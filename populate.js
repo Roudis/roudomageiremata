@@ -92,10 +92,8 @@ categories.forEach(category => {
     const adj = getRandomItem(templates.adjective);
     const title = getRandomItem(templates.title).replace('{adjective}', adj);
     
-    // Choose a random loremflickr image specifically asking for food
-    const imageId = getRandomItem(foodImages);
-    // Alternatively add some variation to unsplash photo to avoid caching issues if same image used
-    const imageUrl = imageId + "&q=80&w=800&auto=format&fit=crop&sig=" + idCounter;
+    const imageIndex = Math.floor(Math.random() * 15) + 1;
+    const imageUrl = `/images/recipes/placeholder-${imageIndex}.jpg`;
 
     newRecipes.push({
       id: `generated-recipe-${idCounter}`,
