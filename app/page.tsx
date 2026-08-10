@@ -16,7 +16,7 @@ export default async function Home() {
         <div className="glass-panel flex flex-col justify-center rounded-[2.5rem] p-10 sm:p-14 relative overflow-hidden group">
           <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
           <h1 className="relative z-10 max-w-2xl text-5xl font-bold tracking-tight text-stone-900 sm:text-7xl leading-[1.1]">
-            Η γεύση και η ανάμνηση <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-orange-400">στο ίδιο τραπέζι.</span>
+            Κάποιες αναμνήσεις μας είναι γεμάτες γεύσεις <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-orange-400">και κάποιες γεύσεις είναι γεμάτες αναμνήσεις μας.</span>
           </h1>
           <p className="relative z-10 mt-8 max-w-xl text-lg leading-relaxed text-stone-600">
             Τα Ρουδομαγειρέματα είναι το δικό μας τετραδιάκι συνταγών για τα φαγητά που μυρίζουν «σπίτι» — γεμάτο με υλικά, βηματάκια και τις μικρές ιστορίες που λέγαμε όσο ζεσταινόταν ο φούρνος.
