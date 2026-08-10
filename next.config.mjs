@@ -1,7 +1,7 @@
 // GitHub Pages serves this project at https://<user>.github.io/roudomageirikes/,
 // so built assets/links need that path prefix. GITHUB_ACTIONS is set to "true"
 // automatically by GitHub-hosted runners, leaving local dev/build untouched.
-const repoName = "roudomageirikes";
+const repoName = "roudomageiremata";
 const isGithubPagesBuild = process.env.GITHUB_ACTIONS === "true";
 
 /** @type {import('next').NextConfig} */
