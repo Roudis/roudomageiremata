@@ -3,6 +3,8 @@ import Link from "next/link";
 import { Recipe } from "@/types/recipe";
 import { Clock, ChefHat, Heart, ArrowRight, Utensils } from "lucide-react";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const categoryStyles = [
   "from-rose-400/20 via-orange-300/10 to-amber-200/20 group-hover:from-rose-400/30 group-hover:via-orange-300/20 group-hover:to-amber-200/30",
   "from-emerald-400/20 via-teal-300/10 to-cyan-200/20 group-hover:from-emerald-400/30 group-hover:via-teal-300/20 group-hover:to-cyan-200/30",
@@ -25,7 +27,7 @@ export function RecipeCard({ recipe, index }: RecipeCardProps) {
     >
       <div className={`relative h-48 bg-gradient-to-br ${gradient} p-8 transition-colors duration-500 overflow-hidden`}>
         {recipe.imageUrl && (
-          <Image src={recipe.imageUrl} alt={recipe.title} fill className="absolute inset-0 h-full w-full object-cover mix-blend-overlay opacity-40 group-hover:scale-110 group-hover:opacity-60 transition-all duration-700" />
+          <Image src={`${basePath}${recipe.imageUrl}`} alt={recipe.title} fill className="absolute inset-0 h-full w-full object-cover mix-blend-overlay opacity-40 group-hover:scale-110 group-hover:opacity-60 transition-all duration-700" />
         )}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.8),transparent_50%)] mix-blend-overlay" />
         <div className="relative flex h-full flex-col justify-between z-10">

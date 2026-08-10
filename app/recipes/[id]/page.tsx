@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { getAllRecipes, getRecipeById } from "@/lib/recipes";
 import { ArrowLeft, Clock, Utensils, CalendarDays, CheckCircle2 } from "lucide-react";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 type RecipeDetailPageProps = {
   params: {
     id: string;
@@ -39,7 +41,7 @@ export default async function RecipeDetailPage({ params }: RecipeDetailPageProps
       {recipe.imageUrl && (
         <div className="relative mb-12 h-[350px] sm:h-[450px] lg:h-[550px] w-full overflow-hidden rounded-[3rem] shadow-2xl group animate-fade-in-up" style={{ animationDelay: '100ms' }}>
           <Image 
-            src={recipe.imageUrl} 
+            src={`${basePath}${recipe.imageUrl}`} 
             alt={recipe.title} 
             fill
             className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105" 
