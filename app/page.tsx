@@ -8,7 +8,7 @@ export default async function Home() {
     <main className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-6 py-12 sm:px-10 lg:px-12 animate-fade-in-up">
       <header className="mb-12 text-center sm:text-left">
         <p className="inline-flex items-center rounded-full bg-rose-100/50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-rose-700 shadow-sm ring-1 ring-rose-200/50 backdrop-blur-sm">
-          Οι Συνταγες της Οικογενειας
+          Ρούδομαγειρέματα
         </p>
       </header>
       
