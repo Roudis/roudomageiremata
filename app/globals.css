@@ -3,8 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --background: #f8f2e8;
+  --background: #fdfbf7;
   --foreground: #1c1917;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* For now keeping a unified beautiful light theme since no dark mode request was explicit, 
+       but setting up variables safely */
+    --background: #fdfbf7;
+    --foreground: #1c1917;
+  }
 }
 
 * {
@@ -18,9 +27,16 @@ html {
 body {
   margin: 0;
   color: var(--foreground);
-  background:
-    linear-gradient(180deg, rgba(255, 251, 235, 0.9) 0%, rgba(248, 242, 232, 1) 45%, rgba(255, 247, 237, 0.96) 100%);
+  background: var(--background);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+.glass-panel {
+  @apply bg-white/60 backdrop-blur-xl border border-white/40 shadow-[0_8px_30px_rgb(0,0,0,0.04)];
+}
+
+.glass-card {
+  @apply bg-white/50 backdrop-blur-lg border border-white/30 shadow-sm hover:shadow-md transition-all duration-300;
 }
 
 a {

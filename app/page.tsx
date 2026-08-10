@@ -5,62 +5,67 @@ export default async function Home() {
   const recipes = await getAllRecipes();
 
   return (
-    <main className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-6 py-10 sm:px-10 lg:px-12">
-      <section className="grid gap-10 rounded-[2rem] bg-white/70 px-8 py-10 shadow-[0_24px_70px_rgba(120,85,45,0.12)] backdrop-blur md:grid-cols-[1.3fr_0.7fr] md:px-12 md:py-14">
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-orange-700">Family recipe guide</p>
-          <h1 className="mt-4 max-w-3xl text-5xl font-semibold leading-tight text-stone-900 sm:text-6xl">
-            Recipes that keep the meal and the memory on the same page.
+    <main className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-6 py-12 sm:px-10 lg:px-12 animate-fade-in-up">
+      <header className="mb-12 text-center sm:text-left">
+        <p className="inline-flex items-center rounded-full bg-rose-100/50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-rose-700 shadow-sm ring-1 ring-rose-200/50 backdrop-blur-sm">
+          Family Recipe Guide
+        </p>
+      </header>
+      
+      <section className="grid gap-6 lg:grid-cols-[1.5fr_1fr]">
+        <div className="glass-panel flex flex-col justify-center rounded-[2.5rem] p-10 sm:p-14 relative overflow-hidden group">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+          <h1 className="relative z-10 max-w-2xl text-5xl font-bold tracking-tight text-stone-900 sm:text-7xl leading-[1.1]">
+            The meal and the memory <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-orange-400">on the same page.</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-stone-600">
+          <p className="relative z-10 mt-8 max-w-xl text-lg leading-relaxed text-stone-600">
             Roudomageirikes is a cozy recipe journal for the dishes that shaped home—filled with ingredients, step-by-step notes, and the little stories told while the oven warmed up.
           </p>
 
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+          <div className="relative z-10 mt-10 flex flex-col gap-4 sm:flex-row">
             <a
               href="#recipe-grid"
-              className="inline-flex items-center justify-center rounded-full bg-stone-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-stone-700"
+              className="inline-flex items-center justify-center rounded-full bg-stone-900 px-8 py-4 text-sm font-semibold text-white shadow-lg transition-transform duration-300 hover:scale-105 hover:bg-stone-800 focus:outline-none focus:ring-4 focus:ring-stone-200"
             >
-              Browse the collection
+              Browse collection
             </a>
           </div>
         </div>
 
-        <div className="rounded-[2rem] bg-gradient-to-br from-orange-100 via-amber-50 to-rose-100 p-8 text-stone-700 shadow-inner">
-          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-rose-700">At the table</p>
-          <div className="mt-6 space-y-5">
-            <div>
-              <p className="text-3xl font-semibold text-stone-900">{recipes.length}</p>
-              <p className="mt-1 text-sm leading-6">Treasured dishes ready to cook, share, and pass to the next generation.</p>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
+          <div className="glass-panel rounded-[2rem] p-8 flex flex-col justify-between group hover:border-orange-200 transition-colors duration-300">
+            <p className="text-xs font-bold uppercase tracking-widest text-orange-600">The Archive</p>
+            <div className="mt-6">
+              <p className="text-6xl font-bold tracking-tighter text-stone-900 group-hover:text-orange-600 transition-colors duration-300">{recipes.length}</p>
+              <p className="mt-2 text-sm font-medium text-stone-500">Treasured family dishes.</p>
             </div>
-            <div className="rounded-3xl bg-white/80 p-5">
-              <p className="text-sm leading-7">
+          </div>
+
+          <div className="glass-panel rounded-[2rem] bg-gradient-to-br from-rose-50/50 to-orange-50/50 p-8 flex flex-col justify-between hover:border-rose-200 transition-colors duration-300">
+             <div className="rounded-2xl bg-white/60 p-5 shadow-sm backdrop-blur-md">
+              <p className="text-sm font-medium italic leading-relaxed text-stone-700">
                 &ldquo;Some recipes begin with olive oil and onions, but the best ones start with somebody saying, ‘Do you remember when...?’&rdquo;
               </p>
             </div>
-            <ul className="space-y-3 text-sm">
-              <li>• Browse ingredients and step-by-step instructions</li>
-              <li>• Each recipe is paired with a family memory</li>
-              <li>• A living archive, passed down through the generations</li>
-            </ul>
           </div>
         </div>
       </section>
 
-      <section id="recipe-grid" className="mt-12">
+      <section id="recipe-grid" className="mt-24 scroll-mt-24">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-700">Recipe collection</p>
-            <h2 className="mt-2 text-3xl font-semibold text-stone-900">Beloved Greek and family favorites</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl">Beloved favorites</h2>
+            <p className="mt-3 max-w-xl text-base leading-relaxed text-stone-600">
+              Each card leads to a full recipe page with ingredients, directions, and the story that keeps the dish close.
+            </p>
           </div>
-          <p className="max-w-xl text-sm leading-7 text-stone-600">
-            Each card leads to a full recipe page with ingredients, directions, and the story that keeps the dish close.
-          </p>
         </div>
 
-        <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-10 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
           {recipes.map((recipe, index) => (
-            <RecipeCard key={recipe.id} recipe={recipe} index={index} />
+            <div key={recipe.id} className="animate-fade-in-up" style={{ animationDelay: `${index * 150}ms`, animationFillMode: "both" }}>
+              <RecipeCard recipe={recipe} index={index} />
+            </div>
           ))}
         </div>
       </section>
