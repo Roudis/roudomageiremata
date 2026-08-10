@@ -31,7 +31,7 @@ export default async function RecipeDetailPage({ params }: RecipeDetailPageProps
           <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/50 backdrop-blur-sm border border-stone-200/50 shadow-sm transition-transform group-hover:-translate-x-1">
             <ArrowLeft className="h-4 w-4" />
           </div>
-          Back to Collection
+          Πίσω στη Συλλογή
         </Link>
       </nav>
 
@@ -42,7 +42,7 @@ export default async function RecipeDetailPage({ params }: RecipeDetailPageProps
             <div className="absolute inset-0 bg-gradient-to-br from-rose-100/40 via-orange-50/40 to-amber-100/40 opacity-70 mix-blend-overlay" />
             <div className="relative z-10">
               <span className="inline-block rounded-full bg-white/80 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-orange-600 shadow-sm backdrop-blur-md border border-white/50">
-                {recipe.category ?? "Family Favorite"}
+                {recipe.category ?? "Αγαπημενο της Οικογενειας"}
               </span>
               <h1 className="mt-6 text-5xl font-bold tracking-tight text-stone-900 sm:text-6xl lg:leading-[1.1]">
                 {recipe.title}
@@ -54,26 +54,26 @@ export default async function RecipeDetailPage({ params }: RecipeDetailPageProps
           </section>
 
           <section className="glass-panel flex flex-col gap-6 rounded-[2.5rem] p-8 sm:p-10">
-             <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-stone-400">Kitchen Notes</h2>
+             <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-stone-400">Σημειωσεις της Κουζινας</h2>
              <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
                 <div className="flex flex-col gap-2 rounded-2xl bg-white/40 p-4 border border-white/40">
                   <Clock className="h-5 w-5 text-orange-400" />
-                  <span className="text-sm font-medium text-stone-500">Prep</span>
+                  <span className="text-sm font-medium text-stone-500">Προετοιμασία</span>
                   <span className="font-bold text-stone-900">{recipe.prepTime ?? "—"}</span>
                 </div>
                 <div className="flex flex-col gap-2 rounded-2xl bg-white/40 p-4 border border-white/40">
                   <Clock className="h-5 w-5 text-rose-400" />
-                  <span className="text-sm font-medium text-stone-500">Cook</span>
+                  <span className="text-sm font-medium text-stone-500">Μαγείρεμα</span>
                   <span className="font-bold text-stone-900">{recipe.cookTime ?? "—"}</span>
                 </div>
                 <div className="flex flex-col gap-2 rounded-2xl bg-white/40 p-4 border border-white/40">
                   <Utensils className="h-5 w-5 text-emerald-400" />
-                  <span className="text-sm font-medium text-stone-500">Yield</span>
+                  <span className="text-sm font-medium text-stone-500">Μερίδες</span>
                   <span className="font-bold text-stone-900">{recipe.servings ?? "—"}</span>
                 </div>
                 <div className="flex flex-col gap-2 rounded-2xl bg-white/40 p-4 border border-white/40">
                   <CalendarDays className="h-5 w-5 text-blue-400" />
-                  <span className="text-sm font-medium text-stone-500">Updated</span>
+                  <span className="text-sm font-medium text-stone-500">Ανανεώθηκε</span>
                   <span className="font-bold text-stone-900">{new Date(recipe.updatedAt).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })}</span>
                 </div>
              </div>
@@ -84,7 +84,7 @@ export default async function RecipeDetailPage({ params }: RecipeDetailPageProps
               <div className="absolute inset-0 bg-gradient-to-br from-rose-300 via-orange-300 to-amber-300 opacity-50 blur-xl transition-opacity duration-500 group-hover:opacity-100" />
               <div className="relative h-full w-full rounded-[2.4rem] bg-white/95 backdrop-blur-3xl p-10 sm:p-14">
                 <span className="inline-block rounded-full bg-rose-100/50 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.25em] text-rose-600">
-                  Recipe Memory
+                  Αναμνηση Συνταγης
                 </span>
                 <div className="mt-8">
                   <h2 className="text-3xl font-bold tracking-tight text-stone-900">{recipe.memory.title}</h2>
@@ -104,9 +104,9 @@ export default async function RecipeDetailPage({ params }: RecipeDetailPageProps
         <div className="flex flex-col gap-12">
           <section className="glass-panel rounded-[2.5rem] p-10 sm:p-12">
             <div className="mb-8 flex items-end justify-between border-b border-stone-200/50 pb-6">
-              <h2 className="text-3xl font-bold tracking-tight text-stone-900">Ingredients</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-stone-900">Υλικά</h2>
               <span className="rounded-full bg-stone-100 px-3 py-1 text-xs font-bold text-stone-500">
-                {recipe.ingredients.length} items
+                {recipe.ingredients.length} υλικά
               </span>
             </div>
             <ul className="space-y-4">
@@ -122,7 +122,7 @@ export default async function RecipeDetailPage({ params }: RecipeDetailPageProps
           </section>
 
           <section>
-            <h2 className="mb-10 text-3xl font-bold tracking-tight text-stone-900 px-4">Method</h2>
+            <h2 className="mb-10 text-3xl font-bold tracking-tight text-stone-900 px-4">Εκτέλεση</h2>
             <ol className="space-y-6">
               {recipe.steps.map((step, index) => (
                 <li key={index} className="glass-panel group flex gap-6 rounded-[2rem] p-8 transition-all hover:shadow-lg hover:border-orange-200/50">

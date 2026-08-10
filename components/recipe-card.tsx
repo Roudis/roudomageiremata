@@ -27,7 +27,7 @@ export function RecipeCard({ recipe, index }: RecipeCardProps) {
         <div className="relative flex h-full flex-col justify-between z-10">
           <div className="flex justify-between items-start">
             <span className="w-fit rounded-full bg-white/70 backdrop-blur-md px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.25em] text-stone-700 shadow-sm">
-              {recipe.category ?? "Family Favorite"}
+              {recipe.category ?? "Αγαπημενο της Οικογενειας"}
             </span>
             {recipe.memory && (
               <span className="flex h-8 w-8 items-center justify-center rounded-full bg-rose-100 text-rose-500 shadow-sm">
@@ -66,7 +66,7 @@ export function RecipeCard({ recipe, index }: RecipeCardProps) {
         <div className="flex items-center justify-between border-t border-stone-200/50 pt-5 mt-2">
           <span className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-stone-500">
             <ChefHat className="h-4 w-4" />
-            {recipe.ingredients.length} ingredients
+            {recipe.ingredients.length} υλικά
           </span>
           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-stone-900 text-white transition-transform duration-300 group-hover:scale-110 group-hover:bg-rose-600">
             <ArrowRight className="h-4 w-4" />

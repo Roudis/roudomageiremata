@@ -15,9 +15,9 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Roudomageirikes | Family Recipe Memories",
+  title: "Ρουδομαγειρέματα | Οικογενειακές Συνταγές",
   description:
-    "A warm personal recipe guide for preserving favorite dishes, little kitchen rituals, and the stories that travel with them.",
+    "Ένας ζεστός, προσωπικός οδηγός με τις αγαπημένες μας συνταγές, τα μικρά μυστικά της κουζίνας μας και τις ιστορίες που τις συνοδεύουν.",
 };
 
 export default function RootLayout({
@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="el" className="scroll-smooth">
       <body className={`${geistSans.variable} ${geistMono.variable} min-h-screen text-stone-900 antialiased selection:bg-rose-200 selection:text-rose-900`}>
         <div className="relative isolate min-h-screen overflow-hidden bg-background">
           {/* Animated dynamic background layers */}
