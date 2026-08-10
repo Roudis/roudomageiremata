@@ -35,13 +35,22 @@ export default async function RecipeDetailPage({ params }: RecipeDetailPageProps
         </Link>
       </nav>
 
+      {recipe.imageUrl && (
+        <div className="relative mb-12 h-[350px] sm:h-[450px] lg:h-[550px] w-full overflow-hidden rounded-[3rem] shadow-2xl group animate-fade-in-up" style={{ animationDelay: '100ms' }}>
+          <img 
+            src={recipe.imageUrl} 
+            alt={recipe.title} 
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105" 
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-stone-900/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
+          <div className="absolute inset-0 rounded-[3rem] ring-1 ring-inset ring-black/10 pointer-events-none" />
+        </div>
+      )}
+
       <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
         {/* Left Column: Header & Notes */}
         <div className="flex flex-col gap-8">
-          <section className="glass-panel relative overflow-hidden rounded-[2.5rem] p-10 sm:p-14">
-            {recipe.imageUrl && (
-              <img src={recipe.imageUrl} alt={recipe.title} className="absolute inset-0 h-full w-full object-cover opacity-20 hover:scale-105 hover:opacity-30 transition-all duration-700 pointer-events-none" />
-            )}
+          <section className="glass-panel relative overflow-hidden rounded-[2.5rem] p-10 sm:p-14 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
             <div className="absolute inset-0 bg-gradient-to-br from-rose-100/40 via-orange-50/40 to-amber-100/40 opacity-70 mix-blend-overlay pointer-events-none" />
             <div className="relative z-10">
               <span className="inline-block rounded-full bg-white/80 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-orange-600 shadow-sm backdrop-blur-md border border-white/50">
