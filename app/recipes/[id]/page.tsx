@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllRecipes, getRecipeById } from "@/lib/recipes";
@@ -37,9 +38,10 @@ export default async function RecipeDetailPage({ params }: RecipeDetailPageProps
 
       {recipe.imageUrl && (
         <div className="relative mb-12 h-[350px] sm:h-[450px] lg:h-[550px] w-full overflow-hidden rounded-[3rem] shadow-2xl group animate-fade-in-up" style={{ animationDelay: '100ms' }}>
-          <img 
+          <Image 
             src={recipe.imageUrl} 
             alt={recipe.title} 
+            fill
             className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105" 
           />
           <div className="absolute inset-0 bg-gradient-to-t from-stone-900/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
