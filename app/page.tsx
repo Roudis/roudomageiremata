@@ -19,7 +19,7 @@ export default async function Home() {
             Κάποιες αναμνήσεις μας είναι γεμάτες γεύσεις <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-orange-400">και κάποιες γεύσεις είναι γεμάτες αναμνήσεις μας.</span>
           </h1>
           <p className="relative z-10 mt-8 max-w-xl text-lg leading-relaxed text-stone-600">
-            Τα Ρουδομαγειρέματα είναι το δικό μας τετραδιάκι συνταγών για τα φαγητά που μυρίζουν «σπίτι» — γεμάτο με υλικά, βηματάκια και τις μικρές ιστορίες που λέγαμε όσο ζεσταινόταν ο φούρνος.
+            Τα Ρουδομαγειρέματα είναι μια μικρή συλλογή από συνταγές που έχουν γεύση σπίτι ή και ταξίδια.
           </p>
 
           <div className="relative z-10 mt-10 flex flex-col gap-4 sm:flex-row">
