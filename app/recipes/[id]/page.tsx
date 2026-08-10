@@ -39,7 +39,10 @@ export default async function RecipeDetailPage({ params }: RecipeDetailPageProps
         {/* Left Column: Header & Notes */}
         <div className="flex flex-col gap-8">
           <section className="glass-panel relative overflow-hidden rounded-[2.5rem] p-10 sm:p-14">
-            <div className="absolute inset-0 bg-gradient-to-br from-rose-100/40 via-orange-50/40 to-amber-100/40 opacity-70 mix-blend-overlay" />
+            {recipe.imageUrl && (
+              <img src={recipe.imageUrl} alt={recipe.title} className="absolute inset-0 h-full w-full object-cover opacity-20 hover:scale-105 hover:opacity-30 transition-all duration-700 pointer-events-none" />
+            )}
+            <div className="absolute inset-0 bg-gradient-to-br from-rose-100/40 via-orange-50/40 to-amber-100/40 opacity-70 mix-blend-overlay pointer-events-none" />
             <div className="relative z-10">
               <span className="inline-block rounded-full bg-white/80 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-orange-600 shadow-sm backdrop-blur-md border border-white/50">
                 {recipe.category ?? "Αγαπημενο της Οικογενειας"}

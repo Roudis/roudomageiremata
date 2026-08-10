@@ -22,7 +22,10 @@ export function RecipeCard({ recipe, index }: RecipeCardProps) {
       href={`/recipes/${recipe.id}`}
       className="group flex h-full flex-col overflow-hidden rounded-[2.5rem] bg-white/40 backdrop-blur-xl border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(225,29,72,0.1)] relative"
     >
-      <div className={`relative h-48 bg-gradient-to-br ${gradient} p-8 transition-colors duration-500`}>
+      <div className={`relative h-48 bg-gradient-to-br ${gradient} p-8 transition-colors duration-500 overflow-hidden`}>
+        {recipe.imageUrl && (
+          <img src={recipe.imageUrl} alt={recipe.title} className="absolute inset-0 h-full w-full object-cover mix-blend-overlay opacity-40 group-hover:scale-110 group-hover:opacity-60 transition-all duration-700" />
+        )}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.8),transparent_50%)] mix-blend-overlay" />
         <div className="relative flex h-full flex-col justify-between z-10">
           <div className="flex justify-between items-start">
