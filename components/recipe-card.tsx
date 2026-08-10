@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import Link from "next/link";
 import { Recipe } from "@/types/recipe";
 import { Clock, ChefHat, Heart, ArrowRight, Utensils } from "lucide-react";
@@ -27,7 +27,7 @@ export function RecipeCard({ recipe, index }: RecipeCardProps) {
     >
       <div className={`relative h-48 bg-gradient-to-br ${gradient} p-8 transition-colors duration-500 overflow-hidden`}>
         {recipe.imageUrl && (
-          <Image src={`${basePath}${recipe.imageUrl}`} alt={recipe.title} fill className="absolute inset-0 h-full w-full object-cover mix-blend-overlay opacity-40 group-hover:scale-110 group-hover:opacity-60 transition-all duration-700" />
+          <img src={`${basePath}${recipe.imageUrl}`} alt={recipe.title} className="absolute inset-0 h-full w-full object-cover mix-blend-overlay opacity-40 group-hover:scale-110 group-hover:opacity-60 transition-all duration-700" />
         )}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.8),transparent_50%)] mix-blend-overlay" />
         <div className="relative flex h-full flex-col justify-between z-10">
