@@ -1,8 +1,5 @@
-import Link from "next/link";
 import { RecipeCard } from "@/components/recipe-card";
 import { getAllRecipes } from "@/lib/recipes";
-
-export const dynamic = "force-dynamic";
 
 export default async function Home() {
   const recipes = await getAllRecipes();
@@ -20,15 +17,9 @@ export default async function Home() {
           </p>
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <Link
-              href="/recipes/new"
-              className="inline-flex items-center justify-center rounded-full bg-stone-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-stone-700"
-            >
-              Add a new recipe
-            </Link>
             <a
               href="#recipe-grid"
-              className="inline-flex items-center justify-center rounded-full border border-stone-300 bg-white px-6 py-3 text-sm font-semibold text-stone-700 transition hover:border-orange-300 hover:text-orange-700"
+              className="inline-flex items-center justify-center rounded-full bg-stone-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-stone-700"
             >
               Browse the collection
             </a>
@@ -49,8 +40,8 @@ export default async function Home() {
             </div>
             <ul className="space-y-3 text-sm">
               <li>• Browse ingredients and step-by-step instructions</li>
-              <li>• Attach memories to each recipe entry</li>
-              <li>• Edit and keep the family archive up to date</li>
+              <li>• Each recipe is paired with a family memory</li>
+              <li>• A living archive, passed down through the generations</li>
             </ul>
           </div>
         </div>

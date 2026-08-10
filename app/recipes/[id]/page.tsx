@@ -1,14 +1,17 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getRecipeById } from "@/lib/recipes";
-
-export const dynamic = "force-dynamic";
+import { getAllRecipes, getRecipeById } from "@/lib/recipes";
 
 type RecipeDetailPageProps = {
   params: {
     id: string;
   };
 };
+
+export async function generateStaticParams() {
+  const recipes = await getAllRecipes();
+  return recipes.map((recipe) => ({ id: recipe.id }));
+}
 
 export default async function RecipeDetailPage({ params }: RecipeDetailPageProps) {
   const recipe = await getRecipeById(params.id);
@@ -22,12 +25,6 @@ export default async function RecipeDetailPage({ params }: RecipeDetailPageProps
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <Link href="/" className="text-sm font-semibold text-orange-700 transition hover:text-orange-800">
           ← Back to all recipes
-        </Link>
-        <Link
-          href={`/recipes/${recipe.id}/edit`}
-          className="inline-flex items-center rounded-full border border-stone-300 bg-white px-5 py-2 text-sm font-semibold text-stone-700 transition hover:border-orange-300 hover:text-orange-700"
-        >
-          Edit recipe
         </Link>
       </div>
 
