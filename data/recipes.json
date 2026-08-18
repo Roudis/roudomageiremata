@@ -397,7 +397,7 @@
     },
     {
       "id": "generated-recipe-14",
-      "title": "Ελληνικό Παστίτσιο",
+      "title": "TO Παστίτσιο της γιαγιάς",
       "description": "Το κλασικό, αγαπημένο ελληνικό παστίτσιο με αφράτη μπεσαμέλ και λαχταριστό κιμά.",
       "ingredients": [
         "1/2 φλιτζάνι λάδι (εξαιρετικό παρθένο ελαιόλαδο)",
@@ -437,7 +437,7 @@
         "date": "2023-11"
       },
       "category": "Της Γιαγιάς που γεμίζουν κοιλίτσες και καρδιές",
-      "imageUrl": "/images/recipes/pastitsio-uploaded.jpg",
+      "imageUrl": "/images/recipes/placeholder-14.jpg",
       "prepTime": "1 ώρα",
       "cookTime": "1 ώρα",
       "servings": 8,
