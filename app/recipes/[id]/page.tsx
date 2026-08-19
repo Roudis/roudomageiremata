@@ -29,7 +29,8 @@ export default async function RecipeDetailPage({ params }: RecipeDetailPageProps
       <nav className="mb-8 flex items-center">
         <Link 
           href="/" 
-          className="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-stone-500 transition-colors hover:text-orange-600"
+          className="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-stone-500 transition-colors hover:text-orange-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded-lg p-2 -ml-2"
+          aria-label="Επιστροφή στη συλλογή"
         >
           <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/50 backdrop-blur-sm border border-stone-200/50 shadow-sm transition-transform group-hover:-translate-x-1">
             <ArrowLeft className="h-4 w-4" />
@@ -59,7 +60,7 @@ export default async function RecipeDetailPage({ params }: RecipeDetailPageProps
               <span className="inline-block rounded-full bg-white/80 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-orange-600 shadow-sm backdrop-blur-md border border-white/50">
                 {recipe.category ?? "Αγαπημενο της Οικογενειας"}
               </span>
-              <h1 className="mt-6 text-5xl font-bold tracking-tight text-stone-900 sm:text-6xl lg:leading-[1.1]">
+              <h1 className="mt-6 text-5xl font-bold tracking-tight text-stone-900 sm:text-6xl lg:leading-[1.1] text-balance">
                 {recipe.title}
               </h1>
               <p className="mt-8 text-xl leading-relaxed text-stone-600">
@@ -102,7 +103,7 @@ export default async function RecipeDetailPage({ params }: RecipeDetailPageProps
                   Αναμνηση Συνταγης
                 </span>
                 <div className="mt-8">
-                  <h2 className="text-3xl font-bold tracking-tight text-stone-900">{recipe.memory.title}</h2>
+                  <h2 className="text-3xl font-bold tracking-tight text-stone-900 text-balance">{recipe.memory.title}</h2>
                   {recipe.memory.date && (
                     <p className="mt-2 font-medium text-rose-500/80">{recipe.memory.date}</p>
                   )}

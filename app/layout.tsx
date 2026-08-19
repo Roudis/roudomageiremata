@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -27,16 +29,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="el" className="scroll-smooth">
-      <body className={`${geistSans.variable} ${geistMono.variable} min-h-screen text-stone-900 antialiased selection:bg-rose-200 selection:text-rose-900`}>
-        <div className="relative isolate min-h-screen overflow-hidden bg-background">
+      <body className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col text-stone-900 antialiased selection:bg-rose-200 selection:text-rose-900`}>
+        <div className="relative isolate flex min-h-screen flex-col overflow-hidden bg-background">
           {/* Animated dynamic background layers */}
           <div className="pointer-events-none absolute inset-0 -z-10 bg-hero-glow opacity-30 animate-mesh" />
           <div className="pointer-events-none absolute -top-40 -right-40 -z-10 h-96 w-96 rounded-full bg-rose-200/40 blur-[100px] animate-float" />
           <div className="pointer-events-none absolute top-1/3 -left-20 -z-10 h-72 w-72 rounded-full bg-amber-200/40 blur-[80px] animate-float" style={{ animationDelay: "2s" }} />
           
-          <div className="relative z-0">
+          <Navbar />
+          <div className="relative z-0 flex-1 pt-24 pb-12">
             {children}
           </div>
+          <Footer />
         </div>
       </body>
     </html>

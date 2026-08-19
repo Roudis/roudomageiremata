@@ -23,7 +23,7 @@ export function RecipeCard({ recipe, index }: RecipeCardProps) {
   return (
     <Link
       href={`/recipes/${recipe.id}`}
-      className="group flex h-full flex-col overflow-hidden rounded-[2.5rem] bg-white/40 backdrop-blur-xl border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(225,29,72,0.1)] relative"
+      className="group flex h-full flex-col overflow-hidden rounded-[2.5rem] bg-white/40 backdrop-blur-xl border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(225,29,72,0.1)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-rose-400 focus-visible:ring-offset-4 focus-visible:ring-offset-background relative"
     >
       <div className={`relative h-48 bg-gradient-to-br ${gradient} p-8 transition-colors duration-500 overflow-hidden`}>
         {recipe.imageUrl && (

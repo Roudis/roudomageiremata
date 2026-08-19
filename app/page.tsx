@@ -1,4 +1,4 @@
-import { RecipeCard } from "@/components/recipe-card";
+import { RecipeList } from "@/components/recipe-list";
 import { getAllRecipes } from "@/lib/recipes";
 
 export default async function Home() {
@@ -15,7 +15,7 @@ export default async function Home() {
       <section className="grid gap-6 lg:grid-cols-[1.5fr_1fr]">
         <div className="glass-panel flex flex-col justify-center rounded-[2.5rem] p-10 sm:p-14 relative overflow-hidden group">
           <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-          <h1 className="relative z-10 max-w-2xl text-5xl font-bold tracking-tight text-stone-900 sm:text-7xl leading-[1.1]">
+          <h1 className="relative z-10 max-w-2xl text-5xl font-bold tracking-tight text-stone-900 sm:text-7xl leading-[1.1] text-balance">
             Κάποιες αναμνήσεις μας είναι γεμάτες γεύσεις <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-orange-400">και κάποιες γεύσεις είναι γεμάτες αναμνήσεις μας.</span>
           </h1>
           <p className="relative z-10 mt-8 max-w-xl text-lg leading-relaxed text-stone-600">
@@ -54,38 +54,14 @@ export default async function Home() {
       <section id="recipe-grid" className="mt-24 scroll-mt-24">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between mb-16">
           <div>
-            <h2 className="text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl">Οι συνταγές της οικογένειας</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl text-balance">Οι συνταγές της οικογένειας</h2>
             <p className="mt-3 max-w-xl text-base leading-relaxed text-stone-600">
               Κάθε πρόσωπο της οικογένειας έχει τη δική του θέση εδώ. Ανακάλυψε τις ιστορίες και τα πιατάκια που τους κάνουν ξεχωριστούς!
             </p>
           </div>
         </div>
 
-        <div className="flex flex-col gap-20">
-          {Object.entries(
-            recipes.reduce((acc, recipe) => {
-              const cat = recipe.category ?? "Άλλο";
-              if (!acc[cat]) acc[cat] = [];
-              acc[cat].push(recipe);
-              return acc;
-            }, {} as Record<string, typeof recipes>)
-          ).map(([category, categoryRecipes], catIndex) => (
-            <div key={category} className="animate-fade-in-up" style={{ animationDelay: `${catIndex * 150}ms`, animationFillMode: "both" }}>
-              <div className="mb-8 border-b border-stone-200/50 pb-4">
-                <h3 className="text-2xl font-bold tracking-tight text-stone-800">
-                  {category}
-                </h3>
-              </div>
-              <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-                {categoryRecipes.map((recipe, index) => (
-                  <div key={recipe.id} className="h-full">
-                    <RecipeCard recipe={recipe} index={index} />
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
+        <RecipeList initialRecipes={recipes} />
       </section>
     </main>
   );
