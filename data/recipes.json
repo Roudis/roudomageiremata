@@ -1,7 +1,7 @@
 {
   "recipes": [
     {
-      "id": "generated-recipe-1",
+      "id": "pascha-vathylakisio",
       "title": "Πάσχα Βαθυλακίσιο",
       "description": "Μια συνταγή που θα λατρέψει όλη η οικογένεια! Με απλά υλικά και υπέροχη γεύση.",
       "ingredients": [
@@ -22,7 +22,7 @@
         "date": "2023-11"
       },
       "category": "Του Μπαμπούλα (που δεν είναι μόνο ψάρια)",
-      "imageUrl": "/images/recipes/generated-recipe-1.jpg",
+      "imageUrl": "/images/recipes/pascha-vathylakisio.jpg",
       "prepTime": "20 λεπτά",
       "cookTime": "45 λεπτά",
       "servings": 4,
@@ -30,7 +30,7 @@
       "updatedAt": "2026-08-10T16:52:28.199Z"
     },
     {
-      "id": "generated-recipe-2",
+      "id": "to-giaoyrtoglyko",
       "title": "Το Γιαουρτογλυκό",
       "description": "Μια κλασική συνταγή που φέρνει στο νου αναμνήσεις και γεμίζει το σπίτι αρώματα.",
       "ingredients": [
@@ -54,7 +54,7 @@
         "date": "2023-11"
       },
       "category": "Του Μπαμπούλα (που δεν είναι μόνο ψάρια)",
-      "imageUrl": "/images/recipes/generated-recipe-2.jpg",
+      "imageUrl": "/images/recipes/to-giaoyrtoglyko.jpg",
       "prepTime": "20 λεπτά",
       "cookTime": "45 λεπτά",
       "servings": 4,
@@ -62,7 +62,7 @@
       "updatedAt": "2026-08-10T16:52:28.199Z"
     },
     {
-      "id": "generated-recipe-3",
+      "id": "katse-sta-ayga-ta-tiganita-soy",
       "title": "Κάτσε στα αυγά, τα τηγανητά σου",
       "description": "Μια συνταγή που θα λατρέψει όλη η οικογένεια! Με απλά υλικά και υπέροχη γεύση.",
       "ingredients": [
@@ -85,7 +85,7 @@
         "date": "2023-11"
       },
       "category": "Του Μπαμπούλα (που δεν είναι μόνο ψάρια)",
-      "imageUrl": "/images/recipes/generated-recipe-3.jpg",
+      "imageUrl": "/images/recipes/katse-sta-ayga-ta-tiganita-soy.jpg",
       "prepTime": "20 λεπτά",
       "cookTime": "45 λεπτά",
       "servings": 4,
@@ -93,7 +93,7 @@
       "updatedAt": "2026-08-10T16:52:28.199Z"
     },
     {
-      "id": "generated-recipe-4",
+      "id": "pergamonto-toy-koytalioy-tis-sopypas",
       "title": "Περγαμόντο του κουταλιού ( της σοπύπας )",
       "description": "Το απόλυτο comfort food, ό,τι πρέπει για τις Κυριακές ή τα κρύα απογεύματα.",
       "ingredients": [
@@ -117,7 +117,7 @@
         "date": "2023-11"
       },
       "category": "Του Μπαμπούλα (που δεν είναι μόνο ψάρια)",
-      "imageUrl": "/images/recipes/generated-recipe-4.jpg",
+      "imageUrl": "/images/recipes/pergamonto-toy-koytalioy-tis-sopypas.jpg",
       "prepTime": "20 λεπτά",
       "cookTime": "45 λεπτά",
       "servings": 4,
@@ -125,7 +125,7 @@
       "updatedAt": "2026-08-10T16:52:28.199Z"
     },
     {
-      "id": "generated-recipe-5",
+      "id": "i-tsipoyra",
       "title": "Η ΤΣΙΠΟΥΡΑ",
       "description": "Το απόλυτο comfort food, ό,τι πρέπει για τις Κυριακές ή τα κρύα απογεύματα.",
       "ingredients": [
@@ -148,7 +148,7 @@
         "date": "2023-11"
       },
       "category": "Του Μπαμπούλα (που δεν είναι μόνο ψάρια)",
-      "imageUrl": "/images/recipes/generated-recipe-5.jpg",
+      "imageUrl": "/images/recipes/i-tsipoyra.jpg",
       "prepTime": "20 λεπτά",
       "cookTime": "45 λεπτά",
       "servings": 4,
@@ -156,7 +156,7 @@
       "updatedAt": "2026-08-10T16:52:28.199Z"
     },
     {
-      "id": "generated-recipe-6",
+      "id": "ekeino-me-to-estragkon",
       "title": "Εκείνο με το Εστραγκόν",
       "description": "Το απόλυτο comfort food, ό,τι πρέπει για τις Κυριακές ή τα κρύα απογεύματα.",
       "ingredients": [
@@ -178,7 +178,7 @@
         "date": "2023-11"
       },
       "category": "Οι ντελικάτες της Μαμάς",
-      "imageUrl": "/images/recipes/generated-recipe-6.jpg",
+      "imageUrl": "/images/recipes/ekeino-me-to-estragkon.jpg",
       "prepTime": "20 λεπτά",
       "cookTime": "45 λεπτά",
       "servings": 4,
@@ -186,7 +186,7 @@
       "updatedAt": "2026-08-10T16:52:28.199Z"
     },
     {
-      "id": "generated-recipe-7",
+      "id": "gia-na-anevei-o-sidiros-tote-poy-epaize-elntoranto",
       "title": "Για να ανέβει ο σίδήρος ( τότε που έπαιζε ελντοράντο)",
       "description": "Μια συνταγή που θα λατρέψει όλη η οικογένεια! Με απλά υλικά και υπέροχη γεύση.",
       "ingredients": [
@@ -209,7 +209,7 @@
         "date": "2023-11"
       },
       "category": "Οι ντελικάτες της Μαμάς",
-      "imageUrl": "/images/recipes/generated-recipe-7.jpg",
+      "imageUrl": "/images/recipes/gia-na-anevei-o-sidiros-tote-poy-epaize-elntoranto.jpg",
       "prepTime": "20 λεπτά",
       "cookTime": "45 λεπτά",
       "servings": 4,
@@ -217,7 +217,7 @@
       "updatedAt": "2026-08-10T16:52:28.199Z"
     },
     {
-      "id": "generated-recipe-8",
+      "id": "oi-pio-soavres-patates",
       "title": "ΟΙ ΠΙΟ ΣΟΑΒΡΕΣ ΠΑΤΑΤΕΣ",
       "description": "Το απόλυτο comfort food, ό,τι πρέπει για τις Κυριακές ή τα κρύα απογεύματα.",
       "ingredients": [
@@ -238,7 +238,7 @@
         "date": "2023-11"
       },
       "category": "Οι ντελικάτες της Μαμάς",
-      "imageUrl": "/images/recipes/generated-recipe-8.jpg",
+      "imageUrl": "/images/recipes/oi-pio-soavres-patates.jpg",
       "prepTime": "20 λεπτά",
       "cookTime": "45 λεπτά",
       "servings": 4,
@@ -246,7 +246,7 @@
       "updatedAt": "2026-08-10T16:52:28.199Z"
     },
     {
-      "id": "generated-recipe-9",
+      "id": "tsilichoyda",
       "title": "Τσιλιχούδα",
       "description": "Το απόλυτο comfort food, ό,τι πρέπει για τις Κυριακές ή τα κρύα απογεύματα.",
       "ingredients": [
@@ -269,7 +269,7 @@
         "date": "2023-11"
       },
       "category": "Οι ντελικάτες της Μαμάς",
-      "imageUrl": "/images/recipes/generated-recipe-9.jpg",
+      "imageUrl": "/images/recipes/tsilichoyda.jpg",
       "prepTime": "20 λεπτά",
       "cookTime": "45 λεπτά",
       "servings": 4,
@@ -277,7 +277,7 @@
       "updatedAt": "2026-08-10T16:52:28.199Z"
     },
     {
-      "id": "generated-recipe-10",
+      "id": "to-pio-nostimo-kokkinisto-maska-aerion",
       "title": "Το πιο νόστημο κοκκινιστό + μάσκα αερίων",
       "description": "Μια συνταγή που θα λατρέψει όλη η οικογένεια! Με απλά υλικά και υπέροχη γεύση.",
       "ingredients": [
@@ -298,7 +298,7 @@
         "date": "2023-11"
       },
       "category": "Οι ντελικάτες της Μαμάς",
-      "imageUrl": "/images/recipes/generated-recipe-10.jpg",
+      "imageUrl": "/images/recipes/to-pio-nostimo-kokkinisto-maska-aerion.jpg",
       "prepTime": "20 λεπτά",
       "cookTime": "45 λεπτά",
       "servings": 4,
@@ -306,7 +306,7 @@
       "updatedAt": "2026-08-10T16:52:28.199Z"
     },
     {
-      "id": "generated-recipe-11",
+      "id": "taxidiara-kotopita",
       "title": "Ταξιδιάρα κοτόπιτα",
       "description": "Το απόλυτο comfort food, ό,τι πρέπει για τις Κυριακές ή τα κρύα απογεύματα.",
       "ingredients": [
@@ -327,7 +327,7 @@
         "date": "2023-11"
       },
       "category": "Της Γιαγιάς που γεμίζουν κοιλίτσες και καρδιές",
-      "imageUrl": "/images/recipes/generated-recipe-11.jpg",
+      "imageUrl": "/images/recipes/taxidiara-kotopita.jpg",
       "prepTime": "20 λεπτά",
       "cookTime": "45 λεπτά",
       "servings": 4,
@@ -335,7 +335,7 @@
       "updatedAt": "2026-08-10T16:52:28.199Z"
     },
     {
-      "id": "generated-recipe-12",
+      "id": "ta-snitsel-poy-pairnei-taperaki-o-theios",
       "title": "Τα σνιτσελ που παίρνει ταπεράκι ο Θείος",
       "description": "Λεπτές γεύσεις, όμορφο στήσιμο και πολλή αγάπη σε κάθε μπουκιά.",
       "ingredients": [
@@ -358,7 +358,7 @@
         "date": "2023-11"
       },
       "category": "Της Γιαγιάς που γεμίζουν κοιλίτσες και καρδιές",
-      "imageUrl": "/images/recipes/generated-recipe-12.jpg",
+      "imageUrl": "/images/recipes/ta-snitsel-poy-pairnei-taperaki-o-theios.jpg",
       "prepTime": "20 λεπτά",
       "cookTime": "45 λεπτά",
       "servings": 4,
@@ -366,7 +366,7 @@
       "updatedAt": "2026-08-10T16:52:28.199Z"
     },
     {
-      "id": "generated-recipe-13",
+      "id": "ta-kaimena-gemista",
       "title": "Τα καημένα γεμιστά",
       "description": "Μια κλασική συνταγή που φέρνει στο νου αναμνήσεις και γεμίζει το σπίτι αρώματα.",
       "ingredients": [
@@ -388,7 +388,7 @@
         "date": "2023-11"
       },
       "category": "Της Γιαγιάς που γεμίζουν κοιλίτσες και καρδιές",
-      "imageUrl": "/images/recipes/generated-recipe-13.jpg",
+      "imageUrl": "/images/recipes/ta-kaimena-gemista.jpg",
       "prepTime": "20 λεπτά",
       "cookTime": "45 λεπτά",
       "servings": 4,
@@ -396,7 +396,7 @@
       "updatedAt": "2026-08-10T16:52:28.199Z"
     },
     {
-      "id": "generated-recipe-14",
+      "id": "to-pastitsio-tis-giagias",
       "title": "TO Παστίτσιο της γιαγιάς",
       "description": "Το κλασικό, αγαπημένο ελληνικό παστίτσιο με αφράτη μπεσαμέλ και λαχταριστό κιμά.",
       "ingredients": [
@@ -437,7 +437,7 @@
         "date": "2023-11"
       },
       "category": "Της Γιαγιάς που γεμίζουν κοιλίτσες και καρδιές",
-      "imageUrl": "/images/recipes/generated-recipe-14.jpg",
+      "imageUrl": "/images/recipes/to-pastitsio-tis-giagias.jpg",
       "prepTime": "1 ώρα",
       "cookTime": "1 ώρα",
       "servings": 8,
@@ -445,7 +445,7 @@
       "updatedAt": "2026-08-10T16:52:28.199Z"
     },
     {
-      "id": "generated-recipe-15",
+      "id": "to-kotopoylo-kai-oi-patatates-foyrnoy",
       "title": "ΤΟ Κοτοπουλο και ΟΙ πατατάτες φούρνου",
       "description": "Το απόλυτο comfort food, ό,τι πρέπει για τις Κυριακές ή τα κρύα απογεύματα.",
       "ingredients": [
@@ -468,7 +468,7 @@
         "date": "2023-11"
       },
       "category": "Της Γιαγιάς που γεμίζουν κοιλίτσες και καρδιές",
-      "imageUrl": "/images/recipes/generated-recipe-15.jpg",
+      "imageUrl": "/images/recipes/to-kotopoylo-kai-oi-patatates-foyrnoy.jpg",
       "prepTime": "20 λεπτά",
       "cookTime": "45 λεπτά",
       "servings": 4,
@@ -476,7 +476,7 @@
       "updatedAt": "2026-08-10T16:52:28.199Z"
     },
     {
-      "id": "generated-recipe-16",
+      "id": "makaronada-me-kolokythi-kai-meltizana",
       "title": "Μακαρονάδα με κολοκύθι και μελτιζάνα ??",
       "description": "Λεπτές γεύσεις, όμορφο στήσιμο και πολλή αγάπη σε κάθε μπουκιά.",
       "ingredients": [
@@ -499,7 +499,7 @@
         "date": "2023-11"
       },
       "category": "Αέρας Νάπολης της Θείας",
-      "imageUrl": "/images/recipes/generated-recipe-16.jpg",
+      "imageUrl": "/images/recipes/makaronada-me-kolokythi-kai-meltizana.jpg",
       "prepTime": "20 λεπτά",
       "cookTime": "45 λεπτά",
       "servings": 4,
@@ -507,7 +507,7 @@
       "updatedAt": "2026-08-10T16:52:28.199Z"
     },
     {
-      "id": "generated-recipe-17",
+      "id": "i-karmponara",
       "title": "Η ΚΑΡΜΠΟΝΑΡΑ",
       "description": "Μια συνταγή που θα λατρέψει όλη η οικογένεια! Με απλά υλικά και υπέροχη γεύση.",
       "ingredients": [
@@ -529,7 +529,7 @@
         "date": "2023-11"
       },
       "category": "Αέρας Νάπολης της Θείας",
-      "imageUrl": "/images/recipes/generated-recipe-17.jpg",
+      "imageUrl": "/images/recipes/i-karmponara.jpg",
       "prepTime": "20 λεπτά",
       "cookTime": "45 λεπτά",
       "servings": 4,
@@ -537,7 +537,7 @@
       "updatedAt": "2026-08-10T16:52:28.199Z"
     },
     {
-      "id": "generated-recipe-18",
+      "id": "ena-potiraki-limonstelo-i-2",
       "title": "Ενα ποτηράκι Λιμονστέλο (ή 2 ?)",
       "description": "Λεπτές γεύσεις, όμορφο στήσιμο και πολλή αγάπη σε κάθε μπουκιά.",
       "ingredients": [
@@ -559,7 +559,7 @@
         "date": "2023-11"
       },
       "category": "Αέρας Νάπολης της Θείας",
-      "imageUrl": "/images/recipes/generated-recipe-18.jpg",
+      "imageUrl": "/images/recipes/ena-potiraki-limonstelo-i-2.jpg",
       "prepTime": "20 λεπτά",
       "cookTime": "45 λεπτά",
       "servings": 4,
@@ -567,7 +567,7 @@
       "updatedAt": "2026-08-10T16:52:28.199Z"
     },
     {
-      "id": "generated-recipe-19",
+      "id": "ta-pio-nostima-mezedakia",
       "title": "Τα πιο νόστημα μεζεδάκια",
       "description": "Το απόλυτο comfort food, ό,τι πρέπει για τις Κυριακές ή τα κρύα απογεύματα.",
       "ingredients": [
@@ -590,7 +590,7 @@
         "date": "2023-11"
       },
       "category": "Αέρας Νάπολης της Θείας",
-      "imageUrl": "/images/recipes/generated-recipe-19.jpg",
+      "imageUrl": "/images/recipes/ta-pio-nostima-mezedakia.jpg",
       "prepTime": "20 λεπτά",
       "cookTime": "45 λεπτά",
       "servings": 4,
@@ -598,7 +598,7 @@
       "updatedAt": "2026-08-10T16:52:28.199Z"
     },
     {
-      "id": "generated-recipe-20",
+      "id": "kati-xechnao",
       "title": "Κάτι ξεχνάω",
       "description": "Μια συνταγή που θα λατρέψει όλη η οικογένεια! Με απλά υλικά και υπέροχη γεύση.",
       "ingredients": [
@@ -620,7 +620,7 @@
         "date": "2023-11"
       },
       "category": "Αέρας Νάπολης της Θείας",
-      "imageUrl": "/images/recipes/generated-recipe-20.jpg",
+      "imageUrl": "/images/recipes/kati-xechnao.jpg",
       "prepTime": "20 λεπτά",
       "cookTime": "45 λεπτά",
       "servings": 4,
@@ -628,7 +628,7 @@
       "updatedAt": "2026-08-10T16:52:28.199Z"
     },
     {
-      "id": "generated-recipe-21",
+      "id": "to-kritharoto-toy-daskaloy",
       "title": "Το κριθαρότο του δάσκαλου",
       "description": "Το απόλυτο comfort food, ό,τι πρέπει για τις Κυριακές ή τα κρύα απογεύματα.",
       "ingredients": [
@@ -649,7 +649,7 @@
         "date": "2023-11"
       },
       "category": "Από Χαραλαμπρούδη",
-      "imageUrl": "/images/recipes/generated-recipe-21.jpg",
+      "imageUrl": "/images/recipes/to-kritharoto-toy-daskaloy.jpg",
       "prepTime": "20 λεπτά",
       "cookTime": "45 λεπτά",
       "servings": 4,
@@ -657,7 +657,7 @@
       "updatedAt": "2026-08-10T16:52:28.199Z"
     },
     {
-      "id": "generated-recipe-22",
+      "id": "garidomaranadara-to-aki-alla-den-peirazei",
       "title": "Γαριδομαραναδάρα ( το άκη αλλά δεν πειράζει)",
       "description": "Μια συνταγή που θα λατρέψει όλη η οικογένεια! Με απλά υλικά και υπέροχη γεύση.",
       "ingredients": [
@@ -679,7 +679,7 @@
         "date": "2023-11"
       },
       "category": "Από Χαραλαμπρούδη",
-      "imageUrl": "/images/recipes/generated-recipe-22.jpg",
+      "imageUrl": "/images/recipes/garidomaranadara-to-aki-alla-den-peirazei.jpg",
       "prepTime": "20 λεπτά",
       "cookTime": "45 λεπτά",
       "servings": 4,
@@ -687,7 +687,7 @@
       "updatedAt": "2026-08-10T16:52:28.199Z"
     },
     {
-      "id": "generated-recipe-23",
+      "id": "ela-moy-nte",
       "title": "Έλα μου ντε???",
       "description": "Μια συνταγή που θα λατρέψει όλη η οικογένεια! Με απλά υλικά και υπέροχη γεύση.",
       "ingredients": [
@@ -708,7 +708,7 @@
         "date": "2023-11"
       },
       "category": "Από Χαραλαμπρούδη",
-      "imageUrl": "/images/recipes/generated-recipe-23.jpg",
+      "imageUrl": "/images/recipes/ela-moy-nte.jpg",
       "prepTime": "20 λεπτά",
       "cookTime": "45 λεπτά",
       "servings": 4,
@@ -716,7 +716,7 @@
       "updatedAt": "2026-08-10T16:52:28.199Z"
     },
     {
-      "id": "generated-recipe-24",
+      "id": "ela-moy-ntee",
       "title": "Έλα μου ντεε ??",
       "description": "Το απόλυτο comfort food, ό,τι πρέπει για τις Κυριακές ή τα κρύα απογεύματα.",
       "ingredients": [
@@ -739,7 +739,7 @@
         "date": "2023-11"
       },
       "category": "Από Χαραλαμπρούδη",
-      "imageUrl": "/images/recipes/generated-recipe-24.jpg",
+      "imageUrl": "/images/recipes/ela-moy-ntee.jpg",
       "prepTime": "20 λεπτά",
       "cookTime": "45 λεπτά",
       "servings": 4,
@@ -747,7 +747,7 @@
       "updatedAt": "2026-08-10T16:52:28.199Z"
     },
     {
-      "id": "generated-recipe-25",
+      "id": "ela-moy-ntee-1",
       "title": "Έλα μου ντεε???",
       "description": "Μια συνταγή που θα λατρέψει όλη η οικογένεια! Με απλά υλικά και υπέροχη γεύση.",
       "ingredients": [
@@ -769,7 +769,7 @@
         "date": "2023-11"
       },
       "category": "Από Χαραλαμπρούδη",
-      "imageUrl": "/images/recipes/generated-recipe-25.jpg",
+      "imageUrl": "/images/recipes/ela-moy-ntee-1.jpg",
       "prepTime": "20 λεπτά",
       "cookTime": "45 λεπτά",
       "servings": 4,
@@ -777,7 +777,7 @@
       "updatedAt": "2026-08-10T16:52:28.199Z"
     },
     {
-      "id": "generated-recipe-26",
+      "id": "mporsta-poly",
       "title": "Μπορστά πολύ",
       "description": "Λεπτές γεύσεις, όμορφο στήσιμο και πολλή αγάπη σε κάθε μπουκιά.",
       "ingredients": [
@@ -798,7 +798,7 @@
         "date": "2023-11"
       },
       "category": "Μικρές στο μάτι , Μεγάλες στο τραπέζι",
-      "imageUrl": "/images/recipes/generated-recipe-26.jpg",
+      "imageUrl": "/images/recipes/mporsta-poly.jpg",
       "prepTime": "20 λεπτά",
       "cookTime": "45 λεπτά",
       "servings": 4,
@@ -806,7 +806,7 @@
       "updatedAt": "2026-08-10T16:52:28.199Z"
     },
     {
-      "id": "generated-recipe-27",
+      "id": "ela-moy-nte-1",
       "title": "Έλα μου ντε???",
       "description": "Μια συνταγή που θα λατρέψει όλη η οικογένεια! Με απλά υλικά και υπέροχη γεύση.",
       "ingredients": [
@@ -827,7 +827,7 @@
         "date": "2023-11"
       },
       "category": "Μικρές στο μάτι , Μεγάλες στο τραπέζι",
-      "imageUrl": "/images/recipes/generated-recipe-27.jpg",
+      "imageUrl": "/images/recipes/ela-moy-nte-1.jpg",
       "prepTime": "20 λεπτά",
       "cookTime": "45 λεπτά",
       "servings": 4,
@@ -835,7 +835,7 @@
       "updatedAt": "2026-08-10T16:52:28.199Z"
     },
     {
-      "id": "generated-recipe-28",
+      "id": "ela-moy-nte-2",
       "title": "Έλα μου ντε???",
       "description": "Το απόλυτο comfort food, ό,τι πρέπει για τις Κυριακές ή τα κρύα απογεύματα.",
       "ingredients": [
@@ -856,7 +856,7 @@
         "date": "2023-11"
       },
       "category": "Μικρές στο μάτι , Μεγάλες στο τραπέζι",
-      "imageUrl": "/images/recipes/generated-recipe-28.jpg",
+      "imageUrl": "/images/recipes/ela-moy-nte-2.jpg",
       "prepTime": "20 λεπτά",
       "cookTime": "45 λεπτά",
       "servings": 4,
@@ -864,7 +864,7 @@
       "updatedAt": "2026-08-10T16:52:28.199Z"
     },
     {
-      "id": "generated-recipe-29",
+      "id": "ela-moy-ntee-2",
       "title": "Έλα μου ντεε ??",
       "description": "Το απόλυτο comfort food, ό,τι πρέπει για τις Κυριακές ή τα κρύα απογεύματα.",
       "ingredients": [
@@ -888,7 +888,7 @@
         "date": "2023-11"
       },
       "category": "Μικρές στο μάτι , Μεγάλες στο τραπέζι",
-      "imageUrl": "/images/recipes/generated-recipe-29.jpg",
+      "imageUrl": "/images/recipes/ela-moy-ntee-2.jpg",
       "prepTime": "20 λεπτά",
       "cookTime": "45 λεπτά",
       "servings": 4,
@@ -896,7 +896,7 @@
       "updatedAt": "2026-08-10T16:52:28.199Z"
     },
     {
-      "id": "generated-recipe-30",
+      "id": "ela-moy-ntee-3",
       "title": "Έλα μου ντεε???",
       "description": "Μια κλασική συνταγή που φέρνει στο νου αναμνήσεις και γεμίζει το σπίτι αρώματα.",
       "ingredients": [
@@ -919,7 +919,7 @@
         "date": "2023-11"
       },
       "category": "Μικρές στο μάτι , Μεγάλες στο τραπέζι",
-      "imageUrl": "/images/recipes/generated-recipe-30.jpg",
+      "imageUrl": "/images/recipes/ela-moy-ntee-3.jpg",
       "prepTime": "20 λεπτά",
       "cookTime": "45 λεπτά",
       "servings": 4,
