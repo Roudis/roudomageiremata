@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { LanguageToggle } from "@/components/language-toggle";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,6 +29,7 @@ export default function RootLayout({
   return (
     <html lang="el" className="scroll-smooth">
       <body className={`${geistSans.variable} ${geistMono.variable} min-h-screen text-stone-900 antialiased selection:bg-rose-200 selection:text-rose-900`}>
+        <LanguageToggle />
         <div className="relative isolate min-h-screen overflow-hidden bg-background">
           {/* Animated dynamic background layers */}
           <div className="pointer-events-none absolute inset-0 -z-10 bg-hero-glow opacity-30 animate-mesh" />

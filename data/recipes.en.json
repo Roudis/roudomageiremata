@@ -1,0 +1,930 @@
+{
+  "recipes": [
+    {
+      "id": "pascha-vathylakisio",
+      "title": "Vathylakisios Easter",
+      "description": "A recipe the whole family will love! With simple ingredients and great taste.",
+      "ingredients": [
+        "1 kg of meat",
+        "2 onions",
+        "Oil and salt",
+        "Spices of your choice"
+      ],
+      "steps": [
+        "We throw in everything left over from last night's dinner.",
+        "Let it cool, but we can't stand it and eat it hot.",
+        "Mix the ingredients furiously until they are homogeneous.",
+        "We close our eyes and add spices at random."
+      ],
+      "memory": {
+        "title": "Sunday table",
+        "story": "We didn't expect it to turn out so well the first time, but it has become our specialty.",
+        "date": "2023-11"
+      },
+      "category": "Baboulas's (not just fish)",
+      "imageUrl": "/images/recipes/pascha-vathylakisio.jpg",
+      "prepTime": "20 mins",
+      "cookTime": "45 mins",
+      "servings": 4,
+      "createdAt": "2026-08-10T16:52:28.198Z",
+      "updatedAt": "2026-08-10T16:52:28.199Z"
+    },
+    {
+      "id": "to-giaoyrtoglyko",
+      "title": "The yogurt sweet",
+      "description": "A classic recipe that brings back memories and fills the house with aromas.",
+      "ingredients": [
+        "Flour",
+        "Eggs",
+        "Milk",
+        "Butter",
+        "Cheese slice"
+      ],
+      "steps": [
+        "We wait over the pot anxiously.",
+        "We call mom to ask \"how much water do I put in?\".",
+        "We throw in everything left over from last night's dinner.",
+        "We serve in deep dishes and act like we know what we're doing.",
+        "We take a look at the oven and hope for the best.",
+        "We are looking in the cupboards to find that utensil we bought in 2015."
+      ],
+      "memory": {
+        "title": "The surprise",
+        "story": "Always present at every feast, it was the plate that was emptied first.",
+        "date": "2023-11"
+      },
+      "category": "Baboulas's (not just fish)",
+      "imageUrl": "/images/recipes/to-giaoyrtoglyko.jpg",
+      "prepTime": "20 mins",
+      "cookTime": "45 mins",
+      "servings": 4,
+      "createdAt": "2026-08-10T16:52:28.199Z",
+      "updatedAt": "2026-08-10T16:52:28.199Z"
+    },
+    {
+      "id": "katse-sta-ayga-ta-tiganita-soy",
+      "title": "Sit on your fried eggs",
+      "description": "A recipe the whole family will love! With simple ingredients and great taste.",
+      "ingredients": [
+        "Fresh vegetables",
+        "Olive oil",
+        "Balsamic vinegar",
+        "Salt"
+      ],
+      "steps": [
+        "We smile widely because... come on, it kind of worked!",
+        "We throw in everything left over from last night's dinner.",
+        "Mix the ingredients furiously until they are homogeneous.",
+        "We try a little in secret and burn our tongues.",
+        "We wait over the pot anxiously.",
+        "We call mom to ask \"how much water do I put in?\"."
+      ],
+      "memory": {
+        "title": "The surprise",
+        "story": "Always present at every feast, it was the plate that was emptied first.",
+        "date": "2023-11"
+      },
+      "category": "Baboulas's (not just fish)",
+      "imageUrl": "/images/recipes/katse-sta-ayga-ta-tiganita-soy.jpg",
+      "prepTime": "20 mins",
+      "cookTime": "45 mins",
+      "servings": 4,
+      "createdAt": "2026-08-10T16:52:28.199Z",
+      "updatedAt": "2026-08-10T16:52:28.199Z"
+    },
+    {
+      "id": "pergamonto-toy-koytalioy-tis-sopypas",
+      "title": "Bergamot of the spoon",
+      "description": "The ultimate comfort food, everything you need for Sundays or cold afternoons.",
+      "ingredients": [
+        "Flour",
+        "Eggs",
+        "Milk",
+        "Butter",
+        "Cheese slice"
+      ],
+      "steps": [
+        "Mix the ingredients furiously until they are homogeneous.",
+        "We are looking in the cupboards to find that utensil we bought in 2015.",
+        "We take a look at the oven and hope for the best.",
+        "We put a little more oil, \"because that's how it tastes\".",
+        "We try a little in secret and burn our tongues.",
+        "We add a little salt, a little pepper, and a lot of emotion."
+      ],
+      "memory": {
+        "title": "The surprise",
+        "story": "Always present at every feast, it was the plate that was emptied first.",
+        "date": "2023-11"
+      },
+      "category": "Baboulas's (not just fish)",
+      "imageUrl": "/images/recipes/pergamonto-toy-koytalioy-tis-sopypas.jpg",
+      "prepTime": "20 mins",
+      "cookTime": "45 mins",
+      "servings": 4,
+      "createdAt": "2026-08-10T16:52:28.199Z",
+      "updatedAt": "2026-08-10T16:52:28.199Z"
+    },
+    {
+      "id": "i-tsipoyra",
+      "title": "THE bream",
+      "description": "The ultimate comfort food, everything you need for Sundays or cold afternoons.",
+      "ingredients": [
+        "500g of pasta",
+        "Tomato sauce",
+        "Lots of cheese",
+        "Fresh basil"
+      ],
+      "steps": [
+        "We call mom to ask \"how much water do I put in?\".",
+        "Mix the ingredients furiously until they are homogeneous.",
+        "We are looking in the cupboards to find that utensil we bought in 2015.",
+        "We serve in deep dishes and act like we know what we're doing.",
+        "We take a look at the oven and hope for the best.",
+        "We put on our apron and take a deep breath."
+      ],
+      "memory": {
+        "title": "Sunday table",
+        "story": "We didn't expect it to turn out so well the first time, but it has become our specialty.",
+        "date": "2023-11"
+      },
+      "category": "Baboulas's (not just fish)",
+      "imageUrl": "/images/recipes/i-tsipoyra.jpg",
+      "prepTime": "20 mins",
+      "cookTime": "45 mins",
+      "servings": 4,
+      "createdAt": "2026-08-10T16:52:28.199Z",
+      "updatedAt": "2026-08-10T16:52:28.199Z"
+    },
+    {
+      "id": "ekeino-me-to-estragkon",
+      "title": "The one with the estragon",
+      "description": "The ultimate comfort food, everything you need for Sundays or cold afternoons.",
+      "ingredients": [
+        "Potatoes",
+        "Oil",
+        "Oregano",
+        "Lemon"
+      ],
+      "steps": [
+        "We wait over the pot anxiously.",
+        "Let it cool, but we can't stand it and eat it hot.",
+        "We are looking in the cupboards to find that utensil we bought in 2015.",
+        "We close our eyes and add spices at random.",
+        "Mix the ingredients furiously until they are homogeneous."
+      ],
+      "memory": {
+        "title": "The surprise",
+        "story": "We didn't expect it to turn out so well the first time, but it has become our specialty.",
+        "date": "2023-11"
+      },
+      "category": "Οι ντελικάτες της Μαμάς",
+      "imageUrl": "/images/recipes/ekeino-me-to-estragkon.jpg",
+      "prepTime": "20 mins",
+      "cookTime": "45 mins",
+      "servings": 4,
+      "createdAt": "2026-08-10T16:52:28.199Z",
+      "updatedAt": "2026-08-10T16:52:28.199Z"
+    },
+    {
+      "id": "gia-na-anevei-o-sidiros-tote-poy-epaize-elntoranto",
+      "title": "For the iron to rise (when Eldorado was playing)",
+      "description": "A recipe the whole family will love! With simple ingredients and great taste.",
+      "ingredients": [
+        "1 kg of meat",
+        "2 onions",
+        "Oil and salt",
+        "Spices of your choice"
+      ],
+      "steps": [
+        "Let it cool, but we can't stand it and eat it hot.",
+        "We call mom to ask \"how much water do I put in?\".",
+        "We try a little in secret and burn our tongues.",
+        "We add a little salt, a little pepper, and a lot of emotion.",
+        "Mix the ingredients furiously until they are homogeneous.",
+        "We take a look at the oven and hope for the best."
+      ],
+      "memory": {
+        "title": "Sunday table",
+        "story": "Always present at every feast, it was the plate that was emptied first.",
+        "date": "2023-11"
+      },
+      "category": "Οι ντελικάτες της Μαμάς",
+      "imageUrl": "/images/recipes/gia-na-anevei-o-sidiros-tote-poy-epaize-elntoranto.jpg",
+      "prepTime": "20 mins",
+      "cookTime": "45 mins",
+      "servings": 4,
+      "createdAt": "2026-08-10T16:52:28.199Z",
+      "updatedAt": "2026-08-10T16:52:28.199Z"
+    },
+    {
+      "id": "oi-pio-soavres-patates",
+      "title": "THE COOLEST POTATOES",
+      "description": "The ultimate comfort food, everything you need for Sundays or cold afternoons.",
+      "ingredients": [
+        "500g of pasta",
+        "Tomato sauce",
+        "Lots of cheese",
+        "Fresh basil"
+      ],
+      "steps": [
+        "We close our eyes and add spices at random.",
+        "We add a little salt, a little pepper, and a lot of emotion.",
+        "Let it cool, but we can't stand it and eat it hot.",
+        "We throw in everything left over from last night's dinner."
+      ],
+      "memory": {
+        "title": "The surprise",
+        "story": "Every Sunday, this smell woke us up in the morning!",
+        "date": "2023-11"
+      },
+      "category": "Οι ντελικάτες της Μαμάς",
+      "imageUrl": "/images/recipes/oi-pio-soavres-patates.jpg",
+      "prepTime": "20 mins",
+      "cookTime": "45 mins",
+      "servings": 4,
+      "createdAt": "2026-08-10T16:52:28.199Z",
+      "updatedAt": "2026-08-10T16:52:28.199Z"
+    },
+    {
+      "id": "tsilichoyda",
+      "title": "Chilihuda",
+      "description": "The ultimate comfort food, everything you need for Sundays or cold afternoons.",
+      "ingredients": [
+        "Flour",
+        "Eggs",
+        "Milk",
+        "Butter",
+        "Cheese slice"
+      ],
+      "steps": [
+        "We put on our apron and take a deep breath.",
+        "We smile widely because... come on, it kind of worked!",
+        "We serve in deep dishes and act like we know what we're doing.",
+        "We throw in everything left over from last night's dinner.",
+        "We take a look at the oven and hope for the best."
+      ],
+      "memory": {
+        "title": "Holidays",
+        "story": "We didn't expect it to turn out so well the first time, but it has become our specialty.",
+        "date": "2023-11"
+      },
+      "category": "Οι ντελικάτες της Μαμάς",
+      "imageUrl": "/images/recipes/tsilichoyda.jpg",
+      "prepTime": "20 mins",
+      "cookTime": "45 mins",
+      "servings": 4,
+      "createdAt": "2026-08-10T16:52:28.199Z",
+      "updatedAt": "2026-08-10T16:52:28.199Z"
+    },
+    {
+      "id": "to-pio-nostimo-kokkinisto-maska-aerion",
+      "title": "The tastiest braised + gas mask",
+      "description": "A recipe the whole family will love! With simple ingredients and great taste.",
+      "ingredients": [
+        "Potatoes",
+        "Oil",
+        "Oregano",
+        "Lemon"
+      ],
+      "steps": [
+        "We take a look at the oven and hope for the best.",
+        "We throw in everything left over from last night's dinner.",
+        "We close our eyes and add spices at random.",
+        "We try a little in secret and burn our tongues."
+      ],
+      "memory": {
+        "title": "Sunday table",
+        "story": "Every Sunday, this smell woke us up in the morning!",
+        "date": "2023-11"
+      },
+      "category": "Οι ντελικάτες της Μαμάς",
+      "imageUrl": "/images/recipes/to-pio-nostimo-kokkinisto-maska-aerion.jpg",
+      "prepTime": "20 mins",
+      "cookTime": "45 mins",
+      "servings": 4,
+      "createdAt": "2026-08-10T16:52:28.199Z",
+      "updatedAt": "2026-08-10T16:52:28.199Z"
+    },
+    {
+      "id": "taxidiara-kotopita",
+      "title": "Traveling chicken pies",
+      "description": "The ultimate comfort food, everything you need for Sundays or cold afternoons.",
+      "ingredients": [
+        "500g of pasta",
+        "Tomato sauce",
+        "Lots of cheese",
+        "Fresh basil"
+      ],
+      "steps": [
+        "Let it cool, but we can't stand it and eat it hot.",
+        "Mix the ingredients furiously until they are homogeneous.",
+        "We put a little more oil, \"because that's how it tastes\".",
+        "We smile widely because... come on, it kind of worked!"
+      ],
+      "memory": {
+        "title": "The surprise",
+        "story": "Every Sunday, this smell woke us up in the morning!",
+        "date": "2023-11"
+      },
+      "category": "Της Γιαγιάς που γεμίζουν κοιλίτσες και καρδιές",
+      "imageUrl": "/images/recipes/taxidiara-kotopita.jpg",
+      "prepTime": "20 mins",
+      "cookTime": "45 mins",
+      "servings": 4,
+      "createdAt": "2026-08-10T16:52:28.199Z",
+      "updatedAt": "2026-08-10T16:52:28.199Z"
+    },
+    {
+      "id": "ta-snitsel-poy-pairnei-taperaki-o-theios",
+      "title": "The schnitzels that Uncle Theios gets",
+      "description": "Delicate flavors, beautiful setting and lots of love in every bite.",
+      "ingredients": [
+        "Fresh vegetables",
+        "Olive oil",
+        "Balsamic vinegar",
+        "Salt"
+      ],
+      "steps": [
+        "We throw in everything left over from last night's dinner.",
+        "We wait over the pot anxiously.",
+        "We serve in deep dishes and act like we know what we're doing.",
+        "We call mom to ask \"how much water do I put in?\".",
+        "We smile widely because... come on, it kind of worked!",
+        "We try a little in secret and burn our tongues."
+      ],
+      "memory": {
+        "title": "Holidays",
+        "story": "We didn't expect it to turn out so well the first time, but it has become our specialty.",
+        "date": "2023-11"
+      },
+      "category": "Της Γιαγιάς που γεμίζουν κοιλίτσες και καρδιές",
+      "imageUrl": "/images/recipes/ta-snitsel-poy-pairnei-taperaki-o-theios.jpg",
+      "prepTime": "20 mins",
+      "cookTime": "45 mins",
+      "servings": 4,
+      "createdAt": "2026-08-10T16:52:28.199Z",
+      "updatedAt": "2026-08-10T16:52:28.199Z"
+    },
+    {
+      "id": "ta-kaimena-gemista",
+      "title": "The poor stuffed ones",
+      "description": "A classic recipe that brings back memories and fills the house with aromas.",
+      "ingredients": [
+        "500g of pasta",
+        "Tomato sauce",
+        "Lots of cheese",
+        "Fresh basil"
+      ],
+      "steps": [
+        "We throw in everything left over from last night's dinner.",
+        "We call mom to ask \"how much water do I put in?\".",
+        "We are looking in the cupboards to find that utensil we bought in 2015.",
+        "We try a little in secret and burn our tongues.",
+        "We put a little more oil, \"because that's how it tastes\"."
+      ],
+      "memory": {
+        "title": "Sunday table",
+        "story": "Always present at every feast, it was the plate that was emptied first.",
+        "date": "2023-11"
+      },
+      "category": "Της Γιαγιάς που γεμίζουν κοιλίτσες και καρδιές",
+      "imageUrl": "/images/recipes/ta-kaimena-gemista.jpg",
+      "prepTime": "20 mins",
+      "cookTime": "45 mins",
+      "servings": 4,
+      "createdAt": "2026-08-10T16:52:28.199Z",
+      "updatedAt": "2026-08-10T16:52:28.199Z"
+    },
+    {
+      "id": "to-pastitsio-tis-giagias",
+      "title": "Grandma's pasticcio",
+      "description": "The classic, beloved Greek pasticcio with fluffy béchamel and delicious minced meat.",
+      "ingredients": [
+        "1/2 cup oil (extra virgin olive oil)",
+        "1 medium onion, grated",
+        "1 kg minced meat (veal or mixed)",
+        "2 cups of tomato passata",
+        "1 tbsp tomato paste",
+        "1/2 tsp. sugar",
+        "3 tbsp parsley, chopped",
+        "1 egg (lightly beaten)",
+        "Salt & Pepper",
+        "1/2 kilo spaghetti for pasticcio (No. 2)",
+        "1/4 cup butter",
+        "2 1/2 cups grated cheese (Kasseri, Kefalograviera or Graviera)",
+        "2 tbsp breadcrumbs",
+        "1 tbsp oil (for cooking)",
+        "4 cups of milk",
+        "8 tbsp all purpose flour",
+        "8 tbsp butter",
+        "4 eggs (lightly beaten)",
+        "Salt, white pepper, nutmeg"
+      ],
+      "steps": [
+        "Heat the oil in a saucepan over high heat. Sauté the onion until soft, add the minced meat and fry it well.",
+        "Stir in the passata, tomato paste, sugar, parsley, salt and pepper. Cover and simmer until the liquid evaporates.",
+        "Remove the ground beef from the heat, let it cool slightly, and stir in 1 beaten egg and 1/2 cup of the grated cheese.",
+        "Boil the spaghetti in salted water with 1 tbsp. oil. Drain, rinse lightly with cold water and mix with 1/4 cup butter and 2 cups grated cheese.",
+        "Σε μια μικρή κατσαρόλα, αφήστε το γάλα να πάρει βράση. Σε άλλη κατσαρόλα, λιώστε τις 8 κ.σ. βούτυρο, προσθέστε το αλεύρι και σοτάρετε για περίπου 5 λεπτά.",
+        "Pour the hot milk all at once into the flour, beating vigorously with the whisk. Stir over low heat until thickened.",
+        "Remove the cream from the heat, season with salt, pepper, nutmeg and incorporate 4 lightly beaten eggs while mixing.",
+        "Butter a baking tray (30x40 cm) and sprinkle with breadcrumbs. Spread half the spaghetti, then the minced meat, then the rest of the spaghetti.",
+        "Pour the béchamel over the entire surface and bake at 180°C for about 1 hour. Let it rest for 20 minutes before serving."
+      ],
+      "memory": {
+        "title": "Sunday table",
+        "story": "The favorite Sunday food that gathers the whole family around the table! The smell of béchamel lingers in the house until the afternoon.",
+        "date": "2023-11"
+      },
+      "category": "Της Γιαγιάς που γεμίζουν κοιλίτσες και καρδιές",
+      "imageUrl": "/images/recipes/to-pastitsio-tis-giagias.jpg",
+      "prepTime": "1 ώρα",
+      "cookTime": "1 ώρα",
+      "servings": 8,
+      "createdAt": "2026-08-10T16:52:28.199Z",
+      "updatedAt": "2026-08-10T16:52:28.199Z"
+    },
+    {
+      "id": "to-kotopoylo-kai-oi-patatates-foyrnoy",
+      "title": "CHICKEN and baked potatoes",
+      "description": "The ultimate comfort food, everything you need for Sundays or cold afternoons.",
+      "ingredients": [
+        "1 kg of meat",
+        "2 onions",
+        "Oil and salt",
+        "Spices of your choice"
+      ],
+      "steps": [
+        "We put on our apron and take a deep breath.",
+        "We throw in everything left over from last night's dinner.",
+        "We call mom to ask \"how much water do I put in?\".",
+        "We serve in deep dishes and act like we know what we're doing.",
+        "We are looking in the cupboards to find that utensil we bought in 2015.",
+        "We try a little in secret and burn our tongues."
+      ],
+      "memory": {
+        "title": "Sunday table",
+        "story": "Every Sunday, this smell woke us up in the morning!",
+        "date": "2023-11"
+      },
+      "category": "Της Γιαγιάς που γεμίζουν κοιλίτσες και καρδιές",
+      "imageUrl": "/images/recipes/to-kotopoylo-kai-oi-patatates-foyrnoy.jpg",
+      "prepTime": "20 mins",
+      "cookTime": "45 mins",
+      "servings": 4,
+      "createdAt": "2026-08-10T16:52:28.199Z",
+      "updatedAt": "2026-08-10T16:52:28.199Z"
+    },
+    {
+      "id": "makaronada-me-kolokythi-kai-meltizana",
+      "title": "Pasta with pumpkin and maltizana ??",
+      "description": "Delicate flavors, beautiful setting and lots of love in every bite.",
+      "ingredients": [
+        "Fresh vegetables",
+        "Olive oil",
+        "Balsamic vinegar",
+        "Salt"
+      ],
+      "steps": [
+        "We put on our apron and take a deep breath.",
+        "We put a little more oil, \"because that's how it tastes\".",
+        "We throw in everything left over from last night's dinner.",
+        "We call mom to ask \"how much water do I put in?\".",
+        "Mix the ingredients furiously until they are homogeneous.",
+        "We serve in deep dishes and act like we know what we're doing."
+      ],
+      "memory": {
+        "title": "Holidays",
+        "story": "Always present at every feast, it was the plate that was emptied first.",
+        "date": "2023-11"
+      },
+      "category": "Αέρας Νάπολης της Θείας",
+      "imageUrl": "/images/recipes/makaronada-me-kolokythi-kai-meltizana.jpg",
+      "prepTime": "20 mins",
+      "cookTime": "45 mins",
+      "servings": 4,
+      "createdAt": "2026-08-10T16:52:28.199Z",
+      "updatedAt": "2026-08-10T16:52:28.199Z"
+    },
+    {
+      "id": "i-karmponara",
+      "title": "THE CARBONARA",
+      "description": "A recipe the whole family will love! With simple ingredients and great taste.",
+      "ingredients": [
+        "Potatoes",
+        "Oil",
+        "Oregano",
+        "Lemon"
+      ],
+      "steps": [
+        "We call mom to ask \"how much water do I put in?\".",
+        "We throw in everything left over from last night's dinner.",
+        "We serve in deep dishes and act like we know what we're doing.",
+        "We add a little salt, a little pepper, and a lot of emotion.",
+        "Mix gently so as not to wake up the dough."
+      ],
+      "memory": {
+        "title": "The surprise",
+        "story": "Always present at every feast, it was the plate that was emptied first.",
+        "date": "2023-11"
+      },
+      "category": "Αέρας Νάπολης της Θείας",
+      "imageUrl": "/images/recipes/i-karmponara.jpg",
+      "prepTime": "20 mins",
+      "cookTime": "45 mins",
+      "servings": 4,
+      "createdAt": "2026-08-10T16:52:28.199Z",
+      "updatedAt": "2026-08-10T16:52:28.199Z"
+    },
+    {
+      "id": "ena-potiraki-limonstelo-i-2",
+      "title": "A glass of Limonstello (or 2?)",
+      "description": "Delicate flavors, beautiful setting and lots of love in every bite.",
+      "ingredients": [
+        "1 kg of meat",
+        "2 onions",
+        "Oil and salt",
+        "Spices of your choice"
+      ],
+      "steps": [
+        "Mix gently so as not to wake up the dough.",
+        "We add a little salt, a little pepper, and a lot of emotion.",
+        "We serve in deep dishes and act like we know what we're doing.",
+        "We smile widely because... come on, it kind of worked!",
+        "Let it cool, but we can't stand it and eat it hot."
+      ],
+      "memory": {
+        "title": "Sunday table",
+        "story": "We didn't expect it to turn out so well the first time, but it has become our specialty.",
+        "date": "2023-11"
+      },
+      "category": "Αέρας Νάπολης της Θείας",
+      "imageUrl": "/images/recipes/ena-potiraki-limonstelo-i-2.jpg",
+      "prepTime": "20 mins",
+      "cookTime": "45 mins",
+      "servings": 4,
+      "createdAt": "2026-08-10T16:52:28.199Z",
+      "updatedAt": "2026-08-10T16:52:28.199Z"
+    },
+    {
+      "id": "ta-pio-nostima-mezedakia",
+      "title": "The most delicious appetizers",
+      "description": "The ultimate comfort food, everything you need for Sundays or cold afternoons.",
+      "ingredients": [
+        "Flour",
+        "Eggs",
+        "Milk",
+        "Butter",
+        "Cheese slice"
+      ],
+      "steps": [
+        "We serve in deep dishes and act like we know what we're doing.",
+        "We throw in everything left over from last night's dinner.",
+        "We wait over the pot anxiously.",
+        "We smile widely because... come on, it kind of worked!",
+        "We take a look at the oven and hope for the best."
+      ],
+      "memory": {
+        "title": "Sunday table",
+        "story": "Every Sunday, this smell woke us up in the morning!",
+        "date": "2023-11"
+      },
+      "category": "Αέρας Νάπολης της Θείας",
+      "imageUrl": "/images/recipes/ta-pio-nostima-mezedakia.jpg",
+      "prepTime": "20 mins",
+      "cookTime": "45 mins",
+      "servings": 4,
+      "createdAt": "2026-08-10T16:52:28.199Z",
+      "updatedAt": "2026-08-10T16:52:28.199Z"
+    },
+    {
+      "id": "kati-xechnao",
+      "title": "I'm forgetting something",
+      "description": "A recipe the whole family will love! With simple ingredients and great taste.",
+      "ingredients": [
+        "Flour",
+        "Eggs",
+        "Milk",
+        "Butter",
+        "Cheese slice"
+      ],
+      "steps": [
+        "We are looking in the cupboards to find that utensil we bought in 2015.",
+        "We wait over the pot anxiously.",
+        "We add a little salt, a little pepper, and a lot of emotion.",
+        "We call mom to ask \"how much water do I put in?\"."
+      ],
+      "memory": {
+        "title": "Holidays",
+        "story": "Every Sunday, this smell woke us up in the morning!",
+        "date": "2023-11"
+      },
+      "category": "Αέρας Νάπολης της Θείας",
+      "imageUrl": "/images/recipes/kati-xechnao.jpg",
+      "prepTime": "20 mins",
+      "cookTime": "45 mins",
+      "servings": 4,
+      "createdAt": "2026-08-10T16:52:28.199Z",
+      "updatedAt": "2026-08-10T16:52:28.199Z"
+    },
+    {
+      "id": "to-kritharoto-toy-daskaloy",
+      "title": "The teacher's millet",
+      "description": "The ultimate comfort food, everything you need for Sundays or cold afternoons.",
+      "ingredients": [
+        "500g of pasta",
+        "Tomato sauce",
+        "Lots of cheese",
+        "Fresh basil"
+      ],
+      "steps": [
+        "We put on our apron and take a deep breath.",
+        "We call mom to ask \"how much water do I put in?\".",
+        "We smile widely because... come on, it kind of worked!",
+        "We throw in everything left over from last night's dinner."
+      ],
+      "memory": {
+        "title": "The surprise",
+        "story": "Always present at every feast, it was the plate that was emptied first.",
+        "date": "2023-11"
+      },
+      "category": "Από Χαραλαμπρούδη",
+      "imageUrl": "/images/recipes/to-kritharoto-toy-daskaloy.jpg",
+      "prepTime": "20 mins",
+      "cookTime": "45 mins",
+      "servings": 4,
+      "createdAt": "2026-08-10T16:52:28.199Z",
+      "updatedAt": "2026-08-10T16:52:28.199Z"
+    },
+    {
+      "id": "garidomaranadara-to-aki-alla-den-peirazei",
+      "title": "Garidomaranadara (the aki but it doesn't matter)",
+      "description": "A recipe the whole family will love! With simple ingredients and great taste.",
+      "ingredients": [
+        "Fresh vegetables",
+        "Olive oil",
+        "Balsamic vinegar",
+        "Salt"
+      ],
+      "steps": [
+        "We try a little in secret and burn our tongues.",
+        "We take a look at the oven and hope for the best.",
+        "We close our eyes and add spices at random.",
+        "We serve in deep dishes and act like we know what we're doing.",
+        "We put a little more oil, \"because that's how it tastes\"."
+      ],
+      "memory": {
+        "title": "Sunday table",
+        "story": "We didn't expect it to turn out so well the first time, but it has become our specialty.",
+        "date": "2023-11"
+      },
+      "category": "Από Χαραλαμπρούδη",
+      "imageUrl": "/images/recipes/garidomaranadara-to-aki-alla-den-peirazei.jpg",
+      "prepTime": "20 mins",
+      "cookTime": "45 mins",
+      "servings": 4,
+      "createdAt": "2026-08-10T16:52:28.199Z",
+      "updatedAt": "2026-08-10T16:52:28.199Z"
+    },
+    {
+      "id": "ela-moy-nte",
+      "title": "come on???",
+      "description": "A recipe the whole family will love! With simple ingredients and great taste.",
+      "ingredients": [
+        "1 kg of meat",
+        "2 onions",
+        "Oil and salt",
+        "Spices of your choice"
+      ],
+      "steps": [
+        "We put on our apron and take a deep breath.",
+        "We try a little in secret and burn our tongues.",
+        "We take a look at the oven and hope for the best.",
+        "We put a little more oil, \"because that's how it tastes\"."
+      ],
+      "memory": {
+        "title": "Sunday table",
+        "story": "Always present at every feast, it was the plate that was emptied first.",
+        "date": "2023-11"
+      },
+      "category": "Από Χαραλαμπρούδη",
+      "imageUrl": "/images/recipes/ela-moy-nte.jpg",
+      "prepTime": "20 mins",
+      "cookTime": "45 mins",
+      "servings": 4,
+      "createdAt": "2026-08-10T16:52:28.199Z",
+      "updatedAt": "2026-08-10T16:52:28.199Z"
+    },
+    {
+      "id": "ela-moy-ntee",
+      "title": "come on me ??",
+      "description": "The ultimate comfort food, everything you need for Sundays or cold afternoons.",
+      "ingredients": [
+        "Fresh vegetables",
+        "Olive oil",
+        "Balsamic vinegar",
+        "Salt"
+      ],
+      "steps": [
+        "We add a little salt, a little pepper, and a lot of emotion.",
+        "We wait over the pot anxiously.",
+        "Let it cool, but we can't stand it and eat it hot.",
+        "We serve in deep dishes and act like we know what we're doing.",
+        "We call mom to ask \"how much water do I put in?\".",
+        "We are looking in the cupboards to find that utensil we bought in 2015."
+      ],
+      "memory": {
+        "title": "Sunday table",
+        "story": "Always present at every feast, it was the plate that was emptied first.",
+        "date": "2023-11"
+      },
+      "category": "Από Χαραλαμπρούδη",
+      "imageUrl": "/images/recipes/ela-moy-ntee.jpg",
+      "prepTime": "20 mins",
+      "cookTime": "45 mins",
+      "servings": 4,
+      "createdAt": "2026-08-10T16:52:28.199Z",
+      "updatedAt": "2026-08-10T16:52:28.199Z"
+    },
+    {
+      "id": "ela-moy-ntee-1",
+      "title": "come on me",
+      "description": "A recipe the whole family will love! With simple ingredients and great taste.",
+      "ingredients": [
+        "Flour",
+        "Eggs",
+        "Milk",
+        "Butter",
+        "Cheese slice"
+      ],
+      "steps": [
+        "We are looking in the cupboards to find that utensil we bought in 2015.",
+        "We try a little in secret and burn our tongues.",
+        "Mix gently so as not to wake up the dough.",
+        "We throw in everything left over from last night's dinner."
+      ],
+      "memory": {
+        "title": "The surprise",
+        "story": "Every Sunday, this smell woke us up in the morning!",
+        "date": "2023-11"
+      },
+      "category": "Από Χαραλαμπρούδη",
+      "imageUrl": "/images/recipes/ela-moy-ntee-1.jpg",
+      "prepTime": "20 mins",
+      "cookTime": "45 mins",
+      "servings": 4,
+      "createdAt": "2026-08-10T16:52:28.199Z",
+      "updatedAt": "2026-08-10T16:52:28.199Z"
+    },
+    {
+      "id": "mporsta-poly",
+      "title": "Very good",
+      "description": "Delicate flavors, beautiful setting and lots of love in every bite.",
+      "ingredients": [
+        "Potatoes",
+        "Oil",
+        "Oregano",
+        "Lemon"
+      ],
+      "steps": [
+        "Mix gently so as not to wake up the dough.",
+        "We are looking in the cupboards to find that utensil we bought in 2015.",
+        "We try a little in secret and burn our tongues.",
+        "We put a little more oil, \"because that's how it tastes\"."
+      ],
+      "memory": {
+        "title": "The surprise",
+        "story": "Always present at every feast, it was the plate that was emptied first.",
+        "date": "2023-11"
+      },
+      "category": "Μικρές στο μάτι , Μεγάλες στο τραπέζι",
+      "imageUrl": "/images/recipes/mporsta-poly.jpg",
+      "prepTime": "20 mins",
+      "cookTime": "45 mins",
+      "servings": 4,
+      "createdAt": "2026-08-10T16:52:28.199Z",
+      "updatedAt": "2026-08-10T16:52:28.199Z"
+    },
+    {
+      "id": "ela-moy-nte-1",
+      "title": "come on???",
+      "description": "A recipe the whole family will love! With simple ingredients and great taste.",
+      "ingredients": [
+        "Fresh vegetables",
+        "Olive oil",
+        "Balsamic vinegar",
+        "Salt"
+      ],
+      "steps": [
+        "We add a little salt, a little pepper, and a lot of emotion.",
+        "We are looking in the cupboards to find that utensil we bought in 2015.",
+        "We close our eyes and add spices at random.",
+        "We try a little in secret and burn our tongues."
+      ],
+      "memory": {
+        "title": "The surprise",
+        "story": "Always present at every feast, it was the plate that was emptied first.",
+        "date": "2023-11"
+      },
+      "category": "Μικρές στο μάτι , Μεγάλες στο τραπέζι",
+      "imageUrl": "/images/recipes/ela-moy-nte-1.jpg",
+      "prepTime": "20 mins",
+      "cookTime": "45 mins",
+      "servings": 4,
+      "createdAt": "2026-08-10T16:52:28.199Z",
+      "updatedAt": "2026-08-10T16:52:28.199Z"
+    },
+    {
+      "id": "ela-moy-nte-2",
+      "title": "come on???",
+      "description": "The ultimate comfort food, everything you need for Sundays or cold afternoons.",
+      "ingredients": [
+        "Potatoes",
+        "Oil",
+        "Oregano",
+        "Lemon"
+      ],
+      "steps": [
+        "Mix the ingredients furiously until they are homogeneous.",
+        "We try a little in secret and burn our tongues.",
+        "We add a little salt, a little pepper, and a lot of emotion.",
+        "We throw in everything left over from last night's dinner."
+      ],
+      "memory": {
+        "title": "Holidays",
+        "story": "Always present at every feast, it was the plate that was emptied first.",
+        "date": "2023-11"
+      },
+      "category": "Μικρές στο μάτι , Μεγάλες στο τραπέζι",
+      "imageUrl": "/images/recipes/ela-moy-nte-2.jpg",
+      "prepTime": "20 mins",
+      "cookTime": "45 mins",
+      "servings": 4,
+      "createdAt": "2026-08-10T16:52:28.199Z",
+      "updatedAt": "2026-08-10T16:52:28.199Z"
+    },
+    {
+      "id": "ela-moy-ntee-2",
+      "title": "come on me ??",
+      "description": "The ultimate comfort food, everything you need for Sundays or cold afternoons.",
+      "ingredients": [
+        "Flour",
+        "Eggs",
+        "Milk",
+        "Butter",
+        "Cheese slice"
+      ],
+      "steps": [
+        "Mix the ingredients furiously until they are homogeneous.",
+        "We wait over the pot anxiously.",
+        "Let it cool, but we can't stand it and eat it hot.",
+        "We take a look at the oven and hope for the best.",
+        "We are looking in the cupboards to find that utensil we bought in 2015.",
+        "We serve in deep dishes and act like we know what we're doing."
+      ],
+      "memory": {
+        "title": "The surprise",
+        "story": "We didn't expect it to turn out so well the first time, but it has become our specialty.",
+        "date": "2023-11"
+      },
+      "category": "Μικρές στο μάτι , Μεγάλες στο τραπέζι",
+      "imageUrl": "/images/recipes/ela-moy-ntee-2.jpg",
+      "prepTime": "20 mins",
+      "cookTime": "45 mins",
+      "servings": 4,
+      "createdAt": "2026-08-10T16:52:28.199Z",
+      "updatedAt": "2026-08-10T16:52:28.199Z"
+    },
+    {
+      "id": "ela-moy-ntee-3",
+      "title": "come on me",
+      "description": "A classic recipe that brings back memories and fills the house with aromas.",
+      "ingredients": [
+        "Potatoes",
+        "Oil",
+        "Oregano",
+        "Lemon"
+      ],
+      "steps": [
+        "We call mom to ask \"how much water do I put in?\".",
+        "We try a little in secret and burn our tongues.",
+        "We serve in deep dishes and act like we know what we're doing.",
+        "We put on our apron and take a deep breath.",
+        "We are looking in the cupboards to find that utensil we bought in 2015.",
+        "We smile widely because... come on, it kind of worked!"
+      ],
+      "memory": {
+        "title": "The surprise",
+        "story": "We didn't expect it to turn out so well the first time, but it has become our specialty.",
+        "date": "2023-11"
+      },
+      "category": "Μικρές στο μάτι , Μεγάλες στο τραπέζι",
+      "imageUrl": "/images/recipes/ela-moy-ntee-3.jpg",
+      "prepTime": "20 mins",
+      "cookTime": "45 mins",
+      "servings": 4,
+      "createdAt": "2026-08-10T16:52:28.199Z",
+      "updatedAt": "2026-08-10T16:52:28.199Z"
+    }
+  ]
+}
