@@ -41,16 +41,19 @@ async function run() {
     }
   }
   
-  // Now update recipes.json
-  const recipesPath = path.join(__dirname, 'data', 'recipes.json');
-  const data = JSON.parse(fs.readFileSync(recipesPath, 'utf8'));
+  // Now update recipes
+  const recipesDir = path.join(__dirname, 'data', 'recipes');
+  const files = fs.readdirSync(recipesDir);
+  const jsonFiles = files.filter(file => file.endsWith('.json'));
   
-  data.recipes.forEach((recipe, index) => {
-    recipe.imageUrl = `/images/recipes/placeholder-${index + 1}.jpg`;
+  jsonFiles.forEach((file, index) => {
+    const filePath = path.join(recipesDir, file);
+    const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    data.imageUrl = `/images/recipes/placeholder-${(index % total) + 1}.jpg`;
+    fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
   });
   
-  fs.writeFileSync(recipesPath, JSON.stringify(data, null, 2));
-  console.log('Done downloading 30 unique images and updating recipes.json.');
+  console.log('Done downloading 30 unique images and updating recipes.');
 }
 
 run();

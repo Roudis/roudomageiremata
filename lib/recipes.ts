@@ -2,30 +2,37 @@ import { promises as fs } from "fs";
 import path from "path";
 import { Recipe } from "@/types/recipe";
 
-const dataFilePath = path.join(process.cwd(), "data", "recipes.json");
+const recipesDir = path.join(process.cwd(), "data", "recipes");
 
-type RecipeFile = {
-  recipes: Recipe[];
-};
+export async function getAllRecipes(): Promise<Recipe[]> {
+  try {
+    const files = await fs.readdir(recipesDir);
+    const jsonFiles = files.filter(file => file.endsWith('.json'));
+    
+    const recipes: Recipe[] = [];
+    for (const file of jsonFiles) {
+      const filePath = path.join(recipesDir, file);
+      const raw = await fs.readFile(filePath, "utf8");
+      recipes.push(JSON.parse(raw) as Recipe);
+    }
 
-async function readRecipeFile(): Promise<RecipeFile> {
-  const raw = await fs.readFile(dataFilePath, "utf8");
-  const parsed = JSON.parse(raw) as Partial<RecipeFile>;
-
-  return {
-    recipes: Array.isArray(parsed.recipes) ? parsed.recipes : [],
-  };
+    return recipes.sort(
+      (a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime(),
+    );
+  } catch (error) {
+    console.error("Failed to read recipes directory", error);
+    return [];
+  }
 }
 
-export async function getAllRecipes() {
-  const data = await readRecipeFile();
-
-  return [...data.recipes].sort(
-    (a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime(),
-  );
-}
-
-export async function getRecipeById(id: string) {
-  const recipes = await getAllRecipes();
-  return recipes.find((recipe) => recipe.id === id);
+export async function getRecipeById(id: string): Promise<Recipe | undefined> {
+  try {
+    const filePath = path.join(recipesDir, `${id}.json`);
+    const raw = await fs.readFile(filePath, "utf8");
+    return JSON.parse(raw) as Recipe;
+  } catch (error) {
+    // If the file is not found, we can optionally fallback to getAllRecipes() 
+    // but reading the specific file is more efficient.
+    return undefined;
+  }
 }

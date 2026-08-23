@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 
 const categories = [
   "Του Μπαμπούλα (που δεν είναι μόνο ψάρια)",
@@ -118,9 +119,14 @@ categories.forEach(category => {
   }
 });
 
-const data = {
-  recipes: newRecipes
-};
+const outputDir = '/Users/alkisroudis/Desktop/roudomageirikes/data/recipes';
+if (!fs.existsSync(outputDir)) {
+  fs.mkdirSync(outputDir, { recursive: true });
+}
 
-fs.writeFileSync('/Users/alkisroudis/Desktop/roudomageirikes/data/recipes.json', JSON.stringify(data, null, 2));
-console.log("Recipes generated successfully");
+newRecipes.forEach(recipe => {
+  fs.writeFileSync(path.join(outputDir, `${recipe.id}.json`), JSON.stringify(recipe, null, 2));
+});
+
+console.log(`Recipes generated successfully in ${outputDir}`);
+

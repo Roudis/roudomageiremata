@@ -45,7 +45,8 @@ export function RecipeList({ initialRecipes }: RecipeListProps) {
             placeholder="Αναζήτηση συνταγής ή υλικού..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full rounded-full bg-white pl-12 pr-4 py-3 text-sm shadow-sm ring-1 ring-stone-200/50 focus:outline-none focus:ring-2 focus:ring-orange-400 transition-shadow"
+            className="w-full h-12 rounded-full bg-white pl-12 pr-4 text-base font-medium shadow-sm ring-1 ring-stone-200/50 focus:outline-none focus:ring-2 focus:ring-orange-400 transition-shadow"
+            style={{ color: 'black', WebkitTextFillColor: 'black' }}
             aria-label="Αναζήτηση συνταγής"
           />
         </div>
