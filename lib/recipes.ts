@@ -30,7 +30,7 @@ export async function getRecipeById(id: string): Promise<Recipe | undefined> {
     const filePath = path.join(recipesDir, `${id}.json`);
     const raw = await fs.readFile(filePath, "utf8");
     return JSON.parse(raw) as Recipe;
-  } catch (error) {
+  } catch {
     // If the file is not found, we can optionally fallback to getAllRecipes() 
     // but reading the specific file is more efficient.
     return undefined;

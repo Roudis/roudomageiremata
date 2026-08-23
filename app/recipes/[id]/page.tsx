@@ -41,6 +41,7 @@ export default async function RecipeDetailPage({ params }: RecipeDetailPageProps
 
       {recipe.imageUrl && (
         <div className="relative mb-12 h-[350px] sm:h-[450px] lg:h-[550px] w-full overflow-hidden rounded-[3rem] shadow-2xl group animate-fade-in-up" style={{ animationDelay: '100ms' }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img 
             src={`${basePath}${recipe.imageUrl}`} 
             alt={recipe.title} 
