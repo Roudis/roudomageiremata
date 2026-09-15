@@ -37,3 +37,6 @@ next-env.d.ts
 
 # graphify output
 /graphify-out/
+
+# claude code personal overrides
+.claude/settings.local.json
