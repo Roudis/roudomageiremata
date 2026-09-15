@@ -13,6 +13,8 @@ npm run lint           # next lint
 npm run typecheck      # tsc --noEmit
 npm run test           # Vitest unit tests (npm run test:watch for watch mode)
 npm run validate:data  # validate every data/recipes/*.json file
+npm run changelog      # regenerate CHANGELOG.md from Git history
+npm run changelog:check # fail if CHANGELOG.md is stale
 npm run build          # static export to out/
 npm run check          # all of the above except dev, in order; run before calling work done
 npm run start          # serve out/ locally; `next start` does NOT work with static export
@@ -61,5 +63,6 @@ These are one-off seeding scripts kept for history. They are blocked in `.claude
 
 - Pushing to `main` deploys to production immediately. **Never push to `main` directly.** Work on `develop` or a feature branch and open a PR into `main`.
 - CI (`.github/workflows/ci.yml`) runs lint, typecheck, unit tests, data validation, and build on every PR and non-main push.
+- `.github/workflows/changelog.yml` regenerates and commits `CHANGELOG.md` after every push. It is generated from commit history; never edit it manually.
 - Commit messages use conventional prefixes: `feat:`, `fix:`, `refactor:`, `chore:`, `docs:`.
 - Keep commits small and focused so they are easy to review and revert.

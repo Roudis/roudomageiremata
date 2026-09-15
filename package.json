@@ -11,6 +11,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "validate:data": "node scripts/validate-recipes.mjs",
+    "changelog": "node scripts/generate-changelog.mjs",
+    "changelog:check": "node scripts/generate-changelog.mjs --check",
     "check": "npm run lint && npm run typecheck && npm run test && npm run validate:data && npm run build"
   },
   "dependencies": {

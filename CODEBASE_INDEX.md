@@ -25,6 +25,8 @@ for working in the repo live in [CLAUDE.md](CLAUDE.md).
   `actions/deploy-pages` on every push to `main`.
 - [.github/workflows/ci.yml](.github/workflows/ci.yml) runs the same checks on
   pull requests and pushes to non-main branches.
+- [.github/workflows/changelog.yml](.github/workflows/changelog.yml) regenerates
+  and commits [CHANGELOG.md](CHANGELOG.md) after every push.
 - `next.config.mjs` sets `basePath`/`assetPrefix` to `/roudomageiremata` and
   exposes it as `NEXT_PUBLIC_BASE_PATH` only when `GITHUB_ACTIONS=true`, so
   local `npm run dev`/`npm run build` are unaffected.
@@ -58,6 +60,7 @@ public/
   images/recipes/<id>.jpg    Recipe images
 scripts/
   validate-recipes.mjs       Data validator used by `npm run validate:data` and CI
+  generate-changelog.mjs     Generates CHANGELOG.md from the Git commit history
 populate.js                  Legacy seeding script; overwrites data/recipes. Do not run.
 download-images.js           Legacy image downloader. Do not run.
 download-all-images.js       Legacy; rewrites imageUrl in every recipe. Do not run.
@@ -106,7 +109,8 @@ Read-only; runs at build time.
 
 ## Config Files
 - [package.json](package.json): scripts `dev`, `build`, `start` (serves `out/`
-  via `serve`), `lint`, `typecheck`, `test`, `test:watch`, `validate:data`, `check`.
+  via `serve`), `lint`, `typecheck`, `test`, `test:watch`, `validate:data`,
+  `changelog`, `changelog:check`, `check`.
 - [vitest.config.mts](vitest.config.mts): Vitest in node environment with the `@/` alias.
 - [tsconfig.json](tsconfig.json): strict mode; path alias `@/*` → repo root.
 - [.eslintrc.json](.eslintrc.json): extends `next/core-web-vitals`, `next/typescript`.
@@ -118,6 +122,8 @@ Read-only; runs at build time.
 ## Common Tasks — Where to Look
 - **Add/edit/remove a recipe:** edit `data/recipes/<id>.json` (+ image in
   `public/images/recipes/`), run `npm run validate:data`, open a PR into `main`.
+- **Regenerate the changelog:** run `npm run changelog`. The push workflow also
+  performs this automatically; never edit [CHANGELOG.md](CHANGELOG.md) manually.
 - **Change recipe fields/shape:** [types/recipe.ts](types/recipe.ts) →
   [scripts/validate-recipes.mjs](scripts/validate-recipes.mjs) →
   [lib/recipes.ts](lib/recipes.ts) → card, list, and detail components.

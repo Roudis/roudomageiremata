@@ -29,6 +29,16 @@ npm run check          # all of the above
 
 The same checks run in CI on every pull request and before each deploy.
 
+## Changelog
+
+[CHANGELOG.md](CHANGELOG.md) is generated from the Git commit history. The
+[changelog workflow](.github/workflows/changelog.yml) regenerates and commits it
+after every push. To regenerate it locally, run:
+
+```bash
+npm run changelog
+```
+
 ## Adding or editing a recipe
 1. Create or edit `data/recipes/<id>.json`. The filename must match the `id`
    field. The shape is defined in [`types/recipe.ts`](types/recipe.ts).
