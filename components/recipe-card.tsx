@@ -1,9 +1,9 @@
 
 import Link from "next/link";
-import { Recipe } from "@/types/recipe";
+import type { Recipe } from "@/types/recipe";
+import { withBasePath } from "@/lib/base-path";
+import { DISPLAY_CATEGORY_FALLBACK, formatIngredientCount } from "@/lib/recipe-view";
 import { Clock, ChefHat, Heart, ArrowRight, Utensils } from "lucide-react";
-
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const categoryStyles = [
   "from-rose-400/20 via-orange-300/10 to-amber-200/20 group-hover:from-rose-400/30 group-hover:via-orange-300/20 group-hover:to-amber-200/30",
@@ -29,14 +29,14 @@ export function RecipeCard({ recipe, index }: RecipeCardProps) {
         {recipe.imageUrl && (
           <>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={`${basePath}${recipe.imageUrl}`} alt={recipe.title} className="absolute inset-0 h-full w-full object-cover mix-blend-overlay opacity-40 group-hover:scale-110 group-hover:opacity-60 transition-all duration-700" />
+            <img src={withBasePath(recipe.imageUrl)} alt={recipe.title} className="absolute inset-0 h-full w-full object-cover mix-blend-overlay opacity-40 group-hover:scale-110 group-hover:opacity-60 transition-all duration-700" />
           </>
         )}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.8),transparent_50%)] mix-blend-overlay" />
         <div className="relative flex h-full flex-col justify-between z-10">
           <div className="flex justify-between items-start">
             <span className="w-fit rounded-full bg-white/70 backdrop-blur-md px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.25em] text-stone-700 shadow-sm">
-              {recipe.category ?? "Αγαπημενο της Οικογενειας"}
+              {recipe.category ?? DISPLAY_CATEGORY_FALLBACK}
             </span>
             {recipe.memory && (
               <span className="flex h-8 w-8 items-center justify-center rounded-full bg-rose-100 text-rose-500 shadow-sm">
@@ -75,7 +75,7 @@ export function RecipeCard({ recipe, index }: RecipeCardProps) {
         <div className="flex items-center justify-between border-t border-stone-200/50 pt-5 mt-2">
           <span className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-stone-500">
             <ChefHat className="h-4 w-4" />
-            {recipe.ingredients.length} υλικά
+            {formatIngredientCount(recipe.ingredients.length)}
           </span>
           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-stone-900 text-white transition-transform duration-300 group-hover:scale-110 group-hover:bg-rose-600">
             <ArrowRight className="h-4 w-4" />

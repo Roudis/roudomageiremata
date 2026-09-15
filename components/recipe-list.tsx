@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { Recipe } from "@/types/recipe";
+import type { Recipe } from "@/types/recipe";
+import { filterRecipes, getCategories } from "@/lib/recipe-search";
 import { RecipeCard } from "@/components/recipe-card";
 import { Search } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -14,25 +15,12 @@ export function RecipeList({ initialRecipes }: RecipeListProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-  // Extract unique categories
-  const categories = useMemo(() => {
-    const cats = new Set(initialRecipes.map((r) => r.category ?? "Άλλο"));
-    return Array.from(cats).sort();
-  }, [initialRecipes]);
+  const categories = useMemo(() => getCategories(initialRecipes), [initialRecipes]);
 
-  // Filter recipes based on search query and selected category
-  const filteredRecipes = useMemo(() => {
-    return initialRecipes.filter((recipe) => {
-      const matchesSearch =
-        recipe.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        recipe.description?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        recipe.ingredients.some((i) => i.toLowerCase().includes(searchQuery.toLowerCase()));
-      
-      const matchesCategory = selectedCategory ? (recipe.category ?? "Άλλο") === selectedCategory : true;
-
-      return matchesSearch && matchesCategory;
-    });
-  }, [initialRecipes, searchQuery, selectedCategory]);
+  const filteredRecipes = useMemo(
+    () => filterRecipes(initialRecipes, { query: searchQuery, category: selectedCategory }),
+    [initialRecipes, searchQuery, selectedCategory],
+  );
 
   return (
     <div className="flex flex-col gap-10">

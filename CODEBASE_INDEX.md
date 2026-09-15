@@ -52,8 +52,14 @@ components/
 lib/
   recipes.ts                 Build-time data access: getAllRecipes(), getRecipeById(id)
   recipes.test.ts            Vitest characterization tests for recipes.ts
+  recipe-view.ts             Pure: category fallback labels, formatIngredientCount, compareRecipes,
+                             toRecipeSummary (not used by components yet)
+  recipe-search.ts           Pure: getCategories, filterRecipes for the home page list
+  recipe-schema.ts           Pure: parseRecipe(value, source), RecipeDataError (not used by the loader yet)
+  base-path.ts               Pure: withBasePath(path) for raw asset URLs such as <img src>
+  *.test.ts                  Vitest unit tests next to each module above
 types/
-  recipe.ts                  `Recipe` and `Memory` interfaces
+  recipe.ts                  `Recipe` and `Memory` interfaces, plus the `RecipeSummary` view type
 data/
   recipes/<id>.json          Recipe data, one file per recipe (source of truth)
 public/
@@ -81,8 +87,9 @@ interface Recipe {
   ingredients: string[];
   steps: string[];
   memory?: Memory;
-  imageUrl?: string;       // "/images/recipes/<id>.jpg", prefixed with NEXT_PUBLIC_BASE_PATH when rendered
-  category?: string;       // grouping used by the filter buttons; missing → "Άλλο"
+  imageUrl?: string;       // "/images/recipes/<id>.jpg", prefixed via withBasePath when rendered
+  category?: string;       // grouping used by the filter buttons; missing → "Άλλο" in the filter,
+                           // "Αγαπημενο της Οικογενειας" on cards and pages (lib/recipe-view.ts)
   prepTime?: string;
   cookTime?: string;
   servings?: number;
@@ -93,7 +100,8 @@ interface Recipe {
 
 ## Data Access Layer ([lib/recipes.ts](lib/recipes.ts))
 Read-only; runs at build time.
-- `getAllRecipes()` reads every `data/recipes/*.json`, sorts by `updatedAt` desc.
+- `getAllRecipes()` reads every `data/recipes/*.json`, sorts by `updatedAt` desc
+  with `compareRecipes` from `lib/recipe-view.ts`.
   **On any error it logs and returns `[]`**, so a broken file yields an empty
   site instead of a failed build. `npm run validate:data` guards against this.
 - `getRecipeById(id)` reads `data/recipes/<id>.json`; returns `undefined` if
@@ -125,16 +133,20 @@ Read-only; runs at build time.
 - **Regenerate the changelog:** run `npm run changelog`. The push workflow also
   performs this automatically; never edit [CHANGELOG.md](CHANGELOG.md) manually.
 - **Change recipe fields/shape:** [types/recipe.ts](types/recipe.ts) →
-  [scripts/validate-recipes.mjs](scripts/validate-recipes.mjs) →
+  [scripts/validate-recipes.mjs](scripts/validate-recipes.mjs) and
+  [lib/recipe-schema.ts](lib/recipe-schema.ts) →
   [lib/recipes.ts](lib/recipes.ts) → card, list, and detail components.
-- **Change search/filter behavior:** [components/recipe-list.tsx](components/recipe-list.tsx).
+- **Change search/filter behavior:** matching and category logic in
+  [lib/recipe-search.ts](lib/recipe-search.ts); UI state in
+  [components/recipe-list.tsx](components/recipe-list.tsx).
 - **Change styling/theme:** inline Tailwind classes in each component, plus
   [app/globals.css](app/globals.css) and [tailwind.config.ts](tailwind.config.ts).
 
 ## Notes / Gotchas
 - No auth, no database. `npm run check` is the verification step.
-- Unit tests cover `lib/recipes.ts` only, as characterization tests that lock
-  down current behavior. Components and pages have no tests.
+- Unit tests cover `lib/`: characterization tests for `recipes.ts` and unit
+  tests for the pure helpers. Tests named "(current behavior)" lock down quirks
+  that a later refactor step changes. Components and pages have no tests.
 - All real recipes currently share one `updatedAt` value, so the home page
   order is effectively the filesystem's directory listing order, which can
   differ between macOS and the Linux build machine.

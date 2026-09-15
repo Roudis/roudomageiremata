@@ -1,6 +1,7 @@
 # Refactor Plan: Recipe Loading and Rendering
 
-**Status:** Draft, waiting for approval. No code has been changed.
+**Status:** In progress. Completed steps are ticked in section 7. The
+decisions in section 6 are still open.
 **Date:** 2026-09-15, reviewed at commit `374b3df`.
 **Scope:** `lib/recipes.ts`, `types/recipe.ts`, `components/recipe-card.tsx`,
 `components/recipe-list.tsx`, `app/recipes/[id]/page.tsx`, and `app/page.tsx`
@@ -223,39 +224,39 @@ Rules for every step:
 
 ### Phase 1: Types and Pure Helpers, Lowest Risk
 
-- [ ] **1.1 Type-only imports and stale comment**
+- [x] **1.1 Type-only imports and stale comment**
   - Change: use `import type` for `Recipe` in `lib/recipes.ts`,
     `recipe-card.tsx`, and `recipe-list.tsx`, and delete the stale comment in
     `getRecipeById`.
   - Behavior: none. Fixes D11.
-- [ ] **1.2 `withBasePath` helper**
+- [x] **1.2 `withBasePath` helper**
   - Change: add `lib/base-path.ts` with unit tests and use it in the card and
     the detail page.
   - Behavior: none, the URLs are identical. Fixes X1.
-- [ ] **1.3 Shared labels and fallback constants**
+- [x] **1.3 Shared labels and fallback constants**
   - Change: add `lib/recipe-view.ts` holding the "υλικά" label and both
     existing fallback values as named constants, and use them in all four
     places.
   - Behavior: none. The two fallbacks are unified later in 3.5. Fixes part of
     X2 and X5.
-- [ ] **1.4 Extract search and category logic**
+- [x] **1.4 Extract search and category logic**
   - Change: add `lib/recipe-search.ts` with `getCategories` and
     `filterRecipes`, lowercasing the query once. Write unit tests first that
     lock today's accent-sensitive matching, including "καρμπονάρα" finding
     nothing. `RecipeList` then calls these functions.
   - Behavior: none. Fixes X6.
-- [ ] **1.5 `RecipeSummary` type and mapper**
+- [x] **1.5 `RecipeSummary` type and mapper**
   - Change: add `RecipeSummary` to `types/recipe.ts` and `toRecipeSummary` to
     `lib/recipe-view.ts`, with unit tests. The summary holds id, title,
     description, category, image, prep time, servings, ingredients for
     search, and whether a memory exists. Nothing uses it yet.
   - Behavior: none. Prepares D1 and T5.
-- [ ] **1.6 Extract the sort comparator**
+- [x] **1.6 Extract the sort comparator**
   - Change: move the comparator into `compareRecipes` in
     `lib/recipe-view.ts` with identical semantics, including no tie-break, and
     have the loader use it.
   - Behavior: none. Prepares D7.
-- [ ] **1.7 `parseRecipe` schema**
+- [x] **1.7 `parseRecipe` schema**
   - Change: add `lib/recipe-schema.ts` with `parseRecipe(value, source)` and
     `RecipeDataError`, enforcing the same rules as
     `scripts/validate-recipes.mjs`, with unit tests. Nothing uses it yet.

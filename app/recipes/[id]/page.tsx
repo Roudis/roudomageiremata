@@ -2,9 +2,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllRecipes, getRecipeById } from "@/lib/recipes";
+import { withBasePath } from "@/lib/base-path";
+import { DISPLAY_CATEGORY_FALLBACK, formatIngredientCount } from "@/lib/recipe-view";
 import { ArrowLeft, Clock, Utensils, CalendarDays, CheckCircle2 } from "lucide-react";
-
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 type RecipeDetailPageProps = {
   params: {
@@ -43,7 +43,7 @@ export default async function RecipeDetailPage({ params }: RecipeDetailPageProps
         <div className="relative mb-12 h-[350px] sm:h-[450px] lg:h-[550px] w-full overflow-hidden rounded-[3rem] shadow-2xl group animate-fade-in-up" style={{ animationDelay: '100ms' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img 
-            src={`${basePath}${recipe.imageUrl}`} 
+            src={withBasePath(recipe.imageUrl)} 
             alt={recipe.title} 
             className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105" 
           />
@@ -59,7 +59,7 @@ export default async function RecipeDetailPage({ params }: RecipeDetailPageProps
             <div className="absolute inset-0 bg-gradient-to-br from-rose-100/40 via-orange-50/40 to-amber-100/40 opacity-70 mix-blend-overlay pointer-events-none" />
             <div className="relative z-10">
               <span className="inline-block rounded-full bg-white/80 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-orange-600 shadow-sm backdrop-blur-md border border-white/50">
-                {recipe.category ?? "Αγαπημενο της Οικογενειας"}
+                {recipe.category ?? DISPLAY_CATEGORY_FALLBACK}
               </span>
               <h1 className="mt-6 text-5xl font-bold tracking-tight text-stone-900 sm:text-6xl lg:leading-[1.1] text-balance">
                 {recipe.title}
@@ -123,7 +123,7 @@ export default async function RecipeDetailPage({ params }: RecipeDetailPageProps
             <div className="mb-8 flex items-end justify-between border-b border-stone-200/50 pb-6">
               <h2 className="text-3xl font-bold tracking-tight text-stone-900">Υλικά</h2>
               <span className="rounded-full bg-stone-100 px-3 py-1 text-xs font-bold text-stone-500">
-                {recipe.ingredients.length} υλικά
+                {formatIngredientCount(recipe.ingredients.length)}
               </span>
             </div>
             <ul className="space-y-4">
