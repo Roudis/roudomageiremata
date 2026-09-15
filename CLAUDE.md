@@ -11,13 +11,21 @@ For a file-by-file map see `CODEBASE_INDEX.md`. Keep it and this file current in
 npm run dev            # local dev server
 npm run lint           # next lint
 npm run typecheck      # tsc --noEmit
+npm run test           # Vitest unit tests (npm run test:watch for watch mode)
 npm run validate:data  # validate every data/recipes/*.json file
 npm run build          # static export to out/
 npm run check          # all of the above except dev, in order; run before calling work done
 npm run start          # serve out/ locally; `next start` does NOT work with static export
 ```
 
-There is no test suite. `npm run check` is the definition of "not broken".
+`npm run check` is the definition of "not broken".
+
+## Tests
+
+- Vitest, node environment, config in `vitest.config.mts`. Test files are `*.test.ts` next to the code they cover.
+- `lib/recipes.test.ts` holds **characterization tests** for the recipe loader. They lock down current behavior, including quirks. Tests named "(current behavior)" document quirks such as one bad recipe file making `getAllRecipes` return `[]`. If you change one of these behaviors on purpose, update the matching test in the same change and say so.
+- Fixture tests write temp files and fake `process.cwd()` while re-importing `lib/recipes.ts`, because that module resolves `data/recipes` once at import time.
+- `ShapeSpec<Recipe>` in that test file mirrors `types/recipe.ts`. Changing the `Recipe` type fails `npm run typecheck` until the spec is updated.
 
 ## Hard constraints
 
@@ -52,6 +60,6 @@ These are one-off seeding scripts kept for history. They are blocked in `.claude
 ## Git workflow
 
 - Pushing to `main` deploys to production immediately. **Never push to `main` directly.** Work on `develop` or a feature branch and open a PR into `main`.
-- CI (`.github/workflows/ci.yml`) runs lint, typecheck, data validation, and build on every PR and non-main push.
+- CI (`.github/workflows/ci.yml`) runs lint, typecheck, unit tests, data validation, and build on every PR and non-main push.
 - Commit messages use conventional prefixes: `feat:`, `fix:`, `refactor:`, `chore:`, `docs:`.
 - Keep commits small and focused so they are easy to review and revert.

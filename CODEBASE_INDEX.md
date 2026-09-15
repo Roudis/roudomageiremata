@@ -21,7 +21,7 @@ for working in the repo live in [CLAUDE.md](CLAUDE.md).
   renamed from `roudomageirikes` to `roudomageiremata`; the local folder name
   still uses the old name.
 - [.github/workflows/deploy.yml](.github/workflows/deploy.yml) runs lint,
-  typecheck, data validation, and `npm run build`, then publishes `out/` via
+  typecheck, unit tests, data validation, and `npm run build`, then publishes `out/` via
   `actions/deploy-pages` on every push to `main`.
 - [.github/workflows/ci.yml](.github/workflows/ci.yml) runs the same checks on
   pull requests and pushes to non-main branches.
@@ -49,6 +49,7 @@ components/
   recipe-card.tsx            Card for the grid; gradient rotates by index % 4; links to /recipes/[id]
 lib/
   recipes.ts                 Build-time data access: getAllRecipes(), getRecipeById(id)
+  recipes.test.ts            Vitest characterization tests for recipes.ts
 types/
   recipe.ts                  `Recipe` and `Memory` interfaces
 data/
@@ -94,6 +95,7 @@ Read-only; runs at build time.
   site instead of a failed build. `npm run validate:data` guards against this.
 - `getRecipeById(id)` reads `data/recipes/<id>.json`; returns `undefined` if
   missing or unparseable, which makes the detail page call `notFound()`.
+  It does not sanitize `id` or check that the file's `id` matches.
 
 ## Pages / Routes
 | Route | File | Description |
@@ -104,7 +106,8 @@ Read-only; runs at build time.
 
 ## Config Files
 - [package.json](package.json): scripts `dev`, `build`, `start` (serves `out/`
-  via `serve`), `lint`, `typecheck`, `validate:data`, `check`.
+  via `serve`), `lint`, `typecheck`, `test`, `test:watch`, `validate:data`, `check`.
+- [vitest.config.mts](vitest.config.mts): Vitest in node environment with the `@/` alias.
 - [tsconfig.json](tsconfig.json): strict mode; path alias `@/*` → repo root.
 - [.eslintrc.json](.eslintrc.json): extends `next/core-web-vitals`, `next/typescript`.
 - [tailwind.config.ts](tailwind.config.ts): content from `app/`, `components/`,
@@ -123,6 +126,11 @@ Read-only; runs at build time.
   [app/globals.css](app/globals.css) and [tailwind.config.ts](tailwind.config.ts).
 
 ## Notes / Gotchas
-- No auth, no database, no test suite. `npm run check` is the verification step.
+- No auth, no database. `npm run check` is the verification step.
+- Unit tests cover `lib/recipes.ts` only, as characterization tests that lock
+  down current behavior. Components and pages have no tests.
+- All real recipes currently share one `updatedAt` value, so the home page
+  order is effectively the filesystem's directory listing order, which can
+  differ between macOS and the Linux build machine.
 - No add/edit/delete UI or API routes. The site is a static export.
 - `next start` does not work with `output: "export"`; use `npm run start`.

@@ -21,6 +21,7 @@ npm run dev
 ```bash
 npm run lint           # ESLint
 npm run typecheck      # TypeScript
+npm run test           # Vitest unit tests
 npm run validate:data  # validate every recipe JSON file
 npm run build          # static export
 npm run check          # all of the above

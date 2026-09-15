@@ -3,6 +3,9 @@
     "allow": [
       "Bash(npm run lint)",
       "Bash(npm run typecheck)",
+      "Bash(npm run test)",
+      "Bash(npm test)",
+      "Bash(npx vitest run *)",
       "Bash(npm run validate:data)",
       "Bash(npm run build)",
       "Bash(npm run check)",
