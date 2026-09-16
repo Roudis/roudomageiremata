@@ -1,7 +1,7 @@
 # Refactor Plan: Recipe Loading and Rendering
 
 **Status:** In progress. Completed steps are ticked in section 7. Decisions
-1, 2, 5, and 10 are made (see section 6); the others are still open.
+1, 2, 3, 4, 5, 6, 9, and 10 are made (see section 6); 7 and 8 are still open.
 **Date:** 2026-09-15, reviewed at commit `374b3df`.
 **Scope:** `lib/recipes.ts`, `types/recipe.ts`, `components/recipe-card.tsx`,
 `components/recipe-list.tsx`, `app/recipes/[id]/page.tsx`, and `app/page.tsx`
@@ -203,6 +203,15 @@ Each decision has a recommendation. Steps that depend on one say so.
   several real recipes share a title.
 - **10: Require `id` to equal the filename**, as recommended.
 
+**Decided on 2026-09-16:**
+
+- **3: "Άλλο" everywhere**, as recommended.
+- **4: Colour by category**, as recommended.
+- **6: Search ignores accents and final sigma**, as recommended.
+- **9: Proceed with Phase 3 without settling the branches.** `feature/reimagined-ui`
+  and `dual/lang` are now harder to merge; dark mode and translations are
+  expected to be rebuilt on top of the refactor.
+
 ## 7. Checklist
 
 Rules for every step:
@@ -347,45 +356,52 @@ Rules for every step:
 
 ### Phase 3: Client and Shared Components
 
-- [ ] **3.1 Card accessibility and image loading**
+- [x] **3.1 Card accessibility and image loading**
   - Change: the decorative card image gets `alt=""`, `loading="lazy"`, and
     `decoding="async"`, and the card title becomes an `h3`.
   - Behavior: no visual change, but screen reader output and image loading
     change. Fixes part of B7, and D10.
-- [ ] **3.2 Explicit checks for optional fields**
+- [x] **3.2 Explicit checks for optional fields**
   - Change: replace `{recipe.servings && …}` and similar patterns with
     explicit checks.
   - Behavior: none for current data. Fixes T2.
-- [ ] **3.3 Search input styling**
+- [x] **3.3 Search input styling**
   - Change: replace the inline style with Tailwind classes, then check text
     colour in iOS Safari and with browser autofill.
   - Behavior: should look identical, and needs a manual visual check.
     Fixes D9.
-- [ ] **3.4 Filter accessibility**
+  - As built: `text-black [-webkit-text-fill-color:black]` replace the inline
+    style, and both utilities are in the built CSS. **The iOS Safari and
+    autofill check has not been done.**
+- [x] **3.4 Filter accessibility**
   - Change: add `aria-pressed` to the category buttons and a polite live
     region that announces the result count.
   - Behavior: no visual change. Fixes part of B7.
-- [ ] **3.5 One category fallback** (depends on 1.3 and decision 3)
+- [x] **3.5 One category fallback** (depends on 1.3 and decision 3)
   - Change: a single `categoryLabel(recipe)` used by the card, the detail
     page, and the filter.
   - Behavior: changes only for uncategorized recipes, and there are none
     today. Fixes X2.
-- [ ] **3.6 `CategoryBadge` component**
+- [x] **3.6 `CategoryBadge` component**
   - Change: extract the category pill shared by the card and the detail page.
   - Behavior: none. Fixes the repeated markup in X2.
-- [ ] **3.7 Send summaries to the client** (depends on 1.4 and 1.5)
+- [x] **3.7 Send summaries to the client** (depends on 1.4 and 1.5)
   - Change: `app/page.tsx` maps recipes with `toRecipeSummary`, and
     `RecipeList` and `RecipeCard` take `RecipeSummary`. Rename the
     `initialRecipes` prop to `recipes`.
   - Behavior: no visual change. Steps and memory stories disappear from
     `out/index.html`, and searching by ingredient still works.
   - Fixes D1 and T5.
-- [ ] **3.8 Stable card colour** (decision 4)
+- [x] **3.8 Stable card colour** (decision 4)
   - Change: derive the gradient from the category and remove the `index`
     prop.
   - Behavior: changes. Colours differ from today but stay fixed while
     filtering. Fixes B4.
-- [ ] **3.9 Search that ignores Greek accents** (depends on 1.4 and decision 6)
+  - As built: `categoryColorIndex` (FNV-1a) picks from 7 gradients, up from 4.
+    A colour is stable per category but not guaranteed unique; today's six
+    categories get six different ones, and the unused "Άλλο" fallback shares
+    one with them.
+- [x] **3.9 Search that ignores Greek accents** (depends on 1.4 and decision 6)
   - Change: `normalizeSearchText` lowercases with Greek rules, strips
     diacritics, and folds "ς" into "σ", for both the query and the recipe
     text.

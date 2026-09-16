@@ -59,7 +59,8 @@ These are one-off seeding scripts kept for history. They are blocked in `.claude
 - Styling is inline Tailwind classes. Shared utility classes `glass-panel` and `glass-card` live in `app/globals.css`.
 - Icons come from `lucide-react`. Animations use `framer-motion` or the Tailwind keyframes in `tailwind.config.ts`.
 - Import via the `@/` alias, which maps to the repo root.
-- `lib/recipes.ts` imports `server-only`, so only server code in `app/` may import it. Client components get data as props. Pure helpers in `lib/` (`recipe-view`, `recipe-search`, `recipe-schema`, `base-path`) are safe on either side.
+- `lib/recipes.ts` imports `server-only`, so only server code in `app/` may import it. Client components get data as props: the home page sends `RecipeSummary` objects via `toRecipeSummary`, not full recipes. Pure helpers in `lib/` (`recipe-view`, `recipe-search`, `recipe-schema`, `base-path`) are safe on either side.
+- Tailwind only scans `app/` and `components/`. Keep class strings there; `lib/` returns data such as a colour index, not class names.
 
 ## Git workflow
 

@@ -1,10 +1,9 @@
 /**
  * Tests for lib/recipe-search.ts. Like lib/recipes.test.ts, tests named
  * "(current behavior)" lock down quirks that a later step is expected to change.
- * Step 3.9 of REFACTOR_PLAN.md makes search ignore accents and final sigma.
  */
 import { describe, expect, it } from "vitest";
-import { filterRecipes, getCategories, type SearchableRecipe } from "@/lib/recipe-search";
+import { filterRecipes, getCategories, normalizeSearchText, type SearchableRecipe } from "@/lib/recipe-search";
 
 type Fixture = SearchableRecipe & { id: string };
 
@@ -77,27 +76,26 @@ describe("filterRecipes: search", () => {
     expect(filterRecipes(all, { query: "τσιπουρα", category: null })[0]).toBe(tsipoura);
   });
 
-  it("is accent-sensitive, so 'καρμπονάρα' and 'τσιπούρα' miss titles written without accents (current behavior)", () => {
-    expect(search("καρμπονάρα")).toEqual([]);
-    // "τσιπούρα" still finds the recipe through its accented ingredient, but not through the title.
-    expect(search("τσιπούρα")).toEqual(["tsipoura"]);
-    expect(ids(filterRecipes([{ ...tsipoura, ingredients: [] }], { query: "τσιπούρα", category: null }))).toEqual([]);
+  it("ignores accents, so 'καρμπονάρα' finds the unaccented 'Η ΚΑΡΜΠΟΝΑΡΑ'", () => {
+    expect(search("καρμπονάρα")).toEqual(["karmponara"]);
+    expect(ids(filterRecipes([{ ...tsipoura, ingredients: [] }], { query: "τσιπούρα", category: null }))).toEqual([
+      "tsipoura",
+    ]);
   });
 
-  it("is accent-sensitive in both directions: 'πατατες' and 'πατάτες' find different text (current behavior)", () => {
+  it("ignores accents in both directions, in the title and in the body", () => {
     const titleOnly = { ...patates, description: "", ingredients: [] };
     const bodyOnly = { ...patates, title: "" };
 
-    expect(ids(filterRecipes([titleOnly], { query: "πατατες", category: null }))).toEqual(["patates"]);
-    expect(ids(filterRecipes([titleOnly], { query: "πατάτες", category: null }))).toEqual([]);
-    expect(ids(filterRecipes([bodyOnly], { query: "πατάτες", category: null }))).toEqual(["patates"]);
-    expect(ids(filterRecipes([bodyOnly], { query: "πατατες", category: null }))).toEqual([]);
+    for (const query of ["πατατες", "πατάτες"]) {
+      expect(ids(filterRecipes([titleOnly], { query, category: null })), query).toEqual(["patates"]);
+      expect(ids(filterRecipes([bodyOnly], { query, category: null })), query).toEqual(["patates"]);
+    }
   });
 
-  it("treats final sigma 'ς' and 'σ' as different letters (current behavior)", () => {
-    // "ΠΑΤΑΤΕΣ".toLowerCase() is "πατατες", ending in a final sigma.
+  it("treats final sigma 'ς' and 'σ' as the same letter", () => {
     expect(search("πατατες")).toEqual(["patates"]);
-    expect(search("πατατεσ")).toEqual([]);
+    expect(search("πατατεσ")).toEqual(["patates"]);
   });
 
   it("does not trim the query, so surrounding spaces must appear in the text (current behavior)", () => {
@@ -138,6 +136,28 @@ describe("filterRecipes: category", () => {
     filterRecipes(input, { query: "καρμποναρα", category: null });
 
     expect(input).toEqual(all);
+  });
+});
+
+describe("normalizeSearchText", () => {
+  it("lowercases, strips accents, and folds final sigma", () => {
+    expect(normalizeSearchText("Η ΚΑΡΜΠΟΝΑΡΑ")).toBe("η καρμποναρα");
+    expect(normalizeSearchText("Καρμπονάρα")).toBe("καρμποναρα");
+    expect(normalizeSearchText("ΠΑΤΑΤΕΣ")).toBe("πατατεσ");
+    expect(normalizeSearchText("πατάτες")).toBe("πατατεσ");
+  });
+
+  it("strips the diaeresis too", () => {
+    expect(normalizeSearchText("ΟΪΣΤΡΟΣ")).toBe("οιστροσ");
+    expect(normalizeSearchText("ρολόι")).toBe("ρολοι");
+  });
+
+  it("leaves Latin text and punctuation alone apart from case", () => {
+    expect(normalizeSearchText("Guanciale (100g)")).toBe("guanciale (100g)");
+  });
+
+  it("does not trim whitespace", () => {
+    expect(normalizeSearchText("  πατάτες ")).toBe("  πατατεσ ");
   });
 });
 

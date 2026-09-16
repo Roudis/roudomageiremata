@@ -1,13 +1,27 @@
 import type { Recipe, RecipeSummary } from "@/types/recipe";
 
-/** Category shown on the card and the detail page when a recipe has none. */
-export const DISPLAY_CATEGORY_FALLBACK = "Αγαπημενο της Οικογενειας";
+/** Category used everywhere a recipe has none: the card, the detail page, and the filter. */
+export const CATEGORY_FALLBACK = "Άλλο";
+
+/** The category to display and filter by, which is CATEGORY_FALLBACK when the recipe has none. */
+export function categoryLabel(recipe: Pick<Recipe, "category">): string {
+  return recipe.category ?? CATEGORY_FALLBACK;
+}
 
 /**
- * Category the home page filter lists uncategorized recipes under. It differs
- * from DISPLAY_CATEGORY_FALLBACK today; step 3.5 of REFACTOR_PLAN.md unifies them.
+ * A stable bucket for a category label, so each category keeps one colour
+ * however the list is filtered. FNV-1a, which spreads similar labels such as
+ * "Της Γιαγιάς…" and "Του Μπαμπούλα…" apart. Two categories can still land on
+ * the same bucket: the colour is stable, not guaranteed unique.
  */
-export const FILTER_CATEGORY_FALLBACK = "Άλλο";
+export function categoryColorIndex(label: string, buckets: number): number {
+  let hash = 2166136261;
+  for (let i = 0; i < label.length; i++) {
+    hash ^= label.charCodeAt(i);
+    hash = Math.imul(hash, 16777619) >>> 0;
+  }
+  return hash % buckets;
+}
 
 /** "N υλικά", used on the card and the detail page. */
 export function formatIngredientCount(count: number): string {

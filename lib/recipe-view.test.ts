@@ -1,7 +1,8 @@
 import { describe, expect, it } from "vitest";
 import {
-  DISPLAY_CATEGORY_FALLBACK,
-  FILTER_CATEGORY_FALLBACK,
+  CATEGORY_FALLBACK,
+  categoryColorIndex,
+  categoryLabel,
   compareRecipes,
   formatIngredientCount,
   toRecipeSummary,
@@ -21,9 +22,17 @@ function makeRecipe(overrides: Partial<Recipe> & Pick<Recipe, "id">): Recipe {
 }
 
 describe("labels and fallbacks", () => {
-  it("keeps today's two different category fallbacks until step 3.5 unifies them (current behavior)", () => {
-    expect(DISPLAY_CATEGORY_FALLBACK).toBe("Αγαπημενο της Οικογενειας");
-    expect(FILTER_CATEGORY_FALLBACK).toBe("Άλλο");
+  it("uses one fallback category everywhere", () => {
+    expect(CATEGORY_FALLBACK).toBe("Άλλο");
+  });
+
+  it("returns the recipe's category when it has one", () => {
+    expect(categoryLabel({ category: "Της Γιαγιάς" })).toBe("Της Γιαγιάς");
+  });
+
+  it("falls back for a recipe with no category", () => {
+    expect(categoryLabel({})).toBe("Άλλο");
+    expect(categoryLabel({ category: undefined })).toBe("Άλλο");
   });
 
   it("formats an ingredient count as 'N υλικά'", () => {
@@ -33,6 +42,49 @@ describe("labels and fallbacks", () => {
   it("uses the plural label for every count, including 1 and 0 (current behavior)", () => {
     expect(formatIngredientCount(1)).toBe("1 υλικά");
     expect(formatIngredientCount(0)).toBe("0 υλικά");
+  });
+});
+
+describe("categoryColorIndex", () => {
+  const CATEGORIES = [
+    "Οι ντελικάτες της Μαμάς",
+    "Μικρές στο μάτι , Μεγάλες στο τραπέζι",
+    "Από Χαραλαμπρούδη",
+    "Αέρας Νάπολης της Θείας",
+    "Του Μπαμπούλα (που δεν είναι μόνο ψάρια)",
+    "Της Γιαγιάς που γεμίζουν κοιλίτσες και καρδιές",
+  ];
+
+  // components/recipe-card.tsx has 7 gradients.
+  const BUCKETS = 7;
+
+  it("returns the same index for the same label", () => {
+    expect(categoryColorIndex("Της Γιαγιάς", BUCKETS)).toBe(categoryColorIndex("Της Γιαγιάς", BUCKETS));
+  });
+
+  it("returns an index inside the range", () => {
+    for (const category of [...CATEGORIES, CATEGORY_FALLBACK, ""]) {
+      const index = categoryColorIndex(category, BUCKETS);
+      expect(index, category).toBeGreaterThanOrEqual(0);
+      expect(index, category).toBeLessThan(BUCKETS);
+    }
+  });
+
+  // Distinct colours are not guaranteed for any set of labels, but they hold for the six
+  // categories in data/recipes today. CATEGORY_FALLBACK shares a bucket with one of them,
+  // which no page shows because every recipe has a category. If this fails after a category
+  // is renamed or added, two categories share a colour: a look problem rather than a bug.
+  it("gives each of today's categories its own colour", () => {
+    const indexes = CATEGORIES.map((category) => categoryColorIndex(category, BUCKETS));
+
+    expect(new Set(indexes).size).toBe(CATEGORIES.length);
+  });
+
+  it("does not depend on the order categories appear in", () => {
+    const forward = CATEGORIES.map((category) => categoryColorIndex(category, BUCKETS));
+    const backward = [...CATEGORIES].reverse().map((category) => categoryColorIndex(category, BUCKETS));
+
+    expect(backward).toEqual([...forward].reverse());
   });
 });
 

@@ -1,5 +1,6 @@
 import { RecipeList } from "@/components/recipe-list";
 import { getAllRecipes } from "@/lib/recipes";
+import { toRecipeSummary } from "@/lib/recipe-view";
 
 export default async function Home() {
   const recipes = await getAllRecipes();
@@ -61,7 +62,7 @@ export default async function Home() {
           </div>
         </div>
 
-        <RecipeList initialRecipes={recipes} />
+        <RecipeList recipes={recipes.map(toRecipeSummary)} />
       </section>
     </main>
   );

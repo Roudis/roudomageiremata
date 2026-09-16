@@ -48,16 +48,19 @@ app/
 components/
   navbar.tsx                 Client; fixed header, scroll-aware styling, home/search links
   footer.tsx                 Footer with copyright year
-  recipe-list.tsx            Client; search box + category filter + animated grid of cards
-  recipe-card.tsx            Card for the grid; gradient rotates by index % 4; links to /recipes/[id]
+  recipe-list.tsx            Client; search box + category filter + animated grid of cards;
+                             takes RecipeSummary[], announces the result count to screen readers
+  recipe-card.tsx            Card for the grid; takes a RecipeSummary; one gradient per category;
+                             links to /recipes/[id]
+  category-badge.tsx         Category pill shared by the card and the detail page (variant prop)
 lib/
   recipes.ts                 Server-only build-time data access: createRecipeStore(dir),
                              getRecipeIds(), getAllRecipes(), getRecipeById(id)
   recipes.test.ts            Vitest characterization tests for recipes.ts, using temp folders
   recipes.data.test.ts       Validates the real data/recipes files; the only file `npm run validate:data` runs
-  recipe-view.ts             Pure: category fallback labels, formatIngredientCount, compareRecipes,
-                             toRecipeSummary (not used by components yet)
-  recipe-search.ts           Pure: getCategories, filterRecipes for the home page list
+  recipe-view.ts             Pure: CATEGORY_FALLBACK, categoryLabel, categoryColorIndex,
+                             formatIngredientCount, compareRecipes, toRecipeSummary
+  recipe-search.ts           Pure: normalizeSearchText, getCategories, filterRecipes for the home page list
   recipe-schema.ts           Pure: parseRecipe(value, source, { expectedId }), RecipeDataError, isRecipeId;
                              the single recipe schema, used by the loader and the data test
   base-path.ts               Pure: withBasePath(path) for raw asset URLs such as <img src>
@@ -91,8 +94,8 @@ interface Recipe {
   steps: string[];
   memory?: Memory;
   imageUrl?: string;       // "/images/recipes/<id>.jpg", prefixed via withBasePath when rendered
-  category?: string;       // grouping used by the filter buttons; missing → "Άλλο" in the filter,
-                           // "Αγαπημενο της Οικογενειας" on cards and pages (lib/recipe-view.ts)
+  category?: string;       // grouping used by the filter buttons and the card colour;
+                           // missing → "Άλλο" everywhere (categoryLabel in lib/recipe-view.ts)
   prepTime?: string;
   cookTime?: string;
   servings?: number;
@@ -125,7 +128,7 @@ cannot import it.
 ## Pages / Routes
 | Route | File | Description |
 |---|---|---|
-| `/` | [app/page.tsx](app/page.tsx) | Hero, recipe count, searchable/filterable recipe grid |
+| `/` | [app/page.tsx](app/page.tsx) | Hero, recipe count, searchable/filterable recipe grid; sends `RecipeSummary` objects to the client |
 | `/recipes/[id]` | [app/recipes/[id]/page.tsx](<app/recipes/[id]/page.tsx>) | Full recipe detail; statically generated |
 | 404 | [app/not-found.tsx](app/not-found.tsx) | Custom not-found page |
 
@@ -163,5 +166,12 @@ cannot import it.
   that a later refactor step changes. Components and pages have no tests.
 - All real recipes currently share one `updatedAt` value, so the home page
   order comes from the title and id tie-breaks in `compareRecipes`.
+- Search ignores case, accents, and final sigma (`normalizeSearchText`), so
+  "καρμπονάρα" finds "Η ΚΑΡΜΠΟΝΑΡΑ".
+- Card colours come from the category, through `categoryColorIndex` and the
+  gradient list in `recipe-card.tsx`. Colours are stable per category but not
+  guaranteed unique; today's six categories happen to get six different ones.
+- Tailwind's `content` globs cover `app/` and `components/` only, so class
+  strings in `lib/` would be dropped from the CSS.
 - No add/edit/delete UI or API routes. The site is a static export.
 - `next start` does not work with `output: "export"`; use `npm run start`.

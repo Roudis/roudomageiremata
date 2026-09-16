@@ -3,7 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllRecipes, getRecipeById } from "@/lib/recipes";
 import { withBasePath } from "@/lib/base-path";
-import { DISPLAY_CATEGORY_FALLBACK, formatIngredientCount } from "@/lib/recipe-view";
+import { formatIngredientCount } from "@/lib/recipe-view";
+import { CategoryBadge } from "@/components/category-badge";
 import { ArrowLeft, Clock, Utensils, CalendarDays, CheckCircle2 } from "lucide-react";
 
 type RecipeDetailPageProps = {
@@ -39,7 +40,7 @@ export default async function RecipeDetailPage({ params }: RecipeDetailPageProps
         </Link>
       </nav>
 
-      {recipe.imageUrl && (
+      {recipe.imageUrl !== undefined && (
         <div className="relative mb-12 h-[350px] sm:h-[450px] lg:h-[550px] w-full overflow-hidden rounded-[3rem] shadow-2xl group animate-fade-in-up" style={{ animationDelay: '100ms' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img 
@@ -58,9 +59,7 @@ export default async function RecipeDetailPage({ params }: RecipeDetailPageProps
           <section className="glass-panel relative overflow-hidden rounded-[2.5rem] p-10 sm:p-14 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
             <div className="absolute inset-0 bg-gradient-to-br from-rose-100/40 via-orange-50/40 to-amber-100/40 opacity-70 mix-blend-overlay pointer-events-none" />
             <div className="relative z-10">
-              <span className="inline-block rounded-full bg-white/80 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-orange-600 shadow-sm backdrop-blur-md border border-white/50">
-                {recipe.category ?? DISPLAY_CATEGORY_FALLBACK}
-              </span>
+              <CategoryBadge recipe={recipe} variant="detail" />
               <h1 className="mt-6 text-5xl font-bold tracking-tight text-stone-900 sm:text-6xl lg:leading-[1.1] text-balance">
                 {recipe.title}
               </h1>
@@ -96,7 +95,7 @@ export default async function RecipeDetailPage({ params }: RecipeDetailPageProps
              </div>
           </section>
 
-          {recipe.memory && (
+          {recipe.memory !== undefined && (
             <section className="relative overflow-hidden rounded-[2.5rem] p-[2px] bg-gradient-to-br from-rose-300 via-orange-300 to-amber-300 shadow-xl group">
               <div className="absolute inset-0 bg-gradient-to-br from-rose-300 via-orange-300 to-amber-300 opacity-50 blur-xl transition-opacity duration-500 group-hover:opacity-100" />
               <div className="relative h-full w-full rounded-[2.4rem] bg-white/95 backdrop-blur-3xl p-10 sm:p-14">
@@ -105,7 +104,7 @@ export default async function RecipeDetailPage({ params }: RecipeDetailPageProps
                 </span>
                 <div className="mt-8">
                   <h2 className="text-3xl font-bold tracking-tight text-stone-900 text-balance">{recipe.memory.title}</h2>
-                  {recipe.memory.date && (
+                  {recipe.memory.date !== undefined && (
                     <p className="mt-2 font-medium text-rose-500/80">{recipe.memory.date}</p>
                   )}
                   <p className="mt-6 text-lg leading-relaxed text-stone-700 italic border-l-4 border-rose-200 pl-6">
