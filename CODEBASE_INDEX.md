@@ -38,37 +38,37 @@ for working in the repo live in [CLAUDE.md](CLAUDE.md).
 ## Directory Map
 ```
 app/
-  layout.tsx                 Root layout: Geist fonts, animated background, Navbar, Footer, lang="el";
+  layout.tsx                 Root layout: Commissioner + Literata fonts (Greek subsets), Navbar, Footer, lang="el";
                              site metadata: metadataBase, title template, description
-  template.tsx               Client; framer-motion fade-in page transition
-  page.tsx                   Home: hero, recipe count, <RecipeList> with all recipes
+  template.tsx               Client; framer-motion fade-in page transition; MotionConfig respects reduced motion
+  page.tsx                   Home: hero with a three-photo mosaic, quote and stats band, <RecipeList> with all recipes
   not-found.tsx              Custom 404 page
-  globals.css                Tailwind layers, CSS vars, .glass-panel / .glass-card utilities
-  fonts/                     Local Geist variable fonts
+  globals.css                Theme tokens (HSL CSS vars, light + prefers-color-scheme dark), .page-container
   recipes/
     [id]/page.tsx            Recipe detail; loads the recipe and composes components/recipe-detail/*;
                              statically generated for every recipe id
 components/
-  navbar.tsx                 Client; fixed header, scroll-aware styling, home/search links
+  navbar.tsx                 Sticky header: monogram and wordmark, link to /#recipe-grid
   footer.tsx                 Footer with copyright year
-  recipe-list.tsx            Client; search box + category filter + animated grid of cards;
-                             takes RecipeSummary[], announces the result count to screen readers
-  recipe-card.tsx            Card for the grid; takes a RecipeSummary; one gradient per category;
-                             links to /recipes/[id]
-  category-badge.tsx         Category pill shared by the card and the detail page (variant prop)
+  recipe-list.tsx            Client; search box with clear button + category chips + animated grid of cards;
+                             takes RecipeSummary[], shows and announces the result count, empty state resets filters
+  recipe-card.tsx            Photo-first card for the grid; takes a RecipeSummary; links to /recipes/[id]
+  category-badge.tsx         CategoryBadge (green label + dot, variant prop) and CategoryDot, whose colour
+                             list lives here; used by the card, the filter chips, and the detail page
   recipe-detail/             Sections of the recipe page, all server components
-    recipe-hero.tsx          Full-width image; renders nothing when the recipe has no image
-    recipe-stats.tsx         StatTile + RecipeStats: prep, cook, servings, updated date
-    recipe-memory.tsx        The family story attached to a recipe
-    ingredient-list.tsx      Ingredient list with the count badge
-    step-list.tsx            Numbered steps
+    recipe-hero.tsx          Recipe photo beside the title; renders nothing when the recipe has no image
+    recipe-stats.tsx         StatTile + RecipeStats: prep, cook, servings, updated date, as a <dl>
+    recipe-memory.tsx        The family story attached to a recipe, on the purple feature band
+    ingredient-list.tsx      Ingredients as native checkboxes (no client JS) with the count badge;
+                             sticky beside the steps on large screens
+    step-list.tsx            Numbered steps with the step count
 lib/
   recipes.ts                 Server-only build-time data access: createRecipeStore(dir),
                              getRecipeIds(), getAllRecipes(), getRecipeById(id)
   recipes.test.ts            Vitest characterization tests for recipes.ts, using temp folders
   recipes.data.test.ts       Validates the real data/recipes files; the only file `npm run validate:data` runs
   recipe-view.ts             Pure: CATEGORY_FALLBACK, categoryLabel, categoryColorIndex,
-                             formatIngredientCount, formatRecipeDate, compareRecipes, toRecipeSummary
+                             formatIngredientCount, formatRecipeDate, formatMemoryDate, compareRecipes, toRecipeSummary
   recipe-search.ts           Pure: normalizeSearchText, getCategories, filterRecipes for the home page list
   recipe-schema.ts           Pure: parseRecipe(value, source, { expectedId }), RecipeDataError, isRecipeId;
                              the single recipe schema, used by the loader and the data test
@@ -138,7 +138,7 @@ cannot import it.
 | Route | File | Description |
 |---|---|---|
 | `/` | [app/page.tsx](app/page.tsx) | Hero, recipe count, searchable/filterable recipe grid; sends `RecipeSummary` objects to the client |
-| `/recipes/[id]` | [app/recipes/[id]/page.tsx](<app/recipes/[id]/page.tsx>) | Full recipe detail; generated for each id from `getRecipeIds()` with `dynamicParams = false`; `generateMetadata` adds a per-recipe title, description, and Open Graph image |
+| `/recipes/[id]` | [app/recipes/[id]/page.tsx](<app/recipes/[id]/page.tsx>) | Full recipe detail; generated for each id from `getRecipeIds()` (no `dynamicParams = false`: it breaks `npm run dev` with static export on Next 14); `generateMetadata` adds a per-recipe title, description, and Open Graph image |
 | 404 | [app/not-found.tsx](app/not-found.tsx) | Custom not-found page |
 
 ## Config Files
@@ -150,7 +150,8 @@ cannot import it.
 - [tsconfig.json](tsconfig.json): strict mode; path alias `@/*` → repo root.
 - [.eslintrc.json](.eslintrc.json): extends `next/core-web-vitals`, `next/typescript`.
 - [tailwind.config.ts](tailwind.config.ts): content from `app/`, `components/`,
-  `pages/`; custom `float`, `fade-in-up`, `mesh` animations and `hero-glow` background.
+  `pages/`; theme colours mapped to the CSS variables in `app/globals.css`, and the
+  `font-sans` / `font-serif` families.
 - [next.config.mjs](next.config.mjs): static export, Pages base path, unoptimized images.
 - [.claude/settings.json](.claude/settings.json): shared Claude Code permissions.
 
@@ -165,8 +166,9 @@ cannot import it.
 - **Change search/filter behavior:** matching and category logic in
   [lib/recipe-search.ts](lib/recipe-search.ts); UI state in
   [components/recipe-list.tsx](components/recipe-list.tsx).
-- **Change styling/theme:** inline Tailwind classes in each component, plus
-  [app/globals.css](app/globals.css) and [tailwind.config.ts](tailwind.config.ts).
+- **Change styling/theme:** inline Tailwind classes in each component. Colours are
+  tokens: change a value once in [app/globals.css](app/globals.css) (light and dark),
+  and add a new token to [tailwind.config.ts](tailwind.config.ts).
 
 ## Notes / Gotchas
 - No auth, no database. `npm run check` is the verification step.
@@ -178,9 +180,10 @@ cannot import it.
 - Search ignores case, accents, and final sigma (`normalizeSearchText`), so
   "καρμπονάρα" finds "Η ΚΑΡΜΠΟΝΑΡΑ".
 - The "updated" date is formatted with `formatRecipeDate`: `el-GR` in
-  `Europe/Athens`, for example "10 Αυγ 2026".
-- Card colours come from the category, through `categoryColorIndex` and the
-  gradient list in `recipe-card.tsx`. Colours are stable per category but not
+  `Europe/Athens`, for example "10 Αυγ 2026". A memory's "YYYY-MM" date goes
+  through `formatMemoryDate`, for example "Νοέμβριος 2023"; other values show as written.
+- Category dot colours come from the category, through `categoryColorIndex` and the
+  colour list in `category-badge.tsx`. Colours are stable per category but not
   guaranteed unique; today's six categories happen to get six different ones.
 - Tailwind's `content` globs cover `app/` and `components/` only, so class
   strings in `lib/` would be dropped from the CSS.

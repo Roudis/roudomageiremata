@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -24,9 +23,11 @@ type RecipeDetailPageProps = {
   params: RecipeParams;
 };
 
-/** Only the ids below have a page; any other path renders the 404 page. */
-export const dynamicParams = false;
-
+/**
+ * Only these ids get a page; on GitHub Pages any other path serves the 404 page.
+ * Do not add `export const dynamicParams = false`: on Next 14 with `output: "export"`
+ * the dev server then throws "missing generateStaticParams()" for every recipe.
+ */
 export async function generateStaticParams(): Promise<RecipeParams[]> {
   const ids = await getRecipeIds();
   return ids.map((id) => ({ id }));
@@ -64,47 +65,46 @@ export default async function RecipeDetailPage({ params }: RecipeDetailPageProps
   }
 
   return (
-    <main className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-6 py-12 sm:px-10 lg:px-12 animate-fade-in-up">
-      <nav className="mb-8 flex items-center">
-        <Link 
-          href="/" 
-          className="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-stone-500 transition-colors hover:text-orange-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded-lg p-2 -ml-2"
-          aria-label="Επιστροφή στη συλλογή"
-        >
-          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/50 backdrop-blur-sm border border-stone-200/50 shadow-sm transition-transform group-hover:-translate-x-1">
-            <ArrowLeft className="h-4 w-4" />
+    <main className="page-container pt-6 sm:pt-10">
+      <Link
+        href="/"
+        className="group -ml-2 inline-flex items-center gap-2 rounded-full px-2 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+      >
+        <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-0.5" aria-hidden="true" />
+        Όλες οι συνταγές
+      </Link>
+
+      {/* auto-cols-fr puts the text and photo side by side, and gives the text the full width when there is no photo. */}
+      <header className="mt-6 grid gap-8 lg:grid-flow-col lg:auto-cols-fr lg:items-center lg:gap-12">
+        <div>
+          <CategoryBadge recipe={recipe} variant="detail" />
+          <h1 className="mt-3 text-balance font-serif text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
+            {recipe.title}
+          </h1>
+          <p className="mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">{recipe.description}</p>
+          <div className="mt-8">
+            <RecipeStats recipe={recipe} />
           </div>
-          Πίσω στη Συλλογή
-        </Link>
-      </nav>
-
-      <RecipeHero recipe={recipe} />
-
-      <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
-        {/* Left Column: Header & Notes */}
-        <div className="flex flex-col gap-8">
-          <section className="glass-panel relative overflow-hidden rounded-[2.5rem] p-10 sm:p-14 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
-            <div className="absolute inset-0 bg-gradient-to-br from-rose-100/40 via-orange-50/40 to-amber-100/40 opacity-70 mix-blend-overlay pointer-events-none" />
-            <div className="relative z-10">
-              <CategoryBadge recipe={recipe} variant="detail" />
-              <h1 className="mt-6 text-5xl font-bold tracking-tight text-stone-900 sm:text-6xl lg:leading-[1.1] text-balance">
-                {recipe.title}
-              </h1>
-              <p className="mt-8 text-xl leading-relaxed text-stone-600">
-                {recipe.description}
-              </p>
-            </div>
-          </section>
-
-          <RecipeStats recipe={recipe} />
-
-          {recipe.memory !== undefined && <RecipeMemory memory={recipe.memory} />}
         </div>
 
-        {/* Right Column: Ingredients & Method */}
-        <div className="flex flex-col gap-12">
-          <IngredientList ingredients={recipe.ingredients} />
+        <RecipeHero recipe={recipe} />
+      </header>
 
+      {recipe.memory !== undefined && (
+        <div className="mt-12 sm:mt-16">
+          <RecipeMemory memory={recipe.memory} />
+        </div>
+      )}
+
+      <div className="mt-12 grid gap-12 sm:mt-16 lg:grid-cols-12 lg:gap-16">
+        <aside className="lg:col-span-4">
+          {/* Stays in view beside the steps, and scrolls on its own when it is taller than the screen. */}
+          <div className="lg:sticky lg:top-24 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto lg:rounded-xl">
+            <IngredientList ingredients={recipe.ingredients} />
+          </div>
+        </aside>
+
+        <div className="lg:col-span-8">
           <StepList steps={recipe.steps} />
         </div>
       </div>

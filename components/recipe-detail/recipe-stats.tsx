@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import type { Recipe } from "@/types/recipe";
 import { formatRecipeDate } from "@/lib/recipe-view";
-import { CalendarDays, Clock, Utensils } from "lucide-react";
+import { CalendarDays, Clock, Flame, Users } from "lucide-react";
 
 type StatTileProps = {
   /** Rendered as given, so the caller keeps the icon's colour. */
@@ -12,10 +12,12 @@ type StatTileProps = {
 
 function StatTile({ icon, label, value }: StatTileProps) {
   return (
-    <div className="flex flex-col gap-2 rounded-2xl bg-white/40 p-4 border border-white/40">
-      {icon}
-      <span className="text-sm font-medium text-stone-500">{label}</span>
-      <span className="font-bold text-stone-900">{value}</span>
+    <div className="flex flex-col gap-1 bg-card p-4">
+      <dt className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
+        {icon}
+        {label}
+      </dt>
+      <dd className="font-semibold">{value}</dd>
     </div>
   );
 }
@@ -25,19 +27,19 @@ type RecipeStatsProps = {
 };
 
 export function RecipeStats({ recipe }: RecipeStatsProps) {
+  const iconClass = "h-3.5 w-3.5 text-secondary";
+
   return (
-    <section className="glass-panel flex flex-col gap-6 rounded-[2.5rem] p-8 sm:p-10">
-      <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-stone-400">Σημειωσεις της Κουζινας</h2>
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-        <StatTile icon={<Clock className="h-5 w-5 text-orange-400" />} label="Προετοιμασία" value={recipe.prepTime ?? "—"} />
-        <StatTile icon={<Clock className="h-5 w-5 text-rose-400" />} label="Μαγείρεμα" value={recipe.cookTime ?? "—"} />
-        <StatTile icon={<Utensils className="h-5 w-5 text-emerald-400" />} label="Μερίδες" value={recipe.servings ?? "—"} />
-        <StatTile
-          icon={<CalendarDays className="h-5 w-5 text-blue-400" />}
-          label="Ανανεώθηκε"
-          value={formatRecipeDate(recipe.updatedAt)}
-        />
-      </div>
-    </section>
+    // gap-px over a border-coloured background draws the dividers however the tiles wrap.
+    <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-4">
+      <StatTile icon={<Clock className={iconClass} aria-hidden="true" />} label="Προετοιμασία" value={recipe.prepTime ?? "—"} />
+      <StatTile icon={<Flame className={iconClass} aria-hidden="true" />} label="Μαγείρεμα" value={recipe.cookTime ?? "—"} />
+      <StatTile icon={<Users className={iconClass} aria-hidden="true" />} label="Μερίδες" value={recipe.servings ?? "—"} />
+      <StatTile
+        icon={<CalendarDays className={iconClass} aria-hidden="true" />}
+        label="Ανανεώθηκε"
+        value={formatRecipeDate(recipe.updatedAt)}
+      />
+    </dl>
   );
 }

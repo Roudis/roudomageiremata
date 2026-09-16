@@ -2,54 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #fdfbf7;
-  --foreground: #1c1917;
-}
-
-@media (prefers-color-scheme: dark) {
+/*
+ * Theme tokens as HSL channels, read by the colours in tailwind.config.ts.
+ * Purple and green are the family's favourite colours: aubergine for actions,
+ * olive for labels. Dark mode follows the visitor's system setting.
+ */
+@layer base {
   :root {
-    /* For now keeping a unified beautiful light theme since no dark mode request was explicit, 
-       but setting up variables safely */
-    --background: #fdfbf7;
-    --foreground: #1c1917;
+    color-scheme: light;
+    --background: 40 33% 97%;
+    --foreground: 285 18% 12%;
+    --card: 0 0% 100%;
+    --muted: 40 18% 92%;
+    --muted-foreground: 285 6% 38%;
+    --border: 40 12% 85%;
+    --ring: 285 42% 32%;
+    --primary: 285 42% 32%;
+    --primary-foreground: 40 33% 98%;
+    --primary-soft: 285 40% 94%;
+    --secondary: 90 36% 27%;
+    --secondary-foreground: 40 33% 98%;
+    --secondary-soft: 88 32% 90%;
+    --feature: 285 40% 20%;
+    --feature-foreground: 40 30% 95%;
+    --feature-accent: 85 45% 72%;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --background: 285 14% 7%;
+      --foreground: 40 20% 92%;
+      --card: 285 12% 10%;
+      --muted: 285 10% 14%;
+      --muted-foreground: 40 8% 66%;
+      --border: 285 9% 20%;
+      --ring: 285 50% 78%;
+      --primary: 285 50% 78%;
+      --primary-foreground: 285 30% 12%;
+      --primary-soft: 285 26% 17%;
+      --secondary: 85 38% 66%;
+      --secondary-foreground: 285 30% 10%;
+      --secondary-soft: 88 18% 15%;
+      --feature: 285 30% 16%;
+      --feature-foreground: 40 20% 94%;
+      --feature-accent: 85 45% 72%;
+    }
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+  }
+
+  ::selection {
+    background: hsl(var(--primary-soft));
   }
 }
 
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
-}
-
-.glass-panel {
-  @apply bg-white/60 backdrop-blur-xl border border-white/40 shadow-[0_8px_30px_rgb(0,0,0,0.04)];
-}
-
-.glass-card {
-  @apply bg-white/50 backdrop-blur-lg border border-white/30 shadow-sm hover:shadow-md transition-all duration-300;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-::selection {
-  background: rgba(251, 191, 36, 0.28);
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer components {
+  /* The shared page width and side padding for the header, footer, and every page. */
+  .page-container {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
   }
 }

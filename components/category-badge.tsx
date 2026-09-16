@@ -1,11 +1,29 @@
 import type { Recipe } from "@/types/recipe";
-import { categoryLabel } from "@/lib/recipe-view";
+import { categoryColorIndex, categoryLabel } from "@/lib/recipe-view";
 
-/** The pill looks different on a card and on a detail page, so each keeps its own classes. */
+// One dot colour per category, picked by categoryColorIndex: greens and purples to match
+// the theme. Tailwind only scans app/ and components/, so these class strings have to
+// live in a component file.
+const dotColors = [
+  "bg-lime-600",
+  "bg-purple-500",
+  "bg-emerald-500",
+  "bg-violet-400",
+  "bg-green-700",
+  "bg-fuchsia-600",
+  "bg-teal-500",
+];
+
+/** The coloured dot that identifies a category on cards, filters, and the detail page. */
+export function CategoryDot({ label }: { label: string }) {
+  const color = dotColors[categoryColorIndex(label, dotColors.length)];
+  return <span aria-hidden="true" className={`h-2 w-2 shrink-0 rounded-full ${color}`} />;
+}
+
+/** The label is smaller on a card than on a detail page, so each keeps its own classes. */
 const variants = {
-  card: "w-fit rounded-full bg-white/70 backdrop-blur-md px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.25em] text-stone-700 shadow-sm",
-  detail:
-    "inline-block rounded-full bg-white/80 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-orange-600 shadow-sm backdrop-blur-md border border-white/50",
+  card: "text-xs font-medium",
+  detail: "text-sm font-semibold",
 };
 
 type CategoryBadgeProps = {
@@ -14,5 +32,12 @@ type CategoryBadgeProps = {
 };
 
 export function CategoryBadge({ recipe, variant }: CategoryBadgeProps) {
-  return <span className={variants[variant]}>{categoryLabel(recipe)}</span>;
+  const label = categoryLabel(recipe);
+
+  return (
+    <span className={`inline-flex items-center gap-2 text-secondary ${variants[variant]}`}>
+      <CategoryDot label={label} />
+      {label}
+    </span>
+  );
 }

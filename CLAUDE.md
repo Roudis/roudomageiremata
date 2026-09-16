@@ -55,9 +55,11 @@ These are one-off seeding scripts kept for history. They are blocked in `.claude
 
 ## Code conventions
 
-- Server components by default. Add `"use client"` only for interactivity; current client components are `components/navbar.tsx`, `components/recipe-list.tsx`, and `app/template.tsx`.
-- Styling is inline Tailwind classes. Shared utility classes `glass-panel` and `glass-card` live in `app/globals.css`.
-- Icons come from `lucide-react`. Animations use `framer-motion` or the Tailwind keyframes in `tailwind.config.ts`.
+- Server components by default. Add `"use client"` only for interactivity; current client components are `components/recipe-list.tsx` and `app/template.tsx`.
+- Styling is inline Tailwind classes. The only shared class is `page-container` (page width and side padding) in `app/globals.css`.
+- Colours are theme tokens, not raw palette classes: `background`, `foreground`, `card`, `muted`, `border`, `primary` (aubergine purple), `secondary` (olive green), and `feature` (the family-story band). Each is an HSL variable in `app/globals.css` with a dark-mode value that follows the system setting, mapped in `tailwind.config.ts`. Purple and green are the family's favourite colours; keep new UI in that palette and check contrast in both modes.
+- Fonts come from `next/font/google` in `app/layout.tsx`, which downloads them at build time: Commissioner (`font-sans`) and Literata (`font-serif`, used for headings). Any replacement must include the `greek` subset.
+- Icons come from `lucide-react`. Animations use `framer-motion`; `app/template.tsx` wraps pages in `MotionConfig reducedMotion="user"`.
 - Import via the `@/` alias, which maps to the repo root.
 - `lib/recipes.ts` imports `server-only`, so only server code in `app/` may import it. Client components get data as props: the home page sends `RecipeSummary` objects via `toRecipeSummary`, not full recipes. Pure helpers in `lib/` (`recipe-view`, `recipe-search`, `recipe-schema`, `base-path`) are safe on either side.
 - Tailwind only scans `app/` and `components/`. Keep class strings there; `lib/` returns data such as a colour index, not class names.

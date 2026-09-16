@@ -1,65 +1,97 @@
+import Link from "next/link";
+import { ArrowDown, Quote } from "lucide-react";
 import { RecipeList } from "@/components/recipe-list";
 import { getAllRecipes } from "@/lib/recipes";
 import { toRecipeSummary } from "@/lib/recipe-view";
+import { getCategories } from "@/lib/recipe-search";
+import { withBasePath } from "@/lib/base-path";
+
+// The mosaic's first photo spans both rows; the other two stack beside it.
+const mosaicCells = ["col-span-3 row-span-2", "col-span-2", "col-span-2"];
 
 export default async function Home() {
   const recipes = await getAllRecipes();
+  const featured = recipes
+    .flatMap(({ id, title, imageUrl }) => (imageUrl === undefined ? [] : [{ id, title, imageUrl }]))
+    .slice(0, mosaicCells.length);
+
+  const stats = [
+    { value: recipes.length, label: "Συνταγές" },
+    { value: getCategories(recipes).length, label: "Κατηγορίες" },
+    { value: recipes.filter((recipe) => recipe.memory !== undefined).length, label: "Ιστορίες" },
+  ];
 
   return (
-    <main className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-6 py-12 sm:px-10 lg:px-12 animate-fade-in-up">
-      <header className="mb-12 text-center sm:text-left">
-        <p className="inline-flex items-center rounded-full bg-rose-100/50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-rose-700 shadow-sm ring-1 ring-rose-200/50 backdrop-blur-sm">
-          Ρούδομαγειρέματα
-        </p>
-      </header>
-      
-      <section className="grid gap-6 lg:grid-cols-[1.5fr_1fr]">
-        <div className="glass-panel flex flex-col justify-center rounded-[2.5rem] p-10 sm:p-14 relative overflow-hidden group">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-          <h1 className="relative z-10 max-w-2xl text-5xl font-bold tracking-tight text-stone-900 sm:text-7xl leading-[1.1] text-balance">
-            Κάποιες αναμνήσεις μας είναι γεμάτες γεύσεις <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-orange-400">και κάποιες γεύσεις είναι γεμάτες αναμνήσεις μας.</span>
+    <main className="page-container pt-10 sm:pt-16">
+      <section className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
+        <div className="lg:col-span-7">
+          <p className="text-sm font-semibold text-secondary">Το οικογενειακό τετράδιο συνταγών</p>
+          <h1 className="mt-4 text-balance font-serif text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
+            Κάποιες αναμνήσεις μας είναι γεμάτες γεύσεις,{" "}
+            <em className="font-normal text-primary">και κάποιες γεύσεις είναι γεμάτες αναμνήσεις μας.</em>
           </h1>
-          <p className="relative z-10 mt-8 max-w-xl text-lg leading-relaxed text-stone-600">
+          <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">
             Τα Ρουδομαγειρέματα είναι μια μικρή συλλογή από συνταγές που έχουν γεύση σπίτι ή και ταξίδια.
           </p>
-
-          <div className="relative z-10 mt-10 flex flex-col gap-4 sm:flex-row">
-            <a
-              href="#recipe-grid"
-              className="inline-flex items-center justify-center rounded-full bg-stone-900 px-8 py-4 text-sm font-semibold text-white shadow-lg transition-transform duration-300 hover:scale-105 hover:bg-stone-800 focus:outline-none focus:ring-4 focus:ring-stone-200"
-            >
-              Ξεφύλλισε τις συνταγές μας
-            </a>
-          </div>
+          <a
+            href="#recipe-grid"
+            className="mt-8 inline-flex h-12 items-center gap-2 rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
+            Ξεφύλλισε τις συνταγές μας
+            <ArrowDown className="h-4 w-4" aria-hidden="true" />
+          </a>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
-          <div className="glass-panel rounded-[2rem] p-8 flex flex-col justify-between group hover:border-orange-200 transition-colors duration-300">
-            <p className="text-xs font-bold uppercase tracking-widest text-orange-600">Το Τετραδιακι Μας</p>
-            <div className="mt-6">
-              <p className="text-6xl font-bold tracking-tighter text-stone-900 group-hover:text-orange-600 transition-colors duration-300">{recipes.length}</p>
-              <p className="mt-2 text-sm font-medium text-stone-500">Αγαπημένα οικογενειακά πιατάκια.</p>
-            </div>
+        {featured.length > 0 && (
+          <div className="grid h-72 grid-cols-5 grid-rows-2 gap-3 sm:h-96 lg:col-span-5 lg:h-[28rem]">
+            {featured.map((recipe, index) => (
+              <Link
+                key={recipe.id}
+                href={`/recipes/${recipe.id}`}
+                className={`group relative overflow-hidden rounded-lg bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background ${mosaicCells[index]}`}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={withBasePath(recipe.imageUrl)}
+                  alt=""
+                  className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+                />
+                <span className="absolute bottom-2 left-2 right-2 truncate rounded-md bg-background/90 px-2 py-1 text-xs font-medium backdrop-blur sm:w-fit sm:max-w-[calc(100%-1rem)]">
+                  {recipe.title}
+                </span>
+              </Link>
+            ))}
           </div>
-
-          <div className="glass-panel rounded-[2rem] bg-gradient-to-br from-rose-50/50 to-orange-50/50 p-8 flex flex-col justify-between hover:border-rose-200 transition-colors duration-300">
-             <div className="rounded-2xl bg-white/60 p-5 shadow-sm backdrop-blur-md">
-              <p className="text-sm font-medium italic leading-relaxed text-stone-700">
-                &ldquo;Κάποιες συνταγές ξεκινάνε με λαδάκι και κρεμμυδάκι, αλλά οι καλύτερες αρχίζουν με κάποιον να λέει, &apos;Θυμάσαι τότε που...;&apos;&rdquo;
-              </p>
-            </div>
-          </div>
-        </div>
+        )}
       </section>
 
-      <section id="recipe-grid" className="mt-24 scroll-mt-24">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between mb-16">
-          <div>
-            <h2 className="text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl text-balance">Οι συνταγές της οικογένειας</h2>
-            <p className="mt-3 max-w-xl text-base leading-relaxed text-stone-600">
-              Κάθε πρόσωπο της οικογένειας έχει τη δική του θέση εδώ. Ανακάλυψε τις ιστορίες και τα πιατάκια που τους κάνουν ξεχωριστούς!
-            </p>
-          </div>
+      <section className="mt-16 grid gap-8 border-y border-border py-8 sm:mt-20 lg:grid-cols-12 lg:items-center lg:gap-12">
+        <figure className="flex gap-4 lg:col-span-7">
+          <Quote className="mt-1 h-6 w-6 shrink-0 fill-secondary-soft text-secondary" aria-hidden="true" />
+          <blockquote className="text-pretty font-serif text-xl italic leading-relaxed sm:text-2xl">
+            Κάποιες συνταγές ξεκινάνε με λαδάκι και κρεμμυδάκι, αλλά οι καλύτερες αρχίζουν με κάποιον να λέει «Θυμάσαι
+            τότε που…;»
+          </blockquote>
+        </figure>
+        <dl className="grid grid-cols-3 gap-4 lg:col-span-5">
+          {stats.map((stat) => (
+            <div key={stat.label} className="flex flex-col-reverse gap-1 border-l-2 border-secondary/40 pl-4">
+              <dt className="text-sm text-muted-foreground">{stat.label}</dt>
+              <dd className="font-serif text-3xl font-semibold tabular-nums sm:text-4xl">{stat.value}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      <section id="recipe-grid" className="mt-16 scroll-mt-20 sm:mt-20">
+        <div className="mb-8 max-w-2xl">
+          <h2 className="text-balance font-serif text-3xl font-semibold tracking-tight sm:text-4xl">
+            Οι συνταγές της οικογένειας
+          </h2>
+          <p className="mt-3 text-pretty leading-relaxed text-muted-foreground">
+            Κάθε πρόσωπο της οικογένειας έχει τη δική του θέση εδώ. Ανακάλυψε τις ιστορίες και τα πιατάκια που τους
+            κάνουν ξεχωριστούς!
+          </p>
         </div>
 
         <RecipeList recipes={recipes.map(toRecipeSummary)} />
