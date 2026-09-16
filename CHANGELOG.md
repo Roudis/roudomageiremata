@@ -7,6 +7,7 @@ to regenerate it.
 ## 2026-09-16
 
 ### Added
+- refactor recipe detail components and implement Greek date formatting ([759329d](https://github.com/Roudis/roudomageiremata/commit/759329d5880b2f47dfe24944c6e0eec322e9491a))
 - unify category fallback handling and enhance recipe filtering logic ([f88408c](https://github.com/Roudis/roudomageiremata/commit/f88408c295841b156d7745cef5a3a9e6592a3a7c))
 - add validation tests for recipe files and improve error handling ([b6b317c](https://github.com/Roudis/roudomageiremata/commit/b6b317c2717d557e2167ec6c8d8d33fcebe05055))
 
