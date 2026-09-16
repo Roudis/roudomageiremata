@@ -1,7 +1,7 @@
 # Refactor Plan: Recipe Loading and Rendering
 
-**Status:** In progress. Completed steps are ticked in section 7. Decisions
-1, 2, 3, 4, 5, 6, 9, and 10 are made (see section 6); 7 and 8 are still open.
+**Status:** In progress. Completed steps are ticked in section 7. Every
+decision except 8 is made (see section 6).
 **Date:** 2026-09-15, reviewed at commit `374b3df`.
 **Scope:** `lib/recipes.ts`, `types/recipe.ts`, `components/recipe-card.tsx`,
 `components/recipe-list.tsx`, `app/recipes/[id]/page.tsx`, and `app/page.tsx`
@@ -211,6 +211,8 @@ Each decision has a recommendation. Steps that depend on one say so.
 - **9: Proceed with Phase 3 without settling the branches.** `feature/reimagined-ui`
   and `dual/lang` are now harder to merge; dark mode and translations are
   expected to be rebuilt on top of the refactor.
+- **7: `el-GR` in `Europe/Athens` with a short month**, as recommended, so the
+  date reads "10 Αυγ 2026".
 
 ## 7. Checklist
 
@@ -410,18 +412,21 @@ Rules for every step:
 
 ### Phase 4: Detail Page Decomposition
 
-- [ ] **4.1 `StatTile` and `RecipeStats`**
+- [x] **4.1 `StatTile` and `RecipeStats`**
   - Change: replace the four repeated stat blocks with one component.
   - Behavior: none, confirmed with the export snapshot. Fixes X5 and part of
     D8.
-- [ ] **4.2 Remaining detail sections**
+- [x] **4.2 Remaining detail sections**
   - Change: extract `RecipeHero`, `RecipeMemory`, `IngredientList`, and
     `StepList` into `components/recipe-detail/`.
   - Behavior: none, confirmed with the export snapshot. Fixes D8.
-- [ ] **4.3 Greek date format** (decision 7)
+- [x] **4.3 Greek date format** (decision 7)
   - Change: `formatRecipeDate` using `el-GR` and `Europe/Athens`, with a unit
     test.
   - Behavior: changes. "Aug 10, 2026" becomes "10 Αυγ 2026". Fixes B2.
+  - As built: `formatRecipeDate` returns its input unchanged for a timestamp
+    `Date.parse` rejects, rather than throwing or printing "Invalid Date".
+    The loader already rejects such files.
 
 ### Phase 5: Page Routing, Highest Risk
 

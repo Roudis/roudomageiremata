@@ -5,6 +5,7 @@ import {
   categoryLabel,
   compareRecipes,
   formatIngredientCount,
+  formatRecipeDate,
   toRecipeSummary,
 } from "@/lib/recipe-view";
 import type { Recipe } from "@/types/recipe";
@@ -42,6 +43,27 @@ describe("labels and fallbacks", () => {
   it("uses the plural label for every count, including 1 and 0 (current behavior)", () => {
     expect(formatIngredientCount(1)).toBe("1 υλικά");
     expect(formatIngredientCount(0)).toBe("0 υλικά");
+  });
+});
+
+describe("formatRecipeDate", () => {
+  it("formats an ISO timestamp in Greek", () => {
+    expect(formatRecipeDate("2026-08-10T16:52:28.199Z")).toBe("10 Αυγ 2026");
+    expect(formatRecipeDate("2026-01-02T09:00:00.000Z")).toBe("2 Ιαν 2026");
+  });
+
+  it("uses Europe/Athens rather than the build machine's time zone", () => {
+    // 22:30 UTC on 31 December is already 1 January in Athens.
+    expect(formatRecipeDate("2025-12-31T22:30:00.000Z")).toBe("1 Ιαν 2026");
+  });
+
+  it("accepts any timestamp Date.parse understands", () => {
+    expect(formatRecipeDate("2026-08-10")).toBe("10 Αυγ 2026");
+  });
+
+  it("returns the input unchanged when it cannot be parsed", () => {
+    expect(formatRecipeDate("not a date")).toBe("not a date");
+    expect(formatRecipeDate("")).toBe("");
   });
 });
 

@@ -43,7 +43,7 @@ app/
   globals.css                Tailwind layers, CSS vars, .glass-panel / .glass-card utilities
   fonts/                     Local Geist variable fonts
   recipes/
-    [id]/page.tsx            Recipe detail (image, notes, memory, ingredients, steps);
+    [id]/page.tsx            Recipe detail; loads the recipe and composes components/recipe-detail/*;
                              statically generated for every recipe id
 components/
   navbar.tsx                 Client; fixed header, scroll-aware styling, home/search links
@@ -53,13 +53,19 @@ components/
   recipe-card.tsx            Card for the grid; takes a RecipeSummary; one gradient per category;
                              links to /recipes/[id]
   category-badge.tsx         Category pill shared by the card and the detail page (variant prop)
+  recipe-detail/             Sections of the recipe page, all server components
+    recipe-hero.tsx          Full-width image; renders nothing when the recipe has no image
+    recipe-stats.tsx         StatTile + RecipeStats: prep, cook, servings, updated date
+    recipe-memory.tsx        The family story attached to a recipe
+    ingredient-list.tsx      Ingredient list with the count badge
+    step-list.tsx            Numbered steps
 lib/
   recipes.ts                 Server-only build-time data access: createRecipeStore(dir),
                              getRecipeIds(), getAllRecipes(), getRecipeById(id)
   recipes.test.ts            Vitest characterization tests for recipes.ts, using temp folders
   recipes.data.test.ts       Validates the real data/recipes files; the only file `npm run validate:data` runs
   recipe-view.ts             Pure: CATEGORY_FALLBACK, categoryLabel, categoryColorIndex,
-                             formatIngredientCount, compareRecipes, toRecipeSummary
+                             formatIngredientCount, formatRecipeDate, compareRecipes, toRecipeSummary
   recipe-search.ts           Pure: normalizeSearchText, getCategories, filterRecipes for the home page list
   recipe-schema.ts           Pure: parseRecipe(value, source, { expectedId }), RecipeDataError, isRecipeId;
                              the single recipe schema, used by the loader and the data test
@@ -168,6 +174,8 @@ cannot import it.
   order comes from the title and id tie-breaks in `compareRecipes`.
 - Search ignores case, accents, and final sigma (`normalizeSearchText`), so
   "καρμπονάρα" finds "Η ΚΑΡΜΠΟΝΑΡΑ".
+- The "updated" date is formatted with `formatRecipeDate`: `el-GR` in
+  `Europe/Athens`, for example "10 Αυγ 2026".
 - Card colours come from the category, through `categoryColorIndex` and the
   gradient list in `recipe-card.tsx`. Colours are stable per category but not
   guaranteed unique; today's six categories happen to get six different ones.

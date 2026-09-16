@@ -43,7 +43,7 @@ npm run start          # serve out/ locally; `next start` does NOT work with sta
 - Shape is `Recipe` in `types/recipe.ts`. If you change the shape, update `parseRecipe` in `lib/recipe-schema.ts` too.
 - Images live at `public/images/recipes/<id>.jpg` and are referenced as `"/images/recipes/<id>.jpg"`.
 - `lib/recipes.ts` validates each file with `parseRecipe` at build time. **An invalid file, or one whose `id` differs from its filename, is skipped with a console warning, and the build still succeeds without that recipe.** `npm run validate:data` fails on such files and CI runs it before building, so always run it after touching recipe data.
-- All user-facing copy is Greek (`<html lang="el">`). Keep new UI text in Greek.
+- All user-facing copy is Greek (`<html lang="el">`). Keep new UI text in Greek, and format dates with `formatRecipeDate` (`el-GR`, `Europe/Athens`) so they don't depend on the build machine.
 
 ## Do not run
 

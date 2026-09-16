@@ -44,6 +44,20 @@ export function compareRecipes(a: Recipe, b: Recipe): number {
   );
 }
 
+// "10 Αυγ 2026". Fixed locale and time zone, so the date does not depend on the build machine.
+const recipeDateFormat = new Intl.DateTimeFormat("el-GR", {
+  day: "numeric",
+  month: "short",
+  year: "numeric",
+  timeZone: "Europe/Athens",
+});
+
+/** Formats an ISO timestamp for display, or returns it unchanged if it cannot be parsed. */
+export function formatRecipeDate(isoDate: string): string {
+  const parsed = Date.parse(isoDate);
+  return Number.isNaN(parsed) ? isoDate : recipeDateFormat.format(parsed);
+}
+
 /** Keeps only what the recipe list and cards render. Optional fields stay absent when missing. */
 export function toRecipeSummary(recipe: Recipe): RecipeSummary {
   const summary: RecipeSummary = {
