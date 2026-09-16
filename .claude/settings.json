@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run lint)",
+      "Bash(npm run typecheck)",
+      "Bash(npm run test)",
+      "Bash(npm test)",
+      "Bash(npx vitest run *)",
+      "Bash(npm run validate:data)",
+      "Bash(npm run build)",
+      "Bash(npm run check)",
+      "Bash(npx tsc --noEmit)",
+      "Bash(git status *)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git show *)",
+      "Bash(git branch)",
+      "Bash(git branch -vv)",
+      "Bash(git branch -a)"
+    ],
+    "deny": [
+      "Bash(git push origin main*)",
+      "Bash(git push * main)",
+      "Bash(git push * main:*)",
+      "Bash(git push * HEAD:main*)",
+      "Bash(git push --force*)",
+      "Bash(git push -f*)",
+      "Bash(node populate.js*)",
+      "Bash(node ./populate.js*)",
+      "Bash(node download-all-images.js*)",
+      "Bash(node ./download-all-images.js*)",
+      "Bash(node download-images.js*)",
+      "Bash(node ./download-images.js*)"
+    ]
+  }
+}

@@ -1,38 +1,26 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { Recipe } from "@/types/recipe";
+import type { RecipeSummary } from "@/types/recipe";
+import { filterRecipes, getCategories } from "@/lib/recipe-search";
 import { RecipeCard } from "@/components/recipe-card";
 import { Search } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 type RecipeListProps = {
-  initialRecipes: Recipe[];
+  recipes: RecipeSummary[];
 };
 
-export function RecipeList({ initialRecipes }: RecipeListProps) {
+export function RecipeList({ recipes }: RecipeListProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-  // Extract unique categories
-  const categories = useMemo(() => {
-    const cats = new Set(initialRecipes.map((r) => r.category ?? "Άλλο"));
-    return Array.from(cats).sort();
-  }, [initialRecipes]);
+  const categories = useMemo(() => getCategories(recipes), [recipes]);
 
-  // Filter recipes based on search query and selected category
-  const filteredRecipes = useMemo(() => {
-    return initialRecipes.filter((recipe) => {
-      const matchesSearch =
-        recipe.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        recipe.description?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        recipe.ingredients.some((i) => i.toLowerCase().includes(searchQuery.toLowerCase()));
-      
-      const matchesCategory = selectedCategory ? (recipe.category ?? "Άλλο") === selectedCategory : true;
-
-      return matchesSearch && matchesCategory;
-    });
-  }, [initialRecipes, searchQuery, selectedCategory]);
+  const filteredRecipes = useMemo(
+    () => filterRecipes(recipes, { query: searchQuery, category: selectedCategory }),
+    [recipes, searchQuery, selectedCategory],
+  );
 
   return (
     <div className="flex flex-col gap-10">
@@ -45,8 +33,7 @@ export function RecipeList({ initialRecipes }: RecipeListProps) {
             placeholder="Αναζήτηση συνταγής ή υλικού..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full h-12 rounded-full bg-white pl-12 pr-4 text-base font-medium shadow-sm ring-1 ring-stone-200/50 focus:outline-none focus:ring-2 focus:ring-orange-400 transition-shadow"
-            style={{ color: 'black', WebkitTextFillColor: 'black' }}
+            className="w-full h-12 rounded-full bg-white pl-12 pr-4 text-base font-medium text-black [-webkit-text-fill-color:black] shadow-sm ring-1 ring-stone-200/50 focus:outline-none focus:ring-2 focus:ring-orange-400 transition-shadow"
             aria-label="Αναζήτηση συνταγής"
           />
         </div>
@@ -54,6 +41,7 @@ export function RecipeList({ initialRecipes }: RecipeListProps) {
         <div className="flex flex-wrap gap-2">
           <button
             onClick={() => setSelectedCategory(null)}
+            aria-pressed={selectedCategory === null}
             className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
               selectedCategory === null
                 ? "bg-stone-900 text-white shadow-md"
@@ -66,6 +54,7 @@ export function RecipeList({ initialRecipes }: RecipeListProps) {
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
+              aria-pressed={selectedCategory === cat}
               className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
                 selectedCategory === cat
                   ? "bg-orange-500 text-white shadow-md"
@@ -78,6 +67,10 @@ export function RecipeList({ initialRecipes }: RecipeListProps) {
         </div>
       </div>
 
+      <p role="status" aria-live="polite" className="sr-only">
+        {`Βρέθηκαν ${filteredRecipes.length} συνταγές`}
+      </p>
+
       {/* Recipe Grid with Framer Motion */}
       <motion.div 
         layout
@@ -85,7 +78,7 @@ export function RecipeList({ initialRecipes }: RecipeListProps) {
       >
         <AnimatePresence mode="popLayout">
           {filteredRecipes.length > 0 ? (
-            filteredRecipes.map((recipe, index) => (
+            filteredRecipes.map((recipe) => (
               <motion.div
                 layout
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -95,7 +88,7 @@ export function RecipeList({ initialRecipes }: RecipeListProps) {
                 key={recipe.id}
                 className="h-full"
               >
-                <RecipeCard recipe={recipe} index={index} />
+                <RecipeCard recipe={recipe} />
               </motion.div>
             ))
           ) : (

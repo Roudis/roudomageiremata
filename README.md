@@ -2,11 +2,14 @@
 
 A Next.js 14 recipe journal for preserving family recipes and the memories attached to them.
 
+Live site: https://roudis.github.io/roudomageiremata/
+
 ## Features
-- Browse a warm, family-style recipe collection
+- Browse a warm, family-style recipe collection with search and category filters
 - View recipe details with ingredients, steps, and memory/story notes
-- Data is baked into the site at build time from `data/recipes.json` (read-only
-  in production — see [Static site & GitHub Pages](#static-site--github-pages))
+- Recipe data is baked into the site at build time from one JSON file per recipe
+  in [`data/recipes/`](data/recipes). It is read-only in production; see
+  [Static site & GitHub Pages](#static-site--github-pages).
 
 ## Run locally
 ```bash
@@ -14,24 +17,54 @@ npm install
 npm run dev
 ```
 
+## Checks
+```bash
+npm run lint           # ESLint
+npm run typecheck      # TypeScript
+npm run test           # Vitest unit tests
+npm run validate:data  # validate every recipe JSON file
+npm run build          # static export
+npm run check          # all of the above
+```
+
+The same checks run in CI on every pull request and before each deploy.
+
+## Changelog
+
+[CHANGELOG.md](CHANGELOG.md) is generated from the Git commit history. The
+[changelog workflow](.github/workflows/changelog.yml) regenerates and commits it
+after every push. To regenerate it locally, run:
+
+```bash
+npm run changelog
+```
+
+## Adding or editing a recipe
+1. Create or edit `data/recipes/<id>.json`. The filename must match the `id`
+   field. The shape is defined in [`types/recipe.ts`](types/recipe.ts).
+2. Put the image at `public/images/recipes/<id>.jpg` and set
+   `"imageUrl": "/images/recipes/<id>.jpg"`.
+3. Run `npm run validate:data`, then open a pull request into `main`.
+
 ## Static site & GitHub Pages
 
 This app is built as a fully static site (`next build` with `output: "export"`)
-so it can be hosted on GitHub Pages, which only serves static files. Because of
-that, there's no server at runtime — recipes are read from
-[`data/recipes.json`](data/recipes.json) at build time and rendered to static
-HTML. **Adding, editing, or deleting recipes now happens by editing
-`data/recipes.json` and re-deploying** (the old API routes and recipe
-create/edit forms were removed since they required a writable server).
+so it can be hosted on GitHub Pages, which only serves static files. There's no
+server at runtime. Recipes are read from `data/recipes/*.json` at build time
+and rendered to static HTML. There are no API routes or in-app create/edit
+forms, because those would require a writable server.
 
-To publish:
-1. In the repo's **Settings → Pages**, set **Source** to **GitHub Actions**.
-2. Push to `main` — the [deploy workflow](.github/workflows/deploy.yml) builds
-   the site and publishes it automatically to
-   `https://<your-username>.github.io/roudomageirikes/`.
+Publishing is automatic. Merging to `main` runs the
+[deploy workflow](.github/workflows/deploy.yml), which checks, builds, and
+publishes the site. **Settings → Pages → Source** must be set to
+**GitHub Actions**.
 
 To preview the production build locally:
 ```bash
 npm run build
 npm run start   # serves the generated out/ folder
 ```
+
+## Developing with Claude Code
+Project guidance for AI coding agents lives in [`CLAUDE.md`](CLAUDE.md), and
+shared tool permissions live in [`.claude/settings.json`](.claude/settings.json).
