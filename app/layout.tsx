@@ -17,7 +17,13 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Ρουδομαγειρέματα | Οικογενειακές Συνταγές",
+  // Absolute base for Open Graph image URLs. The site lives under /roudomageiremata on
+  // GitHub Pages, which withBasePath adds to each image path, so this is the origin only.
+  metadataBase: new URL("https://roudis.github.io"),
+  title: {
+    default: "Ρουδομαγειρέματα | Οικογενειακές Συνταγές",
+    template: "%s | Ρουδομαγειρέματα",
+  },
   description:
     "Ένας ζεστός, προσωπικός οδηγός με τις αγαπημένες μας συνταγές, τα μικρά μυστικά της κουζίνας μας και τις ιστορίες που τις συνοδεύουν.",
 };

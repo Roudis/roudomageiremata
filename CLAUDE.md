@@ -34,7 +34,7 @@ npm run start          # serve out/ locally; `next start` does NOT work with sta
 
 - **Static export only** (`output: "export"`). No API routes, route handlers, server actions, middleware, cookies/headers, ISR, or runtime file writes. Anything that needs a server at request time will break the deploy.
 - **`next/image` optimization is off** (`images.unoptimized`). Existing code uses `<img>` with an eslint-disable line.
-- **Base path**: on GitHub Actions the site is served under `/roudomageiremata`. `next/link` handles this automatically, but raw asset URLs such as `<img src>` must go through `withBasePath` from `lib/base-path.ts`.
+- **Base path**: on GitHub Actions the site is served under `/roudomageiremata`. `next/link` handles this automatically, but raw asset URLs such as `<img src>` must go through `withBasePath` from `lib/base-path.ts`. That includes Open Graph image paths in `generateMetadata`, which Next does not prefix; `metadataBase` in `app/layout.tsx` is the origin only.
 - The repo was renamed on GitHub from `roudomageirikes` to `roudomageiremata`. The `repoName` in `next.config.mjs` is correct. Do not "fix" it to match the local folder name.
 
 ## Recipe data

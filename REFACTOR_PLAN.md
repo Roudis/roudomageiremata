@@ -1,7 +1,7 @@
 # Refactor Plan: Recipe Loading and Rendering
 
-**Status:** In progress. Completed steps are ticked in section 7. Every
-decision except 8 is made (see section 6).
+**Status:** Phases 1 to 5 are done and ticked in section 7. Every decision in
+section 6 is made. Steps 0.2 and 0.3 are still open.
 **Date:** 2026-09-15, reviewed at commit `374b3df`.
 **Scope:** `lib/recipes.ts`, `types/recipe.ts`, `components/recipe-card.tsx`,
 `components/recipe-list.tsx`, `app/recipes/[id]/page.tsx`, and `app/page.tsx`
@@ -213,6 +213,7 @@ Each decision has a recommendation. Steps that depend on one say so.
   expected to be rebuilt on top of the refactor.
 - **7: `el-GR` in `Europe/Athens` with a short month**, as recommended, so the
   date reads "10 Αυγ 2026".
+- **8: Per-recipe title, description, and Open Graph image**, as recommended.
 
 ## 7. Checklist
 
@@ -430,15 +431,21 @@ Rules for every step:
 
 ### Phase 5: Page Routing, Highest Risk
 
-- [ ] **5.1 Static params from ids** (depends on 2.2, ideally after 2.5)
+- [x] **5.1 Static params from ids** (depends on 2.2, ideally after 2.5)
   - Change: `generateStaticParams` uses `getRecipeIds()`, and the page exports
     `dynamicParams = false`.
   - Behavior: none. The export snapshot must list exactly the same routes.
-- [ ] **5.2 Per-recipe metadata** (decision 8)
+- [x] **5.2 Per-recipe metadata** (decision 8)
   - Change: `generateMetadata` sets the title, description, and Open Graph
     image. Set `metadataBase` so image URLs are absolute on GitHub Pages.
   - Behavior: changes. Every recipe page gets new `<head>` tags. Fixes B3.
-- [ ] **5.3 One page props type**
+  - As built: `app/layout.tsx` sets `metadataBase` to the origin and a
+    `%s | Ρουδομαγειρέματα` title template; the page passes the image through
+    `withBasePath`, since Next does not add the base path to metadata URLs.
+    A page's `openGraph` replaces the layout's instead of merging, so
+    `siteName` and `locale` are set on the page. Next derives the `twitter:*`
+    tags from `openGraph` on its own. The home page and 404 page are unchanged.
+- [x] **5.3 One page props type**
   - Change: define the detail page's props in one place, so moving to the
     asynchronous `params` of Next 15 and later is a single edit.
   - Behavior: none. Prepares T6.

@@ -32,11 +32,14 @@ for working in the repo live in [CLAUDE.md](CLAUDE.md).
   exposes it as `NEXT_PUBLIC_BASE_PATH` only when `GITHUB_ACTIONS=true`, so
   local `npm run dev`/`npm run build` are unaffected.
 - [public/.nojekyll](public/.nojekyll) prevents Jekyll from ignoring `_next/`.
+- Open Graph image URLs are absolute: `metadataBase` (the origin) in
+  [app/layout.tsx](app/layout.tsx) plus `withBasePath` on the image path.
 
 ## Directory Map
 ```
 app/
-  layout.tsx                 Root layout: Geist fonts, animated background, Navbar, Footer, lang="el"
+  layout.tsx                 Root layout: Geist fonts, animated background, Navbar, Footer, lang="el";
+                             site metadata: metadataBase, title template, description
   template.tsx               Client; framer-motion fade-in page transition
   page.tsx                   Home: hero, recipe count, <RecipeList> with all recipes
   not-found.tsx              Custom 404 page
@@ -135,7 +138,7 @@ cannot import it.
 | Route | File | Description |
 |---|---|---|
 | `/` | [app/page.tsx](app/page.tsx) | Hero, recipe count, searchable/filterable recipe grid; sends `RecipeSummary` objects to the client |
-| `/recipes/[id]` | [app/recipes/[id]/page.tsx](<app/recipes/[id]/page.tsx>) | Full recipe detail; statically generated |
+| `/recipes/[id]` | [app/recipes/[id]/page.tsx](<app/recipes/[id]/page.tsx>) | Full recipe detail; generated for each id from `getRecipeIds()` with `dynamicParams = false`; `generateMetadata` adds a per-recipe title, description, and Open Graph image |
 | 404 | [app/not-found.tsx](app/not-found.tsx) | Custom not-found page |
 
 ## Config Files

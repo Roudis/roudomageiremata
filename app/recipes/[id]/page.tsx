@@ -1,7 +1,9 @@
 
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getAllRecipes, getRecipeById } from "@/lib/recipes";
+import { getRecipeById, getRecipeIds } from "@/lib/recipes";
+import { withBasePath } from "@/lib/base-path";
 import { CategoryBadge } from "@/components/category-badge";
 import { RecipeHero } from "@/components/recipe-detail/recipe-hero";
 import { RecipeStats } from "@/components/recipe-detail/recipe-stats";
@@ -10,15 +12,48 @@ import { IngredientList } from "@/components/recipe-detail/ingredient-list";
 import { StepList } from "@/components/recipe-detail/step-list";
 import { ArrowLeft } from "lucide-react";
 
-type RecipeDetailPageProps = {
-  params: {
-    id: string;
-  };
+/**
+ * The route's params, in one place: Next 15 and later hand `params` to pages and
+ * to generateMetadata as a Promise, which makes that upgrade a single edit here.
+ */
+type RecipeParams = {
+  id: string;
 };
 
-export async function generateStaticParams() {
-  const recipes = await getAllRecipes();
-  return recipes.map((recipe) => ({ id: recipe.id }));
+type RecipeDetailPageProps = {
+  params: RecipeParams;
+};
+
+/** Only the ids below have a page; any other path renders the 404 page. */
+export const dynamicParams = false;
+
+export async function generateStaticParams(): Promise<RecipeParams[]> {
+  const ids = await getRecipeIds();
+  return ids.map((id) => ({ id }));
+}
+
+export async function generateMetadata({ params }: RecipeDetailPageProps): Promise<Metadata> {
+  const recipe = await getRecipeById(params.id);
+
+  if (!recipe) return {};
+
+  const images =
+    recipe.imageUrl !== undefined ? [{ url: withBasePath(recipe.imageUrl), alt: recipe.title }] : undefined;
+
+  return {
+    title: recipe.title,
+    description: recipe.description,
+    // A page's openGraph replaces the layout's rather than merging into it, so the
+    // site-level fields are repeated here.
+    openGraph: {
+      title: recipe.title,
+      description: recipe.description,
+      siteName: "Ρουδομαγειρέματα",
+      locale: "el_GR",
+      type: "article",
+      images,
+    },
+  };
 }
 
 export default async function RecipeDetailPage({ params }: RecipeDetailPageProps) {
