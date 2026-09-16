@@ -1,7 +1,7 @@
 # Refactor Plan: Recipe Loading and Rendering
 
-**Status:** In progress. Completed steps are ticked in section 7. The
-decisions in section 6 are still open.
+**Status:** In progress. Completed steps are ticked in section 7. Decisions
+1, 2, 5, and 10 are made (see section 6); the others are still open.
 **Date:** 2026-09-15, reviewed at commit `374b3df`.
 **Scope:** `lib/recipes.ts`, `types/recipe.ts`, `components/recipe-card.tsx`,
 `components/recipe-list.tsx`, `app/recipes/[id]/page.tsx`, and `app/page.tsx`
@@ -193,6 +193,16 @@ Each decision has a recommendation. Steps that depend on one say so.
 | 9 | Unmerged branches | Merge, rebase, or drop each one before Phase 3 | **Settle `feature/reimagined-ui` before Phase 3. Treat `dual/lang` as reference only** and rebuild translations after this refactor, since it targets the old data model anyway. |
 | 10 | Source of a recipe's id | Require `id` to equal the filename; derive the id from the filename and drop the field | **Require equality**, so each file stays self-describing. |
 
+**Decided on 2026-09-15:**
+
+- **1: Skip bad files with a warning**, not the recommendation. The build
+  succeeds without the skipped recipe. `npm run validate:data`, which CI runs
+  before every build, is what stops partial data from deploying.
+- **2: Hand-written `parseRecipe`**, as recommended.
+- **5: Title in Greek alphabetical order**, as recommended, then id, because
+  several real recipes share a title.
+- **10: Require `id` to equal the filename**, as recommended.
+
 ## 7. Checklist
 
 Rules for every step:
@@ -211,6 +221,8 @@ Rules for every step:
   - Change: fix the wording in `CLAUDE.md`, `CODEBASE_INDEX.md`, and both
     messages in `scripts/validate-recipes.mjs`.
   - Behavior: none. Fixes section 4.
+  - Note: steps 2.3 and 2.4 made this moot. The validator script is deleted,
+    and `CLAUDE.md` and `CODEBASE_INDEX.md` now describe the new skip behavior.
 - [ ] **0.2 Add a static export snapshot check**
   - Change: a script that runs after `next build` inside `npm run check`. It
     writes each route's markup with `<script>` tags removed, and asserts one
@@ -264,14 +276,14 @@ Rules for every step:
 
 ### Phase 2: Server Data Layer
 
-- [ ] **2.1 `server-only` guard**
+- [x] **2.1 `server-only` guard**
   - Change: add the `server-only` dependency and import it in
     `lib/recipes.ts`. Alias `server-only` to an empty stub in
     `vitest.config.mts`, because the real package throws outside Next's
     server build.
   - Behavior: none at runtime. Importing the loader from client code becomes
     a clear build error. Fixes D2.
-- [ ] **2.2 Loader internals and folder injection**
+- [x] **2.2 Loader internals and folder injection**
   - Change: add `createRecipeStore(dir)` and keep the three exported functions
     bound to `data/recipes`, resolved when called. Share one `readRecipeFile`
     helper. Add `getRecipeIds()`, implemented for now as the ids from
@@ -279,14 +291,14 @@ Rules for every step:
   - Behavior: none. The test helper switches from faking `cwd` to calling
     `createRecipeStore` with the temp folder, and assertions stay unedited.
     Fixes D5 and X4.
-- [ ] **2.3 Replace the validator script** (depends on 1.7 and decision 2)
+- [x] **2.3 Replace the validator script** (depends on 1.7 and decision 2)
   - Change: move the real-data checks into `lib/recipes.data.test.ts` using
     `parseRecipe`, keep the check that each image exists, point
     `validate:data` at that file, and delete `scripts/validate-recipes.mjs`
     and the duplicate `ShapeSpec`.
   - Behavior: tooling only. The same data problems are still reported.
     Fixes X3.
-- [ ] **2.4 Validate in the loader and fail loudly** (depends on 1.7, 2.2, and
+- [x] **2.4 Validate in the loader and fail loudly** (depends on 1.7, 2.2, and
   decision 1)
   - Change: the loader runs `parseRecipe` on every file. `getAllRecipes`
     throws a `RecipeDataError` naming the file. `getRecipeById` still returns
@@ -298,7 +310,13 @@ Rules for every step:
     file and a missing folder. Also "does not validate shape" and "does not
     throw when updatedAt is missing or unparseable".
   - Fixes B6, D3, D4, and T3.
-- [ ] **2.5 Require id to equal filename** (depends on 2.4 and decision 10)
+  - As built, following decision 1: `getAllRecipes` and `getRecipeById` skip
+    an unreadable, unparseable, or invalid file with a `console.warn` naming
+    the file and each problem, instead of throwing. The build succeeds without
+    that recipe. A missing `data/recipes` folder still logs an error and
+    returns `[]`. The tests listed above were updated to assert skipping and
+    warnings.
+- [x] **2.5 Require id to equal filename** (depends on 2.4 and decision 10)
   - Change: the loader rejects a file whose `id` differs from its filename,
     which lets `getRecipeIds()` read filenames only. Drop the optional
     chaining on `description` in search, since the field is now guaranteed.
@@ -307,14 +325,21 @@ Rules for every step:
   - Tests to update: "does not check that the id inside the file matches the
     requested id".
   - Fixes B5, T1, and T4.
-- [ ] **2.6 Reject ids that are not slugs**
+  - As built, following decision 1: a mismatched file is skipped with a
+    warning, so no link points to a missing page. `getRecipeIds()` still
+    returns the ids of the loaded recipes rather than bare filenames, because
+    listing filenames would create pages for skipped files. The id check is
+    `parseRecipe`'s `expectedId` option, which the data test uses too.
+- [x] **2.6 Reject ids that are not slugs**
   - Change: `getRecipeById` returns `undefined` for any id that isn't a
     lowercase, hyphenated slug.
   - Behavior: changes only for ids such as `../outside`.
   - Tests to update: "does not sanitize ids".
   - Fixes D6.
-- [ ] **2.7 Deterministic order** (depends on 1.6 and decision 5)
+- [x] **2.7 Deterministic order** (depends on 1.6 and decision 5)
   - Change: `compareRecipes` breaks ties by title using Greek collation.
+    As built, it then breaks ties by id, because several real recipes share a
+    title, for example three called "Έλα μου ντε???".
   - Behavior: changes. The home page order changes today.
   - Tests: add a tie-break test and update the comment on the real-data order
     test.

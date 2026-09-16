@@ -27,7 +27,7 @@ export function filterRecipes<T extends SearchableRecipe>(recipes: readonly T[],
   return recipes.filter((recipe) => {
     const matchesSearch =
       recipe.title.toLowerCase().includes(needle) ||
-      recipe.description?.toLowerCase().includes(needle) ||
+      recipe.description.toLowerCase().includes(needle) ||
       recipe.ingredients.some((ingredient) => ingredient.toLowerCase().includes(needle));
 
     const matchesCategory = category ? (recipe.category ?? FILTER_CATEGORY_FALLBACK) === category : true;

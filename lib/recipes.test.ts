@@ -1,18 +1,18 @@
 /**
  * Characterization tests for lib/recipes.ts.
  *
- * These lock down how recipes are loaded TODAY, including quirks that may not
- * be desirable. A test named "(current behavior)" documents a quirk: if a
+ * These lock down how recipes are loaded, including quirks that may not be
+ * desirable. A test named "(current behavior)" documents a quirk: if a
  * refactor changes it on purpose, update the test in the same change.
+ *
+ * Checks on the real files in data/recipes live in lib/recipes.data.test.ts.
  */
 import { promises as fs } from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { afterEach, beforeEach, describe, expect, expectTypeOf, it, vi } from "vitest";
-import { getAllRecipes, getRecipeById } from "@/lib/recipes";
-import type { Memory, Recipe } from "@/types/recipe";
-
-type RecipesModule = typeof import("@/lib/recipes");
+import { createRecipeStore, getAllRecipes, getRecipeById, getRecipeIds, type RecipeStore } from "@/lib/recipes";
+import type { Recipe } from "@/types/recipe";
 
 // ---------------------------------------------------------------------------
 // Fixture helpers
@@ -24,12 +24,14 @@ const LOG_MESSAGE = "Failed to read recipes directory";
 let projectRoot: string;
 let recipesDir: string;
 let errorSpy: ReturnType<typeof vi.spyOn>;
+let warnSpy: ReturnType<typeof vi.spyOn>;
 
 beforeEach(async () => {
   projectRoot = await fs.mkdtemp(path.join(os.tmpdir(), "recipes-test-"));
   recipesDir = path.join(projectRoot, "data", "recipes");
   await fs.mkdir(recipesDir, { recursive: true });
   errorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
+  warnSpy = vi.spyOn(console, "warn").mockImplementation(() => {});
 });
 
 afterEach(async () => {
@@ -37,19 +39,9 @@ afterEach(async () => {
   await fs.rm(projectRoot, { recursive: true, force: true });
 });
 
-/**
- * lib/recipes.ts computes `path.join(process.cwd(), "data", "recipes")` once,
- * when the module is first evaluated. To point it at a fixture directory we
- * fake cwd only while a fresh copy of the module is imported.
- */
-async function loadRecipesModule(cwd: string = projectRoot): Promise<RecipesModule> {
-  const cwdSpy = vi.spyOn(process, "cwd").mockReturnValue(cwd);
-  try {
-    vi.resetModules();
-    return await import("@/lib/recipes");
-  } finally {
-    cwdSpy.mockRestore();
-  }
+/** A store reading the fixture folder `<projectRoot>/data/recipes`. */
+function fixtureStore(): RecipeStore {
+  return createRecipeStore(recipesDir);
 }
 
 function makeRecipe(overrides: Partial<Recipe> & Pick<Recipe, "id">): Recipe {
@@ -78,71 +70,6 @@ async function realRecipeIds(): Promise<string[]> {
 }
 
 // ---------------------------------------------------------------------------
-// Runtime mirror of types/recipe.ts
-//
-// ShapeSpec<T> must list every key of T, with `required` matching whether the
-// key is optional in T. Adding, removing, or changing the optionality of a
-// field in types/recipe.ts makes this file fail `npm run typecheck` until the
-// spec below is updated.
-// ---------------------------------------------------------------------------
-
-type RequiredKeys<T> = {
-  [K in keyof T]-?: Partial<Pick<T, K>> extends Pick<T, K> ? never : K;
-}[keyof T];
-
-type FieldRule = (value: unknown) => boolean;
-
-type ShapeSpec<T> = {
-  [K in keyof T]-?: { required: K extends RequiredKeys<T> ? true : false; valid: FieldRule };
-};
-
-const isString: FieldRule = (v) => typeof v === "string";
-const isStringArray: FieldRule = (v) => Array.isArray(v) && v.every((item) => typeof item === "string");
-const isNumber: FieldRule = (v) => typeof v === "number" && Number.isFinite(v);
-const isPlainObject = (v: unknown): v is Record<string, unknown> =>
-  typeof v === "object" && v !== null && !Array.isArray(v);
-
-const memorySpec: ShapeSpec<Memory> = {
-  title: { required: true, valid: isString },
-  story: { required: true, valid: isString },
-  date: { required: false, valid: isString },
-};
-
-const recipeSpec: ShapeSpec<Recipe> = {
-  id: { required: true, valid: isString },
-  title: { required: true, valid: isString },
-  description: { required: true, valid: isString },
-  ingredients: { required: true, valid: isStringArray },
-  steps: { required: true, valid: isStringArray },
-  memory: { required: false, valid: (v) => isPlainObject(v) && shapeErrors(v, memorySpec).length === 0 },
-  imageUrl: { required: false, valid: isString },
-  category: { required: false, valid: isString },
-  prepTime: { required: false, valid: isString },
-  cookTime: { required: false, valid: isString },
-  servings: { required: false, valid: isNumber },
-  createdAt: { required: true, valid: isString },
-  updatedAt: { required: true, valid: isString },
-};
-
-function shapeErrors<T>(value: unknown, spec: ShapeSpec<T>): string[] {
-  if (!isPlainObject(value)) return ["not an object"];
-  const rules = Object.entries(spec) as [string, { required: boolean; valid: FieldRule }][];
-  const errors: string[] = [];
-  for (const [key, rule] of rules) {
-    if (!(key in value)) {
-      if (rule.required) errors.push(`missing required field "${key}"`);
-    } else if (!rule.valid(value[key])) {
-      errors.push(`field "${key}" has the wrong type`);
-    }
-  }
-  const known = new Set(rules.map(([key]) => key));
-  for (const key of Object.keys(value)) {
-    if (!known.has(key)) errors.push(`unexpected field "${key}"`);
-  }
-  return errors;
-}
-
-// ---------------------------------------------------------------------------
 // 1. Loading an individual recipe by id
 // ---------------------------------------------------------------------------
 
@@ -158,7 +85,7 @@ describe("getRecipeById: loading one recipe", () => {
       servings: 4,
     });
     await writeRecipe(stored);
-    const { getRecipeById } = await loadRecipesModule();
+    const { getRecipeById } = fixtureStore();
 
     await expect(getRecipeById("gemista")).resolves.toEqual(stored);
   });
@@ -166,7 +93,7 @@ describe("getRecipeById: loading one recipe", () => {
   it("returns fields exactly as stored, without adding defaults for optional fields", async () => {
     const stored = makeRecipe({ id: "minimal" });
     await writeRecipe(stored);
-    const { getRecipeById } = await loadRecipesModule();
+    const { getRecipeById } = fixtureStore();
 
     const result = await getRecipeById("minimal");
 
@@ -176,7 +103,7 @@ describe("getRecipeById: loading one recipe", () => {
 
   it("reads the file on every call, with no caching", async () => {
     await writeRecipe(makeRecipe({ id: "soup", title: "Before" }));
-    const { getRecipeById } = await loadRecipesModule();
+    const { getRecipeById } = fixtureStore();
 
     const first = await getRecipeById("soup");
     await writeRecipe(makeRecipe({ id: "soup", title: "After" }));
@@ -190,33 +117,39 @@ describe("getRecipeById: loading one recipe", () => {
   it("does not require other recipe files to be valid", async () => {
     await writeRecipe(makeRecipe({ id: "good" }));
     await writeRaw("broken.json", "{ not json");
-    const { getRecipeById } = await loadRecipesModule();
+    const { getRecipeById } = fixtureStore();
 
     await expect(getRecipeById("good")).resolves.toMatchObject({ id: "good" });
   });
 
-  it("does not check that the id inside the file matches the requested id (current behavior)", async () => {
+  it("returns undefined and warns when the id inside the file differs from the file name", async () => {
     await writeRaw("alpha.json", JSON.stringify(makeRecipe({ id: "beta" })));
-    const { getRecipeById } = await loadRecipesModule();
+    const { getRecipeById } = fixtureStore();
 
-    await expect(getRecipeById("alpha")).resolves.toMatchObject({ id: "beta" });
+    await expect(getRecipeById("alpha")).resolves.toBeUndefined();
+    expect(warnSpy).toHaveBeenCalledWith(expect.stringContaining('id "beta" must match filename "alpha"'));
   });
 
-  it("appends .json to the id verbatim, so an id that already ends in .json is not found (current behavior)", async () => {
+  it("does not find an id that already ends in .json", async () => {
     await writeRecipe(makeRecipe({ id: "pastitsio" }));
-    const { getRecipeById } = await loadRecipesModule();
+    const { getRecipeById } = fixtureStore();
 
     await expect(getRecipeById("pastitsio.json")).resolves.toBeUndefined();
   });
 
-  it("does not sanitize ids, so '../' segments resolve outside data/recipes (current behavior)", async () => {
+  it("returns undefined for ids that are not lowercase slugs, without reading any file", async () => {
     await fs.writeFile(
       path.join(projectRoot, "data", "outside.json"),
       JSON.stringify(makeRecipe({ id: "outside" })),
     );
-    const { getRecipeById } = await loadRecipesModule();
+    await writeRaw("Upper_Case.json", JSON.stringify(makeRecipe({ id: "upper-case" })));
+    const { getRecipeById } = fixtureStore();
 
-    await expect(getRecipeById("../outside")).resolves.toMatchObject({ id: "outside" });
+    await expect(getRecipeById("../outside")).resolves.toBeUndefined();
+    await expect(getRecipeById("Upper_Case")).resolves.toBeUndefined();
+    await expect(getRecipeById("")).resolves.toBeUndefined();
+    // Reading Upper_Case.json would have warned about the id mismatch.
+    expect(warnSpy).not.toHaveBeenCalled();
   });
 
   it("loads every real recipe in data/recipes by its id", async () => {
@@ -240,7 +173,7 @@ describe("getAllRecipes: loading every recipe", () => {
     const b = makeRecipe({ id: "b", updatedAt: "2026-02-01T00:00:00.000Z" });
     await writeRecipe(a);
     await writeRecipe(b);
-    const { getAllRecipes } = await loadRecipesModule();
+    const { getAllRecipes } = fixtureStore();
 
     await expect(getAllRecipes()).resolves.toEqual([b, a]);
   });
@@ -251,7 +184,7 @@ describe("getAllRecipes: loading every recipe", () => {
     await writeRaw("notes.txt", "not a recipe");
     await writeRaw("draft.json.bak", "{ not json");
     await writeRaw("SHOUTING.JSON", "{ not json");
-    const { getAllRecipes } = await loadRecipesModule();
+    const { getAllRecipes } = fixtureStore();
 
     const result = await getAllRecipes();
 
@@ -263,7 +196,7 @@ describe("getAllRecipes: loading every recipe", () => {
     await writeRecipe(makeRecipe({ id: "a-oldest", updatedAt: "2025-01-01T00:00:00.000Z" }));
     await writeRecipe(makeRecipe({ id: "b-newest", updatedAt: "2026-06-01T00:00:00.000Z" }));
     await writeRecipe(makeRecipe({ id: "c-middle", updatedAt: "2025-09-01T00:00:00.000Z" }));
-    const { getAllRecipes } = await loadRecipesModule();
+    const { getAllRecipes } = fixtureStore();
 
     const result = await getAllRecipes();
 
@@ -274,7 +207,7 @@ describe("getAllRecipes: loading every recipe", () => {
     // As strings "2026-03-01..." > "2026-02-28...", but as instants 22:00Z is before 23:30Z.
     await writeRecipe(makeRecipe({ id: "offset", updatedAt: "2026-03-01T00:00:00+02:00" }));
     await writeRecipe(makeRecipe({ id: "utc", updatedAt: "2026-02-28T23:30:00Z" }));
-    const { getAllRecipes } = await loadRecipesModule();
+    const { getAllRecipes } = fixtureStore();
 
     const result = await getAllRecipes();
 
@@ -285,15 +218,29 @@ describe("getAllRecipes: loading every recipe", () => {
     // File names sort opposite to the expected result, so this cannot pass by directory order.
     await writeRecipe(makeRecipe({ id: "a-created-late", createdAt: "2026-12-01T00:00:00Z", updatedAt: "2026-01-01T00:00:00Z" }));
     await writeRecipe(makeRecipe({ id: "b-created-early", createdAt: "2020-01-01T00:00:00Z", updatedAt: "2026-02-01T00:00:00Z" }));
-    const { getAllRecipes } = await loadRecipesModule();
+    const { getAllRecipes } = fixtureStore();
 
     const result = await getAllRecipes();
 
     expect(result.map((r) => r.id)).toEqual(["b-created-early", "a-created-late"]);
   });
 
+  it("breaks updatedAt ties by title in Greek alphabetical order, then by id", async () => {
+    // File names sort differently from the expected result, so this cannot pass by directory order.
+    await writeRecipe(makeRecipe({ id: "a-omega", title: "Ωραίο" }));
+    await writeRecipe(makeRecipe({ id: "b-accent", title: "Άλλο" }));
+    await writeRecipe(makeRecipe({ id: "d-same", title: "Βραστό" }));
+    await writeRecipe(makeRecipe({ id: "c-same", title: "Βραστό" }));
+    await writeRecipe(makeRecipe({ id: "e-newer", title: "Ωραίο", updatedAt: "2026-02-01T00:00:00.000Z" }));
+    const { getAllRecipes } = fixtureStore();
+
+    const result = await getAllRecipes();
+
+    expect(result.map((r) => r.id)).toEqual(["e-newer", "b-accent", "c-same", "d-same", "a-omega"]);
+  });
+
   it("returns an empty array for an empty directory, without logging", async () => {
-    const { getAllRecipes } = await loadRecipesModule();
+    const { getAllRecipes } = fixtureStore();
 
     await expect(getAllRecipes()).resolves.toEqual([]);
     expect(errorSpy).not.toHaveBeenCalled();
@@ -301,7 +248,7 @@ describe("getAllRecipes: loading every recipe", () => {
 
   it("re-reads the directory on every call, with no caching", async () => {
     await writeRecipe(makeRecipe({ id: "first" }));
-    const { getAllRecipes } = await loadRecipesModule();
+    const { getAllRecipes } = fixtureStore();
 
     const before = await getAllRecipes();
     await writeRecipe(makeRecipe({ id: "second" }));
@@ -311,30 +258,49 @@ describe("getAllRecipes: loading every recipe", () => {
     expect(after).toHaveLength(2);
   });
 
-  it("does not validate shape: incomplete or extra fields are returned as-is (current behavior)", async () => {
-    const partial = { id: "partial", updatedAt: "2026-01-01T00:00:00Z", unexpected: true };
-    await writeRaw("partial.json", JSON.stringify(partial));
-    const { getAllRecipes } = await loadRecipesModule();
+  it("skips a file that fails validation and warns once, naming the file and every problem", async () => {
+    const good = makeRecipe({ id: "good" });
+    await writeRecipe(good);
+    await writeRaw("partial.json", JSON.stringify({ id: "partial", updatedAt: "2026-01-01T00:00:00Z", unexpected: true }));
+    const { getAllRecipes } = fixtureStore();
 
-    await expect(getAllRecipes()).resolves.toEqual([partial]);
+    await expect(getAllRecipes()).resolves.toEqual([good]);
+    expect(warnSpy).toHaveBeenCalledTimes(1);
+    expect(warnSpy).toHaveBeenCalledWith(expect.stringMatching(/^Skipping recipe: .*partial\.json is not a valid recipe:/));
+    expect(warnSpy).toHaveBeenCalledWith(expect.stringContaining('unknown field "unexpected"'));
+    expect(warnSpy).toHaveBeenCalledWith(expect.stringContaining("title must be a non-empty string"));
+    expect(errorSpy).not.toHaveBeenCalled();
   });
 
-  it("does not throw when updatedAt is missing or unparseable (current behavior)", async () => {
+  it("skips recipes whose updatedAt is missing or unparseable", async () => {
     await writeRecipe(makeRecipe({ id: "valid-date", updatedAt: "2026-01-01T00:00:00Z" }));
     await writeRecipe(makeRecipe({ id: "bad-date", updatedAt: "not a date" }));
     const noDate: Partial<Recipe> = makeRecipe({ id: "no-date" });
     delete noDate.updatedAt;
     await writeRaw("no-date.json", JSON.stringify(noDate));
-    const { getAllRecipes } = await loadRecipesModule();
+    const { getAllRecipes } = fixtureStore();
 
     const result = await getAllRecipes();
 
-    // NaN comparisons leave the order unspecified, so only membership is locked down.
-    expect(result.map((r) => r.id).sort()).toEqual(["bad-date", "no-date", "valid-date"]);
+    expect(result.map((r) => r.id)).toEqual(["valid-date"]);
+    expect(warnSpy).toHaveBeenCalledTimes(2);
     expect(errorSpy).not.toHaveBeenCalled();
   });
 
+  it("skips a file whose id differs from its file name, so no link points to a missing page", async () => {
+    await writeRecipe(makeRecipe({ id: "good" }));
+    await writeRaw("alpha.json", JSON.stringify(makeRecipe({ id: "beta" })));
+    const { getAllRecipes } = fixtureStore();
+
+    await expect(getAllRecipes()).resolves.toEqual([makeRecipe({ id: "good" })]);
+    expect(warnSpy).toHaveBeenCalledWith(expect.stringContaining('id "beta" must match filename "alpha"'));
+  });
+
   it("declares Recipe-typed signatures (checked by npm run typecheck)", () => {
+    expectTypeOf(createRecipeStore).parameters.toEqualTypeOf<[dir: string]>();
+    expectTypeOf(createRecipeStore).returns.toEqualTypeOf<RecipeStore>();
+    expectTypeOf(getRecipeIds).parameters.toEqualTypeOf<[]>();
+    expectTypeOf(getRecipeIds).returns.resolves.toEqualTypeOf<string[]>();
     expectTypeOf(getAllRecipes).parameters.toEqualTypeOf<[]>();
     expectTypeOf(getAllRecipes).returns.resolves.toEqualTypeOf<Recipe[]>();
     expectTypeOf(getRecipeById).parameters.toEqualTypeOf<[id: string]>();
@@ -342,21 +308,28 @@ describe("getAllRecipes: loading every recipe", () => {
   });
 });
 
-describe("shape consistency of real data against the Recipe type", () => {
-  it("the shape checker itself rejects recipes that break the Recipe type", () => {
-    const valid = makeRecipe({ id: "ok", memory: { title: "t", story: "s" } });
-    expect(shapeErrors(valid, recipeSpec)).toEqual([]);
+describe("getRecipeIds", () => {
+  it("returns the ids of the loaded recipes, in the same order, leaving out skipped files", async () => {
+    await writeRecipe(makeRecipe({ id: "older", updatedAt: "2025-01-01T00:00:00.000Z" }));
+    await writeRecipe(makeRecipe({ id: "newer", updatedAt: "2026-01-01T00:00:00.000Z" }));
+    await writeRaw("broken.json", "{ not json");
+    const { getRecipeIds } = fixtureStore();
 
-    const broken = { ...valid, servings: "4", memory: { title: "t" }, extra: 1 } as unknown;
-    delete (broken as Record<string, unknown>).steps;
-    expect(shapeErrors(broken, recipeSpec)).toEqual([
-      'missing required field "steps"',
-      'field "memory" has the wrong type',
-      'field "servings" has the wrong type',
-      'unexpected field "extra"',
-    ]);
+    await expect(getRecipeIds()).resolves.toEqual(["newer", "older"]);
   });
+});
 
+describe("default store", () => {
+  it("resolves data/recipes from process.cwd() on each call, not when the module is imported", async () => {
+    await writeRecipe(makeRecipe({ id: "from-fixture" }));
+    vi.spyOn(process, "cwd").mockReturnValue(projectRoot);
+
+    await expect(getRecipeIds()).resolves.toEqual(["from-fixture"]);
+    await expect(getRecipeById("from-fixture")).resolves.toMatchObject({ id: "from-fixture" });
+  });
+});
+
+describe("real data in data/recipes", () => {
   it("returns exactly one recipe per .json file in data/recipes", async () => {
     const ids = await realRecipeIds();
     const recipes = await getAllRecipes();
@@ -364,30 +337,11 @@ describe("shape consistency of real data against the Recipe type", () => {
     expect(ids.length).toBeGreaterThan(0);
     expect(recipes.map((r) => r.id).sort()).toEqual([...ids].sort());
     expect(errorSpy).not.toHaveBeenCalled();
-  });
-
-  it("every recipe matches the Recipe and Memory interfaces, with no extra fields", async () => {
-    const recipes = await getAllRecipes();
-
-    const problems = recipes.flatMap((recipe) =>
-      shapeErrors(recipe, recipeSpec).map((problem) => `${recipe.id}: ${problem}`),
-    );
-
-    expect(problems).toEqual([]);
-  });
-
-  it("every recipe has parseable createdAt and updatedAt timestamps", async () => {
-    const recipes = await getAllRecipes();
-
-    const unparseable = recipes.filter(
-      (r) => Number.isNaN(Date.parse(r.createdAt)) || Number.isNaN(Date.parse(r.updatedAt)),
-    );
-
-    expect(unparseable.map((r) => r.id)).toEqual([]);
+    expect(warnSpy).not.toHaveBeenCalled();
   });
 
   // Note: today all real recipes share one updatedAt value, so this passes trivially and the
-  // rendered order is really the filesystem's readdir order. The fixture sort tests above are
+  // rendered order comes from the title and id tie-breaks. The fixture sort tests above are
   // the ones that lock down sorting.
   it("is sorted by updatedAt, newest first", async () => {
     const times = (await getAllRecipes()).map((r) => Date.parse(r.updatedAt));
@@ -410,114 +364,123 @@ describe("shape consistency of real data against the Recipe type", () => {
 
 describe("missing or invalid data: getRecipeById", () => {
   it("returns undefined for an id with no file, without logging", async () => {
-    const { getRecipeById } = await loadRecipesModule();
+    const { getRecipeById } = fixtureStore();
 
     await expect(getRecipeById("does-not-exist")).resolves.toBeUndefined();
     expect(errorSpy).not.toHaveBeenCalled();
+    expect(warnSpy).not.toHaveBeenCalled();
   });
 
-  it("returns undefined when the file contains invalid JSON, without logging", async () => {
+  it("returns undefined and warns when the file contains invalid JSON", async () => {
     await writeRaw("broken.json", '{ "id": "broken", ');
-    const { getRecipeById } = await loadRecipesModule();
+    const { getRecipeById } = fixtureStore();
 
     await expect(getRecipeById("broken")).resolves.toBeUndefined();
     expect(errorSpy).not.toHaveBeenCalled();
+    expect(warnSpy).toHaveBeenCalledWith(expect.stringMatching(/broken\.json is not a valid recipe:\n {2}- invalid JSON: /));
   });
 
-  it("returns undefined when the file is empty", async () => {
+  it("returns undefined and warns when the file is empty", async () => {
     await writeRaw("empty.json", "");
-    const { getRecipeById } = await loadRecipesModule();
+    const { getRecipeById } = fixtureStore();
 
     await expect(getRecipeById("empty")).resolves.toBeUndefined();
+    expect(warnSpy).toHaveBeenCalledWith(expect.stringContaining("invalid JSON"));
   });
 
-  it("returns undefined when data/recipes does not exist", async () => {
+  it("returns undefined when data/recipes does not exist, without logging", async () => {
     await fs.rm(recipesDir, { recursive: true });
-    const { getRecipeById } = await loadRecipesModule();
+    const { getRecipeById } = fixtureStore();
 
     await expect(getRecipeById("anything")).resolves.toBeUndefined();
     expect(errorSpy).not.toHaveBeenCalled();
+    expect(warnSpy).not.toHaveBeenCalled();
   });
 
-  it("returns undefined when <id>.json is a directory", async () => {
+  it("returns undefined and warns when <id>.json is a directory", async () => {
     await fs.mkdir(path.join(recipesDir, "folder.json"));
-    const { getRecipeById } = await loadRecipesModule();
+    const { getRecipeById } = fixtureStore();
 
     await expect(getRecipeById("folder")).resolves.toBeUndefined();
+    expect(warnSpy).toHaveBeenCalledWith(expect.stringContaining("could not be read: EISDIR"));
   });
 
-  it("returns valid non-recipe JSON such as null as-is instead of undefined (current behavior)", async () => {
+  it("returns undefined and warns for valid JSON that is not a recipe object, such as null or an array", async () => {
     await writeRaw("null.json", "null");
     await writeRaw("array.json", "[1, 2, 3]");
-    const { getRecipeById } = await loadRecipesModule();
+    const { getRecipeById } = fixtureStore();
 
-    await expect(getRecipeById("null")).resolves.toBeNull();
-    await expect(getRecipeById("array")).resolves.toEqual([1, 2, 3]);
+    await expect(getRecipeById("null")).resolves.toBeUndefined();
+    await expect(getRecipeById("array")).resolves.toBeUndefined();
+    expect(warnSpy).toHaveBeenCalledTimes(2);
+    expect(warnSpy).toHaveBeenCalledWith(expect.stringContaining("top-level value must be an object"));
   });
 });
 
 describe("missing or invalid data: getAllRecipes", () => {
   it("returns [] and logs once when data/recipes does not exist", async () => {
     await fs.rm(recipesDir, { recursive: true });
-    const { getAllRecipes } = await loadRecipesModule();
+    const { getAllRecipes } = fixtureStore();
 
     await expect(getAllRecipes()).resolves.toEqual([]);
     expect(errorSpy).toHaveBeenCalledTimes(1);
     expect(errorSpy).toHaveBeenCalledWith(LOG_MESSAGE, expect.objectContaining({ code: "ENOENT" }));
   });
 
-  it("discards every recipe when one file has invalid JSON: returns [] and logs a SyntaxError (current behavior)", async () => {
+  it("skips a file with invalid JSON, keeps the other recipes, and warns once", async () => {
     await writeRecipe(makeRecipe({ id: "good-1" }));
     await writeRecipe(makeRecipe({ id: "good-2" }));
     await writeRaw("broken.json", '{ "id": "broken", ');
-    const { getAllRecipes } = await loadRecipesModule();
+    const { getAllRecipes } = fixtureStore();
 
-    await expect(getAllRecipes()).resolves.toEqual([]);
-    expect(errorSpy).toHaveBeenCalledTimes(1);
-    expect(errorSpy).toHaveBeenCalledWith(LOG_MESSAGE, expect.any(SyntaxError));
+    await expect(getAllRecipes()).resolves.toEqual([makeRecipe({ id: "good-1" }), makeRecipe({ id: "good-2" })]);
+    expect(errorSpy).not.toHaveBeenCalled();
+    expect(warnSpy).toHaveBeenCalledTimes(1);
+    expect(warnSpy).toHaveBeenCalledWith(expect.stringMatching(/broken\.json is not a valid recipe:\n {2}- invalid JSON: /));
   });
 
-  it("discards every recipe when one .json file is empty (current behavior)", async () => {
+  it("skips an empty .json file and keeps the other recipes", async () => {
     await writeRecipe(makeRecipe({ id: "good" }));
     await writeRaw("empty.json", "");
-    const { getAllRecipes } = await loadRecipesModule();
+    const { getAllRecipes } = fixtureStore();
 
-    await expect(getAllRecipes()).resolves.toEqual([]);
-    expect(errorSpy).toHaveBeenCalledWith(LOG_MESSAGE, expect.any(SyntaxError));
+    await expect(getAllRecipes()).resolves.toEqual([makeRecipe({ id: "good" })]);
+    expect(warnSpy).toHaveBeenCalledWith(expect.stringContaining("empty.json is not a valid recipe"));
   });
 
-  it("discards every recipe when a directory name ends in .json (current behavior)", async () => {
+  it("skips a directory whose name ends in .json and keeps the other recipes", async () => {
     await writeRecipe(makeRecipe({ id: "good" }));
     await fs.mkdir(path.join(recipesDir, "folder.json"));
-    const { getAllRecipes } = await loadRecipesModule();
+    const { getAllRecipes } = fixtureStore();
 
-    await expect(getAllRecipes()).resolves.toEqual([]);
-    expect(errorSpy).toHaveBeenCalledWith(LOG_MESSAGE, expect.objectContaining({ code: "EISDIR" }));
+    await expect(getAllRecipes()).resolves.toEqual([makeRecipe({ id: "good" })]);
+    expect(warnSpy).toHaveBeenCalledWith(expect.stringContaining("could not be read: EISDIR"));
   });
 
-  it("returns a lone null file as [null], because the sort comparator never runs (current behavior)", async () => {
+  it("skips a lone null file and returns []", async () => {
     await writeRaw("null.json", "null");
-    const { getAllRecipes } = await loadRecipesModule();
+    const { getAllRecipes } = fixtureStore();
 
-    await expect(getAllRecipes()).resolves.toEqual([null]);
+    await expect(getAllRecipes()).resolves.toEqual([]);
+    expect(errorSpy).not.toHaveBeenCalled();
+    expect(warnSpy).toHaveBeenCalledWith(expect.stringContaining("top-level value must be an object"));
+  });
+
+  it("skips a null file next to a real recipe and keeps the recipe", async () => {
+    await writeRecipe(makeRecipe({ id: "good" }));
+    await writeRaw("null.json", "null");
+    const { getAllRecipes } = fixtureStore();
+
+    await expect(getAllRecipes()).resolves.toEqual([makeRecipe({ id: "good" })]);
     expect(errorSpy).not.toHaveBeenCalled();
   });
 
-  it("discards every recipe when a null file sits next to a real recipe, because sorting throws (current behavior)", async () => {
-    await writeRecipe(makeRecipe({ id: "good" }));
-    await writeRaw("null.json", "null");
-    const { getAllRecipes } = await loadRecipesModule();
-
-    await expect(getAllRecipes()).resolves.toEqual([]);
-    expect(errorSpy).toHaveBeenCalledWith(LOG_MESSAGE, expect.any(TypeError));
-  });
-
-  it("a broken file breaks getAllRecipes but not getRecipeById for other ids", async () => {
+  it("a broken file is skipped by getAllRecipes and does not affect getRecipeById for other ids", async () => {
     await writeRecipe(makeRecipe({ id: "good" }));
     await writeRaw("broken.json", "{ not json");
-    const { getAllRecipes, getRecipeById } = await loadRecipesModule();
+    const { getAllRecipes, getRecipeById } = fixtureStore();
 
-    await expect(getAllRecipes()).resolves.toEqual([]);
+    await expect(getAllRecipes()).resolves.toEqual([makeRecipe({ id: "good" })]);
     await expect(getRecipeById("good")).resolves.toMatchObject({ id: "good" });
   });
 });

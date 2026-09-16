@@ -14,13 +14,20 @@ export function formatIngredientCount(count: number): string {
   return `${count} υλικά`;
 }
 
+const titleCollator = new Intl.Collator("el");
+
 /**
  * Newest `updatedAt` first, comparing parsed instants rather than strings.
- * Recipes with equal timestamps compare as 0, so their order is left to the
- * sort, and unparseable timestamps compare as NaN.
+ * Ties, including unparseable timestamps, fall back to the title in Greek
+ * alphabetical order and then to the id, so the order never depends on the
+ * filesystem.
  */
 export function compareRecipes(a: Recipe, b: Recipe): number {
-  return new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime();
+  return (
+    new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime() ||
+    titleCollator.compare(a.title, b.title) ||
+    (a.id < b.id ? -1 : a.id > b.id ? 1 : 0)
+  );
 }
 
 /** Keeps only what the recipe list and cards render. Optional fields stay absent when missing. */

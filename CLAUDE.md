@@ -25,9 +25,10 @@ npm run start          # serve out/ locally; `next start` does NOT work with sta
 ## Tests
 
 - Vitest, node environment, config in `vitest.config.mts`. Test files are `*.test.ts` next to the code they cover.
-- `lib/recipes.test.ts` holds **characterization tests** for the recipe loader. They lock down current behavior, including quirks. Tests named "(current behavior)" document quirks such as one bad recipe file making `getAllRecipes` return `[]`. If you change one of these behaviors on purpose, update the matching test in the same change and say so.
-- Fixture tests write temp files and fake `process.cwd()` while re-importing `lib/recipes.ts`, because that module resolves `data/recipes` once at import time.
-- `ShapeSpec<Recipe>` in that test file and `RECIPE_FIELDS` in `lib/recipe-schema.ts` mirror `types/recipe.ts`. Changing the `Recipe` type fails `npm run typecheck` until both are updated.
+- `lib/recipes.test.ts` holds **characterization tests** for the recipe loader. They lock down current behavior, including quirks. Tests named "(current behavior)" document quirks, such as accent-sensitive search in `lib/recipe-search.test.ts`. If you change one of these behaviors on purpose, update the matching test in the same change and say so.
+- Loader fixture tests write temp files and call `createRecipeStore(tempDir)`.
+- `lib/recipes.data.test.ts` validates the real files in `data/recipes`, including that each image exists. `npm run validate:data` runs only that file.
+- `RECIPE_FIELDS` in `lib/recipe-schema.ts` mirrors `types/recipe.ts`. Changing the `Recipe` type fails `npm run typecheck` until it is updated.
 
 ## Hard constraints
 
@@ -39,9 +40,9 @@ npm run start          # serve out/ locally; `next start` does NOT work with sta
 ## Recipe data
 
 - One recipe per file: `data/recipes/<id>.json`. The filename must equal the `id` field. Ids are lowercase Greeklish slugs.
-- Shape is `Recipe` in `types/recipe.ts`. If you change the shape, update `scripts/validate-recipes.mjs` and `lib/recipe-schema.ts` too.
+- Shape is `Recipe` in `types/recipe.ts`. If you change the shape, update `parseRecipe` in `lib/recipe-schema.ts` too.
 - Images live at `public/images/recipes/<id>.jpg` and are referenced as `"/images/recipes/<id>.jpg"`.
-- `lib/recipes.ts` reads files at build time and **silently returns an empty list on any read or parse error**. A broken JSON file still builds and would deploy an empty site. Always run `npm run validate:data` after touching recipe data.
+- `lib/recipes.ts` validates each file with `parseRecipe` at build time. **An invalid file, or one whose `id` differs from its filename, is skipped with a console warning, and the build still succeeds without that recipe.** `npm run validate:data` fails on such files and CI runs it before building, so always run it after touching recipe data.
 - All user-facing copy is Greek (`<html lang="el">`). Keep new UI text in Greek.
 
 ## Do not run
@@ -58,6 +59,7 @@ These are one-off seeding scripts kept for history. They are blocked in `.claude
 - Styling is inline Tailwind classes. Shared utility classes `glass-panel` and `glass-card` live in `app/globals.css`.
 - Icons come from `lucide-react`. Animations use `framer-motion` or the Tailwind keyframes in `tailwind.config.ts`.
 - Import via the `@/` alias, which maps to the repo root.
+- `lib/recipes.ts` imports `server-only`, so only server code in `app/` may import it. Client components get data as props. Pure helpers in `lib/` (`recipe-view`, `recipe-search`, `recipe-schema`, `base-path`) are safe on either side.
 
 ## Git workflow
 

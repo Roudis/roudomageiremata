@@ -10,7 +10,7 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "validate:data": "node scripts/validate-recipes.mjs",
+    "validate:data": "vitest run lib/recipes.data.test.ts",
     "changelog": "node scripts/generate-changelog.mjs",
     "changelog:check": "node scripts/generate-changelog.mjs --check",
     "check": "npm run lint && npm run typecheck && npm run test && npm run validate:data && npm run build"
@@ -20,7 +20,8 @@
     "lucide-react": "^1.31.0",
     "next": "14.2.35",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "server-only": "^0.0.1"
   },
   "devDependencies": {
     "@types/node": "^20",

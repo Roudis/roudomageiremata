@@ -1,7 +1,11 @@
-import { promises as fs } from "node:fs";
-import path from "node:path";
 import { describe, expect, expectTypeOf, it } from "vitest";
-import { RecipeDataError, parseRecipe, type RecipeDataIssue } from "@/lib/recipe-schema";
+import {
+  RecipeDataError,
+  isRecipeId,
+  parseRecipe,
+  type ParseRecipeOptions,
+  type RecipeDataIssue,
+} from "@/lib/recipe-schema";
 import type { Recipe } from "@/types/recipe";
 
 const SOURCE = "data/recipes/gemista.json";
@@ -31,9 +35,9 @@ function fullRecipe(): Record<string, unknown> {
 }
 
 /** Runs parseRecipe and returns the issues it throws, or [] if it accepts the value. */
-function issuesFor(value: unknown): RecipeDataIssue[] {
+function issuesFor(value: unknown, options?: ParseRecipeOptions): RecipeDataIssue[] {
   try {
-    parseRecipe(value, SOURCE);
+    parseRecipe(value, SOURCE, options);
     return [];
   } catch (error) {
     if (!(error instanceof RecipeDataError)) throw error;
@@ -64,8 +68,12 @@ describe("parseRecipe: valid data", () => {
     expect(fieldsOf({ ...validRecipe(), createdAt: "August 10, 2026", updatedAt: "2026-08-10" })).toEqual([]);
   });
 
-  it("does not check that the id matches the source file name, which is left to the caller", () => {
+  it("does not compare the id with the source file name unless expectedId is given", () => {
     expect(parseRecipe(validRecipe(), "data/recipes/something-else.json")).toMatchObject({ id: "gemista" });
+  });
+
+  it("accepts an id equal to expectedId", () => {
+    expect(issuesFor(validRecipe(), { expectedId: "gemista" })).toEqual([]);
   });
 
   it("does not check that imageUrl exists on disk, which is left to the caller", () => {
@@ -73,7 +81,7 @@ describe("parseRecipe: valid data", () => {
   });
 
   it("is typed to return a Recipe (checked by npm run typecheck)", () => {
-    expectTypeOf(parseRecipe).parameters.toEqualTypeOf<[value: unknown, source: string]>();
+    expectTypeOf(parseRecipe).parameters.toEqualTypeOf<[value: unknown, source: string, options?: ParseRecipeOptions]>();
     expectTypeOf(parseRecipe).returns.toEqualTypeOf<Recipe>();
   });
 });
@@ -110,6 +118,23 @@ describe("parseRecipe: invalid data", () => {
     ["a number", 7],
   ])("rejects an id with %s", (_label, id) => {
     expect(issuesFor({ ...validRecipe(), id })).toEqual([{ field: "id", message: "id must be a lowercase-hyphen slug" }]);
+  });
+
+  it("rejects an id that differs from expectedId, alongside other problems", () => {
+    expect(issuesFor({ ...validRecipe(), id: "beta", title: "" }, { expectedId: "alpha" })).toEqual([
+      { field: "id", message: 'id "beta" must match filename "alpha"' },
+      { field: "title", message: "title must be a non-empty string" },
+    ]);
+  });
+
+  it("reports both problems when the id is missing and expectedId is given", () => {
+    const value = validRecipe();
+    delete value.id;
+
+    expect(issuesFor(value, { expectedId: "gemista" })).toEqual([
+      { field: "id", message: "id must be a lowercase-hyphen slug" },
+      { field: "id", message: 'id "undefined" must match filename "gemista"' },
+    ]);
   });
 
   it.each([
@@ -228,15 +253,20 @@ describe("RecipeDataError", () => {
   });
 });
 
-describe("parseRecipe: real data", () => {
-  it("accepts every recipe in data/recipes", async () => {
-    const dir = path.join(process.cwd(), "data", "recipes");
-    const files = (await fs.readdir(dir)).filter((file) => file.endsWith(".json"));
-    expect(files.length).toBeGreaterThan(0);
+describe("isRecipeId", () => {
+  it.each(["gemista", "ela-moy-nte-1", "a", "123"])("accepts %s", (id) => {
+    expect(isRecipeId(id)).toBe(true);
+  });
 
-    for (const file of files) {
-      const value: unknown = JSON.parse(await fs.readFile(path.join(dir, file), "utf8"));
-      expect(() => parseRecipe(value, file), file).not.toThrow();
-    }
+  it.each(["", "Gemista", "gemista_2", "-gemista", "gemista-", "gemista--2", "../gemista", "gemista.json", "γεμιστά"])(
+    "rejects %j",
+    (id) => {
+      expect(isRecipeId(id)).toBe(false);
+    },
+  );
+
+  it("rejects values that are not strings", () => {
+    expect(isRecipeId(7)).toBe(false);
+    expect(isRecipeId(null)).toBe(false);
   });
 });

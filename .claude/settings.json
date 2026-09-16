@@ -10,7 +10,6 @@
       "Bash(npm run build)",
       "Bash(npm run check)",
       "Bash(npx tsc --noEmit)",
-      "Bash(node scripts/validate-recipes.mjs *)",
       "Bash(git status *)",
       "Bash(git diff *)",
       "Bash(git log *)",

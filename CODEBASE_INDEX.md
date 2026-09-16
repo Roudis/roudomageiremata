@@ -6,7 +6,8 @@ for working in the repo live in [CLAUDE.md](CLAUDE.md).
 
 ## Overview
 - **Stack:** Next.js 14 (App Router) + React 18 + TypeScript (strict) + Tailwind CSS 3.
-  Extra deps: `framer-motion` for animation, `lucide-react` for icons.
+  Extra deps: `framer-motion` for animation, `lucide-react` for icons, `server-only`
+  to keep the data loader out of client bundles.
 - **Purpose:** A personal Greek family-recipe journal. Browse and search recipes,
   each optionally paired with a family "memory" (story + date).
 - **Persistence:** One JSON file per recipe in [data/recipes/](data/recipes)
@@ -50,12 +51,15 @@ components/
   recipe-list.tsx            Client; search box + category filter + animated grid of cards
   recipe-card.tsx            Card for the grid; gradient rotates by index % 4; links to /recipes/[id]
 lib/
-  recipes.ts                 Build-time data access: getAllRecipes(), getRecipeById(id)
-  recipes.test.ts            Vitest characterization tests for recipes.ts
+  recipes.ts                 Server-only build-time data access: createRecipeStore(dir),
+                             getRecipeIds(), getAllRecipes(), getRecipeById(id)
+  recipes.test.ts            Vitest characterization tests for recipes.ts, using temp folders
+  recipes.data.test.ts       Validates the real data/recipes files; the only file `npm run validate:data` runs
   recipe-view.ts             Pure: category fallback labels, formatIngredientCount, compareRecipes,
                              toRecipeSummary (not used by components yet)
   recipe-search.ts           Pure: getCategories, filterRecipes for the home page list
-  recipe-schema.ts           Pure: parseRecipe(value, source), RecipeDataError (not used by the loader yet)
+  recipe-schema.ts           Pure: parseRecipe(value, source, { expectedId }), RecipeDataError, isRecipeId;
+                             the single recipe schema, used by the loader and the data test
   base-path.ts               Pure: withBasePath(path) for raw asset URLs such as <img src>
   *.test.ts                  Vitest unit tests next to each module above
 types/
@@ -65,7 +69,6 @@ data/
 public/
   images/recipes/<id>.jpg    Recipe images
 scripts/
-  validate-recipes.mjs       Data validator used by `npm run validate:data` and CI
   generate-changelog.mjs     Generates CHANGELOG.md from the Git commit history
 populate.js                  Legacy seeding script; overwrites data/recipes. Do not run.
 download-images.js           Legacy image downloader. Do not run.
@@ -94,19 +97,30 @@ interface Recipe {
   cookTime?: string;
   servings?: number;
   createdAt: string;       // ISO timestamp
-  updatedAt: string;       // ISO timestamp; list is sorted by this, newest first
+  updatedAt: string;       // ISO timestamp; list is sorted by this, newest first, then title, then id
 }
 ```
 
 ## Data Access Layer ([lib/recipes.ts](lib/recipes.ts))
-Read-only; runs at build time.
-- `getAllRecipes()` reads every `data/recipes/*.json`, sorts by `updatedAt` desc
-  with `compareRecipes` from `lib/recipe-view.ts`.
-  **On any error it logs and returns `[]`**, so a broken file yields an empty
-  site instead of a failed build. `npm run validate:data` guards against this.
-- `getRecipeById(id)` reads `data/recipes/<id>.json`; returns `undefined` if
-  missing or unparseable, which makes the detail page call `notFound()`.
-  It does not sanitize `id` or check that the file's `id` matches.
+Read-only; runs at build time. Imports `server-only`, so client components
+cannot import it.
+- `createRecipeStore(dir)` returns the three functions below for any folder;
+  tests use a temp folder. The exported functions use `data/recipes` under
+  `process.cwd()`, resolved on each call.
+- Every file is validated with `parseRecipe`, and its `id` must equal its
+  filename. **A file that is unreadable, invalid JSON, or invalid is skipped
+  with a `console.warn` naming the file and each problem; the build still
+  succeeds without it.** `npm run validate:data` fails on such files, and CI
+  runs it before building.
+- `getAllRecipes()` returns the valid recipes sorted by `compareRecipes` from
+  `lib/recipe-view.ts`: `updatedAt` newest first, then title in Greek
+  alphabetical order, then id. If `data/recipes` itself cannot be read it logs
+  an error and returns `[]`.
+- `getRecipeIds()` returns the ids of those same recipes, so skipped files get
+  no page.
+- `getRecipeById(id)` returns `undefined` for a non-slug id without touching the
+  filesystem, for a missing file, and (with a warning) for an invalid file,
+  which makes the detail page call `notFound()`.
 
 ## Pages / Routes
 | Route | File | Description |
@@ -119,7 +133,8 @@ Read-only; runs at build time.
 - [package.json](package.json): scripts `dev`, `build`, `start` (serves `out/`
   via `serve`), `lint`, `typecheck`, `test`, `test:watch`, `validate:data`,
   `changelog`, `changelog:check`, `check`.
-- [vitest.config.mts](vitest.config.mts): Vitest in node environment with the `@/` alias.
+- [vitest.config.mts](vitest.config.mts): Vitest in node environment with the `@/` alias;
+  aliases `server-only` to its no-op `empty.js` so the loader can be imported in tests.
 - [tsconfig.json](tsconfig.json): strict mode; path alias `@/*` → repo root.
 - [.eslintrc.json](.eslintrc.json): extends `next/core-web-vitals`, `next/typescript`.
 - [tailwind.config.ts](tailwind.config.ts): content from `app/`, `components/`,
@@ -133,7 +148,6 @@ Read-only; runs at build time.
 - **Regenerate the changelog:** run `npm run changelog`. The push workflow also
   performs this automatically; never edit [CHANGELOG.md](CHANGELOG.md) manually.
 - **Change recipe fields/shape:** [types/recipe.ts](types/recipe.ts) →
-  [scripts/validate-recipes.mjs](scripts/validate-recipes.mjs) and
   [lib/recipe-schema.ts](lib/recipe-schema.ts) →
   [lib/recipes.ts](lib/recipes.ts) → card, list, and detail components.
 - **Change search/filter behavior:** matching and category logic in
@@ -148,7 +162,6 @@ Read-only; runs at build time.
   tests for the pure helpers. Tests named "(current behavior)" lock down quirks
   that a later refactor step changes. Components and pages have no tests.
 - All real recipes currently share one `updatedAt` value, so the home page
-  order is effectively the filesystem's directory listing order, which can
-  differ between macOS and the Linux build machine.
+  order comes from the title and id tie-breaks in `compareRecipes`.
 - No add/edit/delete UI or API routes. The site is a static export.
 - `next start` does not work with `output: "export"`; use `npm run start`.

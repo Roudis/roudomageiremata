@@ -64,20 +64,37 @@ describe("compareRecipes", () => {
     expect(sortIds([createdLate, createdEarly])).toEqual(["created-early", "created-late"]);
   });
 
-  it("returns 0 for equal timestamps, with no tie-break by title or id (current behavior)", () => {
-    const b = makeRecipe({ id: "b", title: "Β" });
-    const a = makeRecipe({ id: "a", title: "Α" });
+  it("breaks ties by title in Greek alphabetical order, not by code unit", () => {
+    // By code unit the order would be Ά, Γ, Ω, β.
+    const recipes = ["Ωραίο", "Άλλο", "βραστό", "Γεμιστά"].map((title, i) => makeRecipe({ id: `r${i}`, title }));
 
-    expect(compareRecipes(b, a)).toBe(0);
-    expect(compareRecipes(a, b)).toBe(0);
-    expect(sortIds([b, a])).toEqual(["b", "a"]);
+    expect(sortIds(recipes).map((id) => recipes.find((r) => r.id === id)?.title)).toEqual([
+      "Άλλο",
+      "βραστό",
+      "Γεμιστά",
+      "Ωραίο",
+    ]);
   });
 
-  it("returns NaN when a timestamp is unparseable (current behavior)", () => {
-    const valid = makeRecipe({ id: "valid" });
-    const invalid = makeRecipe({ id: "invalid", updatedAt: "not a date" });
+  it("breaks ties between equal titles by id, so the result does not depend on input order", () => {
+    const b = makeRecipe({ id: "ela-moy-nte-2", title: "Έλα μου ντε???" });
+    const a = makeRecipe({ id: "ela-moy-nte-1", title: "Έλα μου ντε???" });
 
-    expect(compareRecipes(valid, invalid)).toBeNaN();
+    expect(compareRecipes(a, b)).toBeLessThan(0);
+    expect(compareRecipes(b, a)).toBeGreaterThan(0);
+    expect(sortIds([b, a])).toEqual(["ela-moy-nte-1", "ela-moy-nte-2"]);
+    expect(sortIds([a, b])).toEqual(["ela-moy-nte-1", "ela-moy-nte-2"]);
+  });
+
+  it("returns 0 only for the same updatedAt, title, and id", () => {
+    expect(compareRecipes(makeRecipe({ id: "same" }), makeRecipe({ id: "same" }))).toBe(0);
+  });
+
+  it("treats an unparseable timestamp as a tie and falls back to the title", () => {
+    const valid = makeRecipe({ id: "valid", title: "Β", updatedAt: "2026-06-01T00:00:00.000Z" });
+    const invalid = makeRecipe({ id: "invalid", title: "Α", updatedAt: "not a date" });
+
+    expect(compareRecipes(valid, invalid)).toBeGreaterThan(0);
   });
 });
 

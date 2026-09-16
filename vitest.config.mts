@@ -6,8 +6,12 @@ const rootDir = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   resolve: {
-    // Mirror the "@/*" path alias from tsconfig.json.
-    alias: [{ find: /^@\//, replacement: `${rootDir}/` }],
+    alias: [
+      // Mirror the "@/*" path alias from tsconfig.json.
+      { find: /^@\//, replacement: `${rootDir}/` },
+      // The real "server-only" throws unless bundled for React Server Components, so tests use its no-op variant.
+      { find: /^server-only$/, replacement: `${rootDir}/node_modules/server-only/empty.js` },
+    ],
   },
   test: {
     environment: "node",

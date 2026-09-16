@@ -1,16 +1,20 @@
 import type { Memory, Recipe } from "@/types/recipe";
 
 /**
- * Runtime validation for recipe data, enforcing the same rules as
- * scripts/validate-recipes.mjs. Two of that script's checks need more than the
- * value and stay with the caller: that `id` equals the file name, and that
- * `imageUrl` exists under public/.
+ * Runtime validation for recipe data, used by the loader in lib/recipes.ts and
+ * by `npm run validate:data`. Checking that `imageUrl` exists under public/
+ * needs the filesystem, so it lives in lib/recipes.data.test.ts.
  */
 
 export interface RecipeDataIssue {
   /** Path of the offending field, such as "servings" or "memory.title", or "" for the whole value. */
   field: string;
   message: string;
+}
+
+export interface ParseRecipeOptions {
+  /** The id the file name implies. When given, `id` must equal it. */
+  expectedId?: string;
 }
 
 export class RecipeDataError extends Error {
@@ -34,6 +38,11 @@ const MEMORY_FIELDS = { title: true, story: true, date: true } as const satisfie
 
 const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
+/** True for lowercase, hyphen-separated slugs such as "ela-moy-nte-1". */
+export function isRecipeId(value: unknown): value is string {
+  return typeof value === "string" && SLUG.test(value);
+}
+
 const isPlainObject = (v: unknown): v is Record<string, unknown> =>
   typeof v === "object" && v !== null && !Array.isArray(v);
 const isNonEmptyString = (v: unknown): v is string => typeof v === "string" && v.trim().length > 0;
@@ -41,7 +50,7 @@ const isStringArray = (v: unknown): v is string[] => Array.isArray(v) && v.lengt
 const isIsoDate = (v: unknown): v is string => typeof v === "string" && !Number.isNaN(Date.parse(v));
 
 /** Pushes every problem with `value` onto `issues` and returns true only if there are none. */
-function checkRecipe(value: unknown, issues: RecipeDataIssue[]): value is Recipe {
+function checkRecipe(value: unknown, issues: RecipeDataIssue[], { expectedId }: ParseRecipeOptions): value is Recipe {
   const fail = (field: string, message: string) => issues.push({ field, message });
 
   if (!isPlainObject(value)) {
@@ -55,7 +64,10 @@ function checkRecipe(value: unknown, issues: RecipeDataIssue[]): value is Recipe
     }
   }
 
-  if (typeof value.id !== "string" || !SLUG.test(value.id)) fail("id", "id must be a lowercase-hyphen slug");
+  if (!isRecipeId(value.id)) fail("id", "id must be a lowercase-hyphen slug");
+  if (expectedId !== undefined && value.id !== expectedId) {
+    fail("id", `id "${String(value.id)}" must match filename "${expectedId}"`);
+  }
   if (!isNonEmptyString(value.title)) fail("title", "title must be a non-empty string");
   if (!isNonEmptyString(value.description)) fail("description", "description must be a non-empty string");
   if (!isStringArray(value.ingredients)) fail("ingredients", "ingredients must be a non-empty array of non-empty strings");
@@ -97,8 +109,8 @@ function checkRecipe(value: unknown, issues: RecipeDataIssue[]): value is Recipe
  * Returns `value` typed as a Recipe if it passes every rule, or throws a
  * RecipeDataError listing all problems. `source` names the file in the message.
  */
-export function parseRecipe(value: unknown, source: string): Recipe {
+export function parseRecipe(value: unknown, source: string, options: ParseRecipeOptions = {}): Recipe {
   const issues: RecipeDataIssue[] = [];
-  if (!checkRecipe(value, issues)) throw new RecipeDataError(source, issues);
+  if (!checkRecipe(value, issues, options)) throw new RecipeDataError(source, issues);
   return value;
 }
