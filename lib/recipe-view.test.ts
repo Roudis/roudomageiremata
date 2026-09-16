@@ -5,6 +5,7 @@ import {
   categoryLabel,
   compareRecipes,
   formatIngredientCount,
+  formatMemoryDate,
   formatRecipeDate,
   toRecipeSummary,
 } from "@/lib/recipe-view";
@@ -67,6 +68,19 @@ describe("formatRecipeDate", () => {
   });
 });
 
+describe("formatMemoryDate", () => {
+  it("formats a year and month as a Greek month name and year", () => {
+    expect(formatMemoryDate("2023-11")).toBe("Νοέμβριος 2023");
+    expect(formatMemoryDate("2024-01")).toBe("Ιανουάριος 2024");
+  });
+
+  it("returns anything that is not a valid year and month unchanged", () => {
+    for (const date of ["2023", "2023-13", "2023-1", "2023-11-05", "Καλοκαίρι 2019", ""]) {
+      expect(formatMemoryDate(date), date).toBe(date);
+    }
+  });
+});
+
 describe("categoryColorIndex", () => {
   const CATEGORIES = [
     "Οι ντελικάτες της Μαμάς",
@@ -77,7 +91,7 @@ describe("categoryColorIndex", () => {
     "Της Γιαγιάς που γεμίζουν κοιλίτσες και καρδιές",
   ];
 
-  // components/recipe-card.tsx has 7 gradients.
+  // components/category-badge.tsx has 7 dot colours.
   const BUCKETS = 7;
 
   it("returns the same index for the same label", () => {

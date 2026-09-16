@@ -1,4 +1,6 @@
 import type { Memory } from "@/types/recipe";
+import { formatMemoryDate } from "@/lib/recipe-view";
+import { BookHeart } from "lucide-react";
 
 type RecipeMemoryProps = {
   memory: Memory;
@@ -7,22 +9,22 @@ type RecipeMemoryProps = {
 /** The family story attached to a recipe. The page decides whether there is one. */
 export function RecipeMemory({ memory }: RecipeMemoryProps) {
   return (
-    <section className="relative overflow-hidden rounded-[2.5rem] p-[2px] bg-gradient-to-br from-rose-300 via-orange-300 to-amber-300 shadow-xl group">
-      <div className="absolute inset-0 bg-gradient-to-br from-rose-300 via-orange-300 to-amber-300 opacity-50 blur-xl transition-opacity duration-500 group-hover:opacity-100" />
-      <div className="relative h-full w-full rounded-[2.4rem] bg-white/95 backdrop-blur-3xl p-10 sm:p-14">
-        <span className="inline-block rounded-full bg-rose-100/50 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.25em] text-rose-600">
-          Αναμνηση Συνταγης
-        </span>
-        <div className="mt-8">
-          <h2 className="text-3xl font-bold tracking-tight text-stone-900 text-balance">{memory.title}</h2>
-          {memory.date !== undefined && (
-            <p className="mt-2 font-medium text-rose-500/80">{memory.date}</p>
-          )}
-          <p className="mt-6 text-lg leading-relaxed text-stone-700 italic border-l-4 border-rose-200 pl-6">
-            &ldquo;{memory.story}&rdquo;
-          </p>
-        </div>
-      </div>
+    <section className="relative overflow-hidden rounded-2xl bg-feature px-6 py-10 text-feature-foreground sm:px-12 sm:py-14">
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute right-4 top-2 select-none font-serif text-[7rem] leading-[0.8] text-feature-accent/15 sm:right-10 sm:top-6 sm:text-[10rem]"
+      >
+        &rdquo;
+      </span>
+      <p className="flex items-center gap-2 text-sm font-semibold text-feature-accent">
+        <BookHeart className="h-4 w-4" aria-hidden="true" />
+        Η ιστορία πίσω από τη συνταγή
+      </p>
+      <h2 className="mt-4 text-balance font-serif text-2xl font-semibold tracking-tight sm:text-3xl">{memory.title}</h2>
+      <blockquote className="mt-4 max-w-3xl text-pretty font-serif text-xl italic leading-relaxed text-feature-foreground/90 sm:text-2xl">
+        «{memory.story}»
+      </blockquote>
+      {memory.date !== undefined && <p className="mt-6 text-sm text-feature-foreground/70">{formatMemoryDate(memory.date)}</p>}
     </section>
   );
 }

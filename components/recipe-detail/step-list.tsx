@@ -5,16 +5,17 @@ type StepListProps = {
 export function StepList({ steps }: StepListProps) {
   return (
     <section>
-      <h2 className="mb-10 text-3xl font-bold tracking-tight text-stone-900 px-4">Εκτέλεση</h2>
-      <ol className="space-y-6">
+      <div className="flex items-baseline justify-between gap-4">
+        <h2 className="font-serif text-2xl font-semibold tracking-tight sm:text-3xl">Εκτέλεση</h2>
+        <span className="text-sm text-muted-foreground">{steps.length === 1 ? "1 βήμα" : `${steps.length} βήματα`}</span>
+      </div>
+      <ol className="mt-6">
         {steps.map((step, index) => (
-          <li key={index} className="glass-panel group flex gap-6 rounded-[2rem] p-8 transition-all hover:shadow-lg hover:border-orange-200/50">
-            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-orange-100 to-rose-100 text-lg font-bold text-orange-700 shadow-inner">
+          <li key={index} className="grid grid-cols-[2.5rem_1fr] gap-4 border-t border-border py-6 sm:grid-cols-[3.5rem_1fr]">
+            <span aria-hidden="true" className="font-serif text-3xl font-semibold leading-none text-primary tabular-nums sm:text-4xl">
               {index + 1}
             </span>
-            <p className="pt-2 text-lg leading-relaxed text-stone-700 group-hover:text-stone-900 transition-colors">
-              {step}
-            </p>
+            <p className="text-pretty text-lg leading-relaxed">{step}</p>
           </li>
         ))}
       </ol>

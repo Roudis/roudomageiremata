@@ -58,6 +58,19 @@ export function formatRecipeDate(isoDate: string): string {
   return Number.isNaN(parsed) ? isoDate : recipeDateFormat.format(parsed);
 }
 
+// "Νοέμβριος 2023". UTC, because a bare year and month has no time of day to shift.
+const memoryMonthFormat = new Intl.DateTimeFormat("el-GR", {
+  month: "long",
+  year: "numeric",
+  timeZone: "UTC",
+});
+
+/** Formats a memory's "YYYY-MM" date as a Greek month and year, or returns any other value unchanged. */
+export function formatMemoryDate(date: string): string {
+  const match = /^(\d{4})-(0[1-9]|1[0-2])$/.exec(date);
+  return match === null ? date : memoryMonthFormat.format(Date.UTC(Number(match[1]), Number(match[2]) - 1, 1));
+}
+
 /** Keeps only what the recipe list and cards render. Optional fields stay absent when missing. */
 export function toRecipeSummary(recipe: Recipe): RecipeSummary {
   const summary: RecipeSummary = {
