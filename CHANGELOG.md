@@ -4,6 +4,12 @@ All notable changes to this project are documented here. This file is generated
 from the Git commit history; do not edit it manually. Run `npm run changelog`
 to regenerate it.
 
+## 2026-09-16
+
+### Added
+- unify category fallback handling and enhance recipe filtering logic ([f88408c](https://github.com/Roudis/roudomageiremata/commit/f88408c295841b156d7745cef5a3a9e6592a3a7c))
+- add validation tests for recipe files and improve error handling ([b6b317c](https://github.com/Roudis/roudomageiremata/commit/b6b317c2717d557e2167ec6c8d8d33fcebe05055))
+
 ## 2026-09-15
 
 ### Added
