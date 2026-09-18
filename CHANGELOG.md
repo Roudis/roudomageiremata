@@ -15,6 +15,7 @@ to regenerate it.
 - add Dutch and Swedish translations for site content ([c45f6bd](https://github.com/Roudis/roudomageiremata/commit/c45f6bd6b3d462952904c1e79c599ae9563a9f18))
 
 ### Fixed
+- update updatedAt timestamps and replace images for multiple recipes ([4985e9c](https://github.com/Roudis/roudomageiremata/commit/4985e9c1b50ae9c86d856d9ce7bd27acba381bc6))
 - update updatedAt timestamps and replace images for multiple recipes ([e26cde7](https://github.com/Roudis/roudomageiremata/commit/e26cde7fade47236bbaac2c9194a57e9909cbe27))
 - update updatedAt timestamp for i-tsipoyra recipe and replace its image; delete kati-xechnao recipe ([775d0ff](https://github.com/Roudis/roudomageiremata/commit/775d0ffbb2a042224233825fc1ad3a976c62598b))
 - update updatedAt timestamp and replace recipe image for garidomaranadara-to-aki-alla-den-peirazei ([f00012b](https://github.com/Roudis/roudomageiremata/commit/f00012b4b1c5362ab63701896dffc46eb0e53b37))
