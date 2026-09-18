@@ -25,5 +25,139 @@
   "cookTime": "45 λεπτά",
   "servings": 4,
   "createdAt": "2026-08-10T16:52:28.198Z",
-  "updatedAt": "2026-08-10T16:52:28.199Z"
+  "updatedAt": "2026-08-10T16:52:28.199Z",
+  "translations": {
+    "en": {
+      "title": "Easter, Vathylakos style",
+      "description": "A recipe the whole family will love! Simple ingredients, wonderful flavour.",
+      "ingredients": [
+        "1 kg meat",
+        "2 onions",
+        "Oil and salt",
+        "Spices of your choice"
+      ],
+      "steps": [
+        "We throw in whatever was left over from last night’s dinner.",
+        "We let it cool, but can’t resist and eat it hot anyway.",
+        "We stir the ingredients like mad until they come together.",
+        "We close our eyes and add spices at random."
+      ],
+      "memory": {
+        "title": "Sunday lunch",
+        "story": "We never expected it to turn out so well the first time, but it became our speciality."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "nl": {
+      "title": "Pasen op zijn Vathylakos",
+      "description": "Een recept waar de hele familie dol op zal zijn! Met eenvoudige ingrediënten en een heerlijke smaak.",
+      "ingredients": [
+        "1 kg vlees",
+        "2 uien",
+        "Olie en zout",
+        "Kruiden naar keuze"
+      ],
+      "steps": [
+        "We gooien erin wat er van het avondeten van gisteren over is.",
+        "We laten het afkoelen, maar houden het niet uit en eten het toch warm op.",
+        "We roeren als gekken tot alles mooi gemengd is.",
+        "We doen onze ogen dicht en voegen lukraak kruiden toe."
+      ],
+      "memory": {
+        "title": "Zondagse maaltijd",
+        "story": "We hadden niet verwacht dat het de eerste keer zo lekker zou worden, maar het werd onze specialiteit."
+      },
+      "prepTime": "20 minuten",
+      "cookTime": "45 minuten"
+    },
+    "fr": {
+      "title": "Pâques à la mode de Vathylakos",
+      "description": "Une recette que toute la famille va adorer ! Des ingrédients simples et un goût merveilleux.",
+      "ingredients": [
+        "1 kg de viande",
+        "2 oignons",
+        "Huile et sel",
+        "Épices au choix"
+      ],
+      "steps": [
+        "On y jette les restes du dîner d’hier soir.",
+        "On le laisse refroidir, mais on craque et on le mange chaud.",
+        "On mélange frénétiquement jusqu’à obtenir un mélange homogène.",
+        "On ferme les yeux et on ajoute des épices au hasard."
+      ],
+      "memory": {
+        "title": "Le repas du dimanche",
+        "story": "On ne s’attendait pas à ce que ce soit aussi bon la première fois, mais c’est devenu notre spécialité."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "sv": {
+      "title": "Påsk på Vathylakos-vis",
+      "description": "Ett recept som hela familjen kommer att älska! Enkla ingredienser och underbar smak.",
+      "ingredients": [
+        "1 kg kött",
+        "2 lökar",
+        "Olja och salt",
+        "Kryddor efter smak"
+      ],
+      "steps": [
+        "Vi slänger i det som blev över från gårdagens middag.",
+        "Vi låter det svalna, men står inte ut och äter det varmt ändå.",
+        "Vi rör frenetiskt tills allt har blandats ordentligt.",
+        "Vi blundar och tillsätter kryddor på måfå."
+      ],
+      "memory": {
+        "title": "Söndagsmiddag",
+        "story": "Vi trodde aldrig att det skulle bli så gott första gången, men det blev vår specialitet."
+      },
+      "prepTime": "20 minuter",
+      "cookTime": "45 minuter"
+    },
+    "es": {
+      "title": "Pascua al estilo de Vathylakos",
+      "description": "¡Una receta que encantará a toda la familia! Ingredientes sencillos y un sabor estupendo.",
+      "ingredients": [
+        "1 kg de carne",
+        "2 cebollas",
+        "Aceite y sal",
+        "Especias al gusto"
+      ],
+      "steps": [
+        "Echamos lo que sobró de la cena de anoche.",
+        "Lo dejamos enfriar, pero no aguantamos y nos lo comemos caliente.",
+        "Removemos los ingredientes como locos hasta que queden bien mezclados.",
+        "Cerramos los ojos y añadimos especias al azar."
+      ],
+      "memory": {
+        "title": "La comida del domingo",
+        "story": "No esperábamos que saliera tan rico la primera vez, pero se convirtió en nuestra especialidad."
+      },
+      "prepTime": "20 minutos",
+      "cookTime": "45 minutos"
+    },
+    "it": {
+      "title": "Pasqua alla Vathylakos",
+      "description": "Una ricetta che piacerà a tutta la famiglia! Ingredienti semplici e un sapore meraviglioso.",
+      "ingredients": [
+        "1 kg di carne",
+        "2 cipolle",
+        "Olio e sale",
+        "Spezie a piacere"
+      ],
+      "steps": [
+        "Ci buttiamo dentro gli avanzi della cena di ieri sera.",
+        "Lo lasciamo raffreddare, ma non resistiamo e lo mangiamo caldo.",
+        "Mescoliamo gli ingredienti come matti finché non diventano omogenei.",
+        "Chiudiamo gli occhi e aggiungiamo spezie a caso."
+      ],
+      "memory": {
+        "title": "Il pranzo della domenica",
+        "story": "Non ci aspettavamo che venisse così buono la prima volta, ma è diventato la nostra specialità."
+      },
+      "prepTime": "20 minuti",
+      "cookTime": "45 minuti"
+    }
+  }
 }

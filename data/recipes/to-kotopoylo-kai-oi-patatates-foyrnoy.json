@@ -27,5 +27,151 @@
   "cookTime": "45 λεπτά",
   "servings": 4,
   "createdAt": "2026-08-10T16:52:28.199Z",
-  "updatedAt": "2026-08-10T16:52:28.199Z"
+  "updatedAt": "2026-08-10T16:52:28.199Z",
+  "translations": {
+    "en": {
+      "title": "THE Chicken and THE Oven Potatatoes",
+      "description": "The ultimate comfort food, just right for Sundays or chilly afternoons.",
+      "ingredients": [
+        "1 kg meat",
+        "2 onions",
+        "Oil and salt",
+        "Spices of your choice"
+      ],
+      "steps": [
+        "We put on our apron and take a deep breath.",
+        "We throw in whatever was left over from last night’s dinner.",
+        "We ring Mum to ask “how much water do I add?”.",
+        "We serve it in deep plates and pretend we know what we’re doing.",
+        "We rummage through the cupboards for that gadget we bought back in 2015.",
+        "We sneak a taste and burn our tongue."
+      ],
+      "memory": {
+        "title": "Sunday lunch",
+        "story": "Every Sunday, this smell would wake us up first thing in the morning!"
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "nl": {
+      "title": "DE kip en DE aardaardappels uit de oven",
+      "description": "Het ultieme comfortfood, precies goed voor zondagen of koude middagen.",
+      "ingredients": [
+        "1 kg vlees",
+        "2 uien",
+        "Olie en zout",
+        "Kruiden naar keuze"
+      ],
+      "steps": [
+        "We doen ons schort voor en halen diep adem.",
+        "We gooien erin wat er van het avondeten van gisteren over is.",
+        "We bellen mama om te vragen “hoeveel water doe ik erbij?”.",
+        "We serveren het in diepe borden en doen alsof we weten wat we doen.",
+        "We doorzoeken de kastjes naar dat keukengerei dat we in 2015 hebben gekocht.",
+        "We proeven stiekem een beetje en branden onze tong."
+      ],
+      "memory": {
+        "title": "Zondagse maaltijd",
+        "story": "Elke zondag werden we ’s ochtends vroeg wakker van deze geur!"
+      },
+      "prepTime": "20 minuten",
+      "cookTime": "45 minuten"
+    },
+    "fr": {
+      "title": "LE poulet et LES patatates au four",
+      "description": "Le réconfort ultime dans une assiette, parfait pour les dimanches ou les après-midi froids.",
+      "ingredients": [
+        "1 kg de viande",
+        "2 oignons",
+        "Huile et sel",
+        "Épices au choix"
+      ],
+      "steps": [
+        "On enfile notre tablier et on prend une grande inspiration.",
+        "On y jette les restes du dîner d’hier soir.",
+        "On appelle maman pour lui demander « je mets combien d’eau ? ».",
+        "On sert dans des assiettes creuses en faisant semblant de savoir ce qu’on fait.",
+        "On fouille les placards à la recherche de cet ustensile acheté en 2015.",
+        "On goûte en cachette et on se brûle la langue."
+      ],
+      "memory": {
+        "title": "Le repas du dimanche",
+        "story": "Chaque dimanche, cette odeur nous réveillait dès le matin !"
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "sv": {
+      "title": "KYCKLINGEN och POTATATISARNA i ugn",
+      "description": "Den ultimata tröstmaten, perfekt för söndagar eller kalla eftermiddagar.",
+      "ingredients": [
+        "1 kg kött",
+        "2 lökar",
+        "Olja och salt",
+        "Kryddor efter smak"
+      ],
+      "steps": [
+        "Vi tar på oss förklädet och drar ett djupt andetag.",
+        "Vi slänger i det som blev över från gårdagens middag.",
+        "Vi ringer mamma och frågar ”hur mycket vatten ska jag ha i?”.",
+        "Vi serverar på djupa tallrikar och låtsas att vi vet vad vi håller på med.",
+        "Vi letar i skåpen efter den där köksprylen vi köpte 2015.",
+        "Vi smakar lite i smyg och bränner tungan."
+      ],
+      "memory": {
+        "title": "Söndagsmiddag",
+        "story": "Varje söndag väckte den här doften oss tidigt på morgonen!"
+      },
+      "prepTime": "20 minuter",
+      "cookTime": "45 minuter"
+    },
+    "es": {
+      "title": "EL pollo y LAS patatatas al horno",
+      "description": "La comida reconfortante por excelencia, perfecta para los domingos o las tardes frías.",
+      "ingredients": [
+        "1 kg de carne",
+        "2 cebollas",
+        "Aceite y sal",
+        "Especias al gusto"
+      ],
+      "steps": [
+        "Nos ponemos el delantal y respiramos hondo.",
+        "Echamos lo que sobró de la cena de anoche.",
+        "Llamamos a mamá para preguntarle «¿cuánta agua le echo?».",
+        "Servimos en platos hondos y hacemos como que sabemos lo que hacemos.",
+        "Rebuscamos en los armarios aquel cacharro que compramos en 2015.",
+        "Probamos un poco a escondidas y nos quemamos la lengua."
+      ],
+      "memory": {
+        "title": "La comida del domingo",
+        "story": "¡Cada domingo, este olor nos despertaba por la mañana!"
+      },
+      "prepTime": "20 minutos",
+      "cookTime": "45 minutos"
+    },
+    "it": {
+      "title": "IL pollo e LE patatate al forno",
+      "description": "Il comfort food per eccellenza, perfetto per le domeniche o i pomeriggi freddi.",
+      "ingredients": [
+        "1 kg di carne",
+        "2 cipolle",
+        "Olio e sale",
+        "Spezie a piacere"
+      ],
+      "steps": [
+        "Ci mettiamo il grembiule e facciamo un respiro profondo.",
+        "Ci buttiamo dentro gli avanzi della cena di ieri sera.",
+        "Telefoniamo alla mamma per chiederle «quanta acqua ci metto?».",
+        "Serviamo nei piatti fondi e facciamo finta di sapere quello che facciamo.",
+        "Frughiamo negli armadietti per trovare quell’utensile comprato nel 2015.",
+        "Assaggiamo di nascosto e ci scottiamo la lingua."
+      ],
+      "memory": {
+        "title": "Il pranzo della domenica",
+        "story": "Ogni domenica, questo profumo ci svegliava fin dal mattino!"
+      },
+      "prepTime": "20 minuti",
+      "cookTime": "45 minuti"
+    }
+  }
 }

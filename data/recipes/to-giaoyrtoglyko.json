@@ -28,5 +28,157 @@
   "cookTime": "45 λεπτά",
   "servings": 4,
   "createdAt": "2026-08-10T16:52:28.199Z",
-  "updatedAt": "2026-08-10T16:52:28.199Z"
+  "updatedAt": "2026-08-10T16:52:28.199Z",
+  "translations": {
+    "en": {
+      "title": "The yoghurt cake",
+      "description": "A classic recipe that brings back memories and fills the house with wonderful smells.",
+      "ingredients": [
+        "Flour",
+        "Eggs",
+        "Milk",
+        "Butter",
+        "Feta cheese"
+      ],
+      "steps": [
+        "We hover over the pot, holding our breath.",
+        "We ring Mum to ask “how much water do I add?”.",
+        "We throw in whatever was left over from last night’s dinner.",
+        "We serve it in deep plates and pretend we know what we’re doing.",
+        "We peek into the oven and hope for the best.",
+        "We rummage through the cupboards for that gadget we bought back in 2015."
+      ],
+      "memory": {
+        "title": "The surprise",
+        "story": "Always there at every celebration, it was the first dish to be emptied."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "nl": {
+      "title": "De yoghurttaart",
+      "description": "Een klassiek recept dat herinneringen oproept en het huis vult met heerlijke geuren.",
+      "ingredients": [
+        "Bloem",
+        "Eieren",
+        "Melk",
+        "Boter",
+        "Fetakaas"
+      ],
+      "steps": [
+        "We staan gespannen boven de pan te wachten.",
+        "We bellen mama om te vragen “hoeveel water doe ik erbij?”.",
+        "We gooien erin wat er van het avondeten van gisteren over is.",
+        "We serveren het in diepe borden en doen alsof we weten wat we doen.",
+        "We werpen een blik in de oven en hopen op het beste.",
+        "We doorzoeken de kastjes naar dat keukengerei dat we in 2015 hebben gekocht."
+      ],
+      "memory": {
+        "title": "De verrassing",
+        "story": "Het stond op elk feest op tafel en was altijd als eerste op."
+      },
+      "prepTime": "20 minuten",
+      "cookTime": "45 minuten"
+    },
+    "fr": {
+      "title": "Le gâteau au yaourt",
+      "description": "Une recette classique qui ravive les souvenirs et remplit la maison de bonnes odeurs.",
+      "ingredients": [
+        "Farine",
+        "Œufs",
+        "Lait",
+        "Beurre",
+        "Feta"
+      ],
+      "steps": [
+        "On attend au-dessus de la casserole, rongés d’impatience.",
+        "On appelle maman pour lui demander « je mets combien d’eau ? ».",
+        "On y jette les restes du dîner d’hier soir.",
+        "On sert dans des assiettes creuses en faisant semblant de savoir ce qu’on fait.",
+        "On jette un œil au four en espérant que tout se passe bien.",
+        "On fouille les placards à la recherche de cet ustensile acheté en 2015."
+      ],
+      "memory": {
+        "title": "La surprise",
+        "story": "Toujours présent à chaque fête, c’était le premier plat à être vidé."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "sv": {
+      "title": "Yoghurtkakan",
+      "description": "Ett klassiskt recept som väcker minnen och fyller huset med dofter.",
+      "ingredients": [
+        "Vetemjöl",
+        "Ägg",
+        "Mjölk",
+        "Smör",
+        "Fetaost"
+      ],
+      "steps": [
+        "Vi står och väntar över kastrullen med spänning.",
+        "Vi ringer mamma och frågar ”hur mycket vatten ska jag ha i?”.",
+        "Vi slänger i det som blev över från gårdagens middag.",
+        "Vi serverar på djupa tallrikar och låtsas att vi vet vad vi håller på med.",
+        "Vi kikar in i ugnen och hoppas på det bästa.",
+        "Vi letar i skåpen efter den där köksprylen vi köpte 2015."
+      ],
+      "memory": {
+        "title": "Överraskningen",
+        "story": "Det fanns alltid med på varje fest och var den första rätten som tog slut."
+      },
+      "prepTime": "20 minuter",
+      "cookTime": "45 minuter"
+    },
+    "es": {
+      "title": "El dulce de yogur",
+      "description": "Una receta clásica que trae recuerdos y llena la casa de aromas.",
+      "ingredients": [
+        "Harina",
+        "Huevos",
+        "Leche",
+        "Mantequilla",
+        "Queso feta"
+      ],
+      "steps": [
+        "Esperamos junto a la olla con el corazón en un puño.",
+        "Llamamos a mamá para preguntarle «¿cuánta agua le echo?».",
+        "Echamos lo que sobró de la cena de anoche.",
+        "Servimos en platos hondos y hacemos como que sabemos lo que hacemos.",
+        "Echamos un vistazo al horno y esperamos lo mejor.",
+        "Rebuscamos en los armarios aquel cacharro que compramos en 2015."
+      ],
+      "memory": {
+        "title": "La sorpresa",
+        "story": "Siempre presente en todas las fiestas, era el primer plato en vaciarse."
+      },
+      "prepTime": "20 minutos",
+      "cookTime": "45 minutos"
+    },
+    "it": {
+      "title": "Il dolce allo yogurt",
+      "description": "Una ricetta classica che risveglia i ricordi e riempie la casa di profumi.",
+      "ingredients": [
+        "Farina",
+        "Uova",
+        "Latte",
+        "Burro",
+        "Formaggio feta"
+      ],
+      "steps": [
+        "Aspettiamo sopra la pentola col fiato sospeso.",
+        "Telefoniamo alla mamma per chiederle «quanta acqua ci metto?».",
+        "Ci buttiamo dentro gli avanzi della cena di ieri sera.",
+        "Serviamo nei piatti fondi e facciamo finta di sapere quello che facciamo.",
+        "Diamo un’occhiata al forno e speriamo per il meglio.",
+        "Frughiamo negli armadietti per trovare quell’utensile comprato nel 2015."
+      ],
+      "memory": {
+        "title": "La sorpresa",
+        "story": "Sempre presente a ogni festa, era il primo piatto a svuotarsi."
+      },
+      "prepTime": "20 minuti",
+      "cookTime": "45 minuti"
+    }
+  }
 }

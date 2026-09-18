@@ -26,5 +26,145 @@
   "cookTime": "45 λεπτά",
   "servings": 4,
   "createdAt": "2026-08-10T16:52:28.199Z",
-  "updatedAt": "2026-08-10T16:52:28.199Z"
+  "updatedAt": "2026-08-10T16:52:28.199Z",
+  "translations": {
+    "en": {
+      "title": "A little glass of Limonstello (or 2?)",
+      "description": "Delicate flavours, a beautiful presentation and lots of love in every bite.",
+      "ingredients": [
+        "1 kg meat",
+        "2 onions",
+        "Oil and salt",
+        "Spices of your choice"
+      ],
+      "steps": [
+        "We stir gently so as not to wake the dough.",
+        "We add a little salt, a little pepper and a lot of feeling.",
+        "We serve it in deep plates and pretend we know what we’re doing.",
+        "We grin from ear to ear because... go figure, somehow it worked!",
+        "We let it cool, but can’t resist and eat it hot anyway."
+      ],
+      "memory": {
+        "title": "Sunday lunch",
+        "story": "We never expected it to turn out so well the first time, but it became our speciality."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "nl": {
+      "title": "Een glaasje Limonstello (of 2?)",
+      "description": "Verfijnde smaken, een mooie presentatie en veel liefde in elke hap.",
+      "ingredients": [
+        "1 kg vlees",
+        "2 uien",
+        "Olie en zout",
+        "Kruiden naar keuze"
+      ],
+      "steps": [
+        "We roeren voorzichtig om het deeg niet wakker te maken.",
+        "We voegen een beetje zout, een beetje peper en heel veel gevoel toe.",
+        "We serveren het in diepe borden en doen alsof we weten wat we doen.",
+        "We glimlachen van oor tot oor, want... zeg jij het maar, op de een of andere manier is het gelukt!",
+        "We laten het afkoelen, maar houden het niet uit en eten het toch warm op."
+      ],
+      "memory": {
+        "title": "Zondagse maaltijd",
+        "story": "We hadden niet verwacht dat het de eerste keer zo lekker zou worden, maar het werd onze specialiteit."
+      },
+      "prepTime": "20 minuten",
+      "cookTime": "45 minuten"
+    },
+    "fr": {
+      "title": "Un petit verre de Limonstello (ou 2 ?)",
+      "description": "Des saveurs délicates, une belle présentation et beaucoup d’amour dans chaque bouchée.",
+      "ingredients": [
+        "1 kg de viande",
+        "2 oignons",
+        "Huile et sel",
+        "Épices au choix"
+      ],
+      "steps": [
+        "On mélange doucement pour ne pas réveiller la pâte.",
+        "On ajoute un peu de sel, un peu de poivre et beaucoup d’émotion.",
+        "On sert dans des assiettes creuses en faisant semblant de savoir ce qu’on fait.",
+        "On sourit jusqu’aux oreilles parce que... va savoir, ça a marché !",
+        "On le laisse refroidir, mais on craque et on le mange chaud."
+      ],
+      "memory": {
+        "title": "Le repas du dimanche",
+        "story": "On ne s’attendait pas à ce que ce soit aussi bon la première fois, mais c’est devenu notre spécialité."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "sv": {
+      "title": "Ett litet glas Limonstello (eller 2?)",
+      "description": "Fina smaker, vacker uppläggning och mycket kärlek i varje tugga.",
+      "ingredients": [
+        "1 kg kött",
+        "2 lökar",
+        "Olja och salt",
+        "Kryddor efter smak"
+      ],
+      "steps": [
+        "Vi rör försiktigt för att inte väcka degen.",
+        "Vi tillsätter lite salt, lite peppar och massor av känsla.",
+        "Vi serverar på djupa tallrikar och låtsas att vi vet vad vi håller på med.",
+        "Vi ler från öra till öra för att... säg det du, på något sätt blev det lyckat!",
+        "Vi låter det svalna, men står inte ut och äter det varmt ändå."
+      ],
+      "memory": {
+        "title": "Söndagsmiddag",
+        "story": "Vi trodde aldrig att det skulle bli så gott första gången, men det blev vår specialitet."
+      },
+      "prepTime": "20 minuter",
+      "cookTime": "45 minuter"
+    },
+    "es": {
+      "title": "Un chupito de Limonstello (¿o 2?)",
+      "description": "Sabores delicados, una presentación bonita y mucho amor en cada bocado.",
+      "ingredients": [
+        "1 kg de carne",
+        "2 cebollas",
+        "Aceite y sal",
+        "Especias al gusto"
+      ],
+      "steps": [
+        "Removemos con suavidad para no despertar la masa.",
+        "Añadimos un poco de sal, un poco de pimienta y mucho sentimiento.",
+        "Servimos en platos hondos y hacemos como que sabemos lo que hacemos.",
+        "Sonreímos de oreja a oreja porque... quién sabe, ¡de algún modo salió bien!",
+        "Lo dejamos enfriar, pero no aguantamos y nos lo comemos caliente."
+      ],
+      "memory": {
+        "title": "La comida del domingo",
+        "story": "No esperábamos que saliera tan rico la primera vez, pero se convirtió en nuestra especialidad."
+      },
+      "prepTime": "20 minutos",
+      "cookTime": "45 minutos"
+    },
+    "it": {
+      "title": "Un bicchierino di Limonstello (o 2?)",
+      "description": "Sapori delicati, una bella presentazione e tanto amore in ogni boccone.",
+      "ingredients": [
+        "1 kg di carne",
+        "2 cipolle",
+        "Olio e sale",
+        "Spezie a piacere"
+      ],
+      "steps": [
+        "Mescoliamo delicatamente per non svegliare l’impasto.",
+        "Aggiungiamo un po’ di sale, un po’ di pepe e tanto sentimento.",
+        "Serviamo nei piatti fondi e facciamo finta di sapere quello che facciamo.",
+        "Sorridiamo da un orecchio all’altro perché... chissà, in qualche modo è venuto bene!",
+        "Lo lasciamo raffreddare, ma non resistiamo e lo mangiamo caldo."
+      ],
+      "memory": {
+        "title": "Il pranzo della domenica",
+        "story": "Non ci aspettavamo che venisse così buono la prima volta, ma è diventato la nostra specialità."
+      },
+      "prepTime": "20 minuti",
+      "cookTime": "45 minuti"
+    }
+  }
 }

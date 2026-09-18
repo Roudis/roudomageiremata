@@ -27,5 +27,151 @@
   "cookTime": "45 λεπτά",
   "servings": 4,
   "createdAt": "2026-08-10T16:52:28.199Z",
-  "updatedAt": "2026-08-10T16:52:28.199Z"
+  "updatedAt": "2026-08-10T16:52:28.199Z",
+  "translations": {
+    "en": {
+      "title": "Pasta with courgette and aubregine ??",
+      "description": "Delicate flavours, a beautiful presentation and lots of love in every bite.",
+      "ingredients": [
+        "Fresh vegetables",
+        "Olive oil",
+        "Balsamic vinegar",
+        "Salt"
+      ],
+      "steps": [
+        "We put on our apron and take a deep breath.",
+        "We add a little extra oil, “because that’s what makes it tasty”.",
+        "We throw in whatever was left over from last night’s dinner.",
+        "We ring Mum to ask “how much water do I add?”.",
+        "We stir the ingredients like mad until they come together.",
+        "We serve it in deep plates and pretend we know what we’re doing."
+      ],
+      "memory": {
+        "title": "Festive days",
+        "story": "Always there at every celebration, it was the first dish to be emptied."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "nl": {
+      "title": "Pasta met courgette en aubregine ??",
+      "description": "Verfijnde smaken, een mooie presentatie en veel liefde in elke hap.",
+      "ingredients": [
+        "Verse groenten",
+        "Olijfolie",
+        "Balsamicoazijn",
+        "Zout"
+      ],
+      "steps": [
+        "We doen ons schort voor en halen diep adem.",
+        "We doen er een scheutje olie extra bij, “want dan wordt het lekkerder”.",
+        "We gooien erin wat er van het avondeten van gisteren over is.",
+        "We bellen mama om te vragen “hoeveel water doe ik erbij?”.",
+        "We roeren als gekken tot alles mooi gemengd is.",
+        "We serveren het in diepe borden en doen alsof we weten wat we doen."
+      ],
+      "memory": {
+        "title": "Feestdagen",
+        "story": "Het stond op elk feest op tafel en was altijd als eerste op."
+      },
+      "prepTime": "20 minuten",
+      "cookTime": "45 minuten"
+    },
+    "fr": {
+      "title": "Pâtes aux courgettes et aux aubregines ??",
+      "description": "Des saveurs délicates, une belle présentation et beaucoup d’amour dans chaque bouchée.",
+      "ingredients": [
+        "Légumes frais",
+        "Huile d’olive",
+        "Vinaigre balsamique",
+        "Sel"
+      ],
+      "steps": [
+        "On enfile notre tablier et on prend une grande inspiration.",
+        "On ajoute un peu plus d’huile, « parce que c’est ça qui donne du goût ».",
+        "On y jette les restes du dîner d’hier soir.",
+        "On appelle maman pour lui demander « je mets combien d’eau ? ».",
+        "On mélange frénétiquement jusqu’à obtenir un mélange homogène.",
+        "On sert dans des assiettes creuses en faisant semblant de savoir ce qu’on fait."
+      ],
+      "memory": {
+        "title": "Jours de fête",
+        "story": "Toujours présent à chaque fête, c’était le premier plat à être vidé."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "sv": {
+      "title": "Pasta med zucchini och aubregine ??",
+      "description": "Fina smaker, vacker uppläggning och mycket kärlek i varje tugga.",
+      "ingredients": [
+        "Färska grönsaker",
+        "Olivolja",
+        "Balsamvinäger",
+        "Salt"
+      ],
+      "steps": [
+        "Vi tar på oss förklädet och drar ett djupt andetag.",
+        "Vi häller i lite extra olja, ”för då blir det godare”.",
+        "Vi slänger i det som blev över från gårdagens middag.",
+        "Vi ringer mamma och frågar ”hur mycket vatten ska jag ha i?”.",
+        "Vi rör frenetiskt tills allt har blandats ordentligt.",
+        "Vi serverar på djupa tallrikar och låtsas att vi vet vad vi håller på med."
+      ],
+      "memory": {
+        "title": "Helgdagar",
+        "story": "Det fanns alltid med på varje fest och var den första rätten som tog slut."
+      },
+      "prepTime": "20 minuter",
+      "cookTime": "45 minuter"
+    },
+    "es": {
+      "title": "Pasta con calabacín y berenjana ??",
+      "description": "Sabores delicados, una presentación bonita y mucho amor en cada bocado.",
+      "ingredients": [
+        "Verduras frescas",
+        "Aceite de oliva",
+        "Vinagre balsámico",
+        "Sal"
+      ],
+      "steps": [
+        "Nos ponemos el delantal y respiramos hondo.",
+        "Echamos un poco más de aceite, «porque así sabe mejor».",
+        "Echamos lo que sobró de la cena de anoche.",
+        "Llamamos a mamá para preguntarle «¿cuánta agua le echo?».",
+        "Removemos los ingredientes como locos hasta que queden bien mezclados.",
+        "Servimos en platos hondos y hacemos como que sabemos lo que hacemos."
+      ],
+      "memory": {
+        "title": "Días de fiesta",
+        "story": "Siempre presente en todas las fiestas, era el primer plato en vaciarse."
+      },
+      "prepTime": "20 minutos",
+      "cookTime": "45 minutos"
+    },
+    "it": {
+      "title": "Pasta con zucchine e melanzena ??",
+      "description": "Sapori delicati, una bella presentazione e tanto amore in ogni boccone.",
+      "ingredients": [
+        "Verdure fresche",
+        "Olio d’oliva",
+        "Aceto balsamico",
+        "Sale"
+      ],
+      "steps": [
+        "Ci mettiamo il grembiule e facciamo un respiro profondo.",
+        "Aggiungiamo un po’ d’olio in più, «perché così è più saporito».",
+        "Ci buttiamo dentro gli avanzi della cena di ieri sera.",
+        "Telefoniamo alla mamma per chiederle «quanta acqua ci metto?».",
+        "Mescoliamo gli ingredienti come matti finché non diventano omogenei.",
+        "Serviamo nei piatti fondi e facciamo finta di sapere quello che facciamo."
+      ],
+      "memory": {
+        "title": "Giorni di festa",
+        "story": "Sempre presente a ogni festa, era il primo piatto a svuotarsi."
+      },
+      "prepTime": "20 minuti",
+      "cookTime": "45 minuti"
+    }
+  }
 }

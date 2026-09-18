@@ -27,5 +27,151 @@
   "cookTime": "45 λεπτά",
   "servings": 4,
   "createdAt": "2026-08-10T16:52:28.199Z",
-  "updatedAt": "2026-08-10T16:52:28.199Z"
+  "updatedAt": "2026-08-10T16:52:28.199Z",
+  "translations": {
+    "en": {
+      "title": "The tastiest little mezes",
+      "description": "The ultimate comfort food, just right for Sundays or chilly afternoons.",
+      "ingredients": [
+        "Flour",
+        "Eggs",
+        "Milk",
+        "Butter",
+        "Feta cheese"
+      ],
+      "steps": [
+        "We serve it in deep plates and pretend we know what we’re doing.",
+        "We throw in whatever was left over from last night’s dinner.",
+        "We hover over the pot, holding our breath.",
+        "We grin from ear to ear because... go figure, somehow it worked!",
+        "We peek into the oven and hope for the best."
+      ],
+      "memory": {
+        "title": "Sunday lunch",
+        "story": "Every Sunday, this smell would wake us up first thing in the morning!"
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "nl": {
+      "title": "De lekkerste meze-hapjes",
+      "description": "Het ultieme comfortfood, precies goed voor zondagen of koude middagen.",
+      "ingredients": [
+        "Bloem",
+        "Eieren",
+        "Melk",
+        "Boter",
+        "Fetakaas"
+      ],
+      "steps": [
+        "We serveren het in diepe borden en doen alsof we weten wat we doen.",
+        "We gooien erin wat er van het avondeten van gisteren over is.",
+        "We staan gespannen boven de pan te wachten.",
+        "We glimlachen van oor tot oor, want... zeg jij het maar, op de een of andere manier is het gelukt!",
+        "We werpen een blik in de oven en hopen op het beste."
+      ],
+      "memory": {
+        "title": "Zondagse maaltijd",
+        "story": "Elke zondag werden we ’s ochtends vroeg wakker van deze geur!"
+      },
+      "prepTime": "20 minuten",
+      "cookTime": "45 minuten"
+    },
+    "fr": {
+      "title": "Les petits mezzés les plus savoureux",
+      "description": "Le réconfort ultime dans une assiette, parfait pour les dimanches ou les après-midi froids.",
+      "ingredients": [
+        "Farine",
+        "Œufs",
+        "Lait",
+        "Beurre",
+        "Feta"
+      ],
+      "steps": [
+        "On sert dans des assiettes creuses en faisant semblant de savoir ce qu’on fait.",
+        "On y jette les restes du dîner d’hier soir.",
+        "On attend au-dessus de la casserole, rongés d’impatience.",
+        "On sourit jusqu’aux oreilles parce que... va savoir, ça a marché !",
+        "On jette un œil au four en espérant que tout se passe bien."
+      ],
+      "memory": {
+        "title": "Le repas du dimanche",
+        "story": "Chaque dimanche, cette odeur nous réveillait dès le matin !"
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "sv": {
+      "title": "De godaste små mezerätterna",
+      "description": "Den ultimata tröstmaten, perfekt för söndagar eller kalla eftermiddagar.",
+      "ingredients": [
+        "Vetemjöl",
+        "Ägg",
+        "Mjölk",
+        "Smör",
+        "Fetaost"
+      ],
+      "steps": [
+        "Vi serverar på djupa tallrikar och låtsas att vi vet vad vi håller på med.",
+        "Vi slänger i det som blev över från gårdagens middag.",
+        "Vi står och väntar över kastrullen med spänning.",
+        "Vi ler från öra till öra för att... säg det du, på något sätt blev det lyckat!",
+        "Vi kikar in i ugnen och hoppas på det bästa."
+      ],
+      "memory": {
+        "title": "Söndagsmiddag",
+        "story": "Varje söndag väckte den här doften oss tidigt på morgonen!"
+      },
+      "prepTime": "20 minuter",
+      "cookTime": "45 minuter"
+    },
+    "es": {
+      "title": "Los mezés más ricos",
+      "description": "La comida reconfortante por excelencia, perfecta para los domingos o las tardes frías.",
+      "ingredients": [
+        "Harina",
+        "Huevos",
+        "Leche",
+        "Mantequilla",
+        "Queso feta"
+      ],
+      "steps": [
+        "Servimos en platos hondos y hacemos como que sabemos lo que hacemos.",
+        "Echamos lo que sobró de la cena de anoche.",
+        "Esperamos junto a la olla con el corazón en un puño.",
+        "Sonreímos de oreja a oreja porque... quién sabe, ¡de algún modo salió bien!",
+        "Echamos un vistazo al horno y esperamos lo mejor."
+      ],
+      "memory": {
+        "title": "La comida del domingo",
+        "story": "¡Cada domingo, este olor nos despertaba por la mañana!"
+      },
+      "prepTime": "20 minutos",
+      "cookTime": "45 minutos"
+    },
+    "it": {
+      "title": "I mezedes più gustosi",
+      "description": "Il comfort food per eccellenza, perfetto per le domeniche o i pomeriggi freddi.",
+      "ingredients": [
+        "Farina",
+        "Uova",
+        "Latte",
+        "Burro",
+        "Formaggio feta"
+      ],
+      "steps": [
+        "Serviamo nei piatti fondi e facciamo finta di sapere quello che facciamo.",
+        "Ci buttiamo dentro gli avanzi della cena di ieri sera.",
+        "Aspettiamo sopra la pentola col fiato sospeso.",
+        "Sorridiamo da un orecchio all’altro perché... chissà, in qualche modo è venuto bene!",
+        "Diamo un’occhiata al forno e speriamo per il meglio."
+      ],
+      "memory": {
+        "title": "Il pranzo della domenica",
+        "story": "Ogni domenica, questo profumo ci svegliava fin dal mattino!"
+      },
+      "prepTime": "20 minuti",
+      "cookTime": "45 minuti"
+    }
+  }
 }

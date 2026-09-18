@@ -27,5 +27,151 @@
   "cookTime": "45 λεπτά",
   "servings": 4,
   "createdAt": "2026-08-10T16:52:28.199Z",
-  "updatedAt": "2026-08-10T16:52:28.199Z"
+  "updatedAt": "2026-08-10T16:52:28.199Z",
+  "translations": {
+    "en": {
+      "title": "Go figuuure???",
+      "description": "A classic recipe that brings back memories and fills the house with wonderful smells.",
+      "ingredients": [
+        "Potatoes",
+        "Oil",
+        "Oregano",
+        "Lemon"
+      ],
+      "steps": [
+        "We ring Mum to ask “how much water do I add?”.",
+        "We sneak a taste and burn our tongue.",
+        "We serve it in deep plates and pretend we know what we’re doing.",
+        "We put on our apron and take a deep breath.",
+        "We rummage through the cupboards for that gadget we bought back in 2015.",
+        "We grin from ear to ear because... go figure, somehow it worked!"
+      ],
+      "memory": {
+        "title": "The surprise",
+        "story": "We never expected it to turn out so well the first time, but it became our speciality."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "nl": {
+      "title": "Zeg jij het maaar???",
+      "description": "Een klassiek recept dat herinneringen oproept en het huis vult met heerlijke geuren.",
+      "ingredients": [
+        "Aardappelen",
+        "Olie",
+        "Oregano",
+        "Citroen"
+      ],
+      "steps": [
+        "We bellen mama om te vragen “hoeveel water doe ik erbij?”.",
+        "We proeven stiekem een beetje en branden onze tong.",
+        "We serveren het in diepe borden en doen alsof we weten wat we doen.",
+        "We doen ons schort voor en halen diep adem.",
+        "We doorzoeken de kastjes naar dat keukengerei dat we in 2015 hebben gekocht.",
+        "We glimlachen van oor tot oor, want... zeg jij het maar, op de een of andere manier is het gelukt!"
+      ],
+      "memory": {
+        "title": "De verrassing",
+        "story": "We hadden niet verwacht dat het de eerste keer zo lekker zou worden, maar het werd onze specialiteit."
+      },
+      "prepTime": "20 minuten",
+      "cookTime": "45 minuten"
+    },
+    "fr": {
+      "title": "Va savoiiir ???",
+      "description": "Une recette classique qui ravive les souvenirs et remplit la maison de bonnes odeurs.",
+      "ingredients": [
+        "Pommes de terre",
+        "Huile",
+        "Origan",
+        "Citron"
+      ],
+      "steps": [
+        "On appelle maman pour lui demander « je mets combien d’eau ? ».",
+        "On goûte en cachette et on se brûle la langue.",
+        "On sert dans des assiettes creuses en faisant semblant de savoir ce qu’on fait.",
+        "On enfile notre tablier et on prend une grande inspiration.",
+        "On fouille les placards à la recherche de cet ustensile acheté en 2015.",
+        "On sourit jusqu’aux oreilles parce que... va savoir, ça a marché !"
+      ],
+      "memory": {
+        "title": "La surprise",
+        "story": "On ne s’attendait pas à ce que ce soit aussi bon la première fois, mais c’est devenu notre spécialité."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "sv": {
+      "title": "Säg det duuu???",
+      "description": "Ett klassiskt recept som väcker minnen och fyller huset med dofter.",
+      "ingredients": [
+        "Potatis",
+        "Olja",
+        "Oregano",
+        "Citron"
+      ],
+      "steps": [
+        "Vi ringer mamma och frågar ”hur mycket vatten ska jag ha i?”.",
+        "Vi smakar lite i smyg och bränner tungan.",
+        "Vi serverar på djupa tallrikar och låtsas att vi vet vad vi håller på med.",
+        "Vi tar på oss förklädet och drar ett djupt andetag.",
+        "Vi letar i skåpen efter den där köksprylen vi köpte 2015.",
+        "Vi ler från öra till öra för att... säg det du, på något sätt blev det lyckat!"
+      ],
+      "memory": {
+        "title": "Överraskningen",
+        "story": "Vi trodde aldrig att det skulle bli så gott första gången, men det blev vår specialitet."
+      },
+      "prepTime": "20 minuter",
+      "cookTime": "45 minuter"
+    },
+    "es": {
+      "title": "¿¿¿Quién sabeee???",
+      "description": "Una receta clásica que trae recuerdos y llena la casa de aromas.",
+      "ingredients": [
+        "Patatas",
+        "Aceite",
+        "Orégano",
+        "Limón"
+      ],
+      "steps": [
+        "Llamamos a mamá para preguntarle «¿cuánta agua le echo?».",
+        "Probamos un poco a escondidas y nos quemamos la lengua.",
+        "Servimos en platos hondos y hacemos como que sabemos lo que hacemos.",
+        "Nos ponemos el delantal y respiramos hondo.",
+        "Rebuscamos en los armarios aquel cacharro que compramos en 2015.",
+        "Sonreímos de oreja a oreja porque... quién sabe, ¡de algún modo salió bien!"
+      ],
+      "memory": {
+        "title": "La sorpresa",
+        "story": "No esperábamos que saliera tan rico la primera vez, pero se convirtió en nuestra especialidad."
+      },
+      "prepTime": "20 minutos",
+      "cookTime": "45 minutos"
+    },
+    "it": {
+      "title": "Chissààà???",
+      "description": "Una ricetta classica che risveglia i ricordi e riempie la casa di profumi.",
+      "ingredients": [
+        "Patate",
+        "Olio",
+        "Origano",
+        "Limone"
+      ],
+      "steps": [
+        "Telefoniamo alla mamma per chiederle «quanta acqua ci metto?».",
+        "Assaggiamo di nascosto e ci scottiamo la lingua.",
+        "Serviamo nei piatti fondi e facciamo finta di sapere quello che facciamo.",
+        "Ci mettiamo il grembiule e facciamo un respiro profondo.",
+        "Frughiamo negli armadietti per trovare quell’utensile comprato nel 2015.",
+        "Sorridiamo da un orecchio all’altro perché... chissà, in qualche modo è venuto bene!"
+      ],
+      "memory": {
+        "title": "La sorpresa",
+        "story": "Non ci aspettavamo che venisse così buono la prima volta, ma è diventato la nostra specialità."
+      },
+      "prepTime": "20 minuti",
+      "cookTime": "45 minuti"
+    }
+  }
 }

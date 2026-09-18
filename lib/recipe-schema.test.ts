@@ -2,6 +2,7 @@ import { describe, expect, expectTypeOf, it } from "vitest";
 import {
   RecipeDataError,
   isRecipeId,
+  parseCategoryTranslations,
   parseRecipe,
   type ParseRecipeOptions,
   type RecipeDataIssue,
@@ -268,5 +269,151 @@ describe("isRecipeId", () => {
   it("rejects values that are not strings", () => {
     expect(isRecipeId(7)).toBe(false);
     expect(isRecipeId(null)).toBe(false);
+  });
+});
+
+/** An English translation matching fullRecipe() field for field. */
+function fullTranslation(): Record<string, unknown> {
+  return {
+    title: "Poor stuffed vegetables",
+    description: "Grandma's stuffed vegetables",
+    ingredients: ["tomatoes", "rice"],
+    steps: ["Stuff", "Bake"],
+    memory: { title: "Sunday", story: "In Grandma's kitchen" },
+    prepTime: "20 minutes",
+    cookTime: "60 minutes",
+  };
+}
+
+describe("parseRecipe: translations", () => {
+  it("accepts a translation into every other language", () => {
+    const translations = Object.fromEntries(["en", "nl", "fr", "sv", "es", "it"].map((code) => [code, fullTranslation()]));
+
+    expect(issuesFor({ ...fullRecipe(), translations })).toEqual([]);
+  });
+
+  it("accepts a recipe with translations into only some languages, or none", () => {
+    expect(issuesFor({ ...fullRecipe(), translations: { en: fullTranslation() } })).toEqual([]);
+    expect(issuesFor({ ...fullRecipe(), translations: {} })).toEqual([]);
+  });
+
+  it("accepts a translation without the optional fields when the Greek has none", () => {
+    const translation = { title: "T", description: "D", ingredients: ["a", "b"], steps: ["c", "d"] };
+
+    expect(issuesFor({ ...validRecipe(), translations: { en: translation } })).toEqual([]);
+  });
+
+  it("rejects translations that are not an object", () => {
+    expect(fieldsOf({ ...validRecipe(), translations: [] })).toEqual(["translations"]);
+  });
+
+  it("rejects Greek and unknown language codes, naming the allowed ones", () => {
+    expect(issuesFor({ ...fullRecipe(), translations: { el: fullTranslation(), de: fullTranslation() } })).toEqual([
+      { field: "translations.el", message: 'unknown language "el" in translations; use one of en, nl, fr, sv, es, it' },
+      { field: "translations.de", message: 'unknown language "de" in translations; use one of en, nl, fr, sv, es, it' },
+    ]);
+  });
+
+  it("rejects a translation with missing, blank, or unknown fields", () => {
+    const translation = { ...fullTranslation(), title: "", description: undefined, servings: 4 };
+
+    expect(fieldsOf({ ...fullRecipe(), translations: { en: translation } })).toEqual([
+      "translations.en.servings",
+      "translations.en.title",
+      "translations.en.description",
+    ]);
+  });
+
+  it("rejects a translation with a different number of ingredients or steps, and says how to fix it", () => {
+    const translation = { ...fullTranslation(), ingredients: ["tomatoes"], steps: ["Stuff", "Bake", "Eat"] };
+
+    expect(issuesFor({ ...fullRecipe(), translations: { en: translation } })).toEqual([
+      {
+        field: "translations.en.ingredients",
+        message:
+          "translations.en.ingredients has 1 entries but the Greek ingredients has 2; translate each one, or remove translations.en to show the Greek",
+      },
+      {
+        field: "translations.en.steps",
+        message:
+          "translations.en.steps has 3 entries but the Greek steps has 2; translate each one, or remove translations.en to show the Greek",
+      },
+    ]);
+  });
+
+  it("requires the memory, prepTime, and cookTime exactly when the Greek has them", () => {
+    const { memory, prepTime, ...withoutOptional } = fullTranslation();
+    expect(memory).toBeDefined();
+    expect(prepTime).toBeDefined();
+
+    expect(fieldsOf({ ...fullRecipe(), translations: { en: withoutOptional } })).toEqual([
+      "translations.en.prepTime",
+      "translations.en.memory",
+    ]);
+    expect(fieldsOf({ ...validRecipe(), translations: { en: { ...fullTranslation(), ingredients: ["a", "b"] } } })).toEqual([
+      "translations.en.prepTime",
+      "translations.en.cookTime",
+      "translations.en.memory",
+    ]);
+  });
+
+  it("rejects a translated memory with a date, which comes from the Greek, or blank fields", () => {
+    const translation = { ...fullTranslation(), memory: { title: " ", story: "Story", date: "1998" } };
+
+    expect(issuesFor({ ...fullRecipe(), translations: { en: translation } })).toEqual([
+      {
+        field: "translations.en.memory.date",
+        message: 'unknown field "date" in translations.en.memory; the date comes from the Greek memory',
+      },
+      { field: "translations.en.memory.title", message: "translations.en.memory.title must be a non-empty string" },
+    ]);
+  });
+
+  it("reports problems in several translations at once", () => {
+    const translations = { en: { ...fullTranslation(), title: "" }, fr: { ...fullTranslation(), description: "" } };
+
+    expect(fieldsOf({ ...fullRecipe(), translations })).toEqual(["translations.en.title", "translations.fr.description"]);
+  });
+});
+
+describe("parseCategoryTranslations", () => {
+  const CATEGORIES_SOURCE = "data/categories.json";
+
+  function categoryIssues(value: unknown): RecipeDataIssue[] {
+    try {
+      parseCategoryTranslations(value, CATEGORIES_SOURCE);
+      return [];
+    } catch (error) {
+      if (!(error instanceof RecipeDataError)) throw error;
+      return [...error.issues];
+    }
+  }
+
+  it("accepts names in some or all languages", () => {
+    const value = { "Της Γιαγιάς": { en: "Grandma’s", fr: "De Mamie" }, "Του Μπαμπούλα": {} };
+
+    expect(parseCategoryTranslations(value, CATEGORIES_SOURCE)).toBe(value);
+  });
+
+  it("rejects a value that is not an object of objects", () => {
+    expect(categoryIssues([])).toEqual([
+      { field: "", message: "top-level value must be an object keyed by Greek category name" },
+    ]);
+    expect(categoryIssues({ "Της Γιαγιάς": "Grandma’s" })).toEqual([
+      { field: "Της Γιαγιάς", message: '"Της Γιαγιάς" must map language codes to names' },
+    ]);
+  });
+
+  it("rejects unknown languages and blank names", () => {
+    expect(categoryIssues({ "Της Γιαγιάς": { de: "Omas", en: " " } })).toEqual([
+      { field: "Της Γιαγιάς.de", message: 'unknown language "de" for "Της Γιαγιάς"; use one of en, nl, fr, sv, es, it' },
+      { field: "Της Γιαγιάς.en", message: 'the en name for "Της Γιαγιάς" must be a non-empty string' },
+    ]);
+  });
+
+  it("names the file as a category list in the error message", () => {
+    expect(() => parseCategoryTranslations(null, CATEGORIES_SOURCE)).toThrow(
+      "data/categories.json is not a valid category list:",
+    );
   });
 });

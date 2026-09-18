@@ -2,14 +2,16 @@ import { describe, expect, it } from "vitest";
 import {
   CATEGORY_FALLBACK,
   categoryColorIndex,
+  categoryDisplayName,
   categoryLabel,
   compareRecipes,
-  formatIngredientCount,
   formatMemoryDate,
   formatRecipeDate,
+  localizeRecipe,
+  recipeOrder,
   toRecipeSummary,
 } from "@/lib/recipe-view";
-import type { Recipe } from "@/types/recipe";
+import type { Recipe, RecipeTranslation } from "@/types/recipe";
 
 function makeRecipe(overrides: Partial<Recipe> & Pick<Recipe, "id">): Recipe {
   return {
@@ -37,13 +39,16 @@ describe("labels and fallbacks", () => {
     expect(categoryLabel({ category: undefined })).toBe("Άλλο");
   });
 
-  it("formats an ingredient count as 'N υλικά'", () => {
-    expect(formatIngredientCount(12)).toBe("12 υλικά");
+  it("shows a category's name from the page's language, or the Greek label when it has none", () => {
+    const names = { "Της Γιαγιάς": "Grandma’s", [CATEGORY_FALLBACK]: "Other" };
+
+    expect(categoryDisplayName("Της Γιαγιάς", names)).toBe("Grandma’s");
+    expect(categoryDisplayName(CATEGORY_FALLBACK, names)).toBe("Other");
+    expect(categoryDisplayName("Του Μπαμπούλα", names)).toBe("Του Μπαμπούλα");
   });
 
-  it("uses the plural label for every count, including 1 and 0 (current behavior)", () => {
-    expect(formatIngredientCount(1)).toBe("1 υλικά");
-    expect(formatIngredientCount(0)).toBe("0 υλικά");
+  it("does not treat inherited object keys as category names", () => {
+    expect(categoryDisplayName("constructor", {})).toBe("constructor");
   });
 });
 
@@ -66,6 +71,12 @@ describe("formatRecipeDate", () => {
     expect(formatRecipeDate("not a date")).toBe("not a date");
     expect(formatRecipeDate("")).toBe("");
   });
+
+  it("formats in the page's language, still in Athens time", () => {
+    expect(formatRecipeDate("2026-08-10T16:52:28.199Z", "en")).toBe("10 Aug 2026");
+    expect(formatRecipeDate("2025-12-31T22:30:00.000Z", "nl")).toBe("1 jan 2026");
+    expect(formatRecipeDate("2026-08-10T16:52:28.199Z", "el")).toBe(formatRecipeDate("2026-08-10T16:52:28.199Z"));
+  });
 });
 
 describe("formatMemoryDate", () => {
@@ -78,6 +89,12 @@ describe("formatMemoryDate", () => {
     for (const date of ["2023", "2023-13", "2023-1", "2023-11-05", "Καλοκαίρι 2019", ""]) {
       expect(formatMemoryDate(date), date).toBe(date);
     }
+  });
+
+  it("names the month in the page's language", () => {
+    expect(formatMemoryDate("2023-11", "en")).toBe("November 2023");
+    expect(formatMemoryDate("2023-11", "fr")).toBe("novembre 2023");
+    expect(formatMemoryDate("2023-11", "it")).toBe("novembre 2023");
   });
 });
 
@@ -186,6 +203,102 @@ describe("compareRecipes", () => {
   });
 });
 
+describe("recipeOrder", () => {
+  it("breaks ties by title in the given language's alphabetical order", () => {
+    // Swedish sorts å and ö after z; English sorts them with a and o.
+    const recipes = ["Ödla", "Zucchini", "Äpple", "Apelsin"].map((title, i) => makeRecipe({ id: `r${i}`, title }));
+    const titles = (locale: "en" | "sv") => [...recipes].sort(recipeOrder(locale)).map((r) => r.title);
+
+    expect(titles("en")).toEqual(["Apelsin", "Äpple", "Ödla", "Zucchini"]);
+    expect(titles("sv")).toEqual(["Apelsin", "Zucchini", "Äpple", "Ödla"]);
+  });
+
+  it("still puts the newest updatedAt first", () => {
+    const older = makeRecipe({ id: "older", title: "A", updatedAt: "2025-01-01T00:00:00Z" });
+    const newer = makeRecipe({ id: "newer", title: "Z", updatedAt: "2026-01-01T00:00:00Z" });
+
+    expect([older, newer].sort(recipeOrder("en")).map((r) => r.id)).toEqual(["newer", "older"]);
+  });
+});
+
+describe("localizeRecipe", () => {
+  const english: RecipeTranslation = {
+    title: "Poor stuffed vegetables",
+    description: "Grandma's stuffed vegetables",
+    ingredients: ["tomatoes", "rice"],
+    steps: ["Stuff", "Bake"],
+    memory: { title: "Sunday", story: "In Grandma's kitchen" },
+    prepTime: "20 minutes",
+    cookTime: "1 hour",
+  };
+
+  const gemista = makeRecipe({
+    id: "gemista",
+    title: "Τα καημένα γεμιστά",
+    description: "Γεμιστά της γιαγιάς",
+    ingredients: ["ντομάτες", "ρύζι"],
+    steps: ["Γέμισε", "Ψήσε"],
+    memory: { title: "Κυριακή", story: "Στην κουζίνα της γιαγιάς", date: "1998-05" },
+    imageUrl: "/images/recipes/gemista.jpg",
+    category: "Της Γιαγιάς",
+    prepTime: "20 λεπτά",
+    cookTime: "1 ώρα",
+    servings: 4,
+    translations: { en: english },
+  });
+
+  it("lays the translation over the Greek, keeping the Greek memory date, category, and other fields", () => {
+    const { translations, ...greek } = gemista;
+
+    expect(translations).toBeDefined();
+    expect(localizeRecipe(gemista, "en")).toStrictEqual({
+      ...greek,
+      title: "Poor stuffed vegetables",
+      description: "Grandma's stuffed vegetables",
+      ingredients: ["tomatoes", "rice"],
+      steps: ["Stuff", "Bake"],
+      memory: { title: "Sunday", story: "In Grandma's kitchen", date: "1998-05" },
+      prepTime: "20 minutes",
+      cookTime: "1 hour",
+      contentLocale: "en",
+    });
+  });
+
+  it("shows the Greek, marked as Greek, in a language with no translation", () => {
+    const { translations, ...greek } = gemista;
+
+    expect(translations).toBeDefined();
+    expect(localizeRecipe(gemista, "fr")).toStrictEqual({ ...greek, contentLocale: "el" });
+  });
+
+  it("returns the Greek for Greek and drops the translations, which the page never needs", () => {
+    const localized = localizeRecipe(gemista, "el");
+
+    expect(localized.title).toBe("Τα καημένα γεμιστά");
+    expect(localized.contentLocale).toBe("el");
+    expect(Object.keys(localized)).not.toContain("translations");
+  });
+
+  it("leaves optional fields absent when neither language has them", () => {
+    const minimal = makeRecipe({
+      id: "minimal",
+      translations: { en: { title: "T", description: "D", ingredients: ["i"], steps: ["s"] } },
+    });
+
+    expect(Object.keys(localizeRecipe(minimal, "en")).sort()).toEqual(
+      ["contentLocale", "createdAt", "description", "id", "ingredients", "steps", "title", "updatedAt"],
+    );
+  });
+
+  it("does not mutate the recipe", () => {
+    const copy = structuredClone(gemista);
+
+    localizeRecipe(gemista, "en");
+
+    expect(gemista).toStrictEqual(copy);
+  });
+});
+
 describe("toRecipeSummary", () => {
   it("keeps the fields the list renders and drops steps, memory, cookTime, and timestamps", () => {
     const recipe = makeRecipe({
@@ -202,7 +315,7 @@ describe("toRecipeSummary", () => {
       servings: 4,
     });
 
-    expect(toRecipeSummary(recipe)).toStrictEqual({
+    expect(toRecipeSummary(localizeRecipe(recipe, "el"))).toStrictEqual({
       id: "gemista",
       title: "Τα καημένα γεμιστά",
       description: "Γεμιστά της γιαγιάς",
@@ -211,29 +324,31 @@ describe("toRecipeSummary", () => {
       category: "Της Γιαγιάς",
       prepTime: "20 λεπτά",
       servings: 4,
+      contentLocale: "el",
       hasMemory: true,
     });
   });
 
   it("leaves missing optional fields absent instead of setting them to undefined", () => {
-    const summary = toRecipeSummary(makeRecipe({ id: "minimal" }));
+    const summary = toRecipeSummary(localizeRecipe(makeRecipe({ id: "minimal" }), "el"));
 
     expect(summary).toStrictEqual({
       id: "minimal",
       title: "Title of minimal",
       description: "Description of minimal",
       ingredients: ["ingredient"],
+      contentLocale: "el",
       hasMemory: false,
     });
     expect(Object.keys(summary)).not.toContain("imageUrl");
   });
 
   it("keeps zero servings, which the card's truthiness check hides today", () => {
-    expect(toRecipeSummary(makeRecipe({ id: "zero", servings: 0 })).servings).toBe(0);
+    expect(toRecipeSummary(localizeRecipe(makeRecipe({ id: "zero", servings: 0 }), "el")).servings).toBe(0);
   });
 
   it("does not mutate the recipe", () => {
-    const recipe = makeRecipe({ id: "frozen", memory: { title: "t", story: "s" } });
+    const recipe = localizeRecipe(makeRecipe({ id: "frozen", memory: { title: "t", story: "s" } }), "el");
     const copy = structuredClone(recipe);
 
     toRecipeSummary(recipe);

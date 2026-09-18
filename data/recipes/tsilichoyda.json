@@ -27,5 +27,151 @@
   "cookTime": "45 λεπτά",
   "servings": 4,
   "createdAt": "2026-08-10T16:52:28.199Z",
-  "updatedAt": "2026-08-10T16:52:28.199Z"
+  "updatedAt": "2026-08-10T16:52:28.199Z",
+  "translations": {
+    "en": {
+      "title": "Tsilichouda",
+      "description": "The ultimate comfort food, just right for Sundays or chilly afternoons.",
+      "ingredients": [
+        "Flour",
+        "Eggs",
+        "Milk",
+        "Butter",
+        "Feta cheese"
+      ],
+      "steps": [
+        "We put on our apron and take a deep breath.",
+        "We grin from ear to ear because... go figure, somehow it worked!",
+        "We serve it in deep plates and pretend we know what we’re doing.",
+        "We throw in whatever was left over from last night’s dinner.",
+        "We peek into the oven and hope for the best."
+      ],
+      "memory": {
+        "title": "Festive days",
+        "story": "We never expected it to turn out so well the first time, but it became our speciality."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "nl": {
+      "title": "Tsilichouda",
+      "description": "Het ultieme comfortfood, precies goed voor zondagen of koude middagen.",
+      "ingredients": [
+        "Bloem",
+        "Eieren",
+        "Melk",
+        "Boter",
+        "Fetakaas"
+      ],
+      "steps": [
+        "We doen ons schort voor en halen diep adem.",
+        "We glimlachen van oor tot oor, want... zeg jij het maar, op de een of andere manier is het gelukt!",
+        "We serveren het in diepe borden en doen alsof we weten wat we doen.",
+        "We gooien erin wat er van het avondeten van gisteren over is.",
+        "We werpen een blik in de oven en hopen op het beste."
+      ],
+      "memory": {
+        "title": "Feestdagen",
+        "story": "We hadden niet verwacht dat het de eerste keer zo lekker zou worden, maar het werd onze specialiteit."
+      },
+      "prepTime": "20 minuten",
+      "cookTime": "45 minuten"
+    },
+    "fr": {
+      "title": "Tsilichouda",
+      "description": "Le réconfort ultime dans une assiette, parfait pour les dimanches ou les après-midi froids.",
+      "ingredients": [
+        "Farine",
+        "Œufs",
+        "Lait",
+        "Beurre",
+        "Feta"
+      ],
+      "steps": [
+        "On enfile notre tablier et on prend une grande inspiration.",
+        "On sourit jusqu’aux oreilles parce que... va savoir, ça a marché !",
+        "On sert dans des assiettes creuses en faisant semblant de savoir ce qu’on fait.",
+        "On y jette les restes du dîner d’hier soir.",
+        "On jette un œil au four en espérant que tout se passe bien."
+      ],
+      "memory": {
+        "title": "Jours de fête",
+        "story": "On ne s’attendait pas à ce que ce soit aussi bon la première fois, mais c’est devenu notre spécialité."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "sv": {
+      "title": "Tsilichouda",
+      "description": "Den ultimata tröstmaten, perfekt för söndagar eller kalla eftermiddagar.",
+      "ingredients": [
+        "Vetemjöl",
+        "Ägg",
+        "Mjölk",
+        "Smör",
+        "Fetaost"
+      ],
+      "steps": [
+        "Vi tar på oss förklädet och drar ett djupt andetag.",
+        "Vi ler från öra till öra för att... säg det du, på något sätt blev det lyckat!",
+        "Vi serverar på djupa tallrikar och låtsas att vi vet vad vi håller på med.",
+        "Vi slänger i det som blev över från gårdagens middag.",
+        "Vi kikar in i ugnen och hoppas på det bästa."
+      ],
+      "memory": {
+        "title": "Helgdagar",
+        "story": "Vi trodde aldrig att det skulle bli så gott första gången, men det blev vår specialitet."
+      },
+      "prepTime": "20 minuter",
+      "cookTime": "45 minuter"
+    },
+    "es": {
+      "title": "Tsilichouda",
+      "description": "La comida reconfortante por excelencia, perfecta para los domingos o las tardes frías.",
+      "ingredients": [
+        "Harina",
+        "Huevos",
+        "Leche",
+        "Mantequilla",
+        "Queso feta"
+      ],
+      "steps": [
+        "Nos ponemos el delantal y respiramos hondo.",
+        "Sonreímos de oreja a oreja porque... quién sabe, ¡de algún modo salió bien!",
+        "Servimos en platos hondos y hacemos como que sabemos lo que hacemos.",
+        "Echamos lo que sobró de la cena de anoche.",
+        "Echamos un vistazo al horno y esperamos lo mejor."
+      ],
+      "memory": {
+        "title": "Días de fiesta",
+        "story": "No esperábamos que saliera tan rico la primera vez, pero se convirtió en nuestra especialidad."
+      },
+      "prepTime": "20 minutos",
+      "cookTime": "45 minutos"
+    },
+    "it": {
+      "title": "Tsilichouda",
+      "description": "Il comfort food per eccellenza, perfetto per le domeniche o i pomeriggi freddi.",
+      "ingredients": [
+        "Farina",
+        "Uova",
+        "Latte",
+        "Burro",
+        "Formaggio feta"
+      ],
+      "steps": [
+        "Ci mettiamo il grembiule e facciamo un respiro profondo.",
+        "Sorridiamo da un orecchio all’altro perché... chissà, in qualche modo è venuto bene!",
+        "Serviamo nei piatti fondi e facciamo finta di sapere quello che facciamo.",
+        "Ci buttiamo dentro gli avanzi della cena di ieri sera.",
+        "Diamo un’occhiata al forno e speriamo per il meglio."
+      ],
+      "memory": {
+        "title": "Giorni di festa",
+        "story": "Non ci aspettavamo che venisse così buono la prima volta, ma è diventato la nostra specialità."
+      },
+      "prepTime": "20 minuti",
+      "cookTime": "45 minuti"
+    }
+  }
 }

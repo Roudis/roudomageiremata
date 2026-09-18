@@ -26,5 +26,145 @@
   "cookTime": "45 λεπτά",
   "servings": 4,
   "createdAt": "2026-08-10T16:52:28.199Z",
-  "updatedAt": "2026-08-10T16:52:28.199Z"
+  "updatedAt": "2026-08-10T16:52:28.199Z",
+  "translations": {
+    "en": {
+      "title": "I’m forgetting something",
+      "description": "A recipe the whole family will love! Simple ingredients, wonderful flavour.",
+      "ingredients": [
+        "Flour",
+        "Eggs",
+        "Milk",
+        "Butter",
+        "Feta cheese"
+      ],
+      "steps": [
+        "We rummage through the cupboards for that gadget we bought back in 2015.",
+        "We hover over the pot, holding our breath.",
+        "We add a little salt, a little pepper and a lot of feeling.",
+        "We ring Mum to ask “how much water do I add?”."
+      ],
+      "memory": {
+        "title": "Festive days",
+        "story": "Every Sunday, this smell would wake us up first thing in the morning!"
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "nl": {
+      "title": "Ik vergeet iets",
+      "description": "Een recept waar de hele familie dol op zal zijn! Met eenvoudige ingrediënten en een heerlijke smaak.",
+      "ingredients": [
+        "Bloem",
+        "Eieren",
+        "Melk",
+        "Boter",
+        "Fetakaas"
+      ],
+      "steps": [
+        "We doorzoeken de kastjes naar dat keukengerei dat we in 2015 hebben gekocht.",
+        "We staan gespannen boven de pan te wachten.",
+        "We voegen een beetje zout, een beetje peper en heel veel gevoel toe.",
+        "We bellen mama om te vragen “hoeveel water doe ik erbij?”."
+      ],
+      "memory": {
+        "title": "Feestdagen",
+        "story": "Elke zondag werden we ’s ochtends vroeg wakker van deze geur!"
+      },
+      "prepTime": "20 minuten",
+      "cookTime": "45 minuten"
+    },
+    "fr": {
+      "title": "J’oublie quelque chose",
+      "description": "Une recette que toute la famille va adorer ! Des ingrédients simples et un goût merveilleux.",
+      "ingredients": [
+        "Farine",
+        "Œufs",
+        "Lait",
+        "Beurre",
+        "Feta"
+      ],
+      "steps": [
+        "On fouille les placards à la recherche de cet ustensile acheté en 2015.",
+        "On attend au-dessus de la casserole, rongés d’impatience.",
+        "On ajoute un peu de sel, un peu de poivre et beaucoup d’émotion.",
+        "On appelle maman pour lui demander « je mets combien d’eau ? »."
+      ],
+      "memory": {
+        "title": "Jours de fête",
+        "story": "Chaque dimanche, cette odeur nous réveillait dès le matin !"
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "sv": {
+      "title": "Jag glömmer något",
+      "description": "Ett recept som hela familjen kommer att älska! Enkla ingredienser och underbar smak.",
+      "ingredients": [
+        "Vetemjöl",
+        "Ägg",
+        "Mjölk",
+        "Smör",
+        "Fetaost"
+      ],
+      "steps": [
+        "Vi letar i skåpen efter den där köksprylen vi köpte 2015.",
+        "Vi står och väntar över kastrullen med spänning.",
+        "Vi tillsätter lite salt, lite peppar och massor av känsla.",
+        "Vi ringer mamma och frågar ”hur mycket vatten ska jag ha i?”."
+      ],
+      "memory": {
+        "title": "Helgdagar",
+        "story": "Varje söndag väckte den här doften oss tidigt på morgonen!"
+      },
+      "prepTime": "20 minuter",
+      "cookTime": "45 minuter"
+    },
+    "es": {
+      "title": "Se me olvida algo",
+      "description": "¡Una receta que encantará a toda la familia! Ingredientes sencillos y un sabor estupendo.",
+      "ingredients": [
+        "Harina",
+        "Huevos",
+        "Leche",
+        "Mantequilla",
+        "Queso feta"
+      ],
+      "steps": [
+        "Rebuscamos en los armarios aquel cacharro que compramos en 2015.",
+        "Esperamos junto a la olla con el corazón en un puño.",
+        "Añadimos un poco de sal, un poco de pimienta y mucho sentimiento.",
+        "Llamamos a mamá para preguntarle «¿cuánta agua le echo?»."
+      ],
+      "memory": {
+        "title": "Días de fiesta",
+        "story": "¡Cada domingo, este olor nos despertaba por la mañana!"
+      },
+      "prepTime": "20 minutos",
+      "cookTime": "45 minutos"
+    },
+    "it": {
+      "title": "Mi sto dimenticando qualcosa",
+      "description": "Una ricetta che piacerà a tutta la famiglia! Ingredienti semplici e un sapore meraviglioso.",
+      "ingredients": [
+        "Farina",
+        "Uova",
+        "Latte",
+        "Burro",
+        "Formaggio feta"
+      ],
+      "steps": [
+        "Frughiamo negli armadietti per trovare quell’utensile comprato nel 2015.",
+        "Aspettiamo sopra la pentola col fiato sospeso.",
+        "Aggiungiamo un po’ di sale, un po’ di pepe e tanto sentimento.",
+        "Telefoniamo alla mamma per chiederle «quanta acqua ci metto?»."
+      ],
+      "memory": {
+        "title": "Giorni di festa",
+        "story": "Ogni domenica, questo profumo ci svegliava fin dal mattino!"
+      },
+      "prepTime": "20 minuti",
+      "cookTime": "45 minuti"
+    }
+  }
 }

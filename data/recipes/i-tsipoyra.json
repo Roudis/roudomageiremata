@@ -27,5 +27,151 @@
   "cookTime": "45 λεπτά",
   "servings": 4,
   "createdAt": "2026-08-10T16:52:28.199Z",
-  "updatedAt": "2026-08-10T16:52:28.199Z"
+  "updatedAt": "2026-08-10T16:52:28.199Z",
+  "translations": {
+    "en": {
+      "title": "THE SEA BREAM",
+      "description": "The ultimate comfort food, just right for Sundays or chilly afternoons.",
+      "ingredients": [
+        "500 g pasta",
+        "Tomato sauce",
+        "Plenty of cheese",
+        "Fresh basil"
+      ],
+      "steps": [
+        "We ring Mum to ask “how much water do I add?”.",
+        "We stir the ingredients like mad until they come together.",
+        "We rummage through the cupboards for that gadget we bought back in 2015.",
+        "We serve it in deep plates and pretend we know what we’re doing.",
+        "We peek into the oven and hope for the best.",
+        "We put on our apron and take a deep breath."
+      ],
+      "memory": {
+        "title": "Sunday lunch",
+        "story": "We never expected it to turn out so well the first time, but it became our speciality."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "nl": {
+      "title": "DE DORADE",
+      "description": "Het ultieme comfortfood, precies goed voor zondagen of koude middagen.",
+      "ingredients": [
+        "500 g pasta",
+        "Tomatensaus",
+        "Flink wat kaas",
+        "Verse basilicum"
+      ],
+      "steps": [
+        "We bellen mama om te vragen “hoeveel water doe ik erbij?”.",
+        "We roeren als gekken tot alles mooi gemengd is.",
+        "We doorzoeken de kastjes naar dat keukengerei dat we in 2015 hebben gekocht.",
+        "We serveren het in diepe borden en doen alsof we weten wat we doen.",
+        "We werpen een blik in de oven en hopen op het beste.",
+        "We doen ons schort voor en halen diep adem."
+      ],
+      "memory": {
+        "title": "Zondagse maaltijd",
+        "story": "We hadden niet verwacht dat het de eerste keer zo lekker zou worden, maar het werd onze specialiteit."
+      },
+      "prepTime": "20 minuten",
+      "cookTime": "45 minuten"
+    },
+    "fr": {
+      "title": "LA DORADE",
+      "description": "Le réconfort ultime dans une assiette, parfait pour les dimanches ou les après-midi froids.",
+      "ingredients": [
+        "500 g de pâtes",
+        "Sauce tomate",
+        "Beaucoup de fromage",
+        "Basilic frais"
+      ],
+      "steps": [
+        "On appelle maman pour lui demander « je mets combien d’eau ? ».",
+        "On mélange frénétiquement jusqu’à obtenir un mélange homogène.",
+        "On fouille les placards à la recherche de cet ustensile acheté en 2015.",
+        "On sert dans des assiettes creuses en faisant semblant de savoir ce qu’on fait.",
+        "On jette un œil au four en espérant que tout se passe bien.",
+        "On enfile notre tablier et on prend une grande inspiration."
+      ],
+      "memory": {
+        "title": "Le repas du dimanche",
+        "story": "On ne s’attendait pas à ce que ce soit aussi bon la première fois, mais c’est devenu notre spécialité."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "sv": {
+      "title": "GULDSPARIDEN",
+      "description": "Den ultimata tröstmaten, perfekt för söndagar eller kalla eftermiddagar.",
+      "ingredients": [
+        "500 g pasta",
+        "Tomatsås",
+        "Rikligt med ost",
+        "Färsk basilika"
+      ],
+      "steps": [
+        "Vi ringer mamma och frågar ”hur mycket vatten ska jag ha i?”.",
+        "Vi rör frenetiskt tills allt har blandats ordentligt.",
+        "Vi letar i skåpen efter den där köksprylen vi köpte 2015.",
+        "Vi serverar på djupa tallrikar och låtsas att vi vet vad vi håller på med.",
+        "Vi kikar in i ugnen och hoppas på det bästa.",
+        "Vi tar på oss förklädet och drar ett djupt andetag."
+      ],
+      "memory": {
+        "title": "Söndagsmiddag",
+        "story": "Vi trodde aldrig att det skulle bli så gott första gången, men det blev vår specialitet."
+      },
+      "prepTime": "20 minuter",
+      "cookTime": "45 minuter"
+    },
+    "es": {
+      "title": "LA DORADA",
+      "description": "La comida reconfortante por excelencia, perfecta para los domingos o las tardes frías.",
+      "ingredients": [
+        "500 g de pasta",
+        "Salsa de tomate",
+        "Mucho queso",
+        "Albahaca fresca"
+      ],
+      "steps": [
+        "Llamamos a mamá para preguntarle «¿cuánta agua le echo?».",
+        "Removemos los ingredientes como locos hasta que queden bien mezclados.",
+        "Rebuscamos en los armarios aquel cacharro que compramos en 2015.",
+        "Servimos en platos hondos y hacemos como que sabemos lo que hacemos.",
+        "Echamos un vistazo al horno y esperamos lo mejor.",
+        "Nos ponemos el delantal y respiramos hondo."
+      ],
+      "memory": {
+        "title": "La comida del domingo",
+        "story": "No esperábamos que saliera tan rico la primera vez, pero se convirtió en nuestra especialidad."
+      },
+      "prepTime": "20 minutos",
+      "cookTime": "45 minutos"
+    },
+    "it": {
+      "title": "L’ORATA",
+      "description": "Il comfort food per eccellenza, perfetto per le domeniche o i pomeriggi freddi.",
+      "ingredients": [
+        "500 g di pasta",
+        "Salsa di pomodoro",
+        "Tanto formaggio",
+        "Basilico fresco"
+      ],
+      "steps": [
+        "Telefoniamo alla mamma per chiederle «quanta acqua ci metto?».",
+        "Mescoliamo gli ingredienti come matti finché non diventano omogenei.",
+        "Frughiamo negli armadietti per trovare quell’utensile comprato nel 2015.",
+        "Serviamo nei piatti fondi e facciamo finta di sapere quello che facciamo.",
+        "Diamo un’occhiata al forno e speriamo per il meglio.",
+        "Ci mettiamo il grembiule e facciamo un respiro profondo."
+      ],
+      "memory": {
+        "title": "Il pranzo della domenica",
+        "story": "Non ci aspettavamo che venisse così buono la prima volta, ma è diventato la nostra specialità."
+      },
+      "prepTime": "20 minuti",
+      "cookTime": "45 minuti"
+    }
+  }
 }

@@ -26,5 +26,145 @@
   "cookTime": "45 λεπτά",
   "servings": 4,
   "createdAt": "2026-08-10T16:52:28.199Z",
-  "updatedAt": "2026-08-10T16:52:28.199Z"
+  "updatedAt": "2026-08-10T16:52:28.199Z",
+  "translations": {
+    "en": {
+      "title": "THE CARBONARA",
+      "description": "A recipe the whole family will love! Simple ingredients, wonderful flavour.",
+      "ingredients": [
+        "Potatoes",
+        "Oil",
+        "Oregano",
+        "Lemon"
+      ],
+      "steps": [
+        "We ring Mum to ask “how much water do I add?”.",
+        "We throw in whatever was left over from last night’s dinner.",
+        "We serve it in deep plates and pretend we know what we’re doing.",
+        "We add a little salt, a little pepper and a lot of feeling.",
+        "We stir gently so as not to wake the dough."
+      ],
+      "memory": {
+        "title": "The surprise",
+        "story": "Always there at every celebration, it was the first dish to be emptied."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "nl": {
+      "title": "DE CARBONARA",
+      "description": "Een recept waar de hele familie dol op zal zijn! Met eenvoudige ingrediënten en een heerlijke smaak.",
+      "ingredients": [
+        "Aardappelen",
+        "Olie",
+        "Oregano",
+        "Citroen"
+      ],
+      "steps": [
+        "We bellen mama om te vragen “hoeveel water doe ik erbij?”.",
+        "We gooien erin wat er van het avondeten van gisteren over is.",
+        "We serveren het in diepe borden en doen alsof we weten wat we doen.",
+        "We voegen een beetje zout, een beetje peper en heel veel gevoel toe.",
+        "We roeren voorzichtig om het deeg niet wakker te maken."
+      ],
+      "memory": {
+        "title": "De verrassing",
+        "story": "Het stond op elk feest op tafel en was altijd als eerste op."
+      },
+      "prepTime": "20 minuten",
+      "cookTime": "45 minuten"
+    },
+    "fr": {
+      "title": "LA CARBONARA",
+      "description": "Une recette que toute la famille va adorer ! Des ingrédients simples et un goût merveilleux.",
+      "ingredients": [
+        "Pommes de terre",
+        "Huile",
+        "Origan",
+        "Citron"
+      ],
+      "steps": [
+        "On appelle maman pour lui demander « je mets combien d’eau ? ».",
+        "On y jette les restes du dîner d’hier soir.",
+        "On sert dans des assiettes creuses en faisant semblant de savoir ce qu’on fait.",
+        "On ajoute un peu de sel, un peu de poivre et beaucoup d’émotion.",
+        "On mélange doucement pour ne pas réveiller la pâte."
+      ],
+      "memory": {
+        "title": "La surprise",
+        "story": "Toujours présent à chaque fête, c’était le premier plat à être vidé."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "sv": {
+      "title": "CARBONARAN",
+      "description": "Ett recept som hela familjen kommer att älska! Enkla ingredienser och underbar smak.",
+      "ingredients": [
+        "Potatis",
+        "Olja",
+        "Oregano",
+        "Citron"
+      ],
+      "steps": [
+        "Vi ringer mamma och frågar ”hur mycket vatten ska jag ha i?”.",
+        "Vi slänger i det som blev över från gårdagens middag.",
+        "Vi serverar på djupa tallrikar och låtsas att vi vet vad vi håller på med.",
+        "Vi tillsätter lite salt, lite peppar och massor av känsla.",
+        "Vi rör försiktigt för att inte väcka degen."
+      ],
+      "memory": {
+        "title": "Överraskningen",
+        "story": "Det fanns alltid med på varje fest och var den första rätten som tog slut."
+      },
+      "prepTime": "20 minuter",
+      "cookTime": "45 minuter"
+    },
+    "es": {
+      "title": "LA CARBONARA",
+      "description": "¡Una receta que encantará a toda la familia! Ingredientes sencillos y un sabor estupendo.",
+      "ingredients": [
+        "Patatas",
+        "Aceite",
+        "Orégano",
+        "Limón"
+      ],
+      "steps": [
+        "Llamamos a mamá para preguntarle «¿cuánta agua le echo?».",
+        "Echamos lo que sobró de la cena de anoche.",
+        "Servimos en platos hondos y hacemos como que sabemos lo que hacemos.",
+        "Añadimos un poco de sal, un poco de pimienta y mucho sentimiento.",
+        "Removemos con suavidad para no despertar la masa."
+      ],
+      "memory": {
+        "title": "La sorpresa",
+        "story": "Siempre presente en todas las fiestas, era el primer plato en vaciarse."
+      },
+      "prepTime": "20 minutos",
+      "cookTime": "45 minutos"
+    },
+    "it": {
+      "title": "LA CARBONARA",
+      "description": "Una ricetta che piacerà a tutta la famiglia! Ingredienti semplici e un sapore meraviglioso.",
+      "ingredients": [
+        "Patate",
+        "Olio",
+        "Origano",
+        "Limone"
+      ],
+      "steps": [
+        "Telefoniamo alla mamma per chiederle «quanta acqua ci metto?».",
+        "Ci buttiamo dentro gli avanzi della cena di ieri sera.",
+        "Serviamo nei piatti fondi e facciamo finta di sapere quello che facciamo.",
+        "Aggiungiamo un po’ di sale, un po’ di pepe e tanto sentimento.",
+        "Mescoliamo delicatamente per non svegliare l’impasto."
+      ],
+      "memory": {
+        "title": "La sorpresa",
+        "story": "Sempre presente a ogni festa, era il primo piatto a svuotarsi."
+      },
+      "prepTime": "20 minuti",
+      "cookTime": "45 minuti"
+    }
+  }
 }

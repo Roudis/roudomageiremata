@@ -26,5 +26,145 @@
   "cookTime": "45 λεπτά",
   "servings": 4,
   "createdAt": "2026-08-10T16:52:28.199Z",
-  "updatedAt": "2026-08-10T16:52:28.199Z"
+  "updatedAt": "2026-08-10T16:52:28.199Z",
+  "translations": {
+    "en": {
+      "title": "Shrimp marinaradara (the “aki” one, but never mind)",
+      "description": "A recipe the whole family will love! Simple ingredients, wonderful flavour.",
+      "ingredients": [
+        "Fresh vegetables",
+        "Olive oil",
+        "Balsamic vinegar",
+        "Salt"
+      ],
+      "steps": [
+        "We sneak a taste and burn our tongue.",
+        "We peek into the oven and hope for the best.",
+        "We close our eyes and add spices at random.",
+        "We serve it in deep plates and pretend we know what we’re doing.",
+        "We add a little extra oil, “because that’s what makes it tasty”."
+      ],
+      "memory": {
+        "title": "Sunday lunch",
+        "story": "We never expected it to turn out so well the first time, but it became our speciality."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "nl": {
+      "title": "Garnalen-marinaradara (die van “aki”, maar het geeft niet)",
+      "description": "Een recept waar de hele familie dol op zal zijn! Met eenvoudige ingrediënten en een heerlijke smaak.",
+      "ingredients": [
+        "Verse groenten",
+        "Olijfolie",
+        "Balsamicoazijn",
+        "Zout"
+      ],
+      "steps": [
+        "We proeven stiekem een beetje en branden onze tong.",
+        "We werpen een blik in de oven en hopen op het beste.",
+        "We doen onze ogen dicht en voegen lukraak kruiden toe.",
+        "We serveren het in diepe borden en doen alsof we weten wat we doen.",
+        "We doen er een scheutje olie extra bij, “want dan wordt het lekkerder”."
+      ],
+      "memory": {
+        "title": "Zondagse maaltijd",
+        "story": "We hadden niet verwacht dat het de eerste keer zo lekker zou worden, maar het werd onze specialiteit."
+      },
+      "prepTime": "20 minuten",
+      "cookTime": "45 minuten"
+    },
+    "fr": {
+      "title": "Crevettes marinaradara (celle d’« aki », mais peu importe)",
+      "description": "Une recette que toute la famille va adorer ! Des ingrédients simples et un goût merveilleux.",
+      "ingredients": [
+        "Légumes frais",
+        "Huile d’olive",
+        "Vinaigre balsamique",
+        "Sel"
+      ],
+      "steps": [
+        "On goûte en cachette et on se brûle la langue.",
+        "On jette un œil au four en espérant que tout se passe bien.",
+        "On ferme les yeux et on ajoute des épices au hasard.",
+        "On sert dans des assiettes creuses en faisant semblant de savoir ce qu’on fait.",
+        "On ajoute un peu plus d’huile, « parce que c’est ça qui donne du goût »."
+      ],
+      "memory": {
+        "title": "Le repas du dimanche",
+        "story": "On ne s’attendait pas à ce que ce soit aussi bon la première fois, mais c’est devenu notre spécialité."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "sv": {
+      "title": "Räkmarinaradara (den med ”aki”, men det gör inget)",
+      "description": "Ett recept som hela familjen kommer att älska! Enkla ingredienser och underbar smak.",
+      "ingredients": [
+        "Färska grönsaker",
+        "Olivolja",
+        "Balsamvinäger",
+        "Salt"
+      ],
+      "steps": [
+        "Vi smakar lite i smyg och bränner tungan.",
+        "Vi kikar in i ugnen och hoppas på det bästa.",
+        "Vi blundar och tillsätter kryddor på måfå.",
+        "Vi serverar på djupa tallrikar och låtsas att vi vet vad vi håller på med.",
+        "Vi häller i lite extra olja, ”för då blir det godare”."
+      ],
+      "memory": {
+        "title": "Söndagsmiddag",
+        "story": "Vi trodde aldrig att det skulle bli så gott första gången, men det blev vår specialitet."
+      },
+      "prepTime": "20 minuter",
+      "cookTime": "45 minuter"
+    },
+    "es": {
+      "title": "Gambas marinaradara (la de «aki», pero no pasa nada)",
+      "description": "¡Una receta que encantará a toda la familia! Ingredientes sencillos y un sabor estupendo.",
+      "ingredients": [
+        "Verduras frescas",
+        "Aceite de oliva",
+        "Vinagre balsámico",
+        "Sal"
+      ],
+      "steps": [
+        "Probamos un poco a escondidas y nos quemamos la lengua.",
+        "Echamos un vistazo al horno y esperamos lo mejor.",
+        "Cerramos los ojos y añadimos especias al azar.",
+        "Servimos en platos hondos y hacemos como que sabemos lo que hacemos.",
+        "Echamos un poco más de aceite, «porque así sabe mejor»."
+      ],
+      "memory": {
+        "title": "La comida del domingo",
+        "story": "No esperábamos que saliera tan rico la primera vez, pero se convirtió en nuestra especialidad."
+      },
+      "prepTime": "20 minutos",
+      "cookTime": "45 minutos"
+    },
+    "it": {
+      "title": "Gamberi marinaradara (quella dell’“aki”, ma non importa)",
+      "description": "Una ricetta che piacerà a tutta la famiglia! Ingredienti semplici e un sapore meraviglioso.",
+      "ingredients": [
+        "Verdure fresche",
+        "Olio d’oliva",
+        "Aceto balsamico",
+        "Sale"
+      ],
+      "steps": [
+        "Assaggiamo di nascosto e ci scottiamo la lingua.",
+        "Diamo un’occhiata al forno e speriamo per il meglio.",
+        "Chiudiamo gli occhi e aggiungiamo spezie a caso.",
+        "Serviamo nei piatti fondi e facciamo finta di sapere quello che facciamo.",
+        "Aggiungiamo un po’ d’olio in più, «perché così è più saporito»."
+      ],
+      "memory": {
+        "title": "Il pranzo della domenica",
+        "story": "Non ci aspettavamo che venisse così buono la prima volta, ma è diventato la nostra specialità."
+      },
+      "prepTime": "20 minuti",
+      "cookTime": "45 minuti"
+    }
+  }
 }

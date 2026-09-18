@@ -27,5 +27,151 @@
   "cookTime": "45 λεπτά",
   "servings": 4,
   "createdAt": "2026-08-10T16:52:28.199Z",
-  "updatedAt": "2026-08-10T16:52:28.199Z"
+  "updatedAt": "2026-08-10T16:52:28.199Z",
+  "translations": {
+    "en": {
+      "title": "The schnitzels Uncle takes home in a tupperware",
+      "description": "Delicate flavours, a beautiful presentation and lots of love in every bite.",
+      "ingredients": [
+        "Fresh vegetables",
+        "Olive oil",
+        "Balsamic vinegar",
+        "Salt"
+      ],
+      "steps": [
+        "We throw in whatever was left over from last night’s dinner.",
+        "We hover over the pot, holding our breath.",
+        "We serve it in deep plates and pretend we know what we’re doing.",
+        "We ring Mum to ask “how much water do I add?”.",
+        "We grin from ear to ear because... go figure, somehow it worked!",
+        "We sneak a taste and burn our tongue."
+      ],
+      "memory": {
+        "title": "Festive days",
+        "story": "We never expected it to turn out so well the first time, but it became our speciality."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "nl": {
+      "title": "De schnitzels die oom in een bakje mee naar huis neemt",
+      "description": "Verfijnde smaken, een mooie presentatie en veel liefde in elke hap.",
+      "ingredients": [
+        "Verse groenten",
+        "Olijfolie",
+        "Balsamicoazijn",
+        "Zout"
+      ],
+      "steps": [
+        "We gooien erin wat er van het avondeten van gisteren over is.",
+        "We staan gespannen boven de pan te wachten.",
+        "We serveren het in diepe borden en doen alsof we weten wat we doen.",
+        "We bellen mama om te vragen “hoeveel water doe ik erbij?”.",
+        "We glimlachen van oor tot oor, want... zeg jij het maar, op de een of andere manier is het gelukt!",
+        "We proeven stiekem een beetje en branden onze tong."
+      ],
+      "memory": {
+        "title": "Feestdagen",
+        "story": "We hadden niet verwacht dat het de eerste keer zo lekker zou worden, maar het werd onze specialiteit."
+      },
+      "prepTime": "20 minuten",
+      "cookTime": "45 minuten"
+    },
+    "fr": {
+      "title": "Les schnitzels que Tonton emporte dans un Tupperware",
+      "description": "Des saveurs délicates, une belle présentation et beaucoup d’amour dans chaque bouchée.",
+      "ingredients": [
+        "Légumes frais",
+        "Huile d’olive",
+        "Vinaigre balsamique",
+        "Sel"
+      ],
+      "steps": [
+        "On y jette les restes du dîner d’hier soir.",
+        "On attend au-dessus de la casserole, rongés d’impatience.",
+        "On sert dans des assiettes creuses en faisant semblant de savoir ce qu’on fait.",
+        "On appelle maman pour lui demander « je mets combien d’eau ? ».",
+        "On sourit jusqu’aux oreilles parce que... va savoir, ça a marché !",
+        "On goûte en cachette et on se brûle la langue."
+      ],
+      "memory": {
+        "title": "Jours de fête",
+        "story": "On ne s’attendait pas à ce que ce soit aussi bon la première fois, mais c’est devenu notre spécialité."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "sv": {
+      "title": "Schnitzlarna som farbror tar med sig hem i en matlåda",
+      "description": "Fina smaker, vacker uppläggning och mycket kärlek i varje tugga.",
+      "ingredients": [
+        "Färska grönsaker",
+        "Olivolja",
+        "Balsamvinäger",
+        "Salt"
+      ],
+      "steps": [
+        "Vi slänger i det som blev över från gårdagens middag.",
+        "Vi står och väntar över kastrullen med spänning.",
+        "Vi serverar på djupa tallrikar och låtsas att vi vet vad vi håller på med.",
+        "Vi ringer mamma och frågar ”hur mycket vatten ska jag ha i?”.",
+        "Vi ler från öra till öra för att... säg det du, på något sätt blev det lyckat!",
+        "Vi smakar lite i smyg och bränner tungan."
+      ],
+      "memory": {
+        "title": "Helgdagar",
+        "story": "Vi trodde aldrig att det skulle bli så gott första gången, men det blev vår specialitet."
+      },
+      "prepTime": "20 minuter",
+      "cookTime": "45 minuter"
+    },
+    "es": {
+      "title": "Los escalopes que el tío se lleva en un táper",
+      "description": "Sabores delicados, una presentación bonita y mucho amor en cada bocado.",
+      "ingredients": [
+        "Verduras frescas",
+        "Aceite de oliva",
+        "Vinagre balsámico",
+        "Sal"
+      ],
+      "steps": [
+        "Echamos lo que sobró de la cena de anoche.",
+        "Esperamos junto a la olla con el corazón en un puño.",
+        "Servimos en platos hondos y hacemos como que sabemos lo que hacemos.",
+        "Llamamos a mamá para preguntarle «¿cuánta agua le echo?».",
+        "Sonreímos de oreja a oreja porque... quién sabe, ¡de algún modo salió bien!",
+        "Probamos un poco a escondidas y nos quemamos la lengua."
+      ],
+      "memory": {
+        "title": "Días de fiesta",
+        "story": "No esperábamos que saliera tan rico la primera vez, pero se convirtió en nuestra especialidad."
+      },
+      "prepTime": "20 minutos",
+      "cookTime": "45 minutos"
+    },
+    "it": {
+      "title": "Le cotolette che lo zio si porta a casa nel tupperware",
+      "description": "Sapori delicati, una bella presentazione e tanto amore in ogni boccone.",
+      "ingredients": [
+        "Verdure fresche",
+        "Olio d’oliva",
+        "Aceto balsamico",
+        "Sale"
+      ],
+      "steps": [
+        "Ci buttiamo dentro gli avanzi della cena di ieri sera.",
+        "Aspettiamo sopra la pentola col fiato sospeso.",
+        "Serviamo nei piatti fondi e facciamo finta di sapere quello che facciamo.",
+        "Telefoniamo alla mamma per chiederle «quanta acqua ci metto?».",
+        "Sorridiamo da un orecchio all’altro perché... chissà, in qualche modo è venuto bene!",
+        "Assaggiamo di nascosto e ci scottiamo la lingua."
+      ],
+      "memory": {
+        "title": "Giorni di festa",
+        "story": "Non ci aspettavamo che venisse così buono la prima volta, ma è diventato la nostra specialità."
+      },
+      "prepTime": "20 minuti",
+      "cookTime": "45 minuti"
+    }
+  }
 }

@@ -25,5 +25,139 @@
   "cookTime": "45 λεπτά",
   "servings": 4,
   "createdAt": "2026-08-10T16:52:28.199Z",
-  "updatedAt": "2026-08-10T16:52:28.199Z"
+  "updatedAt": "2026-08-10T16:52:28.199Z",
+  "translations": {
+    "en": {
+      "title": "The tastiest kokkinisto + a gas mask",
+      "description": "A recipe the whole family will love! Simple ingredients, wonderful flavour.",
+      "ingredients": [
+        "Potatoes",
+        "Oil",
+        "Oregano",
+        "Lemon"
+      ],
+      "steps": [
+        "We peek into the oven and hope for the best.",
+        "We throw in whatever was left over from last night’s dinner.",
+        "We close our eyes and add spices at random.",
+        "We sneak a taste and burn our tongue."
+      ],
+      "memory": {
+        "title": "Sunday lunch",
+        "story": "Every Sunday, this smell would wake us up first thing in the morning!"
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "nl": {
+      "title": "De lekkerste kokkinisto + een gasmasker",
+      "description": "Een recept waar de hele familie dol op zal zijn! Met eenvoudige ingrediënten en een heerlijke smaak.",
+      "ingredients": [
+        "Aardappelen",
+        "Olie",
+        "Oregano",
+        "Citroen"
+      ],
+      "steps": [
+        "We werpen een blik in de oven en hopen op het beste.",
+        "We gooien erin wat er van het avondeten van gisteren over is.",
+        "We doen onze ogen dicht en voegen lukraak kruiden toe.",
+        "We proeven stiekem een beetje en branden onze tong."
+      ],
+      "memory": {
+        "title": "Zondagse maaltijd",
+        "story": "Elke zondag werden we ’s ochtends vroeg wakker van deze geur!"
+      },
+      "prepTime": "20 minuten",
+      "cookTime": "45 minuten"
+    },
+    "fr": {
+      "title": "Le kokkinisto le plus savoureux + un masque à gaz",
+      "description": "Une recette que toute la famille va adorer ! Des ingrédients simples et un goût merveilleux.",
+      "ingredients": [
+        "Pommes de terre",
+        "Huile",
+        "Origan",
+        "Citron"
+      ],
+      "steps": [
+        "On jette un œil au four en espérant que tout se passe bien.",
+        "On y jette les restes du dîner d’hier soir.",
+        "On ferme les yeux et on ajoute des épices au hasard.",
+        "On goûte en cachette et on se brûle la langue."
+      ],
+      "memory": {
+        "title": "Le repas du dimanche",
+        "story": "Chaque dimanche, cette odeur nous réveillait dès le matin !"
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "sv": {
+      "title": "Den godaste kokkiniston + en gasmask",
+      "description": "Ett recept som hela familjen kommer att älska! Enkla ingredienser och underbar smak.",
+      "ingredients": [
+        "Potatis",
+        "Olja",
+        "Oregano",
+        "Citron"
+      ],
+      "steps": [
+        "Vi kikar in i ugnen och hoppas på det bästa.",
+        "Vi slänger i det som blev över från gårdagens middag.",
+        "Vi blundar och tillsätter kryddor på måfå.",
+        "Vi smakar lite i smyg och bränner tungan."
+      ],
+      "memory": {
+        "title": "Söndagsmiddag",
+        "story": "Varje söndag väckte den här doften oss tidigt på morgonen!"
+      },
+      "prepTime": "20 minuter",
+      "cookTime": "45 minuter"
+    },
+    "es": {
+      "title": "El kokkinisto más rico + una máscara de gas",
+      "description": "¡Una receta que encantará a toda la familia! Ingredientes sencillos y un sabor estupendo.",
+      "ingredients": [
+        "Patatas",
+        "Aceite",
+        "Orégano",
+        "Limón"
+      ],
+      "steps": [
+        "Echamos un vistazo al horno y esperamos lo mejor.",
+        "Echamos lo que sobró de la cena de anoche.",
+        "Cerramos los ojos y añadimos especias al azar.",
+        "Probamos un poco a escondidas y nos quemamos la lengua."
+      ],
+      "memory": {
+        "title": "La comida del domingo",
+        "story": "¡Cada domingo, este olor nos despertaba por la mañana!"
+      },
+      "prepTime": "20 minutos",
+      "cookTime": "45 minutos"
+    },
+    "it": {
+      "title": "Il kokkinisto più gustoso + una maschera antigas",
+      "description": "Una ricetta che piacerà a tutta la famiglia! Ingredienti semplici e un sapore meraviglioso.",
+      "ingredients": [
+        "Patate",
+        "Olio",
+        "Origano",
+        "Limone"
+      ],
+      "steps": [
+        "Diamo un’occhiata al forno e speriamo per il meglio.",
+        "Ci buttiamo dentro gli avanzi della cena di ieri sera.",
+        "Chiudiamo gli occhi e aggiungiamo spezie a caso.",
+        "Assaggiamo di nascosto e ci scottiamo la lingua."
+      ],
+      "memory": {
+        "title": "Il pranzo della domenica",
+        "story": "Ogni domenica, questo profumo ci svegliava fin dal mattino!"
+      },
+      "prepTime": "20 minuti",
+      "cookTime": "45 minuti"
+    }
+  }
 }
