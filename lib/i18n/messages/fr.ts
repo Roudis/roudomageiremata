@@ -34,7 +34,7 @@ export const fr: Messages = {
       "Chaque membre de la famille a sa place ici. Découvre les histoires et les petits plats qui les rendent uniques !",
   },
   recipeList: {
-    searchPlaceholder: "Rechercher une recette ou un ingrédient…",
+    searchPlaceholder: "Recette, ingrédient ou étiquette…",
     searchLabel: "Rechercher une recette",
     clearSearch: "Effacer la recherche",
     allCategories: "Toutes",
@@ -59,6 +59,9 @@ export const fr: Messages = {
     ingredients: "Ingrédients",
     ingredientsHint: "Coche ce que tu as déjà préparé.",
     steps: "Réalisation",
+  },
+  tags: {
+    label: "Étiquettes",
   },
   counts: {
     recipes: { one: "{count} recette", other: "{count} recettes" },

@@ -37,7 +37,7 @@ export const el = {
       "Κάθε πρόσωπο της οικογένειας έχει τη δική του θέση εδώ. Ανακάλυψε τις ιστορίες και τα πιατάκια που τους κάνουν ξεχωριστούς!",
   },
   recipeList: {
-    searchPlaceholder: "Αναζήτηση συνταγής ή υλικού…",
+    searchPlaceholder: "Συνταγή, υλικό ή ετικέτα…",
     searchLabel: "Αναζήτηση συνταγής",
     clearSearch: "Καθαρισμός αναζήτησης",
     allCategories: "Όλες",
@@ -62,6 +62,9 @@ export const el = {
     ingredients: "Υλικά",
     ingredientsHint: "Τσέκαρε ό,τι έχεις ήδη ετοιμάσει.",
     steps: "Εκτέλεση",
+  },
+  tags: {
+    label: "Ετικέτες",
   },
   counts: {
     recipes: { one: "{count} συνταγή", other: "{count} συνταγές" },

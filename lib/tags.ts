@@ -1,0 +1,88 @@
+import type { Locale } from "@/lib/i18n/config";
+
+/**
+ * The tags a recipe can carry, in the order the filter shows them: diet, then
+ * the main ingredient, then the kind of dish. A recipe's `tags` may only use
+ * these ids, which `npm run validate:data` checks. Adding a tag means adding
+ * its name in every language here; a missing one fails `npm run typecheck`.
+ * Pure, so it is safe on either side.
+ */
+export const TAG_NAMES = {
+  vegan: { el: "Βίγκαν", en: "Vegan", nl: "Veganistisch", fr: "Végan", sv: "Vegansk", es: "Vegano", it: "Vegano" },
+  vegetarian: {
+    el: "Χορτοφαγικό",
+    en: "Vegetarian",
+    nl: "Vegetarisch",
+    fr: "Végétarien",
+    sv: "Vegetarisk",
+    es: "Vegetariano",
+    it: "Vegetariano",
+  },
+  meat: { el: "Κρέας", en: "Meat", nl: "Vlees", fr: "Viande", sv: "Kött", es: "Carne", it: "Carne" },
+  beef: { el: "Μοσχάρι", en: "Beef", nl: "Rundvlees", fr: "Bœuf", sv: "Nötkött", es: "Ternera", it: "Manzo" },
+  pork: { el: "Χοιρινό", en: "Pork", nl: "Varkensvlees", fr: "Porc", sv: "Fläsk", es: "Cerdo", it: "Maiale" },
+  lamb: { el: "Αρνί", en: "Lamb", nl: "Lamsvlees", fr: "Agneau", sv: "Lamm", es: "Cordero", it: "Agnello" },
+  chicken: { el: "Κοτόπουλο", en: "Chicken", nl: "Kip", fr: "Poulet", sv: "Kyckling", es: "Pollo", it: "Pollo" },
+  fish: { el: "Ψάρι", en: "Fish", nl: "Vis", fr: "Poisson", sv: "Fisk", es: "Pescado", it: "Pesce" },
+  seafood: {
+    el: "Θαλασσινά",
+    en: "Seafood",
+    nl: "Zeevruchten",
+    fr: "Fruits de mer",
+    sv: "Skaldjur",
+    es: "Marisco",
+    it: "Frutti di mare",
+  },
+  pasta: { el: "Ζυμαρικά", en: "Pasta", nl: "Pasta", fr: "Pâtes", sv: "Pasta", es: "Pasta", it: "Pasta" },
+  pie: {
+    el: "Πίτα",
+    en: "Pie",
+    nl: "Hartige taart",
+    fr: "Tourte",
+    sv: "Paj",
+    es: "Pastel salado",
+    it: "Torta salata",
+  },
+  soup: { el: "Σούπα", en: "Soup", nl: "Soep", fr: "Soupe", sv: "Soppa", es: "Sopa", it: "Zuppa" },
+  meze: { el: "Μεζέδες", en: "Meze", nl: "Meze", fr: "Mezzés", sv: "Meze", es: "Meze", it: "Meze" },
+  dessert: { el: "Γλυκό", en: "Dessert", nl: "Dessert", fr: "Dessert", sv: "Efterrätt", es: "Postre", it: "Dolce" },
+  drink: { el: "Ποτό", en: "Drink", nl: "Drankje", fr: "Boisson", sv: "Dryck", es: "Bebida", it: "Bevanda" },
+} as const satisfies Record<string, Record<Locale, string>>;
+
+export type TagId = keyof typeof TAG_NAMES;
+
+export const TAG_IDS = Object.keys(TAG_NAMES) as TagId[];
+
+/**
+ * Broader tags a tag counts as, so a recipe lists only the most specific one:
+ * a vegan recipe turns up under "vegetarian" and a beef one under "meat".
+ * One level deep; listing an implied tag as well is a data error.
+ */
+export const TAG_IMPLIES: Partial<Record<TagId, readonly TagId[]>> = {
+  vegan: ["vegetarian"],
+  beef: ["meat"],
+  pork: ["meat"],
+  lamb: ["meat"],
+  chicken: ["meat"],
+};
+
+/** Tags that cannot apply to a vegetarian recipe. */
+export const NOT_VEGETARIAN: readonly TagId[] = ["meat", "fish", "seafood"];
+
+export function isTagId(value: unknown): value is TagId {
+  return typeof value === "string" && Object.hasOwn(TAG_NAMES, value);
+}
+
+export function tagName(tag: TagId, locale: Locale): string {
+  return TAG_NAMES[tag][locale];
+}
+
+/** The tags plus every tag they imply, without duplicates, in TAG_IDS order. */
+export function expandTags(tags: readonly TagId[]): TagId[] {
+  const expanded = new Set<TagId>();
+  for (const tag of tags) {
+    expanded.add(tag);
+    for (const implied of TAG_IMPLIES[tag] ?? []) expanded.add(implied);
+  }
+  return TAG_IDS.filter((tag) => expanded.has(tag));
+}

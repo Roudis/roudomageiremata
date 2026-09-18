@@ -3,7 +3,7 @@
  * "(current behavior)" lock down quirks that a later step is expected to change.
  */
 import { describe, expect, it } from "vitest";
-import { filterRecipes, getCategories, normalizeSearchText, type SearchableRecipe } from "@/lib/recipe-search";
+import { filterRecipes, getCategories, getTags, normalizeSearchText, type SearchableRecipe } from "@/lib/recipe-search";
 
 type Fixture = SearchableRecipe & { id: string };
 
@@ -185,5 +185,67 @@ describe("getCategories", () => {
 
   it("returns an empty list for no recipes", () => {
     expect(getCategories([])).toEqual([]);
+  });
+});
+
+describe("tags", () => {
+  const pastitsio = makeRecipe({ id: "pastitsio", title: "Παστίτσιο", tags: ["beef", "pasta"] });
+  const gemista = makeRecipe({ id: "gemista", title: "Γεμιστά", tags: ["vegan"] });
+  const tiropita = makeRecipe({ id: "tiropita", title: "Τυρόπιτα", tags: ["vegetarian", "pie"] });
+  const untagged = makeRecipe({ id: "untagged", title: "Κάτι ξεχνάω" });
+  const tagged = [pastitsio, gemista, tiropita, untagged];
+
+  const byTag = (tag: Parameters<typeof filterRecipes>[1]["tag"]) =>
+    ids(filterRecipes(tagged, { query: "", category: null, tag }));
+  const searchIn = (locale: "el" | "en" | "fr", query: string) =>
+    ids(filterRecipes(tagged, { query, category: null, locale }));
+
+  it("filters by a tag the recipe lists", () => {
+    expect(byTag("pasta")).toEqual(["pastitsio"]);
+    expect(byTag("pie")).toEqual(["tiropita"]);
+  });
+
+  it("filters by a tag the recipe's tags imply: vegan counts as vegetarian, beef as meat", () => {
+    expect(byTag("vegetarian")).toEqual(["gemista", "tiropita"]);
+    expect(byTag("meat")).toEqual(["pastitsio"]);
+    expect(byTag("vegan")).toEqual(["gemista"]);
+  });
+
+  it("does not filter when the tag is null or absent", () => {
+    expect(byTag(null)).toEqual(ids(tagged));
+    expect(byTag(undefined)).toEqual(ids(tagged));
+  });
+
+  it("combines the tag with the query and the category", () => {
+    expect(ids(filterRecipes(tagged, { query: "γεμ", category: null, tag: "vegetarian" }))).toEqual(["gemista"]);
+    expect(ids(filterRecipes(tagged, { query: "", category: "Άλλο", tag: "vegetarian" }))).toEqual([
+      "gemista",
+      "tiropita",
+    ]);
+    expect(ids(filterRecipes(tagged, { query: "", category: "Κάτι άλλο", tag: "vegan" }))).toEqual([]);
+  });
+
+  it("matches the query against tag names in the page's language, ignoring case and accents", () => {
+    expect(searchIn("el", "ζυμαρικα")).toEqual(["pastitsio"]);
+    expect(searchIn("en", "VEGAN")).toEqual(["gemista"]);
+    expect(searchIn("fr", "vegetarien")).toEqual(["gemista", "tiropita"]);
+  });
+
+  it("matches implied tag names too, so 'κρέας' finds a recipe tagged beef", () => {
+    expect(searchIn("el", "κρέας")).toEqual(["pastitsio"]);
+    expect(searchIn("en", "meat")).toEqual(["pastitsio"]);
+  });
+
+  it("matches tag names in Greek when no language is given", () => {
+    expect(ids(filterRecipes(tagged, { query: "πίτα", category: null }))).toEqual(["tiropita"]);
+  });
+
+  it("does not match a tag name from another language", () => {
+    expect(searchIn("el", "pasta")).toEqual([]);
+  });
+
+  it("lists every tag in use, implied ones included, in the vocabulary's order", () => {
+    expect(getTags(tagged)).toEqual(["vegan", "vegetarian", "meat", "beef", "pasta", "pie"]);
+    expect(getTags([untagged])).toEqual([]);
   });
 });

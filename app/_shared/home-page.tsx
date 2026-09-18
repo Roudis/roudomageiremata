@@ -108,7 +108,7 @@ export async function HomePage({ locale }: { locale: Locale }) {
           recipes={recipes.map(toRecipeSummary)}
           locale={locale}
           categoryNames={categoryNames}
-          messages={{ recipeList: t.recipeList, recipeCard: t.recipeCard, counts: t.counts }}
+          messages={{ recipeList: t.recipeList, recipeCard: t.recipeCard, tags: t.tags, counts: t.counts }}
         />
       </section>
     </main>

@@ -272,6 +272,52 @@ describe("isRecipeId", () => {
   });
 });
 
+describe("parseRecipe: tags", () => {
+  const tagIssues = (tags: unknown) => issuesFor({ ...validRecipe(), tags }).map((issue) => issue.message);
+
+  it("accepts known tags", () => {
+    expect(tagIssues(["beef", "pasta"])).toEqual([]);
+    expect(tagIssues(["vegan", "dessert"])).toEqual([]);
+  });
+
+  it.each([
+    ["an empty array", []],
+    ["a string", "vegan"],
+    ["null", null],
+  ])("rejects tags that are %s", (_label, tags) => {
+    expect(tagIssues(tags)).toEqual(["tags must be a non-empty array when present"]);
+  });
+
+  it("rejects unknown tags, naming the allowed ones", () => {
+    const [message] = tagIssues(["tofu"]);
+
+    expect(message).toMatch(/^unknown tag "tofu"; use one of vegan, vegetarian, meat, .* or add it to lib\/tags.ts$/);
+    expect(tagIssues(["Vegan", 3])).toHaveLength(2);
+  });
+
+  it("rejects a repeated tag", () => {
+    expect(tagIssues(["pasta", "pasta"])).toEqual(['tag "pasta" is listed twice']);
+  });
+
+  it("rejects a tag another tag already implies", () => {
+    expect(tagIssues(["vegan", "vegetarian"])).toEqual(['remove tag "vegetarian": "vegan" already implies it']);
+    expect(tagIssues(["meat", "beef"])).toEqual(['remove tag "meat": "beef" already implies it']);
+  });
+
+  it("rejects a vegetarian or vegan recipe tagged with meat, fish, or seafood", () => {
+    expect(tagIssues(["vegetarian", "fish"])).toEqual(['a vegetarian recipe cannot also be tagged "fish"']);
+    expect(tagIssues(["vegan", "beef", "seafood"])).toEqual([
+      'a vegetarian recipe cannot also be tagged "meat", "seafood"',
+    ]);
+  });
+
+  it("rejects tags inside a translation, since they are not text", () => {
+    const translation = { title: "T", description: "D", ingredients: ["a", "b"], steps: ["c", "d"], tags: ["vegan"] };
+
+    expect(fieldsOf({ ...validRecipe(), translations: { en: translation } })).toEqual(["translations.en.tags"]);
+  });
+});
+
 /** An English translation matching fullRecipe() field for field. */
 function fullTranslation(): Record<string, unknown> {
   return {

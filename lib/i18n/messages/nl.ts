@@ -33,7 +33,7 @@ export const nl: Messages = {
       "Ieder familielid heeft hier een eigen plekje. Ontdek de verhalen en de gerechtjes die hen zo bijzonder maken!",
   },
   recipeList: {
-    searchPlaceholder: "Zoek een recept of ingrediënt…",
+    searchPlaceholder: "Recept, ingrediënt of label…",
     searchLabel: "Recepten zoeken",
     clearSearch: "Zoekopdracht wissen",
     allCategories: "Alle",
@@ -58,6 +58,9 @@ export const nl: Messages = {
     ingredients: "Ingrediënten",
     ingredientsHint: "Vink af wat je al hebt klaargezet.",
     steps: "Bereiding",
+  },
+  tags: {
+    label: "Labels",
   },
   counts: {
     recipes: { one: "{count} recept", other: "{count} recepten" },

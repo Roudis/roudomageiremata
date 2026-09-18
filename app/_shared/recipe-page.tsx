@@ -7,6 +7,7 @@ import { localizeRecipe } from "@/lib/recipe-view";
 import { withBasePath } from "@/lib/base-path";
 import { LOCALE_DETAILS, SITE_NAME, localizePath, type Locale } from "@/lib/i18n/config";
 import { getMessages } from "@/lib/i18n/messages";
+import { tagName } from "@/lib/tags";
 import { languageAlternates } from "@/app/_shared/metadata";
 import { CategoryBadge } from "@/components/category-badge";
 import { RecipeHero } from "@/components/recipe-detail/recipe-hero";
@@ -14,7 +15,7 @@ import { RecipeStats } from "@/components/recipe-detail/recipe-stats";
 import { RecipeMemory } from "@/components/recipe-detail/recipe-memory";
 import { IngredientList } from "@/components/recipe-detail/ingredient-list";
 import { StepList } from "@/components/recipe-detail/step-list";
-import { ArrowLeft, Languages } from "lucide-react";
+import { ArrowLeft, Languages, Tag } from "lucide-react";
 
 /**
  * The recipe ids that get a page, in every language; on GitHub Pages any other
@@ -66,7 +67,8 @@ export async function RecipePage({ id, locale }: RecipePageProps) {
     notFound();
   }
 
-  const t = getMessages(locale).recipe;
+  const messages = getMessages(locale);
+  const t = messages.recipe;
   const recipe = localizeRecipe(found, locale);
   // Set only when the recipe has no translation for this language and its text is still Greek.
   const lang = recipe.contentLocale === locale ? undefined : recipe.contentLocale;
@@ -101,6 +103,22 @@ export async function RecipePage({ id, locale }: RecipePageProps) {
           <p lang={lang} className="mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">
             {recipe.description}
           </p>
+          {recipe.tags !== undefined && (
+            <ul aria-label={messages.tags.label} className="mt-5 flex flex-wrap gap-2">
+              {recipe.tags.map((tag) => (
+                <li key={tag}>
+                  {/* Opens the recipe list filtered to this tag; RecipeList reads ?tag= when it mounts. */}
+                  <Link
+                    href={localizePath(`/?tag=${tag}#recipe-grid`, locale)}
+                    className="inline-flex h-8 items-center gap-1.5 rounded-full bg-secondary-soft px-3 text-sm font-medium text-secondary transition-colors hover:bg-secondary hover:text-secondary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                  >
+                    <Tag className="h-3.5 w-3.5" aria-hidden="true" />
+                    {tagName(tag, locale)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
           <div className="mt-8">
             <RecipeStats recipe={recipe} locale={locale} lang={lang} />
           </div>
