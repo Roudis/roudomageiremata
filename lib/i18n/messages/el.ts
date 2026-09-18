@@ -1,8 +1,11 @@
+import type { PluralForms } from "@/lib/i18n/format";
+
 /**
  * The Greek interface text, which every other language file must match key for
  * key: `Messages` is this object's type, so a missing or extra key fails
  * `npm run typecheck`. `{count}` is replaced by `formatCount` in lib/i18n/format.ts,
- * which also picks the `one` or `other` form.
+ * which also picks the `one`, `few`, or `other` form. Only `few` may be added:
+ * languages whose plural rules have that category, such as Czech, must give it.
  */
 export const el = {
   site: {
@@ -75,4 +78,4 @@ export const el = {
   },
 };
 
-export type Messages = typeof el;
+export type Messages = Omit<typeof el, "counts"> & { counts: Record<keyof (typeof el)["counts"], PluralForms> };

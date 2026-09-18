@@ -183,6 +183,56 @@
       },
       "prepTime": "20 minuti",
       "cookTime": "45 minuti"
+    },
+    "ro": {
+      "title": "Prăjitura cu iaurt",
+      "description": "O rețetă clasică ce trezește amintiri și umple casa de arome.",
+      "ingredients": [
+        "Făină",
+        "Ouă",
+        "Lapte",
+        "Unt",
+        "Brânză feta"
+      ],
+      "steps": [
+        "Stăm deasupra oalei cu sufletul la gură.",
+        "O sunăm pe mama să o întrebăm „câtă apă pun?”.",
+        "Aruncăm înăuntru tot ce a rămas de la cina de aseară.",
+        "Servim în farfurii adânci și ne prefacem că știm ce facem.",
+        "Aruncăm o privire în cuptor și sperăm la ce e mai bun.",
+        "Scotocim prin dulapuri după ustensila aceea pe care am cumpărat-o în 2015."
+      ],
+      "memory": {
+        "title": "Surpriza",
+        "story": "Mereu prezent la fiecare sărbătoare, era farfuria care se golea prima."
+      },
+      "prepTime": "20 de minute",
+      "cookTime": "45 de minute"
+    },
+    "cs": {
+      "title": "Jogurtový koláč",
+      "description": "Klasický recept, který probouzí vzpomínky a naplní dům vůněmi.",
+      "ingredients": [
+        "Mouka",
+        "Vejce",
+        "Mléko",
+        "Máslo",
+        "Sýr feta"
+      ],
+      "steps": [
+        "Napjatě stojíme nad hrncem.",
+        "Voláme mamince, abychom se zeptali: „Kolik vody tam mám dát?“",
+        "Přihodíme všechno, co zbylo od včerejší večeře.",
+        "Podáváme v hlubokých talířích a děláme, že víme, co děláme.",
+        "Nakoukneme do trouby a doufáme v to nejlepší.",
+        "Prohrabáváme skříňky a hledáme to nádobí, které jsme koupili v roce 2015."
+      ],
+      "memory": {
+        "title": "Překvapení",
+        "story": "Nikdy nechybělo na žádné oslavě a jeho mísa se vždycky vyprázdnila jako první."
+      },
+      "prepTime": "20 minut",
+      "cookTime": "45 minut"
     }
   }
 }

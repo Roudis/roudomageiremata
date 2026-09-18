@@ -162,6 +162,50 @@
       },
       "prepTime": "20 minuti",
       "cookTime": "45 minuti"
+    },
+    "ro": {
+      "title": "Orzotto-ul învățătorului",
+      "description": "Supremul comfort food, exact ce trebuie pentru duminici sau pentru după-amiezile reci.",
+      "ingredients": [
+        "500 g de paste",
+        "Sos de roșii",
+        "Multă brânză",
+        "Busuioc proaspăt"
+      ],
+      "steps": [
+        "Ne punem șorțul și tragem adânc aer în piept.",
+        "O sunăm pe mama să o întrebăm „câtă apă pun?”.",
+        "Zâmbim larg pentru că... ce să vezi, cumva a ieșit!",
+        "Aruncăm înăuntru tot ce a rămas de la cina de aseară."
+      ],
+      "memory": {
+        "title": "Surpriza",
+        "story": "Mereu prezent la fiecare sărbătoare, era farfuria care se golea prima."
+      },
+      "prepTime": "20 de minute",
+      "cookTime": "45 de minute"
+    },
+    "cs": {
+      "title": "Orzotto pana učitele",
+      "description": "Dokonalé comfort food, přesně to pravé na neděle nebo na chladná odpoledne.",
+      "ingredients": [
+        "500 g těstovin",
+        "Rajčatová omáčka",
+        "Hodně sýra",
+        "Čerstvá bazalka"
+      ],
+      "steps": [
+        "Uvážeme si zástěru a zhluboka se nadechneme.",
+        "Voláme mamince, abychom se zeptali: „Kolik vody tam mám dát?“",
+        "Usmíváme se od ucha k uchu, protože... kdo by to řekl, nějak se to povedlo!",
+        "Přihodíme všechno, co zbylo od včerejší večeře."
+      ],
+      "memory": {
+        "title": "Překvapení",
+        "story": "Nikdy nechybělo na žádné oslavě a jeho mísa se vždycky vyprázdnila jako první."
+      },
+      "prepTime": "20 minut",
+      "cookTime": "45 minut"
     }
   }
 }

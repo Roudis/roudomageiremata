@@ -175,6 +175,54 @@
       },
       "prepTime": "20 minuti",
       "cookTime": "45 minuti"
+    },
+    "ro": {
+      "title": "Ca să crească fierul (pe vremea când dădea Eldorado)",
+      "description": "O rețetă pe care o va adora toată familia! Cu ingrediente simple și un gust minunat.",
+      "ingredients": [
+        "1 kg de carne",
+        "2 cepe",
+        "Ulei și sare",
+        "Condimente după gust"
+      ],
+      "steps": [
+        "Îl lăsăm să se răcească, dar nu rezistăm și îl mâncăm fierbinte.",
+        "O sunăm pe mama să o întrebăm „câtă apă pun?”.",
+        "Gustăm puțin pe furiș și ne ardem limba.",
+        "Adăugăm puțină sare, puțin piper și multă emoție.",
+        "Amestecăm ingredientele cu frenezie până se omogenizează.",
+        "Aruncăm o privire în cuptor și sperăm la ce e mai bun."
+      ],
+      "memory": {
+        "title": "Masa de duminică",
+        "story": "Mereu prezent la fiecare sărbătoare, era farfuria care se golea prima."
+      },
+      "prepTime": "20 de minute",
+      "cookTime": "45 de minute"
+    },
+    "cs": {
+      "title": "Pro doplnění železa (tenkrát, když dávali Eldorado)",
+      "description": "Recept, který si zamiluje celá rodina! Jednoduché suroviny a báječná chuť.",
+      "ingredients": [
+        "1 kg masa",
+        "2 cibule",
+        "Olej a sůl",
+        "Koření podle chuti"
+      ],
+      "steps": [
+        "Necháme to vychladnout, ale nevydržíme to a sníme to horké.",
+        "Voláme mamince, abychom se zeptali: „Kolik vody tam mám dát?“",
+        "Potajmu ochutnáme a spálíme si jazyk.",
+        "Přidáme trochu soli, trochu pepře a hodně citu.",
+        "Zběsile mícháme suroviny, dokud se nespojí.",
+        "Nakoukneme do trouby a doufáme v to nejlepší."
+      ],
+      "memory": {
+        "title": "Nedělní oběd",
+        "story": "Nikdy nechybělo na žádné oslavě a jeho mísa se vždycky vyprázdnila jako první."
+      },
+      "prepTime": "20 minut",
+      "cookTime": "45 minut"
     }
   }
 }

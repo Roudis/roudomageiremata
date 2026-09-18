@@ -168,6 +168,52 @@
       },
       "prepTime": "20 minuti",
       "cookTime": "45 minuti"
+    },
+    "ro": {
+      "title": "Aia cu tarhon",
+      "description": "Supremul comfort food, exact ce trebuie pentru duminici sau pentru după-amiezile reci.",
+      "ingredients": [
+        "Cartofi",
+        "Ulei",
+        "Oregano",
+        "Lămâie"
+      ],
+      "steps": [
+        "Stăm deasupra oalei cu sufletul la gură.",
+        "Îl lăsăm să se răcească, dar nu rezistăm și îl mâncăm fierbinte.",
+        "Scotocim prin dulapuri după ustensila aceea pe care am cumpărat-o în 2015.",
+        "Închidem ochii și adăugăm condimente la întâmplare.",
+        "Amestecăm ingredientele cu frenezie până se omogenizează."
+      ],
+      "memory": {
+        "title": "Surpriza",
+        "story": "Nu ne așteptam să iasă atât de bine de prima dată, dar a devenit specialitatea noastră."
+      },
+      "prepTime": "20 de minute",
+      "cookTime": "45 de minute"
+    },
+    "cs": {
+      "title": "To s estragonem",
+      "description": "Dokonalé comfort food, přesně to pravé na neděle nebo na chladná odpoledne.",
+      "ingredients": [
+        "Brambory",
+        "Olej",
+        "Oregano",
+        "Citron"
+      ],
+      "steps": [
+        "Napjatě stojíme nad hrncem.",
+        "Necháme to vychladnout, ale nevydržíme to a sníme to horké.",
+        "Prohrabáváme skříňky a hledáme to nádobí, které jsme koupili v roce 2015.",
+        "Zavřeme oči a přidáme koření naslepo.",
+        "Zběsile mícháme suroviny, dokud se nespojí."
+      ],
+      "memory": {
+        "title": "Překvapení",
+        "story": "Nečekali jsme, že se to napoprvé tak povede, ale stala se z toho naše specialita."
+      },
+      "prepTime": "20 minut",
+      "cookTime": "45 minut"
     }
   }
 }

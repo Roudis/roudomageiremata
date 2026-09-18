@@ -12,7 +12,8 @@ for working in the repo live in [CLAUDE.md](CLAUDE.md).
   each optionally paired with a family "memory" (story + date), and filter them by
   category or by tag (vegan, beef, pasta, …).
 - **Languages:** Greek (the original, unprefixed URLs) plus English, Dutch, French,
-  Swedish, Spanish, and Italian under `/en`, `/nl`, `/fr`, `/sv`, `/es`, `/it`. A
+  Swedish, Spanish, Italian, Romanian, and Czech under `/en`, `/nl`, `/fr`, `/sv`,
+  `/es`, `/it`, `/ro`, `/cs`. A
   language menu at the right of the navbar switches between them on the same page.
 - **Persistence:** One JSON file per recipe in [data/recipes/](data/recipes)
   (no database at build time). Currently 30 recipes. Read at **build time** only.
@@ -57,13 +58,13 @@ app/
     template.tsx             Re-exports _shared/page-transition
     page.tsx                 /  → <HomePage locale="el">
     recipes/[id]/page.tsx    /recipes/[id]  → <RecipePage locale="el">
-  [locale]/                  The other six languages under their code
+  [locale]/                  The other eight languages under their code
     layout.tsx               generateStaticParams → TRANSLATED_LOCALES; <RootLayout locale={locale}>, per-language metadata
     template.tsx             Re-exports _shared/page-transition
     page.tsx                 /en etc.
     recipes/[id]/page.tsx    /en/recipes/[id] etc.
   _shared/                   Private folder (not a route): what both trees render
-    root-layout.tsx          RootLayout: fonts (Greek + Latin subsets), <html lang>, Navbar, Footer; rootMetadata(locale)
+    root-layout.tsx          RootLayout: fonts (Greek, Latin, and Latin Extended subsets), <html lang>, Navbar, Footer; rootMetadata(locale)
     home-page.tsx            HomePage: hero with a three-photo mosaic, quote and stats band, <RecipeList>; homeMetadata
     recipe-page.tsx          RecipePage: composes components/recipe-detail/*, shows a notice for an untranslated
                              recipe, and links each tag to the list filtered by it (/?tag=<id>);
@@ -92,9 +93,9 @@ lib/
   i18n/
     config.ts                Pure: LOCALES, DEFAULT_LOCALE, TRANSLATED_LOCALES, LOCALE_DETAILS (name, Intl tag,
                              og:locale), SITE_NAME, isLocale, localizePath, splitLocalePath
-    format.ts                Pure: formatCount(locale, { one, other }, n) with Intl.PluralRules
+    format.ts                Pure: formatCount(locale, { one, few?, other }, n) with Intl.PluralRules
     messages/el.ts           Greek interface text; defines the Messages type every other language must match
-    messages/<locale>.ts     en, nl, fr, sv, es, it
+    messages/<locale>.ts     en, nl, fr, sv, es, it, ro, cs
     messages/index.ts        getMessages(locale)
   tags.ts                    Pure: TAG_NAMES (the tag list, named in every language), TagId, TAG_IMPLIES,
                              NOT_VEGETARIAN, isTagId, tagName, expandTags
@@ -154,7 +155,7 @@ interface Recipe {
   createdAt: string;       // ISO timestamp
   updatedAt: string;       // ISO timestamp; list is sorted by this, newest first, then title, then id
   translations?: {         // optional; a missing language shows the Greek text with a notice
-    [locale in "en" | "nl" | "fr" | "sv" | "es" | "it"]?: RecipeTranslation;
+    [locale in "en" | "nl" | "fr" | "sv" | "es" | "it" | "ro" | "cs"]?: RecipeTranslation;
   };
 }
 
@@ -205,7 +206,7 @@ cannot import it.
 |---|---|---|
 | `/` | [app/(el)/page.tsx](<app/(el)/page.tsx>) | Greek home: hero, recipe count, searchable/filterable recipe grid; sends `RecipeSummary` objects to the client |
 | `/recipes/[id]` | [app/(el)/recipes/[id]/page.tsx](<app/(el)/recipes/[id]/page.tsx>) | Greek recipe detail; generated for each id from `getRecipeIds()` (no `dynamicParams = false`: it breaks `npm run dev` with static export on Next 14); metadata adds title, description, Open Graph image, and hreflang alternates |
-| `/[locale]` | [app/[locale]/page.tsx](<app/[locale]/page.tsx>) | The same home in en, nl, fr, sv, es, it, sorted by that language's titles |
+| `/[locale]` | [app/[locale]/page.tsx](<app/[locale]/page.tsx>) | The same home in en, nl, fr, sv, es, it, ro, cs, sorted by that language's titles |
 | `/[locale]/recipes/[id]` | [app/[locale]/recipes/[id]/page.tsx](<app/[locale]/recipes/[id]/page.tsx>) | The same recipe page in that language, or the Greek text with a notice when untranslated |
 | 404 | [app/not-found.tsx](app/not-found.tsx) | Custom not-found page (Greek), served by GitHub Pages for any unknown path |
 

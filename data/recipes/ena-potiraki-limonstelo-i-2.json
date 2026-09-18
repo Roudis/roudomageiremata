@@ -169,6 +169,52 @@
       },
       "prepTime": "20 minuti",
       "cookTime": "45 minuti"
+    },
+    "ro": {
+      "title": "Un păhărel de Limonstello (sau 2?)",
+      "description": "Arome delicate, o prezentare frumoasă și multă dragoste în fiecare îmbucătură.",
+      "ingredients": [
+        "1 kg de carne",
+        "2 cepe",
+        "Ulei și sare",
+        "Condimente după gust"
+      ],
+      "steps": [
+        "Amestecăm ușor, ca să nu trezim aluatul.",
+        "Adăugăm puțină sare, puțin piper și multă emoție.",
+        "Servim în farfurii adânci și ne prefacem că știm ce facem.",
+        "Zâmbim larg pentru că... ce să vezi, cumva a ieșit!",
+        "Îl lăsăm să se răcească, dar nu rezistăm și îl mâncăm fierbinte."
+      ],
+      "memory": {
+        "title": "Masa de duminică",
+        "story": "Nu ne așteptam să iasă atât de bine de prima dată, dar a devenit specialitatea noastră."
+      },
+      "prepTime": "20 de minute",
+      "cookTime": "45 de minute"
+    },
+    "cs": {
+      "title": "Sklenička Limonstella (nebo 2?)",
+      "description": "Jemné chutě, krásné servírování a spousta lásky v každém soustu.",
+      "ingredients": [
+        "1 kg masa",
+        "2 cibule",
+        "Olej a sůl",
+        "Koření podle chuti"
+      ],
+      "steps": [
+        "Jemně mícháme, abychom neprobudili těsto.",
+        "Přidáme trochu soli, trochu pepře a hodně citu.",
+        "Podáváme v hlubokých talířích a děláme, že víme, co děláme.",
+        "Usmíváme se od ucha k uchu, protože... kdo by to řekl, nějak se to povedlo!",
+        "Necháme to vychladnout, ale nevydržíme to a sníme to horké."
+      ],
+      "memory": {
+        "title": "Nedělní oběd",
+        "story": "Nečekali jsme, že se to napoprvé tak povede, ale stala se z toho naše specialita."
+      },
+      "prepTime": "20 minut",
+      "cookTime": "45 minut"
     }
   }
 }

@@ -302,6 +302,90 @@
       },
       "prepTime": "1 ora",
       "cookTime": "1 ora"
+    },
+    "ro": {
+      "title": "Pastitsio de la bunica",
+      "description": "Clasicul și îndrăgitul pastitsio grecesc, cu besamel pufos și carne tocată irezistibilă.",
+      "ingredients": [
+        "1/2 cană de ulei (ulei de măsline extravirgin)",
+        "1 ceapă medie, rasă",
+        "1 kg de carne tocată (de vită sau amestecată)",
+        "2 căni de passata de roșii",
+        "1 lingură de pastă de roșii",
+        "1/2 linguriță de zahăr",
+        "3 linguri de pătrunjel, tocat mărunt",
+        "1 ou (ușor bătut)",
+        "Sare și piper",
+        "1/2 kg de paste pentru pastitsio (nr. 2)",
+        "1/4 cană de unt",
+        "2 1/2 căni de brânză rasă (kasseri, kefalograviera sau graviera)",
+        "2 linguri de pesmet",
+        "1 lingură de ulei (pentru apa de fiert)",
+        "4 căni de lapte",
+        "8 linguri de făină albă",
+        "8 linguri de unt",
+        "4 ouă (ușor bătute)",
+        "Sare, piper alb, nucșoară"
+      ],
+      "steps": [
+        "Încălziți uleiul într-o cratiță la foc mare. Căliți ceapa până se înmoaie, adăugați carnea tocată și rumeniți-o bine.",
+        "Adăugați, amestecând, passata, pasta de roșii, zahărul, pătrunjelul, sarea și piperul. Acoperiți și fierbeți la foc mic până se evaporă lichidul.",
+        "Luați sosul de carne de pe foc, lăsați-l să se răcească puțin și încorporați, amestecând, 1 ou bătut și 1/2 cană din brânza rasă.",
+        "Fierbeți pastele în apă cu sare și 1 lingură de ulei. Scurgeți-le, clătiți-le ușor cu apă rece și amestecați-le cu 1/4 cană de unt și 2 căni de brânză rasă.",
+        "Într-o cratiță mică, aduceți laptele la fiert. În altă cratiță, topiți cele 8 linguri de unt, adăugați făina și căliți aproximativ 5 minute.",
+        "Turnați tot laptele fierbinte deodată peste făină, bătând energic cu telul. Amestecați la foc mic până se îngroașă.",
+        "Luați crema de pe foc, condimentați cu sare, piper și nucșoară și încorporați, amestecând, cele 4 ouă ușor bătute.",
+        "Ungeți cu unt o tavă (30x40 cm) și presărați pesmet. Întindeți jumătate din paste, apoi sosul de carne și apoi restul pastelor.",
+        "Turnați besamelul peste toată suprafața și coaceți la 180°C aproximativ 1 oră. Lăsați-l să se odihnească 20 de minute înainte de a-l servi."
+      ],
+      "memory": {
+        "title": "Masa de duminică",
+        "story": "Mâncarea preferată de duminică, cea care adună toată familia în jurul mesei! Mirosul de besamel rămâne în casă până după-amiază."
+      },
+      "prepTime": "1 oră",
+      "cookTime": "1 oră"
+    },
+    "cs": {
+      "title": "Babiččino pastitsio",
+      "description": "Klasické a oblíbené řecké pastitsio s nadýchaným bešamelem a lákavým mletým masem.",
+      "ingredients": [
+        "1/2 hrnku oleje (extra panenského olivového oleje)",
+        "1 středně velká cibule, nastrouhaná",
+        "1 kg mletého masa (hovězího nebo míchaného)",
+        "2 hrnky rajčatové passaty",
+        "1 lžíce rajčatového protlaku",
+        "1/2 lžičky cukru",
+        "3 lžíce petrželky, nadrobno nasekané",
+        "1 vejce (lehce rozšlehané)",
+        "Sůl a pepř",
+        "1/2 kg těstovin na pastitsio (č. 2)",
+        "1/4 hrnku másla",
+        "2 1/2 hrnku strouhaného sýra (kasseri, kefalograviera nebo graviera)",
+        "2 lžíce strouhanky",
+        "1 lžíce oleje (do vody na vaření)",
+        "4 hrnky mléka",
+        "8 lžic hladké mouky",
+        "8 lžic másla",
+        "4 vejce (lehce rozšlehaná)",
+        "Sůl, bílý pepř, muškátový oříšek"
+      ],
+      "steps": [
+        "Rozehřejte olej v hrnci na silném ohni. Orestujte cibuli dozměkka, přidejte mleté maso a dobře ho osmahněte.",
+        "Za stálého míchání přidejte passatu, rajčatový protlak, cukr, petrželku, sůl a pepř. Přikryjte a nechte zvolna probublávat, dokud se tekutina neodpaří.",
+        "Stáhněte maso z ohně, nechte ho mírně vychladnout a vmíchejte 1 rozšlehané vejce a 1/2 hrnku strouhaného sýra.",
+        "Uvařte těstoviny v osolené vodě s 1 lžící oleje. Sceďte je, krátce propláchněte studenou vodou a promíchejte s 1/4 hrnku másla a 2 hrnky strouhaného sýra.",
+        "V malém hrnci přiveďte mléko k varu. V jiném hrnci rozpusťte 8 lžic másla, přidejte mouku a za stálého míchání ji asi 5 minut opékejte.",
+        "Vlijte všechno horké mléko najednou k mouce a energicky šlehejte metlou. Míchejte na mírném ohni, dokud omáčka nezhoustne.",
+        "Stáhněte omáčku z ohně, ochuťte solí, pepřem a muškátovým oříškem a vmíchejte 4 lehce rozšlehaná vejce.",
+        "Vymažte pekáč (30x40 cm) máslem a vysypte strouhankou. Rozprostřete polovinu těstovin, pak masovou směs a nakonec zbytek těstovin.",
+        "Celý povrch zalijte bešamelem a pečte na 180 °C asi 1 hodinu. Před podáváním nechte 20 minut odpočinout."
+      ],
+      "memory": {
+        "title": "Nedělní oběd",
+        "story": "Oblíbené nedělní jídlo, které shromáždí celou rodinu kolem stolu! Vůně bešamelu zůstává v domě až do odpoledne."
+      },
+      "prepTime": "1 hodina",
+      "cookTime": "1 hodina"
     }
   }
 }

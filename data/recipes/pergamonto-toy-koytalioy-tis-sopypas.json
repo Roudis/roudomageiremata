@@ -183,6 +183,56 @@
       },
       "prepTime": "20 minuti",
       "cookTime": "45 minuti"
+    },
+    "ro": {
+      "title": "Dulceață de bergamotă (de la Sopypa)",
+      "description": "Supremul comfort food, exact ce trebuie pentru duminici sau pentru după-amiezile reci.",
+      "ingredients": [
+        "Făină",
+        "Ouă",
+        "Lapte",
+        "Unt",
+        "Brânză feta"
+      ],
+      "steps": [
+        "Amestecăm ingredientele cu frenezie până se omogenizează.",
+        "Scotocim prin dulapuri după ustensila aceea pe care am cumpărat-o în 2015.",
+        "Aruncăm o privire în cuptor și sperăm la ce e mai bun.",
+        "Mai punem puțin ulei, „pentru că așa e mai gustos”.",
+        "Gustăm puțin pe furiș și ne ardem limba.",
+        "Adăugăm puțină sare, puțin piper și multă emoție."
+      ],
+      "memory": {
+        "title": "Surpriza",
+        "story": "Mereu prezent la fiecare sărbătoare, era farfuria care se golea prima."
+      },
+      "prepTime": "20 de minute",
+      "cookTime": "45 de minute"
+    },
+    "cs": {
+      "title": "Bergamot v sirupu na lžičku (od Sopypy)",
+      "description": "Dokonalé comfort food, přesně to pravé na neděle nebo na chladná odpoledne.",
+      "ingredients": [
+        "Mouka",
+        "Vejce",
+        "Mléko",
+        "Máslo",
+        "Sýr feta"
+      ],
+      "steps": [
+        "Zběsile mícháme suroviny, dokud se nespojí.",
+        "Prohrabáváme skříňky a hledáme to nádobí, které jsme koupili v roce 2015.",
+        "Nakoukneme do trouby a doufáme v to nejlepší.",
+        "Přidáme trochu oleje navíc, „protože tak je to chutnější“.",
+        "Potajmu ochutnáme a spálíme si jazyk.",
+        "Přidáme trochu soli, trochu pepře a hodně citu."
+      ],
+      "memory": {
+        "title": "Překvapení",
+        "story": "Nikdy nechybělo na žádné oslavě a jeho mísa se vždycky vyprázdnila jako první."
+      },
+      "prepTime": "20 minut",
+      "cookTime": "45 minut"
     }
   }
 }

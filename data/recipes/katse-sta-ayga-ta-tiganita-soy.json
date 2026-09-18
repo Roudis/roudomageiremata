@@ -175,6 +175,54 @@
       },
       "prepTime": "20 minuti",
       "cookTime": "45 minuti"
+    },
+    "ro": {
+      "title": "Vezi-ți de ouăle tale, cele prăjite",
+      "description": "O rețetă pe care o va adora toată familia! Cu ingrediente simple și un gust minunat.",
+      "ingredients": [
+        "Legume proaspete",
+        "Ulei de măsline",
+        "Oțet balsamic",
+        "Sare"
+      ],
+      "steps": [
+        "Zâmbim larg pentru că... ce să vezi, cumva a ieșit!",
+        "Aruncăm înăuntru tot ce a rămas de la cina de aseară.",
+        "Amestecăm ingredientele cu frenezie până se omogenizează.",
+        "Gustăm puțin pe furiș și ne ardem limba.",
+        "Stăm deasupra oalei cu sufletul la gură.",
+        "O sunăm pe mama să o întrebăm „câtă apă pun?”."
+      ],
+      "memory": {
+        "title": "Surpriza",
+        "story": "Mereu prezent la fiecare sărbătoare, era farfuria care se golea prima."
+      },
+      "prepTime": "20 de minute",
+      "cookTime": "45 de minute"
+    },
+    "cs": {
+      "title": "Starej se o svoje vejce, ta smažená",
+      "description": "Recept, který si zamiluje celá rodina! Jednoduché suroviny a báječná chuť.",
+      "ingredients": [
+        "Čerstvá zelenina",
+        "Olivový olej",
+        "Balzamikový ocet",
+        "Sůl"
+      ],
+      "steps": [
+        "Usmíváme se od ucha k uchu, protože... kdo by to řekl, nějak se to povedlo!",
+        "Přihodíme všechno, co zbylo od včerejší večeře.",
+        "Zběsile mícháme suroviny, dokud se nespojí.",
+        "Potajmu ochutnáme a spálíme si jazyk.",
+        "Napjatě stojíme nad hrncem.",
+        "Voláme mamince, abychom se zeptali: „Kolik vody tam mám dát?“"
+      ],
+      "memory": {
+        "title": "Překvapení",
+        "story": "Nikdy nechybělo na žádné oslavě a jeho mísa se vždycky vyprázdnila jako první."
+      },
+      "prepTime": "20 minut",
+      "cookTime": "45 minut"
     }
   }
 }

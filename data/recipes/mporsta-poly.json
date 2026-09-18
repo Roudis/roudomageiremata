@@ -162,6 +162,50 @@
       },
       "prepTime": "20 minuti",
       "cookTime": "45 minuti"
+    },
+    "ro": {
+      "title": "Borș, cu mult înainte",
+      "description": "Arome delicate, o prezentare frumoasă și multă dragoste în fiecare îmbucătură.",
+      "ingredients": [
+        "Cartofi",
+        "Ulei",
+        "Oregano",
+        "Lămâie"
+      ],
+      "steps": [
+        "Amestecăm ușor, ca să nu trezim aluatul.",
+        "Scotocim prin dulapuri după ustensila aceea pe care am cumpărat-o în 2015.",
+        "Gustăm puțin pe furiș și ne ardem limba.",
+        "Mai punem puțin ulei, „pentru că așa e mai gustos”."
+      ],
+      "memory": {
+        "title": "Surpriza",
+        "story": "Mereu prezent la fiecare sărbătoare, era farfuria care se golea prima."
+      },
+      "prepTime": "20 de minute",
+      "cookTime": "45 de minute"
+    },
+    "cs": {
+      "title": "Boršč, daleko vpředu",
+      "description": "Jemné chutě, krásné servírování a spousta lásky v každém soustu.",
+      "ingredients": [
+        "Brambory",
+        "Olej",
+        "Oregano",
+        "Citron"
+      ],
+      "steps": [
+        "Jemně mícháme, abychom neprobudili těsto.",
+        "Prohrabáváme skříňky a hledáme to nádobí, které jsme koupili v roce 2015.",
+        "Potajmu ochutnáme a spálíme si jazyk.",
+        "Přidáme trochu oleje navíc, „protože tak je to chutnější“."
+      ],
+      "memory": {
+        "title": "Překvapení",
+        "story": "Nikdy nechybělo na žádné oslavě a jeho mísa se vždycky vyprázdnila jako první."
+      },
+      "prepTime": "20 minut",
+      "cookTime": "45 minut"
     }
   }
 }

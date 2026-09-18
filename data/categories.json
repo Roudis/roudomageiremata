@@ -5,7 +5,9 @@
     "fr": "Un air de Naples, par Tatie",
     "sv": "Mosters fläkt av Neapel",
     "es": "Aires de Nápoles de la tía",
-    "it": "Aria di Napoli della zia"
+    "it": "Aria di Napoli della zia",
+    "ro": "Adiere de Napoli de la mătușa",
+    "cs": "Tetin závan Neapole"
   },
   "Από Χαραλαμπρούδη": {
     "en": "From Charalambroudis",
@@ -13,7 +15,9 @@
     "fr": "De Charalambroudis",
     "sv": "Från Charalambroudis",
     "es": "De Charalambroudis",
-    "it": "Da Charalambroudis"
+    "it": "Da Charalambroudis",
+    "ro": "De la Charalambroudis",
+    "cs": "Od Charalambroudise"
   },
   "Μικρές στο μάτι , Μεγάλες στο τραπέζι": {
     "en": "Small to the eye, big at the table",
@@ -21,7 +25,9 @@
     "fr": "Petites à l’œil, grandes à table",
     "sv": "Små för ögat, stora vid bordet",
     "es": "Pequeñas a la vista, grandes en la mesa",
-    "it": "Piccole all’occhio, grandi a tavola"
+    "it": "Piccole all’occhio, grandi a tavola",
+    "ro": "Mici la vedere, mari la masă",
+    "cs": "Malé na pohled, velké na stole"
   },
   "Οι ντελικάτες της Μαμάς": {
     "en": "Mum’s delicate ones",
@@ -29,7 +35,9 @@
     "fr": "Les délicates de Maman",
     "sv": "Mammas delikata rätter",
     "es": "Las delicadas de mamá",
-    "it": "Le delicate della mamma"
+    "it": "Le delicate della mamma",
+    "ro": "Delicatesele mamei",
+    "cs": "Maminčiny jemné dobroty"
   },
   "Της Γιαγιάς που γεμίζουν κοιλίτσες και καρδιές": {
     "en": "Grandma’s, for full tummies and hearts",
@@ -37,7 +45,9 @@
     "fr": "Ceux de Mamie, qui remplissent les ventres et les cœurs",
     "sv": "Mormors, som fyller magar och hjärtan",
     "es": "Los de la abuela, que llenan barriguitas y corazones",
-    "it": "Quelli della nonna, che riempiono pancini e cuori"
+    "it": "Quelli della nonna, che riempiono pancini e cuori",
+    "ro": "Ale bunicii, care umplu burtici și inimi",
+    "cs": "Od babičky, pro plná bříška i srdce"
   },
   "Του Μπαμπούλα (που δεν είναι μόνο ψάρια)": {
     "en": "Baboulas’s (and not just fish)",
@@ -45,6 +55,8 @@
     "fr": "Ceux de Baboulas (et pas que du poisson)",
     "sv": "Baboulas rätter (och inte bara fisk)",
     "es": "Los de Baboulas (y no solo pescado)",
-    "it": "Quelli di Baboulas (e non solo pesce)"
+    "it": "Quelli di Baboulas (e non solo pesce)",
+    "ro": "Ale lui Baboulas (și nu doar pește)",
+    "cs": "Od Baboulase (a nejen ryby)"
   }
 }
