@@ -13,8 +13,8 @@ import {
 describe("locales", () => {
   it("has Greek first as the default, then the six translated languages", () => {
     expect(DEFAULT_LOCALE).toBe("el");
-    expect(LOCALES).toEqual(["el", "en", "nl", "fr", "sv", "es", "it", "ro", "cs"]);
-    expect(TRANSLATED_LOCALES).toEqual(["en", "nl", "fr", "sv", "es", "it", "ro", "cs"]);
+    expect(LOCALES).toEqual(["el", "en", "nl", "fr", "sv", "es", "it", "ro", "cs", "uk", "ja"]);
+    expect(TRANSLATED_LOCALES).toEqual(["en", "nl", "fr", "sv", "es", "it", "ro", "cs", "uk", "ja"]);
   });
 
   it("gives every language a name, an Intl tag, and an Open Graph locale", () => {

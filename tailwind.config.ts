@@ -41,8 +41,19 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
-        serif: ["var(--font-serif)", "Georgia", "serif"],
+        // The Japanese system fonts only supply what the web fonts lack: the Japanese pages' kana and kanji.
+        sans: [
+          "var(--font-sans)",
+          "Hiragino Sans",
+          "Hiragino Kaku Gothic ProN",
+          "Yu Gothic",
+          "Meiryo",
+          "Noto Sans CJK JP",
+          "Noto Sans JP",
+          "system-ui",
+          "sans-serif",
+        ],
+        serif: ["var(--font-serif)", "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif CJK JP", "Noto Serif JP", "Georgia", "serif"],
       },
     },
   },

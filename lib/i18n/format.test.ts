@@ -36,6 +36,24 @@ describe("formatCount", () => {
     ]);
   });
 
+  it("gives Ukrainian's many category (0, 5 to 20) the other form", () => {
+    const retsepty = { one: "{count} рецепт", few: "{count} рецепти", other: "{count} рецептів" };
+
+    expect([0, 1, 3, 5, 11, 21, 22].map((count) => formatCount("uk", retsepty, count))).toEqual([
+      "0 рецептів",
+      "1 рецепт",
+      "3 рецепти",
+      "5 рецептів",
+      "11 рецептів",
+      "21 рецепт",
+      "22 рецепти",
+    ]);
+  });
+
+  it("uses the other form even for 1 in Japanese, which has no plural", () => {
+    expect(formatCount("ja", { one: "one {count}", other: "{count}件のレシピ" }, 1)).toBe("1件のレシピ");
+  });
+
   it("falls back to the plural form when a few form is missing", () => {
     expect(formatCount("cs", { one: "{count} recept", other: "{count} receptů" }, 3)).toBe("3 receptů");
   });

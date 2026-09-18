@@ -8,10 +8,12 @@ import { nl } from "./nl";
 import { sv } from "./sv";
 import { ro } from "./ro";
 import { cs } from "./cs";
+import { uk } from "./uk";
+import { ja } from "./ja";
 
 export type { Messages };
 
-const MESSAGES: Record<Locale, Messages> = { el, en, nl, fr, sv, es, it, ro, cs };
+const MESSAGES: Record<Locale, Messages> = { el, en, nl, fr, sv, es, it, ro, cs, uk, ja };
 
 /**
  * The interface text for one language. Server code calls this; client

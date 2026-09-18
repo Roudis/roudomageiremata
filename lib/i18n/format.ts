@@ -12,7 +12,9 @@ const pluralRules = new Map<Locale, Intl.PluralRules>();
 /**
  * Fills in `{count}`, choosing the form by the language's plural rules: French
  * uses `one` for 0 as well as 1, Czech uses `few` for 2 to 4, and any other
- * category, or `few` when the forms have none, gets `other`.
+ * category, or `few` when the forms have none, gets `other`. That includes
+ * Ukrainian's `many` (0 and 5 to 20), so its `other` form holds that wording, and
+ * everything in Japanese, which has no plural.
  */
 export function formatCount(locale: Locale, forms: PluralForms, count: number): string {
   let rules = pluralRules.get(locale);
