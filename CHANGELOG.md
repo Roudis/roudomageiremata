@@ -7,6 +7,8 @@ to regenerate it.
 ## 2026-09-18
 
 ### Added
+- update recipe ingredients and fix updatedAt timestamp for ela-moy-nte-1 ([350d344](https://github.com/Roudis/roudomageiremata/commit/350d344a6258a435ea4acfc0396dfc973caa8758))
+- update recipe sync process to retain tags and translations, and adjust recipe structure ([dd1eb44](https://github.com/Roudis/roudomageiremata/commit/dd1eb449b0ceb2f2a59cfbb80c9b12c5267d20b1))
 - add sync script for Strapi recipes and update related documentation ([9e9e1b6](https://github.com/Roudis/roudomageiremata/commit/9e9e1b67dc4ebc4b6fa5f57e7d2053ad34cecd56))
 - add tags to recipes and implement tag filtering ([7d34b48](https://github.com/Roudis/roudomageiremata/commit/7d34b48d027c767c4e6788f53750be0efe8aa98b))
 - add language support details and update recipe translation guidelines ([2bbc20f](https://github.com/Roudis/roudomageiremata/commit/2bbc20fad8ff7e3eba5468056a5962ad6f3d937a))
