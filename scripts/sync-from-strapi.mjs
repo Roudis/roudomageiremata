@@ -2,7 +2,8 @@
 // Pulls published recipes from the Strapi CMS (the roudomageiremata-cms
 // project) into data/recipes/<id>.json and public/images/recipes/, so the
 // static build keeps reading local files and never needs Strapi at deploy
-// time. Files are only rewritten when their content changed.
+// time. Files are only rewritten when their content changed. Fields Strapi
+// doesn't hold, such as tags and translations, are kept from the existing file.
 //
 // Recipes that exist here but not in Strapi are listed; pass --prune to delete
 // them and their images.
@@ -48,26 +49,37 @@ async function fetchAllRecipes() {
   }
 }
 
-// Same key order as the existing files, so unchanged recipes produce no diff.
-function toRecipe(entry, imageUrl) {
-  const recipe = {
+// Key order of the recipe files, so unchanged recipes produce no diff. Strapi
+// holds the Greek text, image, and timestamps; tags and translations are only
+// in the files, so they are kept from the existing file.
+const KEY_ORDER = [
+  "id", "title", "description", "ingredients", "steps", "memory", "category", "tags",
+  "imageUrl", "prepTime", "cookTime", "servings", "createdAt", "updatedAt", "translations",
+];
+
+function toRecipe(entry, imageUrl, existing) {
+  const fromStrapi = {
     id: entry.slug,
     title: entry.title,
     description: entry.description,
     ingredients: entry.ingredients.map((item) => item.name),
     steps: entry.steps.map((item) => item.text),
+    memory: entry.memory
+      ? { title: entry.memory.title, story: entry.memory.story, ...(entry.memory.date && { date: entry.memory.date }) }
+      : undefined,
+    category: entry.category || undefined,
+    imageUrl,
+    prepTime: entry.prepTime || undefined,
+    cookTime: entry.cookTime || undefined,
+    servings: entry.servings ?? undefined,
+    createdAt: entry.createdAt,
+    updatedAt: entry.updatedAt,
   };
-  if (entry.memory) {
-    recipe.memory = { title: entry.memory.title, story: entry.memory.story };
-    if (entry.memory.date) recipe.memory.date = entry.memory.date;
+  const merged = { ...existing, ...fromStrapi };
+  const recipe = {};
+  for (const key of [...KEY_ORDER, ...Object.keys(merged)]) {
+    if (merged[key] !== undefined && !(key in recipe)) recipe[key] = merged[key];
   }
-  if (entry.category) recipe.category = entry.category;
-  if (imageUrl) recipe.imageUrl = imageUrl;
-  if (entry.prepTime) recipe.prepTime = entry.prepTime;
-  if (entry.cookTime) recipe.cookTime = entry.cookTime;
-  if (entry.servings != null) recipe.servings = entry.servings;
-  recipe.createdAt = entry.createdAt;
-  recipe.updatedAt = entry.updatedAt;
   return recipe;
 }
 
@@ -115,8 +127,9 @@ async function main() {
     if (image?.changed) imagesWritten++;
 
     const recipePath = path.join(recipesDir, `${entry.slug}.json`);
-    const previousImageUrl = JSON.parse((await readIfExists(recipePath, "utf8")) ?? "{}").imageUrl;
-    const json = JSON.stringify(toRecipe(entry, image?.imageUrl), null, 2);
+    const existing = JSON.parse((await readIfExists(recipePath, "utf8")) ?? "{}");
+    const previousImageUrl = existing.imageUrl;
+    const json = JSON.stringify(toRecipe(entry, image?.imageUrl, existing), null, 2);
     if (await writeIfChanged(recipePath, json)) {
       written++;
       console.log(`✎ ${entry.slug}`);
