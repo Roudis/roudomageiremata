@@ -1,22 +1,39 @@
 {
   "id": "pascha-vathylakisio",
   "title": "Πάσχα Βαθυλακίσιο",
-  "description": "Μια συνταγή που θα λατρέψει όλη η οικογένεια! Με απλά υλικά και υπέροχη γεύση.",
+  "description": "Το αρνί του Βαθύλακου δεν ψήνεται σε βαθύ λάκκο, αλλά σε μια υπερυψωμένη χτιστή ψησταριά. Είναι μια πασχαλινή συνταγή γεμάτη διλήμματα, προετοιμασία και υπομονή.",
   "ingredients": [
-    "1 κιλό κρέας",
-    "2 κρεμμύδια",
-    "Λάδι και αλάτι",
-    "Μπαχαρικά της αρεσκείας σας"
+    "1 αρνί περίπου 12 κιλών",
+    "Αλάτι",
+    "Πιπέρι",
+    "Στραγάλια, χοντροκομμένα",
+    "1/2 κούπα ελαιόλαδο",
+    "Ξύλα για την ψησταριά",
+    "Τούλι",
+    "Σπάγκος και σακοράφες"
   ],
   "steps": [
-    "Ρίχνουμε μέσα ό,τι περίσσεψε από το χθεσινό βραδινό.",
-    "Αφήνουμε να κρυώσει, αλλά δεν αντέχουμε και το τρώμε ζεστό.",
-    "Ανακατεύουμε τα υλικά με μανία μέχρι να ομογενοποιηθούν.",
-    "Κλείνουμε τα μάτια και προσθέτουμε μπαχαρικά στην τύχη."
+    "Περίπου έναν μήνα πριν το Πάσχα λύνουμε το πρώτο δίλημμα: αποφασίζουμε, όπως κάθε χρόνο, ότι θα κάνουμε αρνί. Την επόμενη εβδομάδα αποφασίζουμε ότι, παρά τον κόπο, θα γίνει στη σούβλα και όχι στον φούρνο.",
+    "Παίρνουμε το αρνί από τον κοντινό βοσκό, εκτός αν του έχουν τελειώσει τα αρνιά. Διαλέγουμε ένα αρνί περίπου 12 κιλών.",
+    "Την πρώτη ημέρα κρεμάμε το αρνί στο επάνω σπίτι, με ένα ταψί από κάτω, τυλιγμένο με τούλι, για να στραγγίσει όλη τη νύχτα.",
+    "Τη δεύτερη ημέρα το πλένουμε στο μπαλκόνι, αφαιρούμε όσες τρίχες βρίσκουμε και, αφού στεγνώσει, το βάζουμε στο ψυγείο να σιτέψει.",
+    "Την τρίτη ημέρα το αφήνουμε στο ψυγείο να συνεχίσει να σιτεύει.",
+    "Το βράδυ του Σαββάτου βγάζουμε το αρνί από το ψυγείο, το σκουπίζουμε και αφαιρούμε προσεκτικά τις υπόλοιπες τρίχες. Ετοιμάζουμε αλάτι και πιπέρι, χτυπάμε τα στραγάλια στο μπλέντερ σε χοντρό κόκκο και βάζουμε το ελαιόλαδο σε ένα μπολ.",
+    "Καθαρίζουμε τη σούβλα και όλα τα εξαρτήματα. Απλώνουμε ένα καθαρό σεντόνι στον πάγκο, τοποθετούμε το αρνί όσο γίνεται σε ευθεία και περνάμε πρώτα ένα δίχαλο στη σούβλα για να συγκρατήσει τα πόδια.",
+    "Περνάμε τη σούβλα από το αρνί και το ζυγοσταθμίζουμε, ώστε το βάρος του να είναι ομοιόμορφα κατανεμημένο και να γυρίζει σωστά. Η μυτερή άκρη βγαίνει από το κεφάλι ή τρυπάει τη μύτη.",
+    "Στερεώνουμε το αρνί με τους συγκρατήρες, αρχικά χαλαρά, ώστε να καθορίσουμε το σωστό ύψος του στη σούβλα. Έπειτα τους σφίγγουμε και δένουμε το αρνί γερά.",
+    "Λαδώνουμε το αρνί, το πιπερώνουμε εσωτερικά και εξωτερικά, το αλατίζουμε καλά και το πασπαλίζουμε με το χοντροκομμένο στραγάλι για τραγανή πέτσα. Ράβουμε μαεστρικά την κοιλιά του, το τυλίγουμε με το σεντόνι και το αφήνουμε σε κρύο περιβάλλον για τη νύχτα.",
+    "Το πρωί της Κυριακής στρώνουμε αρκετά ξύλα στην ψησταριά, ώστε να κρατήσει τη θερμότητα για ώρες, και τα ανάβουμε. Όσο καίγονται, πίνουμε έναν απαραίτητο καραβίσιο μέτριο φραπέ.",
+    "Μόλις πέσουν οι φλόγες, δύο άτομα μεταφέρουν το αρνί στην ψησταριά. Ετοιμάζουμε την παροχή ρεύματος και το μοτέρ, τοποθετούμε τη σούβλα, συνδέουμε το μοτέρ και βεβαιωνόμαστε ότι γυρίζει σωστά.",
+    "Αφήνουμε το αρνί να ψήνεται και να ροδίζει για αρκετές ώρες, αλείφοντάς το συχνά με λάδι. Εν τω μεταξύ τρώμε τα χθεσινά αυγά, μεζεδάκια, σαλαμάκια και τυράκια.",
+    "Όταν το αρνί αρχίσει να αφρίζει, είναι έτοιμο. Συνήθως όμως διαφωνούμε αν ψήθηκε αρκετά και περιμένουμε λίγο ακόμη.",
+    "Ετοιμάζουμε δύο δίσκους δίπλα δίπλα. Διακόπτουμε το ρεύμα, απελευθερώνουμε το μοτέρ, πιάνουμε τη σούβλα από τις δύο άκρες και κατεβάζουμε προσεκτικά το αρνί στα ταψιά χωρίς να καούμε ή να μας πέσει.",
+    "Αφαιρούμε τη σούβλα και τα στηρίγματα, το κόβουμε και ελέγχουμε αν έχει ψηθεί. Αν έχει ψηθεί, τρώμε· αν όχι, κλαίμε.",
+    "Το αρνί που περισσεύει μπαίνει στο ψυγείο για την επόμενη ημέρα. Αν δεν περισσέψει, την επόμενη χρονιά παίρνουμε μεγαλύτερο αρνί."
   ],
   "memory": {
-    "title": "Κυριακάτικο τραπέζι",
-    "story": "Δεν περιμέναμε να βγει τόσο ωραίο την πρώτη φορά, αλλά έγινε η σπεσιαλιτέ μας.",
+    "title": "Τα διλήμματα του Βαθύλακου",
+    "story": "Το βαθυλακίσιο αρνί είναι πάντοτε πιο δύσκολο από ένα απλό αρνάκι στον φούρνο με πατάτες, αλλά στο 95% των περιπτώσεων η σούβλα κερδίζει. Μετά το γλέντι ακολουθεί και μια άλλη, αρκετά επίπονη διαδικασία σε άλλο δωμάτιο: δεν έχουμε συνηθίσει να τρώμε κρέας όλες τις προηγούμενες ημέρες.",
     "date": "2023-11"
   },
   "category": "Του Μπαμπούλα (που δεν είναι μόνο ψάρια)",
@@ -24,143 +41,245 @@
     "lamb"
   ],
   "imageUrl": "/images/recipes/pascha-vathylakisio.jpg",
-  "prepTime": "20 λεπτά",
-  "cookTime": "45 λεπτά",
-  "servings": 4,
+  "prepTime": "4 ημέρες",
+  "cookTime": "Αρκετές ώρες",
+  "servings": 12,
   "createdAt": "2026-08-10T16:52:28.198Z",
-  "updatedAt": "2026-09-18T14:58:07.421Z",
+  "updatedAt": "2026-09-18T17:21:55.985Z",
   "translations": {
     "en": {
-      "title": "Easter, Vathylakos style",
-      "description": "A recipe the whole family will love! Simple ingredients, wonderful flavour.",
+      "title": "Vathylakos Easter",
+      "description": "Vathylakos lamb is not roasted in a deep pit, but on a raised built grill. It is an Easter recipe full of dilemmas, preparation, and patience.",
       "ingredients": [
-        "1 kg meat",
-        "2 onions",
-        "Oil and salt",
-        "Spices of your choice"
+        "1 lamb, about 12 kg",
+        "Salt",
+        "Pepper",
+        "Roasted chickpeas, coarsely chopped",
+        "1/2 cup olive oil",
+        "Wood for the grill",
+        "Tulle",
+        "Twine and sack needles"
       ],
       "steps": [
-        "We throw in whatever was left over from last night’s dinner.",
-        "We let it cool, but can’t resist and eat it hot anyway.",
-        "We stir the ingredients like mad until they come together.",
-        "We close our eyes and add spices at random."
+        "About a month before Easter, we resolve the first dilemma: we decide, as every year, that we will have lamb. The following week, we decide that, despite the effort, it will be cooked on the spit and not in the oven.",
+        "We get the lamb from the nearby shepherd, unless he has run out of lambs. We choose a lamb of about 12 kg.",
+        "On the first day, we hang the lamb at the upper house, with a baking tray underneath, wrapped in tulle, so that it can drain all night.",
+        "On the second day, we wash it on the balcony, remove any hairs we find and, once it has dried, put it in the fridge to age.",
+        "On the third day, we leave it in the fridge to continue aging.",
+        "On Saturday night, we take the lamb out of the fridge, pat it dry, and carefully remove the remaining hairs. We prepare salt and pepper, pulse the roasted chickpeas in the blender into coarse crumbs, and put the olive oil in a bowl.",
+        "We clean the spit and all its fittings. We spread a clean sheet on the counter, position the lamb as straight as possible, and first slide a fork onto the spit to hold the legs in place.",
+        "We pass the spit through the lamb and balance it so its weight is evenly distributed and it turns properly. The pointed end emerges through the head or pierces the nose.",
+        "We secure the lamb with the clamps, initially loosely, to determine its correct height on the spit. Then we tighten them and tie the lamb firmly.",
+        "We oil the lamb, pepper it inside and out, salt it well, and sprinkle it with the coarsely chopped roasted chickpeas for crisp skin. We expertly sew up its belly, wrap it in the sheet, and leave it in a cool place overnight.",
+        "On Sunday morning, we arrange enough wood on the grill to retain heat for hours and light it. While it burns, we drink an essential medium-strength iced frappe.",
+        "As soon as the flames die down, two people carry the lamb to the grill. We prepare the power supply and motor, position the spit, connect the motor, and make sure it turns properly.",
+        "We let the lamb roast and brown for several hours, basting it frequently with oil. Meanwhile, we eat yesterday’s eggs, snacks, little salamis, and cheeses.",
+        "When the lamb begins to foam, it is ready. Usually, though, we disagree about whether it is cooked enough and wait a little longer.",
+        "We prepare two trays side by side. We cut the power, release the motor, hold the spit at both ends, and carefully lower the lamb into the trays without getting burned or dropping it.",
+        "We remove the spit and supports, carve it, and check whether it is cooked. If it is cooked, we eat; if not, we cry.",
+        "Any lamb left over goes into the fridge for the following day. If there is none left over, the next year we get a bigger lamb."
       ],
       "memory": {
-        "title": "Sunday lunch",
-        "story": "We never expected it to turn out so well the first time, but it became our speciality."
+        "title": "The dilemmas of Vathylakos",
+        "story": "Vathylakos lamb is always more difficult than a simple little lamb in the oven with potatoes, but in 95% of cases the spit wins. After the feast, another rather arduous process follows in another room: we are not used to eating meat on all the preceding days."
       },
-      "prepTime": "20 minutes",
-      "cookTime": "45 minutes"
+      "prepTime": "4 days",
+      "cookTime": "Several hours"
     },
     "nl": {
-      "title": "Pasen op zijn Vathylakos",
-      "description": "Een recept waar de hele familie dol op zal zijn! Met eenvoudige ingrediënten en een heerlijke smaak.",
+      "title": "Pasen in Vathylakos",
+      "description": "Het lam van Vathylakos wordt niet in een diepe kuil geroosterd, maar op een verhoogde gemetselde barbecue. Het is een paasrecept vol dilemma’s, voorbereiding en geduld.",
       "ingredients": [
-        "1 kg vlees",
-        "2 uien",
-        "Olie en zout",
-        "Kruiden naar keuze"
+        "1 lam van ongeveer 12 kilo",
+        "Zout",
+        "Peper",
+        "Geroosterde kikkererwten, grof gehakt",
+        "1/2 kopje olijfolie",
+        "Hout voor de barbecue",
+        "Tule",
+        "Touw en zaknaalden"
       ],
       "steps": [
-        "We gooien erin wat er van het avondeten van gisteren over is.",
-        "We laten het afkoelen, maar houden het niet uit en eten het toch warm op.",
-        "We roeren als gekken tot alles mooi gemengd is.",
-        "We doen onze ogen dicht en voegen lukraak kruiden toe."
+        "Ongeveer een maand voor Pasen lossen we het eerste dilemma op: we besluiten, zoals elk jaar, dat we lam zullen maken. De week daarop besluiten we dat het, ondanks de moeite, aan het spit en niet in de oven zal worden bereid.",
+        "We halen het lam bij de nabije herder, tenzij zijn lammeren op zijn. We kiezen een lam van ongeveer 12 kilo.",
+        "Op de eerste dag hangen we het lam in het bovenhuis, met een bakplaat eronder, in tule gewikkeld, zodat het de hele nacht kan uitlekken.",
+        "Op de tweede dag wassen we het op het balkon, verwijderen we alle haren die we vinden en zetten we het, nadat het is opgedroogd, in de koelkast om te besterven.",
+        "Op de derde dag laten we het in de koelkast verder besterven.",
+        "Zaterdagavond halen we het lam uit de koelkast, deppen we het droog en verwijderen we zorgvuldig de resterende haren. We zetten zout en peper klaar, malen de geroosterde kikkererwten in de blender tot grove korrels en doen de olijfolie in een kom.",
+        "We maken het spit en alle onderdelen schoon. We spreiden een schoon laken op het aanrecht, leggen het lam zo recht mogelijk neer en schuiven eerst een vork op het spit om de poten vast te houden.",
+        "We steken het spit door het lam en balanceren het, zodat het gewicht gelijkmatig verdeeld is en het goed draait. Het puntige uiteinde komt door de kop naar buiten of doorboort de neus.",
+        "We zetten het lam met de klemmen vast, eerst losjes, om de juiste hoogte op het spit te bepalen. Daarna draaien we ze vast en binden we het lam stevig vast.",
+        "We oliën het lam in, peperen het vanbinnen en vanbuiten, zouten het goed en bestrooien het met de grofgehakte geroosterde kikkererwten voor een krokante huid. We naaien de buik vakkundig dicht, wikkelen het in het laken en laten het de nacht op een koele plek staan.",
+        "Zondagochtend leggen we genoeg hout op de barbecue zodat die urenlang warmte houdt, en steken we het aan. Terwijl het brandt, drinken we een onmisbare matige karavísios-frappé.",
+        "Zodra de vlammen zakken, dragen twee personen het lam naar de barbecue. We maken de stroomvoorziening en motor klaar, plaatsen het spit, sluiten de motor aan en zorgen dat het goed draait.",
+        "We laten het lam urenlang roosteren en bruinen en bestrijken het vaak met olie. Ondertussen eten we de eieren van gisteren, hapjes, kleine salami’s en kaasjes.",
+        "Wanneer het lam begint te schuimen, is het klaar. Meestal zijn we het er echter niet over eens of het gaar genoeg is en wachten we nog even.",
+        "We zetten twee schalen naast elkaar klaar. We schakelen de stroom uit, maken de motor los, pakken het spit aan beide uiteinden vast en laten het lam voorzichtig in de schalen zakken zonder ons te verbranden of het te laten vallen.",
+        "We verwijderen het spit en de steunen, snijden het aan en controleren of het gaar is. Is het gaar, dan eten we; zo niet, dan huilen we.",
+        "Overgebleven lam gaat voor de volgende dag in de koelkast. Blijft er niets over, dan nemen we het volgende jaar een groter lam."
       ],
       "memory": {
-        "title": "Zondagse maaltijd",
-        "story": "We hadden niet verwacht dat het de eerste keer zo lekker zou worden, maar het werd onze specialiteit."
+        "title": "De dilemma’s van Vathylakos",
+        "story": "Het Vathylakos-lam is altijd moeilijker dan een eenvoudig lammetje uit de oven met aardappelen, maar in 95% van de gevallen wint het spit. Na het feest volgt in een andere kamer nog een ander, behoorlijk zwaar proces: we zijn niet gewend om alle voorafgaande dagen vlees te eten."
       },
-      "prepTime": "20 minuten",
-      "cookTime": "45 minuten"
+      "prepTime": "4 dagen",
+      "cookTime": "Verscheidene uren"
     },
     "fr": {
-      "title": "Pâques à la mode de Vathylakos",
-      "description": "Une recette que toute la famille va adorer ! Des ingrédients simples et un goût merveilleux.",
+      "title": "Pâques à Vathylakos",
+      "description": "L’agneau de Vathylakos ne cuit pas dans une profonde fosse, mais sur un gril maçonné surélevé. C’est une recette de Pâques pleine de dilemmes, de préparation et de patience.",
       "ingredients": [
-        "1 kg de viande",
-        "2 oignons",
-        "Huile et sel",
-        "Épices au choix"
+        "1 agneau d’environ 12 kg",
+        "Sel",
+        "Poivre",
+        "Pois chiches grillés, grossièrement hachés",
+        "1/2 tasse d’huile d’olive",
+        "Bois pour le gril",
+        "Tulle",
+        "Ficelle et aiguilles à sac"
       ],
       "steps": [
-        "On y jette les restes du dîner d’hier soir.",
-        "On le laisse refroidir, mais on craque et on le mange chaud.",
-        "On mélange frénétiquement jusqu’à obtenir un mélange homogène.",
-        "On ferme les yeux et on ajoute des épices au hasard."
+        "Environ un mois avant Pâques, nous résolvons le premier dilemme : nous décidons, comme chaque année, de faire de l’agneau. La semaine suivante, nous décidons que, malgré l’effort, il sera fait à la broche et non au four.",
+        "Nous prenons l’agneau chez le berger voisin, sauf s’il n’a plus d’agneaux. Nous choisissons un agneau d’environ 12 kg.",
+        "Le premier jour, nous suspendons l’agneau dans la maison du haut, avec une plaque dessous, enveloppé de tulle, afin qu’il s’égoutte toute la nuit.",
+        "Le deuxième jour, nous le lavons sur le balcon, retirons tous les poils que nous trouvons et, une fois sec, le mettons au réfrigérateur pour le faire rassir.",
+        "Le troisième jour, nous le laissons au réfrigérateur pour qu’il continue à rassir.",
+        "Le samedi soir, nous sortons l’agneau du réfrigérateur, l’essuyons et retirons soigneusement les poils restants. Nous préparons le sel et le poivre, mixons les pois chiches grillés en gros grains et mettons l’huile d’olive dans un bol.",
+        "Nous nettoyons la broche et tous les accessoires. Nous étalons un drap propre sur le plan de travail, plaçons l’agneau aussi droit que possible et passons d’abord une fourche sur la broche pour retenir les pattes.",
+        "Nous passons la broche dans l’agneau et l’équilibrons afin que son poids soit réparti uniformément et qu’il tourne correctement. La pointe ressort par la tête ou perce le nez.",
+        "Nous fixons l’agneau avec les attaches, d’abord sans serrer, afin de déterminer la bonne hauteur sur la broche. Puis nous les serrons et attachons fermement l’agneau.",
+        "Nous huilons l’agneau, le poivrons à l’intérieur et à l’extérieur, le salons bien et le saupoudrons de pois chiches grillés grossièrement hachés pour une peau croustillante. Nous cousons magistralement son ventre, l’enveloppons dans le drap et le laissons dans un endroit frais pour la nuit.",
+        "Dimanche matin, nous disposons suffisamment de bois sur le gril pour qu’il garde la chaleur pendant des heures et nous l’allumons. Pendant qu’il brûle, nous buvons un indispensable frappé moyen karavísios.",
+        "Dès que les flammes tombent, deux personnes portent l’agneau au gril. Nous préparons l’alimentation électrique et le moteur, installons la broche, branchons le moteur et vérifions qu’elle tourne correctement.",
+        "Nous laissons l’agneau cuire et dorer pendant plusieurs heures, en le badigeonnant souvent d’huile. Entre-temps, nous mangeons les œufs d’hier, des amuse-bouches, des petites tranches de salami et des fromages.",
+        "Lorsque l’agneau commence à mousser, il est prêt. D’ordinaire, cependant, nous ne sommes pas d’accord sur le fait qu’il soit assez cuit et attendons encore un peu.",
+        "Nous préparons deux plateaux côte à côte. Nous coupons le courant, libérons le moteur, saisissons la broche aux deux extrémités et descendons soigneusement l’agneau dans les plateaux sans nous brûler ni le faire tomber.",
+        "Nous retirons la broche et les supports, le découpons et vérifions s’il est cuit. S’il est cuit, nous mangeons ; sinon, nous pleurons.",
+        "L’agneau restant va au réfrigérateur pour le lendemain. S’il n’en reste pas, l’année suivante nous prenons un plus gros agneau."
       ],
       "memory": {
-        "title": "Le repas du dimanche",
-        "story": "On ne s’attendait pas à ce que ce soit aussi bon la première fois, mais c’est devenu notre spécialité."
+        "title": "Les dilemmes de Vathylakos",
+        "story": "L’agneau de Vathylakos est toujours plus difficile qu’un simple petit agneau au four avec des pommes de terre, mais dans 95 % des cas, la broche l’emporte. Après la fête suit aussi une autre procédure, assez pénible, dans une autre pièce : nous n’avons pas l’habitude de manger de la viande tous les jours précédents."
       },
-      "prepTime": "20 minutes",
-      "cookTime": "45 minutes"
+      "prepTime": "4 jours",
+      "cookTime": "Plusieurs heures"
     },
     "sv": {
-      "title": "Påsk på Vathylakos-vis",
-      "description": "Ett recept som hela familjen kommer att älska! Enkla ingredienser och underbar smak.",
+      "title": "Påsk i Vathylakos",
+      "description": "Lammet från Vathylakos tillagas inte i en djup grop utan på en upphöjd murad grill. Det är ett påskrecept fullt av dilemman, förberedelser och tålamod.",
       "ingredients": [
-        "1 kg kött",
-        "2 lökar",
-        "Olja och salt",
-        "Kryddor efter smak"
+        "1 lamm, cirka 12 kg",
+        "Salt",
+        "Peppar",
+        "Rostade kikärtor, grovhackade",
+        "1/2 kopp olivolja",
+        "Ved till grillen",
+        "Tyll",
+        "Snöre och säcknålar"
       ],
       "steps": [
-        "Vi slänger i det som blev över från gårdagens middag.",
-        "Vi låter det svalna, men står inte ut och äter det varmt ändå.",
-        "Vi rör frenetiskt tills allt har blandats ordentligt.",
-        "Vi blundar och tillsätter kryddor på måfå."
+        "Ungefär en månad före påsk löser vi det första dilemmat: vi bestämmer, som varje år, att vi ska göra lamm. Veckan därpå bestämmer vi att det, trots arbetet, ska göras på spett och inte i ugnen.",
+        "Vi hämtar lammet från herden i närheten, om han inte har slut på lamm. Vi väljer ett lamm på cirka 12 kg.",
+        "Den första dagen hänger vi lammet i huset på övervåningen, med en plåt under, inlindat i tyll, så att det får rinna av hela natten.",
+        "Den andra dagen tvättar vi det på balkongen, tar bort de hår vi hittar och ställer det, när det har torkat, i kylen för att mogna.",
+        "Den tredje dagen låter vi det stå kvar i kylen för att fortsätta mogna.",
+        "På lördagskvällen tar vi ut lammet ur kylen, torkar av det och tar försiktigt bort de återstående håren. Vi förbereder salt och peppar, kör de rostade kikärtorna i mixern till grova korn och häller olivoljan i en skål.",
+        "Vi rengör spettet och alla delar. Vi breder ut ett rent lakan på arbetsbänken, lägger lammet så rakt som möjligt och trär först på en gaffel på spettet för att hålla benen på plats.",
+        "Vi för spettet genom lammet och balanserar det så att vikten fördelas jämnt och det roterar rätt. Den spetsiga änden kommer ut genom huvudet eller sticker igenom nosen.",
+        "Vi fäster lammet med hållarna, först löst, för att bestämma rätt höjd på spettet. Sedan drar vi åt dem och binder fast lammet ordentligt.",
+        "Vi oljar lammet, pepprar det invändigt och utvändigt, saltar det väl och strör över de grovhackade rostade kikärtorna för ett krispigt skinn. Vi syr skickligt ihop magen, lindar in det i lakanet och låter det stå svalt över natten.",
+        "På söndagsmorgonen lägger vi tillräckligt med ved på grillen för att den ska hålla värmen i timmar och tänder den. Medan den brinner dricker vi en nödvändig, medelstark karavísios-frappé.",
+        "När lågorna har lagt sig bär två personer lammet till grillen. Vi förbereder strömförsörjningen och motorn, placerar spettet, ansluter motorn och ser till att det roterar rätt.",
+        "Vi låter lammet steka och brynas i flera timmar och penslar det ofta med olja. Under tiden äter vi gårdagens ägg, tilltugg, små salamikorvar och ostar.",
+        "När lammet börjar skumma är det klart. Vanligtvis är vi dock oense om det är tillräckligt tillagat och väntar lite till.",
+        "Vi ställer fram två fat bredvid varandra. Vi bryter strömmen, frigör motorn, håller spettet i båda ändar och sänker försiktigt ner lammet på faten utan att bränna oss eller tappa det.",
+        "Vi tar bort spettet och stöden, skär upp det och kontrollerar om det är tillagat. Är det tillagat äter vi; om inte gråter vi.",
+        "Lamm som blir över ställs i kylen till nästa dag. Om inget blir över tar vi ett större lamm nästa år."
       ],
       "memory": {
-        "title": "Söndagsmiddag",
-        "story": "Vi trodde aldrig att det skulle bli så gott första gången, men det blev vår specialitet."
+        "title": "Vathylakos dilemman",
+        "story": "Lammet från Vathylakos är alltid svårare än ett enkelt litet lamm i ugn med potatis, men i 95 % av fallen vinner spettet. Efter festen följer också en annan, ganska ansträngande procedur i ett annat rum: vi är inte vana vid att äta kött alla de föregående dagarna."
       },
-      "prepTime": "20 minuter",
-      "cookTime": "45 minuter"
+      "prepTime": "4 dagar",
+      "cookTime": "Flera timmar"
     },
     "es": {
-      "title": "Pascua al estilo de Vathylakos",
-      "description": "¡Una receta que encantará a toda la familia! Ingredientes sencillos y un sabor estupendo.",
+      "title": "Pascua en Vathylakos",
+      "description": "El cordero de Vathylakos no se asa en un hoyo profundo, sino en una parrilla de obra elevada. Es una receta de Pascua llena de dilemas, preparación y paciencia.",
       "ingredients": [
-        "1 kg de carne",
-        "2 cebollas",
-        "Aceite y sal",
-        "Especias al gusto"
+        "1 cordero de unos 12 kg",
+        "Sal",
+        "Pimienta",
+        "Garbanzos tostados, picados gruesos",
+        "1/2 taza de aceite de oliva",
+        "Leña para la parrilla",
+        "Tul",
+        "Cordel y agujas para sacos"
       ],
       "steps": [
-        "Echamos lo que sobró de la cena de anoche.",
-        "Lo dejamos enfriar, pero no aguantamos y nos lo comemos caliente.",
-        "Removemos los ingredientes como locos hasta que queden bien mezclados.",
-        "Cerramos los ojos y añadimos especias al azar."
+        "Un mes antes de Pascua aproximadamente resolvemos el primer dilema: decidimos, como cada año, que haremos cordero. La semana siguiente decidimos que, a pesar del esfuerzo, se hará al espetón y no al horno.",
+        "Conseguimos el cordero del pastor cercano, salvo que se le hayan acabado los corderos. Elegimos uno de unos 12 kg.",
+        "El primer día colgamos el cordero en la casa de arriba, con una bandeja debajo, envuelto en tul, para que escurra toda la noche.",
+        "El segundo día lo lavamos en el balcón, quitamos todos los pelos que encontramos y, una vez seco, lo metemos en el frigorífico para que madure.",
+        "El tercer día lo dejamos en el frigorífico para que siga madurando.",
+        "El sábado por la noche sacamos el cordero del frigorífico, lo secamos y retiramos cuidadosamente los pelos restantes. Preparamos sal y pimienta, trituramos los garbanzos tostados en la batidora hasta obtener grano grueso y ponemos el aceite de oliva en un cuenco.",
+        "Limpiamos el espetón y todos los accesorios. Extendemos una sábana limpia sobre la encimera, colocamos el cordero lo más recto posible y primero pasamos un tenedor por el espetón para sujetar las patas.",
+        "Pasamos el espetón por el cordero y lo equilibramos para que el peso quede distribuido uniformemente y gire bien. La punta sale por la cabeza o perfora la nariz.",
+        "Sujetamos el cordero con las abrazaderas, primero flojas, para determinar la altura correcta en el espetón. Después las apretamos y atamos bien el cordero.",
+        "Untamos el cordero con aceite, lo condimentamos con pimienta por dentro y por fuera, lo salamos bien y lo espolvoreamos con los garbanzos tostados picados gruesos para lograr una piel crujiente. Le cosemos magistralmente la barriga, lo envolvemos con la sábana y lo dejamos en un lugar frío durante la noche.",
+        "El domingo por la mañana colocamos suficiente leña en la parrilla para que conserve el calor durante horas y la encendemos. Mientras arde, bebemos un imprescindible frappé karavísios de intensidad media.",
+        "En cuanto bajan las llamas, dos personas llevan el cordero a la parrilla. Preparamos la alimentación eléctrica y el motor, colocamos el espetón, conectamos el motor y comprobamos que gire bien.",
+        "Dejamos que el cordero se ase y se dore durante varias horas, untándolo frecuentemente con aceite. Mientras tanto, comemos los huevos de ayer, aperitivos, salamines y quesitos.",
+        "Cuando el cordero empieza a espumar, está listo. Normalmente, sin embargo, discrepamos sobre si está suficientemente hecho y esperamos un poco más.",
+        "Preparamos dos bandejas una junto a la otra. Cortamos la corriente, liberamos el motor, sujetamos el espetón por ambos extremos y bajamos cuidadosamente el cordero a las bandejas sin quemarnos ni dejarlo caer.",
+        "Quitamos el espetón y los soportes, lo cortamos y comprobamos si está hecho. Si está hecho, comemos; si no, lloramos.",
+        "El cordero que sobra va al frigorífico para el día siguiente. Si no sobra nada, el año siguiente compramos un cordero más grande."
       ],
       "memory": {
-        "title": "La comida del domingo",
-        "story": "No esperábamos que saliera tan rico la primera vez, pero se convirtió en nuestra especialidad."
+        "title": "Los dilemas de Vathylakos",
+        "story": "El cordero de Vathylakos siempre es más difícil que un simple corderito al horno con patatas, pero en el 95 % de los casos gana el espetón. Después de la fiesta sigue otro proceso, bastante penoso, en otra habitación: no estamos acostumbrados a comer carne todos los días anteriores."
       },
-      "prepTime": "20 minutos",
-      "cookTime": "45 minutos"
+      "prepTime": "4 días",
+      "cookTime": "Varias horas"
     },
     "it": {
-      "title": "Pasqua alla Vathylakos",
-      "description": "Una ricetta che piacerà a tutta la famiglia! Ingredienti semplici e un sapore meraviglioso.",
+      "title": "Pasqua a Vathylakos",
+      "description": "L’agnello di Vathylakos non viene arrostito in una fossa profonda, ma su una griglia in muratura rialzata. È una ricetta pasquale piena di dilemmi, preparazione e pazienza.",
       "ingredients": [
-        "1 kg di carne",
-        "2 cipolle",
-        "Olio e sale",
-        "Spezie a piacere"
+        "1 agnello di circa 12 kg",
+        "Sale",
+        "Pepe",
+        "Ceci tostati, tritati grossolanamente",
+        "1/2 tazza di olio d’oliva",
+        "Legna per la griglia",
+        "Tulle",
+        "Spago e aghi da sacco"
       ],
       "steps": [
-        "Ci buttiamo dentro gli avanzi della cena di ieri sera.",
-        "Lo lasciamo raffreddare, ma non resistiamo e lo mangiamo caldo.",
-        "Mescoliamo gli ingredienti come matti finché non diventano omogenei.",
-        "Chiudiamo gli occhi e aggiungiamo spezie a caso."
+        "Circa un mese prima di Pasqua risolviamo il primo dilemma: decidiamo, come ogni anno, che faremo l’agnello. La settimana successiva decidiamo che, nonostante la fatica, sarà fatto allo spiedo e non al forno.",
+        "Prendiamo l’agnello dal pastore vicino, a meno che abbia finito gli agnelli. Scegliamo un agnello di circa 12 kg.",
+        "Il primo giorno appendiamo l’agnello nella casa di sopra, con una teglia sotto, avvolto nel tulle, affinché sgoccioli per tutta la notte.",
+        "Il secondo giorno lo laviamo sul balcone, togliamo tutti i peli che troviamo e, dopo che si è asciugato, lo mettiamo in frigorifero a frollare.",
+        "Il terzo giorno lo lasciamo in frigorifero a continuare a frollare.",
+        "Sabato sera togliamo l’agnello dal frigorifero, lo asciughiamo e rimuoviamo con cura i peli rimasti. Prepariamo sale e pepe, frulliamo i ceci tostati fino a ottenere una grana grossa e versiamo l’olio d’oliva in una ciotola.",
+        "Puliamo lo spiedo e tutti gli accessori. Stendiamo un lenzuolo pulito sul banco, sistemiamo l’agnello il più dritto possibile e infiliamo prima una forchetta nello spiedo per trattenere le gambe.",
+        "Passiamo lo spiedo attraverso l’agnello e lo bilanciamo, affinché il peso sia distribuito uniformemente e ruoti correttamente. L’estremità appuntita esce dalla testa o perfora il naso.",
+        "Fissiamo l’agnello con i fermi, inizialmente allentati, per stabilire la giusta altezza sullo spiedo. Poi li stringiamo e leghiamo saldamente l’agnello.",
+        "Ungiamo l’agnello, lo pepiamo dentro e fuori, lo saliamo bene e lo cospargiamo di ceci tostati tritati grossolanamente per una pelle croccante. Cuciamo magistralmente la pancia, lo avvolgiamo nel lenzuolo e lo lasciamo in un luogo fresco per la notte.",
+        "Domenica mattina disponiamo abbastanza legna sulla griglia perché mantenga il calore per ore e le diamo fuoco. Mentre brucia, beviamo un indispensabile frappé karavísios di media intensità.",
+        "Non appena le fiamme calano, due persone portano l’agnello alla griglia. Prepariamo l’alimentazione elettrica e il motore, posizioniamo lo spiedo, colleghiamo il motore e ci assicuriamo che ruoti correttamente.",
+        "Lasciamo arrostire e dorare l’agnello per diverse ore, ungendolo spesso con olio. Nel frattempo mangiamo le uova di ieri, stuzzichini, salametti e formaggini.",
+        "Quando l’agnello comincia a fare schiuma, è pronto. Di solito, però, non siamo d’accordo sul fatto che sia abbastanza cotto e aspettiamo ancora un po’.",
+        "Prepariamo due vassoi affiancati. Togliamo la corrente, liberiamo il motore, afferriamo lo spiedo alle due estremità e caliamo con cura l’agnello nei vassoi senza bruciarci né farlo cadere.",
+        "Rimuoviamo lo spiedo e i sostegni, lo tagliamo e controlliamo se è cotto. Se è cotto, mangiamo; altrimenti piangiamo.",
+        "L’agnello avanzato va in frigorifero per il giorno seguente. Se non avanza nulla, l’anno successivo prendiamo un agnello più grande."
       ],
       "memory": {
-        "title": "Il pranzo della domenica",
-        "story": "Non ci aspettavamo che venisse così buono la prima volta, ma è diventato la nostra specialità."
+        "title": "I dilemmi di Vathylakos",
+        "story": "L’agnello di Vathylakos è sempre più difficile di un semplice agnellino al forno con patate, ma nel 95% dei casi vince lo spiedo. Dopo la festa segue anche un’altra procedura, piuttosto faticosa, in un’altra stanza: non siamo abituati a mangiare carne in tutti i giorni precedenti."
       },
-      "prepTime": "20 minuti",
-      "cookTime": "45 minuti"
+      "prepTime": "4 giorni",
+      "cookTime": "Diverse ore"
     }
   }
 }
