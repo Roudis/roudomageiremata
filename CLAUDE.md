@@ -2,6 +2,7 @@
 
 Greek family-recipe journal. Next.js 14 App Router, React 18, TypeScript strict, Tailwind 3.
 Built as a fully static export and hosted on GitHub Pages at https://roudis.github.io/roudomageiremata/.
+Available in Greek (the original) plus English, Dutch, French, Swedish, Spanish, and Italian.
 
 For a file-by-file map see `CODEBASE_INDEX.md`. Keep it and this file current in the same change that makes them stale.
 
@@ -27,23 +28,34 @@ npm run start          # serve out/ locally; `next start` does NOT work with sta
 - Vitest, node environment, config in `vitest.config.mts`. Test files are `*.test.ts` next to the code they cover.
 - `lib/recipes.test.ts` holds **characterization tests** for the recipe loader. They lock down current behavior, including quirks. Tests named "(current behavior)" document quirks, such as accent-sensitive search in `lib/recipe-search.test.ts`. If you change one of these behaviors on purpose, update the matching test in the same change and say so.
 - Loader fixture tests write temp files and call `createRecipeStore(tempDir)`.
-- `lib/recipes.data.test.ts` validates the real files in `data/recipes`, including that each image exists. `npm run validate:data` runs only that file.
+- `lib/recipes.data.test.ts` validates the real files in `data/recipes` (translations included), that each image exists, and `data/categories.json`. `npm run validate:data` runs only that file.
 - `RECIPE_FIELDS` in `lib/recipe-schema.ts` mirrors `types/recipe.ts`. Changing the `Recipe` type fails `npm run typecheck` until it is updated.
 
 ## Hard constraints
 
 - **Static export only** (`output: "export"`). No API routes, route handlers, server actions, middleware, cookies/headers, ISR, or runtime file writes. Anything that needs a server at request time will break the deploy.
 - **`next/image` optimization is off** (`images.unoptimized`). Existing code uses `<img>` with an eslint-disable line.
-- **Base path**: on GitHub Actions the site is served under `/roudomageiremata`. `next/link` handles this automatically, but raw asset URLs such as `<img src>` must go through `withBasePath` from `lib/base-path.ts`. That includes Open Graph image paths in `generateMetadata`, which Next does not prefix; `metadataBase` in `app/layout.tsx` is the origin only.
+- **Base path**: on GitHub Actions the site is served under `/roudomageiremata`. `next/link` handles this automatically, but raw URLs such as `<img src>` or a plain `<a href>` must go through `withBasePath` from `lib/base-path.ts`. That includes Open Graph image and alternate-language URLs in metadata, which Next does not prefix; `metadataBase` in `app/_shared/root-layout.tsx` is the origin only.
 - The repo was renamed on GitHub from `roudomageirikes` to `roudomageiremata`. The `repoName` in `next.config.mjs` is correct. Do not "fix" it to match the local folder name.
+
+## Languages and routing
+
+- Locales live in `lib/i18n/config.ts`: `el` (default), `en`, `nl`, `fr`, `sv`, `es`, `it`. Greek keeps the unprefixed URLs (`/`, `/recipes/<id>`); every other language is under its code (`/en`, `/en/recipes/<id>`). Build internal links with `localizePath(path, locale)`, never by hand.
+- Two route trees render the same views from `app/_shared/`: `app/(el)/` for Greek and `app/[locale]/` for the rest. Each tree's layout renders its own `<html lang>` through `RootLayout`. `app/layout.tsx` only passes children through; it must exist, because without it Next 14 builds the default unstyled 404. `app/not-found.tsx` renders its own Greek shell.
+- The language menu (`components/language-switcher.tsx`) uses plain `<a>` links, so switching language is a full page load. Keep it that way: a client-side navigation between the trees would have to swap `<html>` in place.
+- Interface text lives in `lib/i18n/messages/<locale>.ts`. `el.ts` is the source and defines the `Messages` type, so a key missing from any language fails `npm run typecheck`. Add every new string to all seven files. Counts use `{ one, other }` forms with `{count}`, rendered by `formatCount` in `lib/i18n/format.ts`.
+- Server components call `getMessages(locale)`. Client components get only the message sections they render, as props.
 
 ## Recipe data
 
 - One recipe per file: `data/recipes/<id>.json`. The filename must equal the `id` field. Ids are lowercase Greeklish slugs.
 - Shape is `Recipe` in `types/recipe.ts`. If you change the shape, update `parseRecipe` in `lib/recipe-schema.ts` too.
+- Other languages go in the recipe file's optional `translations` object, keyed by locale code. Each entry mirrors the Greek text one to one: the same number of ingredients and steps, and a `memory` (title and story only), `prepTime`, or `cookTime` exactly when the Greek has one. The memory date, image, servings, and category always come from the Greek. A language with no entry shows the Greek text with a notice. `localizeRecipe` in `lib/recipe-view.ts` merges a translation for display.
+- When you change a recipe's Greek ingredients or steps, update or remove its translations in the same change: a count mismatch makes the whole file invalid. Changed wording with the same count is not detected, so update the translations too.
+- Category names are translated in `data/categories.json`, keyed by the Greek category name. `category` stays Greek everywhere in the data because filtering and the dot colours key on it. `npm run validate:data` fails when a key there matches no recipe's category, which usually means a typo or a rename.
 - Images live at `public/images/recipes/<id>.jpg` and are referenced as `"/images/recipes/<id>.jpg"`.
 - `lib/recipes.ts` validates each file with `parseRecipe` at build time. **An invalid file, or one whose `id` differs from its filename, is skipped with a console warning, and the build still succeeds without that recipe.** `npm run validate:data` fails on such files and CI runs it before building, so always run it after touching recipe data.
-- All user-facing copy is Greek (`<html lang="el">`). Keep new UI text in Greek, and format dates with `formatRecipeDate` (`el-GR`, `Europe/Athens`) so they don't depend on the build machine.
+- Greek is the site's original language. New UI text goes into every file in `lib/i18n/messages/`, never inline in a component. Format dates with `formatRecipeDate(iso, locale)` and `formatMemoryDate(date, locale)`, which fix the time zone (`Europe/Athens`) so they don't depend on the build machine.
 
 ## Do not run
 
@@ -55,13 +67,13 @@ These are one-off seeding scripts kept for history. They are blocked in `.claude
 
 ## Code conventions
 
-- Server components by default. Add `"use client"` only for interactivity; current client components are `components/recipe-list.tsx` and `app/template.tsx`.
+- Server components by default. Add `"use client"` only for interactivity; current client components are `components/recipe-list.tsx` (with the `recipe-card.tsx` it renders), `components/language-switcher.tsx`, and `app/_shared/page-transition.tsx`, which both trees' `template.tsx` re-export.
 - Styling is inline Tailwind classes. The only shared class is `page-container` (page width and side padding) in `app/globals.css`.
 - Colours are theme tokens, not raw palette classes: `background`, `foreground`, `card`, `muted`, `border`, `primary` (aubergine purple), `secondary` (olive green), and `feature` (the family-story band). Each is an HSL variable in `app/globals.css` with a dark-mode value that follows the system setting, mapped in `tailwind.config.ts`. Purple and green are the family's favourite colours; keep new UI in that palette and check contrast in both modes.
-- Fonts come from `next/font/google` in `app/layout.tsx`, which downloads them at build time: Commissioner (`font-sans`) and Literata (`font-serif`, used for headings). Any replacement must include the `greek` subset.
-- Icons come from `lucide-react`. Animations use `framer-motion`; `app/template.tsx` wraps pages in `MotionConfig reducedMotion="user"`.
+- Fonts come from `next/font/google` in `app/_shared/root-layout.tsx`, which downloads them at build time: Commissioner (`font-sans`) and Literata (`font-serif`, used for headings). Any replacement must include the `greek` subset; `latin` covers the other six languages.
+- Icons come from `lucide-react`. Animations use `framer-motion`; `app/_shared/page-transition.tsx` wraps pages in `MotionConfig reducedMotion="user"`. The navbar sits outside it, so the language menu uses CSS transitions with `motion-reduce:` instead.
 - Import via the `@/` alias, which maps to the repo root.
-- `lib/recipes.ts` imports `server-only`, so only server code in `app/` may import it. Client components get data as props: the home page sends `RecipeSummary` objects via `toRecipeSummary`, not full recipes. Pure helpers in `lib/` (`recipe-view`, `recipe-search`, `recipe-schema`, `base-path`) are safe on either side.
+- `lib/recipes.ts` and `lib/categories.ts` import `server-only`, so only server code in `app/` may import them. Client components get data as props: the home page sends `RecipeSummary` objects via `toRecipeSummary(localizeRecipe(...))`, not full recipes with every translation. Pure helpers in `lib/` (`recipe-view`, `recipe-search`, `recipe-schema`, `base-path`, `i18n/config`, `i18n/format`) are safe on either side.
 - Tailwind only scans `app/` and `components/`. Keep class strings there; `lib/` returns data such as a colour index, not class names.
 
 ## Git workflow
