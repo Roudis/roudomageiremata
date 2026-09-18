@@ -3,7 +3,7 @@
   "title": "Έλα μου ντε???",
   "description": "Μια συνταγή που θα λατρέψει όλη η οικογένεια! Με απλά υλικά και υπέροχη γεύση.",
   "ingredients": [
-    "Φρέσκα λαχανικά",
+    "12 cups low sodium beef broth, or beef bones + cold water (see notes)",
     "Ελαιόλαδο",
     "Ξύδι βαλσάμικο",
     "Αλάτι"
@@ -28,7 +28,7 @@
   "cookTime": "45 λεπτά",
   "servings": 4,
   "createdAt": "2026-08-10T16:52:28.199Z",
-  "updatedAt": "2026-08-10T16:52:28.199Z",
+  "updatedAt": "2026-09-18T13:27:16.686Z",
   "translations": {
     "en": {
       "title": "Go figure???",
