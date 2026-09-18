@@ -27,5 +27,151 @@
   "cookTime": "45 λεπτά",
   "servings": 4,
   "createdAt": "2026-08-10T16:52:28.199Z",
-  "updatedAt": "2026-08-10T16:52:28.199Z"
+  "updatedAt": "2026-08-10T16:52:28.199Z",
+  "translations": {
+    "en": {
+      "title": "Go figuuure ??",
+      "description": "The ultimate comfort food, just right for Sundays or chilly afternoons.",
+      "ingredients": [
+        "Fresh vegetables",
+        "Olive oil",
+        "Balsamic vinegar",
+        "Salt"
+      ],
+      "steps": [
+        "We add a little salt, a little pepper and a lot of feeling.",
+        "We hover over the pot, holding our breath.",
+        "We let it cool, but can’t resist and eat it hot anyway.",
+        "We serve it in deep plates and pretend we know what we’re doing.",
+        "We ring Mum to ask “how much water do I add?”.",
+        "We rummage through the cupboards for that gadget we bought back in 2015."
+      ],
+      "memory": {
+        "title": "Sunday lunch",
+        "story": "Always there at every celebration, it was the first dish to be emptied."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "nl": {
+      "title": "Zeg jij het maaar ??",
+      "description": "Het ultieme comfortfood, precies goed voor zondagen of koude middagen.",
+      "ingredients": [
+        "Verse groenten",
+        "Olijfolie",
+        "Balsamicoazijn",
+        "Zout"
+      ],
+      "steps": [
+        "We voegen een beetje zout, een beetje peper en heel veel gevoel toe.",
+        "We staan gespannen boven de pan te wachten.",
+        "We laten het afkoelen, maar houden het niet uit en eten het toch warm op.",
+        "We serveren het in diepe borden en doen alsof we weten wat we doen.",
+        "We bellen mama om te vragen “hoeveel water doe ik erbij?”.",
+        "We doorzoeken de kastjes naar dat keukengerei dat we in 2015 hebben gekocht."
+      ],
+      "memory": {
+        "title": "Zondagse maaltijd",
+        "story": "Het stond op elk feest op tafel en was altijd als eerste op."
+      },
+      "prepTime": "20 minuten",
+      "cookTime": "45 minuten"
+    },
+    "fr": {
+      "title": "Va savoiiir ??",
+      "description": "Le réconfort ultime dans une assiette, parfait pour les dimanches ou les après-midi froids.",
+      "ingredients": [
+        "Légumes frais",
+        "Huile d’olive",
+        "Vinaigre balsamique",
+        "Sel"
+      ],
+      "steps": [
+        "On ajoute un peu de sel, un peu de poivre et beaucoup d’émotion.",
+        "On attend au-dessus de la casserole, rongés d’impatience.",
+        "On le laisse refroidir, mais on craque et on le mange chaud.",
+        "On sert dans des assiettes creuses en faisant semblant de savoir ce qu’on fait.",
+        "On appelle maman pour lui demander « je mets combien d’eau ? ».",
+        "On fouille les placards à la recherche de cet ustensile acheté en 2015."
+      ],
+      "memory": {
+        "title": "Le repas du dimanche",
+        "story": "Toujours présent à chaque fête, c’était le premier plat à être vidé."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "sv": {
+      "title": "Säg det duuu ??",
+      "description": "Den ultimata tröstmaten, perfekt för söndagar eller kalla eftermiddagar.",
+      "ingredients": [
+        "Färska grönsaker",
+        "Olivolja",
+        "Balsamvinäger",
+        "Salt"
+      ],
+      "steps": [
+        "Vi tillsätter lite salt, lite peppar och massor av känsla.",
+        "Vi står och väntar över kastrullen med spänning.",
+        "Vi låter det svalna, men står inte ut och äter det varmt ändå.",
+        "Vi serverar på djupa tallrikar och låtsas att vi vet vad vi håller på med.",
+        "Vi ringer mamma och frågar ”hur mycket vatten ska jag ha i?”.",
+        "Vi letar i skåpen efter den där köksprylen vi köpte 2015."
+      ],
+      "memory": {
+        "title": "Söndagsmiddag",
+        "story": "Det fanns alltid med på varje fest och var den första rätten som tog slut."
+      },
+      "prepTime": "20 minuter",
+      "cookTime": "45 minuter"
+    },
+    "es": {
+      "title": "¿¿Quién sabeee ??",
+      "description": "La comida reconfortante por excelencia, perfecta para los domingos o las tardes frías.",
+      "ingredients": [
+        "Verduras frescas",
+        "Aceite de oliva",
+        "Vinagre balsámico",
+        "Sal"
+      ],
+      "steps": [
+        "Añadimos un poco de sal, un poco de pimienta y mucho sentimiento.",
+        "Esperamos junto a la olla con el corazón en un puño.",
+        "Lo dejamos enfriar, pero no aguantamos y nos lo comemos caliente.",
+        "Servimos en platos hondos y hacemos como que sabemos lo que hacemos.",
+        "Llamamos a mamá para preguntarle «¿cuánta agua le echo?».",
+        "Rebuscamos en los armarios aquel cacharro que compramos en 2015."
+      ],
+      "memory": {
+        "title": "La comida del domingo",
+        "story": "Siempre presente en todas las fiestas, era el primer plato en vaciarse."
+      },
+      "prepTime": "20 minutos",
+      "cookTime": "45 minutos"
+    },
+    "it": {
+      "title": "Chissààà ??",
+      "description": "Il comfort food per eccellenza, perfetto per le domeniche o i pomeriggi freddi.",
+      "ingredients": [
+        "Verdure fresche",
+        "Olio d’oliva",
+        "Aceto balsamico",
+        "Sale"
+      ],
+      "steps": [
+        "Aggiungiamo un po’ di sale, un po’ di pepe e tanto sentimento.",
+        "Aspettiamo sopra la pentola col fiato sospeso.",
+        "Lo lasciamo raffreddare, ma non resistiamo e lo mangiamo caldo.",
+        "Serviamo nei piatti fondi e facciamo finta di sapere quello che facciamo.",
+        "Telefoniamo alla mamma per chiederle «quanta acqua ci metto?».",
+        "Frughiamo negli armadietti per trovare quell’utensile comprato nel 2015."
+      ],
+      "memory": {
+        "title": "Il pranzo della domenica",
+        "story": "Sempre presente a ogni festa, era il primo piatto a svuotarsi."
+      },
+      "prepTime": "20 minuti",
+      "cookTime": "45 minuti"
+    }
+  }
 }

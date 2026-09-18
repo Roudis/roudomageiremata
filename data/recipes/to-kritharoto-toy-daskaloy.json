@@ -25,5 +25,139 @@
   "cookTime": "45 λεπτά",
   "servings": 4,
   "createdAt": "2026-08-10T16:52:28.199Z",
-  "updatedAt": "2026-08-10T16:52:28.199Z"
+  "updatedAt": "2026-08-10T16:52:28.199Z",
+  "translations": {
+    "en": {
+      "title": "The teacher’s orzotto",
+      "description": "The ultimate comfort food, just right for Sundays or chilly afternoons.",
+      "ingredients": [
+        "500 g pasta",
+        "Tomato sauce",
+        "Plenty of cheese",
+        "Fresh basil"
+      ],
+      "steps": [
+        "We put on our apron and take a deep breath.",
+        "We ring Mum to ask “how much water do I add?”.",
+        "We grin from ear to ear because... go figure, somehow it worked!",
+        "We throw in whatever was left over from last night’s dinner."
+      ],
+      "memory": {
+        "title": "The surprise",
+        "story": "Always there at every celebration, it was the first dish to be emptied."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "nl": {
+      "title": "De orzotto van de meester",
+      "description": "Het ultieme comfortfood, precies goed voor zondagen of koude middagen.",
+      "ingredients": [
+        "500 g pasta",
+        "Tomatensaus",
+        "Flink wat kaas",
+        "Verse basilicum"
+      ],
+      "steps": [
+        "We doen ons schort voor en halen diep adem.",
+        "We bellen mama om te vragen “hoeveel water doe ik erbij?”.",
+        "We glimlachen van oor tot oor, want... zeg jij het maar, op de een of andere manier is het gelukt!",
+        "We gooien erin wat er van het avondeten van gisteren over is."
+      ],
+      "memory": {
+        "title": "De verrassing",
+        "story": "Het stond op elk feest op tafel en was altijd als eerste op."
+      },
+      "prepTime": "20 minuten",
+      "cookTime": "45 minuten"
+    },
+    "fr": {
+      "title": "L’orzotto de l’instituteur",
+      "description": "Le réconfort ultime dans une assiette, parfait pour les dimanches ou les après-midi froids.",
+      "ingredients": [
+        "500 g de pâtes",
+        "Sauce tomate",
+        "Beaucoup de fromage",
+        "Basilic frais"
+      ],
+      "steps": [
+        "On enfile notre tablier et on prend une grande inspiration.",
+        "On appelle maman pour lui demander « je mets combien d’eau ? ».",
+        "On sourit jusqu’aux oreilles parce que... va savoir, ça a marché !",
+        "On y jette les restes du dîner d’hier soir."
+      ],
+      "memory": {
+        "title": "La surprise",
+        "story": "Toujours présent à chaque fête, c’était le premier plat à être vidé."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "sv": {
+      "title": "Lärarens orzotto",
+      "description": "Den ultimata tröstmaten, perfekt för söndagar eller kalla eftermiddagar.",
+      "ingredients": [
+        "500 g pasta",
+        "Tomatsås",
+        "Rikligt med ost",
+        "Färsk basilika"
+      ],
+      "steps": [
+        "Vi tar på oss förklädet och drar ett djupt andetag.",
+        "Vi ringer mamma och frågar ”hur mycket vatten ska jag ha i?”.",
+        "Vi ler från öra till öra för att... säg det du, på något sätt blev det lyckat!",
+        "Vi slänger i det som blev över från gårdagens middag."
+      ],
+      "memory": {
+        "title": "Överraskningen",
+        "story": "Det fanns alltid med på varje fest och var den första rätten som tog slut."
+      },
+      "prepTime": "20 minuter",
+      "cookTime": "45 minuter"
+    },
+    "es": {
+      "title": "El orzotto del maestro",
+      "description": "La comida reconfortante por excelencia, perfecta para los domingos o las tardes frías.",
+      "ingredients": [
+        "500 g de pasta",
+        "Salsa de tomate",
+        "Mucho queso",
+        "Albahaca fresca"
+      ],
+      "steps": [
+        "Nos ponemos el delantal y respiramos hondo.",
+        "Llamamos a mamá para preguntarle «¿cuánta agua le echo?».",
+        "Sonreímos de oreja a oreja porque... quién sabe, ¡de algún modo salió bien!",
+        "Echamos lo que sobró de la cena de anoche."
+      ],
+      "memory": {
+        "title": "La sorpresa",
+        "story": "Siempre presente en todas las fiestas, era el primer plato en vaciarse."
+      },
+      "prepTime": "20 minutos",
+      "cookTime": "45 minutos"
+    },
+    "it": {
+      "title": "L’orzotto del maestro",
+      "description": "Il comfort food per eccellenza, perfetto per le domeniche o i pomeriggi freddi.",
+      "ingredients": [
+        "500 g di pasta",
+        "Salsa di pomodoro",
+        "Tanto formaggio",
+        "Basilico fresco"
+      ],
+      "steps": [
+        "Ci mettiamo il grembiule e facciamo un respiro profondo.",
+        "Telefoniamo alla mamma per chiederle «quanta acqua ci metto?».",
+        "Sorridiamo da un orecchio all’altro perché... chissà, in qualche modo è venuto bene!",
+        "Ci buttiamo dentro gli avanzi della cena di ieri sera."
+      ],
+      "memory": {
+        "title": "La sorpresa",
+        "story": "Sempre presente a ogni festa, era il primo piatto a svuotarsi."
+      },
+      "prepTime": "20 minuti",
+      "cookTime": "45 minuti"
+    }
+  }
 }

@@ -45,5 +45,259 @@
   "cookTime": "1 ώρα",
   "servings": 8,
   "createdAt": "2026-08-10T16:52:28.199Z",
-  "updatedAt": "2026-08-10T16:52:28.199Z"
+  "updatedAt": "2026-08-10T16:52:28.199Z",
+  "translations": {
+    "en": {
+      "title": "Grandma’s pastitsio",
+      "description": "The classic, much-loved Greek pastitsio with fluffy béchamel and a mouth-watering meat sauce.",
+      "ingredients": [
+        "1/2 cup oil (extra virgin olive oil)",
+        "1 medium onion, grated",
+        "1 kg minced meat (beef or mixed)",
+        "2 cups tomato passata",
+        "1 tbsp tomato paste",
+        "1/2 tsp sugar",
+        "3 tbsp parsley, finely chopped",
+        "1 egg (lightly beaten)",
+        "Salt & pepper",
+        "1/2 kg pastitsio pasta (No. 2)",
+        "1/4 cup butter",
+        "2 1/2 cups grated cheese (kasseri, kefalograviera or graviera)",
+        "2 tbsp breadcrumbs",
+        "1 tbsp oil (for the pasta water)",
+        "4 cups milk",
+        "8 tbsp plain flour",
+        "8 tbsp butter",
+        "4 eggs (lightly beaten)",
+        "Salt, white pepper, nutmeg"
+      ],
+      "steps": [
+        "Heat the oil in a pan over a high heat. Sauté the onion until soft, then add the mince and brown it well.",
+        "Stir in the passata, tomato paste, sugar, parsley, salt and pepper. Cover and simmer until the liquid has evaporated.",
+        "Take the meat sauce off the heat, let it cool slightly, then stir in 1 beaten egg and 1/2 cup of the grated cheese.",
+        "Boil the pasta in salted water with 1 tbsp oil. Drain, rinse briefly with cold water and toss with 1/4 cup butter and 2 cups grated cheese.",
+        "Bring the milk to the boil in a small pan. In another pan, melt the 8 tbsp butter, add the flour and cook, stirring, for about 5 minutes.",
+        "Pour all the hot milk into the flour at once, whisking vigorously. Stir over a low heat until it thickens.",
+        "Take the sauce off the heat, season with salt, pepper and nutmeg, and stir in the 4 lightly beaten eggs.",
+        "Butter a baking dish (30x40 cm) and sprinkle it with breadcrumbs. Spread out half the pasta, then the meat sauce, then the rest of the pasta.",
+        "Pour the béchamel over the whole surface and bake at 180°C for about 1 hour. Let it rest for 20 minutes before serving."
+      ],
+      "memory": {
+        "title": "Sunday lunch",
+        "story": "Our favourite Sunday dish, the one that gathers the whole family around the table! The smell of béchamel lingers in the house until the afternoon."
+      },
+      "prepTime": "1 hour",
+      "cookTime": "1 hour"
+    },
+    "nl": {
+      "title": "DE pastitsio van oma",
+      "description": "De klassieke, geliefde Griekse pastitsio met luchtige bechamelsaus en heerlijk gehakt.",
+      "ingredients": [
+        "1/2 kopje olie (extra vierge olijfolie)",
+        "1 middelgrote ui, geraspt",
+        "1 kg gehakt (rund of half-om-half)",
+        "2 kopjes tomatenpassata",
+        "1 el tomatenpuree",
+        "1/2 tl suiker",
+        "3 el peterselie, fijngehakt",
+        "1 ei (licht geklopt)",
+        "Zout & peper",
+        "1/2 kg pastitsio-macaroni (nr. 2)",
+        "1/4 kopje boter",
+        "2 1/2 kopjes geraspte kaas (kasseri, kefalograviera of graviera)",
+        "2 el paneermeel",
+        "1 el olie (voor het kookwater)",
+        "4 kopjes melk",
+        "8 el bloem",
+        "8 el boter",
+        "4 eieren (licht geklopt)",
+        "Zout, witte peper, nootmuskaat"
+      ],
+      "steps": [
+        "Verhit de olie in een pan op hoog vuur. Fruit de ui tot hij zacht is, voeg het gehakt toe en bak het goed rul.",
+        "Roer de passata, tomatenpuree, suiker, peterselie, zout en peper erdoor. Dek af en laat sudderen tot het vocht verdampt is.",
+        "Haal het gehakt van het vuur, laat het iets afkoelen en roer er 1 geklopt ei en 1/2 kopje van de geraspte kaas door.",
+        "Kook de macaroni in water met zout en 1 el olie. Giet af, spoel kort met koud water en meng met 1/4 kopje boter en 2 kopjes geraspte kaas.",
+        "Breng de melk in een kleine pan aan de kook. Smelt in een andere pan de 8 el boter, voeg de bloem toe en laat ongeveer 5 minuten al roerend garen.",
+        "Giet alle hete melk in één keer bij de bloem en klop krachtig met een garde. Roer op laag vuur tot de saus dik wordt.",
+        "Haal de saus van het vuur, breng op smaak met zout, peper en nootmuskaat en roer de 4 licht geklopte eieren erdoor.",
+        "Vet een ovenschaal (30x40 cm) in met boter en bestrooi met paneermeel. Verdeel de helft van de macaroni erover, dan het gehakt en dan de rest van de macaroni.",
+        "Giet de bechamelsaus over de hele bovenkant en bak ongeveer 1 uur op 180°C. Laat 20 minuten rusten voor het serveren."
+      ],
+      "memory": {
+        "title": "Zondagse maaltijd",
+        "story": "Ons favoriete zondagse gerecht, dat de hele familie rond de tafel verzamelt! De geur van bechamel blijft tot in de middag in huis hangen."
+      },
+      "prepTime": "1 uur",
+      "cookTime": "1 uur"
+    },
+    "fr": {
+      "title": "LE pastitsio de Mamie",
+      "description": "Le pastitsio grec classique et adoré, avec une béchamel onctueuse et une viande hachée savoureuse.",
+      "ingredients": [
+        "1/2 tasse d’huile (huile d’olive vierge extra)",
+        "1 oignon moyen, râpé",
+        "1 kg de viande hachée (bœuf ou mélange)",
+        "2 tasses de passata de tomates",
+        "1 c. à s. de concentré de tomates",
+        "1/2 c. à c. de sucre",
+        "3 c. à s. de persil finement ciselé",
+        "1 œuf (légèrement battu)",
+        "Sel & poivre",
+        "1/2 kg de pâtes à pastitsio (n° 2)",
+        "1/4 tasse de beurre",
+        "2 1/2 tasses de fromage râpé (kasséri, kefalograviera ou graviera)",
+        "2 c. à s. de chapelure",
+        "1 c. à s. d’huile (pour l’eau des pâtes)",
+        "4 tasses de lait",
+        "8 c. à s. de farine tout usage",
+        "8 c. à s. de beurre",
+        "4 œufs (légèrement battus)",
+        "Sel, poivre blanc, muscade"
+      ],
+      "steps": [
+        "Faites chauffer l’huile dans une casserole à feu vif. Faites revenir l’oignon jusqu’à ce qu’il soit tendre, ajoutez la viande hachée et faites-la bien dorer.",
+        "Ajoutez en remuant la passata, le concentré de tomates, le sucre, le persil, le sel et le poivre. Couvrez et laissez mijoter jusqu’à ce que le liquide se soit évaporé.",
+        "Retirez la viande du feu, laissez-la tiédir légèrement, puis incorporez 1 œuf battu et 1/2 tasse du fromage râpé.",
+        "Faites cuire les pâtes dans de l’eau salée avec 1 c. à s. d’huile. Égouttez-les, rincez-les rapidement à l’eau froide et mélangez-les avec 1/4 tasse de beurre et 2 tasses de fromage râpé.",
+        "Dans une petite casserole, portez le lait à ébullition. Dans une autre casserole, faites fondre les 8 c. à s. de beurre, ajoutez la farine et faites cuire environ 5 minutes en remuant.",
+        "Versez tout le lait chaud d’un coup sur la farine en fouettant vigoureusement. Remuez à feu doux jusqu’à ce que la sauce épaississe.",
+        "Retirez la sauce du feu, assaisonnez de sel, de poivre et de muscade, puis incorporez les 4 œufs légèrement battus en remuant.",
+        "Beurrez un plat à four (30x40 cm) et saupoudrez-le de chapelure. Étalez la moitié des pâtes, puis la viande, puis le reste des pâtes.",
+        "Nappez toute la surface de béchamel et enfournez à 180°C pendant environ 1 heure. Laissez reposer 20 minutes avant de servir."
+      ],
+      "memory": {
+        "title": "Le repas du dimanche",
+        "story": "Le plat préféré du dimanche, celui qui réunit toute la famille autour de la table ! L’odeur de la béchamel reste dans la maison jusqu’à l’après-midi."
+      },
+      "prepTime": "1 heure",
+      "cookTime": "1 heure"
+    },
+    "sv": {
+      "title": "Mormors pastitsio",
+      "description": "Den klassiska, älskade grekiska pastitsion med luftig béchamelsås och läcker köttfärs.",
+      "ingredients": [
+        "1/2 kopp olja (extra jungfruolivolja)",
+        "1 medelstor lök, riven",
+        "1 kg köttfärs (nöt eller blandfärs)",
+        "2 koppar passerade tomater",
+        "1 msk tomatpuré",
+        "1/2 tsk socker",
+        "3 msk persilja, finhackad",
+        "1 ägg (lätt uppvispat)",
+        "Salt & peppar",
+        "1/2 kg pastitsiopasta (nr 2)",
+        "1/4 kopp smör",
+        "2 1/2 koppar riven ost (kasseri, kefalograviera eller graviera)",
+        "2 msk ströbröd",
+        "1 msk olja (till kokvattnet)",
+        "4 koppar mjölk",
+        "8 msk vetemjöl",
+        "8 msk smör",
+        "4 ägg (lätt uppvispade)",
+        "Salt, vitpeppar, muskot"
+      ],
+      "steps": [
+        "Hetta upp oljan i en kastrull på hög värme. Fräs löken tills den mjuknat, tillsätt köttfärsen och bryn den ordentligt.",
+        "Rör ner passerade tomater, tomatpuré, socker, persilja, salt och peppar. Lägg på lock och låt sjuda tills vätskan har kokat in.",
+        "Ta köttfärssåsen från värmen, låt den svalna något och rör ner 1 uppvispat ägg och 1/2 kopp av den rivna osten.",
+        "Koka pastan i saltat vatten med 1 msk olja. Häll av, skölj den snabbt i kallt vatten och blanda med 1/4 kopp smör och 2 koppar riven ost.",
+        "Koka upp mjölken i en liten kastrull. Smält de 8 msk smöret i en annan kastrull, tillsätt mjölet och fräs under omrörning i ungefär 5 minuter.",
+        "Häll i all den varma mjölken på en gång och vispa kraftigt. Rör på låg värme tills såsen tjocknar.",
+        "Ta såsen från värmen, smaka av med salt, peppar och muskot och rör ner de 4 lätt uppvispade äggen.",
+        "Smörj en ugnsform (30x40 cm) och strö över ströbröd. Bred ut hälften av pastan, sedan köttfärssåsen och sist resten av pastan.",
+        "Häll béchamelsåsen över hela ytan och grädda i 180°C i ungefär 1 timme. Låt vila i 20 minuter före servering."
+      ],
+      "memory": {
+        "title": "Söndagsmiddag",
+        "story": "Den älskade söndagsrätten som samlar hela familjen runt bordet! Doften av béchamelsås dröjer sig kvar i huset ända till eftermiddagen."
+      },
+      "prepTime": "1 timme",
+      "cookTime": "1 timme"
+    },
+    "es": {
+      "title": "EL pastitsio de la abuela",
+      "description": "El clásico y querido pastitsio griego, con una bechamel esponjosa y una carne picada irresistible.",
+      "ingredients": [
+        "1/2 taza de aceite (aceite de oliva virgen extra)",
+        "1 cebolla mediana, rallada",
+        "1 kg de carne picada (de ternera o mixta)",
+        "2 tazas de tomate triturado",
+        "1 cda. de concentrado de tomate",
+        "1/2 cdta. de azúcar",
+        "3 cdas. de perejil picado fino",
+        "1 huevo (ligeramente batido)",
+        "Sal y pimienta",
+        "1/2 kg de macarrones para pastitsio (n.º 2)",
+        "1/4 taza de mantequilla",
+        "2 1/2 tazas de queso rallado (kasseri, kefalograviera o graviera)",
+        "2 cdas. de pan rallado",
+        "1 cda. de aceite (para el agua de la pasta)",
+        "4 tazas de leche",
+        "8 cdas. de harina de trigo",
+        "8 cdas. de mantequilla",
+        "4 huevos (ligeramente batidos)",
+        "Sal, pimienta blanca, nuez moscada"
+      ],
+      "steps": [
+        "Calienta el aceite en una cazuela a fuego fuerte. Sofríe la cebolla hasta que se ablande, añade la carne picada y dórala bien.",
+        "Incorpora, removiendo, el tomate triturado, el concentrado de tomate, el azúcar, el perejil, la sal y la pimienta. Tapa y deja cocer a fuego lento hasta que se evapore el líquido.",
+        "Retira la carne del fuego, deja que se enfríe un poco e incorpora, removiendo, 1 huevo batido y 1/2 taza del queso rallado.",
+        "Cuece la pasta en agua con sal y 1 cda. de aceite. Escúrrela, aclárala ligeramente con agua fría y mézclala con 1/4 taza de mantequilla y 2 tazas de queso rallado.",
+        "En un cazo pequeño, lleva la leche a ebullición. En otra cazuela, derrite las 8 cdas. de mantequilla, añade la harina y rehógala unos 5 minutos.",
+        "Vierte toda la leche caliente de golpe sobre la harina, batiendo enérgicamente con las varillas. Remueve a fuego lento hasta que espese.",
+        "Retira la crema del fuego, sazona con sal, pimienta y nuez moscada e incorpora, removiendo, los 4 huevos ligeramente batidos.",
+        "Unta con mantequilla una fuente de horno (30x40 cm) y espolvoréala con pan rallado. Extiende la mitad de la pasta, luego la carne y después el resto de la pasta.",
+        "Cubre toda la superficie con la bechamel y hornea a 180°C durante 1 hora aproximadamente. Deja reposar 20 minutos antes de servir."
+      ],
+      "memory": {
+        "title": "La comida del domingo",
+        "story": "¡El plato favorito del domingo, el que reúne a toda la familia alrededor de la mesa! El olor de la bechamel se queda en casa hasta la tarde."
+      },
+      "prepTime": "1 hora",
+      "cookTime": "1 hora"
+    },
+    "it": {
+      "title": "IL pastitsio della nonna",
+      "description": "Il classico e amatissimo pastitsio greco, con besciamella soffice e un ragù irresistibile.",
+      "ingredients": [
+        "1/2 tazza di olio (extravergine d’oliva)",
+        "1 cipolla media, grattugiata",
+        "1 kg di carne macinata (manzo o mista)",
+        "2 tazze di passata di pomodoro",
+        "1 cucchiaio di concentrato di pomodoro",
+        "1/2 cucchiaino di zucchero",
+        "3 cucchiai di prezzemolo tritato finemente",
+        "1 uovo (leggermente sbattuto)",
+        "Sale e pepe",
+        "1/2 kg di pasta per pastitsio (n. 2)",
+        "1/4 tazza di burro",
+        "2 1/2 tazze di formaggio grattugiato (kasseri, kefalograviera o graviera)",
+        "2 cucchiai di pangrattato",
+        "1 cucchiaio di olio (per l’acqua della pasta)",
+        "4 tazze di latte",
+        "8 cucchiai di farina 00",
+        "8 cucchiai di burro",
+        "4 uova (leggermente sbattute)",
+        "Sale, pepe bianco, noce moscata"
+      ],
+      "steps": [
+        "Scaldate l’olio in una pentola a fuoco vivace. Soffriggete la cipolla finché non si ammorbidisce, aggiungete la carne macinata e rosolatela bene.",
+        "Aggiungete mescolando la passata, il concentrato di pomodoro, lo zucchero, il prezzemolo, il sale e il pepe. Coprite e fate sobbollire finché i liquidi non saranno evaporati.",
+        "Togliete il ragù dal fuoco, lasciatelo intiepidire leggermente e incorporate 1 uovo sbattuto e 1/2 tazza del formaggio grattugiato.",
+        "Lessate la pasta in acqua salata con 1 cucchiaio di olio. Scolatela, sciacquatela leggermente con acqua fredda e conditela con 1/4 tazza di burro e 2 tazze di formaggio grattugiato.",
+        "In un pentolino portate il latte a bollore. In un’altra pentola sciogliete gli 8 cucchiai di burro, aggiungete la farina e fate tostare per circa 5 minuti.",
+        "Versate tutto il latte caldo in una volta sola sulla farina, mescolando energicamente con la frusta. Mescolate a fuoco basso finché non si addensa.",
+        "Togliete la crema dal fuoco, insaporite con sale, pepe e noce moscata e incorporate mescolando le 4 uova leggermente sbattute.",
+        "Imburrate una teglia (30x40 cm) e cospargetela di pangrattato. Distribuite metà della pasta, poi il ragù e infine la pasta rimanente.",
+        "Versate la besciamella su tutta la superficie e cuocete in forno a 180°C per circa 1 ora. Lasciate riposare 20 minuti prima di servire."
+      ],
+      "memory": {
+        "title": "Il pranzo della domenica",
+        "story": "Il piatto preferito della domenica, quello che riunisce tutta la famiglia intorno al tavolo! Il profumo della besciamella resta in casa fino al pomeriggio."
+      },
+      "prepTime": "1 ora",
+      "cookTime": "1 ora"
+    }
+  }
 }

@@ -27,5 +27,151 @@
   "cookTime": "45 λεπτά",
   "servings": 4,
   "createdAt": "2026-08-10T16:52:28.199Z",
-  "updatedAt": "2026-08-10T16:52:28.199Z"
+  "updatedAt": "2026-08-10T16:52:28.199Z",
+  "translations": {
+    "en": {
+      "title": "Mind your own eggs, the fried ones",
+      "description": "A recipe the whole family will love! Simple ingredients, wonderful flavour.",
+      "ingredients": [
+        "Fresh vegetables",
+        "Olive oil",
+        "Balsamic vinegar",
+        "Salt"
+      ],
+      "steps": [
+        "We grin from ear to ear because... go figure, somehow it worked!",
+        "We throw in whatever was left over from last night’s dinner.",
+        "We stir the ingredients like mad until they come together.",
+        "We sneak a taste and burn our tongue.",
+        "We hover over the pot, holding our breath.",
+        "We ring Mum to ask “how much water do I add?”."
+      ],
+      "memory": {
+        "title": "The surprise",
+        "story": "Always there at every celebration, it was the first dish to be emptied."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "nl": {
+      "title": "Let op je eigen eieren, de gebakken",
+      "description": "Een recept waar de hele familie dol op zal zijn! Met eenvoudige ingrediënten en een heerlijke smaak.",
+      "ingredients": [
+        "Verse groenten",
+        "Olijfolie",
+        "Balsamicoazijn",
+        "Zout"
+      ],
+      "steps": [
+        "We glimlachen van oor tot oor, want... zeg jij het maar, op de een of andere manier is het gelukt!",
+        "We gooien erin wat er van het avondeten van gisteren over is.",
+        "We roeren als gekken tot alles mooi gemengd is.",
+        "We proeven stiekem een beetje en branden onze tong.",
+        "We staan gespannen boven de pan te wachten.",
+        "We bellen mama om te vragen “hoeveel water doe ik erbij?”."
+      ],
+      "memory": {
+        "title": "De verrassing",
+        "story": "Het stond op elk feest op tafel en was altijd als eerste op."
+      },
+      "prepTime": "20 minuten",
+      "cookTime": "45 minuten"
+    },
+    "fr": {
+      "title": "Occupe-toi de tes œufs, ceux au plat",
+      "description": "Une recette que toute la famille va adorer ! Des ingrédients simples et un goût merveilleux.",
+      "ingredients": [
+        "Légumes frais",
+        "Huile d’olive",
+        "Vinaigre balsamique",
+        "Sel"
+      ],
+      "steps": [
+        "On sourit jusqu’aux oreilles parce que... va savoir, ça a marché !",
+        "On y jette les restes du dîner d’hier soir.",
+        "On mélange frénétiquement jusqu’à obtenir un mélange homogène.",
+        "On goûte en cachette et on se brûle la langue.",
+        "On attend au-dessus de la casserole, rongés d’impatience.",
+        "On appelle maman pour lui demander « je mets combien d’eau ? »."
+      ],
+      "memory": {
+        "title": "La surprise",
+        "story": "Toujours présent à chaque fête, c’était le premier plat à être vidé."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "sv": {
+      "title": "Sköt dina egna ägg, de stekta",
+      "description": "Ett recept som hela familjen kommer att älska! Enkla ingredienser och underbar smak.",
+      "ingredients": [
+        "Färska grönsaker",
+        "Olivolja",
+        "Balsamvinäger",
+        "Salt"
+      ],
+      "steps": [
+        "Vi ler från öra till öra för att... säg det du, på något sätt blev det lyckat!",
+        "Vi slänger i det som blev över från gårdagens middag.",
+        "Vi rör frenetiskt tills allt har blandats ordentligt.",
+        "Vi smakar lite i smyg och bränner tungan.",
+        "Vi står och väntar över kastrullen med spänning.",
+        "Vi ringer mamma och frågar ”hur mycket vatten ska jag ha i?”."
+      ],
+      "memory": {
+        "title": "Överraskningen",
+        "story": "Det fanns alltid med på varje fest och var den första rätten som tog slut."
+      },
+      "prepTime": "20 minuter",
+      "cookTime": "45 minuter"
+    },
+    "es": {
+      "title": "Tú a tus huevos, a los fritos",
+      "description": "¡Una receta que encantará a toda la familia! Ingredientes sencillos y un sabor estupendo.",
+      "ingredients": [
+        "Verduras frescas",
+        "Aceite de oliva",
+        "Vinagre balsámico",
+        "Sal"
+      ],
+      "steps": [
+        "Sonreímos de oreja a oreja porque... quién sabe, ¡de algún modo salió bien!",
+        "Echamos lo que sobró de la cena de anoche.",
+        "Removemos los ingredientes como locos hasta que queden bien mezclados.",
+        "Probamos un poco a escondidas y nos quemamos la lengua.",
+        "Esperamos junto a la olla con el corazón en un puño.",
+        "Llamamos a mamá para preguntarle «¿cuánta agua le echo?»."
+      ],
+      "memory": {
+        "title": "La sorpresa",
+        "story": "Siempre presente en todas las fiestas, era el primer plato en vaciarse."
+      },
+      "prepTime": "20 minutos",
+      "cookTime": "45 minutos"
+    },
+    "it": {
+      "title": "Pensa alle tue uova, quelle fritte",
+      "description": "Una ricetta che piacerà a tutta la famiglia! Ingredienti semplici e un sapore meraviglioso.",
+      "ingredients": [
+        "Verdure fresche",
+        "Olio d’oliva",
+        "Aceto balsamico",
+        "Sale"
+      ],
+      "steps": [
+        "Sorridiamo da un orecchio all’altro perché... chissà, in qualche modo è venuto bene!",
+        "Ci buttiamo dentro gli avanzi della cena di ieri sera.",
+        "Mescoliamo gli ingredienti come matti finché non diventano omogenei.",
+        "Assaggiamo di nascosto e ci scottiamo la lingua.",
+        "Aspettiamo sopra la pentola col fiato sospeso.",
+        "Telefoniamo alla mamma per chiederle «quanta acqua ci metto?»."
+      ],
+      "memory": {
+        "title": "La sorpresa",
+        "story": "Sempre presente a ogni festa, era il primo piatto a svuotarsi."
+      },
+      "prepTime": "20 minuti",
+      "cookTime": "45 minuti"
+    }
+  }
 }

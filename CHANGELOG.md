@@ -4,6 +4,14 @@ All notable changes to this project are documented here. This file is generated
 from the Git commit history; do not edit it manually. Run `npm run changelog`
 to regenerate it.
 
+## 2026-09-18
+
+### Added
+- add Dutch and Swedish translations for site content ([c45f6bd](https://github.com/Roudis/roudomageiremata/commit/c45f6bd6b3d462952904c1e79c599ae9563a9f18))
+
+### Fixed
+- adjust spacing and font size for improved layout on mobile ([aa5875f](https://github.com/Roudis/roudomageiremata/commit/aa5875f2d1aa016a791ddf3833db07ac81c51cce))
+
 ## 2026-09-16
 
 ### Added

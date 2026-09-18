@@ -27,5 +27,151 @@
   "cookTime": "45 λεπτά",
   "servings": 4,
   "createdAt": "2026-08-10T16:52:28.199Z",
-  "updatedAt": "2026-08-10T16:52:28.199Z"
+  "updatedAt": "2026-08-10T16:52:28.199Z",
+  "translations": {
+    "en": {
+      "title": "To boost your iron (back when Eldorado was on)",
+      "description": "A recipe the whole family will love! Simple ingredients, wonderful flavour.",
+      "ingredients": [
+        "1 kg meat",
+        "2 onions",
+        "Oil and salt",
+        "Spices of your choice"
+      ],
+      "steps": [
+        "We let it cool, but can’t resist and eat it hot anyway.",
+        "We ring Mum to ask “how much water do I add?”.",
+        "We sneak a taste and burn our tongue.",
+        "We add a little salt, a little pepper and a lot of feeling.",
+        "We stir the ingredients like mad until they come together.",
+        "We peek into the oven and hope for the best."
+      ],
+      "memory": {
+        "title": "Sunday lunch",
+        "story": "Always there at every celebration, it was the first dish to be emptied."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "nl": {
+      "title": "Voor je ijzergehalte (toen Eldorado nog op tv was)",
+      "description": "Een recept waar de hele familie dol op zal zijn! Met eenvoudige ingrediënten en een heerlijke smaak.",
+      "ingredients": [
+        "1 kg vlees",
+        "2 uien",
+        "Olie en zout",
+        "Kruiden naar keuze"
+      ],
+      "steps": [
+        "We laten het afkoelen, maar houden het niet uit en eten het toch warm op.",
+        "We bellen mama om te vragen “hoeveel water doe ik erbij?”.",
+        "We proeven stiekem een beetje en branden onze tong.",
+        "We voegen een beetje zout, een beetje peper en heel veel gevoel toe.",
+        "We roeren als gekken tot alles mooi gemengd is.",
+        "We werpen een blik in de oven en hopen op het beste."
+      ],
+      "memory": {
+        "title": "Zondagse maaltijd",
+        "story": "Het stond op elk feest op tafel en was altijd als eerste op."
+      },
+      "prepTime": "20 minuten",
+      "cookTime": "45 minuten"
+    },
+    "fr": {
+      "title": "Pour faire remonter le fer (à l’époque où passait Eldorado)",
+      "description": "Une recette que toute la famille va adorer ! Des ingrédients simples et un goût merveilleux.",
+      "ingredients": [
+        "1 kg de viande",
+        "2 oignons",
+        "Huile et sel",
+        "Épices au choix"
+      ],
+      "steps": [
+        "On le laisse refroidir, mais on craque et on le mange chaud.",
+        "On appelle maman pour lui demander « je mets combien d’eau ? ».",
+        "On goûte en cachette et on se brûle la langue.",
+        "On ajoute un peu de sel, un peu de poivre et beaucoup d’émotion.",
+        "On mélange frénétiquement jusqu’à obtenir un mélange homogène.",
+        "On jette un œil au four en espérant que tout se passe bien."
+      ],
+      "memory": {
+        "title": "Le repas du dimanche",
+        "story": "Toujours présent à chaque fête, c’était le premier plat à être vidé."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "sv": {
+      "title": "För att få upp järnvärdet (på den tiden när Eldorado gick på tv)",
+      "description": "Ett recept som hela familjen kommer att älska! Enkla ingredienser och underbar smak.",
+      "ingredients": [
+        "1 kg kött",
+        "2 lökar",
+        "Olja och salt",
+        "Kryddor efter smak"
+      ],
+      "steps": [
+        "Vi låter det svalna, men står inte ut och äter det varmt ändå.",
+        "Vi ringer mamma och frågar ”hur mycket vatten ska jag ha i?”.",
+        "Vi smakar lite i smyg och bränner tungan.",
+        "Vi tillsätter lite salt, lite peppar och massor av känsla.",
+        "Vi rör frenetiskt tills allt har blandats ordentligt.",
+        "Vi kikar in i ugnen och hoppas på det bästa."
+      ],
+      "memory": {
+        "title": "Söndagsmiddag",
+        "story": "Det fanns alltid med på varje fest och var den första rätten som tog slut."
+      },
+      "prepTime": "20 minuter",
+      "cookTime": "45 minuter"
+    },
+    "es": {
+      "title": "Para subir el hierro (cuando echaban Eldorado)",
+      "description": "¡Una receta que encantará a toda la familia! Ingredientes sencillos y un sabor estupendo.",
+      "ingredients": [
+        "1 kg de carne",
+        "2 cebollas",
+        "Aceite y sal",
+        "Especias al gusto"
+      ],
+      "steps": [
+        "Lo dejamos enfriar, pero no aguantamos y nos lo comemos caliente.",
+        "Llamamos a mamá para preguntarle «¿cuánta agua le echo?».",
+        "Probamos un poco a escondidas y nos quemamos la lengua.",
+        "Añadimos un poco de sal, un poco de pimienta y mucho sentimiento.",
+        "Removemos los ingredientes como locos hasta que queden bien mezclados.",
+        "Echamos un vistazo al horno y esperamos lo mejor."
+      ],
+      "memory": {
+        "title": "La comida del domingo",
+        "story": "Siempre presente en todas las fiestas, era el primer plato en vaciarse."
+      },
+      "prepTime": "20 minutos",
+      "cookTime": "45 minutos"
+    },
+    "it": {
+      "title": "Per tirare su il ferro (ai tempi in cui davano Eldorado)",
+      "description": "Una ricetta che piacerà a tutta la famiglia! Ingredienti semplici e un sapore meraviglioso.",
+      "ingredients": [
+        "1 kg di carne",
+        "2 cipolle",
+        "Olio e sale",
+        "Spezie a piacere"
+      ],
+      "steps": [
+        "Lo lasciamo raffreddare, ma non resistiamo e lo mangiamo caldo.",
+        "Telefoniamo alla mamma per chiederle «quanta acqua ci metto?».",
+        "Assaggiamo di nascosto e ci scottiamo la lingua.",
+        "Aggiungiamo un po’ di sale, un po’ di pepe e tanto sentimento.",
+        "Mescoliamo gli ingredienti come matti finché non diventano omogenei.",
+        "Diamo un’occhiata al forno e speriamo per il meglio."
+      ],
+      "memory": {
+        "title": "Il pranzo della domenica",
+        "story": "Sempre presente a ogni festa, era il primo piatto a svuotarsi."
+      },
+      "prepTime": "20 minuti",
+      "cookTime": "45 minuti"
+    }
+  }
 }

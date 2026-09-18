@@ -26,5 +26,145 @@
   "cookTime": "45 λεπτά",
   "servings": 4,
   "createdAt": "2026-08-10T16:52:28.199Z",
-  "updatedAt": "2026-08-10T16:52:28.199Z"
+  "updatedAt": "2026-08-10T16:52:28.199Z",
+  "translations": {
+    "en": {
+      "title": "That one with the tarragon",
+      "description": "The ultimate comfort food, just right for Sundays or chilly afternoons.",
+      "ingredients": [
+        "Potatoes",
+        "Oil",
+        "Oregano",
+        "Lemon"
+      ],
+      "steps": [
+        "We hover over the pot, holding our breath.",
+        "We let it cool, but can’t resist and eat it hot anyway.",
+        "We rummage through the cupboards for that gadget we bought back in 2015.",
+        "We close our eyes and add spices at random.",
+        "We stir the ingredients like mad until they come together."
+      ],
+      "memory": {
+        "title": "The surprise",
+        "story": "We never expected it to turn out so well the first time, but it became our speciality."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "nl": {
+      "title": "Die met de dragon",
+      "description": "Het ultieme comfortfood, precies goed voor zondagen of koude middagen.",
+      "ingredients": [
+        "Aardappelen",
+        "Olie",
+        "Oregano",
+        "Citroen"
+      ],
+      "steps": [
+        "We staan gespannen boven de pan te wachten.",
+        "We laten het afkoelen, maar houden het niet uit en eten het toch warm op.",
+        "We doorzoeken de kastjes naar dat keukengerei dat we in 2015 hebben gekocht.",
+        "We doen onze ogen dicht en voegen lukraak kruiden toe.",
+        "We roeren als gekken tot alles mooi gemengd is."
+      ],
+      "memory": {
+        "title": "De verrassing",
+        "story": "We hadden niet verwacht dat het de eerste keer zo lekker zou worden, maar het werd onze specialiteit."
+      },
+      "prepTime": "20 minuten",
+      "cookTime": "45 minuten"
+    },
+    "fr": {
+      "title": "Celui à l’estragon",
+      "description": "Le réconfort ultime dans une assiette, parfait pour les dimanches ou les après-midi froids.",
+      "ingredients": [
+        "Pommes de terre",
+        "Huile",
+        "Origan",
+        "Citron"
+      ],
+      "steps": [
+        "On attend au-dessus de la casserole, rongés d’impatience.",
+        "On le laisse refroidir, mais on craque et on le mange chaud.",
+        "On fouille les placards à la recherche de cet ustensile acheté en 2015.",
+        "On ferme les yeux et on ajoute des épices au hasard.",
+        "On mélange frénétiquement jusqu’à obtenir un mélange homogène."
+      ],
+      "memory": {
+        "title": "La surprise",
+        "story": "On ne s’attendait pas à ce que ce soit aussi bon la première fois, mais c’est devenu notre spécialité."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "sv": {
+      "title": "Den med dragon",
+      "description": "Den ultimata tröstmaten, perfekt för söndagar eller kalla eftermiddagar.",
+      "ingredients": [
+        "Potatis",
+        "Olja",
+        "Oregano",
+        "Citron"
+      ],
+      "steps": [
+        "Vi står och väntar över kastrullen med spänning.",
+        "Vi låter det svalna, men står inte ut och äter det varmt ändå.",
+        "Vi letar i skåpen efter den där köksprylen vi köpte 2015.",
+        "Vi blundar och tillsätter kryddor på måfå.",
+        "Vi rör frenetiskt tills allt har blandats ordentligt."
+      ],
+      "memory": {
+        "title": "Överraskningen",
+        "story": "Vi trodde aldrig att det skulle bli så gott första gången, men det blev vår specialitet."
+      },
+      "prepTime": "20 minuter",
+      "cookTime": "45 minuter"
+    },
+    "es": {
+      "title": "Ese con estragón",
+      "description": "La comida reconfortante por excelencia, perfecta para los domingos o las tardes frías.",
+      "ingredients": [
+        "Patatas",
+        "Aceite",
+        "Orégano",
+        "Limón"
+      ],
+      "steps": [
+        "Esperamos junto a la olla con el corazón en un puño.",
+        "Lo dejamos enfriar, pero no aguantamos y nos lo comemos caliente.",
+        "Rebuscamos en los armarios aquel cacharro que compramos en 2015.",
+        "Cerramos los ojos y añadimos especias al azar.",
+        "Removemos los ingredientes como locos hasta que queden bien mezclados."
+      ],
+      "memory": {
+        "title": "La sorpresa",
+        "story": "No esperábamos que saliera tan rico la primera vez, pero se convirtió en nuestra especialidad."
+      },
+      "prepTime": "20 minutos",
+      "cookTime": "45 minutos"
+    },
+    "it": {
+      "title": "Quello con il dragoncello",
+      "description": "Il comfort food per eccellenza, perfetto per le domeniche o i pomeriggi freddi.",
+      "ingredients": [
+        "Patate",
+        "Olio",
+        "Origano",
+        "Limone"
+      ],
+      "steps": [
+        "Aspettiamo sopra la pentola col fiato sospeso.",
+        "Lo lasciamo raffreddare, ma non resistiamo e lo mangiamo caldo.",
+        "Frughiamo negli armadietti per trovare quell’utensile comprato nel 2015.",
+        "Chiudiamo gli occhi e aggiungiamo spezie a caso.",
+        "Mescoliamo gli ingredienti come matti finché non diventano omogenei."
+      ],
+      "memory": {
+        "title": "La sorpresa",
+        "story": "Non ci aspettavamo che venisse così buono la prima volta, ma è diventato la nostra specialità."
+      },
+      "prepTime": "20 minuti",
+      "cookTime": "45 minuti"
+    }
+  }
 }

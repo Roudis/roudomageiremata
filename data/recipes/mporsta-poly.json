@@ -25,5 +25,139 @@
   "cookTime": "45 λεπτά",
   "servings": 4,
   "createdAt": "2026-08-10T16:52:28.199Z",
-  "updatedAt": "2026-08-10T16:52:28.199Z"
+  "updatedAt": "2026-08-10T16:52:28.199Z",
+  "translations": {
+    "en": {
+      "title": "Borscht, way ahead",
+      "description": "Delicate flavours, a beautiful presentation and lots of love in every bite.",
+      "ingredients": [
+        "Potatoes",
+        "Oil",
+        "Oregano",
+        "Lemon"
+      ],
+      "steps": [
+        "We stir gently so as not to wake the dough.",
+        "We rummage through the cupboards for that gadget we bought back in 2015.",
+        "We sneak a taste and burn our tongue.",
+        "We add a little extra oil, “because that’s what makes it tasty”."
+      ],
+      "memory": {
+        "title": "The surprise",
+        "story": "Always there at every celebration, it was the first dish to be emptied."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "nl": {
+      "title": "Borsjt, ver vooruit",
+      "description": "Verfijnde smaken, een mooie presentatie en veel liefde in elke hap.",
+      "ingredients": [
+        "Aardappelen",
+        "Olie",
+        "Oregano",
+        "Citroen"
+      ],
+      "steps": [
+        "We roeren voorzichtig om het deeg niet wakker te maken.",
+        "We doorzoeken de kastjes naar dat keukengerei dat we in 2015 hebben gekocht.",
+        "We proeven stiekem een beetje en branden onze tong.",
+        "We doen er een scheutje olie extra bij, “want dan wordt het lekkerder”."
+      ],
+      "memory": {
+        "title": "De verrassing",
+        "story": "Het stond op elk feest op tafel en was altijd als eerste op."
+      },
+      "prepTime": "20 minuten",
+      "cookTime": "45 minuten"
+    },
+    "fr": {
+      "title": "Bortsch, loin devant",
+      "description": "Des saveurs délicates, une belle présentation et beaucoup d’amour dans chaque bouchée.",
+      "ingredients": [
+        "Pommes de terre",
+        "Huile",
+        "Origan",
+        "Citron"
+      ],
+      "steps": [
+        "On mélange doucement pour ne pas réveiller la pâte.",
+        "On fouille les placards à la recherche de cet ustensile acheté en 2015.",
+        "On goûte en cachette et on se brûle la langue.",
+        "On ajoute un peu plus d’huile, « parce que c’est ça qui donne du goût »."
+      ],
+      "memory": {
+        "title": "La surprise",
+        "story": "Toujours présent à chaque fête, c’était le premier plat à être vidé."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "sv": {
+      "title": "Borsjtj, långt fram",
+      "description": "Fina smaker, vacker uppläggning och mycket kärlek i varje tugga.",
+      "ingredients": [
+        "Potatis",
+        "Olja",
+        "Oregano",
+        "Citron"
+      ],
+      "steps": [
+        "Vi rör försiktigt för att inte väcka degen.",
+        "Vi letar i skåpen efter den där köksprylen vi köpte 2015.",
+        "Vi smakar lite i smyg och bränner tungan.",
+        "Vi häller i lite extra olja, ”för då blir det godare”."
+      ],
+      "memory": {
+        "title": "Överraskningen",
+        "story": "Det fanns alltid med på varje fest och var den första rätten som tog slut."
+      },
+      "prepTime": "20 minuter",
+      "cookTime": "45 minuter"
+    },
+    "es": {
+      "title": "Borsch, muy por delante",
+      "description": "Sabores delicados, una presentación bonita y mucho amor en cada bocado.",
+      "ingredients": [
+        "Patatas",
+        "Aceite",
+        "Orégano",
+        "Limón"
+      ],
+      "steps": [
+        "Removemos con suavidad para no despertar la masa.",
+        "Rebuscamos en los armarios aquel cacharro que compramos en 2015.",
+        "Probamos un poco a escondidas y nos quemamos la lengua.",
+        "Echamos un poco más de aceite, «porque así sabe mejor»."
+      ],
+      "memory": {
+        "title": "La sorpresa",
+        "story": "Siempre presente en todas las fiestas, era el primer plato en vaciarse."
+      },
+      "prepTime": "20 minutos",
+      "cookTime": "45 minutos"
+    },
+    "it": {
+      "title": "Borscht, molto avanti",
+      "description": "Sapori delicati, una bella presentazione e tanto amore in ogni boccone.",
+      "ingredients": [
+        "Patate",
+        "Olio",
+        "Origano",
+        "Limone"
+      ],
+      "steps": [
+        "Mescoliamo delicatamente per non svegliare l’impasto.",
+        "Frughiamo negli armadietti per trovare quell’utensile comprato nel 2015.",
+        "Assaggiamo di nascosto e ci scottiamo la lingua.",
+        "Aggiungiamo un po’ d’olio in più, «perché così è più saporito»."
+      ],
+      "memory": {
+        "title": "La sorpresa",
+        "story": "Sempre presente a ogni festa, era il primo piatto a svuotarsi."
+      },
+      "prepTime": "20 minuti",
+      "cookTime": "45 minuti"
+    }
+  }
 }

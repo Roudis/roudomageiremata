@@ -25,5 +25,139 @@
   "cookTime": "45 λεπτά",
   "servings": 4,
   "createdAt": "2026-08-10T16:52:28.199Z",
-  "updatedAt": "2026-08-10T16:52:28.199Z"
+  "updatedAt": "2026-08-10T16:52:28.199Z",
+  "translations": {
+    "en": {
+      "title": "Go figure???",
+      "description": "A recipe the whole family will love! Simple ingredients, wonderful flavour.",
+      "ingredients": [
+        "1 kg meat",
+        "2 onions",
+        "Oil and salt",
+        "Spices of your choice"
+      ],
+      "steps": [
+        "We put on our apron and take a deep breath.",
+        "We sneak a taste and burn our tongue.",
+        "We peek into the oven and hope for the best.",
+        "We add a little extra oil, “because that’s what makes it tasty”."
+      ],
+      "memory": {
+        "title": "Sunday lunch",
+        "story": "Always there at every celebration, it was the first dish to be emptied."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "nl": {
+      "title": "Zeg jij het maar???",
+      "description": "Een recept waar de hele familie dol op zal zijn! Met eenvoudige ingrediënten en een heerlijke smaak.",
+      "ingredients": [
+        "1 kg vlees",
+        "2 uien",
+        "Olie en zout",
+        "Kruiden naar keuze"
+      ],
+      "steps": [
+        "We doen ons schort voor en halen diep adem.",
+        "We proeven stiekem een beetje en branden onze tong.",
+        "We werpen een blik in de oven en hopen op het beste.",
+        "We doen er een scheutje olie extra bij, “want dan wordt het lekkerder”."
+      ],
+      "memory": {
+        "title": "Zondagse maaltijd",
+        "story": "Het stond op elk feest op tafel en was altijd als eerste op."
+      },
+      "prepTime": "20 minuten",
+      "cookTime": "45 minuten"
+    },
+    "fr": {
+      "title": "Va savoir ???",
+      "description": "Une recette que toute la famille va adorer ! Des ingrédients simples et un goût merveilleux.",
+      "ingredients": [
+        "1 kg de viande",
+        "2 oignons",
+        "Huile et sel",
+        "Épices au choix"
+      ],
+      "steps": [
+        "On enfile notre tablier et on prend une grande inspiration.",
+        "On goûte en cachette et on se brûle la langue.",
+        "On jette un œil au four en espérant que tout se passe bien.",
+        "On ajoute un peu plus d’huile, « parce que c’est ça qui donne du goût »."
+      ],
+      "memory": {
+        "title": "Le repas du dimanche",
+        "story": "Toujours présent à chaque fête, c’était le premier plat à être vidé."
+      },
+      "prepTime": "20 minutes",
+      "cookTime": "45 minutes"
+    },
+    "sv": {
+      "title": "Säg det du???",
+      "description": "Ett recept som hela familjen kommer att älska! Enkla ingredienser och underbar smak.",
+      "ingredients": [
+        "1 kg kött",
+        "2 lökar",
+        "Olja och salt",
+        "Kryddor efter smak"
+      ],
+      "steps": [
+        "Vi tar på oss förklädet och drar ett djupt andetag.",
+        "Vi smakar lite i smyg och bränner tungan.",
+        "Vi kikar in i ugnen och hoppas på det bästa.",
+        "Vi häller i lite extra olja, ”för då blir det godare”."
+      ],
+      "memory": {
+        "title": "Söndagsmiddag",
+        "story": "Det fanns alltid med på varje fest och var den första rätten som tog slut."
+      },
+      "prepTime": "20 minuter",
+      "cookTime": "45 minuter"
+    },
+    "es": {
+      "title": "¿¿¿Quién sabe???",
+      "description": "¡Una receta que encantará a toda la familia! Ingredientes sencillos y un sabor estupendo.",
+      "ingredients": [
+        "1 kg de carne",
+        "2 cebollas",
+        "Aceite y sal",
+        "Especias al gusto"
+      ],
+      "steps": [
+        "Nos ponemos el delantal y respiramos hondo.",
+        "Probamos un poco a escondidas y nos quemamos la lengua.",
+        "Echamos un vistazo al horno y esperamos lo mejor.",
+        "Echamos un poco más de aceite, «porque así sabe mejor»."
+      ],
+      "memory": {
+        "title": "La comida del domingo",
+        "story": "Siempre presente en todas las fiestas, era el primer plato en vaciarse."
+      },
+      "prepTime": "20 minutos",
+      "cookTime": "45 minutos"
+    },
+    "it": {
+      "title": "Chissà???",
+      "description": "Una ricetta che piacerà a tutta la famiglia! Ingredienti semplici e un sapore meraviglioso.",
+      "ingredients": [
+        "1 kg di carne",
+        "2 cipolle",
+        "Olio e sale",
+        "Spezie a piacere"
+      ],
+      "steps": [
+        "Ci mettiamo il grembiule e facciamo un respiro profondo.",
+        "Assaggiamo di nascosto e ci scottiamo la lingua.",
+        "Diamo un’occhiata al forno e speriamo per il meglio.",
+        "Aggiungiamo un po’ d’olio in più, «perché così è più saporito»."
+      ],
+      "memory": {
+        "title": "Il pranzo della domenica",
+        "story": "Sempre presente a ogni festa, era il primo piatto a svuotarsi."
+      },
+      "prepTime": "20 minuti",
+      "cookTime": "45 minuti"
+    }
+  }
 }
