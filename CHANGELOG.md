@@ -15,6 +15,7 @@ to regenerate it.
 - add Dutch and Swedish translations for site content ([c45f6bd](https://github.com/Roudis/roudomageiremata/commit/c45f6bd6b3d462952904c1e79c599ae9563a9f18))
 
 ### Fixed
+- update updatedAt timestamp and replace recipe image for garidomaranadara-to-aki-alla-den-peirazei ([f00012b](https://github.com/Roudis/roudomageiremata/commit/f00012b4b1c5362ab63701896dffc46eb0e53b37))
 - update updatedAt timestamp and replace recipe image for taxidiara-kotopita ([54b0edc](https://github.com/Roudis/roudomageiremata/commit/54b0edc6a96a12e3990cb5d82bc7fe92bbab5bbd))
 - update updatedAt timestamp and replace recipe image for i-karmponara ([dbe4141](https://github.com/Roudis/roudomageiremata/commit/dbe414144f993d06f058646336ec5aea64a4cf34))
 - update updatedAt timestamp and replace recipe image for i-karmponara ([dee41ac](https://github.com/Roudis/roudomageiremata/commit/dee41ac2959df47d86457d2116ca1ed2ff8ff788))
