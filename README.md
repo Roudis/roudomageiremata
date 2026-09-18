@@ -9,9 +9,10 @@ Live site: https://roudis.github.io/roudomageiremata/
   tags such as vegan, beef, or pasta
 - View recipe details with ingredients, steps, and memory/story notes
 - Read the site and every recipe in Greek (the original), English, Dutch,
-  French, Swedish, Spanish, Italian, Romanian, or Czech, using the language menu
-  at the top right. Greek pages keep their URLs; the others live under `/en`,
-  `/nl`, `/fr`, `/sv`, `/es`, `/it`, `/ro`, and `/cs`
+  French, Swedish, Spanish, Italian, Romanian, Czech, Ukrainian, or Japanese,
+  using the language menu at the top right. Greek pages keep their URLs; the
+  others live under `/en`, `/nl`, `/fr`, `/sv`, `/es`, `/it`, `/ro`, `/cs`,
+  `/uk`, and `/ja`
 - Recipe data is baked into the site at build time from one JSON file per recipe
   in [`data/recipes/`](data/recipes). It is read-only in production; see
   [Static site & GitHub Pages](#static-site--github-pages).
@@ -50,7 +51,7 @@ npm run changelog
 2. Put the image at `public/images/recipes/<id>.jpg` and set
    `"imageUrl": "/images/recipes/<id>.jpg"`.
 3. Add the other languages under `"translations"`, one entry per language code
-   (`en`, `nl`, `fr`, `sv`, `es`, `it`, `ro`, `cs`) with the same number of ingredients and
+   (`en`, `nl`, `fr`, `sv`, `es`, `it`, `ro`, `cs`, `uk`, `ja`) with the same number of ingredients and
    steps as the Greek. A language you leave out shows the Greek text with a
    short notice. When you change the Greek ingredients or steps, update the
    translations too, or `npm run validate:data` will fail.

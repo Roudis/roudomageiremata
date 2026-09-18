@@ -18,6 +18,8 @@ export const TAG_NAMES = {
     it: "Vegano",
     ro: "Vegan",
     cs: "Veganské",
+    uk: "Веганське",
+    ja: "ヴィーガン",
   },
   vegetarian: {
     el: "Χορτοφαγικό",
@@ -29,6 +31,8 @@ export const TAG_NAMES = {
     it: "Vegetariano",
     ro: "Vegetarian",
     cs: "Vegetariánské",
+    uk: "Вегетаріанське",
+    ja: "ベジタリアン",
   },
   meat: {
     el: "Κρέας",
@@ -40,6 +44,8 @@ export const TAG_NAMES = {
     it: "Carne",
     ro: "Carne",
     cs: "Maso",
+    uk: "М’ясо",
+    ja: "肉",
   },
   beef: {
     el: "Μοσχάρι",
@@ -51,6 +57,8 @@ export const TAG_NAMES = {
     it: "Manzo",
     ro: "Vită",
     cs: "Hovězí",
+    uk: "Яловичина",
+    ja: "牛肉",
   },
   pork: {
     el: "Χοιρινό",
@@ -62,6 +70,8 @@ export const TAG_NAMES = {
     it: "Maiale",
     ro: "Porc",
     cs: "Vepřové",
+    uk: "Свинина",
+    ja: "豚肉",
   },
   lamb: {
     el: "Αρνί",
@@ -73,6 +83,8 @@ export const TAG_NAMES = {
     it: "Agnello",
     ro: "Miel",
     cs: "Jehněčí",
+    uk: "Ягнятина",
+    ja: "ラム肉",
   },
   chicken: {
     el: "Κοτόπουλο",
@@ -84,6 +96,8 @@ export const TAG_NAMES = {
     it: "Pollo",
     ro: "Pui",
     cs: "Kuřecí",
+    uk: "Курятина",
+    ja: "鶏肉",
   },
   fish: {
     el: "Ψάρι",
@@ -95,6 +109,8 @@ export const TAG_NAMES = {
     it: "Pesce",
     ro: "Pește",
     cs: "Ryby",
+    uk: "Риба",
+    ja: "魚",
   },
   seafood: {
     el: "Θαλασσινά",
@@ -106,6 +122,8 @@ export const TAG_NAMES = {
     it: "Frutti di mare",
     ro: "Fructe de mare",
     cs: "Plody moře",
+    uk: "Морепродукти",
+    ja: "シーフード",
   },
   pasta: {
     el: "Ζυμαρικά",
@@ -117,6 +135,8 @@ export const TAG_NAMES = {
     it: "Pasta",
     ro: "Paste",
     cs: "Těstoviny",
+    uk: "Паста",
+    ja: "パスタ",
   },
   pie: {
     el: "Πίτα",
@@ -128,6 +148,8 @@ export const TAG_NAMES = {
     it: "Torta salata",
     ro: "Plăcintă",
     cs: "Slaný koláč",
+    uk: "Пиріг",
+    ja: "パイ",
   },
   soup: {
     el: "Σούπα",
@@ -139,6 +161,8 @@ export const TAG_NAMES = {
     it: "Zuppa",
     ro: "Supă",
     cs: "Polévka",
+    uk: "Суп",
+    ja: "スープ",
   },
   meze: {
     el: "Μεζέδες",
@@ -150,6 +174,8 @@ export const TAG_NAMES = {
     it: "Meze",
     ro: "Meze",
     cs: "Meze",
+    uk: "Мезе",
+    ja: "メゼ",
   },
   dessert: {
     el: "Γλυκό",
@@ -161,6 +187,8 @@ export const TAG_NAMES = {
     it: "Dolce",
     ro: "Desert",
     cs: "Dezert",
+    uk: "Десерт",
+    ja: "デザート",
   },
   drink: {
     el: "Ποτό",
@@ -172,6 +200,8 @@ export const TAG_NAMES = {
     it: "Bevanda",
     ro: "Băutură",
     cs: "Nápoj",
+    uk: "Напій",
+    ja: "飲み物",
   },
 } as const satisfies Record<string, Record<Locale, string>>;
 

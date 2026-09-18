@@ -7,16 +7,18 @@ import { getMessages } from "@/lib/i18n/messages";
 import "@/app/globals.css";
 
 // Both fonts include Greek glyphs; latin covers the accents of the Western European
-// languages, and latin-ext the Romanian and Czech letters such as ș, ț, č, and ř. next/font downloads them at build time and serves them from the static
+// languages, latin-ext the Romanian and Czech letters such as ș, ț, č, and ř, and
+// cyrillic Ukrainian. Neither has Japanese, which comes from the system fonts that
+// follow them in tailwind.config.ts. next/font downloads them at build time and serves them from the static
 // export, so visitors never contact Google.
 const sans = Commissioner({
-  subsets: ["greek", "latin", "latin-ext"],
+  subsets: ["greek", "latin", "latin-ext", "cyrillic"],
   variable: "--font-sans",
   display: "swap",
 });
 
 const serif = Literata({
-  subsets: ["greek", "latin", "latin-ext"],
+  subsets: ["greek", "latin", "latin-ext", "cyrillic"],
   style: ["normal", "italic"],
   axes: ["opsz"],
   variable: "--font-serif",

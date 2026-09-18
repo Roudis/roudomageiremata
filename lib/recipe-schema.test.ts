@@ -356,8 +356,8 @@ describe("parseRecipe: translations", () => {
 
   it("rejects Greek and unknown language codes, naming the allowed ones", () => {
     expect(issuesFor({ ...fullRecipe(), translations: { el: fullTranslation(), de: fullTranslation() } })).toEqual([
-      { field: "translations.el", message: 'unknown language "el" in translations; use one of en, nl, fr, sv, es, it, ro, cs' },
-      { field: "translations.de", message: 'unknown language "de" in translations; use one of en, nl, fr, sv, es, it, ro, cs' },
+      { field: "translations.el", message: 'unknown language "el" in translations; use one of en, nl, fr, sv, es, it, ro, cs, uk, ja' },
+      { field: "translations.de", message: 'unknown language "de" in translations; use one of en, nl, fr, sv, es, it, ro, cs, uk, ja' },
     ]);
   });
 
@@ -453,7 +453,7 @@ describe("parseCategoryTranslations", () => {
 
   it("rejects unknown languages and blank names", () => {
     expect(categoryIssues({ "Της Γιαγιάς": { de: "Omas", en: " " } })).toEqual([
-      { field: "Της Γιαγιάς.de", message: 'unknown language "de" for "Της Γιαγιάς"; use one of en, nl, fr, sv, es, it, ro, cs' },
+      { field: "Της Γιαγιάς.de", message: 'unknown language "de" for "Της Γιαγιάς"; use one of en, nl, fr, sv, es, it, ro, cs, uk, ja' },
       { field: "Της Γιαγιάς.en", message: 'the en name for "Της Γιαγιάς" must be a non-empty string' },
     ]);
   });

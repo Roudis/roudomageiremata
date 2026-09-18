@@ -7,7 +7,9 @@
     "es": "Aires de Nápoles de la tía",
     "it": "Aria di Napoli della zia",
     "ro": "Adiere de Napoli de la mătușa",
-    "cs": "Tetin závan Neapole"
+    "cs": "Tetin závan Neapole",
+    "uk": "Подих Неаполя від тітоньки",
+    "ja": "おばさんのナポリの風"
   },
   "Από Χαραλαμπρούδη": {
     "en": "From Charalambroudis",
@@ -17,7 +19,9 @@
     "es": "De Charalambroudis",
     "it": "Da Charalambroudis",
     "ro": "De la Charalambroudis",
-    "cs": "Od Charalambroudise"
+    "cs": "Od Charalambroudise",
+    "uk": "Від Хараламбрудіса",
+    "ja": "ハラランブルディスより"
   },
   "Μικρές στο μάτι , Μεγάλες στο τραπέζι": {
     "en": "Small to the eye, big at the table",
@@ -27,7 +31,9 @@
     "es": "Pequeñas a la vista, grandes en la mesa",
     "it": "Piccole all’occhio, grandi a tavola",
     "ro": "Mici la vedere, mari la masă",
-    "cs": "Malé na pohled, velké na stole"
+    "cs": "Malé na pohled, velké na stole",
+    "uk": "Малі на вигляд, великі на столі",
+    "ja": "見た目は小さく、食卓では大きく"
   },
   "Οι ντελικάτες της Μαμάς": {
     "en": "Mum’s delicate ones",
@@ -37,7 +43,9 @@
     "es": "Las delicadas de mamá",
     "it": "Le delicate della mamma",
     "ro": "Delicatesele mamei",
-    "cs": "Maminčiny jemné dobroty"
+    "cs": "Maminčiny jemné dobroty",
+    "uk": "Мамині делікатні страви",
+    "ja": "ママの繊細な料理"
   },
   "Της Γιαγιάς που γεμίζουν κοιλίτσες και καρδιές": {
     "en": "Grandma’s, for full tummies and hearts",
@@ -47,7 +55,9 @@
     "es": "Los de la abuela, que llenan barriguitas y corazones",
     "it": "Quelli della nonna, che riempiono pancini e cuori",
     "ro": "Ale bunicii, care umplu burtici și inimi",
-    "cs": "Od babičky, pro plná bříška i srdce"
+    "cs": "Od babičky, pro plná bříška i srdce",
+    "uk": "Бабусині, що наповнюють животики й серця",
+    "ja": "おなかと心を満たす、おばあちゃんの料理"
   },
   "Του Μπαμπούλα (που δεν είναι μόνο ψάρια)": {
     "en": "Baboulas’s (and not just fish)",
@@ -57,6 +67,8 @@
     "es": "Los de Baboulas (y no solo pescado)",
     "it": "Quelli di Baboulas (e non solo pesce)",
     "ro": "Ale lui Baboulas (și nu doar pește)",
-    "cs": "Od Baboulase (a nejen ryby)"
+    "cs": "Od Baboulase (a nejen ryby)",
+    "uk": "Від Бабуласа (і не лише риба)",
+    "ja": "バブラスの料理（魚だけじゃない）"
   }
 }

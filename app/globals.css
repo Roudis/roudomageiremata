@@ -64,6 +64,11 @@
     @apply bg-background font-sans text-foreground antialiased;
   }
 
+  /* Japanese type has no italics; keep it upright instead of letting the browser slant it. */
+  :lang(ja) {
+    font-synthesis-style: none;
+  }
+
   ::selection {
     background: hsl(var(--primary-soft));
   }
