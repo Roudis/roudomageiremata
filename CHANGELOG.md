@@ -22,6 +22,9 @@ to regenerate it.
 - update updatedAt timestamp and replace recipe image for mporsta-poly ([4d8808b](https://github.com/Roudis/roudomageiremata/commit/4d8808b57e8eac19545d353434c7b4fc5589f61d))
 - adjust spacing and font size for improved layout on mobile ([aa5875f](https://github.com/Roudis/roudomageiremata/commit/aa5875f2d1aa016a791ddf3833db07ac81c51cce))
 
+### Other
+- Delete multiple recipe files for "Έλα μου ντε???" and its variations, including translations and details, to streamline the recipe database. ([cc1bbea](https://github.com/Roudis/roudomageiremata/commit/cc1bbea6951debae1c4d2299416ab027699d5520))
+
 ## 2026-09-16
 
 ### Added
