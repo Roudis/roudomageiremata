@@ -15,6 +15,7 @@ to regenerate it.
 - add Dutch and Swedish translations for site content ([c45f6bd](https://github.com/Roudis/roudomageiremata/commit/c45f6bd6b3d462952904c1e79c599ae9563a9f18))
 
 ### Fixed
+- update recipe details for Pascha Vathylakos, including ingredients, steps, and cooking times ([c1eb8c8](https://github.com/Roudis/roudomageiremata/commit/c1eb8c8f073a20f4b702d870d2938ee7831db720))
 - update updatedAt timestamps and replace images for recipes ([7e10610](https://github.com/Roudis/roudomageiremata/commit/7e1061099f047c76826bd357dc4ebe79f8b1720c))
 - update updatedAt timestamps and replace images for multiple recipes ([4985e9c](https://github.com/Roudis/roudomageiremata/commit/4985e9c1b50ae9c86d856d9ce7bd27acba381bc6))
 - update updatedAt timestamps and replace images for multiple recipes ([e26cde7](https://github.com/Roudis/roudomageiremata/commit/e26cde7fade47236bbaac2c9194a57e9909cbe27))
