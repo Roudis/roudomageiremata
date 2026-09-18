@@ -29,6 +29,7 @@ to regenerate it.
 - adjust spacing and font size for improved layout on mobile ([aa5875f](https://github.com/Roudis/roudomageiremata/commit/aa5875f2d1aa016a791ddf3833db07ac81c51cce))
 
 ### Other
+- Add Ukrainian and Japanese translations for recipes and site content ([05e6e2a](https://github.com/Roudis/roudomageiremata/commit/05e6e2a0a40126ca48ebd3fb1f04bf8b8a06ece7))
 - Add Romanian and Czech translations for recipes and interface ([1df4f79](https://github.com/Roudis/roudomageiremata/commit/1df4f79d2b28f2ec40c56dd05873ab3a69a1827e))
 - Implement code changes to enhance functionality and improve performance ([8cfaca6](https://github.com/Roudis/roudomageiremata/commit/8cfaca65e3bb4d089c668d7fb116aee94adea0d7))
 - Delete multiple recipe files for "Έλα μου ντε???" and its variations, including translations and details, to streamline the recipe database. ([cc1bbea](https://github.com/Roudis/roudomageiremata/commit/cc1bbea6951debae1c4d2299416ab027699d5520))
