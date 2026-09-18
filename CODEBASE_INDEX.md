@@ -9,7 +9,8 @@ for working in the repo live in [CLAUDE.md](CLAUDE.md).
   Extra deps: `framer-motion` for animation, `lucide-react` for icons, `server-only`
   to keep the data loader out of client bundles.
 - **Purpose:** A personal Greek family-recipe journal. Browse and search recipes,
-  each optionally paired with a family "memory" (story + date).
+  each optionally paired with a family "memory" (story + date), and filter them by
+  category or by tag (vegan, beef, pasta, …).
 - **Languages:** Greek (the original, unprefixed URLs) plus English, Dutch, French,
   Swedish, Spanish, and Italian under `/en`, `/nl`, `/fr`, `/sv`, `/es`, `/it`. A
   language menu at the right of the navbar switches between them on the same page.
@@ -62,16 +63,19 @@ app/
     root-layout.tsx          RootLayout: fonts (Greek + Latin subsets), <html lang>, Navbar, Footer; rootMetadata(locale)
     home-page.tsx            HomePage: hero with a three-photo mosaic, quote and stats band, <RecipeList>; homeMetadata
     recipe-page.tsx          RecipePage: composes components/recipe-detail/*, shows a notice for an untranslated
-                             recipe; recipeMetadata, recipeStaticParams
+                             recipe, and links each tag to the list filtered by it (/?tag=<id>);
+                             recipeMetadata, recipeStaticParams
     metadata.ts              languageAlternates(path, locale): canonical + hreflang links for every language
     page-transition.tsx      Client; framer-motion fade-in page transition; MotionConfig respects reduced motion
 components/
   navbar.tsx                 Sticky header: monogram and wordmark, link to the recipe grid, language menu
   language-switcher.tsx      Client; disclosure button + list of plain <a> links to the same page in each language
   footer.tsx                 Footer with copyright year
-  recipe-list.tsx            Client; search box with clear button + category chips + animated grid of cards;
-                             takes RecipeSummary[], locale, category names, and its message sections
-  recipe-card.tsx            Photo-first card for the grid; takes a RecipeSummary; links to the recipe in the page's language
+  recipe-list.tsx            Client; search box with clear button + category chips + tag chips + animated grid of
+                             cards; takes RecipeSummary[], locale, category names, and its message sections;
+                             reads ?tag= on mount and writes it back when the tag changes
+  recipe-card.tsx            Photo-first card for the grid, with the recipe's tags; takes a RecipeSummary; links to
+                             the recipe in the page's language
   category-badge.tsx         CategoryBadge (green label + dot, variant prop) and CategoryDot, whose colour
                              list lives here; used by the card, the filter chips, and the detail page
   recipe-detail/             Sections of the recipe page, all server components taking `locale`
@@ -89,6 +93,8 @@ lib/
     messages/el.ts           Greek interface text; defines the Messages type every other language must match
     messages/<locale>.ts     en, nl, fr, sv, es, it
     messages/index.ts        getMessages(locale)
+  tags.ts                    Pure: TAG_NAMES (the tag list, named in every language), TagId, TAG_IMPLIES,
+                             NOT_VEGETARIAN, isTagId, tagName, expandTags
   recipes.ts                 Server-only build-time data access: createRecipeStore(dir),
                              getRecipeIds(), getAllRecipes(), getRecipeById(id); recipes include their translations
   categories.ts              Server-only: getCategoryNames(locale) from data/categories.json, plus the fallback name
@@ -98,8 +104,9 @@ lib/
   recipe-view.ts             Pure: CATEGORY_FALLBACK, categoryLabel, categoryDisplayName, categoryColorIndex,
                              formatRecipeDate, formatMemoryDate, recipeOrder(locale), compareRecipes (Greek order),
                              localizeRecipe, toRecipeSummary
-  recipe-search.ts           Pure: normalizeSearchText, getCategories, filterRecipes for the home page list
-  recipe-schema.ts           Pure: parseRecipe(value, source, { expectedId }) including translations,
+  recipe-search.ts           Pure: normalizeSearchText, getCategories, getTags, filterRecipes (query, category,
+                             tag, locale) for the home page list
+  recipe-schema.ts           Pure: parseRecipe(value, source, { expectedId }) including tags and translations,
                              parseCategoryTranslations, RecipeDataError, isRecipeId; used by the loaders and the data test
   base-path.ts               Pure: withBasePath(path) for raw URLs such as <img src> or <a href>
   *.test.ts                  Vitest unit tests next to each module above
@@ -136,6 +143,7 @@ interface Recipe {
   imageUrl?: string;       // "/images/recipes/<id>.jpg", prefixed via withBasePath when rendered
   category?: string;       // grouping used by the filter buttons and the card colour;
                            // missing → "Άλλο" everywhere (categoryLabel in lib/recipe-view.ts)
+  tags?: TagId[];          // ids from TAG_NAMES in lib/tags.ts, most specific only ("vegan", not also "vegetarian")
   prepTime?: string;
   cookTime?: string;
   servings?: number;
@@ -215,6 +223,9 @@ cannot import it.
 - **Add/edit/remove a recipe:** edit `data/recipes/<id>.json` (+ image in
   `public/images/recipes/`), add or update its `translations`, run
   `npm run validate:data`, open a PR into `main`.
+- **Add a tag:** add its id and its name in every language to `TAG_NAMES` in
+  [lib/tags.ts](lib/tags.ts), and to `TAG_IMPLIES` if it is a kind of an existing
+  tag (as beef is of meat). Then list it in the recipes' `tags`.
 - **Add or rename a category:** set `category` in the recipes and add its names
   to [data/categories.json](data/categories.json).
 - **Change interface text:** edit the key in every file in
@@ -243,7 +254,14 @@ cannot import it.
 - All real recipes currently share one `updatedAt` value, so the home page
   order comes from the title and id tie-breaks in `compareRecipes`.
 - Search ignores case, accents, and final sigma (`normalizeSearchText`), so
-  "καρμπονάρα" finds "Η ΚΑΡΜΠΟΝΑΡΑ". It searches the page's language only.
+  "καρμπονάρα" finds "Η ΚΑΡΜΠΟΝΑΡΑ". It searches the page's language only, and
+  covers tag names, implied ones included: "κρέας" finds a recipe tagged beef.
+- Selecting a vegetarian or meat tag also shows recipes whose tags imply it
+  (vegan, or beef/pork/lamb/chicken). Cards and recipe pages show only the
+  listed tags.
+- Most recipes still have placeholder ingredients that don't match their titles,
+  so their tags follow the title where it names the dish (carbonara → pork,
+  pasta) and the listed ingredients where it doesn't (the "Έλα μου ντε" recipes).
 - The "updated" date is formatted with `formatRecipeDate(iso, locale)` in
   `Europe/Athens`, for example "10 Αυγ 2026" or "10 Aug 2026". A memory's "YYYY-MM"
   date goes through `formatMemoryDate`, for example "Νοέμβριος 2023"; other values show as written.

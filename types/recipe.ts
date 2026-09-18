@@ -1,4 +1,5 @@
 import type { Locale, TranslatedLocale } from "@/lib/i18n/config";
+import type { TagId } from "@/lib/tags";
 
 export interface Memory {
   title: string;
@@ -30,6 +31,8 @@ export interface Recipe {
   memory?: Memory;
   imageUrl?: string;
   category?: string;
+  /** Ids from TAG_NAMES in lib/tags.ts, most specific only: "vegan" rather than "vegan" and "vegetarian". */
+  tags?: TagId[];
   prepTime?: string;
   cookTime?: string;
   servings?: number;
@@ -57,7 +60,16 @@ export interface LocalizedRecipe extends Omit<Recipe, "translations"> {
 export interface RecipeSummary
   extends Pick<
     LocalizedRecipe,
-    "id" | "title" | "description" | "ingredients" | "imageUrl" | "category" | "prepTime" | "servings" | "contentLocale"
+    | "id"
+    | "title"
+    | "description"
+    | "ingredients"
+    | "imageUrl"
+    | "category"
+    | "tags"
+    | "prepTime"
+    | "servings"
+    | "contentLocale"
   > {
   hasMemory: boolean;
 }

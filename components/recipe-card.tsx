@@ -4,6 +4,7 @@ import type { Messages } from "@/lib/i18n/messages";
 import { localizePath, type Locale } from "@/lib/i18n/config";
 import { formatCount } from "@/lib/i18n/format";
 import { withBasePath } from "@/lib/base-path";
+import { tagName } from "@/lib/tags";
 import { CategoryBadge } from "@/components/category-badge";
 import { BookHeart, ChefHat, Clock, ListChecks, Users } from "lucide-react";
 
@@ -11,7 +12,7 @@ type RecipeCardProps = {
   recipe: RecipeSummary;
   locale: Locale;
   categoryNames: CategoryNames;
-  messages: Pick<Messages, "recipeCard" | "counts">;
+  messages: Pick<Messages, "recipeCard" | "tags" | "counts">;
 };
 
 export function RecipeCard({ recipe, locale, categoryNames, messages }: RecipeCardProps) {
@@ -56,6 +57,19 @@ export function RecipeCard({ recipe, locale, categoryNames, messages }: RecipeCa
         <p lang={lang} className="mt-2 line-clamp-2 text-sm leading-relaxed text-muted-foreground">
           {recipe.description}
         </p>
+
+        {recipe.tags !== undefined && (
+          <ul aria-label={messages.tags.label} className="mt-3 flex flex-wrap gap-1.5">
+            {recipe.tags.map((tag) => (
+              <li
+                key={tag}
+                className="rounded-full bg-secondary-soft px-2 py-0.5 text-[0.6875rem] font-medium leading-4 text-secondary"
+              >
+                {tagName(tag, locale)}
+              </li>
+            ))}
+          </ul>
+        )}
 
         <p className="mt-auto flex flex-wrap items-center gap-x-4 gap-y-1 pt-4 text-xs text-muted-foreground">
           {recipe.prepTime !== undefined && (

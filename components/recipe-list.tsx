@@ -1,15 +1,16 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { CategoryNames, RecipeSummary } from "@/types/recipe";
 import type { Messages } from "@/lib/i18n/messages";
 import { LOCALE_DETAILS, type Locale } from "@/lib/i18n/config";
 import { formatCount } from "@/lib/i18n/format";
-import { filterRecipes, getCategories } from "@/lib/recipe-search";
+import { filterRecipes, getCategories, getTags } from "@/lib/recipe-search";
 import { categoryDisplayName } from "@/lib/recipe-view";
+import { isTagId, tagName, type TagId } from "@/lib/tags";
 import { RecipeCard } from "@/components/recipe-card";
 import { CategoryDot } from "@/components/category-badge";
-import { Search, X } from "lucide-react";
+import { Search, Tags, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 type RecipeListProps = {
@@ -18,7 +19,7 @@ type RecipeListProps = {
   locale: Locale;
   categoryNames: CategoryNames;
   /** Only the sections this list and its cards render, so the page sends little text to the browser. */
-  messages: Pick<Messages, "recipeList" | "recipeCard" | "counts">;
+  messages: Pick<Messages, "recipeList" | "recipeCard" | "tags" | "counts">;
 };
 
 const chipBase =
@@ -26,10 +27,36 @@ const chipBase =
 const chipIdle = "border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground";
 const chipActive = "border-primary bg-primary text-primary-foreground";
 
+// Tags are smaller and green, so they read as a second, lighter filter under the categories.
+const tagChipBase =
+  "inline-flex h-8 shrink-0 items-center whitespace-nowrap rounded-full border px-3 text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+const tagChipIdle = "border-border text-muted-foreground hover:border-secondary/50 hover:text-secondary";
+const tagChipActive = "border-secondary bg-secondary text-secondary-foreground";
+
+/** Puts the selected tag in the address as ?tag=, so reloading or sharing keeps the filter. */
+function writeTagToUrl(tag: TagId | null) {
+  const url = new URL(window.location.href);
+  if (tag === null) url.searchParams.delete("tag");
+  else url.searchParams.set("tag", tag);
+  window.history.replaceState(window.history.state, "", url);
+}
+
 export function RecipeList({ recipes, locale, categoryNames, messages }: RecipeListProps) {
   const t = messages.recipeList;
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [selectedTag, setSelectedTag] = useState<TagId | null>(null);
+
+  // A recipe page's tags link here as ?tag=<id>. Read after mount: the static HTML has no query string.
+  useEffect(() => {
+    const tag = new URLSearchParams(window.location.search).get("tag");
+    if (isTagId(tag)) setSelectedTag(tag);
+  }, []);
+
+  const selectTag = (tag: TagId | null) => {
+    setSelectedTag(tag);
+    writeTagToUrl(tag);
+  };
 
   // Filtering keys on the Greek names; the chips show, and are sorted by, the page's language.
   const categories = useMemo(() => {
@@ -39,14 +66,17 @@ export function RecipeList({ recipes, locale, categoryNames, messages }: RecipeL
       .sort((a, b) => collator.compare(a.name, b.name));
   }, [recipes, locale, categoryNames]);
 
+  const tags = useMemo(() => getTags(recipes), [recipes]);
+
   const filteredRecipes = useMemo(
-    () => filterRecipes(recipes, { query: searchQuery, category: selectedCategory }),
-    [recipes, searchQuery, selectedCategory],
+    () => filterRecipes(recipes, { query: searchQuery, category: selectedCategory, tag: selectedTag, locale }),
+    [recipes, searchQuery, selectedCategory, selectedTag, locale],
   );
 
   const resetFilters = () => {
     setSearchQuery("");
     setSelectedCategory(null);
+    selectTag(null);
   };
 
   return (
@@ -106,6 +136,31 @@ export function RecipeList({ recipes, locale, categoryNames, messages }: RecipeL
             </button>
           ))}
         </div>
+
+        {tags.length > 0 && (
+          <div
+            role="group"
+            aria-label={messages.tags.label}
+            className="-mx-4 flex items-center gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none] sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 [&::-webkit-scrollbar]:hidden"
+          >
+            <span aria-hidden="true" className="inline-flex shrink-0 items-center gap-1.5 pr-1 text-xs font-semibold text-muted-foreground">
+              <Tags className="h-3.5 w-3.5" />
+              {messages.tags.label}
+            </span>
+            {/* Pressing the selected tag again clears it. */}
+            {tags.map((tag) => (
+              <button
+                type="button"
+                key={tag}
+                onClick={() => selectTag(selectedTag === tag ? null : tag)}
+                aria-pressed={selectedTag === tag}
+                className={`${tagChipBase} ${selectedTag === tag ? tagChipActive : tagChipIdle}`}
+              >
+                {tagName(tag, locale)}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
       <p role="status" aria-live="polite" className="sr-only">

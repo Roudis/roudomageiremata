@@ -1,5 +1,6 @@
 import type { Memory, Recipe, RecipeTranslation } from "@/types/recipe";
 import { TRANSLATED_LOCALES, isTranslatedLocale, type TranslatedLocale } from "@/lib/i18n/config";
+import { NOT_VEGETARIAN, TAG_IDS, TAG_IMPLIES, expandTags, isTagId, type TagId } from "@/lib/tags";
 
 /**
  * Runtime validation for recipe data, used by the loader in lib/recipes.ts and
@@ -34,7 +35,8 @@ export class RecipeDataError extends Error {
 // `satisfies` makes `npm run typecheck` fail until these lists match types/recipe.ts.
 const RECIPE_FIELDS = {
   id: true, title: true, description: true, ingredients: true, steps: true, memory: true, imageUrl: true,
-  category: true, prepTime: true, cookTime: true, servings: true, createdAt: true, updatedAt: true, translations: true,
+  category: true, tags: true, prepTime: true, cookTime: true, servings: true, createdAt: true, updatedAt: true,
+  translations: true,
 } as const satisfies Record<keyof Recipe, true>;
 const MEMORY_FIELDS = { title: true, story: true, date: true } as const satisfies Record<keyof Memory, true>;
 const TRANSLATION_FIELDS = {
@@ -128,6 +130,39 @@ function checkTranslation(
   }
 }
 
+/**
+ * Checks a recipe's tags: known ids, no repeats, no tag another one already
+ * implies, and nothing that contradicts "vegetarian".
+ */
+function checkTags(tags: unknown, fail: Fail): void {
+  if (!Array.isArray(tags) || tags.length === 0) {
+    fail("tags", "tags must be a non-empty array when present");
+    return;
+  }
+
+  const known: TagId[] = [];
+  for (const tag of tags) {
+    if (!isTagId(tag)) {
+      fail("tags", `unknown tag ${JSON.stringify(tag)}; use one of ${TAG_IDS.join(", ")} or add it to lib/tags.ts`);
+    } else if (known.includes(tag)) {
+      fail("tags", `tag "${tag}" is listed twice`);
+    } else {
+      known.push(tag);
+    }
+  }
+
+  for (const tag of known) {
+    const implier = known.find((other) => TAG_IMPLIES[other]?.includes(tag));
+    if (implier !== undefined) fail("tags", `remove tag "${tag}": "${implier}" already implies it`);
+  }
+
+  const expanded = expandTags(known);
+  const conflicts = NOT_VEGETARIAN.filter((tag) => expanded.includes(tag));
+  if (expanded.includes("vegetarian") && conflicts.length > 0) {
+    fail("tags", `a vegetarian recipe cannot also be tagged ${conflicts.map((tag) => `"${tag}"`).join(", ")}`);
+  }
+}
+
 /** Pushes every problem with `value` onto `issues` and returns true only if there are none. */
 function checkRecipe(value: unknown, issues: RecipeDataIssue[], { expectedId }: ParseRecipeOptions): value is Recipe {
   const fail: Fail = (field, message) => {
@@ -178,6 +213,8 @@ function checkRecipe(value: unknown, issues: RecipeDataIssue[], { expectedId }: 
       }
     }
   }
+
+  if ("tags" in value) checkTags(value.tags, fail);
 
   if ("imageUrl" in value && !(isNonEmptyString(value.imageUrl) && value.imageUrl.startsWith("/"))) {
     fail("imageUrl", 'imageUrl must be a root-relative path like "/images/recipes/<id>.jpg"');

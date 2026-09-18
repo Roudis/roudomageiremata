@@ -33,7 +33,7 @@ export const en: Messages = {
       "Everyone in the family has their own place here. Discover the stories and the dishes that make each of them special!",
   },
   recipeList: {
-    searchPlaceholder: "Search for a recipe or ingredient…",
+    searchPlaceholder: "Recipe, ingredient or tag…",
     searchLabel: "Search recipes",
     clearSearch: "Clear search",
     allCategories: "All",
@@ -58,6 +58,9 @@ export const en: Messages = {
     ingredients: "Ingredients",
     ingredientsHint: "Tick off whatever you’ve already prepared.",
     steps: "Method",
+  },
+  tags: {
+    label: "Tags",
   },
   counts: {
     recipes: { one: "{count} recipe", other: "{count} recipes" },

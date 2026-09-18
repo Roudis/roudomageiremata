@@ -128,6 +128,7 @@ export function toRecipeSummary(recipe: LocalizedRecipe): RecipeSummary {
   };
   if (recipe.imageUrl !== undefined) summary.imageUrl = recipe.imageUrl;
   if (recipe.category !== undefined) summary.category = recipe.category;
+  if (recipe.tags !== undefined) summary.tags = recipe.tags;
   if (recipe.prepTime !== undefined) summary.prepTime = recipe.prepTime;
   if (recipe.servings !== undefined) summary.servings = recipe.servings;
   return summary;

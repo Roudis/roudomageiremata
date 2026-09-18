@@ -5,7 +5,8 @@ A Next.js 14 recipe journal for preserving family recipes and the memories attac
 Live site: https://roudis.github.io/roudomageiremata/
 
 ## Features
-- Browse a warm, family-style recipe collection with search and category filters
+- Browse a warm, family-style recipe collection with search, category filters, and
+  tags such as vegan, beef, or pasta
 - View recipe details with ingredients, steps, and memory/story notes
 - Read the site and every recipe in Greek (the original), English, Dutch,
   French, Swedish, Spanish, or Italian, using the language menu at the top right.
@@ -55,7 +56,10 @@ npm run changelog
    translations too, or `npm run validate:data` will fail.
 4. For a new category, add its names in the other languages to
    [`data/categories.json`](data/categories.json).
-5. Run `npm run validate:data`, then open a pull request into `main`.
+5. Add `"tags"`, such as `["beef", "pasta"]`, using the ids in
+   [`lib/tags.ts`](lib/tags.ts). List only the most specific one: a vegan recipe
+   is found under "vegetarian" too, and a beef one under "meat".
+6. Run `npm run validate:data`, then open a pull request into `main`.
 
 ## Static site & GitHub Pages
 

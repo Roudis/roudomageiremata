@@ -33,7 +33,7 @@ export const sv: Messages = {
       "Alla i familjen har sin egen plats här. Upptäck berättelserna och rätterna som gör var och en av dem speciell!",
   },
   recipeList: {
-    searchPlaceholder: "Sök efter recept eller ingrediens…",
+    searchPlaceholder: "Recept, ingrediens eller tagg…",
     searchLabel: "Sök recept",
     clearSearch: "Rensa sökningen",
     allCategories: "Alla",
@@ -58,6 +58,9 @@ export const sv: Messages = {
     ingredients: "Ingredienser",
     ingredientsHint: "Bocka av det du redan har förberett.",
     steps: "Gör så här",
+  },
+  tags: {
+    label: "Taggar",
   },
   counts: {
     recipes: { one: "{count} recept", other: "{count} recept" },
