@@ -7,6 +7,7 @@ to regenerate it.
 ## 2026-09-18
 
 ### Added
+- add sync script for Strapi recipes and update related documentation ([9e9e1b6](https://github.com/Roudis/roudomageiremata/commit/9e9e1b67dc4ebc4b6fa5f57e7d2053ad34cecd56))
 - add tags to recipes and implement tag filtering ([7d34b48](https://github.com/Roudis/roudomageiremata/commit/7d34b48d027c767c4e6788f53750be0efe8aa98b))
 - add language support details and update recipe translation guidelines ([2bbc20f](https://github.com/Roudis/roudomageiremata/commit/2bbc20fad8ff7e3eba5468056a5962ad6f3d937a))
 - add Dutch and Swedish translations for site content ([c45f6bd](https://github.com/Roudis/roudomageiremata/commit/c45f6bd6b3d462952904c1e79c599ae9563a9f18))
