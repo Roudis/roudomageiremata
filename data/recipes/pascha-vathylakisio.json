@@ -10,7 +10,9 @@
     "Ελαιόλαδο, περίπου μισή κούπα",
     "Αρκετά ξύλα για την ψησταριά",
     "Τούλι",
-    "Σακοράφες"
+    "Σακοράφες",
+    "Σπάγκος",
+    "Σούβλα"
   ],
   "steps": [
     "Ημέρα πρώτη, αγορά του αρνιού: πάμε στο βοσκό και επιλέγουμε το κατάλληλο αρνί, ανάλογα με το μέγεθος που θέλουμε, γύρω στα 12 κιλά. Το παίρνουμε και το κρεμάμε στο επάνω σπίτι με ένα ταψί από κάτω του, αφήνοντάς το να στραγγίσει και να φύγουν όλα τα αίματα το βράδυ. Εν τω μεταξύ, προηγουμένως το έχουμε τυλίξει με τούλι.",
@@ -49,7 +51,7 @@
   "cookTime": "Αρκετές ώρες",
   "servings": 12,
   "createdAt": "2026-08-10T16:52:28.198Z",
-  "updatedAt": "2026-09-18T17:51:41.477Z",
+  "updatedAt": "2026-09-18T18:10:53.755Z",
   "translations": {
     "en": {
       "title": "Vathylakos Easter",
@@ -62,7 +64,9 @@
         "Olive oil, about half a cup",
         "Plenty of wood for the grill",
         "Tulle",
-        "Sacking needles"
+        "Sacking needles",
+        "Twine",
+        "Spit"
       ],
       "steps": [
         "Day one, buying the lamb: we go to the shepherd and choose the right lamb, depending on the size we want, around 12 kg. We take it and hang it in the upper house with a baking tray underneath, leaving it overnight to drain so that all the blood runs out. Beforehand, in the meantime, we have wrapped it in tulle.",
@@ -105,7 +109,9 @@
         "Olijfolie, ongeveer een half kopje",
         "Genoeg hout voor de grill",
         "Tule",
-        "Zakkennaalden"
+        "Zakkennaalden",
+        "Touw",
+        "Spit"
       ],
       "steps": [
         "Dag één, het lam kopen: we gaan naar de herder en kiezen het juiste lam, afhankelijk van de grootte die we willen, rond de 12 kilo. We nemen het mee en hangen het op in het bovenste huis met een bakplaat eronder, zodat het ’s nachts kan uitlekken en al het bloed eruit loopt. Intussen hebben we het vooraf in tule gewikkeld.",
@@ -148,7 +154,9 @@
         "Huile d’olive, environ une demi-tasse",
         "Beaucoup de bois pour le barbecue",
         "Tulle",
-        "Aiguilles à sac"
+        "Aiguilles à sac",
+        "Ficelle",
+        "Broche"
       ],
       "steps": [
         "Premier jour, l’achat de l’agneau : nous allons chez le berger et choisissons le bon agneau, selon la taille voulue, autour de 12 kg. Nous le prenons et le suspendons dans la maison du haut avec une plaque en dessous, pour le laisser s’égoutter pendant la nuit et que tout le sang s’écoule. Entre-temps, nous l’avons au préalable enveloppé de tulle.",
@@ -191,7 +199,9 @@
         "Olivolja, ungefär en halv kopp",
         "Gott om ved till grillen",
         "Tyll",
-        "Säcknålar"
+        "Säcknålar",
+        "Snöre",
+        "Spett"
       ],
       "steps": [
         "Dag ett, köpet av lammet: vi åker till herden och väljer rätt lamm, beroende på vilken storlek vi vill ha, runt 12 kg. Vi tar det och hänger upp det i det övre huset med en ugnsplåt under, så att det får rinna av under natten och allt blod rinner ut. Innan dess har vi under tiden lindat in det i tyll.",
@@ -234,7 +244,9 @@
         "Aceite de oliva, más o menos media taza",
         "Bastante leña para la parrilla",
         "Tul",
-        "Agujas saqueras"
+        "Agujas saqueras",
+        "Cordel",
+        "Espetón"
       ],
       "steps": [
         "Día primero, la compra del cordero: vamos a casa del pastor y elegimos el cordero adecuado, según el tamaño que queramos, unos 12 kg. Lo cogemos y lo colgamos en la casa de arriba con una bandeja debajo, dejándolo escurrir durante la noche para que salga toda la sangre. Mientras tanto, antes lo hemos envuelto en tul.",
@@ -277,7 +289,9 @@
         "Olio d’oliva, circa mezza tazza",
         "Tanta legna per la griglia",
         "Tulle",
-        "Aghi da sacco"
+        "Aghi da sacco",
+        "Spago",
+        "Spiedo"
       ],
       "steps": [
         "Primo giorno, l’acquisto dell’agnello: andiamo dal pastore e scegliamo l’agnello adatto, a seconda della grandezza che vogliamo, sui 12 kg. Lo prendiamo e lo appendiamo nella casa di sopra con una teglia sotto, lasciandolo sgocciolare durante la notte perché esca tutto il sangue. Nel frattempo, prima lo abbiamo avvolto nel tulle.",
@@ -320,7 +334,9 @@
         "Ulei de măsline, cam o jumătate de cană",
         "Multe lemne pentru grătar",
         "Tul",
-        "Ace de cusut saci"
+        "Ace de cusut saci",
+        "Sfoară",
+        "Frigare"
       ],
       "steps": [
         "Ziua întâi, cumpărarea mielului: mergem la cioban și alegem mielul potrivit, după mărimea pe care o vrem, în jur de 12 kg. Îl luăm și îl atârnăm în casa de sus, cu o tavă dedesubt, lăsându-l peste noapte să se scurgă și să iasă tot sângele. Între timp, dinainte l-am învelit în tul.",
@@ -363,7 +379,9 @@
         "Olivový olej, asi půl hrnku",
         "Hodně dřeva na gril",
         "Tyl",
-        "Jehly na šití pytlů"
+        "Jehly na šití pytlů",
+        "Provázek",
+        "Rožeň"
       ],
       "steps": [
         "Den první, nákup jehněte: jedeme k pastýři a vybereme vhodné jehně podle velikosti, kterou chceme, kolem 12 kg. Vezmeme ho a pověsíme ho v horním domě s plechem pod ním, aby přes noc odkapalo a vytekla všechna krev. Mezitím jsme ho už předtím zabalili do tylu.",
