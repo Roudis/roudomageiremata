@@ -7,12 +7,27 @@ to regenerate it.
 ## 2026-09-18
 
 ### Added
+- update recipe ingredients and fix updatedAt timestamp for ela-moy-nte-1 ([350d344](https://github.com/Roudis/roudomageiremata/commit/350d344a6258a435ea4acfc0396dfc973caa8758))
+- update recipe sync process to retain tags and translations, and adjust recipe structure ([dd1eb44](https://github.com/Roudis/roudomageiremata/commit/dd1eb449b0ceb2f2a59cfbb80c9b12c5267d20b1))
+- add sync script for Strapi recipes and update related documentation ([9e9e1b6](https://github.com/Roudis/roudomageiremata/commit/9e9e1b67dc4ebc4b6fa5f57e7d2053ad34cecd56))
 - add tags to recipes and implement tag filtering ([7d34b48](https://github.com/Roudis/roudomageiremata/commit/7d34b48d027c767c4e6788f53750be0efe8aa98b))
 - add language support details and update recipe translation guidelines ([2bbc20f](https://github.com/Roudis/roudomageiremata/commit/2bbc20fad8ff7e3eba5468056a5962ad6f3d937a))
 - add Dutch and Swedish translations for site content ([c45f6bd](https://github.com/Roudis/roudomageiremata/commit/c45f6bd6b3d462952904c1e79c599ae9563a9f18))
 
 ### Fixed
+- update updatedAt timestamps and replace images for recipes ([7e10610](https://github.com/Roudis/roudomageiremata/commit/7e1061099f047c76826bd357dc4ebe79f8b1720c))
+- update updatedAt timestamps and replace images for multiple recipes ([4985e9c](https://github.com/Roudis/roudomageiremata/commit/4985e9c1b50ae9c86d856d9ce7bd27acba381bc6))
+- update updatedAt timestamps and replace images for multiple recipes ([e26cde7](https://github.com/Roudis/roudomageiremata/commit/e26cde7fade47236bbaac2c9194a57e9909cbe27))
+- update updatedAt timestamp for i-tsipoyra recipe and replace its image; delete kati-xechnao recipe ([775d0ff](https://github.com/Roudis/roudomageiremata/commit/775d0ffbb2a042224233825fc1ad3a976c62598b))
+- update updatedAt timestamp and replace recipe image for garidomaranadara-to-aki-alla-den-peirazei ([f00012b](https://github.com/Roudis/roudomageiremata/commit/f00012b4b1c5362ab63701896dffc46eb0e53b37))
+- update updatedAt timestamp and replace recipe image for taxidiara-kotopita ([54b0edc](https://github.com/Roudis/roudomageiremata/commit/54b0edc6a96a12e3990cb5d82bc7fe92bbab5bbd))
+- update updatedAt timestamp and replace recipe image for i-karmponara ([dbe4141](https://github.com/Roudis/roudomageiremata/commit/dbe414144f993d06f058646336ec5aea64a4cf34))
+- update updatedAt timestamp and replace recipe image for i-karmponara ([dee41ac](https://github.com/Roudis/roudomageiremata/commit/dee41ac2959df47d86457d2116ca1ed2ff8ff788))
+- update updatedAt timestamp and replace recipe image for mporsta-poly ([4d8808b](https://github.com/Roudis/roudomageiremata/commit/4d8808b57e8eac19545d353434c7b4fc5589f61d))
 - adjust spacing and font size for improved layout on mobile ([aa5875f](https://github.com/Roudis/roudomageiremata/commit/aa5875f2d1aa016a791ddf3833db07ac81c51cce))
+
+### Other
+- Delete multiple recipe files for "Έλα μου ντε???" and its variations, including translations and details, to streamline the recipe database. ([cc1bbea](https://github.com/Roudis/roudomageiremata/commit/cc1bbea6951debae1c4d2299416ab027699d5520))
 
 ## 2026-09-16
 
