@@ -19,6 +19,7 @@ npm run changelog:check # fail if CHANGELOG.md is stale
 npm run build          # static export to out/
 npm run check          # all of the above except dev, in order; run before calling work done
 npm run start          # serve out/ locally; `next start` does NOT work with static export
+npm run sync:strapi    # pull published recipes + images from Strapi (needs it running), then validate
 ```
 
 `npm run check` is the definition of "not broken".
@@ -48,8 +49,10 @@ npm run start          # serve out/ locally; `next start` does NOT work with sta
 
 ## Recipe data
 
+- Recipes are edited in the Strapi CMS, a separate project in the sibling folder `../roudomageiremata-cms` (run it with `npm run develop` there, admin at http://localhost:1337/admin). `npm run sync:strapi` writes the published recipes into `data/recipes/` and `public/images/recipes/`, changing only files whose content differs. Stale recipes are only listed; `--prune` deletes them. The build and deploy never contact Strapi; the committed JSON files are what ships. `STRAPI_URL` (default `http://localhost:1337`) and an optional `STRAPI_API_TOKEN` point the sync elsewhere.
+- Strapi's `Recipe` content type (`src/api/recipe/`, components in `src/components/recipe/`) mirrors `types/recipe.ts`: `id` is `slug`, `ingredients`/`steps` are repeatable components, `memory` is a component, and `imageUrl` is the `image` media field. If you change the shape, update the Strapi schema and `scripts/sync-from-strapi.mjs` too.
 - One recipe per file: `data/recipes/<id>.json`. The filename must equal the `id` field. Ids are lowercase Greeklish slugs.
-- Shape is `Recipe` in `types/recipe.ts`. If you change the shape, update `parseRecipe` in `lib/recipe-schema.ts` too.
+- Shape is `Recipe` in `types/recipe.ts`. If you change the shape, update `parseRecipe` in `lib/recipe-schema.ts` too, plus the Strapi side above.
 - Other languages go in the recipe file's optional `translations` object, keyed by locale code. Each entry mirrors the Greek text one to one: the same number of ingredients and steps, and a `memory` (title and story only), `prepTime`, or `cookTime` exactly when the Greek has one. The memory date, image, servings, and category always come from the Greek. A language with no entry shows the Greek text with a notice. `localizeRecipe` in `lib/recipe-view.ts` merges a translation for display.
 - When you change a recipe's Greek ingredients or steps, update or remove its translations in the same change: a count mismatch makes the whole file invalid. Changed wording with the same count is not detected, so update the translations too.
 - Category names are translated in `data/categories.json`, keyed by the Greek category name. `category` stays Greek everywhere in the data because filtering and the dot colours key on it. `npm run validate:data` fails when a key there matches no recipe's category, which usually means a typo or a rename.

@@ -13,7 +13,8 @@
     "validate:data": "vitest run lib/recipes.data.test.ts",
     "changelog": "node scripts/generate-changelog.mjs",
     "changelog:check": "node scripts/generate-changelog.mjs --check",
-    "check": "npm run lint && npm run typecheck && npm run test && npm run validate:data && npm run build"
+    "check": "npm run lint && npm run typecheck && npm run test && npm run validate:data && npm run build",
+    "sync:strapi": "node scripts/sync-from-strapi.mjs && npm run validate:data"
   },
   "dependencies": {
     "framer-motion": "^13.1.0",

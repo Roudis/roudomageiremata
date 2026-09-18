@@ -15,7 +15,10 @@ for working in the repo live in [CLAUDE.md](CLAUDE.md).
   Swedish, Spanish, and Italian under `/en`, `/nl`, `/fr`, `/sv`, `/es`, `/it`. A
   language menu at the right of the navbar switches between them on the same page.
 - **Persistence:** One JSON file per recipe in [data/recipes/](data/recipes)
-  (no database). Currently 30 recipes. Read at **build time** only.
+  (no database at build time). Currently 30 recipes. Read at **build time** only.
+- **Editing:** Recipes are edited in a Strapi 5 CMS, a separate project in
+  `../roudomageiremata-cms`, and pulled into the JSON files and images with
+  `npm run sync:strapi`. The build and deploy never contact Strapi.
 - **Rendering:** Fully static export (`output: "export"` in
   [next.config.mjs](next.config.mjs)). Every recipe page is pre-rendered in every
   language via `generateStaticParams` (7 homes, 7 × 30 recipe pages), so the site
@@ -119,6 +122,7 @@ data/
 public/
   images/recipes/<id>.jpg    Recipe images
 scripts/
+  sync-from-strapi.mjs       `npm run sync:strapi`: published Strapi recipes → data/recipes + images
   generate-changelog.mjs     Generates CHANGELOG.md from the Git commit history
 populate.js                  Legacy seeding script; overwrites data/recipes. Do not run.
 download-images.js           Legacy image downloader. Do not run.
@@ -208,7 +212,7 @@ cannot import it.
 ## Config Files
 - [package.json](package.json): scripts `dev`, `build`, `start` (serves `out/`
   via `serve`), `lint`, `typecheck`, `test`, `test:watch`, `validate:data`,
-  `changelog`, `changelog:check`, `check`.
+  `sync:strapi`, `changelog`, `changelog:check`, `check`.
 - [vitest.config.mts](vitest.config.mts): Vitest in node environment with the `@/` alias;
   aliases `server-only` to its no-op `empty.js` so the loader can be imported in tests.
 - [tsconfig.json](tsconfig.json): strict mode; path alias `@/*` → repo root.
@@ -220,9 +224,13 @@ cannot import it.
 - [.claude/settings.json](.claude/settings.json): shared Claude Code permissions.
 
 ## Common Tasks — Where to Look
-- **Add/edit/remove a recipe:** edit `data/recipes/<id>.json` (+ image in
-  `public/images/recipes/`), add or update its `translations`, run
-  `npm run validate:data`, open a PR into `main`.
+- **Add/edit/remove a recipe:** edit and publish its Greek text and image in
+  Strapi (`npm run develop` in `../roudomageiremata-cms`), run
+  `npm run sync:strapi` (add `-- --prune` after deleting one), then add or
+  update its `tags` and `translations` in `data/recipes/<id>.json`, which
+  Strapi doesn't hold yet and the sync keeps. Review the diff, open a PR into
+  `main`. Direct edits to Strapi-managed fields in the JSON are overwritten
+  by the next sync.
 - **Add a tag:** add its id and its name in every language to `TAG_NAMES` in
   [lib/tags.ts](lib/tags.ts), and to `TAG_IMPLIES` if it is a kind of an existing
   tag (as beef is of meat). Then list it in the recipes' `tags`.
@@ -247,7 +255,7 @@ cannot import it.
   and add a new token to [tailwind.config.ts](tailwind.config.ts).
 
 ## Notes / Gotchas
-- No auth, no database. `npm run check` is the verification step.
+- No auth, and no database at build time. `npm run check` is the verification step.
 - Unit tests cover `lib/`: characterization tests for `recipes.ts` and unit
   tests for the pure helpers. Tests named "(current behavior)" lock down quirks
   that a later refactor step changes. Components and pages have no tests.
