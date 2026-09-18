@@ -7,6 +7,7 @@ to regenerate it.
 ## 2026-09-18
 
 ### Added
+- add language support details and update recipe translation guidelines ([2bbc20f](https://github.com/Roudis/roudomageiremata/commit/2bbc20fad8ff7e3eba5468056a5962ad6f3d937a))
 - add Dutch and Swedish translations for site content ([c45f6bd](https://github.com/Roudis/roudomageiremata/commit/c45f6bd6b3d462952904c1e79c599ae9563a9f18))
 
 ### Fixed
