@@ -18,10 +18,10 @@ export function Navbar({ locale, switcherPath }: NavbarProps) {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-md">
-      <div className="page-container flex h-16 items-center justify-between gap-4">
+      <div className="page-container flex h-16 items-center justify-between gap-3">
         <Link
           href={localizePath("/", locale)}
-          className="group flex min-w-0 items-center gap-3 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4 focus-visible:ring-offset-background"
+          className="group flex min-w-0 items-center gap-2.5 rounded-md sm:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4 focus-visible:ring-offset-background"
           aria-label={t.home}
         >
           <span
@@ -30,7 +30,8 @@ export function Navbar({ locale, switcherPath }: NavbarProps) {
           >
             Ρ
           </span>
-          <span className="truncate font-serif text-lg font-semibold tracking-tight transition-colors group-hover:text-primary">
+          {/* A step smaller on phones, so the name fits beside the recipes link and the language button. */}
+          <span className="truncate font-serif text-base font-semibold tracking-tight transition-colors group-hover:text-primary sm:text-lg">
             {SITE_NAME}
           </span>
         </Link>
