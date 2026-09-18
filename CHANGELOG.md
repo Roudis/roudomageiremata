@@ -15,6 +15,7 @@ to regenerate it.
 - add Dutch and Swedish translations for site content ([c45f6bd](https://github.com/Roudis/roudomageiremata/commit/c45f6bd6b3d462952904c1e79c599ae9563a9f18))
 
 ### Fixed
+- update ingredients list for Pascha Vathylakos recipe and improve translations ([771bda1](https://github.com/Roudis/roudomageiremata/commit/771bda171018fe6ea03818a3d9ddd57f63775bbf))
 - update recipe details for Pascha Vathylakos, including ingredients, steps, and cooking times ([c1eb8c8](https://github.com/Roudis/roudomageiremata/commit/c1eb8c8f073a20f4b702d870d2938ee7831db720))
 - update updatedAt timestamps and replace images for recipes ([7e10610](https://github.com/Roudis/roudomageiremata/commit/7e1061099f047c76826bd357dc4ebe79f8b1720c))
 - update updatedAt timestamps and replace images for multiple recipes ([4985e9c](https://github.com/Roudis/roudomageiremata/commit/4985e9c1b50ae9c86d856d9ce7bd27acba381bc6))
@@ -28,6 +29,7 @@ to regenerate it.
 - adjust spacing and font size for improved layout on mobile ([aa5875f](https://github.com/Roudis/roudomageiremata/commit/aa5875f2d1aa016a791ddf3833db07ac81c51cce))
 
 ### Other
+- Add Romanian and Czech translations for recipes and interface ([1df4f79](https://github.com/Roudis/roudomageiremata/commit/1df4f79d2b28f2ec40c56dd05873ab3a69a1827e))
 - Implement code changes to enhance functionality and improve performance ([8cfaca6](https://github.com/Roudis/roudomageiremata/commit/8cfaca65e3bb4d089c668d7fb116aee94adea0d7))
 - Delete multiple recipe files for "Έλα μου ντε???" and its variations, including translations and details, to streamline the recipe database. ([cc1bbea](https://github.com/Roudis/roudomageiremata/commit/cc1bbea6951debae1c4d2299416ab027699d5520))
 

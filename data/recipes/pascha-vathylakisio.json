@@ -10,7 +10,9 @@
     "Ελαιόλαδο, περίπου μισή κούπα",
     "Αρκετά ξύλα για την ψησταριά",
     "Τούλι",
-    "Σακοράφες"
+    "Σακοράφες",
+    "Σπάγκος",
+    "Σούβλα"
   ],
   "steps": [
     "Ημέρα πρώτη, αγορά του αρνιού: πάμε στο βοσκό και επιλέγουμε το κατάλληλο αρνί, ανάλογα με το μέγεθος που θέλουμε, γύρω στα 12 κιλά. Το παίρνουμε και το κρεμάμε στο επάνω σπίτι με ένα ταψί από κάτω του, αφήνοντάς το να στραγγίσει και να φύγουν όλα τα αίματα το βράδυ. Εν τω μεταξύ, προηγουμένως το έχουμε τυλίξει με τούλι.",
@@ -49,7 +51,7 @@
   "cookTime": "Αρκετές ώρες",
   "servings": 12,
   "createdAt": "2026-08-10T16:52:28.198Z",
-  "updatedAt": "2026-09-18T17:51:41.477Z",
+  "updatedAt": "2026-09-18T18:10:53.755Z",
   "translations": {
     "en": {
       "title": "Vathylakos Easter",
@@ -62,7 +64,9 @@
         "Olive oil, about half a cup",
         "Plenty of wood for the grill",
         "Tulle",
-        "Sacking needles"
+        "Sacking needles",
+        "Twine",
+        "Spit"
       ],
       "steps": [
         "Day one, buying the lamb: we go to the shepherd and choose the right lamb, depending on the size we want, around 12 kg. We take it and hang it in the upper house with a baking tray underneath, leaving it overnight to drain so that all the blood runs out. Beforehand, in the meantime, we have wrapped it in tulle.",
@@ -105,7 +109,9 @@
         "Olijfolie, ongeveer een half kopje",
         "Genoeg hout voor de grill",
         "Tule",
-        "Zakkennaalden"
+        "Zakkennaalden",
+        "Touw",
+        "Spit"
       ],
       "steps": [
         "Dag één, het lam kopen: we gaan naar de herder en kiezen het juiste lam, afhankelijk van de grootte die we willen, rond de 12 kilo. We nemen het mee en hangen het op in het bovenste huis met een bakplaat eronder, zodat het ’s nachts kan uitlekken en al het bloed eruit loopt. Intussen hebben we het vooraf in tule gewikkeld.",
@@ -148,7 +154,9 @@
         "Huile d’olive, environ une demi-tasse",
         "Beaucoup de bois pour le barbecue",
         "Tulle",
-        "Aiguilles à sac"
+        "Aiguilles à sac",
+        "Ficelle",
+        "Broche"
       ],
       "steps": [
         "Premier jour, l’achat de l’agneau : nous allons chez le berger et choisissons le bon agneau, selon la taille voulue, autour de 12 kg. Nous le prenons et le suspendons dans la maison du haut avec une plaque en dessous, pour le laisser s’égoutter pendant la nuit et que tout le sang s’écoule. Entre-temps, nous l’avons au préalable enveloppé de tulle.",
@@ -191,7 +199,9 @@
         "Olivolja, ungefär en halv kopp",
         "Gott om ved till grillen",
         "Tyll",
-        "Säcknålar"
+        "Säcknålar",
+        "Snöre",
+        "Spett"
       ],
       "steps": [
         "Dag ett, köpet av lammet: vi åker till herden och väljer rätt lamm, beroende på vilken storlek vi vill ha, runt 12 kg. Vi tar det och hänger upp det i det övre huset med en ugnsplåt under, så att det får rinna av under natten och allt blod rinner ut. Innan dess har vi under tiden lindat in det i tyll.",
@@ -234,7 +244,9 @@
         "Aceite de oliva, más o menos media taza",
         "Bastante leña para la parrilla",
         "Tul",
-        "Agujas saqueras"
+        "Agujas saqueras",
+        "Cordel",
+        "Espetón"
       ],
       "steps": [
         "Día primero, la compra del cordero: vamos a casa del pastor y elegimos el cordero adecuado, según el tamaño que queramos, unos 12 kg. Lo cogemos y lo colgamos en la casa de arriba con una bandeja debajo, dejándolo escurrir durante la noche para que salga toda la sangre. Mientras tanto, antes lo hemos envuelto en tul.",
@@ -277,7 +289,9 @@
         "Olio d’oliva, circa mezza tazza",
         "Tanta legna per la griglia",
         "Tulle",
-        "Aghi da sacco"
+        "Aghi da sacco",
+        "Spago",
+        "Spiedo"
       ],
       "steps": [
         "Primo giorno, l’acquisto dell’agnello: andiamo dal pastore e scegliamo l’agnello adatto, a seconda della grandezza che vogliamo, sui 12 kg. Lo prendiamo e lo appendiamo nella casa di sopra con una teglia sotto, lasciandolo sgocciolare durante la notte perché esca tutto il sangue. Nel frattempo, prima lo abbiamo avvolto nel tulle.",
@@ -308,6 +322,96 @@
       },
       "prepTime": "4 giorni",
       "cookTime": "Diverse ore"
+    },
+    "ro": {
+      "title": "Paște în Vathylakos",
+      "description": "Mielul pe care îl facem în Vathylakos este o rețetă plină de dileme, dar înainte să trecem la dileme trebuie să lămurim ceva înșelător: în ciuda numelui, mielul nu se frige într-o groapă adâncă, ci pe un grătar zidit, înălțat.",
+      "ingredients": [
+        "1 miel de aproximativ 12 kg",
+        "Sare",
+        "Piper",
+        "Năut prăjit",
+        "Ulei de măsline, cam o jumătate de cană",
+        "Multe lemne pentru grătar",
+        "Tul",
+        "Ace de cusut saci",
+        "Sfoară",
+        "Frigare"
+      ],
+      "steps": [
+        "Ziua întâi, cumpărarea mielului: mergem la cioban și alegem mielul potrivit, după mărimea pe care o vrem, în jur de 12 kg. Îl luăm și îl atârnăm în casa de sus, cu o tavă dedesubt, lăsându-l peste noapte să se scurgă și să iasă tot sângele. Între timp, dinainte l-am învelit în tul.",
+        "Ziua a doua: mielul s-a scurs și îl spălăm pe balcon ca să iasă sângele rămas, apoi scoatem toate firele de păr pe care le găsim pe el. După ce se usucă, îl punem în frigider să se frăgezească.",
+        "Ziua a treia: mielul stă în frigider și se frăgezește.",
+        "Ziua a patra, e sâmbătă: seara mielul iese din frigider, e șters, e curățat cu grijă de firele de păr rămase și începe pregătirea. Pregătim într-o parte sare și piper. În blender mărunțim năut prăjit tare, până se face granule. Atenție să nu se facă pulbere, pentru că atunci nu mai e bun pentru ce ne trebuie. Într-un bol punem ulei de măsline, cam o jumătate de cană.",
+        "Curățăm toate piesele și frigarea, ca să fie gata să o trecem prin miel.",
+        "Întindem pe blat un cearșaf curat și așezăm mielul pe cearșaf, cât se poate de drept, ca să putem trece frigarea.",
+        "Pe frigarea pe care o vom trece prin miel punem mai întâi o furcă, cea care va veni după aceea și va ține picioarele.",
+        "Trecem frigarea prin miel și ne asigurăm că greutatea lui e echilibrată, adică echilibrăm mielul, ca să nu se rotească cu viteze diferite când îl punem la frigare. Greutatea trebuie să fie distribuită uniform în jurul frigării, ca să se poată roti cum trebuie. Vârful ascuțit al frigării poate ieși fie prin gură, prin căpșor, fie să-i străpungă nasul.",
+        "Punem mielul să stea cu picioarele în sus și trecem clemele, pe care nu le strângem, ci doar le trecem și le lăsăm largi, ca să putem stabili la ce înălțime va sta mielul pe frigare. Imediat ce am stabilit, strângem mielul și îl legăm bine de frigare.",
+        "Îl ungem cu uleiul pe care îl avem și apoi îl sărăm și îl piperăm pe dinăuntru și pe dinafară. După ce l-am sărat și l-am piperat bine, pentru că îi trebuie multă sare, îl presărăm cu năutul mărunțit, ca pielea să se facă crocantă când se frige.",
+        "Apoi îl învelim, după ce mai întâi i-am cusut cu măiestrie burtica cu acele de cusut saci. În acest stadiu suntem deja obosiți, pentru că ne-am chinuit mult și noi, și mielul. Îl lăsăm într-un loc răcoros și mergem la culcare, după ce mai întâi l-am învelit în cearșaful pe care îl întinsesem dedesubt, nu cumva să vină vreo muscă și să ne facă vreo pagubă.",
+        "A doua zi dimineață ne trezim devreme de tot, punem lemnele în grătar, le aranjăm așa încât grătarul să țină căldura multă vreme și le dăm foc să ardă. Atenție: punem destule lemne, pentru că vom avea nevoie de mult timp de frigere.",
+        "Cât timp ard lemnele, e obligatoriu să avem o cafea de băut, de preferință un frappé potrivit de dulce, cum se face pe feriboturi. Atenție: e obligatoriu pentru ca rețeta să iasă bine.",
+        "Imediat ce flăcările se potolesc, focul nostru e gata. Urcăm doi oameni (atunci ne trezim fiul) și luăm mielul cu noi, ca să-l punem pe foc.",
+        "Lăsăm mielul, cu frigare cu tot, pe masa pe care o avem afară și pregătim alimentarea cu curent electric împreună cu motorul, care va prelua mielul și va învârti frigarea cât timp îl punem pe grătar.",
+        "Îl punem pe grătar, îl conectăm la motor, ne asigurăm că se învârte cum trebuie și, cât timp are loc toată operațiunea asta, e inevitabil să ne ardem și noi odată cu mielul, pentru că focul puternic nu ne lasă să scăpăm.",
+        "Mielul se învârte și se frige la frigare, iar între timp noi am trecut la etapa în care mâncăm ouăle de ieri, cu meze, niște salam și niște brânză. Și, în paralel, ungem cu o pensulă animalul care se rumenește.",
+        "După câteva ore mielul e fript și ne certăm dacă e gata sau nu, așa că suntem nevoiți să mai așteptăm, deși ne lasă gura apă. Când începe să facă spumă, e gata.",
+        "Când în sfârșit ne e foarte foame, singura soluție e să riscăm să dăm jos mielul, așa că trebuie să pregătim masa pentru această operațiune.",
+        "Punem două tăvi una lângă alta și eroii merg să scoată mielul de pe frigare. Întrerupem curentul și eliberăm motorul de pe frigare. Apucăm de cele două capete și, cu mișcări de maestru, reușim să scoatem mielul de pe foc, sperând că nu ne ardem. Imediat ce l-am scos, mergem spre tăvi și, dacă nu ne scapă pe drum, îl punem pe tăvi. Acolo trebuie cumva să scoatem frigarea fără ca ceilalți să mănânce mielul înainte să-l servim. Scoatem frigarea și suporturile și îl desfacem, ca să vedem dacă s-a făcut. Dacă nu s-a făcut, plângem; dacă s-a făcut, mâncăm.",
+        "Când în sfârșit am mâncat de stăm să plesnim, dacă a rămas miel, intră în frigider, ca să-l punem la loc în stomac a doua zi. Dacă n-a rămas miel, am greșit cantitatea de miel pe care am gătit-o, pentru că mereu trebuie să rămână miel pentru a doua zi."
+      ],
+      "memory": {
+        "title": "Dilemele din Vathylakos",
+        "story": "Rețeta începe cu prima dilemă, cam cu o lună înainte: facem miel de Paște anul ăsta sau poate nu? Prima dilemă se rezolvă destul de ușor în primele două săptămâni, pentru că decidem mereu că facem miel anul ăsta, ca în fiecare an. Îl facem la frigare sau îl băgăm la cuptor, ca să scăpăm repede? A doua dilemă e mult mai serioasă, pentru că frigarea, adică mielul de Vathylakos, e mereu mai grea decât un simplu mieluț la cuptor cu cartofi, așa că dilema asta durează cam o săptămână, iar în 95% din cazuri ajungem să facem miel la frigare. Îl luăm de la supermarket sau de la prietenul nostru ciobanul, care stă aici aproape? În cazul ăsta, casele de pariuri îl dau pe cioban la cota 1,20, adică favorit. Surpriza apare doar dacă ciobanului i s-au terminat mieii, și atunci suntem nevoiți să luăm de la supermarket sau de la măcelărie. De aici încolo urmăm scenariul cumpărării mielului de la cioban pentru frigarea de duminică. Trebuie spus că, în timpul acestei operațiuni, și după ce mâncăm, urmează o altă operațiune, într-o altă cameră, destul de chinuitoare, pentru că nu ne-am obișnuit să mâncăm carne în toate zilele de dinainte, iar acum, imediat ce a intrat în sistemul nostru digestiv, începe să lanseze atacuri care, de cele mai multe ori, se termină cu o descărcare intensă."
+      },
+      "prepTime": "4 zile",
+      "cookTime": "Câteva ore"
+    },
+    "cs": {
+      "title": "Velikonoce ve Vathylakosu",
+      "description": "Jehně, které děláme ve Vathylakosu, je recept plný dilemat, ale než se k dilematům dostaneme, musíme vysvětlit jedno nedorozumění: navzdory názvu se jehně nepeče v hluboké jámě, ale na vyvýšeném zděném grilu.",
+      "ingredients": [
+        "1 jehně o váze kolem 12 kg",
+        "Sůl",
+        "Pepř",
+        "Pražená cizrna",
+        "Olivový olej, asi půl hrnku",
+        "Hodně dřeva na gril",
+        "Tyl",
+        "Jehly na šití pytlů",
+        "Provázek",
+        "Rožeň"
+      ],
+      "steps": [
+        "Den první, nákup jehněte: jedeme k pastýři a vybereme vhodné jehně podle velikosti, kterou chceme, kolem 12 kg. Vezmeme ho a pověsíme ho v horním domě s plechem pod ním, aby přes noc odkapalo a vytekla všechna krev. Mezitím jsme ho už předtím zabalili do tylu.",
+        "Den druhý: jehně odkapalo a my ho umyjeme na balkoně, aby odešla zbylá krev, a vytaháme z něj všechny chlupy, které najdeme. Až oschne, dáme ho do lednice, aby vyzrálo.",
+        "Den třetí: jehně je v lednici a zraje.",
+        "Den čtvrtý, je sobota: večer jehně vyndáme z lednice, osušíme ho, opatrně ho očistíme od zbylých chlupů a začne příprava. Stranou si připravíme sůl a pepř. V mixéru rozmixujeme tvrdou praženou cizrnu, dokud z ní nejsou zrníčka. Pozor, ať z ní není prášek, protože pak se nehodí na to, k čemu ji potřebujeme. Do misky nalijeme olivový olej, asi půl hrnku.",
+        "Očistíme všechny součástky i rožeň, aby byly připravené a mohli jsme rožeň prostrčit jehnětem.",
+        "Na linku rozprostřeme čisté prostěradlo a položíme na něj jehně co nejrovněji, abychom mohli prostrčit rožeň.",
+        "Na rožeň, který prostrčíme jehnětem, nejdřív navlékneme vidlici, tu, která přijde potom a přidrží nohy.",
+        "Prostrčíme rožeň jehnětem a dbáme na to, aby jeho váha byla vyvážená, to znamená, že jehně vyvážíme, aby se na rožni netočilo různou rychlostí. Váha musí být kolem rožně rozložená rovnoměrně, aby se mohl správně otáčet. Špičatý konec rožně může vyjít buď pusou, hlavičkou, nebo mu propíchnout nos.",
+        "Postavíme jehně nožičkami nahoru a navlékneme úchyty, které neutahujeme, ale jen je navlékneme a necháme volně, abychom mohli určit, v jaké výšce bude jehně na rožni. Jakmile to určíme, jehně utáhneme a pevně ho přivážeme k rožni.",
+        "Potřeme ho olejem, který máme, a pak ho osolíme a opepříme zevnitř i zvenku. Když je pořádně osolené a opepřené, protože potřebuje hodně soli, posypeme ho rozdrcenou cizrnou, aby kůže byla po upečení křupavá.",
+        "Potom ho zabalíme, když jsme mu předtím mistrně zašili bříško jehlami na šití pytlů. V této fázi už jsme unavení, protože jsme se hodně nadřeli, my i jehně. Necháme ho na chladném místě a jdeme spát, když jsme ho předtím zabalili do prostěradla, které jsme pod ním měli rozprostřené, aby na něj náhodou nesedla moucha a nenadělala nám nějakou škodu.",
+        "Druhý den ráno vstaneme brzy, dáme dřevo do grilu, naskládáme ho tak, aby gril dlouho držel teplo, a zapálíme ho, aby prohořelo. Pozor: dáme hodně dřeva, protože pečení bude trvat dlouho.",
+        "Zatímco dřevo hoří, je nezbytné mít kávu na pití, nejlépe středně sladké frappé, jaké dělají na trajektech. Pozor: je nezbytné, aby se recept povedl.",
+        "Jakmile plameny opadnou, náš oheň je připravený. Jdeme nahoru ve dvou (v tu chvíli budíme syna) a bereme s sebou jehně, abychom ho dali na oheň.",
+        "Jehně i s rožněm necháme na stole, který máme venku, a připravíme přívod elektřiny spolu s motorem, který jehně převezme a bude otáčet rožněm, zatímco ho nasazujeme.",
+        "Dáme ho na gril, připojíme k motoru, ověříme, že se správně otáčí, a po celou dobu, co to děláme, je nevyhnutelné, že se spálíme i my spolu s jehnětem, protože silný oheň nám nedovolí uniknout.",
+        "Jehně se otáčí a peče na rožni, a mezitím jsme se my přesunuli do fáze, kdy jíme včerejší vejce, k tomu meze, trochu salámu a trochu sýra. A zároveň štětcem potíráme olejem zvíře, které se zlatavě opéká.",
+        "Po několika hodinách je jehně upečené a my se přeme, jestli je hotové, nebo ne, takže musíme čekat ještě déle, i když se nám sbíhají sliny. Když začne pěnit, je hotové.",
+        "Když už máme opravdu velký hlad, jediným řešením je riskovat sundání jehněte, takže musíme na tuto operaci připravit stůl.",
+        "Postavíme dva tácy vedle sebe a hrdinové jdou sundat jehně z rožně. Vypneme proud a odpojíme motor od rožně. Chytíme ho za oba konce a mistrnými pohyby se nám podaří sundat jehně z ohně, v naději, že se nespálíme. Jakmile ho sundáme, jdeme k tácům, a pokud nám cestou nespadne, položíme ho na ně. Tam musíme nějak vytáhnout rožeň, aniž by ostatní snědli jehně dřív, než ho naservírujeme. Vytáhneme rožeň a podpěry a rozebereme ho, abychom viděli, jestli je upečené. Pokud není upečené, pláčeme; pokud je upečené, jíme.",
+        "Když už jsme přejedení k prasknutí a nějaké jehně zbylo, jde do lednice, abychom si ho druhý den uložili do žaludku. Pokud žádné jehně nezbylo, spletli jsme se v množství, které jsme uvařili, protože jehně musí vždycky zbýt na další den."
+      ],
+      "memory": {
+        "title": "Dilemata z Vathylakosu",
+        "story": "Recept začíná prvním dilematem, zhruba měsíc předem: budeme letos na Velikonoce dělat jehně, nebo radši ne? První dilema se vyřeší poměrně snadno během prvních čtrnácti dnů, protože se vždycky rozhodneme, že letos jehně uděláme, jako každý rok. Uděláme ho na rožni, nebo ho strčíme do trouby, ať to máme z krku? Druhé dilema je mnohem vážnější, protože rožeň, tedy jehně z Vathylakosu, je vždycky náročnější než obyčejné jehňátko v troubě s bramborami, a tak toto dilema trvá asi týden a v 95 % případů nakonec děláme jehně na rožni. Koupíme ho v supermarketu, nebo od našeho kamaráda pastýře, který bydlí kousek odsud? Sázkové kanceláře v tomto případě vypisují na pastýře kurz 1,20, je to tedy favorit. Překvapení nastane jen tehdy, když pastýři dojdou jehňata, a pak musíme koupit v supermarketu nebo u řezníka. Odtud dál sledujeme scénář nákupu jehněte od pastýře na nedělní rožeň. Je třeba dodat, že během této procedury, a když se najíme, následuje další, dost bolestivá procedura v jiné místnosti, protože nejsme zvyklí jíst maso všechny ty předchozí dny, a teď, jakmile se nám dostalo do trávicí soustavy, začne podnikat útoky, které většinou končí prudkým uvolněním."
+      },
+      "prepTime": "4 dny",
+      "cookTime": "Několik hodin"
     }
   }
 }

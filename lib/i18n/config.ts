@@ -7,7 +7,7 @@
 /** The site's name, written in Greek in every language. */
 export const SITE_NAME = "Ρουδομαγειρέματα";
 
-export const LOCALES = ["el", "en", "nl", "fr", "sv", "es", "it"] as const;
+export const LOCALES = ["el", "en", "nl", "fr", "sv", "es", "it", "ro", "cs"] as const;
 
 export type Locale = (typeof LOCALES)[number];
 
@@ -37,6 +37,8 @@ export const LOCALE_DETAILS: Record<Locale, LocaleDetails> = {
   sv: { name: "Svenska", intl: "sv-SE", openGraph: "sv_SE" },
   es: { name: "Español", intl: "es-ES", openGraph: "es_ES" },
   it: { name: "Italiano", intl: "it-IT", openGraph: "it_IT" },
+  ro: { name: "Română", intl: "ro-RO", openGraph: "ro_RO" },
+  cs: { name: "Čeština", intl: "cs-CZ", openGraph: "cs_CZ" },
 };
 
 export function isLocale(value: unknown): value is Locale {

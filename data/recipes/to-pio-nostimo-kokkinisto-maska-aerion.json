@@ -161,6 +161,50 @@
       },
       "prepTime": "20 minuti",
       "cookTime": "45 minuti"
+    },
+    "ro": {
+      "title": "Cel mai gustos kokkinisto + mască de gaze",
+      "description": "O rețetă pe care o va adora toată familia! Cu ingrediente simple și un gust minunat.",
+      "ingredients": [
+        "Cartofi",
+        "Ulei",
+        "Oregano",
+        "Lămâie"
+      ],
+      "steps": [
+        "Aruncăm o privire în cuptor și sperăm la ce e mai bun.",
+        "Aruncăm înăuntru tot ce a rămas de la cina de aseară.",
+        "Închidem ochii și adăugăm condimente la întâmplare.",
+        "Gustăm puțin pe furiș și ne ardem limba."
+      ],
+      "memory": {
+        "title": "Masa de duminică",
+        "story": "În fiecare duminică, mirosul ăsta ne trezea încă de dimineață!"
+      },
+      "prepTime": "20 de minute",
+      "cookTime": "45 de minute"
+    },
+    "cs": {
+      "title": "Nejchutnější kokkinisto + plynová maska",
+      "description": "Recept, který si zamiluje celá rodina! Jednoduché suroviny a báječná chuť.",
+      "ingredients": [
+        "Brambory",
+        "Olej",
+        "Oregano",
+        "Citron"
+      ],
+      "steps": [
+        "Nakoukneme do trouby a doufáme v to nejlepší.",
+        "Přihodíme všechno, co zbylo od včerejší večeře.",
+        "Zavřeme oči a přidáme koření naslepo.",
+        "Potajmu ochutnáme a spálíme si jazyk."
+      ],
+      "memory": {
+        "title": "Nedělní oběd",
+        "story": "Každou neděli nás ta vůně budila hned od rána!"
+      },
+      "prepTime": "20 minut",
+      "cookTime": "45 minut"
     }
   }
 }

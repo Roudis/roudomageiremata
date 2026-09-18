@@ -176,6 +176,54 @@
       },
       "prepTime": "20 minuti",
       "cookTime": "45 minuti"
+    },
+    "ro": {
+      "title": "Cele mai gustoase gustărele",
+      "description": "Supremul comfort food, exact ce trebuie pentru duminici sau pentru după-amiezile reci.",
+      "ingredients": [
+        "Făină",
+        "Ouă",
+        "Lapte",
+        "Unt",
+        "Brânză feta"
+      ],
+      "steps": [
+        "Servim în farfurii adânci și ne prefacem că știm ce facem.",
+        "Aruncăm înăuntru tot ce a rămas de la cina de aseară.",
+        "Stăm deasupra oalei cu sufletul la gură.",
+        "Zâmbim larg pentru că... ce să vezi, cumva a ieșit!",
+        "Aruncăm o privire în cuptor și sperăm la ce e mai bun."
+      ],
+      "memory": {
+        "title": "Masa de duminică",
+        "story": "În fiecare duminică, mirosul ăsta ne trezea încă de dimineață!"
+      },
+      "prepTime": "20 de minute",
+      "cookTime": "45 de minute"
+    },
+    "cs": {
+      "title": "Ty nejchutnější malé meze",
+      "description": "Dokonalé comfort food, přesně to pravé na neděle nebo na chladná odpoledne.",
+      "ingredients": [
+        "Mouka",
+        "Vejce",
+        "Mléko",
+        "Máslo",
+        "Sýr feta"
+      ],
+      "steps": [
+        "Podáváme v hlubokých talířích a děláme, že víme, co děláme.",
+        "Přihodíme všechno, co zbylo od včerejší večeře.",
+        "Napjatě stojíme nad hrncem.",
+        "Usmíváme se od ucha k uchu, protože... kdo by to řekl, nějak se to povedlo!",
+        "Nakoukneme do trouby a doufáme v to nejlepší."
+      ],
+      "memory": {
+        "title": "Nedělní oběd",
+        "story": "Každou neděli nás ta vůně budila hned od rána!"
+      },
+      "prepTime": "20 minut",
+      "cookTime": "45 minut"
     }
   }
 }

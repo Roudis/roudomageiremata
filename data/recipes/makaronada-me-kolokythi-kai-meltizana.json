@@ -176,6 +176,54 @@
       },
       "prepTime": "20 minuti",
       "cookTime": "45 minuti"
+    },
+    "ro": {
+      "title": "Paste cu dovlecel și vinete ??",
+      "description": "Arome delicate, o prezentare frumoasă și multă dragoste în fiecare îmbucătură.",
+      "ingredients": [
+        "Legume proaspete",
+        "Ulei de măsline",
+        "Oțet balsamic",
+        "Sare"
+      ],
+      "steps": [
+        "Ne punem șorțul și tragem adânc aer în piept.",
+        "Mai punem puțin ulei, „pentru că așa e mai gustos”.",
+        "Aruncăm înăuntru tot ce a rămas de la cina de aseară.",
+        "O sunăm pe mama să o întrebăm „câtă apă pun?”.",
+        "Amestecăm ingredientele cu frenezie până se omogenizează.",
+        "Servim în farfurii adânci și ne prefacem că știm ce facem."
+      ],
+      "memory": {
+        "title": "Zile de sărbătoare",
+        "story": "Mereu prezent la fiecare sărbătoare, era farfuria care se golea prima."
+      },
+      "prepTime": "20 de minute",
+      "cookTime": "45 de minute"
+    },
+    "cs": {
+      "title": "Těstoviny s cuketou a lilkem ??",
+      "description": "Jemné chutě, krásné servírování a spousta lásky v každém soustu.",
+      "ingredients": [
+        "Čerstvá zelenina",
+        "Olivový olej",
+        "Balzamikový ocet",
+        "Sůl"
+      ],
+      "steps": [
+        "Uvážeme si zástěru a zhluboka se nadechneme.",
+        "Přidáme trochu oleje navíc, „protože tak je to chutnější“.",
+        "Přihodíme všechno, co zbylo od včerejší večeře.",
+        "Voláme mamince, abychom se zeptali: „Kolik vody tam mám dát?“",
+        "Zběsile mícháme suroviny, dokud se nespojí.",
+        "Podáváme v hlubokých talířích a děláme, že víme, co děláme."
+      ],
+      "memory": {
+        "title": "Sváteční dny",
+        "story": "Nikdy nechybělo na žádné oslavě a jeho mísa se vždycky vyprázdnila jako první."
+      },
+      "prepTime": "20 minut",
+      "cookTime": "45 minut"
     }
   }
 }

@@ -161,6 +161,50 @@
       },
       "prepTime": "20 minuti",
       "cookTime": "45 minuti"
+    },
+    "ro": {
+      "title": "CEI MAI SUAVI CARTOFI",
+      "description": "Supremul comfort food, exact ce trebuie pentru duminici sau pentru după-amiezile reci.",
+      "ingredients": [
+        "500 g de paste",
+        "Sos de roșii",
+        "Multă brânză",
+        "Busuioc proaspăt"
+      ],
+      "steps": [
+        "Închidem ochii și adăugăm condimente la întâmplare.",
+        "Adăugăm puțină sare, puțin piper și multă emoție.",
+        "Îl lăsăm să se răcească, dar nu rezistăm și îl mâncăm fierbinte.",
+        "Aruncăm înăuntru tot ce a rămas de la cina de aseară."
+      ],
+      "memory": {
+        "title": "Surpriza",
+        "story": "În fiecare duminică, mirosul ăsta ne trezea încă de dimineață!"
+      },
+      "prepTime": "20 de minute",
+      "cookTime": "45 de minute"
+    },
+    "cs": {
+      "title": "NEJŠARMANTNĚJŠÍ BRAMBORY",
+      "description": "Dokonalé comfort food, přesně to pravé na neděle nebo na chladná odpoledne.",
+      "ingredients": [
+        "500 g těstovin",
+        "Rajčatová omáčka",
+        "Hodně sýra",
+        "Čerstvá bazalka"
+      ],
+      "steps": [
+        "Zavřeme oči a přidáme koření naslepo.",
+        "Přidáme trochu soli, trochu pepře a hodně citu.",
+        "Necháme to vychladnout, ale nevydržíme to a sníme to horké.",
+        "Přihodíme všechno, co zbylo od včerejší večeře."
+      ],
+      "memory": {
+        "title": "Překvapení",
+        "story": "Každou neděli nás ta vůně budila hned od rána!"
+      },
+      "prepTime": "20 minut",
+      "cookTime": "45 minut"
     }
   }
 }

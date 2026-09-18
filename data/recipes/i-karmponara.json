@@ -169,6 +169,52 @@
       },
       "prepTime": "20 minuti",
       "cookTime": "45 minuti"
+    },
+    "ro": {
+      "title": "CARBONARA",
+      "description": "O rețetă pe care o va adora toată familia! Cu ingrediente simple și un gust minunat.",
+      "ingredients": [
+        "Cartofi",
+        "Ulei",
+        "Oregano",
+        "Lămâie"
+      ],
+      "steps": [
+        "O sunăm pe mama să o întrebăm „câtă apă pun?”.",
+        "Aruncăm înăuntru tot ce a rămas de la cina de aseară.",
+        "Servim în farfurii adânci și ne prefacem că știm ce facem.",
+        "Adăugăm puțină sare, puțin piper și multă emoție.",
+        "Amestecăm ușor, ca să nu trezim aluatul."
+      ],
+      "memory": {
+        "title": "Surpriza",
+        "story": "Mereu prezent la fiecare sărbătoare, era farfuria care se golea prima."
+      },
+      "prepTime": "20 de minute",
+      "cookTime": "45 de minute"
+    },
+    "cs": {
+      "title": "CARBONARA",
+      "description": "Recept, který si zamiluje celá rodina! Jednoduché suroviny a báječná chuť.",
+      "ingredients": [
+        "Brambory",
+        "Olej",
+        "Oregano",
+        "Citron"
+      ],
+      "steps": [
+        "Voláme mamince, abychom se zeptali: „Kolik vody tam mám dát?“",
+        "Přihodíme všechno, co zbylo od včerejší večeře.",
+        "Podáváme v hlubokých talířích a děláme, že víme, co děláme.",
+        "Přidáme trochu soli, trochu pepře a hodně citu.",
+        "Jemně mícháme, abychom neprobudili těsto."
+      ],
+      "memory": {
+        "title": "Překvapení",
+        "story": "Nikdy nechybělo na žádné oslavě a jeho mísa se vždycky vyprázdnila jako první."
+      },
+      "prepTime": "20 minut",
+      "cookTime": "45 minut"
     }
   }
 }

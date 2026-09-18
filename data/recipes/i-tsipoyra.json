@@ -175,6 +175,54 @@
       },
       "prepTime": "20 minuti",
       "cookTime": "45 minuti"
+    },
+    "ro": {
+      "title": "DORADA",
+      "description": "Supremul comfort food, exact ce trebuie pentru duminici sau pentru după-amiezile reci.",
+      "ingredients": [
+        "500 g de paste",
+        "Sos de roșii",
+        "Multă brânză",
+        "Busuioc proaspăt"
+      ],
+      "steps": [
+        "O sunăm pe mama să o întrebăm „câtă apă pun?”.",
+        "Amestecăm ingredientele cu frenezie până se omogenizează.",
+        "Scotocim prin dulapuri după ustensila aceea pe care am cumpărat-o în 2015.",
+        "Servim în farfurii adânci și ne prefacem că știm ce facem.",
+        "Aruncăm o privire în cuptor și sperăm la ce e mai bun.",
+        "Ne punem șorțul și tragem adânc aer în piept."
+      ],
+      "memory": {
+        "title": "Masa de duminică",
+        "story": "Nu ne așteptam să iasă atât de bine de prima dată, dar a devenit specialitatea noastră."
+      },
+      "prepTime": "20 de minute",
+      "cookTime": "45 de minute"
+    },
+    "cs": {
+      "title": "PRAŽMA",
+      "description": "Dokonalé comfort food, přesně to pravé na neděle nebo na chladná odpoledne.",
+      "ingredients": [
+        "500 g těstovin",
+        "Rajčatová omáčka",
+        "Hodně sýra",
+        "Čerstvá bazalka"
+      ],
+      "steps": [
+        "Voláme mamince, abychom se zeptali: „Kolik vody tam mám dát?“",
+        "Zběsile mícháme suroviny, dokud se nespojí.",
+        "Prohrabáváme skříňky a hledáme to nádobí, které jsme koupili v roce 2015.",
+        "Podáváme v hlubokých talířích a děláme, že víme, co děláme.",
+        "Nakoukneme do trouby a doufáme v to nejlepší.",
+        "Uvážeme si zástěru a zhluboka se nadechneme."
+      ],
+      "memory": {
+        "title": "Nedělní oběd",
+        "story": "Nečekali jsme, že se to napoprvé tak povede, ale stala se z toho naše specialita."
+      },
+      "prepTime": "20 minut",
+      "cookTime": "45 minut"
     }
   }
 }

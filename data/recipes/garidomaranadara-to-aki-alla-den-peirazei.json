@@ -169,6 +169,52 @@
       },
       "prepTime": "20 minuti",
       "cookTime": "45 minuti"
+    },
+    "ro": {
+      "title": "Creveți marinaradara (cea cu „aki”, dar nu contează)",
+      "description": "O rețetă pe care o va adora toată familia! Cu ingrediente simple și un gust minunat.",
+      "ingredients": [
+        "Legume proaspete",
+        "Ulei de măsline",
+        "Oțet balsamic",
+        "Sare"
+      ],
+      "steps": [
+        "Gustăm puțin pe furiș și ne ardem limba.",
+        "Aruncăm o privire în cuptor și sperăm la ce e mai bun.",
+        "Închidem ochii și adăugăm condimente la întâmplare.",
+        "Servim în farfurii adânci și ne prefacem că știm ce facem.",
+        "Mai punem puțin ulei, „pentru că așa e mai gustos”."
+      ],
+      "memory": {
+        "title": "Masa de duminică",
+        "story": "Nu ne așteptam să iasă atât de bine de prima dată, dar a devenit specialitatea noastră."
+      },
+      "prepTime": "20 de minute",
+      "cookTime": "45 de minute"
+    },
+    "cs": {
+      "title": "Krevetová marinaradara (ta s „aki“, ale to nevadí)",
+      "description": "Recept, který si zamiluje celá rodina! Jednoduché suroviny a báječná chuť.",
+      "ingredients": [
+        "Čerstvá zelenina",
+        "Olivový olej",
+        "Balzamikový ocet",
+        "Sůl"
+      ],
+      "steps": [
+        "Potajmu ochutnáme a spálíme si jazyk.",
+        "Nakoukneme do trouby a doufáme v to nejlepší.",
+        "Zavřeme oči a přidáme koření naslepo.",
+        "Podáváme v hlubokých talířích a děláme, že víme, co děláme.",
+        "Přidáme trochu oleje navíc, „protože tak je to chutnější“."
+      ],
+      "memory": {
+        "title": "Nedělní oběd",
+        "story": "Nečekali jsme, že se to napoprvé tak povede, ale stala se z toho naše specialita."
+      },
+      "prepTime": "20 minut",
+      "cookTime": "45 minut"
     }
   }
 }

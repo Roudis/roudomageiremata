@@ -1,4 +1,5 @@
 import { describe, expect, expectTypeOf, it } from "vitest";
+import { TRANSLATED_LOCALES } from "@/lib/i18n/config";
 import {
   RecipeDataError,
   isRecipeId,
@@ -333,7 +334,7 @@ function fullTranslation(): Record<string, unknown> {
 
 describe("parseRecipe: translations", () => {
   it("accepts a translation into every other language", () => {
-    const translations = Object.fromEntries(["en", "nl", "fr", "sv", "es", "it"].map((code) => [code, fullTranslation()]));
+    const translations = Object.fromEntries(TRANSLATED_LOCALES.map((code) => [code, fullTranslation()]));
 
     expect(issuesFor({ ...fullRecipe(), translations })).toEqual([]);
   });
@@ -355,8 +356,8 @@ describe("parseRecipe: translations", () => {
 
   it("rejects Greek and unknown language codes, naming the allowed ones", () => {
     expect(issuesFor({ ...fullRecipe(), translations: { el: fullTranslation(), de: fullTranslation() } })).toEqual([
-      { field: "translations.el", message: 'unknown language "el" in translations; use one of en, nl, fr, sv, es, it' },
-      { field: "translations.de", message: 'unknown language "de" in translations; use one of en, nl, fr, sv, es, it' },
+      { field: "translations.el", message: 'unknown language "el" in translations; use one of en, nl, fr, sv, es, it, ro, cs' },
+      { field: "translations.de", message: 'unknown language "de" in translations; use one of en, nl, fr, sv, es, it, ro, cs' },
     ]);
   });
 
@@ -452,7 +453,7 @@ describe("parseCategoryTranslations", () => {
 
   it("rejects unknown languages and blank names", () => {
     expect(categoryIssues({ "Της Γιαγιάς": { de: "Omas", en: " " } })).toEqual([
-      { field: "Της Γιαγιάς.de", message: 'unknown language "de" for "Της Γιαγιάς"; use one of en, nl, fr, sv, es, it' },
+      { field: "Της Γιαγιάς.de", message: 'unknown language "de" for "Της Γιαγιάς"; use one of en, nl, fr, sv, es, it, ro, cs' },
       { field: "Της Γιαγιάς.en", message: 'the en name for "Της Γιαγιάς" must be a non-empty string' },
     ]);
   });

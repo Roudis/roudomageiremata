@@ -6,17 +6,17 @@ import { SITE_NAME, type Locale } from "@/lib/i18n/config";
 import { getMessages } from "@/lib/i18n/messages";
 import "@/app/globals.css";
 
-// Both fonts include Greek glyphs; the latin subset covers the accents of the other
-// languages. next/font downloads them at build time and serves them from the static
+// Both fonts include Greek glyphs; latin covers the accents of the Western European
+// languages, and latin-ext the Romanian and Czech letters such as ș, ț, č, and ř. next/font downloads them at build time and serves them from the static
 // export, so visitors never contact Google.
 const sans = Commissioner({
-  subsets: ["greek", "latin"],
+  subsets: ["greek", "latin", "latin-ext"],
   variable: "--font-sans",
   display: "swap",
 });
 
 const serif = Literata({
-  subsets: ["greek", "latin"],
+  subsets: ["greek", "latin", "latin-ext"],
   style: ["normal", "italic"],
   axes: ["opsz"],
   variable: "--font-serif",

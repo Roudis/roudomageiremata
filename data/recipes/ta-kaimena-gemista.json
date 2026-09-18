@@ -168,6 +168,52 @@
       },
       "prepTime": "20 minuti",
       "cookTime": "45 minuti"
+    },
+    "ro": {
+      "title": "Bietele legume umplute",
+      "description": "O rețetă clasică ce trezește amintiri și umple casa de arome.",
+      "ingredients": [
+        "500 g de paste",
+        "Sos de roșii",
+        "Multă brânză",
+        "Busuioc proaspăt"
+      ],
+      "steps": [
+        "Aruncăm înăuntru tot ce a rămas de la cina de aseară.",
+        "O sunăm pe mama să o întrebăm „câtă apă pun?”.",
+        "Scotocim prin dulapuri după ustensila aceea pe care am cumpărat-o în 2015.",
+        "Gustăm puțin pe furiș și ne ardem limba.",
+        "Mai punem puțin ulei, „pentru că așa e mai gustos”."
+      ],
+      "memory": {
+        "title": "Masa de duminică",
+        "story": "Mereu prezent la fiecare sărbătoare, era farfuria care se golea prima."
+      },
+      "prepTime": "20 de minute",
+      "cookTime": "45 de minute"
+    },
+    "cs": {
+      "title": "Ubohá plněná zelenina",
+      "description": "Klasický recept, který probouzí vzpomínky a naplní dům vůněmi.",
+      "ingredients": [
+        "500 g těstovin",
+        "Rajčatová omáčka",
+        "Hodně sýra",
+        "Čerstvá bazalka"
+      ],
+      "steps": [
+        "Přihodíme všechno, co zbylo od včerejší večeře.",
+        "Voláme mamince, abychom se zeptali: „Kolik vody tam mám dát?“",
+        "Prohrabáváme skříňky a hledáme to nádobí, které jsme koupili v roce 2015.",
+        "Potajmu ochutnáme a spálíme si jazyk.",
+        "Přidáme trochu oleje navíc, „protože tak je to chutnější“."
+      ],
+      "memory": {
+        "title": "Nedělní oběd",
+        "story": "Nikdy nechybělo na žádné oslavě a jeho mísa se vždycky vyprázdnila jako první."
+      },
+      "prepTime": "20 minut",
+      "cookTime": "45 minut"
     }
   }
 }
