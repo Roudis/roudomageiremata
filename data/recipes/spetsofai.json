@@ -1,6 +1,6 @@
 {
   "id": "spetsofai",
-  "title": "Σπετσοφάι",
+  "title": "Σπετσοφάι Β!",
   "description": "Το παραδοσιακό φαγητό του Πηλίου: χωριάτικα λουκάνικα και πιπεριές σε πηχτή σάλτσα ντομάτας, με φέτα και δυόσμο από πάνω.",
   "ingredients": [
     "1 κ. χωριάτικα λουκάνικα",
@@ -37,7 +37,7 @@
   "updatedAt": "2026-10-03T12:00:00.000Z",
   "translations": {
     "en": {
-      "title": "Spetsofai",
+      "title": "Spetsofai B!",
       "description": "The traditional dish of Pelion: village sausages and peppers in a thick tomato sauce, topped with feta and mint.",
       "ingredients": [
         "1 kg village sausages",
@@ -66,7 +66,7 @@
       "cookTime": "25 minutes"
     },
     "nl": {
-      "title": "Spetsofai",
+      "title": "Spetsofai B!",
       "description": "Het traditionele gerecht uit Pilion: dorpsworst en paprika’s in een dikke tomatensaus, met feta en munt erover.",
       "ingredients": [
         "1 kg dorpsworst",
@@ -95,7 +95,7 @@
       "cookTime": "25 minuten"
     },
     "fr": {
-      "title": "Spetsofaï",
+      "title": "Spetsofaï B!",
       "description": "Le plat traditionnel du Pélion : des saucisses de campagne et des poivrons dans une sauce tomate épaisse, avec de la feta et de la menthe par-dessus.",
       "ingredients": [
         "1 kg de saucisses de campagne",
@@ -124,7 +124,7 @@
       "cookTime": "25 minutes"
     },
     "sv": {
-      "title": "Spetsofai",
+      "title": "Spetsofai B!",
       "description": "Den traditionella rätten från Pelion: lantkorv och paprika i en tjock tomatsås, med fetaost och mynta på toppen.",
       "ingredients": [
         "1 kg lantkorv",
@@ -153,7 +153,7 @@
       "cookTime": "25 minuter"
     },
     "es": {
-      "title": "Spetsofái",
+      "title": "Spetsofái B!",
       "description": "El plato tradicional del Pelión: salchichas de pueblo y pimientos en una salsa de tomate espesa, con feta y menta por encima.",
       "ingredients": [
         "1 kg de salchichas de pueblo",
@@ -182,7 +182,7 @@
       "cookTime": "25 minutos"
     },
     "it": {
-      "title": "Spetsofai",
+      "title": "Spetsofai B!",
       "description": "Il piatto tradizionale del Pelio: salsicce paesane e peperoni in un denso sugo di pomodoro, con feta e menta sopra.",
       "ingredients": [
         "1 kg di salsicce paesane",
@@ -211,7 +211,7 @@
       "cookTime": "25 minuti"
     },
     "ro": {
-      "title": "Spetsofai",
+      "title": "Spetsofai B!",
       "description": "Mâncarea tradițională din Pelion: cârnați de țară și ardei într-un sos gros de roșii, cu feta și mentă deasupra.",
       "ingredients": [
         "1 kg de cârnați de țară",
@@ -240,7 +240,7 @@
       "cookTime": "25 de minute"
     },
     "cs": {
-      "title": "Spetsofai",
+      "title": "Spetsofai B!",
       "description": "Tradiční jídlo z Pilionu: venkovské klobásy a papriky v husté rajčatové omáčce, navrchu s fetou a mátou.",
       "ingredients": [
         "1 kg venkovských klobás",
@@ -269,7 +269,7 @@
       "cookTime": "25 minut"
     },
     "uk": {
-      "title": "Спецофай",
+      "title": "Спецофай B!",
       "description": "Традиційна страва з Пеліону: сільські ковбаски та перець у густому томатному соусі, зверху фета й м’ята.",
       "ingredients": [
         "1 кг сільських ковбасок",
@@ -298,7 +298,7 @@
       "cookTime": "25 хвилин"
     },
     "ja": {
-      "title": "スペツォファイ",
+      "title": "スペツォファイ B!",
       "description": "ペリオン地方の伝統料理。田舎風ソーセージとパプリカを濃厚なトマトソースで煮込み、フェタとミントをのせます。",
       "ingredients": [
         "田舎風ソーセージ 1kg",
