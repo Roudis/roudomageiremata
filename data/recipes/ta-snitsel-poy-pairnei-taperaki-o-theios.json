@@ -3,18 +3,18 @@
   "title": "Τα σνιτσελ που παίρνει ταπεράκι ο Θείος",
   "description": "Λεπτές γεύσεις, όμορφο στήσιμο και πολλή αγάπη σε κάθε μπουκιά.",
   "ingredients": [
-    "Φρέσκα λαχανικά",
-    "Ελαιόλαδο",
-    "Ξύδι βαλσάμικο",
-    "Αλάτι"
+    "1 κιλό χοιρινό ή κοτόπουλο κομμένο σε λεπτές φέτες",
+    "2 αυγά χτυπημένα",
+    "Γάλα",
+    "Αλεύρι",
+    "Φρυγανιά"
   ],
   "steps": [
-    "Ρίχνουμε μέσα ό,τι περίσσεψε από το χθεσινό βραδινό.",
-    "Περιμένουμε πάνω από την κατσαρόλα με αγωνία.",
-    "Σερβίρουμε σε βαθιά πιάτα και κάνουμε πως ξέρουμε τι κάνουμε.",
-    "Παίρνουμε τηλέφωνο τη μαμά για να ρωτήσουμε «πόσο νερό βάζω;».",
-    "Χαμογελάμε πλατιά γιατί... έλα μου ντε, κάπως πέτυχε!",
-    "Δοκιμάζουμε λίγο στα κρυφά και καίμε τη γλώσσα μας."
+    "Σε ένα βαθύ πιάτο βάζουμε το γάλα, σε άλλο το αλεύρι, σε άλλο τα αυγά και σε άλλο τη φρυγανιά.",
+    "Βουτάμε ένα-ένα τα φιλέτα πρώτα στο γάλα, μετά στο αλεύρι, στο αυγό και στη φρυγανιά για να τα πανάρουμε.",
+    "Όταν είναι όλα έτοιμα, ή τα τηγανίζουμε σε μπόλικο λάδι ή, για πιο υγιεινά, τα ψήνουμε στο φούρνο.",
+    "Για το φούρνο, στρώνουμε στο ταψί μία λαδόκολλα, τοποθετούμε τα σνίτσελ με τη σειρά και ρίχνουμε λίγο λαδάκι από πάνω.",
+    "Ψήνουμε σε προθερμασμένο φούρνο στους 190°–200° μέχρι να ψηθούν και να ροδίσουν. Γίνονται γρήγορα και ζουμερά, καλή όρεξη!"
   ],
   "memory": {
     "title": "Γιορτινές μέρες",
@@ -23,31 +23,32 @@
   },
   "category": "Της Γιαγιάς που γεμίζουν κοιλίτσες και καρδιές",
   "tags": [
-    "pork"
+    "pork",
+    "chicken"
   ],
   "imageUrl": "/images/recipes/ta-snitsel-poy-pairnei-taperaki-o-theios.jpg",
   "prepTime": "20 λεπτά",
   "cookTime": "45 λεπτά",
   "servings": 4,
   "createdAt": "2026-08-10T16:52:28.199Z",
-  "updatedAt": "2026-09-18T13:15:18.053Z",
+  "updatedAt": "2026-10-03T21:42:34.000Z",
   "translations": {
     "en": {
       "title": "The schnitzels Uncle takes home in a tupperware",
       "description": "Delicate flavours, a beautiful presentation and lots of love in every bite.",
       "ingredients": [
-        "Fresh vegetables",
-        "Olive oil",
-        "Balsamic vinegar",
-        "Salt"
+        "1 kg pork or chicken, cut into thin slices",
+        "2 eggs, beaten",
+        "Milk",
+        "Flour",
+        "Breadcrumbs"
       ],
       "steps": [
-        "We throw in whatever was left over from last night’s dinner.",
-        "We hover over the pot, holding our breath.",
-        "We serve it in deep plates and pretend we know what we’re doing.",
-        "We ring Mum to ask “how much water do I add?”.",
-        "We grin from ear to ear because... go figure, somehow it worked!",
-        "We sneak a taste and burn our tongue."
+        "Put the milk in a deep plate, the flour in another, the eggs in another and the breadcrumbs in another.",
+        "Dip the fillets one by one first in the milk, then in the flour, the egg and the breadcrumbs to coat them.",
+        "When they are all ready, either fry them in plenty of oil or, for a healthier option, bake them in the oven.",
+        "For the oven, line a baking tray with baking paper, lay the schnitzels side by side and drizzle a little oil over them.",
+        "Bake in a preheated oven at 190–200 °C until cooked through and golden. They are quick and juicy. Enjoy!"
       ],
       "memory": {
         "title": "Festive days",
@@ -60,18 +61,18 @@
       "title": "De schnitzels die oom in een bakje mee naar huis neemt",
       "description": "Verfijnde smaken, een mooie presentatie en veel liefde in elke hap.",
       "ingredients": [
-        "Verse groenten",
-        "Olijfolie",
-        "Balsamicoazijn",
-        "Zout"
+        "1 kg varkens- of kippenvlees, in dunne plakken gesneden",
+        "2 eieren, losgeklopt",
+        "Melk",
+        "Bloem",
+        "Paneermeel"
       ],
       "steps": [
-        "We gooien erin wat er van het avondeten van gisteren over is.",
-        "We staan gespannen boven de pan te wachten.",
-        "We serveren het in diepe borden en doen alsof we weten wat we doen.",
-        "We bellen mama om te vragen “hoeveel water doe ik erbij?”.",
-        "We glimlachen van oor tot oor, want... zeg jij het maar, op de een of andere manier is het gelukt!",
-        "We proeven stiekem een beetje en branden onze tong."
+        "Doe de melk in een diep bord, de bloem in een ander, de eieren in een ander en het paneermeel in nog een ander.",
+        "Haal de filets een voor een eerst door de melk, dan door de bloem, het ei en het paneermeel om ze te paneren.",
+        "Als ze allemaal klaar zijn, bak je ze in ruim olie of, gezonder, in de oven.",
+        "Voor de oven: bekleed een bakplaat met bakpapier, leg de schnitzels er naast elkaar op en besprenkel ze met een beetje olie.",
+        "Bak ze in een voorverwarmde oven op 190–200 °C tot ze gaar en goudbruin zijn. Ze zijn snel klaar en lekker sappig. Eet smakelijk!"
       ],
       "memory": {
         "title": "Feestdagen",
@@ -84,18 +85,18 @@
       "title": "Les schnitzels que Tonton emporte dans un Tupperware",
       "description": "Des saveurs délicates, une belle présentation et beaucoup d’amour dans chaque bouchée.",
       "ingredients": [
-        "Légumes frais",
-        "Huile d’olive",
-        "Vinaigre balsamique",
-        "Sel"
+        "1 kg de porc ou de poulet coupé en fines tranches",
+        "2 œufs battus",
+        "Lait",
+        "Farine",
+        "Chapelure"
       ],
       "steps": [
-        "On y jette les restes du dîner d’hier soir.",
-        "On attend au-dessus de la casserole, rongés d’impatience.",
-        "On sert dans des assiettes creuses en faisant semblant de savoir ce qu’on fait.",
-        "On appelle maman pour lui demander « je mets combien d’eau ? ».",
-        "On sourit jusqu’aux oreilles parce que... va savoir, ça a marché !",
-        "On goûte en cachette et on se brûle la langue."
+        "Mettez le lait dans une assiette creuse, la farine dans une autre, les œufs dans une autre et la chapelure dans une autre.",
+        "Trempez les escalopes une à une d’abord dans le lait, puis dans la farine, l’œuf et la chapelure pour les paner.",
+        "Quand elles sont toutes prêtes, faites-les frire dans beaucoup d’huile ou, pour plus de légèreté, cuisez-les au four.",
+        "Pour le four, tapissez une plaque de papier sulfurisé, disposez les schnitzels côte à côte et arrosez-les d’un filet d’huile.",
+        "Enfournez dans un four préchauffé à 190–200 °C jusqu’à ce qu’elles soient cuites et dorées. C’est rapide et bien juteux. Bon appétit !"
       ],
       "memory": {
         "title": "Jours de fête",
@@ -108,18 +109,18 @@
       "title": "Schnitzlarna som farbror tar med sig hem i en matlåda",
       "description": "Fina smaker, vacker uppläggning och mycket kärlek i varje tugga.",
       "ingredients": [
-        "Färska grönsaker",
-        "Olivolja",
-        "Balsamvinäger",
-        "Salt"
+        "1 kg fläsk eller kyckling, skuren i tunna skivor",
+        "2 ägg, uppvispade",
+        "Mjölk",
+        "Vetemjöl",
+        "Ströbröd"
       ],
       "steps": [
-        "Vi slänger i det som blev över från gårdagens middag.",
-        "Vi står och väntar över kastrullen med spänning.",
-        "Vi serverar på djupa tallrikar och låtsas att vi vet vad vi håller på med.",
-        "Vi ringer mamma och frågar ”hur mycket vatten ska jag ha i?”.",
-        "Vi ler från öra till öra för att... säg det du, på något sätt blev det lyckat!",
-        "Vi smakar lite i smyg och bränner tungan."
+        "Häll mjölken i en djup tallrik, mjölet i en annan, äggen i en annan och ströbrödet i en annan.",
+        "Doppa filéerna en i taget först i mjölken, sedan i mjölet, ägget och ströbrödet för att panera dem.",
+        "När alla är klara steker du dem i rikligt med olja eller, för ett nyttigare alternativ, tillagar dem i ugnen.",
+        "För ugnen: klä en plåt med bakplåtspapper, lägg schnitzlarna bredvid varandra och ringla lite olja över.",
+        "Tillaga i förvärmd ugn på 190–200 °C tills de är genomstekta och gyllene. De går snabbt och blir saftiga. Smaklig måltid!"
       ],
       "memory": {
         "title": "Helgdagar",
@@ -132,18 +133,18 @@
       "title": "Los escalopes que el tío se lleva en un táper",
       "description": "Sabores delicados, una presentación bonita y mucho amor en cada bocado.",
       "ingredients": [
-        "Verduras frescas",
-        "Aceite de oliva",
-        "Vinagre balsámico",
-        "Sal"
+        "1 kg de cerdo o pollo cortado en filetes finos",
+        "2 huevos batidos",
+        "Leche",
+        "Harina",
+        "Pan rallado"
       ],
       "steps": [
-        "Echamos lo que sobró de la cena de anoche.",
-        "Esperamos junto a la olla con el corazón en un puño.",
-        "Servimos en platos hondos y hacemos como que sabemos lo que hacemos.",
-        "Llamamos a mamá para preguntarle «¿cuánta agua le echo?».",
-        "Sonreímos de oreja a oreja porque... quién sabe, ¡de algún modo salió bien!",
-        "Probamos un poco a escondidas y nos quemamos la lengua."
+        "Ponemos la leche en un plato hondo, la harina en otro, los huevos en otro y el pan rallado en otro.",
+        "Pasamos los filetes uno a uno primero por la leche, luego por la harina, el huevo y el pan rallado para empanarlos.",
+        "Cuando estén todos listos, los freímos en abundante aceite o, para que sean más sanos, los horneamos.",
+        "Para el horno, forramos la bandeja con papel de horno, colocamos los escalopes en fila y les echamos un chorrito de aceite por encima.",
+        "Horneamos en el horno precalentado a 190–200 °C hasta que estén hechos y dorados. Salen rápidos y jugosos. ¡Buen provecho!"
       ],
       "memory": {
         "title": "Días de fiesta",
@@ -156,18 +157,18 @@
       "title": "Le cotolette che lo zio si porta a casa nel tupperware",
       "description": "Sapori delicati, una bella presentazione e tanto amore in ogni boccone.",
       "ingredients": [
-        "Verdure fresche",
-        "Olio d’oliva",
-        "Aceto balsamico",
-        "Sale"
+        "1 kg di maiale o pollo tagliato a fette sottili",
+        "2 uova sbattute",
+        "Latte",
+        "Farina",
+        "Pangrattato"
       ],
       "steps": [
-        "Ci buttiamo dentro gli avanzi della cena di ieri sera.",
-        "Aspettiamo sopra la pentola col fiato sospeso.",
-        "Serviamo nei piatti fondi e facciamo finta di sapere quello che facciamo.",
-        "Telefoniamo alla mamma per chiederle «quanta acqua ci metto?».",
-        "Sorridiamo da un orecchio all’altro perché... chissà, in qualche modo è venuto bene!",
-        "Assaggiamo di nascosto e ci scottiamo la lingua."
+        "Mettiamo il latte in un piatto fondo, la farina in un altro, le uova in un altro e il pangrattato in un altro.",
+        "Passiamo le fettine una alla volta prima nel latte, poi nella farina, nell’uovo e nel pangrattato per impanarle.",
+        "Quando sono tutte pronte, le friggiamo in abbondante olio oppure, per una versione più sana, le cuociamo in forno.",
+        "Per il forno, foderiamo una teglia con carta forno, disponiamo le cotolette in fila e versiamo un filo d’olio sopra.",
+        "Cuociamo in forno preriscaldato a 190–200 °C finché sono cotte e dorate. Si fanno in fretta e restano succose. Buon appetito!"
       ],
       "memory": {
         "title": "Giorni di festa",
@@ -180,18 +181,18 @@
       "title": "Șnițelele pe care unchiul le ia acasă la caserolă",
       "description": "Arome delicate, o prezentare frumoasă și multă dragoste în fiecare îmbucătură.",
       "ingredients": [
-        "Legume proaspete",
-        "Ulei de măsline",
-        "Oțet balsamic",
-        "Sare"
+        "1 kg carne de porc sau de pui, tăiată în felii subțiri",
+        "2 ouă bătute",
+        "Lapte",
+        "Făină",
+        "Pesmet"
       ],
       "steps": [
-        "Aruncăm înăuntru tot ce a rămas de la cina de aseară.",
-        "Stăm deasupra oalei cu sufletul la gură.",
-        "Servim în farfurii adânci și ne prefacem că știm ce facem.",
-        "O sunăm pe mama să o întrebăm „câtă apă pun?”.",
-        "Zâmbim larg pentru că... ce să vezi, cumva a ieșit!",
-        "Gustăm puțin pe furiș și ne ardem limba."
+        "Punem laptele într-o farfurie adâncă, făina în alta, ouăle în alta și pesmetul în alta.",
+        "Trecem feliile una câte una întâi prin lapte, apoi prin făină, ou și pesmet, ca să le pănăm.",
+        "Când sunt toate gata, fie le prăjim în ulei din belșug, fie, mai sănătos, le coacem la cuptor.",
+        "Pentru cuptor, tapetăm tava cu hârtie de copt, așezăm șnițelele la rând și stropim cu puțin ulei deasupra.",
+        "Le coacem în cuptorul preîncălzit la 190–200 °C până se fac și se rumenesc. Se fac repede și ies suculente. Poftă bună!"
       ],
       "memory": {
         "title": "Zile de sărbătoare",
@@ -204,18 +205,18 @@
       "title": "Řízky, které si strejda bere domů v krabičce",
       "description": "Jemné chutě, krásné servírování a spousta lásky v každém soustu.",
       "ingredients": [
-        "Čerstvá zelenina",
-        "Olivový olej",
-        "Balzamikový ocet",
-        "Sůl"
+        "1 kg vepřového nebo kuřecího masa nakrájeného na tenké plátky",
+        "2 rozšlehaná vejce",
+        "Mléko",
+        "Mouka",
+        "Strouhanka"
       ],
       "steps": [
-        "Přihodíme všechno, co zbylo od včerejší večeře.",
-        "Napjatě stojíme nad hrncem.",
-        "Podáváme v hlubokých talířích a děláme, že víme, co děláme.",
-        "Voláme mamince, abychom se zeptali: „Kolik vody tam mám dát?“",
-        "Usmíváme se od ucha k uchu, protože... kdo by to řekl, nějak se to povedlo!",
-        "Potajmu ochutnáme a spálíme si jazyk."
+        "Do hlubokého talíře nalijeme mléko, do dalšího dáme mouku, do dalšího vejce a do dalšího strouhanku.",
+        "Plátky postupně namáčíme nejdřív v mléce, pak v mouce, vejci a strouhance, abychom je obalili.",
+        "Když jsou všechny hotové, buď je usmažíme ve větším množství oleje, nebo je pro zdravější variantu upečeme v troubě.",
+        "Na pečení vyložíme plech pečicím papírem, řízky na něj položíme vedle sebe a pokapeme je trochou oleje.",
+        "Pečeme v troubě předehřáté na 190–200 °C, dokud nejsou propečené a dozlatova. Jsou rychlé a šťavnaté. Dobrou chuť!"
       ],
       "memory": {
         "title": "Sváteční dny",
@@ -228,18 +229,18 @@
       "title": "Шніцелі, які дядько забирає додому в контейнері",
       "description": "Витончені смаки, гарна подача й багато любові в кожному шматочку.",
       "ingredients": [
-        "Свіжі овочі",
-        "Оливкова олія",
-        "Бальзамічний оцет",
-        "Сіль"
+        "1 кг свинини або курятини, нарізаної тонкими скибочками",
+        "2 збиті яйця",
+        "Молоко",
+        "Борошно",
+        "Панірувальні сухарі"
       ],
       "steps": [
-        "Кидаємо туди все, що лишилося з учорашньої вечері.",
-        "Схвильовано чекаємо над каструлею.",
-        "Подаємо в глибоких тарілках і вдаємо, що знаємо, що робимо.",
-        "Телефонуємо мамі, щоб спитати: «Скільки води додавати?»",
-        "Усміхаємося на всі тридцять два, бо... хто б міг подумати, якось вийшло!",
-        "Тишком куштуємо й обпікаємо язик."
+        "У глибоку тарілку наливаємо молоко, в іншу насипаємо борошно, в іншу — яйця, а ще в іншу — сухарі.",
+        "Вмочуємо філе по одному спершу в молоко, потім у борошно, яйце й сухарі, щоб запанірувати.",
+        "Коли всі готові, або смажимо їх у великій кількості олії, або, щоб було корисніше, запікаємо в духовці.",
+        "Для духовки застеляємо деко пергаментом, викладаємо шніцелі рядами й поливаємо зверху трохи олією.",
+        "Запікаємо в розігрітій духовці при 190–200 °C, доки не спечуться й не підрум’яняться. Готуються швидко й виходять соковитими. Смачного!"
       ],
       "memory": {
         "title": "Святкові дні",
@@ -252,18 +253,18 @@
       "title": "おじさんがタッパーで持ち帰るシュニッツェル",
       "description": "繊細な味わい、美しい盛りつけ、そしてひと口ごとにたっぷりの愛情。",
       "ingredients": [
-        "新鮮な野菜",
-        "オリーブオイル",
-        "バルサミコ酢",
-        "塩"
+        "薄切りにした豚肉または鶏肉 1kg",
+        "溶き卵 2個分",
+        "牛乳",
+        "小麦粉",
+        "パン粉"
       ],
       "steps": [
-        "昨夜の夕食の残りものを全部入れます。",
-        "ハラハラしながら鍋の前で待ちます。",
-        "深皿に盛りつけて、わかっているふりをします。",
-        "ママに電話して「お水はどれくらい入れるの？」と聞きます。",
-        "満面の笑みを浮かべます。だって…なぜか、うまくいったのですから！",
-        "こっそり味見をして、舌をやけどします。"
+        "深皿に牛乳を入れ、別の皿に小麦粉、別の皿に卵、もう一つの皿にパン粉を入れます。",
+        "肉を一枚ずつ、まず牛乳、次に小麦粉、卵、パン粉の順にくぐらせて衣をつけます。",
+        "すべて準備ができたら、たっぷりの油で揚げるか、よりヘルシーにオーブンで焼きます。",
+        "オーブンの場合は、天板にクッキングシートを敷き、シュニッツェルを並べて、上から油を少し回しかけます。",
+        "190〜200℃に予熱したオーブンで、火が通ってこんがり色づくまで焼きます。手早くできて、ジューシーに仕上がります。召し上がれ！"
       ],
       "memory": {
         "title": "お祝いの日",
