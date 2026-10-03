@@ -1,0 +1,453 @@
+{
+  "id": "o-mousakas-tis-giagias",
+  "title": "Ο Μουσακάς της γιαγιάς",
+  "description": "Ο κλασικός μουσακάς σε στρώσεις: πατάτες, ζουμερός κιμάς, μελιτζάνες και αφράτη μπεσαμέλ.",
+  "ingredients": [
+    "1,5 κιλό μελιτζάνες κομμένες σε φέτες πάχους ενός δακτύλου",
+    "1,5 κιλό πατάτες κομμένες σε ροδέλες πάχους ενός δακτύλου",
+    "Αλάτι, πιπέρι, τριμμένος ξερός βασιλικός",
+    "2 ντομάτες τριμμένες στον τρίφτη",
+    "1 κουταλιά σούπας πελτές ντομάτας",
+    "1 μεγάλο κρεμμύδι τριμμένο στον τρίφτη",
+    "1/4 κουταλάκι του γλυκού κανέλα, λίγο κύμινο και λίγη ξερή ρίγανη",
+    "Λάδι",
+    "1 κιλό κιμάς μοσχαρίσιος με λίγο χοιρινό",
+    "Τριμμένο τυρί (λίγο για τον κιμά και λίγο για από πάνω)",
+    "2 αυγά (για τον κιμά)",
+    "Για την μπεσαμέλ: 1 κιλό γάλα",
+    "5-6 κουταλιές σούπας αλεύρι για όλες τις χρήσεις",
+    "Λίγο αλάτι",
+    "2 κουταλιές σούπας βούτυρο",
+    "2 αυγά",
+    "Μοσχοκάρυδο τριμμένο (προαιρετικά)"
+  ],
+  "steps": [
+    "Ψήνουμε στον φούρνο τις πατάτες με λίγο αλάτι και λίγο λάδι, και τις μελιτζάνες επίσης με λίγο λάδι και αλάτι.",
+    "Σε ένα βαθύ τηγάνι ή κατσαρόλα ροδίζουμε πρώτα τον κιμά. Προσθέτουμε το κρεμμύδι, μετά την ντομάτα, τον πελτέ, το αλάτι, το πιπέρι, τα μυρωδικά και τα μπαχαρικά, και αφήνουμε τον κιμά να βράσει περίπου μισή ώρα.",
+    "Για την μπεσαμέλ: σε ένα κατσαρολάκι βάζουμε το γάλα, το αλεύρι και το αλάτι και ανακατεύουμε καλά να διαλυθεί το αλεύρι. Βάζουμε στη φωτιά και ανακατεύουμε.",
+    "Μόλις δέσει η κρέμα, ρίχνουμε το βούτυρο και τα αυγά ανακατεύοντας γρήγορα για να μην κόψουν τα αυγά. Αν θέλουμε, προσθέτουμε και μοσχοκάρυδο.",
+    "Στο ταψί στρώνουμε πρώτα τις πατάτες στη σειρά, να καλύψουν όλο τον πάτο.",
+    "Ανακατεύουμε τον κιμά με λίγο τριμμένο τυρί και τα δύο αυγά και τον ρίχνουμε πάνω από τις πατάτες.",
+    "Από πάνω αραδιάζουμε με τη σειρά τις μελιτζάνες.",
+    "Τελευταία στρώση η μπεσαμέλ. Τρίβουμε και λίγο τυρί από πάνω.",
+    "Ψήνουμε σε προθερμασμένο φούρνο στους 200° μέχρι να ψηθεί η μπεσαμέλ και να ροδίσει."
+  ],
+  "memory": {
+    "title": "Κυριακάτικο τραπέζι",
+    "story": "Το αγαπημένο φαγητό της Κυριακής που μαζεύει όλη την οικογένεια γύρω από το τραπέζι! Η μυρωδιά της μπεσαμέλ μένει στο σπίτι μέχρι το απόγευμα.",
+    "date": "2023-11"
+  },
+  "category": "Της Γιαγιάς που γεμίζουν κοιλίτσες και καρδιές",
+  "tags": [
+    "beef",
+    "pork"
+  ],
+  "imageUrl": "/images/recipes/o-mousakas-tis-giagias.jpg",
+  "prepTime": "1 ώρα",
+  "cookTime": "1 ώρα",
+  "servings": 8,
+  "createdAt": "2026-08-10T16:52:28.199Z",
+  "updatedAt": "2026-10-04T12:00:00.000Z",
+  "translations": {
+    "en": {
+      "title": "Grandma’s moussaka",
+      "description": "Classic moussaka in layers: potatoes, a rich meat sauce, aubergines and fluffy béchamel.",
+      "ingredients": [
+        "1.5 kg aubergines, cut into slices a finger thick",
+        "1.5 kg potatoes, cut into rounds a finger thick",
+        "Salt, pepper, crumbled dried basil",
+        "2 tomatoes, grated",
+        "1 tbsp tomato paste",
+        "1 large onion, grated",
+        "1/4 tsp cinnamon, a little cumin and a little dried oregano",
+        "Oil",
+        "1 kg minced beef with a little pork",
+        "Grated cheese (a little for the meat sauce and a little for the top)",
+        "2 eggs (for the meat sauce)",
+        "For the béchamel: 1 litre milk",
+        "5–6 tbsp all-purpose flour",
+        "A little salt",
+        "2 tbsp butter",
+        "2 eggs",
+        "Grated nutmeg (optional)"
+      ],
+      "steps": [
+        "Bake the potatoes in the oven with a little salt and a little oil, and the aubergines too, with a little oil and salt.",
+        "In a deep frying pan or a saucepan, first brown the mince. Add the onion, then the tomato, the tomato paste, salt, pepper, the herbs and the spices, and let the meat sauce simmer for about half an hour.",
+        "For the béchamel: put the milk, flour and salt in a small saucepan and stir well until the flour dissolves. Put it on the heat and keep stirring.",
+        "As soon as the cream thickens, add the butter and the eggs, stirring quickly so the eggs don’t curdle. Add nutmeg if you like.",
+        "First lay the potatoes in rows in the baking tin so they cover the whole bottom.",
+        "Mix the meat sauce with a little grated cheese and the two eggs, and spread it over the potatoes.",
+        "Arrange the aubergines in rows on top.",
+        "The last layer is the béchamel. Grate a little more cheese over the top.",
+        "Bake in an oven preheated to 200° until the béchamel is cooked and golden."
+      ],
+      "memory": {
+        "title": "Sunday lunch",
+        "story": "Our favourite Sunday dish, the one that gathers the whole family around the table! The smell of béchamel lingers in the house until the afternoon."
+      },
+      "prepTime": "1 hour",
+      "cookTime": "1 hour"
+    },
+    "nl": {
+      "title": "DE moussaka van oma",
+      "description": "Klassieke moussaka in laagjes: aardappelen, een rijke gehaktsaus, aubergines en luchtige bechamel.",
+      "ingredients": [
+        "1,5 kg aubergines, in plakken van een vinger dik",
+        "1,5 kg aardappelen, in schijven van een vinger dik",
+        "Zout, peper, verkruimelde gedroogde basilicum",
+        "2 tomaten, geraspt",
+        "1 el tomatenpuree",
+        "1 grote ui, geraspt",
+        "1/4 tl kaneel, een beetje komijn en een beetje gedroogde oregano",
+        "Olie",
+        "1 kg rundergehakt met een beetje varkensgehakt",
+        "Geraspte kaas (een beetje voor de gehaktsaus en een beetje voor bovenop)",
+        "2 eieren (voor de gehaktsaus)",
+        "Voor de bechamel: 1 liter melk",
+        "5-6 el bloem",
+        "Een beetje zout",
+        "2 el boter",
+        "2 eieren",
+        "Geraspte nootmuskaat (naar keuze)"
+      ],
+      "steps": [
+        "Bak de aardappelen in de oven met een beetje zout en een beetje olie, en de aubergines ook met een beetje olie en zout.",
+        "Bak in een diepe koekenpan of een pan eerst het gehakt bruin. Voeg de ui toe, daarna de tomaat, de tomatenpuree, zout, peper, de kruiden en de specerijen, en laat de gehaktsaus ongeveer een half uur sudderen.",
+        "Voor de bechamel: doe de melk, de bloem en het zout in een steelpannetje en roer goed tot de bloem is opgelost. Zet het op het vuur en blijf roeren.",
+        "Zodra de saus dik wordt, voeg je de boter en de eieren toe en roer je snel, zodat de eieren niet schiften. Voeg naar wens nootmuskaat toe.",
+        "Leg eerst de aardappelen in rijen in de ovenschaal, zodat ze de hele bodem bedekken.",
+        "Meng de gehaktsaus met een beetje geraspte kaas en de twee eieren en verdeel hem over de aardappelen.",
+        "Leg daarop de aubergines in rijen.",
+        "De laatste laag is de bechamel. Rasp er nog wat kaas over.",
+        "Bak in een voorverwarmde oven op 200° tot de bechamel gaar en goudbruin is."
+      ],
+      "memory": {
+        "title": "Zondagse maaltijd",
+        "story": "Ons favoriete zondagse gerecht, dat de hele familie rond de tafel verzamelt! De geur van bechamel blijft tot in de middag in huis hangen."
+      },
+      "prepTime": "1 uur",
+      "cookTime": "1 uur"
+    },
+    "fr": {
+      "title": "LA moussaka de Mamie",
+      "description": "La moussaka classique en couches : pommes de terre, sauce à la viande savoureuse, aubergines et béchamel moelleuse.",
+      "ingredients": [
+        "1,5 kg d’aubergines coupées en tranches d’un doigt d’épaisseur",
+        "1,5 kg de pommes de terre coupées en rondelles d’un doigt d’épaisseur",
+        "Sel, poivre, basilic séché émietté",
+        "2 tomates râpées",
+        "1 c. à soupe de concentré de tomate",
+        "1 gros oignon râpé",
+        "1/4 c. à café de cannelle, un peu de cumin et un peu d’origan séché",
+        "Huile",
+        "1 kg de bœuf haché avec un peu de porc",
+        "Fromage râpé (un peu pour la viande et un peu pour le dessus)",
+        "2 œufs (pour la viande)",
+        "Pour la béchamel : 1 litre de lait",
+        "5-6 c. à soupe de farine tout usage",
+        "Un peu de sel",
+        "2 c. à soupe de beurre",
+        "2 œufs",
+        "Noix de muscade râpée (facultatif)"
+      ],
+      "steps": [
+        "Faites cuire au four les pommes de terre avec un peu de sel et un peu d’huile, et les aubergines de même avec un peu d’huile et de sel.",
+        "Dans une poêle profonde ou une casserole, faites d’abord dorer la viande hachée. Ajoutez l’oignon, puis la tomate, le concentré, le sel, le poivre, les herbes et les épices, et laissez mijoter la viande environ une demi-heure.",
+        "Pour la béchamel : dans une petite casserole, mettez le lait, la farine et le sel et mélangez bien pour dissoudre la farine. Mettez sur le feu et remuez.",
+        "Dès que la crème épaissit, ajoutez le beurre et les œufs en remuant vite pour que les œufs ne tranchent pas. Ajoutez de la muscade si vous le souhaitez.",
+        "Dans le plat, disposez d’abord les pommes de terre en rangées pour couvrir tout le fond.",
+        "Mélangez la viande avec un peu de fromage râpé et les deux œufs, puis étalez-la sur les pommes de terre.",
+        "Par-dessus, alignez les aubergines en rangées.",
+        "La dernière couche, c’est la béchamel. Râpez encore un peu de fromage dessus.",
+        "Enfournez dans un four préchauffé à 200° jusqu’à ce que la béchamel soit cuite et dorée."
+      ],
+      "memory": {
+        "title": "Le repas du dimanche",
+        "story": "Le plat préféré du dimanche, celui qui réunit toute la famille autour de la table ! L’odeur de la béchamel reste dans la maison jusqu’à l’après-midi."
+      },
+      "prepTime": "1 heure",
+      "cookTime": "1 heure"
+    },
+    "sv": {
+      "title": "Mormors moussaka",
+      "description": "Klassisk moussaka i lager: potatis, en mustig köttfärssås, aubergine och luftig béchamel.",
+      "ingredients": [
+        "1,5 kg aubergine, skuren i en fingertjocka skivor",
+        "1,5 kg potatis, skuren i en fingertjocka skivor",
+        "Salt, peppar, smulad torkad basilika",
+        "2 tomater, rivna",
+        "1 msk tomatpuré",
+        "1 stor lök, riven",
+        "1/4 tsk kanel, lite spiskummin och lite torkad oregano",
+        "Olja",
+        "1 kg nötfärs med lite fläskfärs",
+        "Riven ost (lite till köttfärssåsen och lite till toppen)",
+        "2 ägg (till köttfärssåsen)",
+        "Till béchamelsåsen: 1 liter mjölk",
+        "5–6 msk vetemjöl",
+        "Lite salt",
+        "2 msk smör",
+        "2 ägg",
+        "Riven muskotnöt (valfritt)"
+      ],
+      "steps": [
+        "Baka potatisen i ugnen med lite salt och lite olja, och auberginen likaså med lite olja och salt.",
+        "Bryn först köttfärsen i en djup stekpanna eller kastrull. Tillsätt löken, sedan tomaten, tomatpurén, salt, peppar, örterna och kryddorna, och låt köttfärssåsen sjuda i ungefär en halvtimme.",
+        "Till béchamelsåsen: häll mjölken, mjölet och saltet i en liten kastrull och rör om ordentligt tills mjölet har löst sig. Ställ på värmen och rör.",
+        "Så snart såsen tjocknar tillsätter du smöret och äggen och rör snabbt så att äggen inte skär sig. Tillsätt muskot om du vill.",
+        "Lägg först potatisen i rader i ugnsformen så att den täcker hela botten.",
+        "Blanda köttfärssåsen med lite riven ost och de två äggen och bred ut den över potatisen.",
+        "Lägg auberginen i rader ovanpå.",
+        "Det sista lagret är béchamelsåsen. Riv lite ost över.",
+        "Grädda i förvärmd ugn på 200° tills béchamelsåsen har stelnat och fått fin färg."
+      ],
+      "memory": {
+        "title": "Söndagsmiddag",
+        "story": "Den älskade söndagsrätten som samlar hela familjen runt bordet! Doften av béchamelsås dröjer sig kvar i huset ända till eftermiddagen."
+      },
+      "prepTime": "1 timme",
+      "cookTime": "1 timme"
+    },
+    "es": {
+      "title": "LA musaka de la abuela",
+      "description": "La musaka clásica por capas: patatas, una sabrosa salsa de carne, berenjenas y una bechamel esponjosa.",
+      "ingredients": [
+        "1,5 kg de berenjenas cortadas en rodajas de un dedo de grosor",
+        "1,5 kg de patatas cortadas en rodajas de un dedo de grosor",
+        "Sal, pimienta, albahaca seca desmenuzada",
+        "2 tomates rallados",
+        "1 cucharada de concentrado de tomate",
+        "1 cebolla grande rallada",
+        "1/4 de cucharadita de canela, un poco de comino y un poco de orégano seco",
+        "Aceite",
+        "1 kg de carne picada de ternera con un poco de cerdo",
+        "Queso rallado (un poco para la carne y un poco para encima)",
+        "2 huevos (para la carne)",
+        "Para la bechamel: 1 litro de leche",
+        "5-6 cucharadas de harina de trigo",
+        "Un poco de sal",
+        "2 cucharadas de mantequilla",
+        "2 huevos",
+        "Nuez moscada rallada (opcional)"
+      ],
+      "steps": [
+        "Asa en el horno las patatas con un poco de sal y un poco de aceite, y las berenjenas también con un poco de aceite y sal.",
+        "En una sartén honda o una cazuela, dora primero la carne picada. Añade la cebolla, luego el tomate, el concentrado, la sal, la pimienta, las hierbas y las especias, y deja que la carne hierva a fuego lento una media hora.",
+        "Para la bechamel: pon la leche, la harina y la sal en un cazo y remueve bien para que se disuelva la harina. Ponlo al fuego y remueve.",
+        "En cuanto espese la crema, añade la mantequilla y los huevos removiendo rápido para que los huevos no se corten. Si quieres, añade nuez moscada.",
+        "En la bandeja, coloca primero las patatas en filas para cubrir todo el fondo.",
+        "Mezcla la carne con un poco de queso rallado y los dos huevos, y extiéndela sobre las patatas.",
+        "Encima, coloca las berenjenas en filas.",
+        "La última capa es la bechamel. Ralla un poco más de queso por encima.",
+        "Hornea en el horno precalentado a 200° hasta que la bechamel esté hecha y dorada."
+      ],
+      "memory": {
+        "title": "La comida del domingo",
+        "story": "¡El plato favorito del domingo, el que reúne a toda la familia alrededor de la mesa! El olor de la bechamel se queda en casa hasta la tarde."
+      },
+      "prepTime": "1 hora",
+      "cookTime": "1 hora"
+    },
+    "it": {
+      "title": "LA moussaka della nonna",
+      "description": "La classica moussaka a strati: patate, un ragù saporito, melanzane e una besciamella soffice.",
+      "ingredients": [
+        "1,5 kg di melanzane tagliate a fette spesse un dito",
+        "1,5 kg di patate tagliate a rondelle spesse un dito",
+        "Sale, pepe, basilico secco sbriciolato",
+        "2 pomodori grattugiati",
+        "1 cucchiaio di concentrato di pomodoro",
+        "1 cipolla grande grattugiata",
+        "1/4 di cucchiaino di cannella, un po’ di cumino e un po’ di origano secco",
+        "Olio",
+        "1 kg di carne macinata di manzo con un po’ di maiale",
+        "Formaggio grattugiato (un po’ per il ragù e un po’ per sopra)",
+        "2 uova (per il ragù)",
+        "Per la besciamella: 1 litro di latte",
+        "5-6 cucchiai di farina 00",
+        "Un po’ di sale",
+        "2 cucchiai di burro",
+        "2 uova",
+        "Noce moscata grattugiata (facoltativa)"
+      ],
+      "steps": [
+        "Cuocete in forno le patate con un po’ di sale e un po’ d’olio, e anche le melanzane con un po’ d’olio e sale.",
+        "In una padella profonda o in una pentola fate prima rosolare la carne macinata. Aggiungete la cipolla, poi il pomodoro, il concentrato, il sale, il pepe, le erbe e le spezie, e lasciate cuocere il ragù per circa mezz’ora.",
+        "Per la besciamella: in un pentolino mettete il latte, la farina e il sale e mescolate bene finché la farina non si scioglie. Mettete sul fuoco e mescolate.",
+        "Appena la crema si addensa, aggiungete il burro e le uova mescolando velocemente perché le uova non si rapprendano. Se volete, aggiungete la noce moscata.",
+        "Nella teglia disponete prima le patate in file, in modo che coprano tutto il fondo.",
+        "Mescolate il ragù con un po’ di formaggio grattugiato e le due uova e stendetelo sopra le patate.",
+        "Sopra disponete in fila le melanzane.",
+        "L’ultimo strato è la besciamella. Grattugiate ancora un po’ di formaggio sopra.",
+        "Cuocete in forno preriscaldato a 200° finché la besciamella non è cotta e dorata."
+      ],
+      "memory": {
+        "title": "Il pranzo della domenica",
+        "story": "Il piatto preferito della domenica, quello che riunisce tutta la famiglia intorno al tavolo! Il profumo della besciamella resta in casa fino al pomeriggio."
+      },
+      "prepTime": "1 ora",
+      "cookTime": "1 ora"
+    },
+    "ro": {
+      "title": "Musacaua bunicii",
+      "description": "Musacaua clasică în straturi: cartofi, un sos de carne gustos, vinete și un besamel pufos.",
+      "ingredients": [
+        "1,5 kg vinete tăiate în felii groase de un deget",
+        "1,5 kg cartofi tăiați în rondele groase de un deget",
+        "Sare, piper, busuioc uscat mărunțit",
+        "2 roșii rase pe răzătoare",
+        "1 lingură pastă de roșii",
+        "1 ceapă mare rasă pe răzătoare",
+        "1/4 linguriță scorțișoară, puțin chimion și puțin oregano uscat",
+        "Ulei",
+        "1 kg carne tocată de vită cu puțin porc",
+        "Brânză rasă (puțină pentru carne și puțină pentru deasupra)",
+        "2 ouă (pentru carne)",
+        "Pentru besamel: 1 litru de lapte",
+        "5-6 linguri de făină albă",
+        "Puțină sare",
+        "2 linguri de unt",
+        "2 ouă",
+        "Nucșoară rasă (opțional)"
+      ],
+      "steps": [
+        "Coaceți cartofii în cuptor cu puțină sare și puțin ulei, iar vinetele la fel, cu puțin ulei și sare.",
+        "Într-o tigaie adâncă sau într-o cratiță, rumeniți mai întâi carnea tocată. Adăugați ceapa, apoi roșia, pasta de roșii, sarea, piperul, ierburile și condimentele și lăsați carnea să fiarbă cam o jumătate de oră.",
+        "Pentru besamel: într-o crătiță puneți laptele, făina și sarea și amestecați bine să se dizolve făina. Puneți pe foc și amestecați.",
+        "Imediat ce crema se îngroașă, adăugați untul și ouăle, amestecând repede ca să nu se taie ouăle. Dacă doriți, adăugați nucșoară.",
+        "În tavă așezați mai întâi cartofii pe rânduri, ca să acopere tot fundul.",
+        "Amestecați carnea cu puțină brânză rasă și cele două ouă și întindeți-o peste cartofi.",
+        "Deasupra așezați vinetele pe rânduri.",
+        "Ultimul strat este besamelul. Mai radeți puțină brânză deasupra.",
+        "Coaceți în cuptorul preîncălzit la 200° până când besamelul se face și se rumenește."
+      ],
+      "memory": {
+        "title": "Masa de duminică",
+        "story": "Mâncarea preferată de duminică, cea care adună toată familia în jurul mesei! Mirosul de besamel rămâne în casă până după-amiază."
+      },
+      "prepTime": "1 oră",
+      "cookTime": "1 oră"
+    },
+    "cs": {
+      "title": "Babiččina musaka",
+      "description": "Klasická musaka ve vrstvách: brambory, chutná masová omáčka, lilek a nadýchaný bešamel.",
+      "ingredients": [
+        "1,5 kg lilků nakrájených na plátky silné jako prst",
+        "1,5 kg brambor nakrájených na kolečka silná jako prst",
+        "Sůl, pepř, rozdrobená sušená bazalka",
+        "2 rajčata nastrouhaná na struhadle",
+        "1 lžíce rajčatového protlaku",
+        "1 velká cibule nastrouhaná na struhadle",
+        "1/4 lžičky skořice, trochu kmínu římského a trochu sušeného oregana",
+        "Olej",
+        "1 kg mletého hovězího masa s trochou vepřového",
+        "Strouhaný sýr (trochu do masa a trochu navrch)",
+        "2 vejce (do masa)",
+        "Na bešamel: 1 litr mléka",
+        "5–6 lžic hladké mouky",
+        "Trochu soli",
+        "2 lžíce másla",
+        "2 vejce",
+        "Strouhaný muškátový oříšek (podle chuti)"
+      ],
+      "steps": [
+        "Brambory upečte v troubě s trochou soli a oleje a lilky stejně tak s trochou oleje a soli.",
+        "Na hluboké pánvi nebo v hrnci nejprve opečte mleté maso dozlatova. Přidejte cibuli, potom rajčata, protlak, sůl, pepř, bylinky a koření a nechte maso asi půl hodiny probublávat.",
+        "Na bešamel: do malého hrnce dejte mléko, mouku a sůl a dobře promíchejte, aby se mouka rozpustila. Postavte na oheň a míchejte.",
+        "Jakmile krém zhoustne, přidejte máslo a vejce a rychle míchejte, aby se vejce nesrazila. Podle chuti přidejte muškátový oříšek.",
+        "Do pekáče nejprve narovnejte brambory v řadách tak, aby pokryly celé dno.",
+        "Maso smíchejte s trochou strouhaného sýra a oběma vejci a rozprostřete ho na brambory.",
+        "Navrch narovnejte v řadách lilky.",
+        "Poslední vrstvou je bešamel. Navrch nastrouhejte ještě trochu sýra.",
+        "Pečte v troubě předehřáté na 200°, dokud se bešamel neupeče a nezezlátne."
+      ],
+      "memory": {
+        "title": "Nedělní oběd",
+        "story": "Oblíbené nedělní jídlo, které shromáždí celou rodinu kolem stolu! Vůně bešamelu zůstává v domě až do odpoledne."
+      },
+      "prepTime": "1 hodina",
+      "cookTime": "1 hodina"
+    },
+    "uk": {
+      "title": "Бабусина мусака",
+      "description": "Класична мусака шарами: картопля, смачний м’ясний соус, баклажани й пишний бешамель.",
+      "ingredients": [
+        "1,5 кг баклажанів, нарізаних скибками завтовшки з палець",
+        "1,5 кг картоплі, нарізаної кружальцями завтовшки з палець",
+        "Сіль, перець, подрібнений сушений базилік",
+        "2 помідори, натерті на тертці",
+        "1 ст. ложка томатної пасти",
+        "1 велика цибулина, натерта на тертці",
+        "1/4 ч. ложки кориці, трохи кмину й трохи сушеного орегано",
+        "Олія",
+        "1 кг яловичого фаршу з невеликою кількістю свинячого",
+        "Тертий сир (трохи для фаршу й трохи зверху)",
+        "2 яйця (для фаршу)",
+        "Для бешамелю: 1 л молока",
+        "5–6 ст. ложок борошна",
+        "Трохи солі",
+        "2 ст. ложки вершкового масла",
+        "2 яйця",
+        "Тертий мускатний горіх (за бажанням)"
+      ],
+      "steps": [
+        "Запечіть у духовці картоплю з дрібкою солі й трохи олії, а також баклажани з трохи олії та солі.",
+        "У глибокій сковороді чи каструлі спершу обсмажте фарш до рум’янцю. Додайте цибулю, потім помідори, томатну пасту, сіль, перець, зелень і прянощі та тушкуйте фарш близько пів години.",
+        "Для бешамелю: у невелику каструлю покладіть молоко, борошно й сіль і добре перемішайте, щоб борошно розчинилося. Поставте на вогонь і помішуйте.",
+        "Щойно крем загусне, додайте масло та яйця, швидко помішуючи, щоб яйця не згорнулися. За бажанням додайте мускатний горіх.",
+        "У форму спершу викладіть рядами картоплю, щоб вона вкрила все дно.",
+        "Змішайте фарш із трохи тертого сиру та двома яйцями й розкладіть його на картоплю.",
+        "Зверху рядами викладіть баклажани.",
+        "Останній шар — бешамель. Натріть зверху ще трохи сиру.",
+        "Запікайте в розігрітій до 200° духовці, доки бешамель не запечеться й не зарум’яниться."
+      ],
+      "memory": {
+        "title": "Недільний обід",
+        "story": "Улюблена недільна страва, що збирає всю родину за столом! Аромат бешамелю тримається в домі аж до пообіддя."
+      },
+      "prepTime": "1 година",
+      "cookTime": "1 година"
+    },
+    "ja": {
+      "title": "おばあちゃんのムサカ",
+      "description": "じゃがいも、旨みたっぷりのミートソース、なす、ふんわりベシャメルを重ねた定番のムサカ。",
+      "ingredients": [
+        "なす 1.5kg（指1本分の厚さの輪切り）",
+        "じゃがいも 1.5kg（指1本分の厚さの輪切り）",
+        "塩、こしょう、乾燥バジル（細かく砕く）",
+        "トマト 2個（すりおろす）",
+        "トマトペースト 大さじ1",
+        "玉ねぎ（大）1個（すりおろす）",
+        "シナモン 小さじ1/4、クミン 少々、乾燥オレガノ 少々",
+        "油",
+        "牛ひき肉 1kg（豚ひき肉を少し混ぜる）",
+        "粉チーズ（ミートソース用に少々、仕上げ用に少々）",
+        "卵 2個（ミートソース用）",
+        "ベシャメルソース用：牛乳 1リットル",
+        "薄力粉 大さじ5〜6",
+        "塩 少々",
+        "バター 大さじ2",
+        "卵 2個",
+        "ナツメグ（すりおろし・お好みで）"
+      ],
+      "steps": [
+        "じゃがいもに塩と油を少しずつかけてオーブンで焼きます。なすも同じように油と塩を少しかけて焼きます。",
+        "深めのフライパンか鍋で、まずひき肉を焼き色がつくまで炒めます。玉ねぎを加え、続いてトマト、トマトペースト、塩、こしょう、ハーブとスパイスを加え、30分ほど煮込みます。",
+        "ベシャメルソース：小鍋に牛乳、薄力粉、塩を入れ、粉が溶けるまでよく混ぜます。火にかけて混ぜ続けます。",
+        "とろみがついたらバターと卵を加え、卵が固まらないよう手早く混ぜます。お好みでナツメグを加えます。",
+        "耐熱皿に、まずじゃがいもを底全体が隠れるように並べます。",
+        "ミートソースに粉チーズ少々と卵2個を混ぜ、じゃがいもの上に広げます。",
+        "その上になすを並べます。",
+        "いちばん上にベシャメルソースを流し、粉チーズを少し削りかけます。",
+        "200°に予熱したオーブンで、ベシャメルに火が通って焼き色がつくまで焼きます。"
+      ],
+      "memory": {
+        "title": "日曜日の食卓",
+        "story": "家族みんなを食卓に集める、大好きな日曜日のごちそう！ベシャメルの香りは午後まで家に残ります。"
+      },
+      "prepTime": "1時間",
+      "cookTime": "1時間"
+    }
+  }
+}
