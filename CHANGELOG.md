@@ -10,6 +10,7 @@ to regenerate it.
 - add preparations feature to recipes ([75c46b8](https://github.com/Roudis/roudomageiremata/commit/75c46b8cf9271d34e4e1b915a9dac8bda362807e))
 
 ### Other
+- Implement feature X to enhance user experience and optimize performance ([ba2b8ef](https://github.com/Roudis/roudomageiremata/commit/ba2b8efd781e01b4be7fbb3736916205323c365c))
 - Remove Grandma's Pastitsio recipe file from the repository ([6f0e2eb](https://github.com/Roudis/roudomageiremata/commit/6f0e2eb0f8234b18e4c19a71b251bd4ce0367aa9))
 - Add image for 'Ο Μουσακάς της Γιαγιάς' ([96f221f](https://github.com/Roudis/roudomageiremata/commit/96f221f0de888f64132a7f9bc4fad829434ff4ca))
 
