@@ -7,6 +7,7 @@ to regenerate it.
 ## 2026-10-03
 
 ### Other
+- Update Spetsofai title to include 'B!' in all translations ([951e1f1](https://github.com/Roudis/roudomageiremata/commit/951e1f191c4128fe2f270c4e94afbfbd47d58cf8))
 - Add Spetsofai recipe with ingredients, steps, and translations; include recipe image ([d53ebbd](https://github.com/Roudis/roudomageiremata/commit/d53ebbde1e93cf708e12559faf77ad9c32c41043))
 
 ## 2026-09-18
