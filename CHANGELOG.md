@@ -4,6 +4,11 @@ All notable changes to this project are documented here. This file is generated
 from the Git commit history; do not edit it manually. Run `npm run changelog`
 to regenerate it.
 
+## 2026-10-03
+
+### Other
+- Add Spetsofai recipe with ingredients, steps, and translations; include recipe image ([d53ebbd](https://github.com/Roudis/roudomageiremata/commit/d53ebbde1e93cf708e12559faf77ad9c32c41043))
+
 ## 2026-09-18
 
 ### Added
