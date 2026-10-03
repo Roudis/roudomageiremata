@@ -9,6 +9,9 @@ to regenerate it.
 ### Added
 - add preparations feature to recipes ([75c46b8](https://github.com/Roudis/roudomageiremata/commit/75c46b8cf9271d34e4e1b915a9dac8bda362807e))
 
+### Fixed
+- update recipe descriptions to include personal touch and humor ([8f7eac2](https://github.com/Roudis/roudomageiremata/commit/8f7eac24a9e92d012bc21f7b9cb6ff016be5dd18))
+
 ### Other
 - Implement feature X to enhance user experience and optimize performance ([ba2b8ef](https://github.com/Roudis/roudomageiremata/commit/ba2b8efd781e01b4be7fbb3736916205323c365c))
 - Remove Grandma's Pastitsio recipe file from the repository ([6f0e2eb](https://github.com/Roudis/roudomageiremata/commit/6f0e2eb0f8234b18e4c19a71b251bd4ce0367aa9))
