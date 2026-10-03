@@ -7,6 +7,7 @@ to regenerate it.
 ## 2026-10-03
 
 ### Other
+- Update recipe for 'Τα σνίτσελ που παίρνει ταπεράκι ο Θείος' with detailed ingredients and steps ([99efbba](https://github.com/Roudis/roudomageiremata/commit/99efbba2de50c8e9333c78ae6813ddbe7ce93195))
 - Add memory stories for Spetsofai recipe in multiple languages ([f1990af](https://github.com/Roudis/roudomageiremata/commit/f1990afdc20ccdd2d41a5b8f1834643b8ec9e9b5))
 - Update Spetsofai title to include 'B!' in all translations ([951e1f1](https://github.com/Roudis/roudomageiremata/commit/951e1f191c4128fe2f270c4e94afbfbd47d58cf8))
 - Add Spetsofai recipe with ingredients, steps, and translations; include recipe image ([d53ebbd](https://github.com/Roudis/roudomageiremata/commit/d53ebbde1e93cf708e12559faf77ad9c32c41043))
