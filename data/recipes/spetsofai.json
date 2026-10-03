@@ -1,6 +1,6 @@
 {
   "id": "spetsofai",
-  "title": "Σπετσοφάι",
+  "title": "Σπετσοφάι Β!",
   "description": "Το παραδοσιακό φαγητό του Πηλίου: χωριάτικα λουκάνικα και πιπεριές σε πηχτή σάλτσα ντομάτας, με φέτα και δυόσμο από πάνω.",
   "ingredients": [
     "1 κ. χωριάτικα λουκάνικα",
@@ -25,6 +25,10 @@
     "Κλείνουμε τη φωτιά και προσθέτουμε το κασέρι και έπειτα τον φρέσκο δυόσμο.",
     "Σερβίρουμε ζεστό τρίβοντας τη φέτα και δυόσμο για διακόσμηση. Απολαμβάνουμε!"
   ],
+  "memory": {
+    "title": "Η ιστορία του λουκάνικου (Β Παντελής)",
+    "story": "Την ιστορία διηγείται η γιαγιά Μέλπω:\n\n«Στο χωριό μου (Φούστανη Αριδαίας) ήταν πολύ διαδεδομένο το κουτσομπόλιο και η συνήθεια να λέμε το φλυτζάνι.\n\nΜια γειτόνισσα, μεγάλη κουτσομπόλα, είχε μάθει ότι μια συγχωριανή μας ήταν ερωτευμένη με τον Παντελή, μεγάλο γόη του χωριού. Ήθελε λοιπόν να πει στην ενδιαφερόμενη ότι έμαθε τα μαντάτα, αλλά πώς;… Σκέφτηκε λοιπόν πως αντί να το πει αυτή, να το πει το \"φλυτζάνι\".\n\nΒρίσκονται λοιπόν για καφέ και αρχίζει να της λέει… μεγάλο δρόμο θα διαβείς, πάνω σε 3 τέρμενα και τα γνωστά. Στο τέλος της λέει: \"Μπα, τι βλέπω; Υπάρχει και πρόσωπο, να, να, ένα μεγάλο Β. Β βλέπω, Β Παντελής…\" (ήταν αγράμματη).»\n\nΕπιστροφή στο μεσημεριανό τραπέζι. Η γιαγιά μας διηγείται την ιστορία και εμείς μόλις είχαμε μετακομίσει στο χωριό (Βαθύλακκος). Μαθαίνουμε λοιπόν ότι ο κρεοπώλης του χωριού ήταν ο Παντελής και η σπεσιαλιτέ του το λουκάνικο. Από τότε το λουκάνικο πήρε όνομα. Για μας δεν ήταν πια χωρίατικο αλλά ήταν λουκάνικο Β Παντελής."
+  },
   "category": "Οι ντελικάτες της Μαμάς",
   "tags": [
     "pork"
@@ -37,7 +41,7 @@
   "updatedAt": "2026-10-03T12:00:00.000Z",
   "translations": {
     "en": {
-      "title": "Spetsofai",
+      "title": "Spetsofai B!",
       "description": "The traditional dish of Pelion: village sausages and peppers in a thick tomato sauce, topped with feta and mint.",
       "ingredients": [
         "1 kg village sausages",
@@ -62,11 +66,15 @@
         "We turn off the heat and add the kasseri, then the fresh mint.",
         "We serve it hot, crumbling the feta and mint on top to garnish. Enjoy!"
       ],
+      "memory": {
+        "title": "The story of the sausage (B Pantelis)",
+        "story": "Grandma Melpo tells the story:\n\n“In my village (Foustani, near Aridaia), gossip was very widespread, and so was the habit of reading coffee cups.\n\nA neighbour, a great gossip, had found out that a woman from our village was in love with Pantelis, the village’s great charmer. She wanted to let the woman know she had heard the news, but how?… So she thought that instead of saying it herself, she would let the ‘cup’ say it.\n\nSo they meet for coffee, and she starts telling her… you will travel a long road, within three spells of time, and all the usual. At the end she says: ‘Well, what do I see? There’s a person too, look, look, a big B. I see a B, B Pantelis…’ (she couldn’t read or write).”\n\nBack to the lunch table. Grandma tells us the story, and we had just moved to the village (Vathylakkos). And so we learn that the village butcher was Pantelis, and his speciality was sausage. From then on, the sausage had a name. For us it was no longer village sausage; it was B Pantelis sausage."
+      },
       "prepTime": "15 minutes",
       "cookTime": "25 minutes"
     },
     "nl": {
-      "title": "Spetsofai",
+      "title": "Spetsofai B!",
       "description": "Het traditionele gerecht uit Pilion: dorpsworst en paprika’s in een dikke tomatensaus, met feta en munt erover.",
       "ingredients": [
         "1 kg dorpsworst",
@@ -91,11 +99,15 @@
         "We zetten het vuur uit en voegen de kasseri toe en daarna de verse munt.",
         "We serveren het warm en verkruimelen de feta en de munt erover als garnering. Eet smakelijk!"
       ],
+      "memory": {
+        "title": "Het verhaal van de worst (B Pantelis)",
+        "story": "Oma Melpo vertelt het verhaal:\n\n“In mijn dorp (Foustani, bij Aridaia) werd er veel geroddeld, en het was ook de gewoonte om koffiedik te kijken.\n\nEen buurvrouw, een grote roddeltante, had gehoord dat een dorpsgenote verliefd was op Pantelis, de grote charmeur van het dorp. Ze wilde de betrokkene laten weten dat ze het nieuws had gehoord, maar hoe?… Dus bedacht ze dat niet zij het zou zeggen, maar het ‘kopje’.\n\nZe spreken dus af voor een kop koffie en ze begint haar te vertellen… je gaat een lange weg afleggen, binnen drie tijdspannes, en het bekende verhaal. Aan het eind zegt ze: ‘Hé, wat zie ik nu? Er is ook iemand, kijk, kijk, een grote B. Ik zie een B, B Pantelis…’ (ze kon niet lezen en schrijven).”\n\nTerug naar de lunchtafel. Oma vertelt ons het verhaal, en wij waren net naar het dorp (Vathylakkos) verhuisd. Zo horen we dat de slager van het dorp Pantelis was, en zijn specialiteit de worst. Sindsdien had de worst een naam. Voor ons was het geen dorpsworst meer, maar worst B Pantelis."
+      },
       "prepTime": "15 minuten",
       "cookTime": "25 minuten"
     },
     "fr": {
-      "title": "Spetsofaï",
+      "title": "Spetsofaï B!",
       "description": "Le plat traditionnel du Pélion : des saucisses de campagne et des poivrons dans une sauce tomate épaisse, avec de la feta et de la menthe par-dessus.",
       "ingredients": [
         "1 kg de saucisses de campagne",
@@ -120,11 +132,15 @@
         "On éteint le feu et on ajoute le kasseri, puis la menthe fraîche.",
         "On sert chaud en émiettant la feta et la menthe par-dessus pour décorer. Bon appétit !"
       ],
+      "memory": {
+        "title": "L’histoire de la saucisse (B Pantelis)",
+        "story": "C’est grand-mère Melpo qui raconte l’histoire :\n\n« Dans mon village (Foustani, près d’Aridaia), les commérages étaient très répandus, tout comme l’habitude de lire dans le marc de café.\n\nUne voisine, grande commère, avait appris qu’une femme du village était amoureuse de Pantelis, le grand séducteur du village. Elle voulait donc faire savoir à l’intéressée qu’elle était au courant, mais comment ?… Elle se dit alors qu’au lieu de le dire elle-même, elle le ferait dire à la “tasse”.\n\nLes voilà donc réunies autour d’un café, et elle commence à lui dire… tu feras un long voyage, d’ici trois termes, et tout le reste. À la fin, elle lui dit : “Tiens, qu’est-ce que je vois ? Il y a aussi quelqu’un, là, là, un grand B. Je vois un B, B Pantelis…” (elle ne savait ni lire ni écrire). »\n\nRetour à la table du déjeuner. Grand-mère nous raconte l’histoire, et nous venions tout juste d’emménager au village (Vathylakkos). Nous apprenons alors que le boucher du village s’appelait Pantelis et que sa spécialité était la saucisse. Depuis, la saucisse a un nom. Pour nous, ce n’était plus de la saucisse de campagne, c’était la saucisse B Pantelis."
+      },
       "prepTime": "15 minutes",
       "cookTime": "25 minutes"
     },
     "sv": {
-      "title": "Spetsofai",
+      "title": "Spetsofai B!",
       "description": "Den traditionella rätten från Pelion: lantkorv och paprika i en tjock tomatsås, med fetaost och mynta på toppen.",
       "ingredients": [
         "1 kg lantkorv",
@@ -149,11 +165,15 @@
         "Vi stänger av värmen och tillsätter kasseriosten och sedan den färska myntan.",
         "Vi serverar varmt och smular fetaosten och myntan över som garnering. Smaklig måltid!"
       ],
+      "memory": {
+        "title": "Historien om korven (B Pantelis)",
+        "story": "Mormor Melpo berättar historien:\n\n”I min by (Foustani, nära Aridaia) var skvaller mycket vanligt, och likaså vanan att spå i kaffesump.\n\nEn granne, en riktig skvallerbytta, hade fått reda på att en kvinna i byn var förälskad i Pantelis, byns store charmör. Hon ville alltså låta kvinnan veta att hon hade hört nyheten, men hur?… Hon kom då på att i stället för att säga det själv skulle hon låta ’koppen’ säga det.\n\nDe träffas alltså på kaffe och hon börjar berätta… du ska vandra en lång väg, inom tre tidsperioder, och allt det vanliga. Till slut säger hon: ’Nämen, vad ser jag? Det finns en person också, där, där, ett stort B. Jag ser ett B, B Pantelis…’ (hon kunde varken läsa eller skriva).”\n\nTillbaka till lunchbordet. Mormor berättar historien för oss, och vi hade precis flyttat till byn (Vathylakkos). Då får vi veta att byns slaktare var Pantelis och att hans specialitet var korv. Sedan dess hade korven ett namn. För oss var det inte längre bykorv, utan korv B Pantelis."
+      },
       "prepTime": "15 minuter",
       "cookTime": "25 minuter"
     },
     "es": {
-      "title": "Spetsofái",
+      "title": "Spetsofái B!",
       "description": "El plato tradicional del Pelión: salchichas de pueblo y pimientos en una salsa de tomate espesa, con feta y menta por encima.",
       "ingredients": [
         "1 kg de salchichas de pueblo",
@@ -178,11 +198,15 @@
         "Apagamos el fuego y añadimos el kasseri y después la menta fresca.",
         "Servimos caliente, desmenuzando la feta y la menta por encima para decorar. ¡Buen provecho!"
       ],
+      "memory": {
+        "title": "La historia de la salchicha (B Pantelis)",
+        "story": "La abuela Melpo cuenta la historia:\n\n«En mi pueblo (Foustani, cerca de Aridaia) el cotilleo estaba muy extendido, igual que la costumbre de leer los posos del café.\n\nUna vecina, muy cotilla, se había enterado de que una mujer del pueblo estaba enamorada de Pantelis, el gran galán del pueblo. Quería hacerle saber a la interesada que se había enterado de la noticia, pero ¿cómo?… Así que pensó que, en lugar de decirlo ella, lo diría la “taza”.\n\nQuedan, pues, para tomar café y empieza a decirle… harás un largo camino, en tres plazos, y lo de siempre. Al final le dice: “Anda, ¿qué veo? También hay una persona, mira, mira, una B grande. Veo una B, B Pantelis…” (no sabía leer ni escribir).»\n\nDe vuelta a la mesa del almuerzo. La abuela nos cuenta la historia, y nosotros acabábamos de mudarnos al pueblo (Vathylakkos). Nos enteramos entonces de que el carnicero del pueblo era Pantelis, y su especialidad, la salchicha. Desde entonces la salchicha tuvo nombre. Para nosotros ya no era salchicha de pueblo, sino salchicha B Pantelis."
+      },
       "prepTime": "15 minutos",
       "cookTime": "25 minutos"
     },
     "it": {
-      "title": "Spetsofai",
+      "title": "Spetsofai B!",
       "description": "Il piatto tradizionale del Pelio: salsicce paesane e peperoni in un denso sugo di pomodoro, con feta e menta sopra.",
       "ingredients": [
         "1 kg di salsicce paesane",
@@ -207,11 +231,15 @@
         "Spegniamo il fuoco e aggiungiamo il kasseri e poi la menta fresca.",
         "Serviamo caldo, sbriciolando sopra la feta e la menta per guarnire. Buon appetito!"
       ],
+      "memory": {
+        "title": "La storia della salsiccia (B Pantelis)",
+        "story": "La storia la racconta nonna Melpo:\n\n«Nel mio paese (Foustani, vicino ad Aridaia) il pettegolezzo era molto diffuso, come pure l’usanza di leggere i fondi del caffè.\n\nUna vicina, gran pettegola, aveva saputo che una compaesana era innamorata di Pantelis, il grande seduttore del paese. Voleva quindi far sapere all’interessata di essere venuta a conoscenza della notizia, ma come?… Pensò allora che, invece di dirlo lei, l’avrebbe fatto dire alla “tazzina”.\n\nSi incontrano dunque per un caffè e comincia a dirle… farai una lunga strada, entro tre termini, e le solite cose. Alla fine le dice: “Ma guarda, cosa vedo? C’è anche una persona, ecco, ecco, una grande B. Vedo una B, B Pantelis…” (era analfabeta).»\n\nTorniamo alla tavola del pranzo. La nonna ci racconta la storia, e noi ci eravamo appena trasferiti in paese (Vathylakkos). Veniamo così a sapere che il macellaio del paese era Pantelis e che la sua specialità era la salsiccia. Da allora la salsiccia ha un nome. Per noi non era più salsiccia di paese, ma salsiccia B Pantelis."
+      },
       "prepTime": "15 minuti",
       "cookTime": "25 minuti"
     },
     "ro": {
-      "title": "Spetsofai",
+      "title": "Spetsofai B!",
       "description": "Mâncarea tradițională din Pelion: cârnați de țară și ardei într-un sos gros de roșii, cu feta și mentă deasupra.",
       "ingredients": [
         "1 kg de cârnați de țară",
@@ -236,11 +264,15 @@
         "Oprim focul și adăugăm cașcavalul, apoi menta proaspătă.",
         "Servim fierbinte, sfărâmând feta și menta deasupra pentru decor. Poftă bună!"
       ],
+      "memory": {
+        "title": "Povestea cârnatului (B Pantelis)",
+        "story": "Povestea o spune bunica Melpo:\n\n„În satul meu (Foustani, lângă Aridaia) bârfa era foarte răspândită, la fel și obiceiul de a ghici în cafea.\n\nO vecină, mare bârfitoare, aflase că o consăteană de-a noastră era îndrăgostită de Pantelis, marele cuceritor al satului. Voia deci să-i dea de înțeles celei în cauză că aflase vestea, dar cum?… S-a gândit atunci că, în loc să i-o spună ea, să i-o spună «ceașca».\n\nSe întâlnesc deci la o cafea și începe să-i spună… drum lung vei străbate, în trei soroace, și cele știute. La sfârșit îi spune: «Ia te uită, ce văd? Mai e și o persoană, uite, uite, un B mare. Văd un B, B Pantelis…» (era analfabetă).”\n\nÎnapoi la masa de prânz. Bunica ne spune povestea, iar noi tocmai ne mutaserăm în sat (Vathylakkos). Aflăm astfel că măcelarul satului era Pantelis, iar specialitatea lui era cârnatul. De atunci cârnatul are un nume. Pentru noi nu mai era cârnat țărănesc, ci cârnat B Pantelis."
+      },
       "prepTime": "15 minute",
       "cookTime": "25 de minute"
     },
     "cs": {
-      "title": "Spetsofai",
+      "title": "Spetsofai B!",
       "description": "Tradiční jídlo z Pilionu: venkovské klobásy a papriky v husté rajčatové omáčce, navrchu s fetou a mátou.",
       "ingredients": [
         "1 kg venkovských klobás",
@@ -265,11 +297,15 @@
         "Vypneme oheň a přidáme kasseri a potom čerstvou mátu.",
         "Podáváme teplé a navrch nadrobíme fetu a mátu na ozdobu. Dobrou chuť!"
       ],
+      "memory": {
+        "title": "Příběh klobásy (B Pantelis)",
+        "story": "Příběh vypráví babička Melpo:\n\n„V mé vesnici (Foustani u Aridaie) se hodně drbalo a rozšířený byl i zvyk věštit z kávové sedliny.\n\nJedna sousedka, velká drbna, se doslechla, že jedna žena z vesnice je zamilovaná do Pantelise, velkého vesnického svůdníka. Chtěla tedy dotyčné dát najevo, že se to dozvěděla, ale jak?… Napadlo ji, že místo ní to řekne ‚šálek‘.\n\nSejdou se tedy na kávu a ona jí začne vykládat… čeká tě dlouhá cesta, do tří lhůt, a všechno to obvyklé. Nakonec jí řekne: ‚Ale, copak to vidím? Je tu i nějaká osoba, hle, hle, velké B. Vidím B, B Pantelis…‘ (neuměla číst ani psát).“\n\nZpátky u obědového stolu. Babička nám vypráví ten příběh a my jsme se zrovna přestěhovali do vesnice (Vathylakkos). Dozvídáme se tak, že vesnickým řezníkem byl Pantelis a jeho specialitou byla klobása. Od té doby má klobása jméno. Pro nás už to nebyla vesnická klobása, ale klobása B Pantelis."
+      },
       "prepTime": "15 minut",
       "cookTime": "25 minut"
     },
     "uk": {
-      "title": "Спецофай",
+      "title": "Спецофай B!",
       "description": "Традиційна страва з Пеліону: сільські ковбаски та перець у густому томатному соусі, зверху фета й м’ята.",
       "ingredients": [
         "1 кг сільських ковбасок",
@@ -294,11 +330,15 @@
         "Вимикаємо вогонь і додаємо касері, а потім свіжу м’яту.",
         "Подаємо гарячим, накришивши зверху фету й м’яту для прикраси. Смачного!"
       ],
+      "memory": {
+        "title": "Історія ковбаски (B Пантеліс)",
+        "story": "Історію розповідає бабуся Мелпо:\n\n«У моєму селі (Фустані, біля Аридеї) дуже поширені були плітки, а також звичай ворожити на каві.\n\nОдна сусідка, велика пліткарка, дізналася, що одна наша односельчанка закохана в Пантеліса, найбільшого сільського спокусника. Тож вона хотіла дати зацікавленій зрозуміти, що знає новину, але як?… І вирішила, що замість неї про це скаже „філіжанка“.\n\nТож зустрічаються вони на каву, і вона починає їй розповідати… далеку дорогу пройдеш, за три строки, і все таке. Наприкінці каже: „Ого, що я бачу? Є тут і людина, ось, ось, велика B. Бачу B, B Пантеліс…“ (вона була неписьменна).»\n\nПовертаємося до обіднього столу. Бабуся розповідає нам цю історію, а ми щойно переїхали до села (Ватилаккос). І дізнаємося, що сільським м’ясником був Пантеліс, а його фірмовою стравою — ковбаска. Відтоді ковбаска має ім’я. Для нас це була вже не сільська ковбаска, а ковбаска B Пантеліс."
+      },
       "prepTime": "15 хвилин",
       "cookTime": "25 хвилин"
     },
     "ja": {
-      "title": "スペツォファイ",
+      "title": "スペツォファイ B!",
       "description": "ペリオン地方の伝統料理。田舎風ソーセージとパプリカを濃厚なトマトソースで煮込み、フェタとミントをのせます。",
       "ingredients": [
         "田舎風ソーセージ 1kg",
@@ -323,6 +363,10 @@
         "火を止めてカセリを加え、それからフレッシュミントを加えます。",
         "熱々を盛りつけ、フェタとミントを散らして飾ります。どうぞ召し上がれ！"
       ],
+      "memory": {
+        "title": "ソーセージの物語（Bパンテリス）",
+        "story": "メルポおばあちゃんが語る物語です。\n\n「私の村（アリダイア近くのフスタニ）では、うわさ話がとても盛んで、コーヒー占いをする習慣もありました。\n\n近所に大のうわさ好きの女性がいて、村のある女性が村一番の色男パンテリスに恋をしていると聞きつけました。そこで本人に、その知らせを知っていると伝えたかったのですが、どうやって？……自分で言う代わりに、『カップ』に言わせようと考えたのです。\n\nそこで二人はコーヒーを飲みに集まり、彼女は語り始めます……長い道のりを行くだろう、三つの時を経て、などとお決まりの文句を。最後にこう言います。『あら、何が見えるかしら？人もいるわ、ほら、ほら、大きなBが。Bが見える、Bパンテリス……』（彼女は読み書きができなかったのです）。」\n\n昼食の食卓に戻りましょう。おばあちゃんがこの話をしてくれたのは、私たちが村（ヴァシラコス）に引っ越してきたばかりの頃でした。そして、村の肉屋がパンテリスで、彼の名物がソーセージだと知ったのです。それ以来、そのソーセージには名前がつきました。私たちにとって、それはもう田舎のソーセージではなく、Bパンテリスのソーセージになったのです。"
+      },
       "prepTime": "15分",
       "cookTime": "25分"
     }

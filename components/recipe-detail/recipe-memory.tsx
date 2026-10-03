@@ -30,7 +30,7 @@ export function RecipeMemory({ memory, locale, lang }: RecipeMemoryProps) {
       <h2 lang={lang} className="mt-4 text-balance font-serif text-2xl font-semibold tracking-tight sm:text-3xl">{memory.title}</h2>
       <blockquote
         lang={lang}
-        className="mt-4 max-w-3xl text-pretty font-serif text-xl italic leading-relaxed text-feature-foreground/90 sm:text-2xl"
+        className="mt-4 max-w-3xl whitespace-pre-line text-pretty font-serif text-xl italic leading-relaxed text-feature-foreground/90 sm:text-2xl"
       >
         {t.quoteOpen}
         {memory.story}
