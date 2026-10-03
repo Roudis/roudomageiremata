@@ -1,19 +1,46 @@
 {
   "id": "garidomaranadara-to-aki-alla-den-peirazei",
   "title": "Γαριδομαραναδάρα ( το άκη αλλά δεν πειράζει)",
-  "description": "Μια συνταγή που θα λατρέψει όλη η οικογένεια! Με απλά υλικά και υπέροχη γεύση.",
+  "description": "Λιγκουίνι με ζουμερές γαρίδες σε σπιτική κόκκινη σάλτσα, δεμένη με ζωμό από τα κεφάλια και τα κελύφη τους. Η συνταγή είναι του Άκη Πετρετζίκη.",
   "ingredients": [
-    "Φρέσκα λαχανικά",
-    "Ελαιόλαδο",
-    "Ξύδι βαλσάμικο",
-    "Αλάτι"
+    "250 γρ. λιγκουίνι",
+    "1/2 κιλό γαρίδες (κατεψυγμένες)",
+    "1 κύβος λαχανικών",
+    "750 ml νερό",
+    "1 κρεμμύδι",
+    "50 ml ελαιόλαδο, και λίγο ακόμα για το σερβίρισμα",
+    "1/2 κουταλάκι του γλυκού ζάχαρη",
+    "1 πρέζα μπούκοβο",
+    "1 σκελίδα σκόρδο",
+    "20 ml ούζο",
+    "2 ντομάτες",
+    "50 γρ. βούτυρο (ή μαργαρίνη για νηστίσιμη εκδοχή)",
+    "4-5 φύλλα βασιλικού, και λίγα ακόμα για το σερβίρισμα",
+    "1 φρέσκο κρεμμυδάκι ψιλοκομμένο",
+    "Ξύσμα λεμονιού",
+    "50 γρ. παρμεζάνα τριμμένη (προαιρετικά), και λίγη για το σερβίρισμα",
+    "Αλάτι, πιπέρι"
   ],
   "steps": [
-    "Δοκιμάζουμε λίγο στα κρυφά και καίμε τη γλώσσα μας.",
-    "Ρίχνουμε μια ματιά στο φούρνο και ελπίζουμε για το καλύτερο.",
-    "Κλείνουμε τα μάτια και προσθέτουμε μπαχαρικά στην τύχη.",
-    "Σερβίρουμε σε βαθιά πιάτα και κάνουμε πως ξέρουμε τι κάνουμε.",
-    "Βάζουμε λίγο λάδι παραπάνω, «γιατί έτσι νοστιμίζει»."
+    "Ραντίζουμε τις γαρίδες με ελαιόλαδο, αλάτι και πιπέρι και τις σοτάρουμε σε ένα βαθύ τηγάνι σε δυνατή φωτιά, περίπου μισό λεπτό από κάθε πλευρά, μέχρι να πάρουν χρώμα. Τις βγάζουμε σε ένα πιάτο.",
+    "Στο ίδιο τηγάνι, σε δυνατή φωτιά, ρίχνουμε το κρεμμύδι χοντροκομμένο, το ελαιόλαδο, τη ζάχαρη και το μπούκοβο.",
+    "Προσθέτουμε το σκόρδο ψιλοκομμένο και σοτάρουμε για λίγα δευτερόλεπτα.",
+    "Σβήνουμε με το ούζο και αφήνουμε να εξατμιστεί τελείως το αλκοόλ.",
+    "Ρίχνουμε τις ντομάτες κομμένες, τον ζωμό γαρίδας και τα λιγκουίνι άβραστα, ανακατεύουμε και χαμηλώνουμε σε μέτρια φωτιά.",
+    "Σιγοβράζουμε περίπου 10 λεπτά ανακατεύοντας συχνά. Όταν η σάλτσα δέσει αλλά έχει ακόμα λίγη υγρασία, ρίχνουμε το βούτυρο (ή τη μαργαρίνη) και ανακατεύουμε μέχρι να δέσει.",
+    "Αποσύρουμε από τη φωτιά και προσθέτουμε τις γαρίδες, τα φύλλα βασιλικού, το φρέσκο κρεμμυδάκι, το ξύσμα λεμονιού και, αν θέλουμε, την παρμεζάνα.",
+    "Σερβίρουμε με λίγο ελαιόλαδο, φρέσκο πιπέρι, τριμμένη παρμεζάνα και φύλλα βασιλικού."
+  ],
+  "preparations": [
+    {
+      "title": "Καθάρισμα γαρίδων και ζωμός",
+      "steps": [
+        "Καθαρίζουμε τις αποψυγμένες γαρίδες: βγάζουμε το κεφάλι και το κέλυφος, αφήνουμε την ουρά, και κρατάμε τα κεφάλια και τα κελύφη για τον ζωμό.",
+        "Με ένα μικρό μαχαίρι χαράζουμε ελαφρά τη ράχη κάθε γαρίδας, από την ουρά προς το κεφάλι, και αφαιρούμε το έντερο.",
+        "Βάζουμε τα κεφάλια και τα κελύφη σε μια κατσαρόλα με τον κύβο λαχανικών και το νερό, σκεπάζουμε και, μόλις πάρει βράση, σιγοβράζουμε 15 λεπτά. Όχι παραπάνω, γιατί ο ζωμός πικρίζει.",
+        "Σουρώνουμε τον ζωμό σε ένα μπολ και τον κρατάμε στην άκρη."
+      ]
+    }
   ],
   "memory": {
     "title": "Κυριακάτικο τραπέζι",
@@ -26,241 +53,511 @@
     "pasta"
   ],
   "imageUrl": "/images/recipes/garidomaranadara-to-aki-alla-den-peirazei.jpg",
-  "prepTime": "20 λεπτά",
-  "cookTime": "45 λεπτά",
-  "servings": 4,
+  "prepTime": "30 λεπτά",
+  "cookTime": "25 λεπτά",
+  "servings": 3,
   "createdAt": "2026-08-10T16:52:28.199Z",
-  "updatedAt": "2026-09-18T14:26:29.337Z",
+  "updatedAt": "2026-10-04T12:00:00.000Z",
   "translations": {
     "en": {
       "title": "Shrimp marinaradara (the “aki” one, but never mind)",
-      "description": "A recipe the whole family will love! Simple ingredients, wonderful flavour.",
+      "description": "Linguine with juicy shrimp in a homemade red sauce, bound with a stock made from their heads and shells. The recipe is Akis Petretzikis’s.",
       "ingredients": [
-        "Fresh vegetables",
-        "Olive oil",
-        "Balsamic vinegar",
-        "Salt"
+        "250 g linguine",
+        "1/2 kg shrimp (frozen)",
+        "1 vegetable stock cube",
+        "750 ml water",
+        "1 onion",
+        "50 ml olive oil, plus a little more for serving",
+        "1/2 teaspoon sugar",
+        "1 pinch of chilli flakes",
+        "1 clove of garlic",
+        "20 ml ouzo",
+        "2 tomatoes",
+        "50 g butter (or margarine for a fasting version)",
+        "4-5 basil leaves, plus a few more for serving",
+        "1 spring onion, finely chopped",
+        "Lemon zest",
+        "50 g grated Parmesan (optional), plus a little for serving",
+        "Salt, pepper"
       ],
       "steps": [
-        "We sneak a taste and burn our tongue.",
-        "We peek into the oven and hope for the best.",
-        "We close our eyes and add spices at random.",
-        "We serve it in deep plates and pretend we know what we’re doing.",
-        "We add a little extra oil, “because that’s what makes it tasty”."
+        "Drizzle the shrimp with olive oil, salt, and pepper and sear them in a deep frying pan over high heat for about half a minute on each side, until coloured. Move them to a plate.",
+        "In the same pan, over high heat, add the roughly chopped onion, the olive oil, the sugar, and the chilli flakes.",
+        "Add the finely chopped garlic and sauté for a few seconds.",
+        "Deglaze with the ouzo and let the alcohol evaporate completely.",
+        "Add the chopped tomatoes, the shrimp stock, and the uncooked linguine, stir, and lower the heat to medium.",
+        "Simmer for about 10 minutes, stirring often. When the sauce has thickened but there is still a little liquid, add the butter (or margarine) and stir until the sauce comes together.",
+        "Take the pan off the heat and add the shrimp, the basil leaves, the spring onion, the lemon zest, and, if you like, the Parmesan.",
+        "Serve with a little olive oil, freshly ground pepper, grated Parmesan, and basil leaves."
+      ],
+      "preparations": [
+        {
+          "title": "Cleaning the shrimp and the stock",
+          "steps": [
+            "Clean the thawed shrimp: remove the heads and shells but leave the tails on, and keep the heads and shells for the stock.",
+            "With a small knife, make a shallow cut along the back of each shrimp, from tail to head, and remove the vein.",
+            "Put the heads and shells in a pot with the stock cube and the water, cover, and once it boils, simmer for 15 minutes. No longer, or the stock turns bitter.",
+            "Strain the stock into a bowl and set it aside."
+          ]
+        }
       ],
       "memory": {
         "title": "Sunday lunch",
         "story": "We never expected it to turn out so well the first time, but it became our speciality."
       },
-      "prepTime": "20 minutes",
-      "cookTime": "45 minutes"
+      "prepTime": "30 minutes",
+      "cookTime": "25 minutes"
     },
     "nl": {
       "title": "Garnalen-marinaradara (die van “aki”, maar het geeft niet)",
-      "description": "Een recept waar de hele familie dol op zal zijn! Met eenvoudige ingrediënten en een heerlijke smaak.",
+      "description": "Linguine met sappige garnalen in een zelfgemaakte rode saus, gebonden met bouillon van hun koppen en schalen. Het recept is van Akis Petretzikis.",
       "ingredients": [
-        "Verse groenten",
-        "Olijfolie",
-        "Balsamicoazijn",
-        "Zout"
+        "250 g linguine",
+        "1/2 kg garnalen (diepgevroren)",
+        "1 groentebouillonblokje",
+        "750 ml water",
+        "1 ui",
+        "50 ml olijfolie, plus een beetje extra om te serveren",
+        "1/2 theelepel suiker",
+        "1 snufje chilivlokken",
+        "1 teentje knoflook",
+        "20 ml ouzo",
+        "2 tomaten",
+        "50 g boter (of margarine voor een vastenversie)",
+        "4-5 basilicumblaadjes, plus een paar extra om te serveren",
+        "1 lente-ui, fijngesneden",
+        "Citroenrasp",
+        "50 g geraspte Parmezaanse kaas (optioneel), plus een beetje om te serveren",
+        "Zout, peper"
       ],
       "steps": [
-        "We proeven stiekem een beetje en branden onze tong.",
-        "We werpen een blik in de oven en hopen op het beste.",
-        "We doen onze ogen dicht en voegen lukraak kruiden toe.",
-        "We serveren het in diepe borden en doen alsof we weten wat we doen.",
-        "We doen er een scheutje olie extra bij, “want dan wordt het lekkerder”."
+        "Besprenkel de garnalen met olijfolie, zout en peper en bak ze in een diepe koekenpan op hoog vuur ongeveer een halve minuut per kant, tot ze kleur krijgen. Leg ze op een bord.",
+        "Doe in dezelfde pan, op hoog vuur, de grof gesneden ui, de olijfolie, de suiker en de chilivlokken.",
+        "Voeg de fijngehakte knoflook toe en fruit een paar seconden.",
+        "Blus af met de ouzo en laat de alcohol volledig verdampen.",
+        "Voeg de gesneden tomaten, de garnalenbouillon en de ongekookte linguine toe, roer en zet het vuur middelhoog.",
+        "Laat ongeveer 10 minuten zachtjes koken en roer vaak. Als de saus is ingedikt maar er nog wat vocht is, voeg dan de boter (of margarine) toe en roer tot de saus gebonden is.",
+        "Haal de pan van het vuur en voeg de garnalen, de basilicumblaadjes, de lente-ui, de citroenrasp en eventueel de Parmezaanse kaas toe.",
+        "Serveer met een beetje olijfolie, versgemalen peper, geraspte Parmezaanse kaas en basilicumblaadjes."
+      ],
+      "preparations": [
+        {
+          "title": "Garnalen schoonmaken en bouillon",
+          "steps": [
+            "Maak de ontdooide garnalen schoon: verwijder de koppen en schalen maar laat de staartjes zitten, en bewaar de koppen en schalen voor de bouillon.",
+            "Snijd met een klein mes ondiep in langs de rug van elke garnaal, van staart naar kop, en verwijder het darmkanaal.",
+            "Doe de koppen en schalen met het bouillonblokje en het water in een pan, leg het deksel erop en laat, zodra het kookt, 15 minuten zachtjes koken. Niet langer, anders wordt de bouillon bitter.",
+            "Zeef de bouillon in een kom en zet hem apart."
+          ]
+        }
       ],
       "memory": {
         "title": "Zondagse maaltijd",
         "story": "We hadden niet verwacht dat het de eerste keer zo lekker zou worden, maar het werd onze specialiteit."
       },
-      "prepTime": "20 minuten",
-      "cookTime": "45 minuten"
+      "prepTime": "30 minuten",
+      "cookTime": "25 minuten"
     },
     "fr": {
       "title": "Crevettes marinaradara (celle d’« aki », mais peu importe)",
-      "description": "Une recette que toute la famille va adorer ! Des ingrédients simples et un goût merveilleux.",
+      "description": "Des linguine aux crevettes juteuses dans une sauce tomate maison, liée avec un bouillon fait de leurs têtes et de leurs carapaces. La recette est d’Akis Petretzikis.",
       "ingredients": [
-        "Légumes frais",
-        "Huile d’olive",
-        "Vinaigre balsamique",
-        "Sel"
+        "250 g de linguine",
+        "1/2 kg de crevettes (surgelées)",
+        "1 cube de bouillon de légumes",
+        "750 ml d’eau",
+        "1 oignon",
+        "50 ml d’huile d’olive, et un peu plus pour servir",
+        "1/2 cuillère à café de sucre",
+        "1 pincée de piment en flocons",
+        "1 gousse d’ail",
+        "20 ml d’ouzo",
+        "2 tomates",
+        "50 g de beurre (ou de margarine pour une version de carême)",
+        "4-5 feuilles de basilic, et quelques-unes de plus pour servir",
+        "1 oignon nouveau émincé",
+        "Zeste de citron",
+        "50 g de parmesan râpé (facultatif), et un peu pour servir",
+        "Sel, poivre"
       ],
       "steps": [
-        "On goûte en cachette et on se brûle la langue.",
-        "On jette un œil au four en espérant que tout se passe bien.",
-        "On ferme les yeux et on ajoute des épices au hasard.",
-        "On sert dans des assiettes creuses en faisant semblant de savoir ce qu’on fait.",
-        "On ajoute un peu plus d’huile, « parce que c’est ça qui donne du goût »."
+        "Arrosez les crevettes d’huile d’olive, salez, poivrez et saisissez-les dans une sauteuse à feu vif, environ une demi-minute de chaque côté, jusqu’à ce qu’elles soient dorées. Réservez-les dans une assiette.",
+        "Dans la même sauteuse, à feu vif, mettez l’oignon grossièrement haché, l’huile d’olive, le sucre et le piment.",
+        "Ajoutez l’ail haché finement et faites revenir quelques secondes.",
+        "Déglacez à l’ouzo et laissez l’alcool s’évaporer complètement.",
+        "Ajoutez les tomates coupées, le bouillon de crevettes et les linguine crues, mélangez et baissez à feu moyen.",
+        "Laissez mijoter environ 10 minutes en remuant souvent. Quand la sauce a épaissi mais qu’il reste encore un peu de liquide, ajoutez le beurre (ou la margarine) et remuez jusqu’à ce que la sauce soit liée.",
+        "Retirez du feu et ajoutez les crevettes, les feuilles de basilic, l’oignon nouveau, le zeste de citron et, si vous le souhaitez, le parmesan.",
+        "Servez avec un filet d’huile d’olive, du poivre fraîchement moulu, du parmesan râpé et des feuilles de basilic."
+      ],
+      "preparations": [
+        {
+          "title": "Nettoyage des crevettes et bouillon",
+          "steps": [
+            "Nettoyez les crevettes décongelées : retirez la tête et la carapace en gardant la queue, et réservez les têtes et les carapaces pour le bouillon.",
+            "Avec un petit couteau, incisez légèrement le dos de chaque crevette, de la queue vers la tête, et retirez l’intestin.",
+            "Mettez les têtes et les carapaces dans une casserole avec le cube de bouillon et l’eau, couvrez et, dès l’ébullition, laissez frémir 15 minutes. Pas plus, sinon le bouillon devient amer.",
+            "Filtrez le bouillon dans un bol et réservez-le."
+          ]
+        }
       ],
       "memory": {
         "title": "Le repas du dimanche",
         "story": "On ne s’attendait pas à ce que ce soit aussi bon la première fois, mais c’est devenu notre spécialité."
       },
-      "prepTime": "20 minutes",
-      "cookTime": "45 minutes"
+      "prepTime": "30 minutes",
+      "cookTime": "25 minutes"
     },
     "sv": {
       "title": "Räkmarinaradara (den med ”aki”, men det gör inget)",
-      "description": "Ett recept som hela familjen kommer att älska! Enkla ingredienser och underbar smak.",
+      "description": "Linguine med saftiga räkor i en hemlagad röd sås, som binds ihop med en buljong kokt på räkornas huvuden och skal. Receptet är Akis Petretzikis.",
       "ingredients": [
-        "Färska grönsaker",
-        "Olivolja",
-        "Balsamvinäger",
-        "Salt"
+        "250 g linguine",
+        "1/2 kg räkor (frysta)",
+        "1 grönsaksbuljongtärning",
+        "750 ml vatten",
+        "1 gul lök",
+        "50 ml olivolja, plus lite till vid servering",
+        "1/2 tesked socker",
+        "1 nypa chiliflakes",
+        "1 vitlöksklyfta",
+        "20 ml ouzo",
+        "2 tomater",
+        "50 g smör (eller margarin för en fastevariant)",
+        "4-5 basilikablad, plus några till vid servering",
+        "1 salladslök, finhackad",
+        "Rivet citronskal",
+        "50 g riven parmesan (valfritt), plus lite vid servering",
+        "Salt, peppar"
       ],
       "steps": [
-        "Vi smakar lite i smyg och bränner tungan.",
-        "Vi kikar in i ugnen och hoppas på det bästa.",
-        "Vi blundar och tillsätter kryddor på måfå.",
-        "Vi serverar på djupa tallrikar och låtsas att vi vet vad vi håller på med.",
-        "Vi häller i lite extra olja, ”för då blir det godare”."
+        "Ringla olivolja över räkorna, salta och peppra och stek dem i en djup stekpanna på hög värme i ungefär en halv minut per sida, tills de fått färg. Lägg upp dem på en tallrik.",
+        "Lägg den grovhackade löken, olivoljan, sockret och chiliflakesen i samma panna på hög värme.",
+        "Tillsätt den finhackade vitlöken och fräs i några sekunder.",
+        "Slå i ouzon och låt alkoholen koka bort helt.",
+        "Tillsätt de hackade tomaterna, räkbuljongen och den okokta linguinen, rör om och sänk till medelvärme.",
+        "Låt sjuda i ungefär 10 minuter under ofta omrörning. När såsen har tjocknat men det fortfarande finns lite vätska kvar, tillsätt smöret (eller margarinet) och rör tills såsen binds ihop.",
+        "Ta pannan från värmen och tillsätt räkorna, basilikabladen, salladslöken, citronskalet och, om du vill, parmesanen.",
+        "Servera med en skvätt olivolja, nymalen peppar, riven parmesan och basilikablad."
+      ],
+      "preparations": [
+        {
+          "title": "Rensning av räkorna och buljong",
+          "steps": [
+            "Rensa de tinade räkorna: ta bort huvud och skal men låt stjärten sitta kvar, och spara huvudena och skalen till buljongen.",
+            "Skär med en liten kniv ett grunt snitt längs ryggen på varje räka, från stjärten mot huvudet, och ta bort tarmen.",
+            "Lägg huvudena och skalen i en kastrull med buljongtärningen och vattnet, lägg på lock och låt sjuda i 15 minuter när det har kokat upp. Inte längre, annars blir buljongen bitter.",
+            "Sila buljongen ner i en skål och ställ den åt sidan."
+          ]
+        }
       ],
       "memory": {
         "title": "Söndagsmiddag",
         "story": "Vi trodde aldrig att det skulle bli så gott första gången, men det blev vår specialitet."
       },
-      "prepTime": "20 minuter",
-      "cookTime": "45 minuter"
+      "prepTime": "30 minuter",
+      "cookTime": "25 minuter"
     },
     "es": {
       "title": "Gambas marinaradara (la de «aki», pero no pasa nada)",
-      "description": "¡Una receta que encantará a toda la familia! Ingredientes sencillos y un sabor estupendo.",
+      "description": "Linguine con gambas jugosas en una salsa roja casera, ligada con un caldo hecho con sus cabezas y cáscaras. La receta es de Akis Petretzikis.",
       "ingredients": [
-        "Verduras frescas",
-        "Aceite de oliva",
-        "Vinagre balsámico",
-        "Sal"
+        "250 g de linguine",
+        "1/2 kg de gambas (congeladas)",
+        "1 pastilla de caldo de verduras",
+        "750 ml de agua",
+        "1 cebolla",
+        "50 ml de aceite de oliva, y un poco más para servir",
+        "1/2 cucharadita de azúcar",
+        "1 pizca de guindilla en copos",
+        "1 diente de ajo",
+        "20 ml de ouzo",
+        "2 tomates",
+        "50 g de mantequilla (o margarina para una versión de ayuno)",
+        "4-5 hojas de albahaca, y unas cuantas más para servir",
+        "1 cebolleta picada fina",
+        "Ralladura de limón",
+        "50 g de parmesano rallado (opcional), y un poco para servir",
+        "Sal, pimienta"
       ],
       "steps": [
-        "Probamos un poco a escondidas y nos quemamos la lengua.",
-        "Echamos un vistazo al horno y esperamos lo mejor.",
-        "Cerramos los ojos y añadimos especias al azar.",
-        "Servimos en platos hondos y hacemos como que sabemos lo que hacemos.",
-        "Echamos un poco más de aceite, «porque así sabe mejor»."
+        "Rocía las gambas con aceite de oliva, sal y pimienta y saltéalas en una sartén honda a fuego fuerte, aproximadamente medio minuto por cada lado, hasta que tomen color. Pásalas a un plato.",
+        "En la misma sartén, a fuego fuerte, echa la cebolla picada gruesa, el aceite de oliva, el azúcar y la guindilla.",
+        "Añade el ajo picado fino y sofríe unos segundos.",
+        "Desglasa con el ouzo y deja que el alcohol se evapore por completo.",
+        "Añade los tomates troceados, el caldo de gambas y los linguine sin cocer, remueve y baja a fuego medio.",
+        "Cuece a fuego lento unos 10 minutos, removiendo a menudo. Cuando la salsa haya espesado pero aún quede un poco de líquido, añade la mantequilla (o la margarina) y remueve hasta que la salsa ligue.",
+        "Retira del fuego y añade las gambas, las hojas de albahaca, la cebolleta, la ralladura de limón y, si quieres, el parmesano.",
+        "Sirve con un chorrito de aceite de oliva, pimienta recién molida, parmesano rallado y hojas de albahaca."
+      ],
+      "preparations": [
+        {
+          "title": "Limpieza de las gambas y caldo",
+          "steps": [
+            "Limpia las gambas descongeladas: quítales la cabeza y la cáscara, déjales la cola y guarda las cabezas y las cáscaras para el caldo.",
+            "Con un cuchillo pequeño, haz un corte poco profundo a lo largo del lomo de cada gamba, de la cola hacia la cabeza, y quítales el intestino.",
+            "Pon las cabezas y las cáscaras en una olla con la pastilla de caldo y el agua, tapa y, cuando rompa a hervir, deja cocer a fuego lento 15 minutos. No más, o el caldo amargará.",
+            "Cuela el caldo en un bol y resérvalo."
+          ]
+        }
       ],
       "memory": {
         "title": "La comida del domingo",
         "story": "No esperábamos que saliera tan rico la primera vez, pero se convirtió en nuestra especialidad."
       },
-      "prepTime": "20 minutos",
-      "cookTime": "45 minutos"
+      "prepTime": "30 minutos",
+      "cookTime": "25 minutos"
     },
     "it": {
       "title": "Gamberi marinaradara (quella dell’“aki”, ma non importa)",
-      "description": "Una ricetta che piacerà a tutta la famiglia! Ingredienti semplici e un sapore meraviglioso.",
+      "description": "Linguine con gamberi succosi in un sugo rosso fatto in casa, legato con un brodo preparato con le loro teste e i loro gusci. La ricetta è di Akis Petretzikis.",
       "ingredients": [
-        "Verdure fresche",
-        "Olio d’oliva",
-        "Aceto balsamico",
-        "Sale"
+        "250 g di linguine",
+        "1/2 kg di gamberi (surgelati)",
+        "1 dado vegetale",
+        "750 ml d’acqua",
+        "1 cipolla",
+        "50 ml d’olio d’oliva, più un po’ per servire",
+        "1/2 cucchiaino di zucchero",
+        "1 pizzico di peperoncino in fiocchi",
+        "1 spicchio d’aglio",
+        "20 ml di ouzo",
+        "2 pomodori",
+        "50 g di burro (o margarina per una versione di magro)",
+        "4-5 foglie di basilico, più qualcuna per servire",
+        "1 cipollotto tritato finemente",
+        "Scorza di limone grattugiata",
+        "50 g di parmigiano grattugiato (facoltativo), più un po’ per servire",
+        "Sale, pepe"
       ],
       "steps": [
-        "Assaggiamo di nascosto e ci scottiamo la lingua.",
-        "Diamo un’occhiata al forno e speriamo per il meglio.",
-        "Chiudiamo gli occhi e aggiungiamo spezie a caso.",
-        "Serviamo nei piatti fondi e facciamo finta di sapere quello che facciamo.",
-        "Aggiungiamo un po’ d’olio in più, «perché così è più saporito»."
+        "Condite i gamberi con olio d’oliva, sale e pepe e rosolateli in una padella profonda a fuoco vivo, circa mezzo minuto per lato, finché prendono colore. Trasferiteli in un piatto.",
+        "Nella stessa padella, a fuoco vivo, mettete la cipolla tritata grossolanamente, l’olio d’oliva, lo zucchero e il peperoncino.",
+        "Aggiungete l’aglio tritato finemente e fate soffriggere per qualche secondo.",
+        "Sfumate con l’ouzo e lasciate evaporare completamente l’alcol.",
+        "Aggiungete i pomodori tagliati, il brodo di gamberi e le linguine crude, mescolate e abbassate a fuoco medio.",
+        "Fate sobbollire per circa 10 minuti mescolando spesso. Quando il sugo si è addensato ma c’è ancora un po’ di liquido, aggiungete il burro (o la margarina) e mescolate finché il sugo si lega.",
+        "Togliete dal fuoco e aggiungete i gamberi, le foglie di basilico, il cipollotto, la scorza di limone e, se volete, il parmigiano.",
+        "Servite con un filo d’olio d’oliva, pepe macinato fresco, parmigiano grattugiato e foglie di basilico."
+      ],
+      "preparations": [
+        {
+          "title": "Pulizia dei gamberi e brodo",
+          "steps": [
+            "Pulite i gamberi scongelati: togliete la testa e il guscio lasciando la coda, e tenete da parte teste e gusci per il brodo.",
+            "Con un coltellino incidete leggermente il dorso di ogni gambero, dalla coda verso la testa, ed eliminate il filamento intestinale.",
+            "Mettete teste e gusci in una pentola con il dado e l’acqua, coprite e, appena prende il bollore, fate sobbollire 15 minuti. Non di più, altrimenti il brodo diventa amaro.",
+            "Filtrate il brodo in una ciotola e tenetelo da parte."
+          ]
+        }
       ],
       "memory": {
         "title": "Il pranzo della domenica",
         "story": "Non ci aspettavamo che venisse così buono la prima volta, ma è diventato la nostra specialità."
       },
-      "prepTime": "20 minuti",
-      "cookTime": "45 minuti"
+      "prepTime": "30 minuti",
+      "cookTime": "25 minuti"
     },
     "ro": {
       "title": "Creveți marinaradara (cea cu „aki”, dar nu contează)",
-      "description": "O rețetă pe care o va adora toată familia! Cu ingrediente simple și un gust minunat.",
+      "description": "Linguine cu creveți suculenți într-un sos roșu de casă, legat cu o supă făcută din capetele și cojile lor. Rețeta este a lui Akis Petretzikis.",
       "ingredients": [
-        "Legume proaspete",
-        "Ulei de măsline",
-        "Oțet balsamic",
-        "Sare"
+        "250 g linguine",
+        "1/2 kg creveți (congelați)",
+        "1 cub de supă de legume",
+        "750 ml apă",
+        "1 ceapă",
+        "50 ml ulei de măsline, plus puțin pentru servire",
+        "1/2 linguriță de zahăr",
+        "1 vârf de cuțit de fulgi de chili",
+        "1 cățel de usturoi",
+        "20 ml ouzo",
+        "2 roșii",
+        "50 g unt (sau margarină pentru o variantă de post)",
+        "4-5 frunze de busuioc, plus câteva pentru servire",
+        "1 ceapă verde tocată mărunt",
+        "Coajă rasă de lămâie",
+        "50 g parmezan ras (opțional), plus puțin pentru servire",
+        "Sare, piper"
       ],
       "steps": [
-        "Gustăm puțin pe furiș și ne ardem limba.",
-        "Aruncăm o privire în cuptor și sperăm la ce e mai bun.",
-        "Închidem ochii și adăugăm condimente la întâmplare.",
-        "Servim în farfurii adânci și ne prefacem că știm ce facem.",
-        "Mai punem puțin ulei, „pentru că așa e mai gustos”."
+        "Stropiți creveții cu ulei de măsline, sare și piper și căliți-i într-o tigaie adâncă la foc mare, cam o jumătate de minut pe fiecare parte, până se rumenesc. Scoateți-i pe o farfurie.",
+        "În aceeași tigaie, la foc mare, puneți ceapa tăiată grosier, uleiul de măsline, zahărul și fulgii de chili.",
+        "Adăugați usturoiul tocat mărunt și căliți câteva secunde.",
+        "Stingeți cu ouzo și lăsați alcoolul să se evapore complet.",
+        "Adăugați roșiile tăiate, supa de creveți și linguinele nefierte, amestecați și reduceți focul la mediu.",
+        "Fierbeți la foc mic aproximativ 10 minute, amestecând des. Când sosul s-a îngroșat, dar mai are puțin lichid, adăugați untul (sau margarina) și amestecați până se leagă sosul.",
+        "Luați tigaia de pe foc și adăugați creveții, frunzele de busuioc, ceapa verde, coaja de lămâie și, dacă doriți, parmezanul.",
+        "Serviți cu puțin ulei de măsline, piper proaspăt măcinat, parmezan ras și frunze de busuioc."
+      ],
+      "preparations": [
+        {
+          "title": "Curățarea creveților și supa",
+          "steps": [
+            "Curățați creveții decongelați: îndepărtați capul și carapacea, dar lăsați coada, și păstrați capetele și cojile pentru supă.",
+            "Cu un cuțit mic, faceți o incizie superficială de-a lungul spatelui fiecărui crevete, de la coadă spre cap, și scoateți intestinul.",
+            "Puneți capetele și cojile într-o oală cu cubul de supă și apa, acoperiți și, după ce dă în clocot, fierbeți la foc mic 15 minute. Nu mai mult, altfel supa devine amară.",
+            "Strecurați supa într-un bol și puneți-o deoparte."
+          ]
+        }
       ],
       "memory": {
         "title": "Masa de duminică",
         "story": "Nu ne așteptam să iasă atât de bine de prima dată, dar a devenit specialitatea noastră."
       },
-      "prepTime": "20 de minute",
-      "cookTime": "45 de minute"
+      "prepTime": "30 de minute",
+      "cookTime": "25 de minute"
     },
     "cs": {
       "title": "Krevetová marinaradara (ta s „aki“, ale to nevadí)",
-      "description": "Recept, který si zamiluje celá rodina! Jednoduché suroviny a báječná chuť.",
+      "description": "Linguine se šťavnatými krevetami v domácí červené omáčce, kterou spojuje vývar z jejich hlaviček a krunýřů. Recept je od Akise Petretzikise.",
       "ingredients": [
-        "Čerstvá zelenina",
-        "Olivový olej",
-        "Balzamikový ocet",
-        "Sůl"
+        "250 g linguine",
+        "1/2 kg krevet (mražených)",
+        "1 zeleninový bujón",
+        "750 ml vody",
+        "1 cibule",
+        "50 ml olivového oleje a trochu navíc k podávání",
+        "1/2 lžičky cukru",
+        "1 špetka chilli vloček",
+        "1 stroužek česneku",
+        "20 ml ouza",
+        "2 rajčata",
+        "50 g másla (nebo margarínu pro postní verzi)",
+        "4–5 lístků bazalky a pár navíc k podávání",
+        "1 jarní cibulka, nadrobno nakrájená",
+        "Kůra z citronu",
+        "50 g strouhaného parmazánu (podle chuti) a trochu k podávání",
+        "Sůl, pepř"
       ],
       "steps": [
-        "Potajmu ochutnáme a spálíme si jazyk.",
-        "Nakoukneme do trouby a doufáme v to nejlepší.",
-        "Zavřeme oči a přidáme koření naslepo.",
-        "Podáváme v hlubokých talířích a děláme, že víme, co děláme.",
-        "Přidáme trochu oleje navíc, „protože tak je to chutnější“."
+        "Krevety pokapejte olivovým olejem, osolte, opepřete a v hluboké pánvi na prudkém ohni je opečte zhruba půl minuty z každé strany, dokud nezískají barvu. Přendejte je na talíř.",
+        "Do stejné pánve na prudkém ohni dejte nahrubo nakrájenou cibuli, olivový olej, cukr a chilli vločky.",
+        "Přidejte nadrobno nasekaný česnek a pár vteřin orestujte.",
+        "Podlijte ouzem a nechte alkohol úplně odpařit.",
+        "Přidejte nakrájená rajčata, krevetový vývar a syrové linguine, promíchejte a ztlumte na střední oheň.",
+        "Zvolna vařte asi 10 minut a často míchejte. Když omáčka zhoustne, ale ještě v ní zbývá trochu tekutiny, přidejte máslo (nebo margarín) a míchejte, dokud se omáčka nespojí.",
+        "Pánev stáhněte z ohně a přidejte krevety, lístky bazalky, jarní cibulku, citronovou kůru a podle chuti parmazán.",
+        "Podávejte s trochou olivového oleje, čerstvě mletým pepřem, strouhaným parmazánem a lístky bazalky."
+      ],
+      "preparations": [
+        {
+          "title": "Čištění krevet a vývar",
+          "steps": [
+            "Rozmražené krevety očistěte: odstraňte hlavičky a krunýře, ocásky nechte, a hlavičky s krunýři si schovejte na vývar.",
+            "Malým nožem každou krevetu mělce nařízněte podél hřbetu, od ocásku k hlavičce, a vyjměte střevo.",
+            "Hlavičky a krunýře dejte do hrnce s bujónem a vodou, přikryjte a jakmile se začne vařit, nechte 15 minut zvolna vařit. Ne déle, jinak vývar zhořkne.",
+            "Vývar sceďte do misky a odložte stranou."
+          ]
+        }
       ],
       "memory": {
         "title": "Nedělní oběd",
         "story": "Nečekali jsme, že se to napoprvé tak povede, ale stala se z toho naše specialita."
       },
-      "prepTime": "20 minut",
-      "cookTime": "45 minut"
+      "prepTime": "30 minut",
+      "cookTime": "25 minut"
     },
     "uk": {
       "title": "Креветкова маринарадара (та, що з «акі», але нічого страшного)",
-      "description": "Рецепт, який полюбить уся родина! Прості інгредієнти й чудовий смак.",
+      "description": "Лінгвіні із соковитими креветками в домашньому червоному соусі, який загущує бульйон з їхніх голів і панцирів. Рецепт Акіса Петретзікіса.",
       "ingredients": [
-        "Свіжі овочі",
-        "Оливкова олія",
-        "Бальзамічний оцет",
-        "Сіль"
+        "250 г лінгвіні",
+        "1/2 кг креветок (заморожених)",
+        "1 овочевий бульйонний кубик",
+        "750 мл води",
+        "1 цибулина",
+        "50 мл оливкової олії й ще трохи для подачі",
+        "1/2 чайної ложки цукру",
+        "1 дрібка пластівців чилі",
+        "1 зубчик часнику",
+        "20 мл узо",
+        "2 помідори",
+        "50 г вершкового масла (або маргарину для пісної версії)",
+        "4–5 листочків базиліку й ще кілька для подачі",
+        "1 зелена цибулина, дрібно нарізана",
+        "Цедра лимона",
+        "50 г тертого пармезану (за бажанням) і трохи для подачі",
+        "Сіль, перець"
       ],
       "steps": [
-        "Тишком куштуємо й обпікаємо язик.",
-        "Зазираємо в духовку й сподіваємося на краще.",
-        "Заплющуємо очі й додаємо спеції навмання.",
-        "Подаємо в глибоких тарілках і вдаємо, що знаємо, що робимо.",
-        "Додаємо трохи більше олії, «бо так смачніше»."
+        "Збризніть креветки оливковою олією, посоліть, поперчіть і обсмажте в глибокій сковороді на сильному вогні приблизно пів хвилини з кожного боку, доки вони не зарум’яняться. Перекладіть на тарілку.",
+        "У ту саму сковороду на сильному вогні покладіть грубо нарізану цибулю, оливкову олію, цукор і пластівці чилі.",
+        "Додайте дрібно нарізаний часник і смажте кілька секунд.",
+        "Влийте узо й дайте алкоголю повністю випаруватися.",
+        "Додайте нарізані помідори, креветковий бульйон і сирі лінгвіні, перемішайте й зменште вогонь до середнього.",
+        "Тушкуйте приблизно 10 хвилин, часто помішуючи. Коли соус загусне, але ще залишиться трохи рідини, додайте масло (або маргарин) і помішуйте, доки соус не стане однорідним.",
+        "Зніміть сковороду з вогню й додайте креветки, листочки базиліку, зелену цибулю, лимонну цедру і, за бажанням, пармезан.",
+        "Подавайте з краплею оливкової олії, свіжозмеленим перцем, тертим пармезаном і листочками базиліку."
+      ],
+      "preparations": [
+        {
+          "title": "Чищення креветок і бульйон",
+          "steps": [
+            "Очистіть розморожені креветки: зніміть голови й панцирі, залишивши хвостики, а голови й панцирі відкладіть для бульйону.",
+            "Маленьким ножем зробіть неглибокий надріз уздовж спинки кожної креветки, від хвоста до голови, і вийміть кишкову жилку.",
+            "Покладіть голови й панцирі в каструлю з бульйонним кубиком і водою, накрийте кришкою і, щойно закипить, варіть на слабкому вогні 15 хвилин. Не довше, бо бульйон стане гірким.",
+            "Процідіть бульйон у миску й відставте."
+          ]
+        }
       ],
       "memory": {
         "title": "Недільний обід",
         "story": "Ми не очікували, що з першого разу вийде так смачно, але це стало нашою фірмовою стравою."
       },
-      "prepTime": "20 хвилин",
-      "cookTime": "45 хвилин"
+      "prepTime": "30 хвилин",
+      "cookTime": "25 хвилин"
     },
     "ja": {
       "title": "エビのマリナラダーラ（「アキ」のほう、でも気にしない）",
-      "description": "家族みんなが大好きになるレシピ！シンプルな材料で、すばらしい味わいです。",
+      "description": "ぷりぷりのエビを、殻と頭でとったスープでまとめた自家製トマトソースで仕上げるリングイネ。レシピはアキス・ペトレツィキスのものです。",
       "ingredients": [
-        "新鮮な野菜",
-        "オリーブオイル",
-        "バルサミコ酢",
-        "塩"
+        "リングイネ 250g",
+        "エビ（冷凍） 500g",
+        "野菜ブイヨンキューブ 1個",
+        "水 750ml",
+        "玉ねぎ 1個",
+        "オリーブオイル 50ml（仕上げ用に少し追加）",
+        "砂糖 小さじ1/2",
+        "唐辛子フレーク ひとつまみ",
+        "にんにく 1片",
+        "ウーゾ 20ml",
+        "トマト 2個",
+        "バター 50g（精進用にはマーガリン）",
+        "バジルの葉 4〜5枚（仕上げ用に数枚追加）",
+        "青ねぎ 1本（みじん切り）",
+        "レモンの皮のすりおろし",
+        "パルメザンチーズ（すりおろし） 50g（お好みで、仕上げ用に少し追加）",
+        "塩、こしょう"
       ],
       "steps": [
-        "こっそり味見をして、舌をやけどします。",
-        "オーブンをのぞいて、うまくいくよう祈ります。",
-        "目を閉じて、スパイスを適当に加えます。",
-        "深皿に盛りつけて、わかっているふりをします。",
-        "油を少し多めに入れます。「そのほうがおいしくなるから」。"
+        "エビにオリーブオイル、塩、こしょうをかけ、深めのフライパンで強火で片面30秒ほどずつ、色がつくまで焼きます。お皿に取り出します。",
+        "同じフライパンに、強火で粗く刻んだ玉ねぎ、オリーブオイル、砂糖、唐辛子フレークを入れます。",
+        "みじん切りにしたにんにくを加え、数秒炒めます。",
+        "ウーゾを加え、アルコールを完全に飛ばします。",
+        "切ったトマト、エビのスープ、ゆでていないリングイネを加えて混ぜ、中火にします。",
+        "よく混ぜながら10分ほど煮ます。ソースにとろみがつき、まだ少し水分が残っているうちにバター（またはマーガリン）を加え、ソースがまとまるまで混ぜます。",
+        "火から下ろし、エビ、バジルの葉、青ねぎ、レモンの皮、お好みでパルメザンチーズを加えます。",
+        "オリーブオイルを少しかけ、挽きたてのこしょう、すりおろしたパルメザンチーズ、バジルの葉を添えて盛りつけます。"
+      ],
+      "preparations": [
+        {
+          "title": "エビの下処理とスープ",
+          "steps": [
+            "解凍したエビの頭と殻をむきます。尾は残し、頭と殻はスープ用にとっておきます。",
+            "小さなナイフでエビの背に尾から頭に向かって浅く切り込みを入れ、背わたを取ります。",
+            "頭と殻をブイヨンキューブと水と一緒に鍋に入れ、ふたをして沸騰したら弱火で15分煮ます。それ以上煮るとスープが苦くなります。",
+            "スープをこしてボウルに入れ、取っておきます。"
+          ]
+        }
       ],
       "memory": {
         "title": "日曜日の食卓",
         "story": "初めてでこんなにおいしくできるとは思っていませんでしたが、今ではわが家の定番料理です。"
       },
-      "prepTime": "20分",
-      "cookTime": "45分"
+      "prepTime": "30分",
+      "cookTime": "25分"
     }
   }
 }
