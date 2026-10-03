@@ -4,6 +4,12 @@ All notable changes to this project are documented here. This file is generated
 from the Git commit history; do not edit it manually. Run `npm run changelog`
 to regenerate it.
 
+## 2026-10-04
+
+### Other
+- Remove Grandma's Pastitsio recipe file from the repository ([6f0e2eb](https://github.com/Roudis/roudomageiremata/commit/6f0e2eb0f8234b18e4c19a71b251bd4ce0367aa9))
+- Add image for 'Ο Μουσακάς της Γιαγιάς' ([96f221f](https://github.com/Roudis/roudomageiremata/commit/96f221f0de888f64132a7f9bc4fad829434ff4ca))
+
 ## 2026-10-03
 
 ### Other
