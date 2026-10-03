@@ -5,17 +5,21 @@ import { getMessages } from "@/lib/i18n/messages";
 type StepListProps = {
   steps: string[];
   locale: Locale;
+  /** The heading; "Εκτέλεση" and its translations when not given. A preparation passes its own title. */
+  title?: string;
   /** The steps' language when it differs from the page's: Greek, for an untranslated recipe. */
   lang?: Locale;
 };
 
-export function StepList({ steps, locale, lang }: StepListProps) {
+export function StepList({ steps, locale, title, lang }: StepListProps) {
   const t = getMessages(locale);
 
   return (
     <section>
       <div className="flex items-baseline justify-between gap-4">
-        <h2 className="font-serif text-2xl font-semibold tracking-tight sm:text-3xl">{t.recipe.steps}</h2>
+        <h2 lang={title === undefined ? undefined : lang} className="font-serif text-2xl font-semibold tracking-tight sm:text-3xl">
+          {title ?? t.recipe.steps}
+        </h2>
         <span className="text-sm text-muted-foreground">{formatCount(locale, t.counts.steps, steps.length)}</span>
       </div>
       <ol lang={lang} className="mt-6">

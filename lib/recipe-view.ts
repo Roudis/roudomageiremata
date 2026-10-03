@@ -111,6 +111,9 @@ export function localizeRecipe(recipe: Recipe, locale: Locale): LocalizedRecipe 
   if (greek.memory !== undefined && translation.memory !== undefined) {
     localized.memory = { ...greek.memory, ...translation.memory };
   }
+  if (greek.preparations !== undefined && translation.preparations !== undefined) {
+    localized.preparations = translation.preparations;
+  }
   if (translation.prepTime !== undefined) localized.prepTime = translation.prepTime;
   if (translation.cookTime !== undefined) localized.cookTime = translation.cookTime;
   return localized;

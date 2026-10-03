@@ -50,10 +50,10 @@ async function fetchAllRecipes() {
 }
 
 // Key order of the recipe files, so unchanged recipes produce no diff. Strapi
-// holds the Greek text, image, and timestamps; tags and translations are only
-// in the files, so they are kept from the existing file.
+// holds the Greek text, image, and timestamps; preparations, tags, and
+// translations are only in the files, so they are kept from the existing file.
 const KEY_ORDER = [
-  "id", "title", "description", "ingredients", "steps", "memory", "category", "tags",
+  "id", "title", "description", "ingredients", "steps", "preparations", "memory", "category", "tags",
   "imageUrl", "prepTime", "cookTime", "servings", "createdAt", "updatedAt", "translations",
 ];
 

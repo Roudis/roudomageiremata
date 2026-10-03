@@ -8,15 +8,27 @@ export interface Memory {
 }
 
 /**
+ * A part of the recipe made separately before the main steps, such as the
+ * béchamel for a moussaka. The page shows each one, under its title, above the
+ * main steps.
+ */
+export interface Preparation {
+  title: string;
+  steps: string[];
+}
+
+/**
  * A recipe's text in one other language. It mirrors the Greek fields one to one:
- * the same number of ingredients and steps, and a memory, prepTime, or cookTime
- * exactly when the Greek has one. The memory's date comes from the Greek.
+ * the same number of ingredients and steps, the same preparations with the same
+ * number of steps each, and a memory, prepTime, or cookTime exactly when the
+ * Greek has one. The memory's date comes from the Greek.
  */
 export interface RecipeTranslation {
   title: string;
   description: string;
   ingredients: string[];
   steps: string[];
+  preparations?: Preparation[];
   memory?: Pick<Memory, "title" | "story">;
   prepTime?: string;
   cookTime?: string;
@@ -28,6 +40,8 @@ export interface Recipe {
   description: string;
   ingredients: string[];
   steps: string[];
+  /** Made before the main steps and shown above them, such as a sauce. */
+  preparations?: Preparation[];
   memory?: Memory;
   imageUrl?: string;
   category?: string;

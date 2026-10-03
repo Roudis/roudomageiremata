@@ -88,7 +88,7 @@ components/
     recipe-memory.tsx        The family story attached to a recipe, on the purple feature band
     ingredient-list.tsx      Ingredients as native checkboxes (no client JS) with the count badge;
                              sticky beside the steps on large screens
-    step-list.tsx            Numbered steps with the step count
+    step-list.tsx            Numbered steps with the step count; also renders each preparation under its own title
 lib/
   i18n/
     config.ts                Pure: LOCALES, DEFAULT_LOCALE, TRANSLATED_LOCALES, LOCALE_DETAILS (name, Intl tag,
@@ -144,6 +144,8 @@ interface Recipe {
   description: string;
   ingredients: string[];
   steps: string[];
+  preparations?: { title: string; steps: string[] }[];  // made before the main steps and shown above them,
+                           // e.g. the béchamel; only in the JSON files, not in Strapi
   memory?: Memory;
   imageUrl?: string;       // "/images/recipes/<id>.jpg", prefixed via withBasePath when rendered
   category?: string;       // grouping used by the filter buttons and the card colour;
@@ -164,6 +166,7 @@ interface RecipeTranslation {
   description: string;
   ingredients: string[];   // same count as the Greek
   steps: string[];         // same count as the Greek
+  preparations?: { title: string; steps: string[] }[];  // exactly when the Greek has them, same counts
   memory?: { title: string; story: string };   // exactly when the Greek has one; date comes from the Greek
   prepTime?: string;       // exactly when the Greek has one
   cookTime?: string;       // exactly when the Greek has one
@@ -228,7 +231,7 @@ cannot import it.
 - **Add/edit/remove a recipe:** edit and publish its Greek text and image in
   Strapi (`npm run develop` in `../roudomageiremata-cms`), run
   `npm run sync:strapi` (add `-- --prune` after deleting one), then add or
-  update its `tags` and `translations` in `data/recipes/<id>.json`, which
+  update its `preparations`, `tags`, and `translations` in `data/recipes/<id>.json`, which
   Strapi doesn't hold yet and the sync keeps. Review the diff, open a PR into
   `main`. Direct edits to Strapi-managed fields in the JSON are overwritten
   by the next sync.

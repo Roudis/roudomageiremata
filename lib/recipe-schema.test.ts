@@ -332,6 +332,47 @@ function fullTranslation(): Record<string, unknown> {
   };
 }
 
+describe("parseRecipe: preparations", () => {
+  const bechamel = { title: "Μπεσαμέλ", steps: ["Ανακάτεψε", "Δέσε"] };
+
+  it("accepts preparations, each with a title and steps", () => {
+    expect(issuesFor({ ...validRecipe(), preparations: [bechamel, { title: "Σάλτσα", steps: ["Βράσε"] }] })).toEqual([]);
+  });
+
+  it("rejects an empty list and preparations with missing, blank, or unknown fields", () => {
+    expect(fieldsOf({ ...validRecipe(), preparations: [] })).toEqual(["preparations"]);
+    expect(
+      fieldsOf({ ...validRecipe(), preparations: ["Μπεσαμέλ", { title: " ", steps: [], note: "x" }] }),
+    ).toEqual(["preparations.0", "preparations.1.note", "preparations.1.title", "preparations.1.steps"]);
+  });
+
+  it("requires translated preparations exactly when the Greek has them, with the same number of steps", () => {
+    const translation = { title: "T", description: "D", ingredients: ["a", "b"], steps: ["c", "d"] };
+    const withBechamel = { ...validRecipe(), preparations: [bechamel] };
+
+    expect(issuesFor({ ...withBechamel, translations: { en: { ...translation, preparations: [bechamel] } } })).toEqual([]);
+    expect(fieldsOf({ ...withBechamel, translations: { en: translation } })).toEqual(["translations.en.preparations"]);
+    expect(
+      fieldsOf({ ...validRecipe(), translations: { en: { ...translation, preparations: [bechamel] } } }),
+    ).toEqual(["translations.en.preparations"]);
+    expect(
+      issuesFor({
+        ...withBechamel,
+        translations: { en: { ...translation, preparations: [{ title: "Béchamel", steps: ["Mix"] }] } },
+      }),
+    ).toEqual([
+      {
+        field: "translations.en.preparations.0.steps",
+        message:
+          "translations.en.preparations.0.steps has 1 entries but the Greek has 2; translate each one, or remove translations.en to show the Greek",
+      },
+    ]);
+    expect(
+      fieldsOf({ ...withBechamel, translations: { en: { ...translation, preparations: [bechamel, bechamel] } } }),
+    ).toEqual(["translations.en.preparations"]);
+  });
+});
+
 describe("parseRecipe: translations", () => {
   it("accepts a translation into every other language", () => {
     const translations = Object.fromEntries(TRANSLATED_LOCALES.map((code) => [code, fullTranslation()]));

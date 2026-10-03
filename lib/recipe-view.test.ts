@@ -265,6 +265,19 @@ describe("localizeRecipe", () => {
     });
   });
 
+  it("uses the translated preparations when the Greek has them", () => {
+    const moussaka = makeRecipe({
+      id: "moussaka",
+      preparations: [{ title: "Μπεσαμέλ", steps: ["Ανακάτεψε"] }],
+      translations: {
+        en: { title: "T", description: "D", ingredients: ["i"], steps: ["s"], preparations: [{ title: "Béchamel", steps: ["Stir"] }] },
+      },
+    });
+
+    expect(localizeRecipe(moussaka, "en").preparations).toEqual([{ title: "Béchamel", steps: ["Stir"] }]);
+    expect(localizeRecipe(moussaka, "fr").preparations).toEqual([{ title: "Μπεσαμέλ", steps: ["Ανακάτεψε"] }]);
+  });
+
   it("shows the Greek, marked as Greek, in a language with no translation", () => {
     const { translations, ...greek } = gemista;
 

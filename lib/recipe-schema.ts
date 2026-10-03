@@ -1,4 +1,4 @@
-import type { Memory, Recipe, RecipeTranslation } from "@/types/recipe";
+import type { Memory, Preparation, Recipe, RecipeTranslation } from "@/types/recipe";
 import { TRANSLATED_LOCALES, isTranslatedLocale, type TranslatedLocale } from "@/lib/i18n/config";
 import { NOT_VEGETARIAN, TAG_IDS, TAG_IMPLIES, expandTags, isTagId, type TagId } from "@/lib/tags";
 
@@ -34,14 +34,16 @@ export class RecipeDataError extends Error {
 
 // `satisfies` makes `npm run typecheck` fail until these lists match types/recipe.ts.
 const RECIPE_FIELDS = {
-  id: true, title: true, description: true, ingredients: true, steps: true, memory: true, imageUrl: true,
-  category: true, tags: true, prepTime: true, cookTime: true, servings: true, createdAt: true, updatedAt: true,
+  id: true, title: true, description: true, ingredients: true, steps: true, preparations: true, memory: true,
+  imageUrl: true, category: true, tags: true, prepTime: true, cookTime: true, servings: true, createdAt: true, updatedAt: true,
   translations: true,
 } as const satisfies Record<keyof Recipe, true>;
 const MEMORY_FIELDS = { title: true, story: true, date: true } as const satisfies Record<keyof Memory, true>;
 const TRANSLATION_FIELDS = {
-  title: true, description: true, ingredients: true, steps: true, memory: true, prepTime: true, cookTime: true,
+  title: true, description: true, ingredients: true, steps: true, preparations: true, memory: true, prepTime: true,
+  cookTime: true,
 } as const satisfies Record<keyof RecipeTranslation, true>;
+const PREPARATION_FIELDS = { title: true, steps: true } as const satisfies Record<keyof Preparation, true>;
 const TRANSLATED_MEMORY_FIELDS = { title: true, story: true } as const satisfies Record<
   keyof NonNullable<RecipeTranslation["memory"]>,
   true
@@ -61,6 +63,42 @@ const isStringArray = (v: unknown): v is string[] => Array.isArray(v) && v.lengt
 const isIsoDate = (v: unknown): v is string => typeof v === "string" && !Number.isNaN(Date.parse(v));
 
 type Fail = (field: string, message: string) => void;
+
+/**
+ * Checks a `preparations` list, in the Greek or at `at` in a translation. Returns
+ * true when it is a well-formed array, so a translation can then compare it with the Greek.
+ */
+function checkPreparations(preparations: unknown, at: string, fail: Fail): preparations is Preparation[] {
+  if (!Array.isArray(preparations) || preparations.length === 0) {
+    fail(at, `${at} must be a non-empty array when present`);
+    return false;
+  }
+
+  let valid = true;
+  preparations.forEach((preparation: unknown, index) => {
+    const field = `${at}.${index}`;
+    if (!isPlainObject(preparation)) {
+      fail(field, `${field} must be an object with a title and steps`);
+      valid = false;
+      return;
+    }
+    for (const key of Object.keys(preparation)) {
+      if (!Object.hasOwn(PREPARATION_FIELDS, key)) {
+        fail(`${field}.${key}`, `unknown field "${key}" in ${field}`);
+        valid = false;
+      }
+    }
+    if (!isNonEmptyString(preparation.title)) {
+      fail(`${field}.title`, `${field}.title must be a non-empty string`);
+      valid = false;
+    }
+    if (!isStringArray(preparation.steps)) {
+      fail(`${field}.steps`, `${field}.steps must be a non-empty array of non-empty strings`);
+      valid = false;
+    }
+  });
+  return valid;
+}
 
 /**
  * Checks one entry of `translations` against the Greek recipe it translates, so
@@ -99,6 +137,35 @@ function checkTranslation(
         field,
         `${field} has ${translated.length} entries but the Greek ${key} has ${original.length}; translate each one, ${removeHint}`,
       );
+    }
+  }
+
+  const preparationsField = `${at}.preparations`;
+  if ("preparations" in translation !== "preparations" in greek) {
+    fail(preparationsField, `${preparationsField} must be present exactly when the Greek preparations are, ${removeHint}`);
+  } else if (
+    "preparations" in translation &&
+    checkPreparations(translation.preparations, preparationsField, fail) &&
+    Array.isArray(greek.preparations)
+  ) {
+    const original = greek.preparations as unknown[];
+    const translated = translation.preparations;
+    if (translated.length !== original.length) {
+      fail(
+        preparationsField,
+        `${preparationsField} has ${translated.length} entries but the Greek preparations has ${original.length}; translate each one, ${removeHint}`,
+      );
+    } else {
+      translated.forEach((preparation, index) => {
+        const steps = (original[index] as { steps?: unknown }).steps;
+        if (Array.isArray(steps) && preparation.steps.length !== steps.length) {
+          const field = `${preparationsField}.${index}.steps`;
+          fail(
+            field,
+            `${field} has ${preparation.steps.length} entries but the Greek has ${steps.length}; translate each one, ${removeHint}`,
+          );
+        }
+      });
     }
   }
 
@@ -188,6 +255,7 @@ function checkRecipe(value: unknown, issues: RecipeDataIssue[], { expectedId }: 
   if (!isNonEmptyString(value.description)) fail("description", "description must be a non-empty string");
   if (!isStringArray(value.ingredients)) fail("ingredients", "ingredients must be a non-empty array of non-empty strings");
   if (!isStringArray(value.steps)) fail("steps", "steps must be a non-empty array of non-empty strings");
+  if ("preparations" in value) checkPreparations(value.preparations, "preparations", fail);
   if (!isIsoDate(value.createdAt)) fail("createdAt", "createdAt must be an ISO date string");
   if (!isIsoDate(value.updatedAt)) fail("updatedAt", "updatedAt must be an ISO date string");
 

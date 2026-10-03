@@ -141,7 +141,11 @@ export async function RecipePage({ id, locale }: RecipePageProps) {
           </div>
         </aside>
 
-        <div className="lg:col-span-8">
+        {/* Preparations, such as a sauce made separately, come before the main steps. */}
+        <div className="space-y-12 sm:space-y-16 lg:col-span-8">
+          {recipe.preparations?.map((preparation, index) => (
+            <StepList key={index} steps={preparation.steps} title={preparation.title} locale={locale} lang={lang} />
+          ))}
           <StepList steps={recipe.steps} locale={locale} lang={lang} />
         </div>
       </div>
