@@ -17,9 +17,8 @@
     "Ψήνουμε σε προθερμασμένο φούρνο στους 190°–200° μέχρι να ψηθούν και να ροδίσουν. Γίνονται γρήγορα και ζουμερά, καλή όρεξη!"
   ],
   "memory": {
-    "title": "Γιορτινές μέρες",
-    "story": "Δεν περιμέναμε να βγει τόσο ωραίο την πρώτη φορά, αλλά έγινε η σπεσιαλιτέ μας.",
-    "date": "2023-11"
+    "title": "Κυριακές στη γιαγιά",
+    "story": "Όταν πηγαίνουμε τις Κυριακές στη γιαγιά στους Αμπελόκηπους για φαγητό, υπάρχει ένα όμορφο μοτίβο.\n\nΗ γιαγιά ετοιμάζει τα φαγητά από το πρωί, ο θείος είναι στην εκκλησία και ξέρουμε ότι θα έρθει μόλις τελειώσει.\n\nΦτάνουμε στο σπίτι, η γιαγιά τρέχει να μας υποδεχτεί και μας λέει να καθίσουμε. Στο τραπέζι έχει ήδη σαλάτα, φέτα, πατάτες φούρνου και τα σνίτσελ είναι σχεδόν έτοιμα.\n\nΜόλις ακούσουμε το κουδούνι και καταλάβουμε ότι έφτασε ο θείος, η γιαγιά, σαν αυτοματοποιημένη γραμμή παραγωγής, ξεκινάει να τηγανίζει τα σνίτσελ.\n\nΑνεβαίνει ο θείος, ακολουθούν φιλιά, αγκαλιές, χαιρετιόμαστε και πάμε μέσα να δούμε τα καινούρια αποκτήματα από κάρτες.\n\nΜόλις γίνουν τα σνίτσελ, καθόμαστε και τρώμε.\n\nΕννοείται πως η γιαγιά κάνει πάντα έξτρα σνίτσελ, για να πάρει μαζί του ο θείος."
   },
   "category": "Της Γιαγιάς που γεμίζουν κοιλίτσες και καρδιές",
   "tags": [
@@ -31,7 +30,7 @@
   "cookTime": "45 λεπτά",
   "servings": 4,
   "createdAt": "2026-08-10T16:52:28.199Z",
-  "updatedAt": "2026-10-03T21:42:34.000Z",
+  "updatedAt": "2026-10-03T21:58:51.000Z",
   "translations": {
     "en": {
       "title": "The schnitzels Uncle takes home in a tupperware",
@@ -51,8 +50,8 @@
         "Bake in a preheated oven at 190–200 °C until cooked through and golden. They are quick and juicy. Enjoy!"
       ],
       "memory": {
-        "title": "Festive days",
-        "story": "We never expected it to turn out so well the first time, but it became our speciality."
+        "title": "Sundays at Grandma’s",
+        "story": "When we go to Grandma’s in Ampelokipoi for Sunday lunch, there’s a lovely routine.\n\nGrandma has been cooking since the morning, Uncle is at church, and we know he’ll come as soon as it’s over.\n\nWe arrive at the house, Grandma rushes to greet us and tells us to sit down. The table already has salad, feta and oven-roasted potatoes, and the schnitzels are almost ready.\n\nAs soon as we hear the doorbell and realise Uncle has arrived, Grandma, like an automated production line, starts frying the schnitzels.\n\nUncle comes up, and there are kisses and hugs; we say our hellos and go inside to see the latest additions to the card collection.\n\nAs soon as the schnitzels are done, we sit down and eat.\n\nIt goes without saying that Grandma always makes extra schnitzels for Uncle to take home."
       },
       "prepTime": "20 minutes",
       "cookTime": "45 minutes"
@@ -75,8 +74,8 @@
         "Bak ze in een voorverwarmde oven op 190–200 °C tot ze gaar en goudbruin zijn. Ze zijn snel klaar en lekker sappig. Eet smakelijk!"
       ],
       "memory": {
-        "title": "Feestdagen",
-        "story": "We hadden niet verwacht dat het de eerste keer zo lekker zou worden, maar het werd onze specialiteit."
+        "title": "Zondagen bij oma",
+        "story": "Als we op zondag bij oma in Ampelokipoi gaan eten, is er altijd een mooi vast patroon.\n\nOma staat al sinds de ochtend te koken, oom is in de kerk en we weten dat hij komt zodra de dienst voorbij is.\n\nWe komen aan, oma haast zich om ons te begroeten en zegt dat we moeten gaan zitten. Op tafel staan al salade, feta en aardappelen uit de oven, en de schnitzels zijn bijna klaar.\n\nZodra we de bel horen en weten dat oom er is, begint oma als een geautomatiseerde productielijn de schnitzels te bakken.\n\nOom komt boven, er volgen kusjes en knuffels, we begroeten elkaar en gaan naar binnen om de nieuwste aanwinsten van de kaartencollectie te bekijken.\n\nZodra de schnitzels klaar zijn, gaan we zitten en eten we.\n\nHet spreekt vanzelf dat oma altijd extra schnitzels maakt, zodat oom ze mee naar huis kan nemen."
       },
       "prepTime": "20 minuten",
       "cookTime": "45 minuten"
@@ -99,8 +98,8 @@
         "Enfournez dans un four préchauffé à 190–200 °C jusqu’à ce qu’elles soient cuites et dorées. C’est rapide et bien juteux. Bon appétit !"
       ],
       "memory": {
-        "title": "Jours de fête",
-        "story": "On ne s’attendait pas à ce que ce soit aussi bon la première fois, mais c’est devenu notre spécialité."
+        "title": "Les dimanches chez Mamie",
+        "story": "Quand nous allons déjeuner le dimanche chez Mamie, à Ampelokipoi, il y a tout un joli rituel.\n\nMamie cuisine depuis le matin, Tonton est à l’église, et nous savons qu’il arrivera dès la fin de l’office.\n\nNous arrivons, Mamie accourt pour nous accueillir et nous dit de nous asseoir. Sur la table, il y a déjà la salade, la feta, les pommes de terre au four, et les schnitzels sont presque prêts.\n\nDès que nous entendons la sonnette et comprenons que Tonton est là, Mamie, telle une chaîne de production automatisée, se met à faire frire les schnitzels.\n\nTonton monte, ce sont des bisous, des câlins, on se dit bonjour et on va à l’intérieur voir les dernières acquisitions de sa collection de cartes.\n\nDès que les schnitzels sont prêts, nous nous mettons à table.\n\nBien sûr, Mamie fait toujours des schnitzels en plus pour que Tonton en emporte."
       },
       "prepTime": "20 minutes",
       "cookTime": "45 minutes"
@@ -123,8 +122,8 @@
         "Tillaga i förvärmd ugn på 190–200 °C tills de är genomstekta och gyllene. De går snabbt och blir saftiga. Smaklig måltid!"
       ],
       "memory": {
-        "title": "Helgdagar",
-        "story": "Vi trodde aldrig att det skulle bli så gott första gången, men det blev vår specialitet."
+        "title": "Söndagar hos mormor",
+        "story": "När vi åker till mormor i Ampelokipoi och äter på söndagarna finns det ett fint mönster.\n\nMormor har lagat mat sedan morgonen, morbror är i kyrkan och vi vet att han kommer så fort gudstjänsten är slut.\n\nVi kommer fram, mormor skyndar sig att ta emot oss och säger åt oss att sätta oss. På bordet står redan sallad, fetaost och ugnspotatis, och schnitzlarna är nästan klara.\n\nSå fort vi hör dörrklockan och förstår att morbror är här börjar mormor, som ett automatiserat löpande band, steka schnitzlarna.\n\nMorbror kommer upp, det blir pussar och kramar, vi hälsar och går in för att titta på de senaste tillskotten i kortsamlingen.\n\nSå fort schnitzlarna är klara sätter vi oss och äter.\n\nDet säger sig självt att mormor alltid gör extra schnitzlar som morbror får ta med sig hem."
       },
       "prepTime": "20 minuter",
       "cookTime": "45 minuter"
@@ -147,8 +146,8 @@
         "Horneamos en el horno precalentado a 190–200 °C hasta que estén hechos y dorados. Salen rápidos y jugosos. ¡Buen provecho!"
       ],
       "memory": {
-        "title": "Días de fiesta",
-        "story": "No esperábamos que saliera tan rico la primera vez, pero se convirtió en nuestra especialidad."
+        "title": "Domingos en casa de la abuela",
+        "story": "Cuando vamos los domingos a comer a casa de la abuela, en Ampelokipoi, hay un ritual precioso.\n\nLa abuela lleva cocinando desde la mañana, el tío está en la iglesia y sabemos que vendrá en cuanto termine la misa.\n\nLlegamos a casa, la abuela corre a recibirnos y nos dice que nos sentemos. En la mesa ya hay ensalada, queso feta y patatas al horno, y los escalopes están casi listos.\n\nEn cuanto oímos el timbre y sabemos que ha llegado el tío, la abuela, como una cadena de producción automatizada, empieza a freír los escalopes.\n\nSube el tío, vienen los besos y los abrazos, nos saludamos y entramos a ver las últimas adquisiciones de su colección de cartas.\n\nEn cuanto están hechos los escalopes, nos sentamos a comer.\n\nNi que decir tiene que la abuela siempre hace escalopes de más para que el tío se los lleve."
       },
       "prepTime": "20 minutos",
       "cookTime": "45 minutos"
@@ -171,8 +170,8 @@
         "Cuociamo in forno preriscaldato a 190–200 °C finché sono cotte e dorate. Si fanno in fretta e restano succose. Buon appetito!"
       ],
       "memory": {
-        "title": "Giorni di festa",
-        "story": "Non ci aspettavamo che venisse così buono la prima volta, ma è diventato la nostra specialità."
+        "title": "Le domeniche dalla nonna",
+        "story": "Quando la domenica andiamo a pranzo dalla nonna, ad Ampelokipoi, c’è un bellissimo rituale.\n\nLa nonna cucina fin dal mattino, lo zio è in chiesa e sappiamo che arriverà appena finisce la messa.\n\nArriviamo a casa, la nonna corre ad accoglierci e ci dice di sederci. In tavola ci sono già l’insalata, la feta e le patate al forno, e le cotolette sono quasi pronte.\n\nAppena sentiamo il campanello e capiamo che è arrivato lo zio, la nonna, come una catena di montaggio automatizzata, comincia a friggere le cotolette.\n\nLo zio sale, seguono baci e abbracci, ci salutiamo e andiamo di là a vedere gli ultimi acquisti della sua collezione di carte.\n\nAppena le cotolette sono pronte, ci sediamo e mangiamo.\n\nInutile dire che la nonna fa sempre qualche cotoletta in più da far portare a casa allo zio."
       },
       "prepTime": "20 minuti",
       "cookTime": "45 minuti"
@@ -195,8 +194,8 @@
         "Le coacem în cuptorul preîncălzit la 190–200 °C până se fac și se rumenesc. Se fac repede și ies suculente. Poftă bună!"
       ],
       "memory": {
-        "title": "Zile de sărbătoare",
-        "story": "Nu ne așteptam să iasă atât de bine de prima dată, dar a devenit specialitatea noastră."
+        "title": "Duminicile la bunica",
+        "story": "Când mergem duminica la bunica, în Ampelokipoi, la masă, există un ritual frumos.\n\nBunica gătește de dimineață, unchiul e la biserică și știm că va veni imediat ce se termină slujba.\n\nAjungem acasă, bunica aleargă să ne întâmpine și ne spune să ne așezăm. Pe masă sunt deja salata, brânza feta și cartofii la cuptor, iar șnițelele sunt aproape gata.\n\nImediat ce auzim soneria și ne dăm seama că a venit unchiul, bunica, ca o linie de producție automatizată, începe să prăjească șnițelele.\n\nUrcă unchiul, urmează pupături și îmbrățișări, ne salutăm și mergem înăuntru să vedem cele mai noi achiziții din colecția de cărți de joc.\n\nImediat ce sunt gata șnițelele, ne așezăm și mâncăm.\n\nSe înțelege de la sine că bunica face mereu șnițele în plus, ca să ia și unchiul cu el."
       },
       "prepTime": "20 de minute",
       "cookTime": "45 de minute"
@@ -219,8 +218,8 @@
         "Pečeme v troubě předehřáté na 190–200 °C, dokud nejsou propečené a dozlatova. Jsou rychlé a šťavnaté. Dobrou chuť!"
       ],
       "memory": {
-        "title": "Sváteční dny",
-        "story": "Nečekali jsme, že se to napoprvé tak povede, ale stala se z toho naše specialita."
+        "title": "Neděle u babičky",
+        "story": "Když jezdíme v neděli k babičce do Ampelokipoi na oběd, má to vždycky krásný průběh.\n\nBabička vaří už od rána, strejda je v kostele a víme, že přijde, jakmile bohoslužba skončí.\n\nPřijedeme, babička nám běží naproti a řekne nám, ať se posadíme. Na stole už je salát, feta a brambory z trouby a řízky jsou skoro hotové.\n\nJakmile uslyšíme zvonek a víme, že přišel strejda, babička jako automatizovaná výrobní linka začne smažit řízky.\n\nStrejda přijde nahoru, následují pusy a objetí, pozdravíme se a jdeme dovnitř podívat se na nové přírůstky do sbírky karet.\n\nJakmile jsou řízky hotové, sedneme si a jíme.\n\nSamozřejmě babička vždycky udělá řízky navíc, aby si je strejda mohl vzít s sebou."
       },
       "prepTime": "20 minut",
       "cookTime": "45 minut"
@@ -243,8 +242,8 @@
         "Запікаємо в розігрітій духовці при 190–200 °C, доки не спечуться й не підрум’яняться. Готуються швидко й виходять соковитими. Смачного!"
       ],
       "memory": {
-        "title": "Святкові дні",
-        "story": "Ми не очікували, що з першого разу вийде так смачно, але це стало нашою фірмовою стравою."
+        "title": "Неділі в бабусі",
+        "story": "Коли ми щонеділі їздимо обідати до бабусі в Ампелокіпі, усе відбувається за чудовим усталеним порядком.\n\nБабуся готує з самого ранку, дядько в церкві, і ми знаємо, що він прийде, щойно служба закінчиться.\n\nМи приїжджаємо, бабуся біжить нас зустрічати й каже сідати. На столі вже є салат, фета й запечена картопля, а шніцелі майже готові.\n\nЩойно ми чуємо дзвінок і розуміємо, що прийшов дядько, бабуся, мов автоматизована виробнича лінія, починає смажити шніцелі.\n\nДядько підіймається, далі поцілунки, обійми, ми вітаємося й ідемо в кімнату подивитися на нові поповнення колекції карток.\n\nЩойно шніцелі готові, ми сідаємо й їмо.\n\nЗвісно ж, бабуся завжди робить зайві шніцелі, щоб дядько взяв їх із собою."
       },
       "prepTime": "20 хвилин",
       "cookTime": "45 хвилин"
@@ -267,8 +266,8 @@
         "190〜200℃に予熱したオーブンで、火が通ってこんがり色づくまで焼きます。手早くできて、ジューシーに仕上がります。召し上がれ！"
       ],
       "memory": {
-        "title": "お祝いの日",
-        "story": "初めてでこんなにおいしくできるとは思っていませんでしたが、今ではわが家の定番料理です。"
+        "title": "おばあちゃんの家の日曜日",
+        "story": "日曜日にアンベロキピのおばあちゃんの家へごはんを食べに行くと、いつも決まった素敵な流れがあります。\n\nおばあちゃんは朝から料理をしていて、おじさんは教会にいます。礼拝が終わったらすぐに来ることを、みんな知っています。\n\n家に着くと、おばあちゃんが急いで出迎えてくれて、座りなさいと言います。テーブルにはもうサラダ、フェタチーズ、オーブンで焼いたじゃがいもが並び、シュニッツェルももうすぐできあがります。\n\n呼び鈴が鳴って、おじさんが着いたとわかった瞬間、おばあちゃんはまるで自動化された生産ラインのように、シュニッツェルを揚げはじめます。\n\nおじさんが上がってくると、キスとハグであいさつを交わし、奥の部屋へカードコレクションの新入りを見に行きます。\n\nシュニッツェルが揚がったら、みんなで席について食べます。\n\nもちろん、おばあちゃんはいつも、おじさんが持ち帰れるように多めにシュニッツェルを作っておきます。"
       },
       "prepTime": "20分",
       "cookTime": "45分"
