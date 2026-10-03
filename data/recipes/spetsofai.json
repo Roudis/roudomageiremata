@@ -1,0 +1,330 @@
+{
+  "id": "spetsofai",
+  "title": "Σπετσοφάι",
+  "description": "Το παραδοσιακό φαγητό του Πηλίου: χωριάτικα λουκάνικα και πιπεριές σε πηχτή σάλτσα ντομάτας, με φέτα και δυόσμο από πάνω.",
+  "ingredients": [
+    "1 κ. χωριάτικα λουκάνικα",
+    "1 κ. πιπεριές (για γεμιστά, Φλωρίνης, χρωματιστές)",
+    "1 κ.σ. πελτέ ντομάτα",
+    "1 ποτήρι μεγάλο (300 ml) νερό",
+    "1 φλ. καφέ (30 ml) πετιμέζι, μούστο ή κόκκινο κρασί γλυκό",
+    "1 κ.σ. κέτσαπ",
+    "1 χούφτα φρέσκο δυόσμο ή 1 κ.σ. δυόσμο ξερό",
+    "Φέτα (μέγεθος όσο 3 σπιρτόκουτα)",
+    "3 κ.σ. ελαιόλαδο",
+    "2 φέτες κασέρι ή γκούντα",
+    "Λίγο αλάτι",
+    "Πιπέρι κατά βούληση"
+  ],
+  "steps": [
+    "Σε ένα τηγάνι ζεσταίνουμε το ελαιόλαδο. Σοτάρουμε το λουκάνικο να πάρει χρώμα και μετά το μεταφέρουμε σε βαθιά κατσαρόλα.",
+    "Στο λάδι που σοτάραμε τα λουκάνικα τηγανίζουμε ελαφρώς τις πλυμένες και κομμένες πιπεριές (σε μέγεθος περίπου 2×2 εκ.). Τις μεταφέρουμε κι αυτές στην κατσαρόλα.",
+    "Διαλύουμε τον πελτέ ντομάτας στο νερό και τον προσθέτουμε στην κατσαρόλα. Στην κατσαρόλα βάζουμε επίσης το κέτσαπ και το κρασί.",
+    "Στο σημείο αυτό προσθέτουμε και τον δυόσμο (αν είναι ξερός). Αν είναι φρέσκος, προσθέτουμε τώρα μία κουταλιά.",
+    "Βράζουμε όλα τα υλικά σε μέτρια φωτιά για περίπου 10΄ ή μέχρι να δέσει η σάλτσα.",
+    "Κλείνουμε τη φωτιά και προσθέτουμε το κασέρι και έπειτα τον φρέσκο δυόσμο.",
+    "Σερβίρουμε ζεστό τρίβοντας τη φέτα και δυόσμο για διακόσμηση. Απολαμβάνουμε!"
+  ],
+  "category": "Οι ντελικάτες της Μαμάς",
+  "tags": [
+    "pork"
+  ],
+  "imageUrl": "/images/recipes/spetsofai.jpg",
+  "prepTime": "15 λεπτά",
+  "cookTime": "25 λεπτά",
+  "servings": 6,
+  "createdAt": "2026-10-03T12:00:00.000Z",
+  "updatedAt": "2026-10-03T12:00:00.000Z",
+  "translations": {
+    "en": {
+      "title": "Spetsofai",
+      "description": "The traditional dish of Pelion: village sausages and peppers in a thick tomato sauce, topped with feta and mint.",
+      "ingredients": [
+        "1 kg village sausages",
+        "1 kg peppers (for stuffing, Florina, or mixed colours)",
+        "1 tbsp tomato paste",
+        "1 large glass (300 ml) water",
+        "1 coffee cup (30 ml) petimezi (grape molasses), grape must, or sweet red wine",
+        "1 tbsp ketchup",
+        "1 handful fresh mint or 1 tbsp dried mint",
+        "Feta (about the size of 3 matchboxes)",
+        "3 tbsp olive oil",
+        "2 slices kasseri or gouda",
+        "A little salt",
+        "Pepper to taste"
+      ],
+      "steps": [
+        "In a frying pan, we heat the olive oil. We sauté the sausage until it takes on colour, then move it to a deep pot.",
+        "In the oil we used for the sausages, we lightly fry the washed and chopped peppers (in pieces of about 2×2 cm). We move these to the pot as well.",
+        "We dissolve the tomato paste in the water and add it to the pot. We also put the ketchup and the wine into the pot.",
+        "At this point we also add the mint (if it is dried). If it is fresh, we add one spoonful now.",
+        "We boil everything over medium heat for about 10 minutes, or until the sauce thickens.",
+        "We turn off the heat and add the kasseri, then the fresh mint.",
+        "We serve it hot, crumbling the feta and mint on top to garnish. Enjoy!"
+      ],
+      "prepTime": "15 minutes",
+      "cookTime": "25 minutes"
+    },
+    "nl": {
+      "title": "Spetsofai",
+      "description": "Het traditionele gerecht uit Pilion: dorpsworst en paprika’s in een dikke tomatensaus, met feta en munt erover.",
+      "ingredients": [
+        "1 kg dorpsworst",
+        "1 kg paprika’s (om te vullen, Florina-paprika’s of gekleurde)",
+        "1 el tomatenpuree",
+        "1 groot glas (300 ml) water",
+        "1 koffiekopje (30 ml) petimezi (druivenstroop), druivenmost of zoete rode wijn",
+        "1 el ketchup",
+        "1 handvol verse munt of 1 el gedroogde munt",
+        "Feta (ongeveer zo groot als 3 luciferdoosjes)",
+        "3 el olijfolie",
+        "2 plakken kasseri of goudse kaas",
+        "Een beetje zout",
+        "Peper naar smaak"
+      ],
+      "steps": [
+        "In een koekenpan verhitten we de olijfolie. We bakken de worst tot hij kleur krijgt en doen hem daarna in een diepe pan.",
+        "In de olie waarin we de worst hebben gebakken, bakken we de gewassen en gesneden paprika’s (in stukken van ongeveer 2×2 cm) licht aan. Ook die doen we in de pan.",
+        "We lossen de tomatenpuree op in het water en voegen die toe aan de pan. Ook de ketchup en de wijn gaan in de pan.",
+        "Nu voegen we ook de munt toe (als die gedroogd is). Is hij vers, dan doen we er nu één lepel van bij.",
+        "We laten alles op middelhoog vuur ongeveer 10 minuten koken, of tot de saus gebonden is.",
+        "We zetten het vuur uit en voegen de kasseri toe en daarna de verse munt.",
+        "We serveren het warm en verkruimelen de feta en de munt erover als garnering. Eet smakelijk!"
+      ],
+      "prepTime": "15 minuten",
+      "cookTime": "25 minuten"
+    },
+    "fr": {
+      "title": "Spetsofaï",
+      "description": "Le plat traditionnel du Pélion : des saucisses de campagne et des poivrons dans une sauce tomate épaisse, avec de la feta et de la menthe par-dessus.",
+      "ingredients": [
+        "1 kg de saucisses de campagne",
+        "1 kg de poivrons (à farcir, de Florina ou de couleur)",
+        "1 c. à s. de concentré de tomate",
+        "1 grand verre (300 ml) d’eau",
+        "1 tasse à café (30 ml) de petimezi (mélasse de raisin), de moût ou de vin rouge doux",
+        "1 c. à s. de ketchup",
+        "1 poignée de menthe fraîche ou 1 c. à s. de menthe séchée",
+        "De la feta (environ la taille de 3 boîtes d’allumettes)",
+        "3 c. à s. d’huile d’olive",
+        "2 tranches de kasseri ou de gouda",
+        "Un peu de sel",
+        "Du poivre selon votre goût"
+      ],
+      "steps": [
+        "Dans une poêle, on fait chauffer l’huile d’olive. On fait revenir la saucisse jusqu’à ce qu’elle prenne couleur, puis on la transfère dans une marmite profonde.",
+        "Dans l’huile où l’on a fait revenir les saucisses, on fait légèrement frire les poivrons lavés et coupés (en morceaux d’environ 2×2 cm). On les transfère eux aussi dans la marmite.",
+        "On délaye le concentré de tomate dans l’eau et on l’ajoute dans la marmite. On y met aussi le ketchup et le vin.",
+        "À ce stade, on ajoute aussi la menthe (si elle est séchée). Si elle est fraîche, on en ajoute maintenant une cuillerée.",
+        "On fait bouillir le tout à feu moyen pendant environ 10 minutes, ou jusqu’à ce que la sauce épaississe.",
+        "On éteint le feu et on ajoute le kasseri, puis la menthe fraîche.",
+        "On sert chaud en émiettant la feta et la menthe par-dessus pour décorer. Bon appétit !"
+      ],
+      "prepTime": "15 minutes",
+      "cookTime": "25 minutes"
+    },
+    "sv": {
+      "title": "Spetsofai",
+      "description": "Den traditionella rätten från Pelion: lantkorv och paprika i en tjock tomatsås, med fetaost och mynta på toppen.",
+      "ingredients": [
+        "1 kg lantkorv",
+        "1 kg paprika (för fyllning, Florina eller färgade)",
+        "1 msk tomatpuré",
+        "1 stort glas (300 ml) vatten",
+        "1 kaffekopp (30 ml) petimezi (druvsirap), druvmust eller sött rödvin",
+        "1 msk ketchup",
+        "1 näve färsk mynta eller 1 msk torkad mynta",
+        "Fetaost (ungefär lika stor som 3 tändsticksaskar)",
+        "3 msk olivolja",
+        "2 skivor kasseri eller gouda",
+        "Lite salt",
+        "Peppar efter smak"
+      ],
+      "steps": [
+        "I en stekpanna värmer vi olivoljan. Vi steker korven tills den får färg och flyttar den sedan till en djup gryta.",
+        "I oljan där vi stekte korven steker vi lätt de sköljda och skurna paprikorna (i bitar på ungefär 2×2 cm). Vi flyttar även dem till grytan.",
+        "Vi löser upp tomatpurén i vattnet och häller det i grytan. I grytan lägger vi också ketchupen och vinet.",
+        "Nu tillsätter vi också myntan (om den är torkad). Är den färsk tillsätter vi en sked nu.",
+        "Vi låter allt koka på medelvärme i ungefär 10 minuter, eller tills såsen tjocknar.",
+        "Vi stänger av värmen och tillsätter kasseriosten och sedan den färska myntan.",
+        "Vi serverar varmt och smular fetaosten och myntan över som garnering. Smaklig måltid!"
+      ],
+      "prepTime": "15 minuter",
+      "cookTime": "25 minuter"
+    },
+    "es": {
+      "title": "Spetsofái",
+      "description": "El plato tradicional del Pelión: salchichas de pueblo y pimientos en una salsa de tomate espesa, con feta y menta por encima.",
+      "ingredients": [
+        "1 kg de salchichas de pueblo",
+        "1 kg de pimientos (para rellenar, de Florina o de colores)",
+        "1 cda. de concentrado de tomate",
+        "1 vaso grande (300 ml) de agua",
+        "1 taza de café (30 ml) de petimezi (melaza de uva), mosto o vino tinto dulce",
+        "1 cda. de kétchup",
+        "1 puñado de menta fresca o 1 cda. de menta seca",
+        "Queso feta (del tamaño de unas 3 cajas de cerillas)",
+        "3 cdas. de aceite de oliva",
+        "2 lonchas de kasseri o gouda",
+        "Un poco de sal",
+        "Pimienta al gusto"
+      ],
+      "steps": [
+        "En una sartén calentamos el aceite de oliva. Doramos la salchicha hasta que coja color y luego la pasamos a una olla honda.",
+        "En el aceite donde doramos las salchichas, freímos ligeramente los pimientos lavados y cortados (en trozos de unos 2×2 cm). Los pasamos también a la olla.",
+        "Disolvemos el concentrado de tomate en el agua y lo añadimos a la olla. En la olla ponemos también el kétchup y el vino.",
+        "En este momento añadimos también la menta (si es seca). Si es fresca, añadimos ahora una cucharada.",
+        "Hervimos todo a fuego medio durante unos 10 minutos o hasta que la salsa espese.",
+        "Apagamos el fuego y añadimos el kasseri y después la menta fresca.",
+        "Servimos caliente, desmenuzando la feta y la menta por encima para decorar. ¡Buen provecho!"
+      ],
+      "prepTime": "15 minutos",
+      "cookTime": "25 minutos"
+    },
+    "it": {
+      "title": "Spetsofai",
+      "description": "Il piatto tradizionale del Pelio: salsicce paesane e peperoni in un denso sugo di pomodoro, con feta e menta sopra.",
+      "ingredients": [
+        "1 kg di salsicce paesane",
+        "1 kg di peperoni (da ripieno, di Florina o colorati)",
+        "1 cucchiaio di concentrato di pomodoro",
+        "1 bicchiere grande (300 ml) d’acqua",
+        "1 tazzina da caffè (30 ml) di petimezi (sciroppo d’uva), mosto o vino rosso dolce",
+        "1 cucchiaio di ketchup",
+        "1 manciata di menta fresca o 1 cucchiaio di menta secca",
+        "Feta (grande più o meno come 3 scatole di fiammiferi)",
+        "3 cucchiai di olio d’oliva",
+        "2 fette di kasseri o gouda",
+        "Un po’ di sale",
+        "Pepe a piacere"
+      ],
+      "steps": [
+        "In una padella scaldiamo l’olio d’oliva. Rosoliamo la salsiccia finché prende colore e poi la trasferiamo in una pentola profonda.",
+        "Nell’olio in cui abbiamo rosolato le salsicce friggiamo leggermente i peperoni lavati e tagliati (a pezzi di circa 2×2 cm). Trasferiamo anche questi nella pentola.",
+        "Sciogliamo il concentrato di pomodoro nell’acqua e lo aggiungiamo nella pentola. Nella pentola mettiamo anche il ketchup e il vino.",
+        "A questo punto aggiungiamo anche la menta (se è secca). Se è fresca, ne aggiungiamo ora un cucchiaio.",
+        "Facciamo bollire tutti gli ingredienti a fuoco medio per circa 10 minuti, o finché il sugo si addensa.",
+        "Spegniamo il fuoco e aggiungiamo il kasseri e poi la menta fresca.",
+        "Serviamo caldo, sbriciolando sopra la feta e la menta per guarnire. Buon appetito!"
+      ],
+      "prepTime": "15 minuti",
+      "cookTime": "25 minuti"
+    },
+    "ro": {
+      "title": "Spetsofai",
+      "description": "Mâncarea tradițională din Pelion: cârnați de țară și ardei într-un sos gros de roșii, cu feta și mentă deasupra.",
+      "ingredients": [
+        "1 kg de cârnați de țară",
+        "1 kg de ardei (pentru umplut, de Florina sau colorați)",
+        "1 lingură de pastă de roșii",
+        "1 pahar mare (300 ml) de apă",
+        "1 ceșcuță de cafea (30 ml) de petimezi (sirop de struguri), must sau vin roșu dulce",
+        "1 lingură de ketchup",
+        "1 mână de mentă proaspătă sau 1 lingură de mentă uscată",
+        "Brânză feta (cam cât 3 cutii de chibrituri)",
+        "3 linguri de ulei de măsline",
+        "2 felii de cașcaval kasseri sau gouda",
+        "Puțină sare",
+        "Piper după gust"
+      ],
+      "steps": [
+        "Într-o tigaie încălzim uleiul de măsline. Rumenim cârnații până prind culoare, apoi îi mutăm într-o oală adâncă.",
+        "În uleiul în care am rumenit cârnații prăjim ușor ardeii spălați și tăiați (în bucăți de aproximativ 2×2 cm). Îi mutăm și pe ei în oală.",
+        "Dizolvăm pasta de roșii în apă și o adăugăm în oală. În oală punem și ketchupul și vinul.",
+        "În acest moment adăugăm și menta (dacă este uscată). Dacă este proaspătă, adăugăm acum o lingură.",
+        "Fierbem toate ingredientele la foc mediu aproximativ 10 minute sau până se leagă sosul.",
+        "Oprim focul și adăugăm cașcavalul, apoi menta proaspătă.",
+        "Servim fierbinte, sfărâmând feta și menta deasupra pentru decor. Poftă bună!"
+      ],
+      "prepTime": "15 minute",
+      "cookTime": "25 de minute"
+    },
+    "cs": {
+      "title": "Spetsofai",
+      "description": "Tradiční jídlo z Pilionu: venkovské klobásy a papriky v husté rajčatové omáčce, navrchu s fetou a mátou.",
+      "ingredients": [
+        "1 kg venkovských klobás",
+        "1 kg paprik (na plnění, florinských nebo barevných)",
+        "1 lžíce rajčatového protlaku",
+        "1 velká sklenice (300 ml) vody",
+        "1 kávový šálek (30 ml) petimezi (hroznového sirupu), moštu nebo sladkého červeného vína",
+        "1 lžíce kečupu",
+        "1 hrst čerstvé máty nebo 1 lžíce sušené máty",
+        "Feta (zhruba velikosti 3 krabiček zápalek)",
+        "3 lžíce olivového oleje",
+        "2 plátky sýra kasseri nebo goudy",
+        "Trocha soli",
+        "Pepř podle chuti"
+      ],
+      "steps": [
+        "Na pánvi rozehřejeme olivový olej. Klobásu orestujeme, aby dostala barvu, a pak ji přendáme do hlubokého hrnce.",
+        "V oleji, na kterém jsme restovali klobásy, lehce osmažíme omyté a nakrájené papriky (na kousky zhruba 2×2 cm). I ty přendáme do hrnce.",
+        "Rajčatový protlak rozmícháme ve vodě a přidáme do hrnce. Do hrnce dáme také kečup a víno.",
+        "V tuto chvíli přidáme i mátu (pokud je sušená). Pokud je čerstvá, přidáme teď jednu lžíci.",
+        "Vše vaříme na středním ohni asi 10 minut, nebo dokud omáčka nezhoustne.",
+        "Vypneme oheň a přidáme kasseri a potom čerstvou mátu.",
+        "Podáváme teplé a navrch nadrobíme fetu a mátu na ozdobu. Dobrou chuť!"
+      ],
+      "prepTime": "15 minut",
+      "cookTime": "25 minut"
+    },
+    "uk": {
+      "title": "Спецофай",
+      "description": "Традиційна страва з Пеліону: сільські ковбаски та перець у густому томатному соусі, зверху фета й м’ята.",
+      "ingredients": [
+        "1 кг сільських ковбасок",
+        "1 кг перцю (для фарширування, флоринського або кольорового)",
+        "1 ст. л. томатної пасти",
+        "1 велика склянка (300 мл) води",
+        "1 кавова чашечка (30 мл) петимезі (виноградного сиропу), муста або солодкого червоного вина",
+        "1 ст. л. кетчупу",
+        "1 жменя свіжої м’яти або 1 ст. л. сушеної м’яти",
+        "Фета (приблизно розміром із 3 сірникові коробки)",
+        "3 ст. л. оливкової олії",
+        "2 скибочки сиру касері або гауди",
+        "Трохи солі",
+        "Перець до смаку"
+      ],
+      "steps": [
+        "На сковороді розігріваємо оливкову олію. Обсмажуємо ковбасу, щоб вона підрум’янилася, а потім перекладаємо її в глибоку каструлю.",
+        "В олії, на якій смажили ковбаски, злегка обсмажуємо вимитий і нарізаний перець (шматочками приблизно 2×2 см). Його теж перекладаємо в каструлю.",
+        "Розводимо томатну пасту у воді й додаємо в каструлю. У каструлю також кладемо кетчуп і вино.",
+        "На цьому етапі додаємо й м’яту (якщо вона сушена). Якщо свіжа, додаємо зараз одну ложку.",
+        "Варимо все на середньому вогні приблизно 10 хвилин або доки соус не загусне.",
+        "Вимикаємо вогонь і додаємо касері, а потім свіжу м’яту.",
+        "Подаємо гарячим, накришивши зверху фету й м’яту для прикраси. Смачного!"
+      ],
+      "prepTime": "15 хвилин",
+      "cookTime": "25 хвилин"
+    },
+    "ja": {
+      "title": "スペツォファイ",
+      "description": "ペリオン地方の伝統料理。田舎風ソーセージとパプリカを濃厚なトマトソースで煮込み、フェタとミントをのせます。",
+      "ingredients": [
+        "田舎風ソーセージ 1kg",
+        "パプリカ 1kg（詰め物用、フロリナ産、またはカラーパプリカ）",
+        "トマトペースト 大さじ1",
+        "水 大きめのグラス1杯（300ml）",
+        "ペティメジ（ぶどうの糖蜜）、ぶどう果汁、または甘口の赤ワイン コーヒーカップ1杯（30ml）",
+        "ケチャップ 大さじ1",
+        "フレッシュミント ひとつかみ、またはドライミント 大さじ1",
+        "フェタ（マッチ箱3つ分くらいの大きさ）",
+        "オリーブオイル 大さじ3",
+        "カセリまたはゴーダ 2枚",
+        "塩 少々",
+        "こしょう 適量"
+      ],
+      "steps": [
+        "フライパンでオリーブオイルを熱します。ソーセージを焼き色がつくまで炒め、深鍋に移します。",
+        "ソーセージを炒めた油で、洗って切ったパプリカ（約2×2cm）を軽く炒めます。これも鍋に移します。",
+        "トマトペーストを水で溶いて鍋に加えます。ケチャップとワインも鍋に入れます。",
+        "ここでミントも加えます（ドライの場合）。フレッシュの場合は、ここでひとさじ加えます。",
+        "すべての材料を中火で約10分、またはソースにとろみがつくまで煮ます。",
+        "火を止めてカセリを加え、それからフレッシュミントを加えます。",
+        "熱々を盛りつけ、フェタとミントを散らして飾ります。どうぞ召し上がれ！"
+      ],
+      "prepTime": "15分",
+      "cookTime": "25分"
+    }
+  }
+}
