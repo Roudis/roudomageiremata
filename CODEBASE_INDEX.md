@@ -16,13 +16,14 @@ for working in the repo live in [CLAUDE.md](CLAUDE.md).
   `/nl`, `/fr`, `/sv`, `/es`, `/it`, `/ro`, `/cs`, `/uk`, `/ja`. A
   language menu at the right of the navbar switches between them on the same page.
 - **Persistence:** One JSON file per recipe in [data/recipes/](data/recipes)
-  (no database at build time). Currently 30 recipes. Read at **build time** only.
+  (no database at build time). Read at **build time** only.
 - **Editing:** Recipes are edited in a Strapi 5 CMS, a separate project in
   `../roudomageiremata-cms`, and pulled into the JSON files and images with
   `npm run sync:strapi`. The build and deploy never contact Strapi.
 - **Rendering:** Fully static export (`output: "export"` in
   [next.config.mjs](next.config.mjs)). Every recipe page is pre-rendered in every
-  language via `generateStaticParams` (7 homes, 7 × 30 recipe pages), so the site
+  language via `generateStaticParams` (a home and one page per recipe in each of
+  the eleven languages), so the site
   can be hosted on GitHub Pages (no server, no API routes).
 
 ## Deployment (GitHub Pages)
@@ -52,7 +53,8 @@ app/
   layout.tsx                 Pass-through top layout (no <html>) with the Greek site metadata; needed so
                              Next builds not-found.tsx as the 404 page
   not-found.tsx              Custom 404 page (Greek); renders its own RootLayout, language menu links to each home
-  globals.css                Theme tokens (HSL CSS vars, light + prefers-color-scheme dark), .page-container
+  globals.css                Theme tokens (HSL CSS vars, light + prefers-color-scheme dark), .page-container,
+                             and the shared keyboard focus ring: .focus-ring and .focus-ring-offset
   (el)/                      Greek pages at the unprefixed URLs
     layout.tsx               <RootLayout locale="el">
     template.tsx             Re-exports _shared/page-transition
@@ -77,7 +79,10 @@ components/
   footer.tsx                 Footer with copyright year
   recipe-list.tsx            Client; search box with clear button + category chips + tag chips + animated grid of
                              cards; takes RecipeSummary[], locale, category names, and its message sections;
-                             reads ?tag= on mount and writes it back when the tag changes
+                             holds the filter state only (matching and sorting live in lib/recipe-search.ts);
+                             its useTagParam hook reads ?tag= on mount and writes it back when the tag changes
+  filter-chips.tsx           FilterChip (a pressed/idle button in the category or tag tone) and ChipRow (one
+                             scrolling line on phones, wrapped on wider screens), used by the recipe list
   recipe-card.tsx            Photo-first card for the grid, with the recipe's tags; takes a RecipeSummary; links to
                              the recipe in the page's language
   category-badge.tsx         CategoryBadge (green label + dot, variant prop) and CategoryDot, whose colour
@@ -93,12 +98,15 @@ lib/
   i18n/
     config.ts                Pure: LOCALES, DEFAULT_LOCALE, TRANSLATED_LOCALES, LOCALE_DETAILS (name, Intl tag,
                              og:locale), SITE_NAME, isLocale, localizePath, splitLocalePath
-    format.ts                Pure: formatCount(locale, { one, few?, other }, n) with Intl.PluralRules
+    format.ts                Pure: formatCount(locale, { one, few?, other }, n) with Intl.PluralRules;
+                             perLocale (one cached Intl object per language) and collatorFor(locale)
     messages/el.ts           Greek interface text; defines the Messages type every other language must match
     messages/<locale>.ts     en, nl, fr, sv, es, it, ro, cs, uk, ja
     messages/index.ts        getMessages(locale)
   tags.ts                    Pure: TAG_NAMES (the tag list, named in every language), TagId, TAG_IMPLIES,
                              NOT_VEGETARIAN, isTagId, tagName, expandTags
+  json-file.ts               Server-only: readJsonFile(path, kind) for the two loaders below; undefined for a
+                             missing file, RecipeDataError for an unreadable or non-JSON one
   recipes.ts                 Server-only build-time data access: createRecipeStore(dir),
                              getRecipeIds(), getAllRecipes(), getRecipeById(id); recipes include their translations
   categories.ts              Server-only: getCategoryNames(locale) from data/categories.json, plus the fallback name
@@ -107,8 +115,9 @@ lib/
                              the only file `npm run validate:data` runs
   recipe-view.ts             Pure: CATEGORY_FALLBACK, categoryLabel, categoryDisplayName, categoryColorIndex,
                              formatRecipeDate, formatMemoryDate, recipeOrder(locale), compareRecipes (Greek order),
-                             localizeRecipe, toRecipeSummary
-  recipe-search.ts           Pure: normalizeSearchText, getCategories, getTags, filterRecipes (query, category,
+                             localizeRecipe, textLang (the lang attribute for untranslated text), toRecipeSummary
+  recipe-search.ts           Pure: normalizeSearchText, getCategories, getCategoryOptions (the filter's choices,
+                             named and sorted in the page's language), getTags, filterRecipes (query, category,
                              tag, locale) for the home page list
   recipe-schema.ts           Pure: parseRecipe(value, source, { expectedId }) including tags and translations,
                              parseCategoryTranslations, RecipeDataError, isRecipeId; used by the loaders and the data test
@@ -220,9 +229,10 @@ cannot import it.
 - [vitest.config.mts](vitest.config.mts): Vitest in node environment with the `@/` alias;
   aliases `server-only` to its no-op `empty.js` so the loader can be imported in tests.
 - [tsconfig.json](tsconfig.json): strict mode; path alias `@/*` → repo root.
-- [.eslintrc.json](.eslintrc.json): extends `next/core-web-vitals`, `next/typescript`.
-- [tailwind.config.ts](tailwind.config.ts): content from `app/`, `components/`,
-  `pages/`; theme colours mapped to the CSS variables in `app/globals.css`, and the
+- [.eslintrc.json](.eslintrc.json): extends `next/core-web-vitals`, `next/typescript`;
+  turns off `@next/next/no-img-element`, because the static export cannot optimize images.
+- [tailwind.config.ts](tailwind.config.ts): content from `app/` and `components/`;
+  theme colours mapped to the CSS variables in `app/globals.css`, and the
   `font-sans` / `font-serif` families.
 - [next.config.mjs](next.config.mjs): static export, Pages base path, unoptimized images.
 - [.claude/settings.json](.claude/settings.json): shared Claude Code permissions.
@@ -253,10 +263,12 @@ cannot import it.
   [lib/recipes.ts](lib/recipes.ts) → card, list, and detail components.
 - **Change search/filter behavior:** matching and category logic in
   [lib/recipe-search.ts](lib/recipe-search.ts); UI state in
-  [components/recipe-list.tsx](components/recipe-list.tsx).
+  [components/recipe-list.tsx](components/recipe-list.tsx); chip styles in
+  [components/filter-chips.tsx](components/filter-chips.tsx).
 - **Change styling/theme:** inline Tailwind classes in each component. Colours are
   tokens: change a value once in [app/globals.css](app/globals.css) (light and dark),
-  and add a new token to [tailwind.config.ts](tailwind.config.ts).
+  and add a new token to [tailwind.config.ts](tailwind.config.ts). The keyboard focus
+  ring is the `focus-ring` / `focus-ring-offset` class in the same CSS file.
 
 ## Notes / Gotchas
 - No auth, and no database at build time. `npm run check` is the verification step.

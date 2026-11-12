@@ -9,6 +9,7 @@ import {
   formatRecipeDate,
   localizeRecipe,
   recipeOrder,
+  textLang,
   toRecipeSummary,
 } from "@/lib/recipe-view";
 import type { Recipe, RecipeTranslation } from "@/types/recipe";
@@ -313,6 +314,25 @@ describe("localizeRecipe", () => {
   });
 });
 
+describe("textLang", () => {
+  const translation: RecipeTranslation = {
+    title: "Stuffed vegetables",
+    description: "The poor things",
+    ingredients: ["ingredient"],
+    steps: ["step"],
+  };
+  const recipe = makeRecipe({ id: "gemista", translations: { en: translation } });
+
+  it("is undefined when the text is in the page's language", () => {
+    expect(textLang(localizeRecipe(recipe, "el"), "el")).toBeUndefined();
+    expect(textLang(localizeRecipe(recipe, "en"), "en")).toBeUndefined();
+  });
+
+  it("is Greek for a recipe shown untranslated on another language's page", () => {
+    expect(textLang(localizeRecipe(recipe, "fr"), "fr")).toBe("el");
+  });
+});
+
 describe("toRecipeSummary", () => {
   it("keeps the fields the list renders and drops steps, memory, cookTime, and timestamps", () => {
     const recipe = makeRecipe({
@@ -359,7 +379,7 @@ describe("toRecipeSummary", () => {
     expect(Object.keys(summary)).not.toContain("imageUrl");
   });
 
-  it("keeps zero servings, which the card's truthiness check hides today", () => {
+  it("keeps zero servings rather than dropping them as missing", () => {
     expect(toRecipeSummary(localizeRecipe(makeRecipe({ id: "zero", servings: 0 }), "el")).servings).toBe(0);
   });
 

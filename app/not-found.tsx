@@ -22,7 +22,7 @@ export default function NotFound() {
           </p>
           <Link
             href="/"
-            className="mt-8 inline-flex h-12 items-center gap-2 rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="mt-8 inline-flex h-12 items-center gap-2 rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-ring-offset"
           >
             <ArrowLeft className="h-4 w-4" aria-hidden="true" />
             Επιστροφή στη συλλογή

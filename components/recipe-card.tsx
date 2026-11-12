@@ -4,6 +4,7 @@ import type { Messages } from "@/lib/i18n/messages";
 import { localizePath, type Locale } from "@/lib/i18n/config";
 import { formatCount } from "@/lib/i18n/format";
 import { withBasePath } from "@/lib/base-path";
+import { textLang } from "@/lib/recipe-view";
 import { tagName } from "@/lib/tags";
 import { CategoryBadge } from "@/components/category-badge";
 import { BookHeart, ChefHat, Clock, ListChecks, Users } from "lucide-react";
@@ -16,26 +17,22 @@ type RecipeCardProps = {
 };
 
 export function RecipeCard({ recipe, locale, categoryNames, messages }: RecipeCardProps) {
-  // Set only when the recipe has no translation and its text is still Greek.
-  const lang = recipe.contentLocale === locale ? undefined : recipe.contentLocale;
+  const lang = textLang(recipe, locale);
 
   return (
     <Link
       href={localizePath(`/recipes/${recipe.id}`, locale)}
-      className="group flex h-full flex-col rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4 focus-visible:ring-offset-background"
+      className="group flex h-full flex-col rounded-xl focus-ring-offset focus-visible:ring-offset-4"
     >
       <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-muted">
         {recipe.imageUrl !== undefined ? (
-          <>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={withBasePath(recipe.imageUrl)}
-              alt=""
-              loading="lazy"
-              decoding="async"
-              className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
-            />
-          </>
+          <img
+            src={withBasePath(recipe.imageUrl)}
+            alt=""
+            loading="lazy"
+            decoding="async"
+            className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+          />
         ) : (
           <div className="flex h-full items-center justify-center text-muted-foreground">
             <ChefHat className="h-10 w-10" aria-hidden="true" />

@@ -21,7 +21,7 @@ export function Navbar({ locale, switcherPath }: NavbarProps) {
       <div className="page-container flex h-16 items-center justify-between gap-3">
         <Link
           href={localizePath("/", locale)}
-          className="group flex min-w-0 items-center gap-2.5 rounded-md sm:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4 focus-visible:ring-offset-background"
+          className="group flex min-w-0 items-center gap-2.5 rounded-md sm:gap-3 focus-ring-offset focus-visible:ring-offset-4"
           aria-label={t.home}
         >
           <span
@@ -40,7 +40,7 @@ export function Navbar({ locale, switcherPath }: NavbarProps) {
           <nav>
             <Link
               href={localizePath("/#recipe-grid", locale)}
-              className="inline-flex h-9 items-center gap-2 rounded-full px-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="inline-flex h-9 items-center gap-2 rounded-full px-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-ring"
             >
               <BookOpen className="h-4 w-4" aria-hidden="true" />
               {/* Icon only on phones, so the language button still fits beside the name. */}

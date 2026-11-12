@@ -3,7 +3,14 @@
  * "(current behavior)" lock down quirks that a later step is expected to change.
  */
 import { describe, expect, it } from "vitest";
-import { filterRecipes, getCategories, getTags, normalizeSearchText, type SearchableRecipe } from "@/lib/recipe-search";
+import {
+  filterRecipes,
+  getCategories,
+  getCategoryOptions,
+  getTags,
+  normalizeSearchText,
+  type SearchableRecipe,
+} from "@/lib/recipe-search";
 
 type Fixture = SearchableRecipe & { id: string };
 
@@ -185,6 +192,42 @@ describe("getCategories", () => {
 
   it("returns an empty list for no recipes", () => {
     expect(getCategories([])).toEqual([]);
+  });
+});
+
+describe("getCategoryOptions", () => {
+  const names = {
+    Άλλο: "Other",
+    "Αέρας Νάπολης της Θείας": "Auntie’s taste of Naples",
+    "Του Μπαμπούλα (που δεν είναι μόνο ψάρια)": "Dad’s (not only fish)",
+  };
+
+  it("pairs each category in use with its name in the page's language, sorted by that name", () => {
+    expect(getCategoryOptions(all, names, "en")).toEqual([
+      { label: "Αέρας Νάπολης της Θείας", name: "Auntie’s taste of Naples" },
+      { label: "Του Μπαμπούλα (που δεν είναι μόνο ψάρια)", name: "Dad’s (not only fish)" },
+      { label: "Άλλο", name: "Other" },
+      // No English name, so it shows, and sorts, as its Greek label.
+      {
+        label: "Της Γιαγιάς που γεμίζουν κοιλίτσες και καρδιές",
+        name: "Της Γιαγιάς που γεμίζουν κοιλίτσες και καρδιές",
+      },
+    ]);
+  });
+
+  it("sorts in the language's alphabetical order, unlike getCategories: accents and case do not matter", () => {
+    const categories = ["γλυκά", "Ώρα", "Ψάρια", "Βραδινά"].map((category, i) => makeRecipe({ id: `c${i}`, category }));
+
+    expect(getCategoryOptions(categories, {}, "el").map((option) => option.name)).toEqual([
+      "Βραδινά",
+      "γλυκά",
+      "Ψάρια",
+      "Ώρα",
+    ]);
+  });
+
+  it("returns an empty list for no recipes", () => {
+    expect(getCategoryOptions([], names, "en")).toEqual([]);
   });
 });
 

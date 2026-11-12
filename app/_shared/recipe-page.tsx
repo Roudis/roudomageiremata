@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getRecipeById, getRecipeIds } from "@/lib/recipes";
 import { getCategoryNames } from "@/lib/categories";
-import { localizeRecipe } from "@/lib/recipe-view";
+import { localizeRecipe, textLang } from "@/lib/recipe-view";
 import { withBasePath } from "@/lib/base-path";
 import { LOCALE_DETAILS, SITE_NAME, localizePath, type Locale } from "@/lib/i18n/config";
 import { getMessages } from "@/lib/i18n/messages";
@@ -71,13 +71,13 @@ export async function RecipePage({ id, locale }: RecipePageProps) {
   const t = messages.recipe;
   const recipe = localizeRecipe(found, locale);
   // Set only when the recipe has no translation for this language and its text is still Greek.
-  const lang = recipe.contentLocale === locale ? undefined : recipe.contentLocale;
+  const lang = textLang(recipe, locale);
 
   return (
     <main className="page-container pt-6 sm:pt-10">
       <Link
         href={localizePath("/", locale)}
-        className="group -ml-2 inline-flex items-center gap-2 rounded-full px-2 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        className="group -ml-2 inline-flex items-center gap-2 rounded-full px-2 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-primary focus-ring"
       >
         <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-0.5" aria-hidden="true" />
         {t.back}
@@ -110,7 +110,7 @@ export async function RecipePage({ id, locale }: RecipePageProps) {
                   {/* Opens the recipe list filtered to this tag; RecipeList reads ?tag= when it mounts. */}
                   <Link
                     href={localizePath(`/?tag=${tag}#recipe-grid`, locale)}
-                    className="inline-flex h-8 items-center gap-1.5 rounded-full bg-secondary-soft px-3 text-sm font-medium text-secondary transition-colors hover:bg-secondary hover:text-secondary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                    className="inline-flex h-8 items-center gap-1.5 rounded-full bg-secondary-soft px-3 text-sm font-medium text-secondary transition-colors hover:bg-secondary hover:text-secondary-foreground focus-ring-offset"
                   >
                     <Tag className="h-3.5 w-3.5" aria-hidden="true" />
                     {tagName(tag, locale)}

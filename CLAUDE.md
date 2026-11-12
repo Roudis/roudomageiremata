@@ -2,7 +2,7 @@
 
 Greek family-recipe journal. Next.js 14 App Router, React 18, TypeScript strict, Tailwind 3.
 Built as a fully static export and hosted on GitHub Pages at https://roudis.github.io/roudomageiremata/.
-Available in Greek (the original) plus English, Dutch, French, Swedish, Spanish, and Italian.
+Available in Greek (the original) plus English, Dutch, French, Swedish, Spanish, Italian, Romanian, Czech, Ukrainian, and Japanese.
 
 For a file-by-file map see `CODEBASE_INDEX.md`. Keep it and this file current in the same change that makes them stale.
 
@@ -35,7 +35,7 @@ npm run sync:strapi    # pull published recipes + images from Strapi (needs it r
 ## Hard constraints
 
 - **Static export only** (`output: "export"`). No API routes, route handlers, server actions, middleware, cookies/headers, ISR, or runtime file writes. Anything that needs a server at request time will break the deploy.
-- **`next/image` optimization is off** (`images.unoptimized`). Existing code uses `<img>` with an eslint-disable line.
+- **`next/image` optimization is off** (`images.unoptimized`). Use a plain `<img>`; `.eslintrc.json` turns off the `no-img-element` rule for that reason, so no disable comment is needed.
 - **Base path**: on GitHub Actions the site is served under `/roudomageiremata`. `next/link` handles this automatically, but raw URLs such as `<img src>` or a plain `<a href>` must go through `withBasePath` from `lib/base-path.ts`. That includes Open Graph image and alternate-language URLs in metadata, which Next does not prefix; `metadataBase` in `app/_shared/root-layout.tsx` is the origin only.
 - The repo was renamed on GitHub from `roudomageirikes` to `roudomageiremata`. The `repoName` in `next.config.mjs` is correct. Do not "fix" it to match the local folder name.
 
@@ -72,18 +72,18 @@ These are one-off seeding scripts kept for history. They are blocked in `.claude
 
 ## Code conventions
 
-- Server components by default. Add `"use client"` only for interactivity; current client components are `components/recipe-list.tsx` (with the `recipe-card.tsx` it renders), `components/language-switcher.tsx`, and `app/_shared/page-transition.tsx`, which both trees' `template.tsx` re-export.
-- Styling is inline Tailwind classes. The only shared class is `page-container` (page width and side padding) in `app/globals.css`.
+- Server components by default. Add `"use client"` only for interactivity; current client components are `components/recipe-list.tsx` (with the `recipe-card.tsx` and `filter-chips.tsx` it renders), `components/language-switcher.tsx`, and `app/_shared/page-transition.tsx`, which both trees' `template.tsx` re-export.
+- Styling is inline Tailwind classes. The shared classes, in `app/globals.css`, are `page-container` (page width and side padding) and the keyboard focus ring: `focus-ring`, or `focus-ring-offset` for filled or bordered controls. Use those two on every link and button instead of repeating the `focus-visible:` utilities.
 - Colours are theme tokens, not raw palette classes: `background`, `foreground`, `card`, `muted`, `border`, `primary` (aubergine purple), `secondary` (olive green), and `feature` (the family-story band). Each is an HSL variable in `app/globals.css` with a dark-mode value that follows the system setting, mapped in `tailwind.config.ts`. Purple and green are the family's favourite colours; keep new UI in that palette and check contrast in both modes.
 - Fonts come from `next/font/google` in `app/_shared/root-layout.tsx`, which downloads them at build time: Commissioner (`font-sans`) and Literata (`font-serif`, used for headings). Any replacement must include the `greek`, `latin`, `latin-ext`, and `cyrillic` subsets: `latin-ext` holds the Romanian and Czech letters such as ș, ț, č, and ř, and `cyrillic` Ukrainian. Japanese is not in either font; its characters come from the system fonts listed after them in `tailwind.config.ts` (Hiragino, Yu Gothic, Meiryo, Noto CJK), and `app/globals.css` stops browsers slanting Japanese in the italic quotes.
 - Icons come from `lucide-react`. Animations use `framer-motion`; `app/_shared/page-transition.tsx` wraps pages in `MotionConfig reducedMotion="user"`. The navbar sits outside it, so the language menu uses CSS transitions with `motion-reduce:` instead.
 - Import via the `@/` alias, which maps to the repo root.
-- `lib/recipes.ts` and `lib/categories.ts` import `server-only`, so only server code in `app/` may import them. Client components get data as props: the home page sends `RecipeSummary` objects via `toRecipeSummary(localizeRecipe(...))`, not full recipes with every translation. Pure helpers in `lib/` (`recipe-view`, `recipe-search`, `recipe-schema`, `tags`, `base-path`, `i18n/config`, `i18n/format`) are safe on either side.
+- `lib/recipes.ts`, `lib/categories.ts`, and the `lib/json-file.ts` they read files through import `server-only`, so only server code in `app/` may import them. Client components get data as props: the home page sends `RecipeSummary` objects via `toRecipeSummary(localizeRecipe(...))`, not full recipes with every translation. Pure helpers in `lib/` (`recipe-view`, `recipe-search`, `recipe-schema`, `tags`, `base-path`, `i18n/config`, `i18n/format`) are safe on either side.
 - Tailwind only scans `app/` and `components/`. Keep class strings there; `lib/` returns data such as a colour index, not class names.
 
 ## Git workflow
 
-- Pushing to `main` deploys to production immediately. **Never push to `main` directly.** Work on `develop` or a feature branch and open a PR into `main`.
+- Pushing to `main` deploys to production immediately. **Never push to `main` directly.** Work on `dev` or a feature branch and open a PR into `main`.
 - CI (`.github/workflows/ci.yml`) runs lint, typecheck, unit tests, data validation, and build on every PR and non-main push.
 - `.github/workflows/changelog.yml` regenerates and commits `CHANGELOG.md` after every push. It is generated from commit history; never edit it manually.
 - Commit messages use conventional prefixes: `feat:`, `fix:`, `refactor:`, `chore:`, `docs:`.

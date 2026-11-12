@@ -4,7 +4,7 @@ import { ArrowDown, Quote } from "lucide-react";
 import { RecipeList } from "@/components/recipe-list";
 import { getAllRecipes } from "@/lib/recipes";
 import { getCategoryNames } from "@/lib/categories";
-import { localizeRecipe, recipeOrder, toRecipeSummary } from "@/lib/recipe-view";
+import { localizeRecipe, recipeOrder, textLang, toRecipeSummary } from "@/lib/recipe-view";
 import { getCategories } from "@/lib/recipe-search";
 import { withBasePath } from "@/lib/base-path";
 import { localizePath, type Locale } from "@/lib/i18n/config";
@@ -23,6 +23,7 @@ export async function HomePage({ locale }: { locale: Locale }) {
   const t = getMessages(locale);
   const [allRecipes, categoryNames] = await Promise.all([getAllRecipes(), getCategoryNames(locale)]);
   const recipes = allRecipes.map((recipe) => localizeRecipe(recipe, locale)).sort(recipeOrder(locale));
+  // The first few recipes that have a photo.
   const featured = recipes
     .flatMap(({ id, title, imageUrl, contentLocale }) =>
       imageUrl === undefined ? [] : [{ id, title, imageUrl, contentLocale }],
@@ -48,7 +49,7 @@ export async function HomePage({ locale }: { locale: Locale }) {
           </p>
           <a
             href="#recipe-grid"
-            className="mt-8 inline-flex h-12 items-center gap-2 rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="mt-8 inline-flex h-12 items-center gap-2 rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-ring-offset"
           >
             {t.home.browse}
             <ArrowDown className="h-4 w-4" aria-hidden="true" />
@@ -61,16 +62,15 @@ export async function HomePage({ locale }: { locale: Locale }) {
               <Link
                 key={recipe.id}
                 href={localizePath(`/recipes/${recipe.id}`, locale)}
-                className={`group relative overflow-hidden rounded-lg bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background ${mosaicCells[index]}`}
+                className={`group relative overflow-hidden rounded-lg bg-muted focus-ring-offset ${mosaicCells[index]}`}
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={withBasePath(recipe.imageUrl)}
                   alt=""
                   className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
                 />
                 <span
-                  lang={recipe.contentLocale === locale ? undefined : recipe.contentLocale}
+                  lang={textLang(recipe, locale)}
                   className="absolute bottom-2 left-2 right-2 truncate rounded-md bg-background/90 px-2 py-1 text-xs font-medium backdrop-blur sm:w-fit sm:max-w-[calc(100%-1rem)]"
                 >
                   {recipe.title}

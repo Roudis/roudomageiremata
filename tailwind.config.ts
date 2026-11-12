@@ -4,11 +4,8 @@ import type { Config } from "tailwindcss";
 const token = (name: string) => `hsl(var(--${name}) / <alpha-value>)`;
 
 const config: Config = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  // Class strings anywhere else, such as lib/, are not scanned and would be missing from the CSS.
+  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {

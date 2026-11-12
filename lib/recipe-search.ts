@@ -1,6 +1,7 @@
-import type { Recipe } from "@/types/recipe";
+import type { CategoryNames, Recipe } from "@/types/recipe";
 import { DEFAULT_LOCALE, type Locale } from "@/lib/i18n/config";
-import { categoryLabel } from "@/lib/recipe-view";
+import { collatorFor } from "@/lib/i18n/format";
+import { categoryDisplayName, categoryLabel } from "@/lib/recipe-view";
 import { TAG_IDS, expandTags, tagName, type TagId } from "@/lib/tags";
 
 /** The fields search and filtering read. Both `Recipe` and `RecipeSummary` satisfy it. */
@@ -20,6 +21,29 @@ export type RecipeFilter = {
 /** Unique category labels, sorted by code unit, with uncategorized recipes under CATEGORY_FALLBACK. */
 export function getCategories(recipes: readonly SearchableRecipe[]): string[] {
   return Array.from(new Set(recipes.map(categoryLabel))).sort();
+}
+
+export type CategoryOption = {
+  /** The Greek name, which filtering and the colour dot key on. */
+  label: string;
+  /** The name to show in the page's language. */
+  name: string;
+};
+
+/**
+ * The category filter's choices: each category in use with its display name
+ * from `names` (see `getCategoryNames`), in `locale`'s alphabetical order of
+ * those names.
+ */
+export function getCategoryOptions(
+  recipes: readonly SearchableRecipe[],
+  names: CategoryNames,
+  locale: Locale,
+): CategoryOption[] {
+  const collator = collatorFor(locale);
+  return getCategories(recipes)
+    .map((label) => ({ label, name: categoryDisplayName(label, names) }))
+    .sort((a, b) => collator.compare(a.name, b.name));
 }
 
 /** Every tag at least one recipe has, implied ones included, in TAG_IDS order. */

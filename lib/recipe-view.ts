@@ -1,5 +1,6 @@
 import type { CategoryNames, LocalizedRecipe, Recipe, RecipeSummary } from "@/types/recipe";
-import { DEFAULT_LOCALE, LOCALE_DETAILS, type Locale } from "@/lib/i18n/config";
+import { DEFAULT_LOCALE, type Locale } from "@/lib/i18n/config";
+import { collatorFor, perLocale } from "@/lib/i18n/format";
 
 /** Category used everywhere a recipe has none: the card, the detail page, and the filter. */
 export const CATEGORY_FALLBACK = "Άλλο";
@@ -32,21 +33,6 @@ export function categoryColorIndex(label: string, buckets: number): number {
   return hash % buckets;
 }
 
-/** One cached Intl object per language, so formatting a list does not rebuild it for every item. */
-function perLocale<T>(create: (intl: string) => T): (locale: Locale) => T {
-  const cache = new Map<Locale, T>();
-  return (locale) => {
-    let value = cache.get(locale);
-    if (value === undefined) {
-      value = create(LOCALE_DETAILS[locale].intl);
-      cache.set(locale, value);
-    }
-    return value;
-  };
-}
-
-const titleCollator = perLocale((intl) => new Intl.Collator(intl));
-
 type Sortable = Pick<Recipe, "id" | "title" | "updatedAt">;
 
 /**
@@ -56,7 +42,7 @@ type Sortable = Pick<Recipe, "id" | "title" | "updatedAt">;
  * id, so the order never depends on the filesystem.
  */
 export function recipeOrder(locale: Locale): (a: Sortable, b: Sortable) => number {
-  const collator = titleCollator(locale);
+  const collator = collatorFor(locale);
   return (a, b) =>
     new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime() ||
     collator.compare(a.title, b.title) ||
@@ -117,6 +103,15 @@ export function localizeRecipe(recipe: Recipe, locale: Locale): LocalizedRecipe 
   if (translation.prepTime !== undefined) localized.prepTime = translation.prepTime;
   if (translation.cookTime !== undefined) localized.cookTime = translation.cookTime;
   return localized;
+}
+
+/**
+ * The `lang` attribute a recipe's text needs on a page in `locale`: the text's
+ * own language when it differs from the page's, which is Greek for a recipe with
+ * no translation, and undefined when they match.
+ */
+export function textLang(recipe: Pick<LocalizedRecipe, "contentLocale">, locale: Locale): Locale | undefined {
+  return recipe.contentLocale === locale ? undefined : recipe.contentLocale;
 }
 
 /** Keeps only what the recipe list and cards render. Optional fields stay absent when missing. */

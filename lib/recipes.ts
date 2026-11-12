@@ -2,6 +2,7 @@ import "server-only";
 import { promises as fs } from "fs";
 import path from "path";
 import type { Recipe } from "@/types/recipe";
+import { readJsonFile } from "@/lib/json-file";
 import { RecipeDataError, isRecipeId, parseRecipe } from "@/lib/recipe-schema";
 import { compareRecipes } from "@/lib/recipe-view";
 
@@ -11,33 +12,13 @@ export interface RecipeStore {
   getRecipeById(id: string): Promise<Recipe | undefined>;
 }
 
-const errorMessage = (error: unknown) => (error instanceof Error ? error.message : String(error));
-const isMissingFile = (error: unknown) => error instanceof Error && "code" in error && error.code === "ENOENT";
-
 /**
  * Reads and validates `<dir>/<id>.json`. Returns undefined when the file does
  * not exist, and throws a RecipeDataError for any other problem.
  */
 async function readRecipeFile(dir: string, id: string): Promise<Recipe | undefined> {
-  const filePath = path.join(dir, `${id}.json`);
-  const source = path.relative(process.cwd(), filePath);
-
-  let raw: string;
-  try {
-    raw = await fs.readFile(filePath, "utf8");
-  } catch (error) {
-    if (isMissingFile(error)) return undefined;
-    throw new RecipeDataError(source, [{ field: "", message: `could not be read: ${errorMessage(error)}` }]);
-  }
-
-  let value: unknown;
-  try {
-    value = JSON.parse(raw);
-  } catch (error) {
-    throw new RecipeDataError(source, [{ field: "", message: `invalid JSON: ${errorMessage(error)}` }]);
-  }
-
-  return parseRecipe(value, source, { expectedId: id });
+  const file = await readJsonFile(path.join(dir, `${id}.json`));
+  return file && parseRecipe(file.value, file.source, { expectedId: id });
 }
 
 /**

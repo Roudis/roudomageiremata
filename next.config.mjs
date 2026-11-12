@@ -1,6 +1,8 @@
-// GitHub Pages serves this project at https://<user>.github.io/roudomageirikes/,
-// so built assets/links need that path prefix. GITHUB_ACTIONS is set to "true"
-// automatically by GitHub-hosted runners, leaving local dev/build untouched.
+// GitHub Pages serves this project at https://roudis.github.io/roudomageiremata/,
+// so built assets and links need that path prefix. The repository was renamed from
+// "roudomageirikes"; the local folder and package name may still use the old name.
+// GITHUB_ACTIONS is set to "true" automatically by GitHub-hosted runners, leaving
+// local dev and build untouched.
 const repoName = "roudomageiremata";
 const isGithubPagesBuild = process.env.GITHUB_ACTIONS === "true";
 

@@ -46,6 +46,14 @@ npm run changelog
 ```
 
 ## Adding or editing a recipe
+
+The Greek text, photo, and timestamps of each recipe are managed in the Strapi CMS
+(a separate project, `roudomageiremata-cms`) and pulled into this repository with
+`npm run sync:strapi`. The sync overwrites those fields, so edit them in Strapi;
+it keeps `preparations`, `tags`, and `translations`, which live only in the JSON
+files. [CODEBASE_INDEX.md](CODEBASE_INDEX.md) has the full workflow. Without
+Strapi, the files can be edited by hand:
+
 1. Create or edit `data/recipes/<id>.json`. The filename must match the `id`
    field. The shape is defined in [`types/recipe.ts`](types/recipe.ts).
 2. Put the image at `public/images/recipes/<id>.jpg` and set
