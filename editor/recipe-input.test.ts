@@ -93,6 +93,17 @@ describe("buildRecipe", () => {
     expect(without.memory).toEqual({ title: "Τ", story: "Ι" });
   });
 
+  it("adds the story's photo to the story, and leaves it out when there is no story", () => {
+    const options = { id: "fasolada", imageUrl: undefined, storyImageUrl: "/images/stories/fasolada.jpg", now: NOW };
+    expect(buildRecipe(form({ memory: { title: "Τ", story: "Ι", date: "1998" } }), options).memory).toEqual({
+      title: "Τ",
+      story: "Ι",
+      date: "1998",
+      imageUrl: "/images/stories/fasolada.jpg",
+    });
+    expect("memory" in buildRecipe(form(), options)).toBe(false);
+  });
+
   it("keeps createdAt, translations, and unknown fields of the file being edited, and removes cleared ones", () => {
     const existing = {
       id: "fasolada",

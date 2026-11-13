@@ -39,7 +39,7 @@ const RECIPE_FIELDS = {
   imageUrl: true, category: true, tags: true, prepTime: true, cookTime: true, servings: true, createdAt: true, updatedAt: true,
   translations: true,
 } as const satisfies Record<keyof Recipe, true>;
-const MEMORY_FIELDS = { title: true, story: true, date: true } as const satisfies Record<keyof Memory, true>;
+const MEMORY_FIELDS = { title: true, story: true, date: true, imageUrl: true } as const satisfies Record<keyof Memory, true>;
 const TRANSLATION_FIELDS = {
   title: true, description: true, ingredients: true, steps: true, preparations: true, memory: true, prepTime: true,
   cookTime: true,
@@ -61,6 +61,8 @@ const isPlainObject = (v: unknown): v is Record<string, unknown> =>
   typeof v === "object" && v !== null && !Array.isArray(v);
 const isNonEmptyString = (v: unknown): v is string => typeof v === "string" && v.trim().length > 0;
 const isStringArray = (v: unknown): v is string[] => Array.isArray(v) && v.length > 0 && v.every(isNonEmptyString);
+/** A root-relative path such as "/images/recipes/x.jpg". */
+const isRootPath = (v: unknown): v is string => isNonEmptyString(v) && v.startsWith("/");
 const isIsoDate = (v: unknown): v is string => typeof v === "string" && !Number.isNaN(Date.parse(v));
 
 type Fail = (field: string, message: string) => void;
@@ -293,12 +295,15 @@ function checkRecipe(value: unknown, issues: RecipeDataIssue[], { expectedId }: 
       if ("date" in memory && !isNonEmptyString(memory.date)) {
         fail("memory.date", "memory.date must be a non-empty string when present");
       }
+      if ("imageUrl" in memory && !isRootPath(memory.imageUrl)) {
+        fail("memory.imageUrl", 'memory.imageUrl must be a root-relative path like "/images/stories/<id>.jpg"');
+      }
     }
   }
 
   if ("tags" in value) checkTags(value.tags, fail);
 
-  if ("imageUrl" in value && !(isNonEmptyString(value.imageUrl) && value.imageUrl.startsWith("/"))) {
+  if ("imageUrl" in value && !isRootPath(value.imageUrl)) {
     fail("imageUrl", 'imageUrl must be a root-relative path like "/images/recipes/<id>.jpg"');
   }
 

@@ -118,6 +118,8 @@ export interface BuildOptions {
   existing?: Json;
   /** The photo's path, such as "/images/recipes/<id>.jpg", or undefined for none. */
   imageUrl: string | undefined;
+  /** The story's own photo, such as "/images/stories/<id>.jpg"; left out when the recipe has no story. */
+  storyImageUrl?: string;
   now: Date;
 }
 
@@ -126,7 +128,7 @@ export interface BuildOptions {
  * KEY_ORDER, with `updatedAt` set to `now` (and `createdAt` too for a new recipe).
  * An optional field left empty is removed.
  */
-export function buildRecipe(form: RecipeForm, { id, existing = {}, imageUrl, now }: BuildOptions): Json {
+export function buildRecipe(form: RecipeForm, { id, existing = {}, imageUrl, storyImageUrl, now }: BuildOptions): Json {
   const stamp = now.toISOString();
   const { memory } = form;
   return orderKeys({
@@ -137,7 +139,12 @@ export function buildRecipe(form: RecipeForm, { id, existing = {}, imageUrl, now
     ingredients: form.ingredients,
     steps: form.steps,
     preparations: form.preparations.length > 0 ? form.preparations : undefined,
-    memory: memory && { title: memory.title, story: memory.story, ...(memory.date !== "" && { date: memory.date }) },
+    memory: memory && {
+      title: memory.title,
+      story: memory.story,
+      ...(memory.date !== "" && { date: memory.date }),
+      ...(storyImageUrl !== undefined && { imageUrl: storyImageUrl }),
+    },
     category: form.category || undefined,
     tags: form.tags.length > 0 ? form.tags : undefined,
     imageUrl,
@@ -215,7 +222,7 @@ export function dropBrokenTranslations(
   return { recipe: orderKeys(next), dropped };
 }
 
-/** What a translation has to say again: the Greek text, without the memory's date. */
+/** What a translation has to say again: the Greek text, without the memory's date or photo. */
 function greekText(recipe: Json): string {
   const memory = isObject(recipe.memory) ? { title: recipe.memory.title, story: recipe.memory.story } : undefined;
   const { title, description, ingredients, steps, preparations, prepTime, cookTime } = recipe;

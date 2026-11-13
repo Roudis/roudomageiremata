@@ -3,7 +3,8 @@
 // project) into data/recipes/<id>.json and public/images/recipes/, so the
 // static build keeps reading local files and never needs Strapi at deploy
 // time. Files are only rewritten when their content changed. Fields Strapi
-// doesn't hold, such as tags and translations, are kept from the existing file.
+// doesn't hold, such as tags, translations, and the story's photo, are kept from
+// the existing file.
 //
 // Recipes that exist here but not in Strapi are listed; pass --prune to delete
 // them and their images.
@@ -50,8 +51,9 @@ async function fetchAllRecipes() {
 }
 
 // Key order of the recipe files, so unchanged recipes produce no diff. Strapi
-// holds the Greek text, image, and timestamps; preparations, tags, and
-// translations are only in the files, so they are kept from the existing file.
+// holds the Greek text, image, and timestamps; preparations, tags, translations,
+// and the story's photo (memory.imageUrl) are only in the files, so they are kept
+// from the existing file.
 const KEY_ORDER = [
   "id", "title", "description", "ingredients", "steps", "preparations", "memory", "category", "tags",
   "imageUrl", "prepTime", "cookTime", "servings", "createdAt", "updatedAt", "translations",
@@ -65,7 +67,13 @@ function toRecipe(entry, imageUrl, existing) {
     ingredients: entry.ingredients.map((item) => item.name),
     steps: entry.steps.map((item) => item.text),
     memory: entry.memory
-      ? { title: entry.memory.title, story: entry.memory.story, ...(entry.memory.date && { date: entry.memory.date }) }
+      ? {
+          title: entry.memory.title,
+          story: entry.memory.story,
+          ...(entry.memory.date && { date: entry.memory.date }),
+          // The story's own photo isn't in Strapi yet; keep the one the file has.
+          ...(existing.memory?.imageUrl && { imageUrl: existing.memory.imageUrl }),
+        }
       : undefined,
     category: entry.category || undefined,
     imageUrl,
@@ -149,8 +157,10 @@ async function main() {
     }
     const recipe = JSON.parse((await readIfExists(path.join(recipesDir, file), "utf8")) ?? "{}");
     await fs.rm(path.join(recipesDir, file));
-    if (typeof recipe.imageUrl === "string" && recipe.imageUrl.startsWith("/images/recipes/")) {
-      await fs.rm(path.join(root, "public", recipe.imageUrl), { force: true });
+    for (const imageUrl of [recipe.imageUrl, recipe.memory?.imageUrl]) {
+      if (typeof imageUrl === "string" && /^\/images\/(recipes|stories)\//.test(imageUrl)) {
+        await fs.rm(path.join(root, "public", imageUrl), { force: true });
+      }
     }
     console.log(`✖ ${file} deleted`);
   }

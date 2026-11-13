@@ -65,7 +65,12 @@ press **Create recipe** (or ⌘S / Ctrl+S). The editor:
 
 - writes `data/recipes/<id>.json` and `public/images/recipes/<id>.jpg` in the
   right shape, with the id made from the Greek title (`Η φασολάδα` → `i-fasolada`);
-- resizes the photo to at most 1600 px and saves it as a JPEG;
+- takes two photos: the food, for the recipe, and optionally one from the story
+  itself (the people, the place), saved as `public/images/stories/<id>.jpg`. The
+  story's page opens with the story photo, and the recipe with its food photo
+  follows below. A story without its own photo is listed in the journal with the
+  food photo;
+- resizes the photos to at most 1600 px and saves them as JPEGs;
 - checks the recipe with the same rules as `npm run validate:data` before
   writing anything, and points to what needs fixing;
 - helps link another recipe from a story: pick it from **Link a recipe…**,

@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { getBook } from "@/lib/book";
 import { getAllRecipes } from "@/lib/recipes";
-import { formatMemoryDate, textLang, toRecipeSummary } from "@/lib/recipe-view";
+import { formatMemoryDate, storyImageUrl, textLang, toRecipeSummary } from "@/lib/recipe-view";
 import { storyExcerpt, storyMentions, storyPlainText, type RecipeTitles } from "@/lib/story-text";
 import type { RecipeWithStory } from "@/types/recipe";
 import { withBasePath } from "@/lib/base-path";
@@ -48,8 +48,8 @@ export async function storyMetadata(id: string, locale: Locale): Promise<Metadat
   if (!story) return {};
 
   const description = storyExcerpt(story.memory.story, titles, 180);
-  const images =
-    story.imageUrl !== undefined ? [{ url: withBasePath(story.imageUrl), alt: story.title }] : undefined;
+  const imageUrl = storyImageUrl(story);
+  const images = imageUrl !== undefined ? [{ url: withBasePath(imageUrl), alt: story.memory.title }] : undefined;
 
   return {
     title: story.memory.title,
@@ -130,11 +130,12 @@ export async function StoryPage({ id, locale }: StoryPageProps) {
           </div>
         </header>
 
-        {story.imageUrl !== undefined && (
+        {/* Only the story's own photo: the recipe's food photo is in the banner below. */}
+        {memory.imageUrl !== undefined && (
           <div className="relative mt-8 overflow-hidden rounded-2xl bg-muted shadow-sm">
             <img
-              src={withBasePath(story.imageUrl)}
-              alt={story.title}
+              src={withBasePath(memory.imageUrl)}
+              alt={memory.title}
               lang={lang}
               className="aspect-[16/9] w-full object-cover"
             />

@@ -4,14 +4,14 @@ import type { RecipeWithStory } from "@/types/recipe";
 import { withBasePath } from "@/lib/base-path";
 import { localizePath, type Locale } from "@/lib/i18n/config";
 import { getMessages } from "@/lib/i18n/messages";
-import { formatMemoryDate, textLang } from "@/lib/recipe-view";
+import { formatMemoryDate, storyImageUrl, textLang } from "@/lib/recipe-view";
 import { storyExcerpt, type RecipeTitles } from "@/lib/story-text";
 import { ArrowLink } from "@/components/button-link";
 
 /**
  * The ways a story appears in a list. Each is a server component that takes the
- * recipe the story belongs to: the story page lives at /stories/<recipe id>, and
- * the story's photo is the recipe's.
+ * recipe the story belongs to: the story page lives at /stories/<recipe id>. A
+ * story is shown with its own photo, or its recipe's when it has none.
  */
 type StoryProps = {
   story: RecipeWithStory;
@@ -42,11 +42,12 @@ export function StoryRecipeLink({ story, locale }: Pick<StoryProps, "story" | "l
   );
 }
 
-/** An entry in the journal at /stories: the recipe's photo, the story's title, and how it starts. */
+/** An entry in the journal at /stories: the story's photo, its title, and how it starts. */
 export function StoryRow({ story, locale, titles }: StoryProps) {
   const t = getMessages(locale).stories;
   const lang = textLang(story, locale);
   const href = storyPath(story, locale);
+  const imageUrl = storyImageUrl(story);
 
   return (
     <article className="grid grid-cols-[5rem_1fr] gap-4 border-t border-border py-7 sm:grid-cols-[13rem_1fr] sm:gap-8 sm:py-9">
@@ -57,9 +58,9 @@ export function StoryRow({ story, locale, titles }: StoryProps) {
         aria-hidden="true"
         className="group block aspect-square self-start overflow-hidden rounded-lg bg-muted sm:aspect-[4/3] sm:rounded-xl"
       >
-        {story.imageUrl !== undefined ? (
+        {imageUrl !== undefined ? (
           <img
-            src={withBasePath(story.imageUrl)}
+            src={withBasePath(imageUrl)}
             alt=""
             loading="lazy"
             decoding="async"

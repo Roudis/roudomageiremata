@@ -13,6 +13,7 @@ import {
   recipeTitles,
   relatedRecipes,
   storiesMentioning,
+  storyImageUrl,
   textLang,
   toRecipeSummary,
 } from "@/lib/recipe-view";
@@ -426,6 +427,35 @@ describe("stories", () => {
 
   it("storiesMentioning leaves out a recipe's own story, even when it names itself", () => {
     expect(storiesMentioning("patates", [moussaka, potatoes].filter(hasStory))).toEqual([]);
+  });
+
+  it("storyImageUrl is the story's own photo, else the recipe's", () => {
+    const food = "/images/recipes/mousakas.jpg";
+    const table = "/images/stories/mousakas.jpg";
+    expect(storyImageUrl({ imageUrl: food, memory: { ...memory("…"), imageUrl: table } })).toBe(table);
+    expect(storyImageUrl({ imageUrl: food, memory: memory("…") })).toBe(food);
+    expect(storyImageUrl({ memory: memory("…") })).toBeUndefined();
+  });
+
+  it("keeps the story's photo in every language, since translations carry only its text", () => {
+    const recipe = makeRecipe({
+      id: "mousakas",
+      memory: { title: "Κυριακή", story: "Η μυρωδιά.", imageUrl: "/images/stories/mousakas.jpg" },
+      translations: {
+        en: {
+          title: "Moussaka",
+          description: "Layers.",
+          ingredients: ["ingredient"],
+          steps: ["step"],
+          memory: { title: "Sunday", story: "The smell." },
+        },
+      },
+    });
+    expect(localizeRecipe(recipe, "en").memory).toEqual({
+      title: "Sunday",
+      story: "The smell.",
+      imageUrl: "/images/stories/mousakas.jpg",
+    });
   });
 });
 

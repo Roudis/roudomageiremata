@@ -63,11 +63,8 @@ const app = {
   updatedAt: undefined,
   savedHasStory: false,
   form: emptyForm(),
-  /** { kind: "none" } | { kind: "busy" } | { kind: "saved", url } | { kind: "new", dataUrl, width, height, bytes, original } */
-  photo: { kind: "none" },
-  /** The photo on disk when the recipe was opened, to go back to. */
-  savedPhoto: { kind: "none" },
-  photoError: "",
+  /** The food photo and the story's own photo; see `photoSlot`. */
+  photos: { recipe: photoSlot(), story: photoSlot() },
   /** What was on disk when the recipe was opened, to tell whether anything changed. */
   snapshot: "",
   busy: false,
@@ -78,6 +75,16 @@ const app = {
   /** Remarks from the last save. */
   notes: [],
 };
+
+/**
+ * One photo's state. `current` and `saved` are { kind: "none" } | { kind: "busy" } |
+ * { kind: "saved", url } | { kind: "new", dataUrl, width, height, bytes, original };
+ * `saved` is what was on disk when the recipe was opened, to go back to.
+ */
+function photoSlot(url) {
+  const saved = url ? { kind: "saved", url } : { kind: "none" };
+  return { current: saved, saved, error: "" };
+}
 
 function emptyForm() {
   return {
@@ -149,8 +156,10 @@ function payloadForm() {
 }
 
 function snapshot() {
-  const photo = app.photo.kind === "new" ? `new:${app.photo.dataUrl.length}` : app.photo.kind;
-  return JSON.stringify({ id: app.mode === "new" ? app.id : undefined, form: payloadForm(), photo });
+  const photo = ({ current }) => (current.kind === "new" ? `new:${current.dataUrl.length}` : current.kind);
+  // The story's photo only counts while the recipe has a story, as only then is it saved.
+  const story = app.form.hasStory ? photo(app.photos.story) : undefined;
+  return JSON.stringify({ id: app.mode === "new" ? app.id : undefined, form: payloadForm(), photos: [photo(app.photos.recipe), story] });
 }
 
 /** True when the form differs from what was opened; false before anything is open. */
@@ -637,10 +646,16 @@ function tagsField() {
   );
 }
 
-// ── Photo ─────────────────────────────────────────────────────────────────
+// ── Photos ────────────────────────────────────────────────────────────────
 
-function photoSection() {
-  const body = h("div");
+/**
+ * A photo picker for one of the recipe's two photos, `app.photos[slot]`: "recipe"
+ * (the food) or "story" (the story's own). Returns the picker and a function that
+ * lets files be dropped anywhere on a given element.
+ */
+function photoPicker(slot, { field, alt, prompt }) {
+  const state = app.photos[slot];
+  const body = h("div", { class: "photo-picker" });
   const fileInput = h("input", {
     type: "file",
     accept: "image/*,.heic,.heif",
@@ -656,28 +671,29 @@ function photoSection() {
   const choose = () => fileInput.click();
 
   function render() {
-    const photo = app.photo;
-    const error = app.photoError && h("p", { class: "hint is-error", role: "alert" }, app.photoError);
+    const photo = state.current;
+    const error = state.error && h("p", { class: "hint is-error", role: "alert" }, state.error);
     if (photo.kind === "busy") {
       fill(body, h("div", { class: "dropzone" }, h("strong", {}, "Preparing the photo…")));
       return;
     }
     if (photo.kind === "none") {
-      fill(body,
+      fill(
+        body,
         h(
           "button",
-          { type: "button", class: "dropzone", onclick: choose, "data-field": "imageUrl" },
+          { type: "button", class: "dropzone", onclick: choose, "data-field": field },
           icon("photo"),
-          h("strong", {}, "Drop a photo here, or click to choose one"),
+          h("strong", {}, prompt),
           h("span", { class: "hint" }, `JPEG, PNG, WebP, or HEIC (in Safari). Saved as a JPEG of at most ${MAX_PHOTO_EDGE} px.`),
         ),
         error,
-        app.savedPhoto.kind === "saved" &&
+        state.saved.kind === "saved" &&
           h(
             "p",
             { class: "hint" },
             "The saved photo is removed when you save. ",
-            h("button", { type: "button", class: "link-button", onclick: () => setPhoto(app.savedPhoto) }, "Keep it"),
+            h("button", { type: "button", class: "link-button", onclick: () => setPhoto(state.saved) }, "Keep it"),
           ),
       );
       return;
@@ -690,11 +706,12 @@ function photoSection() {
           (photo.original.width > photo.width ? ` (resized from ${photo.original.width} × ${photo.original.height})` : "") +
           ". Saved when you save the recipe."
         : `public${photo.url}`;
-    fill(body,
+    fill(
+      body,
       h(
         "div",
         { class: "photo" },
-        h("img", { src, alt: "The recipe's photo" }),
+        h("img", { src, alt }),
         h(
           "div",
           { class: "photo-footer" },
@@ -703,8 +720,12 @@ function photoSection() {
             "div",
             { class: "photo-actions" },
             photo.kind === "new" &&
-              app.savedPhoto.kind === "saved" &&
-              h("button", { type: "button", class: "button button-ghost button-small", onclick: () => setPhoto(app.savedPhoto) }, "Keep the saved photo"),
+              state.saved.kind === "saved" &&
+              h(
+                "button",
+                { type: "button", class: "button button-ghost button-small", onclick: () => setPhoto(state.saved) },
+                "Keep the saved photo",
+              ),
             h("button", { type: "button", class: "button button-outline button-small", onclick: choose }, "Replace"),
             h(
               "button",
@@ -720,51 +741,68 @@ function photoSection() {
   }
 
   function setPhoto(photo) {
-    app.photo = photo;
-    app.photoError = "";
+    state.current = photo;
+    state.error = "";
     render();
     changed();
   }
 
   async function acceptPhoto(file) {
-    const previous = app.photo;
-    app.photo = { kind: "busy" };
+    const previous = state.current;
+    state.current = { kind: "busy" };
     render();
     try {
       setPhoto({ kind: "new", ...(await preparePhoto(file)) });
     } catch (error) {
-      app.photo = previous;
-      app.photoError = error.message;
+      state.current = previous;
+      state.error = error.message;
       render();
     }
   }
 
-  refresh.photo = render;
-  render();
+  /** Lets a photo be dropped anywhere on `target`, which is highlighted while one is dragged over it. */
+  function acceptDropsOn(target) {
+    let depth = 0;
+    const isFileDrag = (event) => Array.from(event.dataTransfer?.types ?? []).includes("Files");
+    target.addEventListener("dragenter", (event) => {
+      if (!isFileDrag(event)) return;
+      event.preventDefault();
+      depth++;
+      target.classList.add("is-dragging");
+    });
+    target.addEventListener("dragover", (event) => {
+      if (isFileDrag(event)) event.preventDefault();
+    });
+    target.addEventListener("dragleave", () => {
+      depth = Math.max(0, depth - 1);
+      if (depth === 0) target.classList.remove("is-dragging");
+    });
+    target.addEventListener("drop", (event) => {
+      if (!isFileDrag(event)) return;
+      event.preventDefault();
+      depth = 0;
+      target.classList.remove("is-dragging");
+      const file = Array.from(event.dataTransfer?.files ?? [])[0];
+      if (file) acceptPhoto(file);
+    });
+  }
 
-  const card = sectionCard("photo", { title: "Photo", intro: "Optional, but every recipe looks better with one." }, body, fileInput);
-  let depth = 0;
-  const isFileDrag = (event) => Array.from(event.dataTransfer?.types ?? []).includes("Files");
-  card.addEventListener("dragenter", (event) => {
-    if (!isFileDrag(event)) return;
-    event.preventDefault();
-    depth++;
-    card.classList.add("is-dragging");
+  render();
+  return { element: h("div", {}, body, fileInput), acceptDropsOn };
+}
+
+function photoSection() {
+  const picker = photoPicker("recipe", {
+    field: "imageUrl",
+    alt: "The recipe's photo",
+    prompt: "Drop a photo of the food here, or click to choose one",
   });
-  card.addEventListener("dragover", (event) => {
-    if (isFileDrag(event)) event.preventDefault();
-  });
-  card.addEventListener("dragleave", () => {
-    depth = Math.max(0, depth - 1);
-    if (depth === 0) card.classList.remove("is-dragging");
-  });
-  card.addEventListener("drop", (event) => {
-    event.preventDefault();
-    depth = 0;
-    card.classList.remove("is-dragging");
-    const file = Array.from(event.dataTransfer?.files ?? [])[0];
-    if (file) acceptPhoto(file);
-  });
+  const card = sectionCard(
+    "photo",
+    { title: "Photo of the food", intro: "Optional, but every recipe looks better with one. The story can have a photo of its own." },
+    picker.element,
+  );
+  picker.acceptDropsOn(card);
   return card;
 }
 
@@ -1124,6 +1162,7 @@ function storySection() {
           oninput: onInput((value) => (form.memory.date = value)),
         }),
       }),
+      storyPhotoField(),
       h(
         "div",
         { class: "field" },
@@ -1156,6 +1195,28 @@ function storySection() {
     },
     body,
   );
+}
+
+/** The story's own photo, shown at the top of the story's page; the food photo stays with the recipe below it. */
+function storyPhotoField() {
+  const picker = photoPicker("story", {
+    field: "memory.imageUrl",
+    alt: "The story's photo",
+    prompt: "Drop a photo from the story here, or click to choose one",
+  });
+  const wrapper = h(
+    "div",
+    { class: "field" },
+    h("span", { class: "field-label" }, "Photo of the story", h("span", { class: "optional" }, " (optional)")),
+    picker.element,
+    h(
+      "p",
+      { class: "hint" },
+      "The people, the place, the day: it opens the story's page, above the text, while the recipe's photo of the food is shown below it. Without one, the journal shows the food photo.",
+    ),
+  );
+  picker.acceptDropsOn(wrapper);
+  return wrapper;
 }
 
 /** Puts a link to recipe `id` at the cursor, or around the selected words. */
@@ -1328,8 +1389,11 @@ function noticesBox() {
 }
 refresh.notices = () => noticesBox();
 
+const newPhoto = ({ current }) => (current.kind === "new" ? current.dataUrl : undefined);
+const removesPhoto = ({ current, saved }) => current.kind === "none" && saved.kind === "saved";
+
 async function save({ dropBrokenTranslations = false } = {}) {
-  if (app.busy || app.photo.kind === "busy") return;
+  if (app.busy || Object.values(app.photos).some((slot) => slot.current.kind === "busy")) return;
   app.error = undefined;
   app.notes = [];
   app.problems = formProblems();
@@ -1345,8 +1409,10 @@ async function save({ dropBrokenTranslations = false } = {}) {
   const body = {
     form: payloadForm(),
     version: app.version,
-    image: app.photo.kind === "new" ? app.photo.dataUrl : undefined,
-    removeImage: app.photo.kind === "none" && app.savedPhoto.kind === "saved",
+    image: newPhoto(app.photos.recipe),
+    removeImage: removesPhoto(app.photos.recipe),
+    storyImage: newPhoto(app.photos.story),
+    removeStoryImage: removesPhoto(app.photos.story),
     dropBrokenTranslations,
     ...(creating && { id: app.id }),
   };
@@ -1391,7 +1457,6 @@ function startEditing() {
   app.problems = [];
   app.error = undefined;
   app.notes = [];
-  app.photoError = "";
   renderEditor();
   app.snapshot = snapshot();
   refresh.saveBar();
@@ -1409,8 +1474,7 @@ function newRecipe({ story = false } = {}) {
     updatedAt: undefined,
     savedHasStory: false,
     form: { ...emptyForm(), hasStory: story },
-    photo: { kind: "none" },
-    savedPhoto: { kind: "none" },
+    photos: { recipe: photoSlot(), story: photoSlot() },
   });
   history.replaceState(null, "", location.pathname);
   window.scrollTo(0, 0);
@@ -1430,7 +1494,6 @@ async function openRecipe(id, { story = false, force = false, keepScroll = false
   }
 
   const { recipe } = data;
-  const savedPhoto = recipe.imageUrl ? { kind: "saved", url: recipe.imageUrl } : { kind: "none" };
   Object.assign(app, {
     mode: "edit",
     id,
@@ -1440,8 +1503,7 @@ async function openRecipe(id, { story = false, force = false, keepScroll = false
     updatedAt: recipe.updatedAt,
     savedHasStory: recipe.memory !== undefined,
     form: formFromRecipe(recipe),
-    photo: savedPhoto,
-    savedPhoto,
+    photos: { recipe: photoSlot(recipe.imageUrl), story: photoSlot(recipe.memory?.imageUrl) },
   });
   // The open recipe is kept in the address, so reloading the page reopens it.
   history.replaceState(null, "", `#${id}`);

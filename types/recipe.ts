@@ -9,6 +9,12 @@ export interface Memory {
    */
   story: string;
   date?: string;
+  /**
+   * The story's own photo, such as the people at the table, as "/images/stories/<id>.jpg".
+   * The recipe's `imageUrl` is the food. Story lists fall back to the recipe's photo
+   * when this is missing (`storyImageUrl` in lib/recipe-view.ts). Every language shows it.
+   */
+  imageUrl?: string;
 }
 
 /**

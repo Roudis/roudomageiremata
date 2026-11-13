@@ -42,8 +42,13 @@ async function problemsIn(file: string): Promise<string[]> {
   const problems: string[] = [];
   try {
     const recipe = parseRecipe(value, file, { expectedId: file.slice(0, -".json".length) });
-    if (recipe.imageUrl !== undefined && !(await fileExists(path.join(PUBLIC_DIR, recipe.imageUrl)))) {
-      problems.push(`imageUrl "${recipe.imageUrl}" does not exist under public/`);
+    for (const [field, imageUrl] of [
+      ["imageUrl", recipe.imageUrl],
+      ["memory.imageUrl", recipe.memory?.imageUrl],
+    ]) {
+      if (imageUrl !== undefined && !(await fileExists(path.join(PUBLIC_DIR, imageUrl)))) {
+        problems.push(`${field} "${imageUrl}" does not exist under public/`);
+      }
     }
 
     // A story's [[recipe-id]] links must lead to a recipe; the page would show an unknown one as plain text.
@@ -71,7 +76,7 @@ describe("data/recipes", () => {
     expect(files.length).toBeGreaterThan(0);
   });
 
-  it.each(files)("%s is a valid recipe whose image exists", async (file) => {
+  it.each(files)("%s is a valid recipe whose photos exist", async (file) => {
     expect(await problemsIn(file)).toEqual([]);
   });
 });

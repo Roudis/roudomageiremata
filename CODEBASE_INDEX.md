@@ -82,8 +82,9 @@ app/
                              to it), and the newest recipes; homeMetadata
     recipes-page.tsx         RecipesPage: heading + <RecipeList> with every recipe; recipesMetadata
     stories-page.tsx         StoriesPage, the journal: every story as a <StoryRow>; storiesMetadata
-    story-page.tsx           StoryPage: one story set for reading (drop cap on a long opening paragraph, recipe
-                             links in the text), then the recipe it belongs to, the other recipes it mentions,
+    story-page.tsx           StoryPage: one story set for reading (its own photo on top, if it has one; drop cap
+                             on a long opening paragraph; recipe links in the text), then the recipe it belongs to
+                             with the food photo, the other recipes it mentions,
                              and the previous/next story; storyMetadata, storyStaticParams
     recipe-page.tsx          RecipePage: composes components/recipe-detail/*, shows a notice for an untranslated
                              recipe, links the chapter and each tag to the list filtered by it
@@ -106,8 +107,9 @@ components/
   page-links.tsx             BackLink (top of a recipe or story) and UntranslatedNotice
   story-text.tsx             StoryText: a story's paragraphs with each [[recipe-id]] as a link to that recipe;
                              `inline` gives one clampable paragraph for a teaser
-  story-card.tsx             The ways a story appears in a list: StoryRow (journal entry), StoryTeaser (short
-                             lists), StoryFeature (the home page's aubergine band), and StoryRecipeLink
+  story-card.tsx             The ways a story appears in a list: StoryRow (journal entry, with the story's photo
+                             or else the recipe's), StoryTeaser (short lists), StoryFeature (the home page's
+                             aubergine band), and StoryRecipeLink
   recipe-list.tsx            Client; search box with clear button + chapter chips + tag chips + animated grid of
                              cards; takes RecipeSummary[], locale, category names, and its message sections;
                              holds the filter state only (matching and sorting live in lib/recipe-search.ts);
@@ -155,7 +157,8 @@ lib/
   recipe-view.ts             Pure: CATEGORY_FALLBACK, categoryLabel, categoryDisplayName, categoryColorIndex,
                              formatRecipeDate, formatMemoryDate, recipeOrder(locale), compareRecipes (Greek order),
                              localizeRecipe, textLang (the lang attribute for untranslated text), toRecipeSummary,
-                             hasStory, recipeTitles, storiesMentioning, relatedRecipes
+                             hasStory, storyImageUrl (the story's photo, else the recipe's), recipeTitles,
+                             storiesMentioning, relatedRecipes
   recipe-search.ts           Pure: normalizeSearchText, getCategories, getCategoryOptions (the filter's choices,
                              named and sorted in the page's language), getTags, filterRecipes (query, category,
                              tag, locale) for the recipe list; parseFilterParams, filterParams, and recipesPath
@@ -171,7 +174,8 @@ data/
   recipes/<id>.json          Recipe data, one file per recipe with its translations (source of truth)
   categories.json            Category names in the other languages, keyed by Greek category name
 public/
-  images/recipes/<id>.jpg    Recipe images
+  images/recipes/<id>.jpg    Recipe images (the food)
+  images/stories/<id>.jpg    A story's own photo, when it has one (memory.imageUrl)
 scripts/
   sync-from-strapi.mjs       `npm run sync:strapi`: published Strapi recipes → data/recipes + images
   generate-changelog.mjs     Generates CHANGELOG.md from the Git commit history
@@ -182,14 +186,16 @@ editor/                      `npm run editor`: a local web page for adding and e
   server.ts                  node:http server on 127.0.0.1:3210 (EDITOR_PORT): serves ui/ and public/images/recipes,
                              GET /api/state (recipe list with problems, chapters, tags, languages),
                              GET /api/recipes/<id>, POST /api/recipes (create), PUT /api/recipes/<id> (update,
-                             refused when the file's version changed on disk); writes the photo then the JSON,
+                             refused when the file's version changed on disk); writes the photos (images/recipes
+                             and images/stories) then the JSON, deletes a replaced photo no recipe uses,
                              each through a temp file and rename; refuses other hosts and origins
   recipe-input.ts            Pure: readForm (tidies the form), buildRecipe (the file in KEY_ORDER, keeping
                              createdAt, translations, and unknown fields), recipeIssues (parseRecipe plus story
                              links), dropBrokenTranslations, greekTextChanged
   ui/index.html, styles.css  The page shell and its styles (the site's colour tokens, system fonts)
   ui/app.js                  The page: recipe list, form (ingredients, steps, parts made first, tags, story with
-                             recipe-link picker), photo resized in the browser to 1600 px JPEG, save and its messages
+                             recipe-link picker), two photo pickers (the food, and the story's own) that resize in
+                             the browser to a 1600 px JPEG, save and its messages
   ui/slug.js                 slugify (Greek title → Greeklish id) and RECIPE_ID, shared by the page and the tests
   *.test.ts                  recipe-input and slug unit tests; server.test.ts starts the real editor (skipped on
                              a Node that can't run TypeScript, such as CI's Node 20)
@@ -205,6 +211,8 @@ interface Memory {
   story: string;           // plain text, blank line between paragraphs; [[recipe-id]] or
                            // [[recipe-id|words]] links to a recipe (lib/story-text.ts)
   date?: string;
+  imageUrl?: string;       // the story's own photo, "/images/stories/<id>.jpg"; the recipe's
+                           // imageUrl is the food. Same in every language; not in Strapi
 }
 
 interface Recipe {

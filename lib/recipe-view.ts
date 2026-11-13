@@ -115,6 +115,15 @@ export function textLang(recipe: Pick<LocalizedRecipe, "contentLocale">, locale:
   return recipe.contentLocale === locale ? undefined : recipe.contentLocale;
 }
 
+/**
+ * The photo a story is listed with: its own, else its recipe's, so the journal
+ * isn't left without pictures. The story page itself shows only the story's own
+ * photo, since the recipe's appears just below it.
+ */
+export function storyImageUrl(story: Pick<RecipeWithStory, "imageUrl" | "memory">): string | undefined {
+  return story.memory.imageUrl ?? story.imageUrl;
+}
+
 /** True for a recipe with a family story, which gets a journal entry and a story page. */
 export function hasStory(recipe: LocalizedRecipe): recipe is RecipeWithStory {
   return recipe.memory !== undefined;

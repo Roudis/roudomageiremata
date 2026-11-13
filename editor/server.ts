@@ -1,8 +1,9 @@
 /**
  * The recipe editor's local server, started by `npm run editor` through
  * index.mjs. It serves the editor page from editor/ui and a small JSON API that
- * reads and writes the files the site builds from: data/recipes/<id>.json and
- * public/images/recipes/<id>.jpg. Every save is checked with the site's own
+ * reads and writes the files the site builds from: data/recipes/<id>.json,
+ * public/images/recipes/<id>.jpg (the food), and public/images/stories/<id>.jpg
+ * (the story's own photo). Every save is checked with the site's own
  * rules (recipe-input.ts), so nothing invalid is written.
  *
  * It listens on 127.0.0.1 only, and refuses requests from other sites, since
@@ -27,6 +28,7 @@ const RECIPES_DIR = path.join(ROOT, "data", "recipes");
 const CATEGORIES_FILE = path.join(ROOT, "data", "categories.json");
 const PUBLIC_DIR = path.join(ROOT, "public");
 const IMAGES_DIR = path.join(PUBLIC_DIR, "images", "recipes");
+const STORY_IMAGES_DIR = path.join(PUBLIC_DIR, "images", "stories");
 const UI_DIR = path.join(ROOT, "editor", "ui");
 
 const PORT = Number(process.env.EDITOR_PORT ?? 3210);
@@ -146,10 +148,12 @@ async function state(): Promise<Json> {
       const problems = file.jsonError
         ? [file.jsonError]
         : recipeIssues(recipe, file.id, ids).map((issue) => issue.message);
-      if (typeof recipe.imageUrl === "string" && !(await exists(publicFile(recipe.imageUrl)))) {
-        problems.push(`the photo ${recipe.imageUrl} is missing from public/`);
-      }
       const memory = isObject(recipe.memory) ? recipe.memory : undefined;
+      for (const imageUrl of [recipe.imageUrl, memory?.imageUrl]) {
+        if (typeof imageUrl === "string" && !(await exists(publicFile(imageUrl)))) {
+          problems.push(`the photo ${imageUrl} is missing from public/`);
+        }
+      }
       return {
         id: file.id,
         title: typeof recipe.title === "string" ? recipe.title : file.id,
@@ -235,12 +239,23 @@ async function saveRecipe(id: string, body: Json, mode: "create" | "update"): Pr
   }
 
   const existing = current?.value;
+  const form = readForm(body.form);
+
+  // The food photo, and the story's own photo, which goes when the story does.
   const photo = typeof body.image === "string" ? decodePhoto(body.image) : undefined;
   const previousImageUrl = typeof existing?.imageUrl === "string" ? existing.imageUrl : undefined;
   const imageUrl = photo ? `/images/recipes/${id}.jpg` : body.removeImage === true ? undefined : previousImageUrl;
+  const storyPhoto = form.memory && typeof body.storyImage === "string" ? decodePhoto(body.storyImage) : undefined;
+  const previousStoryImageUrl =
+    isObject(existing?.memory) && typeof existing.memory.imageUrl === "string" ? existing.memory.imageUrl : undefined;
+  const storyImageUrl = storyPhoto
+    ? `/images/stories/${id}.jpg`
+    : form.memory && body.removeStoryImage !== true
+      ? previousStoryImageUrl
+      : undefined;
 
   const otherIds = new Set(files.map((file) => file.id).filter((other) => other !== id));
-  let recipe = buildRecipe(readForm(body.form), { id, existing, imageUrl, now: new Date() });
+  let recipe = buildRecipe(form, { id, existing, imageUrl, storyImageUrl, now: new Date() });
   let issues = recipeIssues(recipe, id, otherIds);
   let dropped: string[] = [];
   if (body.dropBrokenTranslations === true) {
@@ -250,26 +265,41 @@ async function saveRecipe(id: string, body: Json, mode: "create" | "update"): Pr
   if (photo === undefined && imageUrl !== undefined && !(await exists(publicFile(imageUrl)))) {
     issues.push({ field: "imageUrl", message: `The photo ${imageUrl} is missing from public/. Choose a photo, or remove it.` });
   }
+  if (storyPhoto === undefined && storyImageUrl !== undefined && !(await exists(publicFile(storyImageUrl)))) {
+    issues.push({
+      field: "memory.imageUrl",
+      message: `The story's photo ${storyImageUrl} is missing from public/. Choose a photo, or remove it.`,
+    });
+  }
   if (issues.length > 0) return [422, { issues }];
 
-  // The photo first, so the recipe file never points to a photo that isn't there.
+  // The photos first, so the recipe file never points to a photo that isn't there.
   if (photo) await writeAtomically(path.join(IMAGES_DIR, `${id}.jpg`), photo);
+  if (storyPhoto) {
+    await fs.mkdir(STORY_IMAGES_DIR, { recursive: true });
+    await writeAtomically(path.join(STORY_IMAGES_DIR, `${id}.jpg`), storyPhoto);
+  }
   const json = JSON.stringify(recipe, null, 2) + (current?.raw.endsWith("\n") ? "\n" : "");
   await writeAtomically(path.join(RECIPES_DIR, `${id}.json`), json);
 
   // A replaced or removed photo goes too, unless another recipe uses the same file.
   const others = files.filter((file) => file.id !== id);
-  if (
-    previousImageUrl?.startsWith("/images/recipes/") &&
-    previousImageUrl !== imageUrl &&
-    !others.some((file) => file.value?.imageUrl === previousImageUrl)
-  ) {
-    const file = publicFile(previousImageUrl);
-    if (file !== undefined) await fs.rm(file, { force: true });
-  }
+  await removeUnusedPhoto(previousImageUrl, imageUrl, others);
+  await removeUnusedPhoto(previousStoryImageUrl, storyImageUrl, others);
 
-  console.log(`✎ ${mode === "create" ? "created" : "saved"} data/recipes/${id}.json${photo ? ` and public${imageUrl}` : ""}`);
+  const written = [photo && imageUrl, storyPhoto && storyImageUrl].filter(Boolean).map((url) => ` and public${url}`);
+  console.log(`✎ ${mode === "create" ? "created" : "saved"} data/recipes/${id}.json${written.join("")}`);
   return [200, { id, version: versionOf(json), warnings: await saveWarnings(recipe, existing, dropped, others) }];
+}
+
+/** Deletes the photo at `previous` when the recipe no longer uses it and no other recipe does either. */
+async function removeUnusedPhoto(previous: string | undefined, current: string | undefined, others: RecipeFile[]) {
+  if (previous === undefined || previous === current || !/^\/images\/(recipes|stories)\//.test(previous)) return;
+  const usedElsewhere = others.some(
+    (file) => file.value?.imageUrl === previous || (isObject(file.value?.memory) && file.value.memory.imageUrl === previous),
+  );
+  const file = publicFile(previous);
+  if (!usedElsewhere && file !== undefined) await fs.rm(file, { force: true });
 }
 
 /** Things worth knowing after a save that don't stop it. */
@@ -354,16 +384,16 @@ async function handle(req: IncomingMessage, res: ServerResponse): Promise<void> 
 
   const { pathname } = new URL(req.url ?? "/", `http://${host}`);
   const recipeRoute = /^\/api\/recipes\/([^/]+)$/.exec(pathname);
-  const imageRoute = /^\/images\/recipes\/([a-z0-9][a-z0-9-]*\.[a-z]+)$/.exec(pathname);
+  const imageRoute = /^\/images\/(recipes|stories)\/([a-z0-9][a-z0-9-]*\.[a-z]+)$/.exec(pathname);
 
   if (method === "GET" && Object.hasOwn(UI_FILES, pathname)) {
     const { file, type } = UI_FILES[pathname];
     return sendFile(res, path.join(UI_DIR, file), type);
   }
   if (method === "GET" && imageRoute) {
-    const type = IMAGE_TYPES[path.extname(imageRoute[1])];
+    const type = IMAGE_TYPES[path.extname(imageRoute[2])];
     if (type === undefined) throw new HttpError(404, "Not found.");
-    return sendFile(res, path.join(IMAGES_DIR, imageRoute[1]), type);
+    return sendFile(res, path.join(imageRoute[1] === "stories" ? STORY_IMAGES_DIR : IMAGES_DIR, imageRoute[2]), type);
   }
   if (method === "GET" && pathname === "/api/state") return send(res, 200, await state());
   if (method === "GET" && recipeRoute) return send(res, 200, await getRecipe(decodeURIComponent(recipeRoute[1])));
@@ -397,7 +427,7 @@ server.on("error", (error: NodeJS.ErrnoException) => {
 server.listen(PORT, "127.0.0.1", () => {
   const url = `http://127.0.0.1:${PORT}`;
   console.log(`\n  Recipe editor: ${url}\n`);
-  console.log("  Saves go to data/recipes/ and public/images/recipes/. Press Ctrl+C to stop.\n");
+  console.log("  Saves go to data/recipes/ and public/images/. Press Ctrl+C to stop.\n");
   if (!process.argv.includes("--no-open") && !process.env.CI) openBrowser(url);
 });
 

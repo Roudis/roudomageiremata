@@ -213,6 +213,34 @@ describe("parseRecipe: invalid data", () => {
     expect(fieldsOf({ ...validRecipe(), imageUrl })).toEqual(["imageUrl"]);
   });
 
+  it("accepts a story photo of its own", () => {
+    const memory = { title: "Κυριακή", story: "Στην αυλή", imageUrl: "/images/stories/gemista.jpg" };
+    expect(fieldsOf({ ...validRecipe(), memory })).toEqual([]);
+  });
+
+  it.each([
+    ["relative", "images/stories/gemista.jpg"],
+    ["empty", ""],
+    ["not a string", 1],
+  ])("rejects a story photo path that is %s", (_label, imageUrl) => {
+    expect(fieldsOf({ ...validRecipe(), memory: { title: "Κυριακή", story: "Στην αυλή", imageUrl } })).toEqual([
+      "memory.imageUrl",
+    ]);
+  });
+
+  it("rejects a story photo in a translation, which always comes from the Greek", () => {
+    const recipe = {
+      ...fullRecipe(),
+      translations: {
+        en: {
+          ...fullTranslation(),
+          memory: { title: "Sunday", story: "In the yard", imageUrl: "/images/stories/gemista.jpg" },
+        },
+      },
+    };
+    expect(fieldsOf(recipe)).toEqual(["translations.en.memory.imageUrl"]);
+  });
+
   it("rejects unknown top-level fields", () => {
     expect(issuesFor({ ...validRecipe(), rating: 5 })).toEqual([
       { field: "rating", message: 'unknown field "rating" (update types/recipe.ts and lib/recipe-schema.ts if intentional)' },
