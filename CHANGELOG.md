@@ -4,6 +4,16 @@ All notable changes to this project are documented here. This file is generated
 from the Git commit history; do not edit it manually. Run `npm run changelog`
 to regenerate it.
 
+## 2026-11-13
+
+### Added
+- add stories and related translations for Romanian, Swedish, and Ukrainian ([74f42e0](https://github.com/Roudis/roudomageiremata/commit/74f42e0653cde0c460913101d1218db02f45de82))
+
+## 2026-11-12
+
+### Other
+- Refactor recipe page and components for improved accessibility and styling ([46e5eb7](https://github.com/Roudis/roudomageiremata/commit/46e5eb7831e37ac37d5ab4946bf608f22d4881bc))
+
 ## 2026-10-04
 
 ### Added
