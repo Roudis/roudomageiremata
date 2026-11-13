@@ -39,6 +39,18 @@ export function FilterChip({ tone, pressed, onClick, children }: FilterChipProps
   );
 }
 
+/** The small visible name at the start of a chip row, such as "Chapters". Screen readers get the row's `label`. */
+export function ChipRowLabel({ children }: { children: ReactNode }) {
+  return (
+    <span
+      aria-hidden="true"
+      className="inline-flex shrink-0 items-center gap-1.5 pr-1 text-xs font-semibold text-muted-foreground"
+    >
+      {children}
+    </span>
+  );
+}
+
 type ChipRowProps = {
   /** Names the group for screen readers. */
   label?: string;

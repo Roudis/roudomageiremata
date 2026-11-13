@@ -4,11 +4,15 @@
  */
 import { describe, expect, it } from "vitest";
 import {
+  NO_FILTERS,
+  filterParams,
   filterRecipes,
   getCategories,
   getCategoryOptions,
   getTags,
   normalizeSearchText,
+  parseFilterParams,
+  recipesPath,
   type SearchableRecipe,
 } from "@/lib/recipe-search";
 
@@ -290,5 +294,48 @@ describe("tags", () => {
   it("lists every tag in use, implied ones included, in the vocabulary's order", () => {
     expect(getTags(tagged)).toEqual(["vegan", "vegetarian", "meat", "beef", "pasta", "pie"]);
     expect(getTags([untagged])).toEqual([]);
+  });
+});
+
+describe("filter params", () => {
+  const categories = ["Της Γιαγιάς", "Αέρας Νάπολης της Θείας"];
+
+  it("reads the search text, category, and tag from a query string", () => {
+    expect(parseFilterParams("?q=μουσακάς&category=Της+Γιαγιάς&tag=vegan", categories)).toEqual({
+      query: "μουσακάς",
+      category: "Της Γιαγιάς",
+      tag: "vegan",
+    });
+  });
+
+  it("returns no filters for an empty query string", () => {
+    expect(parseFilterParams("", categories)).toEqual(NO_FILTERS);
+  });
+
+  it("drops a category no recipe has and a tag that does not exist", () => {
+    expect(parseFilterParams("?category=Του+Κανενός&tag=crunchy", categories)).toEqual(NO_FILTERS);
+  });
+
+  it("writes only the filters that are set", () => {
+    expect(filterParams(NO_FILTERS)).toBe("");
+    expect(filterParams({ tag: "pasta" })).toBe("tag=pasta");
+    expect(filterParams({ query: "ρύζι", category: null, tag: "vegan" })).toBe(
+      `q=${encodeURIComponent("ρύζι")}&tag=vegan`,
+    );
+  });
+
+  it("round-trips a category with spaces, commas, and parentheses", () => {
+    const awkward = ["Του Μπαμπούλα (που δεν είναι μόνο ψάρια)", "Μικρές στο μάτι , Μεγάλες στο τραπέζι"];
+    for (const category of awkward) {
+      expect(parseFilterParams(`?${filterParams({ category })}`, awkward).category).toBe(category);
+    }
+  });
+
+  it("builds the recipe list's path with and without filters", () => {
+    expect(recipesPath()).toBe("/recipes");
+    expect(recipesPath({ tag: "beef" })).toBe("/recipes?tag=beef");
+    expect(parseFilterParams(recipesPath({ category: categories[0] }).slice("/recipes".length), categories).category).toBe(
+      categories[0],
+    );
   });
 });

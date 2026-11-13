@@ -1,7 +1,7 @@
 /**
- * Validates the real recipe files in data/recipes, their translations, and
- * data/categories.json. `npm run validate:data` runs only this file, and CI
- * runs it before every build.
+ * Validates the real recipe files in data/recipes, their translations, the
+ * recipe links in their stories, and data/categories.json.
+ * `npm run validate:data` runs only this file, and CI runs it before every build.
  *
  * The loader skips invalid files with a warning so the build still succeeds,
  * which makes this test the check that stops a partial site from deploying.
@@ -11,6 +11,7 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { RecipeDataError, parseCategoryTranslations, parseRecipe } from "@/lib/recipe-schema";
 import { categoryLabel } from "@/lib/recipe-view";
+import { storyMentions } from "@/lib/story-text";
 
 const RECIPES_DIR = path.join(process.cwd(), "data", "recipes");
 const CATEGORIES_FILE = path.join(process.cwd(), "data", "categories.json");
@@ -18,6 +19,7 @@ const PUBLIC_DIR = path.join(process.cwd(), "public");
 
 // Listed synchronously because it.each needs the file names when tests are collected.
 const files = readdirSync(RECIPES_DIR).filter((file) => file.endsWith(".json")).sort();
+const recipeIds = new Set(files.map((file) => file.slice(0, -".json".length)));
 
 async function fileExists(filePath: string): Promise<boolean> {
   try {
@@ -42,6 +44,20 @@ async function problemsIn(file: string): Promise<string[]> {
     const recipe = parseRecipe(value, file, { expectedId: file.slice(0, -".json".length) });
     if (recipe.imageUrl !== undefined && !(await fileExists(path.join(PUBLIC_DIR, recipe.imageUrl)))) {
       problems.push(`imageUrl "${recipe.imageUrl}" does not exist under public/`);
+    }
+
+    // A story's [[recipe-id]] links must lead to a recipe; the page would show an unknown one as plain text.
+    const stories = [
+      ["memory.story", recipe.memory?.story],
+      ...Object.entries(recipe.translations ?? {}).map(([locale, translation]) => [
+        `translations.${locale}.memory.story`,
+        translation.memory?.story,
+      ]),
+    ];
+    for (const [field, story] of stories) {
+      for (const id of storyMentions(story ?? "")) {
+        if (!recipeIds.has(id)) problems.push(`${field} links to [[${id}]], but data/recipes/${id}.json does not exist`);
+      }
     }
   } catch (error) {
     if (!(error instanceof RecipeDataError)) throw error;

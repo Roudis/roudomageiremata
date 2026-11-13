@@ -18,7 +18,7 @@
   ],
   "memory": {
     "title": "Κυριακάτικο τραπέζι",
-    "story": "Κάθε Κυριακή, αυτή η μυρωδιά μας ξυπνούσε από το πρωί!",
+    "story": "Κάθε Κυριακή, αυτή η μυρωδιά μας ξυπνούσε από το πρωί! Τα βγάζουμε πάντα πρώτα, πριν φτάσει στο τραπέζι το [[spetsofai]] ή [[o-mousakas-tis-giagias]].",
     "date": "2023-11"
   },
   "category": "Αέρας Νάπολης της Θείας",
@@ -52,7 +52,7 @@
       ],
       "memory": {
         "title": "Sunday lunch",
-        "story": "Every Sunday, this smell would wake us up first thing in the morning!"
+        "story": "Every Sunday, this smell would wake us up first thing in the morning! They always come out first, before [[spetsofai]] or [[o-mousakas-tis-giagias]] reaches the table."
       },
       "prepTime": "20 minutes",
       "cookTime": "45 minutes"
@@ -76,7 +76,7 @@
       ],
       "memory": {
         "title": "Zondagse maaltijd",
-        "story": "Elke zondag werden we ’s ochtends vroeg wakker van deze geur!"
+        "story": "Elke zondag werden we ’s ochtends vroeg wakker van deze geur! Ze komen altijd als eerste op tafel, nog vóór [[spetsofai]] of [[o-mousakas-tis-giagias]]."
       },
       "prepTime": "20 minuten",
       "cookTime": "45 minuten"
@@ -100,7 +100,7 @@
       ],
       "memory": {
         "title": "Le repas du dimanche",
-        "story": "Chaque dimanche, cette odeur nous réveillait dès le matin !"
+        "story": "Chaque dimanche, cette odeur nous réveillait dès le matin ! On les sert toujours en premier, avant que [[spetsofai]] ou [[o-mousakas-tis-giagias]] n’arrive sur la table."
       },
       "prepTime": "20 minutes",
       "cookTime": "45 minutes"
@@ -124,7 +124,7 @@
       ],
       "memory": {
         "title": "Söndagsmiddag",
-        "story": "Varje söndag väckte den här doften oss tidigt på morgonen!"
+        "story": "Varje söndag väckte den här doften oss tidigt på morgonen! De kommer alltid fram först, innan [[spetsofai]] eller [[o-mousakas-tis-giagias]] når bordet."
       },
       "prepTime": "20 minuter",
       "cookTime": "45 minuter"
@@ -148,7 +148,7 @@
       ],
       "memory": {
         "title": "La comida del domingo",
-        "story": "¡Cada domingo, este olor nos despertaba por la mañana!"
+        "story": "¡Cada domingo, este olor nos despertaba por la mañana! Siempre salen primero, antes de que llegue a la mesa [[spetsofai]] o [[o-mousakas-tis-giagias]]."
       },
       "prepTime": "20 minutos",
       "cookTime": "45 minutos"
@@ -172,7 +172,7 @@
       ],
       "memory": {
         "title": "Il pranzo della domenica",
-        "story": "Ogni domenica, questo profumo ci svegliava fin dal mattino!"
+        "story": "Ogni domenica, questo profumo ci svegliava fin dal mattino! Arrivano sempre per primi, prima che in tavola arrivi [[spetsofai]] o [[o-mousakas-tis-giagias]]."
       },
       "prepTime": "20 minuti",
       "cookTime": "45 minuti"
@@ -196,7 +196,7 @@
       ],
       "memory": {
         "title": "Masa de duminică",
-        "story": "În fiecare duminică, mirosul ăsta ne trezea încă de dimineață!"
+        "story": "În fiecare duminică, mirosul ăsta ne trezea încă de dimineață! Le scoatem mereu primele, înainte să ajungă pe masă [[spetsofai]] sau [[o-mousakas-tis-giagias]]."
       },
       "prepTime": "20 de minute",
       "cookTime": "45 de minute"
@@ -220,7 +220,7 @@
       ],
       "memory": {
         "title": "Nedělní oběd",
-        "story": "Každou neděli nás ta vůně budila hned od rána!"
+        "story": "Každou neděli nás ta vůně budila hned od rána! Na stůl jdou vždycky jako první, ještě než dorazí [[spetsofai]] nebo [[o-mousakas-tis-giagias]]."
       },
       "prepTime": "20 minut",
       "cookTime": "45 minut"
@@ -244,7 +244,7 @@
       ],
       "memory": {
         "title": "Недільний обід",
-        "story": "Щонеділі цей аромат будив нас зранку!"
+        "story": "Щонеділі цей аромат будив нас зранку! Їх завжди подаємо першими, ще до того, як на столі з’явиться [[spetsofai]] чи [[o-mousakas-tis-giagias]]."
       },
       "prepTime": "20 хвилин",
       "cookTime": "45 хвилин"
@@ -268,7 +268,7 @@
       ],
       "memory": {
         "title": "日曜日の食卓",
-        "story": "毎週日曜日、この香りで朝から目が覚めたものです！"
+        "story": "毎週日曜日、この香りで朝から目が覚めたものです！いつも最初に出します。[[spetsofai]]や[[o-mousakas-tis-giagias]]が食卓に届く前に。"
       },
       "prepTime": "20分",
       "cookTime": "45分"

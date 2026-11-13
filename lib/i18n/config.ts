@@ -53,7 +53,7 @@ export function isTranslatedLocale(value: unknown): value is TranslatedLocale {
 
 /**
  * A site path in `locale`: unchanged for Greek, prefixed for the rest, so
- * "/recipes/x" becomes "/en/recipes/x" and "/#recipe-grid" becomes "/en#recipe-grid".
+ * "/recipes/x" becomes "/en/recipes/x" and "/recipes?tag=vegan" becomes "/en/recipes?tag=vegan".
  * Never adds a trailing slash, which the static export has no file for.
  */
 export function localizePath(path: string, locale: Locale): string {

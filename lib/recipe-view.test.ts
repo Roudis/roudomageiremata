@@ -7,8 +7,12 @@ import {
   compareRecipes,
   formatMemoryDate,
   formatRecipeDate,
+  hasStory,
   localizeRecipe,
   recipeOrder,
+  recipeTitles,
+  relatedRecipes,
+  storiesMentioning,
   textLang,
   toRecipeSummary,
 } from "@/lib/recipe-view";
@@ -390,5 +394,62 @@ describe("toRecipeSummary", () => {
     toRecipeSummary(recipe);
 
     expect(recipe).toStrictEqual(copy);
+  });
+});
+
+describe("stories", () => {
+  const localized = (overrides: Partial<Recipe> & Pick<Recipe, "id">) => localizeRecipe(makeRecipe(overrides), "el");
+  const memory = (story: string) => ({ title: "Κυριακή", story });
+
+  const moussaka = localized({ id: "mousakas", title: "Ο Μουσακάς", memory: memory("Η μυρωδιά της μπεσαμέλ.") });
+  const potatoes = localized({
+    id: "patates",
+    title: "Οι πατάτες",
+    memory: memory("Δίπλα στον [[mousakas|μουσακά]] και στα [[snitsel]], και πάλι [[patates|πατάτες]]."),
+  });
+  const schnitzel = localized({ id: "snitsel", title: "Τα σνίτσελ" });
+
+  it("hasStory is true only for a recipe with a memory", () => {
+    expect([moussaka, potatoes, schnitzel].filter(hasStory).map((recipe) => recipe.id)).toEqual(["mousakas", "patates"]);
+  });
+
+  it("recipeTitles maps each id to its title", () => {
+    expect(recipeTitles([moussaka, schnitzel])).toEqual({ mousakas: "Ο Μουσακάς", snitsel: "Τα σνίτσελ" });
+  });
+
+  it("storiesMentioning finds the other recipes' stories that link to a recipe", () => {
+    const stories = [moussaka, potatoes].filter(hasStory);
+
+    expect(storiesMentioning("mousakas", stories).map((story) => story.id)).toEqual(["patates"]);
+    expect(storiesMentioning("snitsel", stories).map((story) => story.id)).toEqual(["patates"]);
+  });
+
+  it("storiesMentioning leaves out a recipe's own story, even when it names itself", () => {
+    expect(storiesMentioning("patates", [moussaka, potatoes].filter(hasStory))).toEqual([]);
+  });
+});
+
+describe("relatedRecipes", () => {
+  const grandma = "Της Γιαγιάς";
+  const recipes = [
+    makeRecipe({ id: "a", category: grandma }),
+    makeRecipe({ id: "b", category: "Της Μαμάς" }),
+    makeRecipe({ id: "c", category: grandma }),
+    makeRecipe({ id: "d", category: grandma }),
+    makeRecipe({ id: "e" }),
+    makeRecipe({ id: "f" }),
+  ];
+
+  it("returns the other recipes of the same category, in order, up to the limit", () => {
+    expect(relatedRecipes(recipes[0], recipes, 3).map((recipe) => recipe.id)).toEqual(["c", "d"]);
+    expect(relatedRecipes(recipes[0], recipes, 1).map((recipe) => recipe.id)).toEqual(["c"]);
+  });
+
+  it("groups recipes without a category together, as the filter does", () => {
+    expect(relatedRecipes(recipes[4], recipes, 3).map((recipe) => recipe.id)).toEqual(["f"]);
+  });
+
+  it("returns nothing for the only recipe of its category", () => {
+    expect(relatedRecipes(recipes[1], recipes, 3)).toEqual([]);
   });
 });

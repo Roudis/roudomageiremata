@@ -1,5 +1,6 @@
 import type { Memory, Preparation, Recipe, RecipeTranslation } from "@/types/recipe";
 import { TRANSLATED_LOCALES, isTranslatedLocale, type TranslatedLocale } from "@/lib/i18n/config";
+import { hasMalformedMention } from "@/lib/story-text";
 import { NOT_VEGETARIAN, TAG_IDS, TAG_IMPLIES, expandTags, isTagId, type TagId } from "@/lib/tags";
 
 /**
@@ -63,6 +64,19 @@ const isStringArray = (v: unknown): v is string[] => Array.isArray(v) && v.lengt
 const isIsoDate = (v: unknown): v is string => typeof v === "string" && !Number.isNaN(Date.parse(v));
 
 type Fail = (field: string, message: string) => void;
+
+/**
+ * Checks a memory's story, in the Greek or at `field` in a translation: a
+ * non-empty string whose recipe links are well formed. Whether the linked recipes
+ * exist needs the other files, so that check lives in lib/recipes.data.test.ts.
+ */
+function checkStory(story: unknown, field: string, fail: Fail): void {
+  if (!isNonEmptyString(story)) {
+    fail(field, `${field} must be a non-empty string`);
+  } else if (hasMalformedMention(story)) {
+    fail(field, `${field} has a malformed recipe link; write [[recipe-id]] or [[recipe-id|words to show]]`);
+  }
+}
 
 /**
  * Checks a `preparations` list, in the Greek or at `at` in a translation. Returns
@@ -192,7 +206,7 @@ function checkTranslation(
         }
       }
       if (!isNonEmptyString(memory.title)) fail(`${field}.title`, `${field}.title must be a non-empty string`);
-      if (!isNonEmptyString(memory.story)) fail(`${field}.story`, `${field}.story must be a non-empty string`);
+      checkStory(memory.story, `${field}.story`, fail);
     }
   }
 }
@@ -275,7 +289,7 @@ function checkRecipe(value: unknown, issues: RecipeDataIssue[], { expectedId }: 
         if (!Object.hasOwn(MEMORY_FIELDS, key)) fail(`memory.${key}`, `unknown memory field "${key}"`);
       }
       if (!isNonEmptyString(memory.title)) fail("memory.title", "memory.title must be a non-empty string");
-      if (!isNonEmptyString(memory.story)) fail("memory.story", "memory.story must be a non-empty string");
+      checkStory(memory.story, "memory.story", fail);
       if ("date" in memory && !isNonEmptyString(memory.date)) {
         fail("memory.date", "memory.date must be a non-empty string when present");
       }

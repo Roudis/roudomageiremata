@@ -1,6 +1,7 @@
-import type { CategoryNames, LocalizedRecipe, Recipe, RecipeSummary } from "@/types/recipe";
+import type { CategoryNames, LocalizedRecipe, Recipe, RecipeSummary, RecipeWithStory } from "@/types/recipe";
 import { DEFAULT_LOCALE, type Locale } from "@/lib/i18n/config";
 import { collatorFor, perLocale } from "@/lib/i18n/format";
+import { storyMentions, type RecipeTitles } from "@/lib/story-text";
 
 /** Category used everywhere a recipe has none: the card, the detail page, and the filter. */
 export const CATEGORY_FALLBACK = "Άλλο";
@@ -112,6 +113,34 @@ export function localizeRecipe(recipe: Recipe, locale: Locale): LocalizedRecipe 
  */
 export function textLang(recipe: Pick<LocalizedRecipe, "contentLocale">, locale: Locale): Locale | undefined {
   return recipe.contentLocale === locale ? undefined : recipe.contentLocale;
+}
+
+/** True for a recipe with a family story, which gets a journal entry and a story page. */
+export function hasStory(recipe: LocalizedRecipe): recipe is RecipeWithStory {
+  return recipe.memory !== undefined;
+}
+
+/** Recipe titles by id in the recipes' language, for the recipe links inside story text. */
+export function recipeTitles(recipes: readonly Pick<Recipe, "id" | "title">[]): RecipeTitles {
+  return Object.fromEntries(recipes.map((recipe) => [recipe.id, recipe.title]));
+}
+
+/** The stories that mention the recipe, other than its own, in the order given. */
+export function storiesMentioning(recipeId: string, stories: readonly RecipeWithStory[]): RecipeWithStory[] {
+  return stories.filter((story) => story.id !== recipeId && storyMentions(story.memory.story).includes(recipeId));
+}
+
+/**
+ * Other recipes from the same category, in the order given, at most `limit`: the
+ * "from the same chapter" row under a recipe.
+ */
+export function relatedRecipes<T extends Pick<Recipe, "id" | "category">>(
+  recipe: Pick<Recipe, "id" | "category">,
+  recipes: readonly T[],
+  limit: number,
+): T[] {
+  const label = categoryLabel(recipe);
+  return recipes.filter((other) => other.id !== recipe.id && categoryLabel(other) === label).slice(0, limit);
 }
 
 /** Keeps only what the recipe list and cards render. Optional fields stay absent when missing. */

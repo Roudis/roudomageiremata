@@ -505,3 +505,35 @@ describe("parseCategoryTranslations", () => {
     );
   });
 });
+
+describe("parseRecipe: recipe links in stories", () => {
+  const withStory = (story: string) => ({ ...validRecipe(), memory: { title: "Κυριακή", story } });
+
+  it("accepts a story that links to recipes by id, with or without its own words", () => {
+    expect(fieldsOf(withStory("Πρώτα το [[spetsofai]] και μετά [[o-mousakas-tis-giagias|ο μουσακάς]]."))).toEqual([]);
+  });
+
+  it("rejects a link that is not a recipe id, or brackets left open", () => {
+    const message = "memory.story has a malformed recipe link; write [[recipe-id]] or [[recipe-id|words to show]]";
+
+    expect(issuesFor(withStory("Πρώτα το [[Σπετσοφάι Β!]]."))).toEqual([{ field: "memory.story", message }]);
+    expect(fieldsOf(withStory("Πρώτα το [[spetsofai."))).toEqual(["memory.story"]);
+  });
+
+  it("checks the links in a translated story too", () => {
+    const recipe = {
+      ...withStory("Πρώτα το [[spetsofai]]."),
+      translations: {
+        en: {
+          title: "Stuffed vegetables",
+          description: "Grandma's",
+          ingredients: ["tomatoes", "rice"],
+          steps: ["Stuff", "Bake"],
+          memory: { title: "Sunday", story: "First the [[Spetsofai]]." },
+        },
+      },
+    };
+
+    expect(fieldsOf(recipe)).toEqual(["translations.en.memory.story"]);
+  });
+});

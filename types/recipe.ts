@@ -3,6 +3,10 @@ import type { TagId } from "@/lib/tags";
 
 export interface Memory {
   title: string;
+  /**
+   * Plain text; a blank line starts a new paragraph. `[[recipe-id]]` links to that
+   * recipe by its title and `[[recipe-id|words]]` by those words; see lib/story-text.ts.
+   */
   story: string;
   date?: string;
 }
@@ -66,6 +70,12 @@ export interface LocalizedRecipe extends Omit<Recipe, "translations"> {
   /** The language the text is in: the page's language, or Greek when the recipe has no translation. */
   contentLocale: Locale;
 }
+
+/**
+ * A recipe with a family story, which is what the journal lists: today every
+ * story is a recipe's `memory`, so a story's id and photo are its recipe's.
+ */
+export type RecipeWithStory = LocalizedRecipe & { memory: Memory };
 
 /**
  * The fields the recipe list and cards need, so the browser doesn't receive

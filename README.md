@@ -1,13 +1,16 @@
 # Roudomageirikes
 
-A Next.js 14 recipe journal for preserving family recipes and the memories attached to them.
+A Next.js 14 family recipe book and journal: the recipes, and the stories attached to them.
 
 Live site: https://roudis.github.io/roudomageiremata/
 
 ## Features
-- Browse a warm, family-style recipe collection with search, category filters, and
-  tags such as vegan, beef, or pasta
-- View recipe details with ingredients, steps, and memory/story notes
+- Browse the recipes at `/recipes`, with search, chapters (one per family cook),
+  and tags such as vegan, beef, or pasta. The filters are kept in the address, so
+  they survive opening a recipe and coming back
+- Read the family stories in the journal at `/stories`. A recipe named in a story
+  is a link to that recipe, and the recipe lists the stories that mention it
+- View a recipe with its ingredients, steps, and the start of its story
 - Read the site and every recipe in Greek (the original), English, Dutch,
   French, Swedish, Spanish, Italian, Romanian, Czech, Ukrainian, or Japanese,
   using the language menu at the top right. Greek pages keep their URLs; the
@@ -68,7 +71,12 @@ Strapi, the files can be edited by hand:
 5. Add `"tags"`, such as `["beef", "pasta"]`, using the ids in
    [`lib/tags.ts`](lib/tags.ts). List only the most specific one: a vegan recipe
    is found under "vegetarian" too, and a beef one under "meat".
-6. Run `npm run validate:data`, then open a pull request into `main`.
+6. To link a recipe from a story, write `[[recipe-id]]` in the memory's `story`
+   to show that recipe's title, or `[[recipe-id|words to show]]` to choose the
+   words, as in `δίπλα στον [[o-mousakas-tis-giagias|μουσακά της γιαγιάς]]`. The
+   id is the recipe's file name without `.json`. Leave a blank line between
+   paragraphs. The Greek story lives in Strapi, so add the link there as well.
+7. Run `npm run validate:data`, then open a pull request into `main`.
 
 ## Static site & GitHub Pages
 

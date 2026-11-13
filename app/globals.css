@@ -80,6 +80,11 @@
     @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
   }
 
+  /* The small green label above a page or section title, such as "The journal". */
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.14em] text-secondary;
+  }
+
   /* The keyboard focus ring every link and button shares, drawn on the element's edge. */
   .focus-ring {
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
