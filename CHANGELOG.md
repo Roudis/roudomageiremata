@@ -7,6 +7,7 @@ to regenerate it.
 ## 2026-11-13
 
 ### Added
+- add recipe editor UI, slug generation, and styles ([3335aaa](https://github.com/Roudis/roudomageiremata/commit/3335aaaf7861b9e1051009db6741abd5b9645ecd))
 - add stories and related translations for Romanian, Swedish, and Ukrainian ([74f42e0](https://github.com/Roudis/roudomageiremata/commit/74f42e0653cde0c460913101d1218db02f45de82))
 
 ## 2026-11-12
