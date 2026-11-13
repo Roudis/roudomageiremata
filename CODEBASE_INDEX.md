@@ -21,7 +21,8 @@ for working in the repo live in [CLAUDE.md](CLAUDE.md).
   (no database at build time). Read at **build time** only.
 - **Editing:** Recipes are edited in a Strapi 5 CMS, a separate project in
   `../roudomageiremata-cms`, and pulled into the JSON files and images with
-  `npm run sync:strapi`. The build and deploy never contact Strapi.
+  `npm run sync:strapi`. The build and deploy never contact Strapi. Without
+  Strapi, `npm run editor` opens a local editor that writes the same files.
 - **Rendering:** Fully static export (`output: "export"` in
   [next.config.mjs](next.config.mjs)). Every page is pre-rendered in every
   language via `generateStaticParams` (a home, the recipe list, the journal, and
@@ -174,6 +175,24 @@ public/
 scripts/
   sync-from-strapi.mjs       `npm run sync:strapi`: published Strapi recipes → data/recipes + images
   generate-changelog.mjs     Generates CHANGELOG.md from the Git commit history
+editor/                      `npm run editor`: a local web page for adding and editing recipes and their
+                             stories, writing data/recipes and public/images/recipes. Not part of the site
+  index.mjs                  Entry point: checks Node can run TypeScript (22.18+), adds the "@/" alias and
+                             extensionless imports with module.registerHooks, then loads server.ts
+  server.ts                  node:http server on 127.0.0.1:3210 (EDITOR_PORT): serves ui/ and public/images/recipes,
+                             GET /api/state (recipe list with problems, chapters, tags, languages),
+                             GET /api/recipes/<id>, POST /api/recipes (create), PUT /api/recipes/<id> (update,
+                             refused when the file's version changed on disk); writes the photo then the JSON,
+                             each through a temp file and rename; refuses other hosts and origins
+  recipe-input.ts            Pure: readForm (tidies the form), buildRecipe (the file in KEY_ORDER, keeping
+                             createdAt, translations, and unknown fields), recipeIssues (parseRecipe plus story
+                             links), dropBrokenTranslations, greekTextChanged
+  ui/index.html, styles.css  The page shell and its styles (the site's colour tokens, system fonts)
+  ui/app.js                  The page: recipe list, form (ingredients, steps, parts made first, tags, story with
+                             recipe-link picker), photo resized in the browser to 1600 px JPEG, save and its messages
+  ui/slug.js                 slugify (Greek title → Greeklish id) and RECIPE_ID, shared by the page and the tests
+  *.test.ts                  recipe-input and slug unit tests; server.test.ts starts the real editor (skipped on
+                             a Node that can't run TypeScript, such as CI's Node 20)
 populate.js                  Legacy seeding script; overwrites data/recipes. Do not run.
 download-images.js           Legacy image downloader. Do not run.
 download-all-images.js       Legacy; rewrites imageUrl in every recipe. Do not run.
@@ -269,7 +288,7 @@ cannot import it.
 ## Config Files
 - [package.json](package.json): scripts `dev`, `build`, `start` (serves `out/`
   via `serve`), `lint`, `typecheck`, `test`, `test:watch`, `validate:data`,
-  `sync:strapi`, `changelog`, `changelog:check`, `check`.
+  `sync:strapi`, `editor`, `changelog`, `changelog:check`, `check`.
 - [vitest.config.mts](vitest.config.mts): Vitest in node environment with the `@/` alias;
   aliases `server-only` to its no-op `empty.js` so the loader can be imported in tests.
 - [tsconfig.json](tsconfig.json): strict mode; path alias `@/*` → repo root.
@@ -278,10 +297,15 @@ cannot import it.
 - [tailwind.config.ts](tailwind.config.ts): content from `app/` and `components/`;
   theme colours mapped to the CSS variables in `app/globals.css`, and the
   `font-sans` / `font-serif` families.
-- [next.config.mjs](next.config.mjs): static export, Pages base path, unoptimized images.
+- [next.config.mjs](next.config.mjs): static export, Pages base path, unoptimized images,
+  and the folders `next lint` checks (`app`, `components`, `lib`, `editor`).
 - [.claude/settings.json](.claude/settings.json): shared Claude Code permissions.
 
 ## Common Tasks — Where to Look
+- **Add a recipe or a story without Strapi:** run `npm run editor`, fill in the
+  form, and save; it writes the JSON file and photo and validates them the way
+  `npm run validate:data` does. Translations are not edited there. Then review
+  the diff and open a PR into `main`.
 - **Add/edit/remove a recipe:** edit and publish its Greek text and image in
   Strapi (`npm run develop` in `../roudomageiremata-cms`), run
   `npm run sync:strapi` (add `-- --prune` after deleting one), then add or
@@ -361,5 +385,6 @@ cannot import it.
   strings in `lib/` would be dropped from the CSS.
 - `public/images/recipes/to-kotopoylo-kai-oi-patatates-foyrnoy.jpg` is 8 MB
   (9000×12000 px) and loads visibly late; images are served as they are.
-- No add/edit/delete UI or API routes. The site is a static export.
+- The site has no add/edit/delete UI or API routes; it is a static export. Editing
+  happens in Strapi or in the local editor (`editor/`), which write the files.
 - `next start` does not work with `output: "export"`; use `npm run start`.

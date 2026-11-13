@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Recipe editor · Ρουδομαγειρέματα</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23593163'/%3E%3Ctext x='16' y='22.5' font-family='Georgia,serif' font-size='19' text-anchor='middle' fill='%23faf8f3'%3E%CE%A1%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="monogram" aria-hidden="true">Ρ</span>
+        <div class="brand-text">
+          <p class="eyebrow">Recipe editor</p>
+          <p class="brand-name" lang="el">Ρουδομαγειρέματα</p>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <button type="button" class="button button-secondary" id="new-story">New story</button>
+        <button type="button" class="button button-primary" id="new-recipe">New recipe</button>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar" aria-label="Recipes">
+        <label class="search">
+          <span class="visually-hidden">Search recipes</span>
+          <input type="search" id="search" class="input" placeholder="Search recipes" autocomplete="off" />
+        </label>
+        <ul id="recipe-list" class="recipe-list"></ul>
+        <p id="recipe-count" class="sidebar-count"></p>
+      </aside>
+
+      <main id="editor" class="editor">
+        <p class="loading">Loading the recipes…</p>
+      </main>
+    </div>
+
+    <dialog id="story-dialog" aria-labelledby="story-dialog-title"></dialog>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

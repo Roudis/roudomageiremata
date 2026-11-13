@@ -14,6 +14,10 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  // Next's default folders that exist here, plus the local recipe editor (npm run editor).
+  eslint: {
+    dirs: ["app", "components", "lib", "editor"],
+  },
   env: {
     NEXT_PUBLIC_BASE_PATH: isGithubPagesBuild ? `/${repoName}` : "",
   },

@@ -50,6 +50,44 @@ npm run changelog
 
 ## Adding or editing a recipe
 
+### With the recipe editor
+
+The easiest way to add a recipe or a family story is the local editor:
+
+```bash
+npm run editor
+```
+
+It opens http://127.0.0.1:3210 in your browser (Node.js 22.18 or newer). On the
+left are all the recipes; **New recipe** starts an empty one, and **New story**
+asks which recipe the story belongs to. Fill in the form, drop in a photo, and
+press **Create recipe** (or ⌘S / Ctrl+S). The editor:
+
+- writes `data/recipes/<id>.json` and `public/images/recipes/<id>.jpg` in the
+  right shape, with the id made from the Greek title (`Η φασολάδα` → `i-fasolada`);
+- resizes the photo to at most 1600 px and saves it as a JPEG;
+- checks the recipe with the same rules as `npm run validate:data` before
+  writing anything, and points to what needs fixing;
+- helps link another recipe from a story: pick it from **Link a recipe…**,
+  optionally after selecting the words that should become the link.
+
+It edits the Greek text only. A recipe's translations are kept as they are; if
+a change to the Greek no longer fits them (for example, an added step), the
+editor offers to remove the translations that don't match, so those languages
+show the Greek with a notice until it is translated again.
+
+Saving only changes files in your working copy. Look at them with `npm run dev`
+(each recipe has **View recipe** and **View story** links), then commit them on
+a branch and open a pull request into `main`. Stop the editor with Ctrl+C;
+`EDITOR_PORT` and `SITE_URL` change its port and the site those links open.
+
+A recipe made in the editor is not in Strapi. If you also use Strapi,
+`npm run sync:strapi` lists such a recipe as not in Strapi, and `--prune` would
+delete it, while syncing a recipe that is in Strapi overwrites the Greek text
+and photo edited here. Keep each recipe in one place.
+
+### With Strapi or by hand
+
 The Greek text, photo, and timestamps of each recipe are managed in the Strapi CMS
 (a separate project, `roudomageiremata-cms`) and pulled into this repository with
 `npm run sync:strapi`. The sync overwrites those fields, so edit them in Strapi;
@@ -84,7 +122,8 @@ This app is built as a fully static site (`next build` with `output: "export"`)
 so it can be hosted on GitHub Pages, which only serves static files. There's no
 server at runtime. Recipes are read from `data/recipes/*.json` at build time
 and rendered to static HTML. There are no API routes or in-app create/edit
-forms, because those would require a writable server.
+forms, because those would require a writable server; the recipe editor above
+is a separate program that only runs on your own computer.
 
 Publishing is automatic. Merging to `main` runs the
 [deploy workflow](.github/workflows/deploy.yml), which checks, builds, and
