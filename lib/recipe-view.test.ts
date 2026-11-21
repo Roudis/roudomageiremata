@@ -7,8 +7,14 @@ import {
   compareRecipes,
   formatMemoryDate,
   formatRecipeDate,
+  hasStory,
   localizeRecipe,
   recipeOrder,
+  recipeTitles,
+  relatedRecipes,
+  storiesMentioning,
+  storyImageUrl,
+  textLang,
   toRecipeSummary,
 } from "@/lib/recipe-view";
 import type { Recipe, RecipeTranslation } from "@/types/recipe";
@@ -265,6 +271,19 @@ describe("localizeRecipe", () => {
     });
   });
 
+  it("uses the translated preparations when the Greek has them", () => {
+    const moussaka = makeRecipe({
+      id: "moussaka",
+      preparations: [{ title: "Μπεσαμέλ", steps: ["Ανακάτεψε"] }],
+      translations: {
+        en: { title: "T", description: "D", ingredients: ["i"], steps: ["s"], preparations: [{ title: "Béchamel", steps: ["Stir"] }] },
+      },
+    });
+
+    expect(localizeRecipe(moussaka, "en").preparations).toEqual([{ title: "Béchamel", steps: ["Stir"] }]);
+    expect(localizeRecipe(moussaka, "fr").preparations).toEqual([{ title: "Μπεσαμέλ", steps: ["Ανακάτεψε"] }]);
+  });
+
   it("shows the Greek, marked as Greek, in a language with no translation", () => {
     const { translations, ...greek } = gemista;
 
@@ -297,6 +316,25 @@ describe("localizeRecipe", () => {
     localizeRecipe(gemista, "en");
 
     expect(gemista).toStrictEqual(copy);
+  });
+});
+
+describe("textLang", () => {
+  const translation: RecipeTranslation = {
+    title: "Stuffed vegetables",
+    description: "The poor things",
+    ingredients: ["ingredient"],
+    steps: ["step"],
+  };
+  const recipe = makeRecipe({ id: "gemista", translations: { en: translation } });
+
+  it("is undefined when the text is in the page's language", () => {
+    expect(textLang(localizeRecipe(recipe, "el"), "el")).toBeUndefined();
+    expect(textLang(localizeRecipe(recipe, "en"), "en")).toBeUndefined();
+  });
+
+  it("is Greek for a recipe shown untranslated on another language's page", () => {
+    expect(textLang(localizeRecipe(recipe, "fr"), "fr")).toBe("el");
   });
 });
 
@@ -346,7 +384,7 @@ describe("toRecipeSummary", () => {
     expect(Object.keys(summary)).not.toContain("imageUrl");
   });
 
-  it("keeps zero servings, which the card's truthiness check hides today", () => {
+  it("keeps zero servings rather than dropping them as missing", () => {
     expect(toRecipeSummary(localizeRecipe(makeRecipe({ id: "zero", servings: 0 }), "el")).servings).toBe(0);
   });
 
@@ -357,5 +395,91 @@ describe("toRecipeSummary", () => {
     toRecipeSummary(recipe);
 
     expect(recipe).toStrictEqual(copy);
+  });
+});
+
+describe("stories", () => {
+  const localized = (overrides: Partial<Recipe> & Pick<Recipe, "id">) => localizeRecipe(makeRecipe(overrides), "el");
+  const memory = (story: string) => ({ title: "Κυριακή", story });
+
+  const moussaka = localized({ id: "mousakas", title: "Ο Μουσακάς", memory: memory("Η μυρωδιά της μπεσαμέλ.") });
+  const potatoes = localized({
+    id: "patates",
+    title: "Οι πατάτες",
+    memory: memory("Δίπλα στον [[mousakas|μουσακά]] και στα [[snitsel]], και πάλι [[patates|πατάτες]]."),
+  });
+  const schnitzel = localized({ id: "snitsel", title: "Τα σνίτσελ" });
+
+  it("hasStory is true only for a recipe with a memory", () => {
+    expect([moussaka, potatoes, schnitzel].filter(hasStory).map((recipe) => recipe.id)).toEqual(["mousakas", "patates"]);
+  });
+
+  it("recipeTitles maps each id to its title", () => {
+    expect(recipeTitles([moussaka, schnitzel])).toEqual({ mousakas: "Ο Μουσακάς", snitsel: "Τα σνίτσελ" });
+  });
+
+  it("storiesMentioning finds the other recipes' stories that link to a recipe", () => {
+    const stories = [moussaka, potatoes].filter(hasStory);
+
+    expect(storiesMentioning("mousakas", stories).map((story) => story.id)).toEqual(["patates"]);
+    expect(storiesMentioning("snitsel", stories).map((story) => story.id)).toEqual(["patates"]);
+  });
+
+  it("storiesMentioning leaves out a recipe's own story, even when it names itself", () => {
+    expect(storiesMentioning("patates", [moussaka, potatoes].filter(hasStory))).toEqual([]);
+  });
+
+  it("storyImageUrl is the story's own photo, else the recipe's", () => {
+    const food = "/images/recipes/mousakas.jpg";
+    const table = "/images/stories/mousakas.jpg";
+    expect(storyImageUrl({ imageUrl: food, memory: { ...memory("…"), imageUrl: table } })).toBe(table);
+    expect(storyImageUrl({ imageUrl: food, memory: memory("…") })).toBe(food);
+    expect(storyImageUrl({ memory: memory("…") })).toBeUndefined();
+  });
+
+  it("keeps the story's photo in every language, since translations carry only its text", () => {
+    const recipe = makeRecipe({
+      id: "mousakas",
+      memory: { title: "Κυριακή", story: "Η μυρωδιά.", imageUrl: "/images/stories/mousakas.jpg" },
+      translations: {
+        en: {
+          title: "Moussaka",
+          description: "Layers.",
+          ingredients: ["ingredient"],
+          steps: ["step"],
+          memory: { title: "Sunday", story: "The smell." },
+        },
+      },
+    });
+    expect(localizeRecipe(recipe, "en").memory).toEqual({
+      title: "Sunday",
+      story: "The smell.",
+      imageUrl: "/images/stories/mousakas.jpg",
+    });
+  });
+});
+
+describe("relatedRecipes", () => {
+  const grandma = "Της Γιαγιάς";
+  const recipes = [
+    makeRecipe({ id: "a", category: grandma }),
+    makeRecipe({ id: "b", category: "Της Μαμάς" }),
+    makeRecipe({ id: "c", category: grandma }),
+    makeRecipe({ id: "d", category: grandma }),
+    makeRecipe({ id: "e" }),
+    makeRecipe({ id: "f" }),
+  ];
+
+  it("returns the other recipes of the same category, in order, up to the limit", () => {
+    expect(relatedRecipes(recipes[0], recipes, 3).map((recipe) => recipe.id)).toEqual(["c", "d"]);
+    expect(relatedRecipes(recipes[0], recipes, 1).map((recipe) => recipe.id)).toEqual(["c"]);
+  });
+
+  it("groups recipes without a category together, as the filter does", () => {
+    expect(relatedRecipes(recipes[4], recipes, 3).map((recipe) => recipe.id)).toEqual(["f"]);
+  });
+
+  it("returns nothing for the only recipe of its category", () => {
+    expect(relatedRecipes(recipes[1], recipes, 3)).toEqual([]);
   });
 });

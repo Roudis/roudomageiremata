@@ -213,6 +213,34 @@ describe("parseRecipe: invalid data", () => {
     expect(fieldsOf({ ...validRecipe(), imageUrl })).toEqual(["imageUrl"]);
   });
 
+  it("accepts a story photo of its own", () => {
+    const memory = { title: "Κυριακή", story: "Στην αυλή", imageUrl: "/images/stories/gemista.jpg" };
+    expect(fieldsOf({ ...validRecipe(), memory })).toEqual([]);
+  });
+
+  it.each([
+    ["relative", "images/stories/gemista.jpg"],
+    ["empty", ""],
+    ["not a string", 1],
+  ])("rejects a story photo path that is %s", (_label, imageUrl) => {
+    expect(fieldsOf({ ...validRecipe(), memory: { title: "Κυριακή", story: "Στην αυλή", imageUrl } })).toEqual([
+      "memory.imageUrl",
+    ]);
+  });
+
+  it("rejects a story photo in a translation, which always comes from the Greek", () => {
+    const recipe = {
+      ...fullRecipe(),
+      translations: {
+        en: {
+          ...fullTranslation(),
+          memory: { title: "Sunday", story: "In the yard", imageUrl: "/images/stories/gemista.jpg" },
+        },
+      },
+    };
+    expect(fieldsOf(recipe)).toEqual(["translations.en.memory.imageUrl"]);
+  });
+
   it("rejects unknown top-level fields", () => {
     expect(issuesFor({ ...validRecipe(), rating: 5 })).toEqual([
       { field: "rating", message: 'unknown field "rating" (update types/recipe.ts and lib/recipe-schema.ts if intentional)' },
@@ -331,6 +359,47 @@ function fullTranslation(): Record<string, unknown> {
     cookTime: "60 minutes",
   };
 }
+
+describe("parseRecipe: preparations", () => {
+  const bechamel = { title: "Μπεσαμέλ", steps: ["Ανακάτεψε", "Δέσε"] };
+
+  it("accepts preparations, each with a title and steps", () => {
+    expect(issuesFor({ ...validRecipe(), preparations: [bechamel, { title: "Σάλτσα", steps: ["Βράσε"] }] })).toEqual([]);
+  });
+
+  it("rejects an empty list and preparations with missing, blank, or unknown fields", () => {
+    expect(fieldsOf({ ...validRecipe(), preparations: [] })).toEqual(["preparations"]);
+    expect(
+      fieldsOf({ ...validRecipe(), preparations: ["Μπεσαμέλ", { title: " ", steps: [], note: "x" }] }),
+    ).toEqual(["preparations.0", "preparations.1.note", "preparations.1.title", "preparations.1.steps"]);
+  });
+
+  it("requires translated preparations exactly when the Greek has them, with the same number of steps", () => {
+    const translation = { title: "T", description: "D", ingredients: ["a", "b"], steps: ["c", "d"] };
+    const withBechamel = { ...validRecipe(), preparations: [bechamel] };
+
+    expect(issuesFor({ ...withBechamel, translations: { en: { ...translation, preparations: [bechamel] } } })).toEqual([]);
+    expect(fieldsOf({ ...withBechamel, translations: { en: translation } })).toEqual(["translations.en.preparations"]);
+    expect(
+      fieldsOf({ ...validRecipe(), translations: { en: { ...translation, preparations: [bechamel] } } }),
+    ).toEqual(["translations.en.preparations"]);
+    expect(
+      issuesFor({
+        ...withBechamel,
+        translations: { en: { ...translation, preparations: [{ title: "Béchamel", steps: ["Mix"] }] } },
+      }),
+    ).toEqual([
+      {
+        field: "translations.en.preparations.0.steps",
+        message:
+          "translations.en.preparations.0.steps has 1 entries but the Greek has 2; translate each one, or remove translations.en to show the Greek",
+      },
+    ]);
+    expect(
+      fieldsOf({ ...withBechamel, translations: { en: { ...translation, preparations: [bechamel, bechamel] } } }),
+    ).toEqual(["translations.en.preparations"]);
+  });
+});
 
 describe("parseRecipe: translations", () => {
   it("accepts a translation into every other language", () => {
@@ -462,5 +531,37 @@ describe("parseCategoryTranslations", () => {
     expect(() => parseCategoryTranslations(null, CATEGORIES_SOURCE)).toThrow(
       "data/categories.json is not a valid category list:",
     );
+  });
+});
+
+describe("parseRecipe: recipe links in stories", () => {
+  const withStory = (story: string) => ({ ...validRecipe(), memory: { title: "Κυριακή", story } });
+
+  it("accepts a story that links to recipes by id, with or without its own words", () => {
+    expect(fieldsOf(withStory("Πρώτα το [[spetsofai]] και μετά [[o-mousakas-tis-giagias|ο μουσακάς]]."))).toEqual([]);
+  });
+
+  it("rejects a link that is not a recipe id, or brackets left open", () => {
+    const message = "memory.story has a malformed recipe link; write [[recipe-id]] or [[recipe-id|words to show]]";
+
+    expect(issuesFor(withStory("Πρώτα το [[Σπετσοφάι Β!]]."))).toEqual([{ field: "memory.story", message }]);
+    expect(fieldsOf(withStory("Πρώτα το [[spetsofai."))).toEqual(["memory.story"]);
+  });
+
+  it("checks the links in a translated story too", () => {
+    const recipe = {
+      ...withStory("Πρώτα το [[spetsofai]]."),
+      translations: {
+        en: {
+          title: "Stuffed vegetables",
+          description: "Grandma's",
+          ingredients: ["tomatoes", "rice"],
+          steps: ["Stuff", "Bake"],
+          memory: { title: "Sunday", story: "First the [[Spetsofai]]." },
+        },
+      },
+    };
+
+    expect(fieldsOf(recipe)).toEqual(["translations.en.memory.story"]);
   });
 });

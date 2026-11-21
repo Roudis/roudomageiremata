@@ -1,5 +1,6 @@
-import type { Memory, Recipe, RecipeTranslation } from "@/types/recipe";
+import type { Memory, Preparation, Recipe, RecipeTranslation } from "@/types/recipe";
 import { TRANSLATED_LOCALES, isTranslatedLocale, type TranslatedLocale } from "@/lib/i18n/config";
+import { hasMalformedMention } from "@/lib/story-text";
 import { NOT_VEGETARIAN, TAG_IDS, TAG_IMPLIES, expandTags, isTagId, type TagId } from "@/lib/tags";
 
 /**
@@ -34,14 +35,16 @@ export class RecipeDataError extends Error {
 
 // `satisfies` makes `npm run typecheck` fail until these lists match types/recipe.ts.
 const RECIPE_FIELDS = {
-  id: true, title: true, description: true, ingredients: true, steps: true, memory: true, imageUrl: true,
-  category: true, tags: true, prepTime: true, cookTime: true, servings: true, createdAt: true, updatedAt: true,
+  id: true, title: true, description: true, ingredients: true, steps: true, preparations: true, memory: true,
+  imageUrl: true, category: true, tags: true, prepTime: true, cookTime: true, servings: true, createdAt: true, updatedAt: true,
   translations: true,
 } as const satisfies Record<keyof Recipe, true>;
-const MEMORY_FIELDS = { title: true, story: true, date: true } as const satisfies Record<keyof Memory, true>;
+const MEMORY_FIELDS = { title: true, story: true, date: true, imageUrl: true } as const satisfies Record<keyof Memory, true>;
 const TRANSLATION_FIELDS = {
-  title: true, description: true, ingredients: true, steps: true, memory: true, prepTime: true, cookTime: true,
+  title: true, description: true, ingredients: true, steps: true, preparations: true, memory: true, prepTime: true,
+  cookTime: true,
 } as const satisfies Record<keyof RecipeTranslation, true>;
+const PREPARATION_FIELDS = { title: true, steps: true } as const satisfies Record<keyof Preparation, true>;
 const TRANSLATED_MEMORY_FIELDS = { title: true, story: true } as const satisfies Record<
   keyof NonNullable<RecipeTranslation["memory"]>,
   true
@@ -58,9 +61,60 @@ const isPlainObject = (v: unknown): v is Record<string, unknown> =>
   typeof v === "object" && v !== null && !Array.isArray(v);
 const isNonEmptyString = (v: unknown): v is string => typeof v === "string" && v.trim().length > 0;
 const isStringArray = (v: unknown): v is string[] => Array.isArray(v) && v.length > 0 && v.every(isNonEmptyString);
+/** A root-relative path such as "/images/recipes/x.jpg". */
+const isRootPath = (v: unknown): v is string => isNonEmptyString(v) && v.startsWith("/");
 const isIsoDate = (v: unknown): v is string => typeof v === "string" && !Number.isNaN(Date.parse(v));
 
 type Fail = (field: string, message: string) => void;
+
+/**
+ * Checks a memory's story, in the Greek or at `field` in a translation: a
+ * non-empty string whose recipe links are well formed. Whether the linked recipes
+ * exist needs the other files, so that check lives in lib/recipes.data.test.ts.
+ */
+function checkStory(story: unknown, field: string, fail: Fail): void {
+  if (!isNonEmptyString(story)) {
+    fail(field, `${field} must be a non-empty string`);
+  } else if (hasMalformedMention(story)) {
+    fail(field, `${field} has a malformed recipe link; write [[recipe-id]] or [[recipe-id|words to show]]`);
+  }
+}
+
+/**
+ * Checks a `preparations` list, in the Greek or at `at` in a translation. Returns
+ * true when it is a well-formed array, so a translation can then compare it with the Greek.
+ */
+function checkPreparations(preparations: unknown, at: string, fail: Fail): preparations is Preparation[] {
+  if (!Array.isArray(preparations) || preparations.length === 0) {
+    fail(at, `${at} must be a non-empty array when present`);
+    return false;
+  }
+
+  let valid = true;
+  preparations.forEach((preparation: unknown, index) => {
+    const field = `${at}.${index}`;
+    if (!isPlainObject(preparation)) {
+      fail(field, `${field} must be an object with a title and steps`);
+      valid = false;
+      return;
+    }
+    for (const key of Object.keys(preparation)) {
+      if (!Object.hasOwn(PREPARATION_FIELDS, key)) {
+        fail(`${field}.${key}`, `unknown field "${key}" in ${field}`);
+        valid = false;
+      }
+    }
+    if (!isNonEmptyString(preparation.title)) {
+      fail(`${field}.title`, `${field}.title must be a non-empty string`);
+      valid = false;
+    }
+    if (!isStringArray(preparation.steps)) {
+      fail(`${field}.steps`, `${field}.steps must be a non-empty array of non-empty strings`);
+      valid = false;
+    }
+  });
+  return valid;
+}
 
 /**
  * Checks one entry of `translations` against the Greek recipe it translates, so
@@ -102,6 +156,35 @@ function checkTranslation(
     }
   }
 
+  const preparationsField = `${at}.preparations`;
+  if ("preparations" in translation !== "preparations" in greek) {
+    fail(preparationsField, `${preparationsField} must be present exactly when the Greek preparations are, ${removeHint}`);
+  } else if (
+    "preparations" in translation &&
+    checkPreparations(translation.preparations, preparationsField, fail) &&
+    Array.isArray(greek.preparations)
+  ) {
+    const original = greek.preparations as unknown[];
+    const translated = translation.preparations;
+    if (translated.length !== original.length) {
+      fail(
+        preparationsField,
+        `${preparationsField} has ${translated.length} entries but the Greek preparations has ${original.length}; translate each one, ${removeHint}`,
+      );
+    } else {
+      translated.forEach((preparation, index) => {
+        const steps = (original[index] as { steps?: unknown }).steps;
+        if (Array.isArray(steps) && preparation.steps.length !== steps.length) {
+          const field = `${preparationsField}.${index}.steps`;
+          fail(
+            field,
+            `${field} has ${preparation.steps.length} entries but the Greek has ${steps.length}; translate each one, ${removeHint}`,
+          );
+        }
+      });
+    }
+  }
+
   for (const key of ["prepTime", "cookTime"] as const) {
     const field = `${at}.${key}`;
     if (key in translation !== key in greek) {
@@ -125,7 +208,7 @@ function checkTranslation(
         }
       }
       if (!isNonEmptyString(memory.title)) fail(`${field}.title`, `${field}.title must be a non-empty string`);
-      if (!isNonEmptyString(memory.story)) fail(`${field}.story`, `${field}.story must be a non-empty string`);
+      checkStory(memory.story, `${field}.story`, fail);
     }
   }
 }
@@ -188,6 +271,7 @@ function checkRecipe(value: unknown, issues: RecipeDataIssue[], { expectedId }: 
   if (!isNonEmptyString(value.description)) fail("description", "description must be a non-empty string");
   if (!isStringArray(value.ingredients)) fail("ingredients", "ingredients must be a non-empty array of non-empty strings");
   if (!isStringArray(value.steps)) fail("steps", "steps must be a non-empty array of non-empty strings");
+  if ("preparations" in value) checkPreparations(value.preparations, "preparations", fail);
   if (!isIsoDate(value.createdAt)) fail("createdAt", "createdAt must be an ISO date string");
   if (!isIsoDate(value.updatedAt)) fail("updatedAt", "updatedAt must be an ISO date string");
 
@@ -207,16 +291,19 @@ function checkRecipe(value: unknown, issues: RecipeDataIssue[], { expectedId }: 
         if (!Object.hasOwn(MEMORY_FIELDS, key)) fail(`memory.${key}`, `unknown memory field "${key}"`);
       }
       if (!isNonEmptyString(memory.title)) fail("memory.title", "memory.title must be a non-empty string");
-      if (!isNonEmptyString(memory.story)) fail("memory.story", "memory.story must be a non-empty string");
+      checkStory(memory.story, "memory.story", fail);
       if ("date" in memory && !isNonEmptyString(memory.date)) {
         fail("memory.date", "memory.date must be a non-empty string when present");
+      }
+      if ("imageUrl" in memory && !isRootPath(memory.imageUrl)) {
+        fail("memory.imageUrl", 'memory.imageUrl must be a root-relative path like "/images/stories/<id>.jpg"');
       }
     }
   }
 
   if ("tags" in value) checkTags(value.tags, fail);
 
-  if ("imageUrl" in value && !(isNonEmptyString(value.imageUrl) && value.imageUrl.startsWith("/"))) {
+  if ("imageUrl" in value && !isRootPath(value.imageUrl)) {
     fail("imageUrl", 'imageUrl must be a root-relative path like "/images/recipes/<id>.jpg"');
   }
 

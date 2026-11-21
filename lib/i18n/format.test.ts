@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { formatCount } from "@/lib/i18n/format";
+import { collatorFor, formatCount, perLocale } from "@/lib/i18n/format";
 
 const recipes = { one: "{count} recipe", other: "{count} recipes" };
 
@@ -60,5 +60,28 @@ describe("formatCount", () => {
 
   it("uses the plural form for categories other than one, such as Italian's 'many' for a million", () => {
     expect(formatCount("it", { one: "{count} ricetta", other: "{count} ricette" }, 1_000_000)).toBe("1000000 ricette");
+  });
+});
+
+describe("perLocale", () => {
+  it("builds one object per language from its Intl tag, and reuses it", () => {
+    const created: string[] = [];
+    const tagFor = perLocale((intl) => {
+      created.push(intl);
+      return { intl };
+    });
+
+    expect(tagFor("el")).toBe(tagFor("el"));
+    expect(tagFor("en")).toEqual({ intl: "en-GB" });
+    expect(created).toEqual(["el-GR", "en-GB"]);
+  });
+});
+
+describe("collatorFor", () => {
+  it("sorts in the language's alphabetical order: Swedish puts ä after z, English beside a", () => {
+    const words = ["ära", "zebra", "apa"];
+
+    expect([...words].sort(collatorFor("sv").compare)).toEqual(["apa", "zebra", "ära"]);
+    expect([...words].sort(collatorFor("en").compare)).toEqual(["apa", "ära", "zebra"]);
   });
 });

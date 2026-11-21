@@ -1,16 +1,24 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import type { CategoryNames, RecipeSummary } from "@/types/recipe";
 import type { Messages } from "@/lib/i18n/messages";
-import { LOCALE_DETAILS, type Locale } from "@/lib/i18n/config";
+import type { Locale } from "@/lib/i18n/config";
 import { formatCount } from "@/lib/i18n/format";
-import { filterRecipes, getCategories, getTags } from "@/lib/recipe-search";
-import { categoryDisplayName } from "@/lib/recipe-view";
-import { isTagId, tagName, type TagId } from "@/lib/tags";
+import {
+  NO_FILTERS,
+  filterParams,
+  filterRecipes,
+  getCategoryOptions,
+  getTags,
+  parseFilterParams,
+  type RecipeFilterParams,
+} from "@/lib/recipe-search";
+import { tagName } from "@/lib/tags";
 import { RecipeCard } from "@/components/recipe-card";
 import { CategoryDot } from "@/components/category-badge";
-import { Search, Tags, X } from "lucide-react";
+import { ChipRow, ChipRowLabel, FilterChip } from "@/components/filter-chips";
+import { BookOpen, Search, Tags, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 type RecipeListProps = {
@@ -22,144 +30,160 @@ type RecipeListProps = {
   messages: Pick<Messages, "recipeList" | "recipeCard" | "tags" | "counts">;
 };
 
-const chipBase =
-  "inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full border px-3.5 py-1.5 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
-const chipIdle = "border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground";
-const chipActive = "border-primary bg-primary text-primary-foreground";
+/**
+ * The search text, chapter, and tag, mirrored in the address as ?q=, ?category=,
+ * and ?tag=. That keeps the filters when a visitor opens a recipe and comes back,
+ * reloads, or shares the link, and it is how chapter and tag links elsewhere on
+ * the site open the list already filtered. The address is read after mount: the
+ * static HTML has no query string.
+ */
+function useUrlFilters(categories: readonly string[]): [RecipeFilterParams, (changes: Partial<RecipeFilterParams>) => void] {
+  const [filters, setFilters] = useState(NO_FILTERS);
+  // False until the address has been read, so the first render does not wipe it.
+  const [ready, setReady] = useState(false);
 
-// Tags are smaller and green, so they read as a second, lighter filter under the categories.
-const tagChipBase =
-  "inline-flex h-8 shrink-0 items-center whitespace-nowrap rounded-full border px-3 text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
-const tagChipIdle = "border-border text-muted-foreground hover:border-secondary/50 hover:text-secondary";
-const tagChipActive = "border-secondary bg-secondary text-secondary-foreground";
+  useEffect(() => {
+    setFilters(parseFilterParams(window.location.search, categories));
+    setReady(true);
+  }, [categories]);
 
-/** Puts the selected tag in the address as ?tag=, so reloading or sharing keeps the filter. */
-function writeTagToUrl(tag: TagId | null) {
-  const url = new URL(window.location.href);
-  if (tag === null) url.searchParams.delete("tag");
-  else url.searchParams.set("tag", tag);
-  window.history.replaceState(window.history.state, "", url);
+  useEffect(() => {
+    if (!ready) return;
+    // After a pause, so typing in the search box does not rewrite the address on every key.
+    const timer = window.setTimeout(() => {
+      const url = new URL(window.location.href);
+      url.search = filterParams(filters);
+      if (url.href !== window.location.href) window.history.replaceState(window.history.state, "", url);
+    }, 250);
+    return () => window.clearTimeout(timer);
+  }, [filters, ready]);
+
+  const update = useCallback((changes: Partial<RecipeFilterParams>) => {
+    setFilters((current) => ({ ...current, ...changes }));
+  }, []);
+
+  return [filters, update];
+}
+
+type SearchFieldProps = {
+  value: string;
+  onChange: (value: string) => void;
+  messages: Messages["recipeList"];
+};
+
+function SearchField({ value, onChange, messages: t }: SearchFieldProps) {
+  return (
+    <div className="relative w-full sm:max-w-md">
+      <Search
+        className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground"
+        aria-hidden="true"
+      />
+      <input
+        type="search"
+        placeholder={t.searchPlaceholder}
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+        className="h-12 w-full rounded-full border border-border bg-card pl-11 pr-11 text-base text-foreground shadow-sm transition-colors placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-ring/25 [&::-webkit-search-cancel-button]:hidden"
+        aria-label={t.searchLabel}
+      />
+      {value !== "" && (
+        <button
+          type="button"
+          onClick={() => onChange("")}
+          className="absolute right-2.5 top-1/2 flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-full text-muted-foreground hover:bg-muted hover:text-foreground focus-ring"
+          aria-label={t.clearSearch}
+        >
+          <X className="h-4 w-4" aria-hidden="true" />
+        </button>
+      )}
+    </div>
+  );
 }
 
 export function RecipeList({ recipes, locale, categoryNames, messages }: RecipeListProps) {
   const t = messages.recipeList;
-  const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [selectedTag, setSelectedTag] = useState<TagId | null>(null);
 
-  // A recipe page's tags link here as ?tag=<id>. Read after mount: the static HTML has no query string.
-  useEffect(() => {
-    const tag = new URLSearchParams(window.location.search).get("tag");
-    if (isTagId(tag)) setSelectedTag(tag);
-  }, []);
-
-  const selectTag = (tag: TagId | null) => {
-    setSelectedTag(tag);
-    writeTagToUrl(tag);
-  };
-
-  // Filtering keys on the Greek names; the chips show, and are sorted by, the page's language.
-  const categories = useMemo(() => {
-    const collator = new Intl.Collator(LOCALE_DETAILS[locale].intl);
-    return getCategories(recipes)
-      .map((label) => ({ label, name: categoryDisplayName(label, categoryNames) }))
-      .sort((a, b) => collator.compare(a.name, b.name));
-  }, [recipes, locale, categoryNames]);
-
+  const categories = useMemo(
+    () => getCategoryOptions(recipes, categoryNames, locale),
+    [recipes, categoryNames, locale],
+  );
+  const categoryLabels = useMemo(() => categories.map(({ label }) => label), [categories]);
   const tags = useMemo(() => getTags(recipes), [recipes]);
 
+  const [filters, setFilters] = useUrlFilters(categoryLabels);
+  const { query, category: selectedCategory, tag: selectedTag } = filters;
+  const isFiltered = query !== "" || selectedCategory !== null || selectedTag !== null;
+
   const filteredRecipes = useMemo(
-    () => filterRecipes(recipes, { query: searchQuery, category: selectedCategory, tag: selectedTag, locale }),
-    [recipes, searchQuery, selectedCategory, selectedTag, locale],
+    () => filterRecipes(recipes, { query, category: selectedCategory, tag: selectedTag, locale }),
+    [recipes, query, selectedCategory, selectedTag, locale],
   );
 
-  const resetFilters = () => {
-    setSearchQuery("");
-    setSelectedCategory(null);
-    selectTag(null);
-  };
+  const resetFilters = () => setFilters(NO_FILTERS);
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-10">
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <div className="relative w-full sm:max-w-sm">
-            <Search
-              className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground"
-              aria-hidden="true"
-            />
-            <input
-              type="search"
-              placeholder={t.searchPlaceholder}
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="h-11 w-full rounded-lg border border-border bg-card pl-10 pr-10 text-base text-foreground shadow-sm transition-colors placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-ring/25 [&::-webkit-search-cancel-button]:hidden"
-              aria-label={t.searchLabel}
-            />
-            {searchQuery !== "" && (
+          <SearchField value={query} onChange={(value) => setFilters({ query: value })} messages={t} />
+
+          <div className="flex items-center gap-4 text-sm">
+            {/* Hidden from screen readers, which hear the count from the live region below. */}
+            <p aria-hidden="true" className="text-muted-foreground">
+              {formatCount(locale, messages.counts.recipes, filteredRecipes.length)}
+            </p>
+            {isFiltered && (
               <button
                 type="button"
-                onClick={() => setSearchQuery("")}
-                className="absolute right-2 top-1/2 flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-md text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                aria-label={t.clearSearch}
+                onClick={resetFilters}
+                className="inline-flex items-center gap-1 rounded-sm font-semibold text-primary underline-offset-4 hover:underline focus-ring"
               >
-                <X className="h-4 w-4" aria-hidden="true" />
+                <X className="h-3.5 w-3.5" aria-hidden="true" />
+                {t.resetFilters}
               </button>
             )}
           </div>
-
-          <p aria-hidden="true" className="text-sm text-muted-foreground">
-            {formatCount(locale, messages.counts.recipes, filteredRecipes.length)}
-          </p>
         </div>
 
-        {/* One scrolling row on phones, wrapped on wider screens. */}
-        <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none] sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 [&::-webkit-scrollbar]:hidden">
-          <button
-            type="button"
-            onClick={() => setSelectedCategory(null)}
-            aria-pressed={selectedCategory === null}
-            className={`${chipBase} ${selectedCategory === null ? chipActive : chipIdle}`}
-          >
+        <ChipRow label={t.categoriesLabel}>
+          <ChipRowLabel>
+            <BookOpen className="h-3.5 w-3.5" />
+            {t.categoriesLabel}
+          </ChipRowLabel>
+          <FilterChip tone="category" pressed={selectedCategory === null} onClick={() => setFilters({ category: null })}>
             {t.allCategories}
-          </button>
+          </FilterChip>
           {categories.map(({ label, name }) => (
-            <button
-              type="button"
+            <FilterChip
               key={label}
-              onClick={() => setSelectedCategory(label)}
-              aria-pressed={selectedCategory === label}
-              className={`${chipBase} ${selectedCategory === label ? chipActive : chipIdle}`}
+              tone="category"
+              pressed={selectedCategory === label}
+              onClick={() => setFilters({ category: label })}
             >
               <CategoryDot label={label} />
               {name}
-            </button>
+            </FilterChip>
           ))}
-        </div>
+        </ChipRow>
 
         {tags.length > 0 && (
-          <div
-            role="group"
-            aria-label={messages.tags.label}
-            className="-mx-4 flex items-center gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none] sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 [&::-webkit-scrollbar]:hidden"
-          >
-            <span aria-hidden="true" className="inline-flex shrink-0 items-center gap-1.5 pr-1 text-xs font-semibold text-muted-foreground">
+          <ChipRow label={messages.tags.label}>
+            <ChipRowLabel>
               <Tags className="h-3.5 w-3.5" />
               {messages.tags.label}
-            </span>
+            </ChipRowLabel>
             {/* Pressing the selected tag again clears it. */}
             {tags.map((tag) => (
-              <button
-                type="button"
+              <FilterChip
                 key={tag}
-                onClick={() => selectTag(selectedTag === tag ? null : tag)}
-                aria-pressed={selectedTag === tag}
-                className={`${tagChipBase} ${selectedTag === tag ? tagChipActive : tagChipIdle}`}
+                tone="tag"
+                pressed={selectedTag === tag}
+                onClick={() => setFilters({ tag: selectedTag === tag ? null : tag })}
               >
                 {tagName(tag, locale)}
-              </button>
+              </FilterChip>
             ))}
-          </div>
+          </ChipRow>
         )}
       </div>
 
@@ -180,7 +204,14 @@ export function RecipeList({ recipes, locale, categoryNames, messages }: RecipeL
                 key={recipe.id}
                 className="h-full"
               >
-                <RecipeCard recipe={recipe} locale={locale} categoryNames={categoryNames} messages={messages} />
+                {/* The page's <h1> is the only heading above the cards, so their titles are <h2>. */}
+                <RecipeCard
+                  recipe={recipe}
+                  locale={locale}
+                  categoryNames={categoryNames}
+                  messages={messages}
+                  headingLevel="h2"
+                />
               </motion.div>
             ))
           ) : (
@@ -194,12 +225,12 @@ export function RecipeList({ recipes, locale, categoryNames, messages }: RecipeL
               <span className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary-soft text-secondary">
                 <Search className="h-5 w-5" aria-hidden="true" />
               </span>
-              <h3 className="font-serif text-xl font-semibold">{t.emptyTitle}</h3>
+              <h2 className="font-serif text-xl font-semibold">{t.emptyTitle}</h2>
               <p className="max-w-sm text-sm text-muted-foreground">{t.emptyText}</p>
               <button
                 type="button"
                 onClick={resetFilters}
-                className="mt-2 inline-flex h-9 items-center rounded-full border border-border bg-card px-4 text-sm font-medium transition-colors hover:border-primary/40 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className="mt-2 inline-flex h-9 items-center rounded-full border border-border bg-card px-4 text-sm font-medium transition-colors hover:border-primary/40 hover:text-primary focus-ring"
               >
                 {t.resetFilters}
               </button>

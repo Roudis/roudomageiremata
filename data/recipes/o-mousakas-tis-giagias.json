@@ -24,13 +24,20 @@
   "steps": [
     "Ψήνουμε στον φούρνο τις πατάτες με λίγο αλάτι και λίγο λάδι, και τις μελιτζάνες επίσης με λίγο λάδι και αλάτι.",
     "Σε ένα βαθύ τηγάνι ή κατσαρόλα ροδίζουμε πρώτα τον κιμά. Προσθέτουμε το κρεμμύδι, μετά την ντομάτα, τον πελτέ, το αλάτι, το πιπέρι, τα μυρωδικά και τα μπαχαρικά, και αφήνουμε τον κιμά να βράσει περίπου μισή ώρα.",
-    "Για την μπεσαμέλ: σε ένα κατσαρολάκι βάζουμε το γάλα, το αλεύρι και το αλάτι και ανακατεύουμε καλά να διαλυθεί το αλεύρι. Βάζουμε στη φωτιά και ανακατεύουμε.",
-    "Μόλις δέσει η κρέμα, ρίχνουμε το βούτυρο και τα αυγά ανακατεύοντας γρήγορα για να μην κόψουν τα αυγά. Αν θέλουμε, προσθέτουμε και μοσχοκάρυδο.",
     "Στο ταψί στρώνουμε πρώτα τις πατάτες στη σειρά, να καλύψουν όλο τον πάτο.",
     "Ανακατεύουμε τον κιμά με λίγο τριμμένο τυρί και τα δύο αυγά και τον ρίχνουμε πάνω από τις πατάτες.",
     "Από πάνω αραδιάζουμε με τη σειρά τις μελιτζάνες.",
     "Τελευταία στρώση η μπεσαμέλ. Τρίβουμε και λίγο τυρί από πάνω.",
     "Ψήνουμε σε προθερμασμένο φούρνο στους 200° μέχρι να ψηθεί η μπεσαμέλ και να ροδίσει."
+  ],
+  "preparations": [
+    {
+      "title": "Μπεσαμέλ",
+      "steps": [
+        "Σε ένα κατσαρολάκι βάζουμε το γάλα, το αλεύρι και το αλάτι και ανακατεύουμε καλά να διαλυθεί το αλεύρι. Βάζουμε στη φωτιά και ανακατεύουμε.",
+        "Μόλις δέσει η κρέμα, ρίχνουμε το βούτυρο και τα αυγά ανακατεύοντας γρήγορα για να μην κόψουν τα αυγά. Αν θέλουμε, προσθέτουμε και μοσχοκάρυδο."
+      ]
+    }
   ],
   "memory": {
     "title": "Κυριακάτικο τραπέζι",
@@ -74,13 +81,20 @@
       "steps": [
         "Bake the potatoes in the oven with a little salt and a little oil, and the aubergines too, with a little oil and salt.",
         "In a deep frying pan or a saucepan, first brown the mince. Add the onion, then the tomato, the tomato paste, salt, pepper, the herbs and the spices, and let the meat sauce simmer for about half an hour.",
-        "For the béchamel: put the milk, flour and salt in a small saucepan and stir well until the flour dissolves. Put it on the heat and keep stirring.",
-        "As soon as the cream thickens, add the butter and the eggs, stirring quickly so the eggs don’t curdle. Add nutmeg if you like.",
         "First lay the potatoes in rows in the baking tin so they cover the whole bottom.",
         "Mix the meat sauce with a little grated cheese and the two eggs, and spread it over the potatoes.",
         "Arrange the aubergines in rows on top.",
         "The last layer is the béchamel. Grate a little more cheese over the top.",
         "Bake in an oven preheated to 200° until the béchamel is cooked and golden."
+      ],
+      "preparations": [
+        {
+          "title": "Béchamel",
+          "steps": [
+            "Put the milk, flour and salt in a small saucepan and stir well until the flour dissolves. Put it on the heat and keep stirring.",
+            "As soon as the cream thickens, add the butter and the eggs, stirring quickly so the eggs don’t curdle. Add nutmeg if you like."
+          ]
+        }
       ],
       "memory": {
         "title": "Sunday lunch",
@@ -114,13 +128,20 @@
       "steps": [
         "Bak de aardappelen in de oven met een beetje zout en een beetje olie, en de aubergines ook met een beetje olie en zout.",
         "Bak in een diepe koekenpan of een pan eerst het gehakt bruin. Voeg de ui toe, daarna de tomaat, de tomatenpuree, zout, peper, de kruiden en de specerijen, en laat de gehaktsaus ongeveer een half uur sudderen.",
-        "Voor de bechamel: doe de melk, de bloem en het zout in een steelpannetje en roer goed tot de bloem is opgelost. Zet het op het vuur en blijf roeren.",
-        "Zodra de saus dik wordt, voeg je de boter en de eieren toe en roer je snel, zodat de eieren niet schiften. Voeg naar wens nootmuskaat toe.",
         "Leg eerst de aardappelen in rijen in de ovenschaal, zodat ze de hele bodem bedekken.",
         "Meng de gehaktsaus met een beetje geraspte kaas en de twee eieren en verdeel hem over de aardappelen.",
         "Leg daarop de aubergines in rijen.",
         "De laatste laag is de bechamel. Rasp er nog wat kaas over.",
         "Bak in een voorverwarmde oven op 200° tot de bechamel gaar en goudbruin is."
+      ],
+      "preparations": [
+        {
+          "title": "Bechamel",
+          "steps": [
+            "Doe de melk, de bloem en het zout in een steelpannetje en roer goed tot de bloem is opgelost. Zet het op het vuur en blijf roeren.",
+            "Zodra de saus dik wordt, voeg je de boter en de eieren toe en roer je snel, zodat de eieren niet schiften. Voeg naar wens nootmuskaat toe."
+          ]
+        }
       ],
       "memory": {
         "title": "Zondagse maaltijd",
@@ -154,13 +175,20 @@
       "steps": [
         "Faites cuire au four les pommes de terre avec un peu de sel et un peu d’huile, et les aubergines de même avec un peu d’huile et de sel.",
         "Dans une poêle profonde ou une casserole, faites d’abord dorer la viande hachée. Ajoutez l’oignon, puis la tomate, le concentré, le sel, le poivre, les herbes et les épices, et laissez mijoter la viande environ une demi-heure.",
-        "Pour la béchamel : dans une petite casserole, mettez le lait, la farine et le sel et mélangez bien pour dissoudre la farine. Mettez sur le feu et remuez.",
-        "Dès que la crème épaissit, ajoutez le beurre et les œufs en remuant vite pour que les œufs ne tranchent pas. Ajoutez de la muscade si vous le souhaitez.",
         "Dans le plat, disposez d’abord les pommes de terre en rangées pour couvrir tout le fond.",
         "Mélangez la viande avec un peu de fromage râpé et les deux œufs, puis étalez-la sur les pommes de terre.",
         "Par-dessus, alignez les aubergines en rangées.",
         "La dernière couche, c’est la béchamel. Râpez encore un peu de fromage dessus.",
         "Enfournez dans un four préchauffé à 200° jusqu’à ce que la béchamel soit cuite et dorée."
+      ],
+      "preparations": [
+        {
+          "title": "Béchamel",
+          "steps": [
+            "Dans une petite casserole, mettez le lait, la farine et le sel et mélangez bien pour dissoudre la farine. Mettez sur le feu et remuez.",
+            "Dès que la crème épaissit, ajoutez le beurre et les œufs en remuant vite pour que les œufs ne tranchent pas. Ajoutez de la muscade si vous le souhaitez."
+          ]
+        }
       ],
       "memory": {
         "title": "Le repas du dimanche",
@@ -194,13 +222,20 @@
       "steps": [
         "Baka potatisen i ugnen med lite salt och lite olja, och auberginen likaså med lite olja och salt.",
         "Bryn först köttfärsen i en djup stekpanna eller kastrull. Tillsätt löken, sedan tomaten, tomatpurén, salt, peppar, örterna och kryddorna, och låt köttfärssåsen sjuda i ungefär en halvtimme.",
-        "Till béchamelsåsen: häll mjölken, mjölet och saltet i en liten kastrull och rör om ordentligt tills mjölet har löst sig. Ställ på värmen och rör.",
-        "Så snart såsen tjocknar tillsätter du smöret och äggen och rör snabbt så att äggen inte skär sig. Tillsätt muskot om du vill.",
         "Lägg först potatisen i rader i ugnsformen så att den täcker hela botten.",
         "Blanda köttfärssåsen med lite riven ost och de två äggen och bred ut den över potatisen.",
         "Lägg auberginen i rader ovanpå.",
         "Det sista lagret är béchamelsåsen. Riv lite ost över.",
         "Grädda i förvärmd ugn på 200° tills béchamelsåsen har stelnat och fått fin färg."
+      ],
+      "preparations": [
+        {
+          "title": "Béchamelsås",
+          "steps": [
+            "Häll mjölken, mjölet och saltet i en liten kastrull och rör om ordentligt tills mjölet har löst sig. Ställ på värmen och rör.",
+            "Så snart såsen tjocknar tillsätter du smöret och äggen och rör snabbt så att äggen inte skär sig. Tillsätt muskot om du vill."
+          ]
+        }
       ],
       "memory": {
         "title": "Söndagsmiddag",
@@ -234,13 +269,20 @@
       "steps": [
         "Asa en el horno las patatas con un poco de sal y un poco de aceite, y las berenjenas también con un poco de aceite y sal.",
         "En una sartén honda o una cazuela, dora primero la carne picada. Añade la cebolla, luego el tomate, el concentrado, la sal, la pimienta, las hierbas y las especias, y deja que la carne hierva a fuego lento una media hora.",
-        "Para la bechamel: pon la leche, la harina y la sal en un cazo y remueve bien para que se disuelva la harina. Ponlo al fuego y remueve.",
-        "En cuanto espese la crema, añade la mantequilla y los huevos removiendo rápido para que los huevos no se corten. Si quieres, añade nuez moscada.",
         "En la bandeja, coloca primero las patatas en filas para cubrir todo el fondo.",
         "Mezcla la carne con un poco de queso rallado y los dos huevos, y extiéndela sobre las patatas.",
         "Encima, coloca las berenjenas en filas.",
         "La última capa es la bechamel. Ralla un poco más de queso por encima.",
         "Hornea en el horno precalentado a 200° hasta que la bechamel esté hecha y dorada."
+      ],
+      "preparations": [
+        {
+          "title": "Bechamel",
+          "steps": [
+            "Pon la leche, la harina y la sal en un cazo y remueve bien para que se disuelva la harina. Ponlo al fuego y remueve.",
+            "En cuanto espese la crema, añade la mantequilla y los huevos removiendo rápido para que los huevos no se corten. Si quieres, añade nuez moscada."
+          ]
+        }
       ],
       "memory": {
         "title": "La comida del domingo",
@@ -274,13 +316,20 @@
       "steps": [
         "Cuocete in forno le patate con un po’ di sale e un po’ d’olio, e anche le melanzane con un po’ d’olio e sale.",
         "In una padella profonda o in una pentola fate prima rosolare la carne macinata. Aggiungete la cipolla, poi il pomodoro, il concentrato, il sale, il pepe, le erbe e le spezie, e lasciate cuocere il ragù per circa mezz’ora.",
-        "Per la besciamella: in un pentolino mettete il latte, la farina e il sale e mescolate bene finché la farina non si scioglie. Mettete sul fuoco e mescolate.",
-        "Appena la crema si addensa, aggiungete il burro e le uova mescolando velocemente perché le uova non si rapprendano. Se volete, aggiungete la noce moscata.",
         "Nella teglia disponete prima le patate in file, in modo che coprano tutto il fondo.",
         "Mescolate il ragù con un po’ di formaggio grattugiato e le due uova e stendetelo sopra le patate.",
         "Sopra disponete in fila le melanzane.",
         "L’ultimo strato è la besciamella. Grattugiate ancora un po’ di formaggio sopra.",
         "Cuocete in forno preriscaldato a 200° finché la besciamella non è cotta e dorata."
+      ],
+      "preparations": [
+        {
+          "title": "Besciamella",
+          "steps": [
+            "In un pentolino mettete il latte, la farina e il sale e mescolate bene finché la farina non si scioglie. Mettete sul fuoco e mescolate.",
+            "Appena la crema si addensa, aggiungete il burro e le uova mescolando velocemente perché le uova non si rapprendano. Se volete, aggiungete la noce moscata."
+          ]
+        }
       ],
       "memory": {
         "title": "Il pranzo della domenica",
@@ -314,13 +363,20 @@
       "steps": [
         "Coaceți cartofii în cuptor cu puțină sare și puțin ulei, iar vinetele la fel, cu puțin ulei și sare.",
         "Într-o tigaie adâncă sau într-o cratiță, rumeniți mai întâi carnea tocată. Adăugați ceapa, apoi roșia, pasta de roșii, sarea, piperul, ierburile și condimentele și lăsați carnea să fiarbă cam o jumătate de oră.",
-        "Pentru besamel: într-o crătiță puneți laptele, făina și sarea și amestecați bine să se dizolve făina. Puneți pe foc și amestecați.",
-        "Imediat ce crema se îngroașă, adăugați untul și ouăle, amestecând repede ca să nu se taie ouăle. Dacă doriți, adăugați nucșoară.",
         "În tavă așezați mai întâi cartofii pe rânduri, ca să acopere tot fundul.",
         "Amestecați carnea cu puțină brânză rasă și cele două ouă și întindeți-o peste cartofi.",
         "Deasupra așezați vinetele pe rânduri.",
         "Ultimul strat este besamelul. Mai radeți puțină brânză deasupra.",
         "Coaceți în cuptorul preîncălzit la 200° până când besamelul se face și se rumenește."
+      ],
+      "preparations": [
+        {
+          "title": "Besamel",
+          "steps": [
+            "Într-o crătiță puneți laptele, făina și sarea și amestecați bine să se dizolve făina. Puneți pe foc și amestecați.",
+            "Imediat ce crema se îngroașă, adăugați untul și ouăle, amestecând repede ca să nu se taie ouăle. Dacă doriți, adăugați nucșoară."
+          ]
+        }
       ],
       "memory": {
         "title": "Masa de duminică",
@@ -354,13 +410,20 @@
       "steps": [
         "Brambory upečte v troubě s trochou soli a oleje a lilky stejně tak s trochou oleje a soli.",
         "Na hluboké pánvi nebo v hrnci nejprve opečte mleté maso dozlatova. Přidejte cibuli, potom rajčata, protlak, sůl, pepř, bylinky a koření a nechte maso asi půl hodiny probublávat.",
-        "Na bešamel: do malého hrnce dejte mléko, mouku a sůl a dobře promíchejte, aby se mouka rozpustila. Postavte na oheň a míchejte.",
-        "Jakmile krém zhoustne, přidejte máslo a vejce a rychle míchejte, aby se vejce nesrazila. Podle chuti přidejte muškátový oříšek.",
         "Do pekáče nejprve narovnejte brambory v řadách tak, aby pokryly celé dno.",
         "Maso smíchejte s trochou strouhaného sýra a oběma vejci a rozprostřete ho na brambory.",
         "Navrch narovnejte v řadách lilky.",
         "Poslední vrstvou je bešamel. Navrch nastrouhejte ještě trochu sýra.",
         "Pečte v troubě předehřáté na 200°, dokud se bešamel neupeče a nezezlátne."
+      ],
+      "preparations": [
+        {
+          "title": "Bešamel",
+          "steps": [
+            "Do malého hrnce dejte mléko, mouku a sůl a dobře promíchejte, aby se mouka rozpustila. Postavte na oheň a míchejte.",
+            "Jakmile krém zhoustne, přidejte máslo a vejce a rychle míchejte, aby se vejce nesrazila. Podle chuti přidejte muškátový oříšek."
+          ]
+        }
       ],
       "memory": {
         "title": "Nedělní oběd",
@@ -394,13 +457,20 @@
       "steps": [
         "Запечіть у духовці картоплю з дрібкою солі й трохи олії, а також баклажани з трохи олії та солі.",
         "У глибокій сковороді чи каструлі спершу обсмажте фарш до рум’янцю. Додайте цибулю, потім помідори, томатну пасту, сіль, перець, зелень і прянощі та тушкуйте фарш близько пів години.",
-        "Для бешамелю: у невелику каструлю покладіть молоко, борошно й сіль і добре перемішайте, щоб борошно розчинилося. Поставте на вогонь і помішуйте.",
-        "Щойно крем загусне, додайте масло та яйця, швидко помішуючи, щоб яйця не згорнулися. За бажанням додайте мускатний горіх.",
         "У форму спершу викладіть рядами картоплю, щоб вона вкрила все дно.",
         "Змішайте фарш із трохи тертого сиру та двома яйцями й розкладіть його на картоплю.",
         "Зверху рядами викладіть баклажани.",
         "Останній шар — бешамель. Натріть зверху ще трохи сиру.",
         "Запікайте в розігрітій до 200° духовці, доки бешамель не запечеться й не зарум’яниться."
+      ],
+      "preparations": [
+        {
+          "title": "Бешамель",
+          "steps": [
+            "У невелику каструлю покладіть молоко, борошно й сіль і добре перемішайте, щоб борошно розчинилося. Поставте на вогонь і помішуйте.",
+            "Щойно крем загусне, додайте масло та яйця, швидко помішуючи, щоб яйця не згорнулися. За бажанням додайте мускатний горіх."
+          ]
+        }
       ],
       "memory": {
         "title": "Недільний обід",
@@ -434,13 +504,20 @@
       "steps": [
         "じゃがいもに塩と油を少しずつかけてオーブンで焼きます。なすも同じように油と塩を少しかけて焼きます。",
         "深めのフライパンか鍋で、まずひき肉を焼き色がつくまで炒めます。玉ねぎを加え、続いてトマト、トマトペースト、塩、こしょう、ハーブとスパイスを加え、30分ほど煮込みます。",
-        "ベシャメルソース：小鍋に牛乳、薄力粉、塩を入れ、粉が溶けるまでよく混ぜます。火にかけて混ぜ続けます。",
-        "とろみがついたらバターと卵を加え、卵が固まらないよう手早く混ぜます。お好みでナツメグを加えます。",
         "耐熱皿に、まずじゃがいもを底全体が隠れるように並べます。",
         "ミートソースに粉チーズ少々と卵2個を混ぜ、じゃがいもの上に広げます。",
         "その上になすを並べます。",
         "いちばん上にベシャメルソースを流し、粉チーズを少し削りかけます。",
         "200°に予熱したオーブンで、ベシャメルに火が通って焼き色がつくまで焼きます。"
+      ],
+      "preparations": [
+        {
+          "title": "ベシャメルソース",
+          "steps": [
+            "小鍋に牛乳、薄力粉、塩を入れ、粉が溶けるまでよく混ぜます。火にかけて混ぜ続けます。",
+            "とろみがついたらバターと卵を加え、卵が固まらないよう手早く混ぜます。お好みでナツメグを加えます。"
+          ]
+        }
       ],
       "memory": {
         "title": "日曜日の食卓",

@@ -1,13 +1,11 @@
 import "server-only";
-import { promises as fs } from "fs";
 import path from "path";
 import type { CategoryNames } from "@/types/recipe";
 import { DEFAULT_LOCALE, type Locale } from "@/lib/i18n/config";
 import { getMessages } from "@/lib/i18n/messages";
+import { readJsonFile } from "@/lib/json-file";
 import { RecipeDataError, parseCategoryTranslations, type CategoryTranslations } from "@/lib/recipe-schema";
 import { CATEGORY_FALLBACK } from "@/lib/recipe-view";
-
-const isMissingFile = (error: unknown) => error instanceof Error && "code" in error && error.code === "ENOENT";
 
 /**
  * Reads a category translations file. A missing file means no translations; an
@@ -16,13 +14,12 @@ const isMissingFile = (error: unknown) => error instanceof Error && "code" in er
  * fails on it.
  */
 async function readCategoryTranslations(filePath: string): Promise<CategoryTranslations> {
-  const source = path.relative(process.cwd(), filePath);
   try {
-    return parseCategoryTranslations(JSON.parse(await fs.readFile(filePath, "utf8")), source);
+    const file = await readJsonFile(filePath, "category list");
+    return file ? parseCategoryTranslations(file.value, file.source) : {};
   } catch (error) {
-    if (isMissingFile(error)) return {};
-    const message = error instanceof RecipeDataError ? error.message : `${source}: ${String(error)}`;
-    console.warn(`Ignoring category translations: ${message}`);
+    if (!(error instanceof RecipeDataError)) throw error;
+    console.warn(`Ignoring category translations: ${error.message}`);
     return {};
   }
 }

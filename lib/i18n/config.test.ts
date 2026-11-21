@@ -48,7 +48,8 @@ describe("localizePath", () => {
   });
 
   it("keeps a hash or query after the path", () => {
-    expect(localizePath("/#recipe-grid", "en")).toBe("/en#recipe-grid");
+    expect(localizePath("/#chapters", "en")).toBe("/en#chapters");
+    expect(localizePath("/recipes?tag=vegan", "en")).toBe("/en/recipes?tag=vegan");
     expect(localizePath("/recipes/gemista?print=1", "sv")).toBe("/sv/recipes/gemista?print=1");
   });
 });

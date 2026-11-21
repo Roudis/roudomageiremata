@@ -1,7 +1,8 @@
-import type { Recipe } from "@/types/recipe";
+import type { CategoryNames, Recipe } from "@/types/recipe";
 import { DEFAULT_LOCALE, type Locale } from "@/lib/i18n/config";
-import { categoryLabel } from "@/lib/recipe-view";
-import { TAG_IDS, expandTags, tagName, type TagId } from "@/lib/tags";
+import { collatorFor } from "@/lib/i18n/format";
+import { categoryDisplayName, categoryLabel } from "@/lib/recipe-view";
+import { TAG_IDS, expandTags, isTagId, tagName, type TagId } from "@/lib/tags";
 
 /** The fields search and filtering read. Both `Recipe` and `RecipeSummary` satisfy it. */
 export type SearchableRecipe = Pick<Recipe, "title" | "description" | "ingredients" | "category" | "tags">;
@@ -17,9 +18,76 @@ export type RecipeFilter = {
   locale?: Locale;
 };
 
+/** The recipe list's filters as the address carries them: `?q=`, `?category=`, and `?tag=`. */
+export type RecipeFilterParams = {
+  query: string;
+  /** A Greek category name, as in `getCategories`. */
+  category: string | null;
+  tag: TagId | null;
+};
+
+export const NO_FILTERS: RecipeFilterParams = { query: "", category: null, tag: null };
+
+/**
+ * Reads the filters from a query string such as "?q=μουσακάς&tag=vegan". A
+ * category that is not in `categories`, or a tag that does not exist, is dropped,
+ * so an old or mistyped link shows every recipe instead of none.
+ */
+export function parseFilterParams(search: string, categories: readonly string[]): RecipeFilterParams {
+  const params = new URLSearchParams(search);
+  const category = params.get("category");
+  const tag = params.get("tag");
+  return {
+    query: params.get("q") ?? "",
+    category: category !== null && categories.includes(category) ? category : null,
+    tag: isTagId(tag) ? tag : null,
+  };
+}
+
+/** The filters as a query string without the "?", or "" when none is set. */
+export function filterParams({ query = "", category = null, tag = null }: Partial<RecipeFilterParams>): string {
+  const params = new URLSearchParams();
+  if (query !== "") params.set("q", query);
+  if (category !== null) params.set("category", category);
+  if (tag !== null) params.set("tag", tag);
+  return params.toString();
+}
+
+/**
+ * The Greek path of the recipe list with these filters applied, for a chapter
+ * or tag link: pass it through `localizePath`.
+ */
+export function recipesPath(filters: Partial<RecipeFilterParams> = {}): string {
+  const params = filterParams(filters);
+  return params === "" ? "/recipes" : `/recipes?${params}`;
+}
+
 /** Unique category labels, sorted by code unit, with uncategorized recipes under CATEGORY_FALLBACK. */
 export function getCategories(recipes: readonly SearchableRecipe[]): string[] {
   return Array.from(new Set(recipes.map(categoryLabel))).sort();
+}
+
+export type CategoryOption = {
+  /** The Greek name, which filtering and the colour dot key on. */
+  label: string;
+  /** The name to show in the page's language. */
+  name: string;
+};
+
+/**
+ * The category filter's choices: each category in use with its display name
+ * from `names` (see `getCategoryNames`), in `locale`'s alphabetical order of
+ * those names.
+ */
+export function getCategoryOptions(
+  recipes: readonly SearchableRecipe[],
+  names: CategoryNames,
+  locale: Locale,
+): CategoryOption[] {
+  const collator = collatorFor(locale);
+  return getCategories(recipes)
+    .map((label) => ({ label, name: categoryDisplayName(label, names) }))
+    .sort((a, b) => collator.compare(a.name, b.name));
 }
 
 /** Every tag at least one recipe has, implied ones included, in TAG_IDS order. */

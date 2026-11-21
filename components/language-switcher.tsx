@@ -63,7 +63,7 @@ export function LanguageSwitcher({ locale, label, path }: LanguageSwitcherProps)
         aria-expanded={open}
         aria-controls={listId}
         onClick={() => setOpen((isOpen) => !isOpen)}
-        className="inline-flex h-9 items-center gap-1.5 rounded-full border border-border bg-card px-3 text-sm font-medium text-foreground shadow-sm transition-colors hover:border-primary/40 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+        className="inline-flex h-9 items-center gap-1.5 rounded-full border border-border bg-card px-3 text-sm font-medium text-foreground shadow-sm transition-colors hover:border-primary/40 hover:text-primary focus-ring-offset"
       >
         <Languages className="h-4 w-4 text-primary" aria-hidden="true" />
         <span className="sr-only">{label}: </span>
@@ -101,7 +101,7 @@ export function LanguageSwitcher({ locale, label, path }: LanguageSwitcherProps)
                   lang={code}
                   aria-current={isCurrent ? "true" : undefined}
                   onClick={() => setOpen(false)}
-                  className={`flex items-center justify-between gap-3 rounded-lg px-3 py-2 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+                  className={`flex items-center justify-between gap-3 rounded-lg px-3 py-2 text-sm transition-colors focus-ring ${
                     isCurrent ? "bg-primary-soft font-semibold text-primary" : "text-foreground hover:bg-muted"
                   }`}
                 >

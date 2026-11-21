@@ -11,7 +11,6 @@ export function RecipeHero({ recipe }: RecipeHeroProps) {
 
   return (
     <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-muted shadow-sm">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={withBasePath(recipe.imageUrl)} alt={recipe.title} className="h-full w-full object-cover" />
       <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-foreground/10" />
     </div>

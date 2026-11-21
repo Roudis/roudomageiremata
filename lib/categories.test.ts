@@ -57,6 +57,15 @@ describe("getCategoryNames", () => {
 
     expect(await getCategoryNames("en", file)).toEqual({ Άλλο: "Other" });
     expect(warnSpy).toHaveBeenCalledOnce();
+    expect(String(warnSpy.mock.calls[0][0])).toMatch(/categories\.json is not a valid category list:\n {2}- invalid JSON: /);
+  });
+
+  it("ignores a file that cannot be read, with a warning", async () => {
+    await fs.mkdir(file);
+
+    expect(await getCategoryNames("en", file)).toEqual({ Άλλο: "Other" });
+    expect(warnSpy).toHaveBeenCalledOnce();
+    expect(String(warnSpy.mock.calls[0][0])).toContain("could not be read: EISDIR");
   });
 
   it("reads data/categories.json by default", async () => {

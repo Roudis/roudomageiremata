@@ -3,20 +3,42 @@ import type { TagId } from "@/lib/tags";
 
 export interface Memory {
   title: string;
+  /**
+   * Plain text; a blank line starts a new paragraph. `[[recipe-id]]` links to that
+   * recipe by its title and `[[recipe-id|words]]` by those words; see lib/story-text.ts.
+   */
   story: string;
   date?: string;
+  /**
+   * The story's own photo, such as the people at the table, as "/images/stories/<id>.jpg".
+   * The recipe's `imageUrl` is the food. Story lists fall back to the recipe's photo
+   * when this is missing (`storyImageUrl` in lib/recipe-view.ts). Every language shows it.
+   */
+  imageUrl?: string;
+}
+
+/**
+ * A part of the recipe made separately before the main steps, such as the
+ * béchamel for a moussaka. The page shows each one, under its title, above the
+ * main steps.
+ */
+export interface Preparation {
+  title: string;
+  steps: string[];
 }
 
 /**
  * A recipe's text in one other language. It mirrors the Greek fields one to one:
- * the same number of ingredients and steps, and a memory, prepTime, or cookTime
- * exactly when the Greek has one. The memory's date comes from the Greek.
+ * the same number of ingredients and steps, the same preparations with the same
+ * number of steps each, and a memory, prepTime, or cookTime exactly when the
+ * Greek has one. The memory's date comes from the Greek.
  */
 export interface RecipeTranslation {
   title: string;
   description: string;
   ingredients: string[];
   steps: string[];
+  preparations?: Preparation[];
   memory?: Pick<Memory, "title" | "story">;
   prepTime?: string;
   cookTime?: string;
@@ -28,6 +50,8 @@ export interface Recipe {
   description: string;
   ingredients: string[];
   steps: string[];
+  /** Made before the main steps and shown above them, such as a sauce. */
+  preparations?: Preparation[];
   memory?: Memory;
   imageUrl?: string;
   category?: string;
@@ -52,6 +76,12 @@ export interface LocalizedRecipe extends Omit<Recipe, "translations"> {
   /** The language the text is in: the page's language, or Greek when the recipe has no translation. */
   contentLocale: Locale;
 }
+
+/**
+ * A recipe with a family story, which is what the journal lists: today every
+ * story is a recipe's `memory`, so a story's id and photo are its recipe's.
+ */
+export type RecipeWithStory = LocalizedRecipe & { memory: Memory };
 
 /**
  * The fields the recipe list and cards need, so the browser doesn't receive
